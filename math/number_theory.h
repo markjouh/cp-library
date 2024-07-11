@@ -1,7 +1,3 @@
-/* Verification:
- * https://cses.fi/problemset/task/2417/
- */
-
 namespace nt {
     vi mn_fac, primes;
 
