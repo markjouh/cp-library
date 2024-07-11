@@ -1,7 +1,3 @@
-/* Verification:
- * https://cses.fi/problemset/task/1700/
- */
-
 struct tree_iso {
     map<vi, int> mp;
 
