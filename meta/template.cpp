@@ -25,26 +25,48 @@ using namespace std;
 #define fi first
 #define se second
 
+template<class T, size_t N> using arr = array<T, N>;
+template<class T> using vec = vector<T>;
+template<class T> using pq = priority_queue<T>;
+template<class T> using pqg = priority_queue<T, vec<T>, greater<T>>;
+
 using ll = long long;
 using ld = long double;
 
 using pi = pair<int, int>;
 using pl = pair<ll, ll>;
 
-using vi = vector<int>;
-using vl = vector<ll>;
-using vpi = vector<pi>;
-using vpl = vector<pl>;
+using vb = vec<bool>;
+using vi = vec<int>; 
+using vl = vec<ll>;
+using vd = vector<ld>;
+using vs = vec<string>;
+using vpi = vec<pi>;
+using vpl = vec<pl>;
 
 template<class T> bool ckmin(T &a, const T b) { return b < a ? a = b, 1 : 0; }
 template<class T> bool ckmax(T &a, const T b) { return b > a ? a = b, 1 : 0; }
+
+template<class T, class... U> void re(T&& a, U&&... b) {
+    cin >> forward<T>(a);
+    (int[]) { (cin >> forward<U>(b), 0)... };
+}
+
+template<class T, class... U> void pr(T&& a, U&&... b) {
+    cout << forward<T>(a);
+    (int[]) { (cout << ' ' << forward<U>(b), 0)... };
+    cout << '\n';
+}
+
+const int inf = INT_MAX / 2;
+const ll infl = LLONG_MAX / 2;
 
 void solve() {
 }
 
 int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
+    cin.tie(0)->sync_with_stdio(0);
+    cin.exceptions(ios::badbit | ios::failbit);
 
     int t = 1;
     // cin >> t;
