@@ -5,20 +5,20 @@ const ll base = uniform_int_distribution<ll>(999, mod - 999)(rng);
 
 vl pwb = {1};
 
-struct hsh {
+struct seg_hash {
     ll val;
     int len;
 
-    hsh(ll x = 0, int y = 0) : val(x), len(y) {}
+    seg_hash(ll x = 0, int y = 0) : val(x), len(y) {}
 
-    hsh operator+(hsh b) {
+    seg_hash operator+(seg_hash b) {
         while (sz(pwb) - 1 < b.len) {
-            pwb.pb(__int128_t(pwb.back()) * base % mod);
+            pwb.pb(i128(pwb.back()) * base % mod);
         }
-        return hsh(__int128_t(val) * pwb[b.len] + b.val % mod, len + b.len);
+        return seg_hash(i128(val) * pwb[b.len] + b.val % mod, len + b.len);
     }
 
-    bool operator==(hsh b) {
+    bool operator==(seg_hash b) {
         return val == b.val && len == b.len;
     }
 };
