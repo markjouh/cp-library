@@ -1,7 +1,7 @@
 struct tree_iso {
     map<vi, int> mp;
 
-    vi gen(vector<vi> &g, int r = 0) {
+    vi gen(vec<vi> &g, int r = 0) {
         vi res(sz(g));
 
         auto dfs = [&](int u, int par, auto &&self) -> void {
