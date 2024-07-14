@@ -1,7 +1,7 @@
-vi topsort(vec<vpi> &g) {
+vi topsort(vec<vi> &g) {
     vi in(sz(g));
     rep(u, sz(g)) {
-        for (auto [v, _] : g[u]) {
+        for (int v : g[u]) {
             in[v]++;
         }
     }
@@ -16,7 +16,7 @@ vi topsort(vec<vpi> &g) {
         int u = q.front();
         q.pop();
         res.pb(u);
-        for (auto [v, _] : g[u]) {
+        for (int v : g[u]) {
             if (--in[v] == 0) {
                 q.push(v);
             }
