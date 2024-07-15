@@ -1,4 +1,4 @@
-struct tree_iso {
+struct TreeIso {
     map<vi, int> mp;
 
     vi gen(vec<vi> &g, int r = 0) {
