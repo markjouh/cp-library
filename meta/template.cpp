@@ -1,4 +1,3 @@
-#include <bits/stdc++.h>
 using namespace std;
 
 #ifdef LOCAL
@@ -25,13 +24,12 @@ using namespace std;
 #define fi first
 #define se second
 
-template<class T, size_t N> using arr = array<T, N>;
 template<class T> using vec = vector<T>;
-template<class T> using pq = priority_queue<T>;
-template<class T> using pqg = priority_queue<T, vec<T>, greater<T>>;
+template<class T, size_t N> using arr = array<T, N>;
 
 using ll = long long;
 using ld = long double;
+using i128 = __int128_t;
 
 using pi = pair<int, int>;
 using pl = pair<ll, ll>;
@@ -47,32 +45,12 @@ using vpl = vec<pl>;
 template<class T> bool ckmin(T &a, const T b) { return b < a ? a = b, 1 : 0; }
 template<class T> bool ckmax(T &a, const T b) { return b > a ? a = b, 1 : 0; }
 
-template<class T, class... U> void re(T&& a, U&&... b) {
-    cin >> forward<T>(a);
-    (int[]) { (cin >> forward<U>(b), 0)... };
-}
-
-template<class T, class... U> void pr(T&& a, U&&... b) {
-    cout << forward<T>(a);
-    (int[]) { (cout << ' ' << forward<U>(b), 0)... };
-    cout << '\n';
-}
-
 const int inf = INT_MAX / 2;
-const ll infl = LLONG_MAX / 2;
-
-void solve() {
-}
+const ll infll = LLONG_MAX / 2;
 
 int main() {
     cin.tie(0)->sync_with_stdio(0);
     cin.exceptions(ios::badbit | ios::failbit);
-
-    int t = 1;
-    // cin >> t;
-    while (t--) {
-        solve();
-    }
 }
 
 /* READ THE PROBLEM STATEMENT CAREFULLY
