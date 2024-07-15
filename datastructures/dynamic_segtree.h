@@ -1,19 +1,19 @@
 struct STNode {
     ll tl, tr;
     ll val = 0, lz = 0;
-    STNode *l_child = 0, *r_child = 0;
+    STNode *left = 0, *right = 0;
 
     STNode(ll l, ll r) : tl(l), tr(r) {}
 
     void push() {
-        if (!l_child) {
+        if (!left) {
             ll mid = tl + (tr - tl) / 2;
-            l_child = new STNode(tl, mid);
-            r_child = new STNode(mid, tr);
+            left = new STNode(tl, mid);
+            right = new STNode(mid, tr);
         }
         if (lz) {
-            l_child->add(tl, tr, lz);
-            r_child->add(tl, tr, lz);
+            left->add(tl, tr, lz);
+            right->add(tl, tr, lz);
             lz = 0;
         }
     }
@@ -26,7 +26,7 @@ struct STNode {
             return val;
         }
         push();
-        return l_child->query(l, r) + r_child->query(l, r);
+        return left->query(l, r) + right->query(l, r);
     }
 
     void add(ll l, ll r, ll v) {
@@ -39,8 +39,8 @@ struct STNode {
             return;
         }
         push();
-        l_child->add(l, r, v);
-        r_child->add(l, r, v);
-        val = l_child->val + r_child->val;
+        left->add(l, r, v);
+        right->add(l, r, v);
+        val = left->val + right->val;
     }
 };
