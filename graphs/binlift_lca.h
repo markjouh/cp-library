@@ -1,9 +1,9 @@
-struct bl_lca {
+struct LCA {
     int n, lg;
     vi dep;
     vec<vi> up;
 
-    bl_lca(vec<vi> &g) : n(sz(g)), lg(__lg(n) + 1), dep(n, inf), up(n, vi(lg, -1)) {
+    LCA(vec<vi> &g) : n(sz(g)), lg(__lg(n) + 1), dep(n, INF), up(n, vi(lg, -1)) {
         queue<int> q;
         dep[0] = 0;
         q.push(0);
@@ -11,7 +11,7 @@ struct bl_lca {
             int u = q.front();
             q.pop();
             for (int v : g[u]) {
-                if (dep[v] == inf) {
+                if (dep[v] == INF) {
                     dep[v] = dep[u] + 1;
                     up[v][0] = u;
                     rep(i, 1, lg) {
