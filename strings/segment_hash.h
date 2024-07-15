@@ -1,24 +1,24 @@
 mt19937_64 rng(chrono::steady_clock::now().time_since_epoch().count());
 
-const ll mod = (1ll << 61) - 1;
-const ll base = uniform_int_distribution<ll>(999, mod - 999)(rng);
+const ll MOD = (1ll << 61) - 1;
+const ll B = uniform_int_distribution<ll>(999, MOD - 999)(rng);
 
-vl pwb = {1};
+vl pow_b = {1};
 
-struct seg_hash {
+struct SegHash {
     ll val;
     int len;
 
-    seg_hash(ll x = 0, int y = 0) : val(x), len(y) {}
+    SegHash(ll x = 0, int y = 0) : val(x), len(y) {}
 
-    seg_hash operator+(seg_hash b) {
-        while (sz(pwb) - 1 < b.len) {
-            pwb.pb(i128(pwb.back()) * base % mod);
+    SegHash operator+(SegHash b) {
+        while (sz(pow_b) - 1 < b.len) {
+            pow_b.pb(i128(pow_b.back()) * B % MOD);
         }
-        return seg_hash(i128(val) * pwb[b.len] + b.val % mod, len + b.len);
+        return SegHash(i128(val) * pow_b[b.len] + b.val % MOD, len + b.len);
     }
 
-    bool operator==(seg_hash b) {
+    bool operator==(SegHash b) {
         return val == b.val && len == b.len;
     }
 };
