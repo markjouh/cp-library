@@ -46,7 +46,7 @@ template<class T> bool ckmin(T &a, const T b) { return b < a ? a = b, 1 : 0; }
 template<class T> bool ckmax(T &a, const T b) { return b > a ? a = b, 1 : 0; }
 
 const int inf = INT_MAX / 2;
-const ll infll = LLONG_MAX / 2;
+const ll infl = LLONG_MAX / 2;
 
 int main() {
     cin.tie(0)->sync_with_stdio(0);
