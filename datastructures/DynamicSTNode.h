@@ -1,19 +1,19 @@
-struct dst_node {
+struct STNode {
     ll tl, tr;
     ll val = 0, lz = 0;
-    dst_node *lch = 0, *rch = 0;
+    STNode *l_child = 0, *r_child = 0;
 
-    dst_node(ll l, ll r) : tl(l), tr(r) {}
+    STNode(ll l, ll r) : tl(l), tr(r) {}
 
     void push() {
-        if (!lch) {
+        if (!l_child) {
             ll mid = tl + (tr - tl) / 2;
-            lch = new dst_node(tl, mid);
-            rch = new dst_node(mid, tr);
+            l_child = new STNode(tl, mid);
+            r_child = new STNode(mid, tr);
         }
         if (lz) {
-            lch->add(tl, tr, lz);
-            rch->add(tl, tr, lz);
+            l_child->add(tl, tr, lz);
+            r_child->add(tl, tr, lz);
             lz = 0;
         }
     }
@@ -26,7 +26,7 @@ struct dst_node {
             return val;
         }
         push();
-        return lch->query(l, r) + rch->query(l, r);
+        return l_child->query(l, r) + r_child->query(l, r);
     }
 
     void add(ll l, ll r, ll v) {
@@ -39,8 +39,8 @@ struct dst_node {
             return;
         }
         push();
-        lch->add(l, r, v);
-        rch->add(l, r, v);
-        val = lch->val + rch->val;
+        l_child->add(l, r, v);
+        r_child->add(l, r, v);
+        val = l_child->val + r_child->val;
     }
 };
