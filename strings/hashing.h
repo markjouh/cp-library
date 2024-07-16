@@ -1,7 +1,7 @@
 // https://rng-58.blogspot.com/2017/02/hashing-and-probability-of-collision.html
 mt19937_64 rng(chrono::steady_clock::now().time_since_epoch().count());
 
-const ll mod = (1LL << 61) - 1;
+const ll mod = (1ll << 61) - 1;
 const ll base = uniform_int_distribution<ll>(1e3, mod - 1e3)(rng);
 
 vector<ll> pow_b = {1};
