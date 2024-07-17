@@ -53,6 +53,6 @@ struct LCA {
     }
 
     int dist(int x, int y) {
-        return dep[x] + dep[y] - 2 * dep[lca(x, y)] + 1;
+        return dep[x] + dep[y] - 2 * dep[lca(x, y)];
     }
 };
