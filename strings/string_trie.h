@@ -12,7 +12,7 @@ struct Trie {
 
     Trie() : trie(1) {}
 
-    void add(string &s) {
+    int add(string &s) {
         int x = 0;
         for (char c : s) {
             int y = c - 'a';
@@ -23,5 +23,19 @@ struct Trie {
             x = trie[x].nxt[y];
         }
         trie[x].flag = true;
+        return x;
+    }
+
+    vec<vi> graph() {
+        vec<vi> g(sz(trie));
+        rep(u, sz(trie)) {
+            rep(i, 26) {
+                int v = trie[u].nxt[i];
+                if (v != -1) {
+                    g[u].pb(v);
+                }
+            }
+        }
+        return g;
     }
 };
