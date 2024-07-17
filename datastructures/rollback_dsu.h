@@ -5,7 +5,7 @@ struct RollbackDSU {
     RollbackDSU(int n) : a(n, -1) {}
 
     int find(int x) {
-        return a[x] < 0 ? x : a[x] = find(a[x]);
+        return a[x] < 0 ? x : find(a[x]);
     }
 
     int size(int x) {
