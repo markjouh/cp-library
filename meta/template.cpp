@@ -17,11 +17,22 @@ using namespace std;
 #define per2(i, n) per3(i, 0, n)
 #define per(...) arg4(__VA_ARGS__, per3, per2) (__VA_ARGS__)
 
-#define all(x) begin(x), end(x)
+#define bg(x) begin(x)
+#define ed(x) end(x)
+#define all(x) bg(x), ed(x)
+#define rall(x) rbegin(x), rend(x)
+
+#define ft(x) (x).front()
+#define bk(x) (x).back()
 #define sz(x) int(size(x))
 
+#define pf push_front
 #define pb push_back
 #define eb emplace_back
+#define pft pop_front
+#define pbk pop_back
+#define ins insert
+#define era erase
 #define fi first
 #define se second
 
@@ -31,6 +42,7 @@ template<class T, size_t N> using arr = array<T, N>;
 using ll = long long;
 using ld = long double;
 using i128 = __int128_t;
+using str = string;
 
 using pi = pair<int, int>;
 using pl = pair<ll, ll>;
@@ -39,34 +51,12 @@ using vb = vec<bool>;
 using vi = vec<int>; 
 using vl = vec<ll>;
 using vd = vec<ld>;
-using vs = vec<string>;
+using vs = vec<str>;
 using vpi = vec<pi>;
 using vpl = vec<pl>;
 
-template<class T> bool ckmin(T &a, const T b) {
-    return b < a ? a = b, 1 : 0;
-}
-
-template<class T> bool ckmax(T &a, const T b) {
-    return b > a ? a = b, 1 : 0;
-}
-
-template<class T> ll bsmin(ll lo, ll hi, T f) {
-    while (lo + 1 < hi) {
-        ll mid = (lo + hi) / 2;
-        (f(mid) ? hi : lo) = mid;
-    }
-    return hi;
-}
-
-template<class T> ll bsmax(ll lo, ll hi, T f) {
-    lo--;
-    while (lo + 1 < hi) {
-        ll mid = (lo + hi) / 2;
-        (f(mid) ? lo : hi) = mid;
-    }
-    return lo;
-}
+template<class T> bool ckmin(T &a, T b) { return b < a ? a = b, 1 : 0; }
+template<class T> bool ckmax(T &a, T b) { return b > a ? a = b, 1 : 0; }
 
 const int inf = INT_MAX / 2;
 const ll infl = LLONG_MAX / 2;
