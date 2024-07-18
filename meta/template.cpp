@@ -76,9 +76,7 @@ int main() {
     cin.exceptions(ios::badbit | ios::failbit);
 }
 
-/* READ THE PROBLEM STATEMENT CAREFULLY
- * PAY ATTENTION TO THE SAMPLES
+/* DON'T MISREAD THE PROBLEM
  * It's probably not as complicated as you think
  * Don't get stuck on one idea for too long
- * Print output tables, try random stuff
  */
