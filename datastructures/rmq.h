@@ -1,12 +1,12 @@
 struct RMQ {
-    int n;
+    int n, lg;
     vec<vi> rmq;
 
-    RMQ(vi &a) : n(sz(a)), rmq(__lg(n) + 1) {
+    RMQ(vi &a) : n(sz(a)), lg(__lg(n) + 1), rmq(lg) {
         rmq[0] = a;
-        for (int i = 1; i <= __lg(n); i++) {
+        rep(i, 1, lg) {
             rmq[i].resize(n - (1 << i) + 1);
-            for (int j = 0; j + (1 << i) <= n; j++) {
+            rep(j, sz(rmq[i])) {
                 rmq[i][j] = min(rmq[i - 1][j], rmq[i - 1][j + (1 << (i - 1))]);
             }
         }
