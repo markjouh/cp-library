@@ -43,8 +43,30 @@ using vs = vec<string>;
 using vpi = vec<pi>;
 using vpl = vec<pl>;
 
-template<class T> bool ckmin(T &a, const T b) { return b < a ? a = b, 1 : 0; }
-template<class T> bool ckmax(T &a, const T b) { return b > a ? a = b, 1 : 0; }
+template<class T> bool ckmin(T &a, const T b) {
+    return b < a ? a = b, 1 : 0;
+}
+
+template<class T> bool ckmax(T &a, const T b) {
+    return b > a ? a = b, 1 : 0;
+}
+
+template<class T> ll bsmax(ll lo, ll hi, T f) {
+    lo--;
+    while (lo + 1 < hi) {
+        ll mid = (lo + hi) / 2;
+        (f(mid) ? lo : hi) = mid;
+    }
+    return lo;
+}
+
+template<class T> ll bsmin(ll lo, ll hi, T f) {
+    while (lo + 1 < hi) {
+        ll mid = (lo + hi) / 2;
+        (f(mid) ? hi : lo) = mid;
+    }
+    return hi;
+}
 
 const int inf = INT_MAX / 2;
 const ll infl = LLONG_MAX / 2;
