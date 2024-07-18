@@ -1,10 +1,10 @@
-struct BIT {
+struct FT {
     int n;
     vi bit;
 
-    BIT(int x) : n(x), bit(n + 1) {}
+    FT(int x) : n(x), bit(n + 1) {}
 
-    BIT(vi &a) : n(sz(a)), bit(n + 1) {
+    FT(vi &a) : n(sz(a)), bit(n + 1) {
         rep(i, 1, n + 1) {
             bit[i] += bit[i - 1];
             if (i + (i & (-i)) <= n) {
