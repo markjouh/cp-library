@@ -1,5 +1,5 @@
 # Geometry and related ideas
-Nothing too advanced, just whatever shows up
+Nothing too advanced here, just writing common stuff down bc I'm lazy
 
 ## Lines
 **Intersection of lines**\
