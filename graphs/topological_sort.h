@@ -1,4 +1,4 @@
-vi topsort(vec<vi> &g) {
+vi topsort(vvi &g) {
     vi in(sz(g));
     rep(u, sz(g)) {
         for (int v : g[u]) {
@@ -13,7 +13,7 @@ vi topsort(vec<vi> &g) {
         }
     }
     while (sz(q)) {
-        int u = q.front();
+        int u = ft(q);
         q.pop();
         res.pb(u);
         for (int v : g[u]) {
