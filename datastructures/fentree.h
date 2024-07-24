@@ -6,7 +6,7 @@ struct FT {
 
     FT(vi &a) : n(sz(a)), bit(n + 1) {
         rep(i, 1, n + 1) {
-            bit[i] += bit[i - 1];
+            bit[i] += a[i - 1];
             if (i + (i & (-i)) <= n) {
                 bit[i + (i & (-i))] += bit[i];
             }
