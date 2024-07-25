@@ -1,6 +1,6 @@
 struct MergeTree {
     int n;
-    vec<iset<int>> mt;
+    vec<oset<int>> mt;
 
     MergeTree(int x) : n(x), mt(n + 1) {}
 
