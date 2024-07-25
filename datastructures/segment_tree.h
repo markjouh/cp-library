@@ -6,7 +6,7 @@ struct ST {
     ST(int sz) : n(sz), st(2 * n, id()) {}
 
     ST(vec<T> &a) : n(sz(a)), st(2 * n) {
-        copy(all(a), begin(st) + n);
+        copy(all(a), bg(st) + n);
         per(i, 1, n) {
             st[i] = op(st[i << 1], st[i << 1 | 1]);
         }
