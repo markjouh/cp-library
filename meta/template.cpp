@@ -28,8 +28,8 @@ using namespace __gnu_pbds;
 #define ft(x) (x).front()
 #define bk(x) (x).back()
 
-#define lg2(x) int(__lg(x))
-#define lg2c(x) (lg2(x) + (((x) & (x - 1)) != 0))
+#define lgf(x) int(__lg(x))
+#define lgc(x) (lgf(x) + (((x) & (x - 1)) != 0))
 #define bit(x, i) (((x) >> (i)) & 1)
 
 #define acc accumulate
