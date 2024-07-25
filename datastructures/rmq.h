@@ -13,7 +13,7 @@ struct RMQ {
     }
 
     int query(int l, int r) {
-        int i = __lg(r - l);
+        int i = __lg(++r - l);
         return min(rmq[i][l], rmq[i][r - (1 << i)]);
     }
 };
