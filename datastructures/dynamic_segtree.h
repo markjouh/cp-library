@@ -1,3 +1,5 @@
+// Note: exclusive intervals
+
 struct STNode {
     int tl, tr;
     ll sum = 0;
