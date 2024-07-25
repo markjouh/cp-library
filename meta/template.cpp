@@ -10,17 +10,15 @@ using namespace __gnu_pbds;
 #define dbg(...)
 #endif
 
-#define arg5(a, b, c, d, e, ...) e
+#define arg4(a, b, c, d, ...) d
 
-#define rep4(i, l, r, x) for (int i = int(l); i < int(r); i += x)
-#define rep3(i, l, r) rep4(i, l, r, 1)
+#define rep3(i, l, r) for (int i = int(l); i < int(r); i++)
 #define rep2(i, n) rep3(i, 0, n)
-#define rep(...) arg5(__VA_ARGS__, rep4, rep3, rep2) (__VA_ARGS__)
+#define rep(...) arg4(__VA_ARGS__, rep3, rep2) (__VA_ARGS__)
 
-#define per4(i, l, r, x) for (int i = int(r) - 1; i >= int(l); i -= x)
-#define per3(i, l, r) per4(i, l, r, 1)
+#define per3(i, l, r) for (int i = int(r) - 1; i >= int(l); i--)
 #define per2(i, n) per3(i, 0, n)
-#define per(...) arg5(__VA_ARGS__, per4, per3, per2) (__VA_ARGS__)
+#define per(...) arg4(__VA_ARGS__, per3, per2) (__VA_ARGS__)
 
 #define bg(x) begin(x)
 #define ed(x) end(x)
