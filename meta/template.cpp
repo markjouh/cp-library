@@ -53,7 +53,9 @@ using namespace __gnu_pbds;
 
 template<class T, size_t N> using arr = array<T, N>;
 template<class T> using vec = vector<T>;
-template<class T> using iset = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
+template<class T> using prq = priority_queue<T>;
+template<class T> using prqg = priority_queue<T, vec<T>, greater<T>>;
+template<class T> using oset = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
 
 using ll = long long;
 using ld = long double;
