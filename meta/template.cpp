@@ -1,8 +1,6 @@
 #include <bits/stdc++.h>
-#include <ext/pb_ds/assoc_container.hpp>
 
 using namespace std;
-using namespace __gnu_pbds;
 
 #ifdef LOCAL
 #include "debug.h"
@@ -25,25 +23,15 @@ using namespace __gnu_pbds;
 #define all(x) begin(x), end(x)
 #define rall(x) rbegin(x), rend(x)
 #define sz(x) int(size(x))
-#define ft(x) (x).front()
-#define bk(x) (x).back()
-
-#define lgf(x) int(__lg(x))
-#define lgc(x) (lgf(x) + (((x) & (x - 1)) != 0))
-#define bit(x, i) (((x) >> (i)) & 1)
 
 #define acc accumulate
 #define mne min_element
 #define mxe max_element
 #define lb lower_bound
 #define ub upper_bound
-#define ook order_of_key
-#define fbo find_by_order
 
-#define pf push_front
 #define pb push_back
 #define eb emplace_back
-#define pft pop_front
 #define pbk pop_back
 #define ins insert
 #define era erase
@@ -53,9 +41,6 @@ using namespace __gnu_pbds;
 
 template<class T, size_t N> using arr = array<T, N>;
 template<class T> using vec = vector<T>;
-template<class T> using prq = priority_queue<T>;
-template<class T> using prqg = priority_queue<T, vec<T>, greater<T>>;
-template<class T> using oset = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
 
 using ll = long long;
 using ld = long double;
@@ -78,10 +63,38 @@ using vvl = vec<vl>;
 using vvpi = vec<vpi>;
 using vvpl = vec<vpl>;
 
-template<class T> int pct(T x) { return is_same_v<T, int> ? __builtin_popcount(x) : __builtin_popcountll(x); }
-template<class T> bool ckmin(T &a, T b) { return b < a ? a = b, 1 : 0; }
-template<class T> bool ckmax(T &a, T b) { return b > a ? a = b, 1 : 0; }
-template<class T> void remdup(vec<T> &a) { sort(all(a)); a.resize(unique(all(a)) - bg(a)); }
+template<class T> bool ckmin(T &a, T b) {
+    return b < a ? a = b, 1 : 0;
+}
+
+template<class T> bool ckmax(T &a, T b) {
+    return b > a ? a = b, 1 : 0;
+}
+
+template<class T, class U> T bsmin(T lo, T hi, U f) {
+    assert(lo < ++hi);
+    for (T i = 1ll << __lg(hi - lo); i; i >>= 1) {
+        if (hi - i >= lo && f(hi - i)) {
+            hi -= i;
+        }
+    }
+    return hi;
+}
+
+template<class T, class U> T bsmax(T lo, T hi, U f) {
+    assert(--lo < hi);
+    for (T i = 1ll << __lg(hi - lo); i; i >>= 1) {
+        if (lo + i <= hi && f(lo + i)) {
+            lo += i;
+        }
+    }
+    return lo;
+}
+
+template<class T> void remdup(vec<T> &a) {
+    sort(all(a));
+    a.resize(unique(all(a)) - bg(a));
+}
 
 void set_io(str s = "") {
     cin.tie(0)->sync_with_stdio(0);
