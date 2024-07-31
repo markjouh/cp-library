@@ -57,31 +57,31 @@ using vpi = vec<pi>;
 using vpl = vec<pl>;
 
 template<class T> bool ckmin(T &a, T b) {
-  return b < a ? a = b, 1 : 0;
+    return b < a ? a = b, 1 : 0;
 }
 
 template<class T> bool ckmax(T &a, T b) {
-  return b > a ? a = b, 1 : 0;
+    return b > a ? a = b, 1 : 0;
 }
 
 template<class T, class U> T bsmin(T lo, T hi, U f) {
-  hi++;
-  for (T i = 1ll << __lg(hi - lo); i; i >>= 1) {
-    if (hi - i >= lo && f(hi - i)) {
-      hi -= i;
+    hi++;
+    for (T i = 1ll << __lg(hi - lo); i; i >>= 1) {
+        if (hi - i >= lo && f(hi - i)) {
+            hi -= i;
+        }
     }
-  }
-  return hi;
+    return hi;
 }
 
 template<class T, class U> T bsmax(T lo, T hi, U f) {
-  lo--;
-  for (T i = 1ll << __lg(hi - lo); i; i >>= 1) {
-    if (lo + i <= hi && f(lo + i)) {
-      lo += i;
+    lo--;
+    for (T i = 1ll << __lg(hi - lo); i; i >>= 1) {
+        if (lo + i <= hi && f(lo + i)) {
+            lo += i;
+        }
     }
-  }
-  return lo;
+    return lo;
 }
 
 const int inf = INT_MAX / 2;
@@ -91,12 +91,12 @@ void solve() {
 }
 
 int main() {
-  cin.tie(0)->sync_with_stdio(0);
-  cin.exceptions(cin.failbit);
+    cin.tie(0)->sync_with_stdio(0);
+    cin.exceptions(cin.failbit);
 
-  int t = 1;
-  // cin >> t;
-  while (t--) {
-    solve();
-  }
+    int t = 1;
+    // cin >> t;
+    while (t--) {
+        solve();
+    }
 }
