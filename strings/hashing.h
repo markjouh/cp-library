@@ -25,8 +25,6 @@ struct StringHash {
     int len;
     vector<ll> hash;
 
-    StringHash() {}
-
     StringHash(string s) : len(sz(s)), hash(len + 1) {
         rep(i, len) {
             hash[i + 1] = (i128(hash[i]) * base + s[i]) % mod;
