@@ -1,4 +1,4 @@
-namespace nt {
+namespace number_theory {
     vi mn_fac, primes;
 
     void sieve(int n) {
@@ -16,7 +16,7 @@ namespace nt {
         }
     }
 
-    vpi fac(ll x) {
+    vpi factorize(ll x) {
         vpi res;
 
         if (x <= sz(mn_fac) - 1) {
@@ -35,13 +35,13 @@ namespace nt {
             if (ll(p) * p > x) {
                 break;
             }
-            int e = 0;
+            int exp = 0;
             while (x % p == 0) {
                 x /= p;
-                e++;
+                exp++;
             }
-            if (e) {
-                res.eb(p, e);
+            if (exp) {
+                res.eb(p, exp);
             }
         }
         if (x > 1) {
@@ -50,12 +50,12 @@ namespace nt {
         return res;
     }
 
-    vl gen_div(vpi p_fac) {
+    vl gen_divisors(vpi p_fac) {
         vl res = {1};
-        for (auto [p, e] : p_fac) {
+        for (auto [p, exp] : p_fac) {
             int n = sz(res);
             ll mul = 1;
-            rep(i, e) {
+            rep(i, exp) {
                 mul *= p;
                 rep(j, n) {
                     res.pb(res[j] * mul);
