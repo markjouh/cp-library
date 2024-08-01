@@ -7,7 +7,7 @@ namespace number_theory {
             if (!mn_fac[i]) {
                 mn_fac[i] = i;
                 primes.pb(i);
-                for (ll j = ll(i) * i; j <= n; j += i) {
+                for (ll j = 1ll * i * i; j <= n; j += i) {
                     if (!mn_fac[j]) {
                         mn_fac[j] = i;
                     }
@@ -21,10 +21,10 @@ namespace number_theory {
 
         if (x <= sz(mn_fac) - 1) {
             while (x > 1) {
-                int f = mn_fac[x];
-                res.eb(f, 0);
-                while (x % f == 0) {
-                    x /= f;
+                int fac = mn_fac[x];
+                res.eb(fac, 0);
+                while (x % fac == 0) {
+                    x /= fac;
                     res.back().se++;
                 }
             }
@@ -32,7 +32,7 @@ namespace number_theory {
         }
 
         for (int p : primes) {
-            if (ll(p) * p > x) {
+            if (1ll * p * p > x) {
                 break;
             }
             int exp = 0;
