@@ -84,6 +84,41 @@ template<class T, class U> T bsmax(T lo, T hi, U f) {
     return lo;
 }
 
+template<class T, class U> istream &operator>>(istream &is, pair<T, U> &p) {
+    is >> p.fi >> p.se;
+    return is;
+}
+
+template<class T, class U> ostream &operator<<(ostream &os, pair<T, U> &p) {
+    os << p.fi << ' ' << p.se;
+    return os;
+}
+
+template<class T> istream &operator>>(istream &is, vec<T> &v) {
+    for (auto &x : v) {
+        cin >> x;
+    }
+    return is;
+}
+
+template<class T> ostream &operator<<(ostream &os, vec<T> &v) {
+    rep(i, sz(v)) {
+        cout << v[i] << " \n"[i == sz(v) - 1];
+    }
+    return os;
+}
+
+template<class T, class... U> void re(T&& a, U&&... b) {
+    cin >> forward<T>(a);
+    (int[]) { (cin >> forward<U>(b), 0)... };
+}
+
+template<class T, class... U> void pr(T&& a, U&&... b) {
+    cout << forward<T>(a);
+    (int[]) { (cout << ' ' << forward<U>(b), 0)... };
+    cout << '\n';
+}
+
 const int inf = INT_MAX / 2;
 const ll infl = LLONG_MAX / 2;
 
