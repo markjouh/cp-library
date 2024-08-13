@@ -1,9 +1,9 @@
-template<class T, T(*op)(T, T), T(*id)()>
+template<class T, T(*op)(T, T), int id>
 struct ST {
     int n;
     vec<T> st;
 
-    ST(int sz) : n(sz), st(2 * n, id()) {}
+    ST(int sz) : n(sz), st(2 * n, id) {}
 
     ST(vec<T> &a) : n(sz(a)), st(2 * n) {
         copy(all(a), bg(st) + n);
@@ -13,7 +13,7 @@ struct ST {
     }
 
     T query(int l, int r) {
-        T ls = id(), rs = id();
+        T ls = id, rs = id;
         for (l += n, r += n + 1; l < r; l >>= 1, r >>= 1) {
             if (l & 1) ls = op(ls, st[l++]);
             if (r & 1) rs = op(st[--r], rs);
