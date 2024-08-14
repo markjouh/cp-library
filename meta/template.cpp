@@ -96,14 +96,14 @@ template<class T, class U> ostream &operator<<(ostream &os, pair<T, U> &p) {
 
 template<class T> istream &operator>>(istream &is, vec<T> &v) {
     for (auto &x : v) {
-        cin >> x;
+        is >> x;
     }
     return is;
 }
 
 template<class T> ostream &operator<<(ostream &os, vec<T> &v) {
     rep(i, sz(v)) {
-        cout << v[i] << " \n"[i == sz(v) - 1];
+        os << v[i] << " \n"[i == sz(v) - 1];
     }
     return os;
 }
