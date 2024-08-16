@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+
 using namespace std;
 
 #ifdef LOCAL
@@ -26,11 +27,13 @@ using namespace std;
 #define mxe max_element
 #define lb lower_bound
 #define ub upper_bound
+
 #define pb push_back
 #define eb emplace_back
 #define pbk pop_back
 #define ins insert
 #define era erase
+
 #define fi first
 #define se second
 
@@ -41,8 +44,10 @@ using ll = long long;
 using ld = long double;
 using i128 = __int128_t;
 using str = string;
+
 using pi = pair<int, int>;
 using pl = pair<ll, ll>;
+
 using vb = vec<bool>;
 using vi = vec<int>; 
 using vl = vec<ll>;
@@ -51,17 +56,60 @@ using vs = vec<str>;
 using vpi = vec<pi>;
 using vpl = vec<pl>;
 
-template<class T, class U> istream &operator>>(istream &is, pair<T, U> &p) { return is >> p.fi >> p.se; }
-template<class T, class U> ostream &operator<<(ostream &os, pair<T, U> &p) { return os << p.fi << ' ' << p.se; }
-template<class T> istream &operator>>(istream &is, vec<T> &v) { for (auto &x : v) is >> x; return is; }
-template<class T> ostream &operator<<(ostream &os, vec<T> &v) { rep(i, sz(v)) os << v[i] << " \n"[i == sz(v) - 1]; return os; }
-template<class T, class... U> void re(T&& a, U&&... b) { cin >> forward<T>(a); (int[]) { (cin >> forward<U>(b), 0)... }; }
-template<class T, class... U> void pr(T&& a, U&&... b) { cout << forward<T>(a); (int[]) { (cout << ' ' << forward<U>(b), 0)... }; cout << '\n'; }
+template<class T> bool ckmin(T &a, T b) {
+    return b < a ? a = b, 1 : 0;
+}
 
-template<class T, class U> T bsmin(T lo, T hi, U f) { for (T i = 1ll << __lg(hi++ - lo); i; i >>= 1) hi -= (hi - i >= lo && f(hi - i)) * i; return hi; }
-template<class T, class U> T bsmax(T lo, T hi, U f) { for (T i = 1ll << __lg(hi - lo--); i; i >>= 1) lo += (lo + i <= hi && f(lo + i)) * i; return lo; }
-template<class T> bool ckmin(T &a, T b) { return b < a ? a = b, 1 : 0; }
-template<class T> bool ckmax(T &a, T b) { return b > a ? a = b, 1 : 0; }
+template<class T> bool ckmax(T &a, T b) {
+    return b > a ? a = b, 1 : 0;
+}
+
+template<class T, class U> T bsmin(T lo, T hi, U f) {
+    for (T i = 1ll << __lg(++hi - lo); i; i >>= 1) {
+        hi -= (hi - i >= lo && f(hi - i)) * i;
+    }
+    return hi;
+}
+
+template<class T, class U> T bsmax(T lo, T hi, U f) {
+    for (T i = 1ll << __lg(hi - --lo); i; i >>= 1) {
+        lo += (lo + i <= hi && f(lo + i)) * i;
+    }
+    return lo;
+}
+
+template<class T, class U> istream &operator>>(istream &is, pair<T, U> &p) {
+    return is >> p.fi >> p.se;
+}
+
+template<class T, class U> ostream &operator<<(ostream &os, pair<T, U> &p) {
+    return os << p.fi << ' ' << p.se;
+}
+
+template<class T> istream &operator>>(istream &is, vec<T> &v) {
+    for (auto &x : v) {
+        is >> x;
+    }
+    return is;
+}
+
+template<class T> ostream &operator<<(ostream &os, vec<T> &v) {
+    rep(i, sz(v)) {
+        os << v[i] << " \n"[i == sz(v) - 1];
+    }
+    return os;
+}
+
+template<class T, class... U> void re(T&& a, U&&... b) {
+    cin >> forward<T>(a);
+    (int[]) { (cin >> forward<U>(b), 0)... };
+}
+
+template<class T, class... U> void pr(T&& a, U&&... b) {
+    cout << forward<T>(a);
+    (int[]) { (cout << ' ' << forward<U>(b), 0)... };
+    cout << '\n';
+}
 
 const int inf = INT_MAX / 2;
 const ll infl = LLONG_MAX / 2;
