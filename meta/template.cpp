@@ -38,7 +38,6 @@ using namespace std;
 #define se second
 
 template<class T, size_t N> using arr = array<T, N>;
-template<class T> using duo = pair<T, T>;
 template<class T> using vec = vector<T>;
 
 using ll = long long;
