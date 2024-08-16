@@ -59,3 +59,6 @@ template<int MOD> struct Mint {
         return os << a.v;
     }
 };
+
+// using mi = Mint<int(1e9 + 7)>;
+// using mi = Mint<998244353>;
