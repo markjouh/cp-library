@@ -16,15 +16,15 @@ namespace number_theory {
         }
     }
 
-    vpi factorize(ll x) {
+    vpi factor(int num) {
         vpi res;
 
-        if (x <= sz(mn_fac) - 1) {
-            while (x > 1) {
-                int fac = mn_fac[x];
+        if (num <= sz(mn_fac) - 1) {
+            while (num > 1) {
+                int fac = mn_fac[num];
                 res.eb(fac, 0);
-                while (x % fac == 0) {
-                    x /= fac;
+                while (num % fac == 0) {
+                    num /= fac;
                     res.back().se++;
                 }
             }
@@ -32,33 +32,33 @@ namespace number_theory {
         }
 
         for (int p : primes) {
-            if (1ll * p * p > x) {
+            if (1ll * p * p > num) {
                 break;
             }
             int exp = 0;
-            while (x % p == 0) {
-                x /= p;
+            while (num % p == 0) {
+                num /= p;
                 exp++;
             }
             if (exp) {
                 res.eb(p, exp);
             }
         }
-        if (x > 1) {
-            res.eb(x, 1);
+        if (num > 1) {
+            res.eb(num, 1);
         }
         return res;
     }
 
-    vl gen_divisors(vpi p_fac) {
-        vl res = {1};
-        for (auto [p, exp] : p_fac) {
-            int n = sz(res);
-            ll mul = 1;
+    vi gen_divs(vpi prime_facs) {
+        vi res = {1};
+        for (auto [p, exp] : prime_facs) {
+            const int prev_layer = sz(res);
+            int coeff = 1;
             rep(i, exp) {
-                mul *= p;
-                rep(j, n) {
-                    res.pb(res[j] * mul);
+                coeff *= p;
+                rep(j, prev_layer) {
+                    res.pb(coeff * res[j]);
                 }
             }
         }
