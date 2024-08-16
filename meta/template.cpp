@@ -65,6 +65,7 @@ template<class T> bool ckmax(T &a, T b) {
 }
 
 template<class T, class U> T bsmin(T lo, T hi, U f) {
+    assert(lo <= hi);
     for (T i = 1ll << __lg(++hi - lo); i; i >>= 1) {
         hi -= (hi - i >= lo && f(hi - i)) * i;
     }
@@ -72,6 +73,7 @@ template<class T, class U> T bsmin(T lo, T hi, U f) {
 }
 
 template<class T, class U> T bsmax(T lo, T hi, U f) {
+    assert(lo <= hi);
     for (T i = 1ll << __lg(hi - --lo); i; i >>= 1) {
         lo += (lo + i <= hi && f(lo + i)) * i;
     }
