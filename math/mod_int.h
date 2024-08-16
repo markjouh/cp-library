@@ -7,7 +7,9 @@ template<int MOD> struct Mint {
         assert(exp >= 0);
         Mint res = 1;
         while (exp) {
-            if (exp & 1) res *= base;
+            if (exp & 1) {
+                res *= base;
+            }
             base *= base;
             exp >>= 1;
         }
@@ -25,6 +27,3 @@ template<int MOD> struct Mint {
     friend Mint operator/(Mint a, Mint b) { return a /= b; }
     friend ostream &operator<<(ostream &os, Mint a) { return os << a.v; }
 };
-
-// using mi = Mint<int(1e9 + 7)>;
-// using mi = Mint<998244353>;
