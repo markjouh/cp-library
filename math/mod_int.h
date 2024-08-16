@@ -25,5 +25,6 @@ template<int MOD> struct Mint {
     friend Mint operator-(Mint a, Mint b) { return a -= b; }
     friend Mint operator*(Mint a, Mint b) { return a *= b; }
     friend Mint operator/(Mint a, Mint b) { return a /= b; }
+    
     friend ostream &operator<<(ostream &os, Mint a) { return os << a.v; }
 };
