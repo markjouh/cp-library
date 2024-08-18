@@ -99,9 +99,9 @@ template<class T> ostream &operator<<(ostream &os, vec<T> &v) {
     bool first = true;
     for (auto &x : v) {
         if (!first) {
-            cout << ' ';
+            os << ' ';
         }
-        cout << x;
+        os << x;
         first = false;
     }
     return os;
