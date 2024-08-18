@@ -96,8 +96,13 @@ template<class T> istream &operator>>(istream &is, vec<T> &v) {
 }
 
 template<class T> ostream &operator<<(ostream &os, vec<T> &v) {
-    rep(i, sz(v)) {
-        os << v[i] << " \n"[i == sz(v) - 1];
+    bool first = true;
+    for (auto &x : v) {
+        if (!first) {
+            cout << ' ';
+        }
+        cout << x;
+        first = false;
     }
     return os;
 }
