@@ -13,13 +13,13 @@ template<class T> struct FT {
         }
     }
 
-    void upd(int r, T v) {
+    void add(int r, T v) {
         for (r++; r > 0; r -= r & -r) {
             ft[r] += v;
         }
     }
 
-    void upd(int l, int r, T v) {
+    void add(int l, int r, T v) {
         upd(r, v);
         upd(l - 1, T(0) - T(v));
     }
