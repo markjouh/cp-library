@@ -42,7 +42,6 @@ template<class T> using vec = vector<T>;
 
 using ll = long long;
 using ld = long double;
-using i128 = __int128_t;
 using str = string;
 
 using pi = pair<int, int>;
