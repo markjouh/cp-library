@@ -13,7 +13,7 @@ template<class T> struct FT {
         }
     }
 
-    T query(int r) {
+    T sum(int r) {
         T res = 0;
         for (r++; r > 0; r -= r & -r) {
             res += ft[r];
@@ -21,11 +21,11 @@ template<class T> struct FT {
         return res;
     }
 
-    T query(int l, int r) {
-        return query(r) - query(l - 1);
+    T sum(int l, int r) {
+        return sum(r) - sum(l - 1);
     }
 
-    void upd(int p, T v) {
+    void add(int p, T v) {
         for (p++; p <= n; p += p & -p) {
             ft[p] += v;
         }
