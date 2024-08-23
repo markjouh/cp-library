@@ -1,71 +1,55 @@
-#include <bits/stdc++.h>
+#include <algorithm>
+#include <array>
+#include <bitset>
+#include <cassert>
+#include <chrono>
+#include <cmath>
+#include <cstdint>
+#include <cstring>
+#include <functional>
+#include <iomanip>
+#include <iostream>
+#include <map>
+#include <numeric>
+#include <queue>
+#include <random>
+#include <set>
+#include <vector>
 
 using namespace std;
 
-#ifdef LOCAL
-#include "debug.h"
-#else
-#define dbg(...)
-#endif
-
-#define arg4(a, b, c, d, ...) d
-
-#define rep3(i, l, r) for (int i = int(l); i < int(r); i++)
-#define rep2(i, n) rep3(i, 0, n)
-#define rep(...) arg4(__VA_ARGS__, rep3, rep2) (__VA_ARGS__)
-
-#define per3(i, l, r) for (int i = int(r) - 1; i >= int(l); i--)
-#define per2(i, n) per3(i, 0, n)
-#define per(...) arg4(__VA_ARGS__, per3, per2) (__VA_ARGS__)
-
-#define bg(x) begin(x)
-#define all(x) bg(x), end(x)
-#define sz(x) int(size(x))
-
-#define acc accumulate
-#define mne min_element
-#define mxe max_element
-#define lb lower_bound
-#define ub upper_bound
-
-#define pb push_back
-#define eb emplace_back
-#define pbk pop_back
-#define ins insert
-#define era erase
-
-#define fi first
-#define se second
-
-template<class T, size_t N> using arr = array<T, N>;
-template<class T> using vec = vector<T>;
-
 using ll = long long;
 using ld = long double;
-using str = string;
 
-using pi = pair<int, int>;
-using pl = pair<ll, ll>;
+template<class T> constexpr int sz(T x) {
+    return static_cast<int>((x).size());
+}
 
-using vb = vec<bool>;
-using vi = vec<int>; 
-using vl = vec<ll>;
-using vd = vec<ld>;
-using vs = vec<str>;
-using vpi = vec<pi>;
-using vpl = vec<pl>;
+template<class T> constexpr int lg2(T x) {
+    assert(x > 0);
+#ifdef __GNUC__
+    return static_cast<int>(__lg2(x));
+#else
+    int res = 0;
+    while (x >>= 1) {
+        res++;
+    }
+    return res;
+#endif
+}
 
-template<class T> bool ckmin(T &a, T b) {
+template<class T> bool ckmin(T &a, const T b) {
     return b < a ? a = b, 1 : 0;
 }
 
-template<class T> bool ckmax(T &a, T b) {
+template<class T> bool ckmax(T &a, const T b) {
     return b > a ? a = b, 1 : 0;
 }
 
 template<class T, class U> T bsmin(T lo, T hi, U f) {
     assert(lo <= hi);
-    for (T i = 1ll << __lg(++hi - lo); i; i >>= 1) {
+    hi++;
+    for (T i = T(1) << lg2(hi - lo); i > 0; i >>= 1) {
         hi -= (hi - i >= lo && f(hi - i)) * i;
     }
     return hi;
@@ -73,52 +57,12 @@ template<class T, class U> T bsmin(T lo, T hi, U f) {
 
 template<class T, class U> T bsmax(T lo, T hi, U f) {
     assert(lo <= hi);
-    for (T i = 1ll << __lg(hi - --lo); i; i >>= 1) {
+    lo--;
+    for (T i = T(1) << lg2(hi - lo); i > 0; i >>= 1) {
         lo += (lo + i <= hi && f(lo + i)) * i;
     }
     return lo;
 }
-
-template<class T, class U> istream &operator>>(istream &is, pair<T, U> &p) {
-    return is >> p.fi >> p.se;
-}
-
-template<class T, class U> ostream &operator<<(ostream &os, pair<T, U> &p) {
-    return os << p.fi << ' ' << p.se;
-}
-
-template<class T> istream &operator>>(istream &is, vec<T> &v) {
-    for (auto &x : v) {
-        is >> x;
-    }
-    return is;
-}
-
-template<class T> ostream &operator<<(ostream &os, vec<T> &v) {
-    bool first = true;
-    for (auto &x : v) {
-        if (!first) {
-            os << ' ';
-        }
-        os << x;
-        first = false;
-    }
-    return os;
-}
-
-template<class T, class... U> void re(T&& a, U&&... b) {
-    cin >> forward<T>(a);
-    (int[]) { (cin >> forward<U>(b), 0)... };
-}
-
-template<class T, class... U> void pr(T&& a, U&&... b) {
-    cout << forward<T>(a);
-    (int[]) { (cout << ' ' << forward<U>(b), 0)... };
-    cout << '\n';
-}
-
-const int inf = INT_MAX / 2;
-const ll infl = LLONG_MAX / 2;
 
 void solve() {
 }
@@ -128,8 +72,10 @@ int main() {
     cin.exceptions(cin.failbit);
 
     int t = 1;
-    // re(t);
+    // cin >> t;
     while (t--) {
         solve();
     }
+
+    return 0;
 }
