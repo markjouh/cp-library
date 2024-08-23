@@ -1,5 +1,5 @@
 /* A data structure that uses two fenwick trees in tandem to support both
- * range adds and range queries in O(log(N)).
+ * range add and range sum queries in O(log(N)).
  * A much smaller and faster alternative to lazy segment trees for this particular
  * use case.
  */
