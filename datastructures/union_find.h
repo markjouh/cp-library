@@ -1,14 +1,14 @@
-struct DSU {
-    vi a;
+struct union_find {
+    vector<int> a;
 
-    DSU(int n) : a(n, -1) {}
-
-    int find(int x) {
-        return a[x] < 0 ? x : a[x] = find(a[x]);
-    }
+    union_find(int n) : a(n, -1) {}
 
     int size(int x) {
         return -a[find(x)];
+    }
+
+    int find(int x) {
+        return a[x] < 0 ? x : a[x] = find(a[x]);
     }
 
     bool join(int x, int y) {
