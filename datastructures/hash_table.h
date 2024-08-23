@@ -1,6 +1,11 @@
+/* A hash table with a better constant than unordered_map, using gnu pbds.
+ * The optional custom hash function provides better resistance to hacks
+ * on Codeforces (shouldn't be a concern for USACO, thankfully).
+ */
+
 #include <ext/pb_ds/assoc_container.hpp>
 
-struct CustomHash {
+struct custom_hash {
     static uint64_t splitmix64(uint64_t x) {
         x += 0x9e3779b97f4a7c15;
         x = (x ^ (x >> 30)) * 0xbf58476d1ce4e5b9;
@@ -14,4 +19,4 @@ struct CustomHash {
     }
 };
 
-template<class K, class V> using HT = __gnu_pbds::gp_hash_table<K, V, CustomHash>;
+template<class K, class V> using hash_table = __gnu_pbds::gp_hash_table<K, V, custom_hash>;
