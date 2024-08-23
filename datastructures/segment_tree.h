@@ -1,29 +1,40 @@
-template<class T, T(*op)(T, T), int id>
-struct ST {
+/* A data structure that stores an array of objects with an identity element
+ * and associative binary operator.
+ * Supports arbitrary point updates, as well as range aggregates, in O(log(N)).
+ * This bottom-up implementation stores the tree as a forest of binary trees
+ * for efficiency, which should be functionally identical for the purposes
+ * of the supported operations.
+ */
+
+template<class T, T(*op)(T, T), int id> struct segment_tree {
     int n;
-    vec<T> st;
+    vector<T> tree;
 
-    ST(int sz) : n(sz), st(2 * n, id) {}
+    segment_tree(int sz) : n(sz), tree(2 * n, id) {}
 
-    ST(vec<T> &a) : n(sz(a)), st(2 * n) {
-        copy(all(a), bg(st) + n);
-        per(i, 1, n) {
-            st[i] = op(st[i << 1], st[i << 1 | 1]);
+    segment_tree(const vector<T> &a) : n(sz(a)), tree(2 * n) {
+        copy(begin(a), end(a), begin(tree) + n);
+        for (int i = n - 1; i > 0; i--) {
+            tree[i] = op(tree[i << 1], tree[i << 1 | 1]);
         }
     }
 
     T query(int l, int r) {
         T ls = id, rs = id;
         for (l += n, r += n + 1; l < r; l >>= 1, r >>= 1) {
-            if (l & 1) ls = op(ls, st[l++]);
-            if (r & 1) rs = op(st[--r], rs);
+            if (l & 1) {
+                ls = op(ls, tree[l++]);
+            }
+            if (r & 1) {
+                rs = op(tree[--r], rs);
+            }
         }
         return op(ls, rs);
     }
 
     void set(int p, T val) {
-        for (st[p += n] = val, p >>= 1; p > 0; p >>= 1) {
-            st[p] = op(st[p << 1], st[p << 1 | 1]);
+        for (tree[p += n] = val, p >>= 1; p > 0; p >>= 1) {
+            tree[p] = op(tree[p << 1], tree[p << 1 | 1]);
         }
     }
 };

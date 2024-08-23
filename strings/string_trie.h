@@ -1,24 +1,29 @@
-struct Trie {
-    struct Node {
+/* Takes in strings and incrementally builds a trie.
+ * Can construct and return a directed rooted tree with the same structure
+ * as the trie, which... was useful once?
+ */
+
+struct string_trie {
+    struct node {
         int nxt[26];
         bool flag = false;
 
-        Node() {
+        node() {
             memset(nxt, -1, sizeof nxt);
         }
     };
 
-    vector<Node> trie;
+    vector<node> trie;
 
-    Trie() : trie(1) {}
+    string_trie() : trie(1) {}
 
-    int add(string &s) {
+    int insert(const string &s) {
         int x = 0;
         for (char c : s) {
             int y = c - 'a';
             if (trie[x].nxt[y] == -1) {
                 trie[x].nxt[y] = sz(trie);
-                trie.eb();
+                trie.emplace_back();
             }
             x = trie[x].nxt[y];
         }
@@ -26,13 +31,13 @@ struct Trie {
         return x;
     }
 
-    vec<vi> graph() {
-        vec<vi> g(sz(trie));
-        rep(u, sz(trie)) {
-            rep(i, 26) {
+    vector<vector<int>> gen_graph() {
+        vector<vector<int>> g(sz(trie));
+        for (int u = 0; u < sz(trie); u++) {
+            for (int i = 0; i < 26; i++) {
                 int v = trie[u].nxt[i];
                 if (v != -1) {
-                    g[u].pb(v);
+                    g[u].push_back(v);
                 }
             }
         }

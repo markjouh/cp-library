@@ -1,10 +1,18 @@
-template<int MOD> struct Mint {
+/* Type that performs arithmetic mod some large prime, which is a standard
+ * expected output format for problems with answers that have impractically
+ * high magnitude or required precision.
+ */
+
+const int MOD = 1000000007;
+// const int MOD = 998244353;
+
+struct mint {
     int v;
  
-    Mint(ll x = 0) : v(int(-MOD < x && x < MOD ? x : x % MOD) + (x < 0) * MOD) {}
+    mint(ll x = 0) : v(int(-MOD < x && x < MOD ? x : x % MOD) + (x < 0) * MOD) {}
  
-    friend Mint pow(Mint base, int exp) {
-        Mint res = 1;
+    friend mint pow(mint base, int exp) {
+        mint res = 1;
         while (exp) {
             if (exp & 1) {
                 res *= base;
@@ -15,50 +23,47 @@ template<int MOD> struct Mint {
         return res;
     }
  
-    Mint &operator+=(Mint b) {
+    mint &operator+=(mint b) {
         if ((v += b.v) >= MOD) {
             v -= MOD;
         }
         return *this;
     }
  
-    Mint &operator-=(Mint b) {
+    mint &operator-=(mint b) {
         if ((v -= b.v) < 0) {
             v += MOD;
         }
         return *this;
     }
  
-    Mint &operator*=(Mint b) {
+    mint &operator*=(mint b) {
         v = int(1ll * v * b.v % MOD);
         return *this;
     }
  
-    Mint &operator/=(Mint b) {
+    mint &operator/=(mint b) {
         v = int(1ll * v * pow(b, MOD - 2).v % MOD);
         return *this;
     }
  
-    friend Mint operator+(Mint a, Mint b) {
+    friend mint operator+(mint a, mint b) {
         return a += b;
     }
  
-    friend Mint operator-(Mint a, Mint b) {
+    friend mint operator-(mint a, mint b) {
         return a -= b;
     }
  
-    friend Mint operator*(Mint a, Mint b) {
+    friend mint operator*(mint a, mint b) {
         return a *= b;
     }
  
-    friend Mint operator/(Mint a, Mint b) {
+    friend mint operator/(mint a, mint b) {
         return a /= b;
     }
  
-    friend ostream &operator<<(ostream &os, Mint a) {
+    friend ostream &operator<<(ostream &os, mint a) {
         return os << a.v;
     }
 };
-
-// using mi = Mint<int(1e9 + 7)>;
-// using mi = Mint<998244353>;
