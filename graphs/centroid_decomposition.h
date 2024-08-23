@@ -1,7 +1,11 @@
-vi centroid_decomp(vec<vi> &g) {
+/* Given an undirected forest, builds a centroid decomposition
+ * forest in O(N * log(N)). Returns the parent array.
+ */
+
+vector<int> centroid_decomp(const vector<vector<int>> &g) {
     const int n = sz(g);
-    vb blocked(n);
-    vi st_size(n), par(n, -1);
+    vector<bool> blocked(n);
+    vector<int> st_size(n), par(n, -1);
 
     auto get_sizes = [&](auto &&self, int u, int p) -> void {
         st_size[u] = 1;
@@ -37,7 +41,7 @@ vi centroid_decomp(vec<vi> &g) {
         }
     };
 
-    rep(i, n) {
+    for (int i = 0; i < n; i++) {
         if (st_size[i] == 0) {
             gen_tree(gen_tree, i, -1);
         }
