@@ -1,18 +1,23 @@
-template<class T, int N> struct Matrix {
-    arr<arr<T, N>, N> vals{};
+/* A square matrix, supporting multiplication in fairly fast O(N^3).
+ * Notably, this allows us to apply a linear transformation K times
+ * in just O(N^3 * log(K)) with binary exponentiation.
+ */
 
-    Matrix() {
-        rep(i, N) {
+template<class T, int N> struct matrix {
+    array<array<T, N>, N> vals{};
+
+    matrix() {
+        for (int i = 0; i < N; i++) {
             vals[i][i] = 1;
         }
     }
 
-    arr<T, N> &operator[](int p) {
+    array<T, N> &operator[](int p) {
         return vals[p];
     }
 
-    friend Matrix pow(Matrix base, int exp) {
-        Matrix res;
+    friend matrix pow(matrix base, int exp) {
+        matrix res;
         while (exp) {
             if (exp & 1) {
                 res *= base;
@@ -23,11 +28,11 @@ template<class T, int N> struct Matrix {
         return res;
     }
 
-    Matrix &operator*=(Matrix b) {
-        arr<arr<T, N>, N> res{};
-        rep(i, N) {
-            rep(j, N) {
-                rep(k, N) {
+    matrix &operator*=(matrix b) {
+        array<array<T, N>, N> res{};
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < N; j++) {
+                for (int k = 0; k < N; k++) {
                     res[i][j] += vals[i][k] * b.vals[k][j];
                 }
             }
@@ -36,7 +41,7 @@ template<class T, int N> struct Matrix {
         return *this;
     }
 
-    friend Matrix operator*(Matrix a, Matrix b) {
+    friend matrix operator*(matrix a, matrix b) {
         return a *= b;
     }
 };
