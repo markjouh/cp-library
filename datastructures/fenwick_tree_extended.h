@@ -6,12 +6,12 @@
 
 template<class T> struct extended_fenwick {
     int n;
-    fenwick_tree<T> inside_pref, outside_pref;
+    fenwick_tree<T> inside, outside;
 
-    extended_fenwick(int x) : n(x), inside_pref(n), outside_pref(n) {}
+    extended_fenwick(int x) : n(x), inside(n), outside(n) {}
 
     T sum(int r) {
-        return inside_pref.sum(r - 1) + outside_pref.sum(n - r - 1) * (r + 1);
+        return inside.sum(r - 1) + outside.sum(n - r - 1) * (r + 1);
     }
 
     T sum(int l, int r) {
@@ -19,8 +19,8 @@ template<class T> struct extended_fenwick {
     }
 
     void add(int r, T v) {
-        inside_pref.add(r, v * (r + 1));
-        outside_pref.add(n - r - 1, v);
+        inside.add(r, v * (r + 1));
+        outside.add(n - r - 1, v);
     }
 
     void add(int l, int r, T v) {
