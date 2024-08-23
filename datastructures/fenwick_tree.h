@@ -1,5 +1,5 @@
 /* A data structure that supports point add/prefix sum or
- * range add/point sum queries in O(log(N)).
+ * prefix add/point query queries in O(log(N)).
  * Can probably be generalized to a slightly broader set of applications, but
  * due to the existence of the strictly more powerful segment tree,
  * its usage is typically limited to being a lightweight data structure for sums.
