@@ -1,44 +1,51 @@
-// https://rng-58.blogspot.com/2017/02/hashing-and-probability-of-collision.html
+/* Hashes strings (really any sequence) according to the scheme described in rng-58's blog.
+ * https://rng-58.blogspot.com/2017/02/hashing-and-probability-of-collision.html
+ * Also defines a basic hash type that allows substrings to be split off, joined, and compared in O(1).
+ */
+
+namespace hashing {
+
 mt19937_64 rng(chrono::steady_clock::now().time_since_epoch().count());
 
-const ll mod = (1ll << 61) - 1;
-const ll base = uniform_int_distribution<ll>(1e3, mod - 1e3)(rng);
+const ll H_MOD = (1ll << 61) - 1;
+const ll H_BASE = uniform_int_distribution<ll>(0, H_MOD)(rng);
 
 vector<ll> pow_b = {1};
 
-struct Hash {
+struct hash {
     ll val;
     int len;
 
-    Hash(ll x, int y) : val(x), len(y) {}
+    hash(ll x, int y) : val(x), len(y) {}
 
-    Hash operator+(Hash b) {
-        return Hash((__int128_t(val) * pow_b[b.len] + b.val) % mod, len + b.len);
+    hash operator+(hash b) {
+        return hash((__int128_t(val) * pow_b[b.len] + b.val) % H_MOD, len + b.len);
     }
 
-    bool operator==(Hash b) {
+    bool operator==(hash b) {
         return val == b.val && len == b.len;
     }
 };
 
-struct StringHash {
+struct seq_hash {
     int len;
-    vector<ll> hash;
+    vector<ll> hashes;
 
-    StringHash(string s) : len(sz(s)), hash(len + 1) {
-        rep(i, len) {
-            hash[i + 1] = (__int128_t(hash[i]) * base + s[i]) % mod;
+    template<class T> seq_hash(const T &s) : len(sz(s)), hashes(len + 1) {
+        for (int i = 0; i < len; i++) {
+            hashes[i + 1] = (__int128_t(hashes[i]) * H_BASE + s[i]) % H_MOD;
         }
         while (sz(pow_b) <= len) {
-            pow_b.push_back(__int128_t(pow_b.back()) * base % mod);
+            pow_b.push_back(__int128_t(pow_b.back()) * H_BASE % H_MOD);
         }
     }
 
-    Hash get(int l, int r) {
-        return Hash(((hash[r] - __int128_t(hash[l]) * pow_b[r - l]) % mod + mod) % mod, r - l);
+    hash get(int l, int r) {
+        return hash(((hashes[r] - __int128_t(hashes[l]) * pow_b[r - l]) % H_MOD + H_MOD) % H_MOD, r - l);
     }
 
-    Hash get() {
-        return get(0, sz(hash) - 1);
+    hash get() {
+        return get(0, sz(hashes) - 1);
     }
+};
 };
