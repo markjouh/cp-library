@@ -5,7 +5,7 @@
 struct tree_isomorphism {
     map<vector<int>, int> hashes;
 
-    vector<int> gen(const vector<vector<int>> &g, int root = 0) {
+    vector<int> compute(const vector<vector<int>> &g, int root = 0) {
         vector<int> res(sz(g));
 
         auto dfs = [&](int u, int par, auto &&self) -> void {
