@@ -1,8 +1,14 @@
-template<class T> struct TandemFT {
-    int n;
-    FT<T> in, out;
+/* A data structure that uses two fenwick trees in conjunction to support both
+ * range adds and range updates in log(N).
+ * A much smaller and faster alternative to lazy segment trees for this particular
+ * use case.
+ */
 
-    TandemFT(int x) : n(x), in(n), out(n) {}
+template<class T> struct extended_fenwick {
+    int n;
+    fenwick_tree<T> in, out;
+
+    extended_fenwick(int x) : n(x), in(n), out(n) {}
 
     T sum(int r) {
         return in.sum(r - 1) + out.sum(n - r - 1) * (r + 1);
