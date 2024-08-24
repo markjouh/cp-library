@@ -5,7 +5,7 @@ using namespace std;
 #define sz(x) int(size(x))
 
 using ll = long long;
-using ld = long double;
+using db = double;
 
 template<class T> bool ckmin(T &a, const T b) { return b < a ? a = b, 1 : 0; }
 template<class T> bool ckmax(T &a, const T b) { return b > a ? a = b, 1 : 0; }
