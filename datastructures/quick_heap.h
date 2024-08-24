@@ -1,4 +1,4 @@
-/* A functionally O(1) heap with very good constant using hardware intrinsics.
+/* A functionally O(1) heap-like datastructure with very good constant using hardware intrinsics.
  * Space complexity is O(V), where V is the largest value that can be inserted.
  * This implementation uses 2 layers and holds values up to 64^3, which should
  * cover almost all practical uses in cp. Can be generalized to arbitary V with
