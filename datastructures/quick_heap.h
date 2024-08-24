@@ -3,6 +3,7 @@
  * This implementation uses 2 layers and holds values up to 64^3, which should
  * cover almost all practical uses in cp. Can be generalized to arbitary V with
  * O(log_W(V)) queries, where W is the word size of the judge.
+ * Space complexity is O(V / W) if duplicates aren't allowed.
  */
 
 template<int N> struct quick_heap {
