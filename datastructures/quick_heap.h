@@ -1,9 +1,10 @@
-/* A functionally O(1) heap-like datastructure with very good constant using hardware intrinsics.
- * Space complexity is O(V), where V is the largest value that can be inserted.
- * This implementation uses 2 layers and holds values up to 64^3, which should
- * cover almost all practical uses in cp. Can be generalized to arbitary V with
- * O(log_W(V)) queries, where W is the word size of the judge.
- * Space complexity is O(V / W) if duplicates aren't allowed.
+/* A functionally O(1) heap-like datastructure with good constant using hardware intrinsics.
+ * Can be represented as a W-ary search tree with a fixed structure, where W is the word size.
+ * Space complexity is O(V), where V is the largest value that can be inserted, or O(V / W) if
+ * duplicate values are disallowed.
+ * Time complexity of queries is O(log_W(V)).
+ * This implementation is fixed at 2 layers, which makes it very fast O(1), but limits V
+ * to 64^3 = 262144 (which should cover most practical uses, anyway).
  */
 
 template<int N> struct quick_heap {
