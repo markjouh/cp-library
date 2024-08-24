@@ -1,4 +1,8 @@
-template<class T> db bsmax_fp(db lo, db hi, T f) {
+/* Maximally precise and cheap (bounded by 64 ops) binary search on real values,
+ * based off of https://codeforces.com/blog/entry/63085.
+ */
+
+template<class T> db bsmax_reals(db lo, db hi, T f) {
     assert(sizeof(uint64_t) >= sizeof(db));
     assert(lo <= hi);
     uint64_t l = reinterpret_cast<uint64_t&>(lo) - 1, r = reinterpret_cast<uint64_t&>(hi);
@@ -9,7 +13,7 @@ template<class T> db bsmax_fp(db lo, db hi, T f) {
     return reinterpret_cast<db&>(l);
 }
 
-template<class T> db bsmin_fp(db lo, db hi, T f) {
+template<class T> db bsmin_reals(db lo, db hi, T f) {
     assert(sizeof(uint64_t) >= sizeof(db));
     assert(lo <= hi);
     uint64_t l = reinterpret_cast<uint64_t&>(lo), r = reinterpret_cast<uint64_t&>(hi) + 1;
