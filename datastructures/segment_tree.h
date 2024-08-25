@@ -6,11 +6,11 @@
  * of the supported operations.
  */
 
-template<class T, T(*op)(T, T), int id> struct segment_tree {
+template<class T, T(*op)(T, T), T(*id)()> struct segment_tree {
     int n;
     vector<T> tree;
 
-    segment_tree(int sz) : n(sz), tree(2 * n, id) {}
+    segment_tree(int sz) : n(sz), tree(2 * n, id()) {}
 
     segment_tree(const vector<T> &a) : n(sz(a)), tree(2 * n) {
         copy(begin(a), end(a), begin(tree) + n);
@@ -20,7 +20,7 @@ template<class T, T(*op)(T, T), int id> struct segment_tree {
     }
 
     T query(int l, int r) {
-        T ls = id, rs = id;
+        T ls = id(), rs = id();
         for (l += n, r += n + 1; l < r; l >>= 1, r >>= 1) {
             if (l & 1) {
                 ls = op(ls, tree[l++]);
