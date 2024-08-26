@@ -1,5 +1,4 @@
 struct kosaraju_scc {
-public:
     int sccs = 0;
     vector<int> comp;
     vector<vector<int>> members, c_adj;
