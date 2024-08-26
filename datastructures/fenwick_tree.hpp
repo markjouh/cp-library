@@ -3,6 +3,8 @@
  * `add(x, y)`, `sum(x, y)`: O(log(y))
  */
 
+#pragma once
+
 template<class T> struct fenwick_tree {
     int n;
     vector<T> tree;

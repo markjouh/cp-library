@@ -5,6 +5,8 @@
  * `kosaraju_scc(G)`: O(|G|)
  */
 
+#pragma once
+
 struct kosaraju_scc {
     int sccs = 0;
     vector<int> comp;

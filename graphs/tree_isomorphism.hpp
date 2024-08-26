@@ -2,6 +2,8 @@
  * Two trees are isomorphic if and only if their hashes match.
  */
 
+#pragma once
+
 struct tree_isomorphism {
     map<vector<int>, int> hashes;
 

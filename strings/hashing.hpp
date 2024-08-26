@@ -5,6 +5,8 @@
  * `hash`: An object representing a substring. Can be joined with `+` and compared in O(1), but not split further.
  */
 
+#pragma once
+
 namespace hashing {
 
 mt19937_64 rng(chrono::steady_clock::now().time_since_epoch().count());

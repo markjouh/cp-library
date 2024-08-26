@@ -3,6 +3,8 @@
  * `anc(x, y)`, `lca(x, y)`: O(log(N))
  */
 
+#pragma once
+
 struct binary_lifts {
     binary_lifts(const vector<vector<int>> &g, int root = 0) : lg(__lg(sz(g)) + 1), dep(sz(g), -1), up(sz(g), vector<int>(lg, -1)) {
         queue<int> q;

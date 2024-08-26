@@ -4,6 +4,8 @@
  * `update(x, y)`, `query(x, y)`: O(log(N))
  */
 
+#pragma once
+
 template<class T, T(*op)(T, T), T(*id)()> struct segment_tree {
     int n;
     vector<T> tree;

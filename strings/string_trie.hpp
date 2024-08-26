@@ -3,6 +3,8 @@
  * 'gen_graph()`: O(N), returns an adjacency list with the same structure as the trie
  */
 
+#pragma once
+
 struct string_trie {
     struct node {
         int nxt[26];

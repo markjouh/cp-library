@@ -4,6 +4,8 @@
  * `pow(x, k)`: O(log(k))
  */
 
+#pragma once
+
 const int MOD = 1000000007;
 // const int MOD = 998244353;
 

@@ -2,6 +2,8 @@
  * `bsmin(l, r, f)`, `bsmax(l, r, f)`: O(log(hi - lo) * T_f)
  */
 
+#pragma once
+
 template<class T, class U> T bsmin(T lo, T hi, U f) {
     assert(lo <= hi);
     hi++;

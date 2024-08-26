@@ -2,6 +2,9 @@
  * `add(l, r, v)`, `sum(l, r)`: O(log(r))
  */
 
+#pragma once
+#include "fenwick_tree.hpp"
+
 template<class T> struct extended_fenwick {
     int n;
     fenwick_tree<T> inside, outside;

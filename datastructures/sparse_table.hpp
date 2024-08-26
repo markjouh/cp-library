@@ -4,6 +4,8 @@
  * `query(l, r)`: O(1)
  */
 
+#pragma once
+
 template<class T, T(*op)(T, T)> struct sparse_table {
     int n, lg;
     vector<vector<T>> table;

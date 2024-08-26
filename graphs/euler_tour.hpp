@@ -3,6 +3,8 @@
  * would contain exactly the subtree rooted at v for all v.
  */
 
+#pragma once
+
 struct euler_tour {
     vector<int> tin, tout;
 

@@ -3,6 +3,9 @@
  * `pow(matrix<T, N>, k)`: O(N^3 * log(k))
  */
 
+#pragma once
+#include "mod_int.hpp"
+
 template<class T, int N> struct matrix {
     array<array<T, N>, N> vals{};
 

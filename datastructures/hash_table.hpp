@@ -2,6 +2,7 @@
  * `operator[]`: O(1), but expensive
  */
 
+#pragma once
 #include <ext/pb_ds/assoc_container.hpp>
 
 struct custom_hash {

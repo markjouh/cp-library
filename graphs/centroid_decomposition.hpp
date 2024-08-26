@@ -3,6 +3,8 @@
  * `centroid_decomp()`: O(N * log(N))
  */
 
+#pragma once
+
 struct centroid_decomp {
     vector<int> cd_par;
 

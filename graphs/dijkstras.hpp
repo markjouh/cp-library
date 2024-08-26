@@ -3,6 +3,8 @@
  * `dijkstras((V, E))`: O((|V| + |E|) * log(|V|))
  */
 
+#pragma once
+
 template<class T> auto dijkstras(const vector<vector<pair<int, int>>> &g, int start = 0) {
     priority_queue<pair<T, int>, vector<pair<T, int>>, greater<pair<T, int>>> pq;
 

@@ -7,6 +7,8 @@
  * to 64^3 = 262144 (which should cover most practical uses, anyway).
  */
 
+#pragma once
+
 template<int N> struct quick_heap {
     uint32_t freq[N];
     uint64_t l0[(N >> 6) + 1], l1[(N >> 12) + 1], root;

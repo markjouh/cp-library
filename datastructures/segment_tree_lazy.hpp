@@ -3,6 +3,8 @@
  * `update(l, r, v)`, `query(l, r)`: O(log(N))
  */
 
+#pragma once
+
 template<class T> struct lazy_segtree {
     const T id = 0;
     const T lz_id = 0;

@@ -3,6 +3,8 @@
  * `bsmin(l, r, f)`, `bsmax(l, r, f)`: O(log(hi - lo) * T_f)
  */
 
+#pragma once
+
 template<class T> db bsmin_reals(db lo, db hi, T f) {
     assert(sizeof(uint64_t) >= sizeof(db));
     assert(lo <= hi);

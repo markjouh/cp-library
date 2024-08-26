@@ -4,6 +4,8 @@
  * `gen_divisors(k)`: O(#divisors), bounded by ~cbrt(k)
  */
 
+#pragma once
+
 namespace number_theory {
 
 vector<int> mn_fac, primes;

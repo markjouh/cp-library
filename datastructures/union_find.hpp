@@ -3,6 +3,8 @@
  * purposes O(1).
  */
 
+#pragma once
+
 struct union_find {
     vector<int> a;
 

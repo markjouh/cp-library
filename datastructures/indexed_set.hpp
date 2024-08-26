@@ -3,6 +3,7 @@
  * `order_of_key(v)`: O(log(N)), counts the number of elements < v in the set
  */
 
+#pragma once
 #include <ext/pb_ds/assoc_container.hpp>
 
 using namespace __gnu_pbds;
