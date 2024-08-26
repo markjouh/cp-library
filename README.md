@@ -1,7 +1,7 @@
 # cp-library
 [![Codeforces](https://badges.joonhyung.xyz/codeforces/mark.svg)](https://codeforces.com/profile/mark)
 
-My library of template/reference code for competitive programming.
+My library of template code for competitive programming.
 
 ## Why
 KACTL is very concise, but I really dislike their interfaces. Atcoder Library is very fast and has nice interfaces, but is intended to be included as a black-box and infeasible to type out.
