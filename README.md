@@ -1,7 +1,7 @@
 # cp-library
 [![Codeforces](https://badges.joonhyung.xyz/codeforces/mark.svg)](https://codeforces.com/profile/mark)
 ![GitHub last commit](https://img.shields.io/github/last-commit/markjouh/cp-library)
-![GitHub repo file or directory count](https://img.shields.io/github/directory-file-count/markjouh/cp-library?type=file&extension=hpp&label=headers)
+![GitHub repo size](https://img.shields.io/github/repo-size/markjouh/cp-library)
 
 My library of template code for competitive programming.
 
