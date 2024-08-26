@@ -1,3 +1,9 @@
+/* Kosaraju's algorithm. Computes SCCs in O(N).
+ * comp[x] is the component id, numbered [0, sccs), of x.
+ * c_adj represents the condensation graph through connections between component ids.
+ * members[c] holds the original vertex numbers of the members of component c.
+ */
+
 struct kosaraju_scc {
     int sccs = 0;
     vector<int> comp;
