@@ -1,4 +1,4 @@
-// Environment: M1, MacOS Ventura, XCode developer tools
+// Environment: M1, MacOS Ventura, Apple clang version 15.0.0 (clang-1500.3.9.4)
 {
     "shell_cmd": "clang++ -Wl,-stack_size,0x20000000 -fsanitize=undefined,address -DLOCAL -std=c++20 -O2 -Wall -I/Users/mzh/Documents/comp/include '${file}' && echo 'cd \"${file_path}/\"' > '/tmp/${file_base_name}' && echo './a.out' >> '/tmp/${file_base_name}' && echo read >> '/tmp/${file_base_name}' && chmod +x '/tmp/${file_base_name}' && open -a Terminal.app '/tmp/${file_base_name}'"
 }
