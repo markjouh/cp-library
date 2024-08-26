@@ -3,11 +3,7 @@
  */
 
 struct binary_lifts {
-    int n, lg;
-    vector<int> dep;
-    vector<vector<int>> up;
-
-    binary_lifts(const vector<vector<int>> &g, int root = 0) : n(sz(g)), lg(__lg(n) + 1), dep(n, -1), up(n, vector<int>(lg, -1)) {
+    binary_lifts(const vector<vector<int>> &g, int root = 0) : lg(__lg(sz(g)) + 1), dep(sz(g), -1), up(sz(g), vector<int>(lg, -1)) {
         queue<int> q;
         dep[root] = 0;
         q.push(root);
@@ -63,4 +59,9 @@ struct binary_lifts {
     int dist(int x, int y) {
         return dep[x] + dep[y] - 2 * dep[lca(x, y)];
     }
+
+private:
+    int lg;
+    vector<int> dep;
+    vector<vector<int>> up;
 };
