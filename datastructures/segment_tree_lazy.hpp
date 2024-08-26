@@ -1,7 +1,8 @@
-template<class T> struct LazyST {
-    int n;
-    vec<T> st, lz;
+/* A standard segment tree with lazy updates.
+ * Not generic or iterative for ease of modification - but might change later.
+ */
 
+template<class T> struct lazy_segtree {
     const T id = 0;
     const T lz_id = 0;
 
@@ -10,45 +11,63 @@ template<class T> struct LazyST {
     }
 
     void push(int x, int tl, int tr) {
-        if (lz[x] != lz_id) {
-            st[x] += (tr - tl) * lz[x];
+        if (lazy[x] != lz_id) {
+            tree[x] += (tr - tl) * lazy[x]; // Make sure this checks out!
             if (tl + 1 != tr) {
-                lz[2 * x + 1] += lz[x];
-                lz[2 * x + 2] += lz[x];
+                lazy[2 * x + 1] += lazy[x];
+                lazy[2 * x + 2] += lazy[x];
             }
-            lz[x] = lz_id;
+            lazy[x] = lz_id;
         }
     }
 
-    LazyST(int sz) {
-        init(sz);
+    // Modify above ^^
+
+    lazy_segtree(int x) {
+        init(x);
     }
 
-    LazyST(vec<T> &a) {
+    lazy_segtree(const vector<T> &a) {
         init(sz(a));
         build(a, 0, 0, n);
     }
+
+    T query(int l, int r) {
+        return query(l, r + 1, 0, 0, n);
+    }
+
+    void update(int l, int r, int v) {
+        update(l, r + 1, v, 0, 0, n);
+    }
+
+    // int walk() {
+    //     return walk(0, 0, n);
+    // }
+
+private:
+    int n;
+    vector<T> tree, lazy;
 
     void init(int sz) {
         n = 1;
         while (n < sz) {
             n *= 2;
         }
-        st.resize(2 * n, id);
-        lz.resize(2 * n, lz_id);
+        tree.resize(2 * n, id);
+        lazy.resize(2 * n, lz_id);
     }
 
-    void build(vec<T> &a, int x, int tl, int tr) {
+    void build(vector<T> &a, int x, int tl, int tr) {
         if (tl + 1 == tr) {
             if (tl < sz(a)) {
-                st[x] = a[tl];
+                tree[x] = a[tl];
             }
             return;
         }
         int mid = (tl + tr) / 2;
         build(a, 2 * x + 1, tl, mid);
         build(a, 2 * x + 2, mid, tr);
-        st[x] = merge(st[2 * x + 1], st[2 * x + 2]);
+        tree[x] = merge(tree[2 * x + 1], tree[2 * x + 2]);
     }
 
     T query(int l, int r, int x, int tl, int tr) {
@@ -57,14 +76,10 @@ template<class T> struct LazyST {
             return id;
         }
         if (tl >= l && tr <= r) {
-            return st[x];
+            return tree[x];
         }
         int mid = (tl + tr) / 2;
         return merge(query(l, r, 2 * x + 1, tl, mid), query(l, r, 2 * x + 2, mid, tr));
-    }
-
-    T query(int l, int r) {
-        return query(l, r + 1, 0, 0, n);
     }
 
     void update(int l, int r, int v, int x, int tl, int tr) {
@@ -73,18 +88,14 @@ template<class T> struct LazyST {
             return;
         }
         if (tl >= l && tr <= r) {
-            lz[x] += v;
+            lazy[x] += v;
             push(x, tl, tr);
             return;
         }
         int mid = (tl + tr) / 2;
         update(l, r, v, 2 * x + 1, tl, mid);
         update(l, r, v, 2 * x + 2, mid, tr);
-        st[x] = merge(st[2 * x + 1], st[2 * x + 2]);
-    }
-
-    void update(int l, int r, int v) {
-        update(l, r + 1, v, 0, 0, n);
+        tree[x] = merge(tree[2 * x + 1], tree[2 * x + 2]);
     }
 
     // int walk(int x, int tl, int tr) {
@@ -100,9 +111,5 @@ template<class T> struct LazyST {
     //     } else {
     //         return walk(2 * x + 2, mid, tr);
     //     }
-    // }
-
-    // int walk() {
-    //     return walk(0, 0, n);
     // }
 };
