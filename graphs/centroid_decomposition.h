@@ -2,49 +2,53 @@
  * forest in O(N * log(N)). Returns the parent array.
  */
 
-vector<int> centroid_decomp(const vector<vector<int>> &g) {
-    const int n = sz(g);
-    vector<bool> blocked(n);
-    vector<int> st_size(n), par(n, -1);
+struct centroid_decomp {
+    vector<int> cd_par;
 
-    auto get_sizes = [&](auto &&self, int u, int p) -> void {
+    centroid_decomp(const vector<vector<int>> &g) : cd_par(sz(g)), adj(g), blocked(sz(g)), st_size(sz(g)) {
+        for (int i = 0; i < sz(g); i++) {
+            if (st_size[i] == 0) {
+                build(i, -1);
+            }
+        }
+        blocked.clear();
+        st_size.clear();
+    }
+private:
+    const vector<vector<int>> &adj;
+    vector<bool> blocked;
+    vector<int> st_size;
+
+    void get_sizes(int u, int par) {
         st_size[u] = 1;
-        for (int v : g[u]) {
-            if (v != p && !blocked[v]) {
-                self(self, v, u);
+        for (int v : adj[u]) {
+            if (v != par && !blocked[v]) {
+                get_sizes(v, u);
                 st_size[u] += st_size[v];
             }
         }
-    };
+    }
 
-    auto find_centroid = [&](auto &&self, int u, int p, int sz) -> int {
-        int to = -1;
-        for (int v : g[u]) {
-            if (v != p && !blocked[v] && st_size[v] > sz / 2) {
-                to = v;
+    int find_centroid(int u, int par, int tree_sz) {
+        int nxt = -1;
+        for (int v : adj[u]) {
+            if (v != par && !blocked[v] && st_size[v] * 2 > tree_sz) {
+                nxt = v;
+                break;
             }
         }
-        return to == -1 ? u : self(self, to, u, sz);
-    };
+        return nxt == -1 ? u : find_centroid(nxt, u, tree_sz);
+    }
 
-    auto gen_tree = [&](auto &&self, int u, int p) -> void {
-        get_sizes(get_sizes, u, -1);
-        int cent = find_centroid(find_centroid, u, -1, st_size[u]);
-        par[cent] = p;
-        blocked[cent] = true;
-        if (st_size[u] > 1) {
-            for (int v : g[cent]) {
-                if (!blocked[v]) {
-                    self(self, v, cent);
-                }
+    void build(int u, int par) {
+        get_sizes(u, -1);
+        const int root = find_centroid(u, -1, st_size[u]);
+        cd_par[root] = par;
+        blocked[root] = true;
+        for (int v : adj[root]) {
+            if (!blocked[v]) {
+                build(v, root);
             }
-        }
-    };
-
-    for (int i = 0; i < n; i++) {
-        if (st_size[i] == 0) {
-            gen_tree(gen_tree, i, -1);
         }
     }
-    return par;
-}
+};
