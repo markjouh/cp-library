@@ -1,0 +1,128 @@
+---
+data:
+  libraryCategories:
+  - name: datastructures
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: datastructures/fenwick_tree.hpp
+      title: datastructures/fenwick_tree.hpp
+    - icon: ':heavy_check_mark:'
+      path: datastructures/fenwick_tree_extended.hpp
+      title: datastructures/fenwick_tree_extended.hpp
+    - icon: ':warning:'
+      path: datastructures/hash_table.hpp
+      title: datastructures/hash_table.hpp
+    - icon: ':warning:'
+      path: datastructures/indexed_set.hpp
+      title: datastructures/indexed_set.hpp
+    - icon: ':warning:'
+      path: datastructures/quick_heap.hpp
+      title: datastructures/quick_heap.hpp
+    - icon: ':heavy_check_mark:'
+      path: datastructures/segment_tree.hpp
+      title: datastructures/segment_tree.hpp
+    - icon: ':warning:'
+      path: datastructures/segment_tree_lazy.hpp
+      title: datastructures/segment_tree_lazy.hpp
+    - icon: ':heavy_check_mark:'
+      path: datastructures/sparse_table.hpp
+      title: datastructures/sparse_table.hpp
+    - icon: ':heavy_check_mark:'
+      path: datastructures/union_find.hpp
+      title: datastructures/union_find.hpp
+  - name: graphs
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: graphs/binary_lifts.hpp
+      title: graphs/binary_lifts.hpp
+    - icon: ':warning:'
+      path: graphs/centroid_decomposition.hpp
+      title: graphs/centroid_decomposition.hpp
+    - icon: ':heavy_check_mark:'
+      path: graphs/dijkstras.hpp
+      title: graphs/dijkstras.hpp
+    - icon: ':warning:'
+      path: graphs/euler_tour.hpp
+      title: graphs/euler_tour.hpp
+    - icon: ':heavy_check_mark:'
+      path: graphs/kosaraju_scc.hpp
+      title: graphs/kosaraju_scc.hpp
+    - icon: ':heavy_check_mark:'
+      path: graphs/tree_isomorphism.hpp
+      title: graphs/tree_isomorphism.hpp
+  - name: local
+    pages:
+    - icon: ':warning:'
+      path: local/debug.hpp
+      title: local/debug.hpp
+    - icon: ':warning:'
+      path: local/template.cpp
+      title: local/template.cpp
+  - name: numeric
+    pages:
+    - icon: ':warning:'
+      path: numeric/binary_search.hpp
+      title: numeric/binary_search.hpp
+    - icon: ':warning:'
+      path: numeric/binary_search_reals.hpp
+      title: numeric/binary_search_reals.hpp
+    - icon: ':warning:'
+      path: numeric/matrix.hpp
+      title: numeric/matrix.hpp
+    - icon: ':warning:'
+      path: numeric/mod_int.hpp
+      title: numeric/mod_int.hpp
+    - icon: ':heavy_check_mark:'
+      path: numeric/number_theory.hpp
+      title: numeric/number_theory.hpp
+  - name: strings
+    pages:
+    - icon: ':warning:'
+      path: strings/hashing.hpp
+      title: strings/hashing.hpp
+    - icon: ':warning:'
+      path: strings/string_trie.hpp
+      title: strings/string_trie.hpp
+  verificationCategories:
+  - name: verify/aizu/dsl
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/aizu/dsl/rmq.test.cpp
+      title: verify/aizu/dsl/rmq.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/aizu/dsl/rsq_and_raq.test.cpp
+      title: verify/aizu/dsl/rsq_and_raq.test.cpp
+  - name: verify/library_checker/data_structure
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/library_checker/data_structure/point_add_range_sum.test.cpp
+      title: verify/library_checker/data_structure/point_add_range_sum.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/library_checker/data_structure/static_rmq.test.cpp
+      title: verify/library_checker/data_structure/static_rmq.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/library_checker/data_structure/unionfind.test.cpp
+      title: verify/library_checker/data_structure/unionfind.test.cpp
+  - name: verify/library_checker/graph
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/library_checker/graph/scc.test.cpp
+      title: verify/library_checker/graph/scc.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/library_checker/graph/shortest_path.test.cpp
+      title: verify/library_checker/graph/shortest_path.test.cpp
+  - name: verify/library_checker/number_theory
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/library_checker/number_theory/enumerate_primes.test.cpp
+      title: verify/library_checker/number_theory/enumerate_primes.test.cpp
+  - name: verify/library_checker/tree
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/library_checker/tree/lca.test.cpp
+      title: verify/library_checker/tree/lca.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/library_checker/tree/rooted_tree_isomorphism.test.cpp
+      title: verify/library_checker/tree/rooted_tree_isomorphism.test.cpp
+layout: toppage
+---
