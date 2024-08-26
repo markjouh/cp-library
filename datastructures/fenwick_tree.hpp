@@ -21,14 +21,14 @@ template<class T> struct fenwick_tree {
     }
 
     void add(int p, T v) {
-        // assert(p >= 0);
+        assert(p >= 0);
         for (p++; p <= n; p += p & -p) {
             tree[p] += v;
         }
     }
 
     T sum(int r) {
-        // assert(r < n);
+        assert(r < n);
         T res = 0;
         for (r++; r > 0; r -= r & -r) {
             res += tree[r];
