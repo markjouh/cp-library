@@ -1,7 +1,7 @@
 /* Given a weighted graph, computes and constructs the shortest paths from the
  * starting vertex.
  * `dijkstras((V, E))`: O((|V| + |E|) * log(|V|))
- *
+ */
 
 template<class T> auto dijkstras(const vector<vector<pair<int, int>>> &g, int start = 0) {
     priority_queue<pair<T, int>, vector<pair<T, int>>, greater<pair<T, int>>> pq;
