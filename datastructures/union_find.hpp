@@ -1,6 +1,5 @@
 /* Connectivity data structure limited to edge insertions.
- * Operations have inverse Ackermann complexity, which is for all intents and
- * purposes O(1).
+ * `size(x)`, `find(x)`, `join(x, y)`: O(a(N)) = ~O(1)
  */
 
 #pragma once
