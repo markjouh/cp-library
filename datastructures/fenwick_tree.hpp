@@ -1,8 +1,7 @@
-/* A data structure that supports point add/prefix sum or
- * prefix add/point query queries in O(log(N)).
- * Can probably be generalized to a slightly broader set of applications, but
- * due to the existence of the strictly more powerful segment tree,
- * its usage is typically limited to being a lightweight data structure for sums.
+/* A data structure that supports point updates and range queries
+ * or vice versa with modificiations.
+ * `add(p, v)`: O(log(N))
+ * `sum(l, r)`: O(log(r))
  */
 
 template<class T> struct fenwick_tree {
