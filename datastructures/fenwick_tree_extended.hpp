@@ -1,7 +1,5 @@
-/* A data structure that uses two fenwick trees in tandem to support both
- * range add and range sum queries in O(log(N)).
- * A much smaller and faster alternative to lazy segment trees for this particular
- * use case.
+/* Uses 2 fenwick trees to support both range updates and range queries.
+ * `add(l, r, v)`, `sum(l, r)`: O(log(r))
  */
 
 template<class T> struct extended_fenwick {
