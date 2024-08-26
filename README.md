@@ -1,7 +1,7 @@
 # cp-library
 [![Codeforces](https://badges.joonhyung.xyz/codeforces/mark.svg)](https://codeforces.com/profile/mark) 
 
-## Priorities
+## Goals
 1. Simple and easy to understand code short enough to be typed out during contests.
 2. Good performance. It's nice to have most of your optimization work done in advance!
 3. Convenient interfaces. What this looks like is kinda formed from trial and error through implementing a lot of solutions.
