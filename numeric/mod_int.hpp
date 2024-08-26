@@ -1,7 +1,7 @@
 /* Type that performs arithmetic mod some large prime.
- * `mint::operator$` for $ in {+, -, *}: O(1)
- * `mint::operator/`: O(log(MOD))
- * `mint::pow(x, k)`: O(log(k))
+ * `operator$` for $ in {+, -, *}: O(1)
+ * `operator/`: O(log(MOD))
+ * `pow(x, k)`: O(log(k))
  */
 
 const int MOD = 1000000007;
