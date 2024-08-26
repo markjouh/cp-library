@@ -4,7 +4,6 @@
  */
 
 struct euler_tour {
-public:
     vector<int> tin, tout;
 
     euler_tour(const vector<vector<int>> &g, int root = 0) : adj(g) {
