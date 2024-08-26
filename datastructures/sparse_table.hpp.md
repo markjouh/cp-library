@@ -11,19 +11,17 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/onlinejudge_verify/documentation/build.py\"\
-    , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
-    \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n          \
-    \         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\
-    \  File \"/opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus.py\"\
-    , line 187, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
-    , line 312, in update\n    raise BundleErrorAt(path, i + 1, \"#pragma once found\
-    \ in a non-first line\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
-    \ datastructures/sparse_table.hpp: line 7: #pragma once found in a non-first line\n"
-  code: "/* A data structure that stores an array of objects with an associative and\n\
-    \ * idempotent binary operator.\n * `sparse_table(x)`: O(N * log(N))\n * `query(l,\
-    \ r)`: O(1)\n */\n\n#pragma once\n\ntemplate<class T, T(*op)(T, T)> struct sparse_table\
-    \ {\n    int n, lg;\n    vector<vector<T>> table;\n\n    sparse_table(const vector<T>\
+  bundledCode: "#line 2 \"datastructures/sparse_table.hpp\"\n\ntemplate<class T, T(*op)(T,\
+    \ T)> struct sparse_table {\n    int n, lg;\n    vector<vector<T>> table;\n\n\
+    \    sparse_table(const vector<T> &a) : n(sz(a)), lg(__lg(n) + 1), table(lg) {\n\
+    \        table[0] = a;\n        for (int i = 1; i < lg; i++) {\n            table[i].resize(n\
+    \ - (1 << i) + 1);\n            for (int j = 0; j < sz(table[i]); j++) {\n   \
+    \             table[i][j] = op(table[i - 1][j], table[i - 1][j + (1 << (i - 1))]);\n\
+    \            }\n        }\n    }\n\n    T query(int l, int r) {\n        assert(l\
+    \ <= r);\n        int i = __lg(++r - l);\n        return op(table[i][l], table[i][r\
+    \ - (1 << i)]);\n    }\n};\n"
+  code: "#pragma once\n\ntemplate<class T, T(*op)(T, T)> struct sparse_table {\n \
+    \   int n, lg;\n    vector<vector<T>> table;\n\n    sparse_table(const vector<T>\
     \ &a) : n(sz(a)), lg(__lg(n) + 1), table(lg) {\n        table[0] = a;\n      \
     \  for (int i = 1; i < lg; i++) {\n            table[i].resize(n - (1 << i) +\
     \ 1);\n            for (int j = 0; j < sz(table[i]); j++) {\n                table[i][j]\
@@ -35,14 +33,22 @@ data:
   isVerificationFile: false
   path: datastructures/sparse_table.hpp
   requiredBy: []
-  timestamp: '2024-08-26 11:12:12-04:00'
+  timestamp: '2024-08-26 19:30:17-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/library_checker/data_structure/static_rmq.test.cpp
 documentation_of: datastructures/sparse_table.hpp
 layout: document
-redirect_from:
-- /library/datastructures/sparse_table.hpp
-- /library/datastructures/sparse_table.hpp.html
-title: datastructures/sparse_table.hpp
+title: Sparse Table
 ---
+
+### Overview
+
+The sparse table is a data structure that's useful for answering static range queries in constant time given an idempotent merge operation (that is, applying it more than once won't change the result). Generally used for RMQ.
+
+Sparse tables precompute the result for all subarrays with lengths of powers of 2 using range dp. This guaranteees there will always exist a pair of (not neccessarily distinct) intervals in our table which have a union equal to any valid query interval, allowing us to compute the answer in $O(1)$.
+
+### Operations
+
+* `sparse_table<T>(a)`: Builds a sparse table from the vector `a`. $O(n \log{n})$ time and memory.
+* `query(l, r)`: Returns the range aggregate over the interval $[l, r]$. $O(1)$

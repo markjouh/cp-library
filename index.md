@@ -26,7 +26,7 @@ data:
       title: datastructures/segment_tree_lazy.hpp
     - icon: ':heavy_check_mark:'
       path: datastructures/sparse_table.hpp
-      title: datastructures/sparse_table.hpp
+      title: Sparse Table
     - icon: ':heavy_check_mark:'
       path: datastructures/union_find.hpp
       title: datastructures/union_find.hpp
