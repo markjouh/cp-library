@@ -1,6 +1,5 @@
 /* A square matrix, supporting multiplication in fairly fast O(N^3).
- * Notably, this allows us to apply a linear transformation K times
- * in just O(N^3 * log(K)) with binary exponentiation.
+ * Useful for applying a linear transformation a large number of times.
  */
 
 template<class T, int N> struct matrix {
