@@ -50,14 +50,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: graphs/tree_isomorphism.hpp
       title: graphs/tree_isomorphism.hpp
-  - name: local
-    pages:
-    - icon: ':warning:'
-      path: local/debug.hpp
-      title: local/debug.hpp
-    - icon: ':warning:'
-      path: local/template.cpp
-      title: local/template.cpp
   - name: numeric
     pages:
     - icon: ':warning:'

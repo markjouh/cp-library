@@ -11,18 +11,25 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/onlinejudge_verify/documentation/build.py\"\
-    , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
-    \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n          \
-    \         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\
-    \  File \"/opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus.py\"\
-    , line 187, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
-    , line 312, in update\n    raise BundleErrorAt(path, i + 1, \"#pragma once found\
-    \ in a non-first line\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
-    \ numeric/mod_int.hpp: line 7: #pragma once found in a non-first line\n"
-  code: "/* Type that performs arithmetic mod some large prime.\n * `operator$` for\
-    \ $ in {+, -, *}: O(1)\n * `operator/`: O(log(MOD))\n * `pow(x, k)`: O(log(k))\n\
-    \ */\n\n#pragma once\n\nconst int MOD = 1000000007;\n// const int MOD = 998244353;\n\
+  bundledCode: "#line 2 \"numeric/mod_int.hpp\"\n\nconst int MOD = 1000000007;\n//\
+    \ const int MOD = 998244353;\n\nstruct mint {\n    int v;\n \n    mint(ll x =\
+    \ 0) : v(int(-MOD < x && x < MOD ? x : x % MOD) + (x < 0) * MOD) {}\n \n    friend\
+    \ mint pow(mint base, int exp) {\n        mint res = 1;\n        while (exp) {\n\
+    \            if (exp & 1) {\n                res *= base;\n            }\n   \
+    \         base *= base;\n            exp >>= 1;\n        }\n        return res;\n\
+    \    }\n \n    mint &operator+=(mint b) {\n        if ((v += b.v) >= MOD) {\n\
+    \            v -= MOD;\n        }\n        return *this;\n    }\n \n    mint &operator-=(mint\
+    \ b) {\n        if ((v -= b.v) < 0) {\n            v += MOD;\n        }\n    \
+    \    return *this;\n    }\n \n    mint &operator*=(mint b) {\n        v = int(1ll\
+    \ * v * b.v % MOD);\n        return *this;\n    }\n \n    mint &operator/=(mint\
+    \ b) {\n        v = int(1ll * v * pow(b, MOD - 2).v % MOD);\n        return *this;\n\
+    \    }\n \n    friend mint operator+(mint a, mint b) {\n        return a += b;\n\
+    \    }\n \n    friend mint operator-(mint a, mint b) {\n        return a -= b;\n\
+    \    }\n \n    friend mint operator*(mint a, mint b) {\n        return a *= b;\n\
+    \    }\n \n    friend mint operator/(mint a, mint b) {\n        return a /= b;\n\
+    \    }\n \n    friend ostream &operator<<(ostream &os, mint a) {\n        return\
+    \ os << a.v;\n    }\n};\n"
+  code: "#pragma once\n\nconst int MOD = 1000000007;\n// const int MOD = 998244353;\n\
     \nstruct mint {\n    int v;\n \n    mint(ll x = 0) : v(int(-MOD < x && x < MOD\
     \ ? x : x % MOD) + (x < 0) * MOD) {}\n \n    friend mint pow(mint base, int exp)\
     \ {\n        mint res = 1;\n        while (exp) {\n            if (exp & 1) {\n\
@@ -45,7 +52,7 @@ data:
   path: numeric/mod_int.hpp
   requiredBy:
   - numeric/matrix.hpp
-  timestamp: '2024-08-26 11:12:12-04:00'
+  timestamp: '2024-08-26 19:37:00-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: numeric/mod_int.hpp
