@@ -1,4 +1,5 @@
-/* Nah, I'd learn useless algorithms
+/* Find the first true/last true value given a monotonic boolean function.
+ * `bsmin(l, r, f)`, `bsmax(l, r, f)`: O(log(hi - lo) * T_f)
  */
 
 template<class T, class U> T bsmin(T lo, T hi, U f) {
