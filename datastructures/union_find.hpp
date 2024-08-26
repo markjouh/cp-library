@@ -1,3 +1,8 @@
+/* Connectivity data structure limited to edge insertions.
+ * Operations have inverse Ackermann complexity, which is for all intents and
+ * purposes O(1).
+ */
+
 struct union_find {
     vector<int> a;
 
