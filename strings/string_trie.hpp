@@ -1,6 +1,6 @@
-/* Takes in strings and incrementally builds a trie.
- * Can construct and return a directed rooted tree with the same structure
- * as the trie, which... was useful once?
+/* Builds a trie, a k-ary search tree where each node represents a distinct prefix.
+ * `insert(S)`: O(|S|)
+ * 'gen_graph()`: O(N), returns an adjacency list with the same structure as the trie
  */
 
 struct string_trie {
