@@ -1,4 +1,5 @@
 /* Given an undirected forest, builds a centroid decomposition forest.
+ * `cd_par[x]` is the last vertex we chose as a centroid and split before x in the poset.
  * `centroid_decomp()`: O(N * log(N))
  */
 
