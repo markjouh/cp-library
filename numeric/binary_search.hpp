@@ -1,4 +1,4 @@
-/* Find the first true/last true value given a monotonic boolean function.
+/* Find the first true/last true value given a discrete monotonic boolean function.
  * `bsmin(l, r, f)`, `bsmax(l, r, f)`: O(log(hi - lo) * T_f)
  */
 
