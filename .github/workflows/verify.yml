@@ -4,9 +4,15 @@ on:
   push:
     branches:
       - main
+    paths:
+      - '**/*.cpp'
+      - '**/*.hpp'
   pull_request:
     branches:
       - main
+    paths:
+      - '**/*.cpp'
+      - '**/*.hpp'
 
 jobs:
   verify-library:
