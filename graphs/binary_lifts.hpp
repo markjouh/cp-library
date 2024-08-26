@@ -1,5 +1,6 @@
-/* Given a rooted tree, computes binary lifts, which enable O(log(N)) LCA.
- * TODO: arbitrary path aggregates?
+/* Given a rooted tree, computes binary lifts. TODO: arbitrary path aggregates?
+ * `binary_lifts(G)`: O(|G| * log(|G|))
+ * `anc(x, y)`, `lca(x, y)`: O(log(N))
  */
 
 struct binary_lifts {
