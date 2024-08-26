@@ -17,7 +17,7 @@
 #include <vector>
 
 #ifdef LOCAL
-#include "debug.h"
+#include "debug.hpp"
 #else
 #define dbg(...)
 #endif
