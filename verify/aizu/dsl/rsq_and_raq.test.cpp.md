@@ -6,7 +6,7 @@ data:
     title: Fenwick Tree
   - icon: ':heavy_check_mark:'
     path: datastructures/fenwick_tree_extended.hpp
-    title: datastructures/fenwick_tree_extended.hpp
+    title: Range Add Range Query Fenwick Tree
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -51,7 +51,7 @@ data:
   isVerificationFile: true
   path: verify/aizu/dsl/rsq_and_raq.test.cpp
   requiredBy: []
-  timestamp: '2024-08-26 18:36:05-04:00'
+  timestamp: '2024-08-26 18:55:18-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/aizu/dsl/rsq_and_raq.test.cpp

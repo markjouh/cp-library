@@ -14,18 +14,17 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/onlinejudge_verify/documentation/build.py\"\
-    , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
-    \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n          \
-    \         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\
-    \  File \"/opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus.py\"\
-    , line 187, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
-    , line 312, in update\n    raise BundleErrorAt(path, i + 1, \"#pragma once found\
-    \ in a non-first line\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
-    \ datastructures/fenwick_tree_extended.hpp: line 5: #pragma once found in a non-first\
-    \ line\n"
-  code: "/* Uses 2 fenwick trees to support both range updates and range queries.\n\
-    \ * `add(l, r, v)`, `sum(l, r)`: O(log(r))\n */\n\n#pragma once\n#include \"fenwick_tree.hpp\"\
+  bundledCode: "#line 2 \"datastructures/fenwick_tree.hpp\"\n\ntemplate<class T> struct\
+    \ fenwick_tree {\n    int n;\n    vector<T> tree;\n\n    fenwick_tree(int x) :\
+    \ n(x), tree(n + 1) {}\n\n    fenwick_tree(const vector<T> &a) : n(sz(a)), tree(n\
+    \ + 1) {\n        for (int i = 1; i <= n; i++) {\n            tree[i] += a[i -\
+    \ 1];\n            if (i + (i & -i) <= n) {\n                tree[i + (i & -i)]\
+    \ += tree[i];\n            }\n        }\n    }\n\n    void add(int p, T v) {\n\
+    \        assert(p >= 0);\n        for (p++; p <= n; p += p & -p) {\n         \
+    \   tree[p] += v;\n        }\n    }\n\n    T sum(int r) {\n        assert(r <\
+    \ n);\n        T res = 0;\n        for (r++; r > 0; r -= r & -r) {\n         \
+    \   res += tree[r];\n        }\n        return res;\n    }\n\n    T sum(int l,\
+    \ int r) {\n        return sum(r) - sum(l - 1);\n    }\n};\n#line 3 \"datastructures/fenwick_tree_extended.hpp\"\
     \n\ntemplate<class T> struct extended_fenwick {\n    int n;\n    fenwick_tree<T>\
     \ inside, outside;\n\n    extended_fenwick(int x) : n(x), inside(n), outside(n)\
     \ {}\n\n    T sum(int r) {\n        return inside.sum(r - 1) + outside.sum(n -\
@@ -34,19 +33,36 @@ data:
     \ v * (r + 1));\n        outside.add(n - r - 1, v);\n    }\n\n    void add(int\
     \ l, int r, T v) {\n        add(r, v);\n        if (l > 0) {\n            add(l\
     \ - 1, T(0) - T(v));\n        }\n    }\n};\n"
+  code: "#pragma once\n#include \"fenwick_tree.hpp\"\n\ntemplate<class T> struct extended_fenwick\
+    \ {\n    int n;\n    fenwick_tree<T> inside, outside;\n\n    extended_fenwick(int\
+    \ x) : n(x), inside(n), outside(n) {}\n\n    T sum(int r) {\n        return inside.sum(r\
+    \ - 1) + outside.sum(n - r - 1) * (r + 1);\n    }\n\n    T sum(int l, int r) {\n\
+    \        return sum(r) - (l > 0 ? sum(l - 1) : 0);\n    }\n\n    void add(int\
+    \ r, T v) {\n        inside.add(r, v * (r + 1));\n        outside.add(n - r -\
+    \ 1, v);\n    }\n\n    void add(int l, int r, T v) {\n        add(r, v);\n   \
+    \     if (l > 0) {\n            add(l - 1, T(0) - T(v));\n        }\n    }\n};\n"
   dependsOn:
   - datastructures/fenwick_tree.hpp
   isVerificationFile: false
   path: datastructures/fenwick_tree_extended.hpp
   requiredBy: []
-  timestamp: '2024-08-26 18:36:05-04:00'
+  timestamp: '2024-08-26 18:55:18-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/aizu/dsl/rsq_and_raq.test.cpp
 documentation_of: datastructures/fenwick_tree_extended.hpp
 layout: document
-redirect_from:
-- /library/datastructures/fenwick_tree_extended.hpp
-- /library/datastructures/fenwick_tree_extended.hpp.html
-title: datastructures/fenwick_tree_extended.hpp
+title: Range Add Range Query Fenwick Tree
 ---
+
+#### Overview
+
+A data structure that uses two point update fenwick trees to achieve both range adds and range sums in $O(\log(n))$.
+
+For a reversible operation like addition, supporting prefix operations naturally extends to range operations, so let's focus on that for now. When we query a prefix $r$, completed prefix updates at some $p \leq r$ have contribution capped by their position, while for updates with $p \gt r$, it's capped by our position. We can reflect both of these possible "pulls" using two fenwick trees `inside` and `outside`, with `inside` storing a capped, fixed contribution, and `outside` storing a coefficient to apply to future query positions.
+
+#### Operations
+
+* `fenwick_tree<T>(x)`: Builds a fenwick tree of length x, or from the vector x. The complexity is $O(n)$ in both cases.
+* `add(l, r, x)`: Adds x to the interval $[l, r]$. $O(\log{n})$
+* `sum(l, r)`: Returns the sum of the interval $[l, r]$. $O(\log{n})$.
