@@ -1,4 +1,4 @@
-name: Verify
+name: verify
 
 on:
   push:
@@ -19,23 +19,13 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v3
       with:
-        python-version: '3.x'
+        python-version: '3.x'  # Replace with the desired Python version
 
     - name: Install Online Judge Tools
       run: |
         pip install online-judge-tools
         pip install online-judge-verify-helper
 
-    - name: Get list of changed files
-      id: changes
+    - name: Run oj-verify
       run: |
-        echo "$(git diff --name-only HEAD~1 HEAD)" > changed_files.txt
-
-    - name: Run oj-verify on .test.cpp files
-      run: |
-        files=$(cat changed_files.txt)
-        for file in $files; do
-          if [[ $file == *.test.cpp ]]; then
-            oj-verify run $file
-          fi
-        done
+        oj-verify all
