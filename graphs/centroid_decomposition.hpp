@@ -1,5 +1,5 @@
-/* Given an undirected forest, builds a centroid decomposition
- * forest in O(N * log(N)).
+/* Given an undirected forest, builds a centroid decomposition forest.
+ * `centroid_decomp()`: O(N * log(N))
  */
 
 struct centroid_decomp {
