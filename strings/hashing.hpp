@@ -48,4 +48,4 @@ struct seq_hash {
         return get(0, sz(hashes) - 1);
     }
 };
-};
+}
