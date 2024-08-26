@@ -8,7 +8,7 @@ Ranked roughly in order...
 3. Good performance. It's nice to have most of your optimization work done in advance!
 
 ## Why
-KACTL is very concise, but often slow, and I really dislike their interfaces. Atcoder Library is very fast and has nice interfaces, but is intended to be included as a black-box and infeasible to type out.
+KACTL is very concise, but I really dislike their interfaces. Atcoder Library is very fast and has nice interfaces, but is intended to be included as a black-box and infeasible to type out.
 
 Is this library better? Probably not.
 
