@@ -16,7 +16,7 @@ template<class T> struct extended_fenwick {
     }
 
     T sum(int l, int r) {
-        return sum(r) - sum(l - 1);
+        return sum(r) - (l > 0 ? sum(l - 1) : 0);
     }
 
     void add(int r, T v) {
