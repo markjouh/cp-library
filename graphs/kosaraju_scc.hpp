@@ -1,7 +1,7 @@
 /* Kosaraju's algorithm for SCCs.
- * comp[x] is the component id, numbered [0, sccs), of x.
- * c_adj represents the condensation graph through connections between component ids.
- * members[c] holds the original vertex numbers of the members of component c.
+ * `comp[x]` is the component id, numbered [0, sccs), of x.
+ * `c_adj` represents the condensation graph through connections between component ids.
+ * `members[c]` holds the original vertex numbers of the members of component c.
  * `kosaraju_scc(G)`: O(|G|)
  */
 
