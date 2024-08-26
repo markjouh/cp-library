@@ -45,7 +45,7 @@ template<class T> bool ckmax(T &a, const T b) {
 void solve() {
     int n, q;
     cin >> n >> q;
-    extended_fenwick<int> ft(n);
+    extended_fenwick<ll> ft(n);
     while (q--) {
         bool t;
         int l, r;
