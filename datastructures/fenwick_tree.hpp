@@ -1,6 +1,6 @@
 /* A data structure that supports point updates and range queries
  * or vice versa with modificiations.
- * `add(p, v)`: O(log(N))
+ * `add(p, v)`: O(log(p))
  * `sum(l, r)`: O(log(r))
  */
 
