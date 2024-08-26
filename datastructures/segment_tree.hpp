@@ -1,6 +1,6 @@
 /* A data structure that stores an array of objects with an identity element
  * and associative binary operator.
- * `segment_tree(A)`: O(|A|)
+ * `segment_tree(x)`: O(N)
  * `update(x, y)`, `query(x, y)`: O(log(N))
  */
 
