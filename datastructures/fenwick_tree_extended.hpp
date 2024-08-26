@@ -1,7 +1,3 @@
-/* Uses 2 fenwick trees to support both range updates and range queries.
- * `add(l, r, v)`, `sum(l, r)`: O(log(r))
- */
-
 #pragma once
 #include "fenwick_tree.hpp"
 
