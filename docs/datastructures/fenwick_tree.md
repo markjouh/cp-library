@@ -1,0 +1,1 @@
+A fenwick tree is a data structure that's generally used for $O(log(N))$ point updates and range sum queries.

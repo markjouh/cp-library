@@ -5,7 +5,7 @@ data:
     pages:
     - icon: ':heavy_check_mark:'
       path: datastructures/fenwick_tree.hpp
-      title: datastructures/fenwick_tree.hpp
+      title: Fenwick Tree (Binary Indexed Tree)
     - icon: ':heavy_check_mark:'
       path: datastructures/fenwick_tree_extended.hpp
       title: datastructures/fenwick_tree_extended.hpp
