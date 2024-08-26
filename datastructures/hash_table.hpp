@@ -1,6 +1,5 @@
-/* A hash table with a better constant than unordered_map, using gnu pbds.
- * The optional custom hash function provides better resistance to hacks
- * on Codeforces (shouldn't be a concern for USACO, thankfully).
+/* A hash table using gnu pbds, with optional anti-hack hash function.
+ * `operator[]`: O(1), but expensive
  */
 
 #include <ext/pb_ds/assoc_container.hpp>
