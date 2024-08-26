@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: datastructures/fenwick_tree.hpp
-    title: Fenwick Tree (Binary Indexed Tree)
+    title: Fenwick Tree
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
@@ -39,7 +39,7 @@ data:
   isVerificationFile: false
   path: datastructures/fenwick_tree_extended.hpp
   requiredBy: []
-  timestamp: '2024-08-26 17:42:39-04:00'
+  timestamp: '2024-08-26 18:36:05-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/aizu/dsl/rsq_and_raq.test.cpp

@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: datastructures/fenwick_tree.hpp
-    title: Fenwick Tree (Binary Indexed Tree)
+    title: Fenwick Tree
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -47,7 +47,7 @@ data:
   isVerificationFile: true
   path: verify/library_checker/data_structure/point_add_range_sum.test.cpp
   requiredBy: []
-  timestamp: '2024-08-26 17:42:39-04:00'
+  timestamp: '2024-08-26 18:36:05-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/library_checker/data_structure/point_add_range_sum.test.cpp
