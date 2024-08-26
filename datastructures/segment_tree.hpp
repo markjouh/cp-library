@@ -1,9 +1,3 @@
-/* A data structure that stores an array of objects with an identity element
- * and associative binary operator.
- * `segment_tree(x)`: O(N)
- * `update(x, y)`, `query(x, y)`: O(log(N))
- */
-
 #pragma once
 
 template<class T, T(*op)(T, T), T(*id)()> struct segment_tree {

@@ -1,9 +1,3 @@
-/* A data structure that stores an array of objects with an associative and
- * idempotent binary operator.
- * `sparse_table(x)`: O(N * log(N))
- * `query(l, r)`: O(1)
- */
-
 #pragma once
 
 template<class T, T(*op)(T, T)> struct sparse_table {

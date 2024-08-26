@@ -1,7 +1,3 @@
-/* Connectivity data structure limited to edge insertions.
- * `size(x)`, `find(x)`, `join(x, y)`: O(a(N)) = ~O(1)
- */
-
 #pragma once
 
 struct union_find {

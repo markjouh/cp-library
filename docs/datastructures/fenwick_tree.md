@@ -5,7 +5,7 @@ documentation_of: ../../datastructures/fenwick_tree.hpp
 
 ### Overview
 
-A fenwick tree is a data structure that stores an array and supports $O(\log{n})$ point updates and range queries. It's generally used for adds/sums.
+The fenwick tree is a data structure that stores an array and supports $O(\log{n})$ point updates and range queries. It's generally used for adds/sums.
 
 ### Operations
 
