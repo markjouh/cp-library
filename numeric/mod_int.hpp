@@ -1,6 +1,7 @@
-/* Type that performs arithmetic mod some large prime, which is a standard
- * expected output format for problems with answers that have impractically
- * high magnitude or required precision.
+/* Type that performs arithmetic mod some large prime.
+ * `mint::operator$` for $ in {+, -, *}: O(1)
+ * `mint::operator/`: O(log(MOD))
+ * `mint::pow(x, k)`: O(log(k))
  */
 
 const int MOD = 1000000007;
