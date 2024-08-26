@@ -25,7 +25,7 @@ jobs:
         pip install online-judge-verify-helper
 
     - name: Pull latest changes from gh-pages
-      run: git pull origin gh-pages
+      run: git pull origin gh-pages --no-rebase
 
     - name: Run tests
       env:
