@@ -1,5 +1,6 @@
-/* A square matrix, supporting multiplication in fairly fast O(N^3).
- * Useful for applying a linear transformation a large number of times.
+/* A square matrix, used for applying linear transformations.
+ * `operator*=`: O(N^3)
+ * `pow(matrix<T, N>, k)`: O(N^3 * log(k))
  */
 
 template<class T, int N> struct matrix {
