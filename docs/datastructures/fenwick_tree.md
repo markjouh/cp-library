@@ -1,4 +1,7 @@
-## Fenwick Tree
+---
+title: Fenwick Tree
+documentation_of: ../../datastructures/fenwick_tree.hpp
+---
 
 #### Overview
 
