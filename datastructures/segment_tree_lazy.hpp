@@ -1,5 +1,6 @@
 /* A standard segment tree with lazy updates.
- * Not generic or iterative for ease of modification - but might change later.
+ * `segment_tree(x)`: O(N)`
+ * `update(l, r, v)`, `query(l, r)`: O(log(r - l))
  */
 
 template<class T> struct lazy_segtree {
