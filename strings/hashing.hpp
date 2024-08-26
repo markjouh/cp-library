@@ -1,6 +1,8 @@
-/* Hashes strings (really any sequence) according to the scheme described in rng-58's blog.
+/* Hashes strings according to the scheme described in rng-58's blog.
  * https://rng-58.blogspot.com/2017/02/hashing-and-probability-of-collision.html
- * Also defines a basic hash type that allows substrings to be split off, joined, and compared in O(1).
+ * `str_hash(S)`: O(|S|)
+ * `str_hash::get(l, r)`: O(1), returns a hash object
+ * `hash`: An object representing a substring. Can be joined with `+` and compared in O(1), but not split further.
  */
 
 namespace hashing {
@@ -27,11 +29,11 @@ struct hash {
     }
 };
 
-struct seq_hash {
+struct str_hash {
     int len;
     vector<ll> hashes;
 
-    template<class T> seq_hash(const T &s) : len(sz(s)), hashes(len + 1) {
+    template<class T> str_hash(const T &s) : len(sz(s)), hashes(len + 1) {
         for (int i = 0; i < len; i++) {
             hashes[i + 1] = (__int128_t(hashes[i]) * H_BASE + s[i]) % H_MOD;
         }
