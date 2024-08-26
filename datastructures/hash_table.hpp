@@ -1,7 +1,3 @@
-/* A hash table using gnu pbds, with optional anti-hack hash function.
- * `operator[]`: O(1), but expensive
- */
-
 #pragma once
 #include <ext/pb_ds/assoc_container.hpp>
 

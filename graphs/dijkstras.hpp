@@ -1,8 +1,3 @@
-/* Given a weighted graph, computes and constructs the shortest paths from the
- * starting vertex.
- * `dijkstras((V, E))`: O((|V| + |E|) * log(|V|))
- */
-
 #pragma once
 
 template<class T> auto dijkstras(const vector<vector<pair<int, int>>> &g, int start = 0) {

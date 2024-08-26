@@ -1,8 +1,3 @@
-/* A square matrix, used for applying linear transformations.
- * `operator*=`: O(N^3)
- * `pow(matrix<T, N>, k)`: O(N^3 * log(k))
- */
-
 #pragma once
 #include "mod_int.hpp"
 

@@ -1,7 +1,3 @@
-/* Takes in rooted trees and generates perfect hashes of all subtrees in O(N * log(N)).
- * Two trees are isomorphic if and only if their hashes match.
- */
-
 #pragma once
 
 struct tree_isomorphism {

@@ -1,8 +1,3 @@
-/* Find the first true/last true value given a continous monotonic boolean function.
- * Implementation based off of https://codeforces.com/blog/entry/63085.
- * `bsmin(l, r, f)`, `bsmax(l, r, f)`: O(log(hi - lo) * T_f)
- */
-
 #pragma once
 
 template<class T> db bsmin_reals(db lo, db hi, T f) {

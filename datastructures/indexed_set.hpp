@@ -1,8 +1,3 @@
-/* An order statistic tree using gnu pbds.
- * `find_by_order(k)`: O(log(N)), finds the kth smallest element (0-indexed)
- * `order_of_key(v)`: O(log(N)), counts the number of elements < v in the set
- */
-
 #pragma once
 #include <ext/pb_ds/assoc_container.hpp>
 

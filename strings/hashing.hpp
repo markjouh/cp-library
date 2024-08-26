@@ -1,10 +1,3 @@
-/* Hashes strings according to the scheme described in rng-58's blog.
- * https://rng-58.blogspot.com/2017/02/hashing-and-probability-of-collision.html
- * `str_hash(S)`: O(|S|)
- * `str_hash::get(l, r)`: O(1), returns a hash object
- * `hash`: An object representing a substring. Can be joined with `+` and compared in O(1), but not split further.
- */
-
 #pragma once
 
 namespace hashing {

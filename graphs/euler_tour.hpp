@@ -1,8 +1,3 @@
-/* Given a rooted undirected tree, computes (tin, tout) such that if vertex v
- * were assigned to position tin[v] for all v, the interval [tin[v], tout[v])
- * would contain exactly the subtree rooted at v for all v.
- */
-
 #pragma once
 
 struct euler_tour {

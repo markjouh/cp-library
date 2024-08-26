@@ -1,9 +1,3 @@
-/* A standard prime sieve and number theory helpers.
- * `sieve(N)`: O(N * log(log(N)))
- * `factor(k)`: O(log(k)) if sieve is run up to k, O(sqrt(k) / log(k)) otherwise
- * `gen_divisors(k)`: O(#divisors), bounded by ~cbrt(k)
- */
-
 #pragma once
 
 namespace number_theory {

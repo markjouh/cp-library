@@ -1,8 +1,3 @@
-/* Given a rooted tree, computes binary lifts. TODO: arbitrary path aggregates?
- * `binary_lifts(G)`: O(|G| * log(|G|))
- * `anc(x, y)`, `lca(x, y)`: O(log(N))
- */
-
 #pragma once
 
 struct binary_lifts {

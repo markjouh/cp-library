@@ -1,8 +1,3 @@
-/* Builds a trie, a k-ary search tree where each node represents a distinct prefix.
- * `insert(S)`: O(|S|)
- * 'gen_graph()`: O(N), returns an adjacency list with the same structure as the trie
- */
-
 #pragma once
 
 struct string_trie {

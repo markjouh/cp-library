@@ -1,9 +1,3 @@
-/* Type that performs arithmetic mod some large prime.
- * `operator$` for $ in {+, -, *}: O(1)
- * `operator/`: O(log(MOD))
- * `pow(x, k)`: O(log(k))
- */
-
 #pragma once
 
 const int MOD = 1000000007;

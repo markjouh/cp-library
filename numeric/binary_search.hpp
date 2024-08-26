@@ -1,7 +1,3 @@
-/* Find the first true/last true value given a discrete monotonic boolean function.
- * `bsmin(l, r, f)`, `bsmax(l, r, f)`: O(log(hi - lo) * T_f)
- */
-
 #pragma once
 
 template<class T, class U> T bsmin(T lo, T hi, U f) {

@@ -1,12 +1,3 @@
-/* A functionally O(1) heap-like datastructure with good constant using hardware intrinsics.
- * Can be represented as a W-ary search tree with a fixed structure, where W is the word size.
- * Space complexity is O(V), where V is the largest value that can be inserted, or O(V / W) if
- * duplicate values are disallowed.
- * Time complexity of queries is O(log_W(V)).
- * This implementation is fixed at 2 layers, which makes it very fast O(1), but limits V
- * to 64^3 = 262144 (which should cover most practical uses, anyway).
- */
-
 #pragma once
 
 template<int N> struct quick_heap {
