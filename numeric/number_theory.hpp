@@ -1,7 +1,7 @@
 /* A standard prime sieve and number theory helpers.
- * Factoring N takes O(sqrt(N) / log(N)) if sieve is run up to sqrt(N),
- * and O(sqrt(N)) otherwise.
- * Generating all divisors is O(#divisors), which is approximately cbrt(N).
+ * `sieve(N)`: O(N * log(log(N)))
+ * `factor(k)`: O(log(k)) if sieve is run up to k, O(sqrt(k) / log(k)) otherwise
+ * `gen_divisors(k)`: O(#divisors), bounded by ~cbrt(k)
  */
 
 namespace number_theory {
