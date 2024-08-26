@@ -40,7 +40,7 @@ template<class T> bool ckmax(T &a, const T b) {
     return b > a ? a = b, 1 : 0;
 }
 
-#include "../../datastructures/fenwick_tree.hpp"
+#include "../../../datastructures/fenwick_tree.hpp"
 
 void solve() {
     int n, q;

@@ -1,4 +1,4 @@
-#define PROBLEM "https://judge.yosupo.jp/problem/unionfind"
+#define PROBLEM "https://judge.yosupo.jp/problem/scc"
 
 #include <algorithm>
 #include <array>
@@ -40,21 +40,25 @@ template<class T> bool ckmax(T &a, const T b) {
     return b > a ? a = b, 1 : 0;
 }
 
-#include "../../datastructures/union_find.hpp"
+#include "../../../graphs/kosaraju_scc.hpp"
 
 void solve() {
-    int n, q;
-    cin >> n >> q;
-    union_find uf(n);
-    while (q--) {
-        bool t;
-        int x, y;
-        cin >> t >> x >> y;
-        if (t) {
-            cout << (uf.find(x) == uf.find(y)) << '\n';
-        } else {
-            uf.join(x, y);
+    int n, m;
+    cin >> n >> m;
+    vector<vector<int>> g(n);
+    for (int i = 0; i < m; i++) {
+        int u, v;
+        cin >> u >> v;
+        g[u].push_back(v);
+    }
+    kosaraju_scc scc(g);
+    cout << scc.sccs << '\n';
+    for (int i = 0; i < scc.sccs; i++) {
+        cout << sz(scc.members[i]) << ' ';
+        for (int x : scc.members[i]) {
+            cout << x << ' ';
         }
+        cout << '\n';
     }
 }
 

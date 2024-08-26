@@ -1,4 +1,4 @@
-#define PROBLEM "https://judge.yosupo.jp/problem/scc"
+#define PROBLEM "https://judge.yosupo.jp/problem/lca"
 
 #include <algorithm>
 #include <array>
@@ -40,25 +40,22 @@ template<class T> bool ckmax(T &a, const T b) {
     return b > a ? a = b, 1 : 0;
 }
 
-#include "../../graphs/kosaraju_scc.hpp"
+#include "../../../graphs/binary_lifts.hpp"
 
 void solve() {
-    int n, m;
-    cin >> n >> m;
+    int n, q;
+    cin >> n >> q;
     vector<vector<int>> g(n);
-    for (int i = 0; i < m; i++) {
+    for (int i = 1; i < n; i++) {
+        int p;
+        cin >> p;
+        g[p].push_back(i);
+    }
+    binary_lifts bl(g);
+    while (q--) {
         int u, v;
         cin >> u >> v;
-        g[u].push_back(v);
-    }
-    kosaraju_scc scc(g);
-    cout << scc.sccs << '\n';
-    for (int i = 0; i < scc.sccs; i++) {
-        cout << sz(scc.members[i]) << ' ';
-        for (int x : scc.members[i]) {
-            cout << x << ' ';
-        }
-        cout << '\n';
+        cout << bl.lca(u, v) << '\n';
     }
 }
 

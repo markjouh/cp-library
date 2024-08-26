@@ -25,8 +25,8 @@ void sieve(int n) {
     }
 }
 
-vector<pair<int, int>> factor(int num) {
-    vector<pair<int, int>> res;
+template<class T> vector<pair<T, int>> factor(T num) {
+    vector<pair<T, int>> res;
 
     if (num <= sz(mn_fac) - 1) {
         while (num > 1) {
@@ -59,11 +59,11 @@ vector<pair<int, int>> factor(int num) {
     return res;
 }
 
-vector<int> gen_divisors(vector<pair<int, int>> prime_facs) {
-    vector<int> res = {1};
+template<class T> vector<T> gen_divisors(vector<pair<T, int>> prime_facs) {
+    vector<T> res = {1};
     for (auto [p, exp] : prime_facs) {
         const int prev_layer = sz(res);
-        int coeff = 1;
+        T coeff = 1;
         for (int i = 0; i < exp; i++) {
             coeff *= p;
             for (int j = 0; j < prev_layer; j++) {
