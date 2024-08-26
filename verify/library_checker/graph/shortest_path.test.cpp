@@ -65,6 +65,8 @@ void solve() {
         for (auto [u, v] : path) {
             cout << u << ' ' << v << '\n';
         }
+    } else {
+        cout << -1 << '\n';
     }
 }
 
