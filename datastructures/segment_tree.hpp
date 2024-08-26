@@ -1,9 +1,7 @@
 /* A data structure that stores an array of objects with an identity element
  * and associative binary operator.
- * Supports arbitrary point updates, as well as range aggregates, in O(log(N)).
- * This bottom-up implementation stores the tree as a forest of binary trees
- * for efficiency, which should be functionally identical for the purposes
- * of the supported operations.
+ * `update(p, v)`: O(log(N))
+ * `query(l, r)`: O(log(r - l))
  */
 
 template<class T, T(*op)(T, T), T(*id)()> struct segment_tree {
