@@ -35,3 +35,8 @@ template<class T> struct fenwick_tree {
         return sum(r) - sum(l - 1);
     }
 };
+
+/**
+ * @brief Fenwick Tree (Binary Indexed Tree)
+ * @docs docs/datastructures/fenwick_tree.md
+ */
