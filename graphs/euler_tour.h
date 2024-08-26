@@ -3,21 +3,25 @@
  * would contain exactly the subtree rooted at v for all v.
  */
 
-pair<vector<int>, vector<int>> euler_tour(const vector<vector<int>> &g, int root = 0) {
-    pair<vector<int>, vector<int>> res;
-    res.first = res.second = vector<int>(sz(g));
-    int time = 0;
+struct euler_tour {
+public:
+    vector<int> tin, tout;
 
-    auto dfs = [&](auto &&self, int u, int par) -> void {
-        res.first[u] = time++;
-        for (int v : g[u]) {
+    euler_tour(const vector<vector<int>> &g, int root = 0) : adj(g) {
+        dfs(root, -1);
+    }
+
+private:
+    int time = 0;
+    const vector<vector<int>> &adj;
+
+    void dfs(int u, int par) {
+        tin[u] = time++;
+        for (int v : adj[u]) {
             if (v != par) {
-                self(self, v, u);
+                dfs(v, u);
             }
         }
-        res.second[u] = time;
-    };
-
-    dfs(dfs, root, -1);
-    return res;
-}
+        tout[u] = time;
+    }
+};
