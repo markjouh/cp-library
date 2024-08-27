@@ -15,9 +15,6 @@ data:
     - icon: ':warning:'
       path: datastructures/indexed_set.hpp
       title: datastructures/indexed_set.hpp
-    - icon: ':warning:'
-      path: datastructures/quick_heap.hpp
-      title: datastructures/quick_heap.hpp
     - icon: ':heavy_check_mark:'
       path: datastructures/segment_tree.hpp
       title: datastructures/segment_tree.hpp
@@ -30,6 +27,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: datastructures/union_find.hpp
       title: datastructures/union_find.hpp
+    - icon: ':x:'
+      path: datastructures/w_ary_tree.hpp
+      title: datastructures/w_ary_tree.hpp
   - name: graphs
     pages:
     - icon: ':heavy_check_mark:'
@@ -77,7 +77,7 @@ data:
       title: strings/string_trie.hpp
   - name: verify
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: verify/boilerplate.hpp
       title: verify/boilerplate.hpp
   verificationCategories:
@@ -86,6 +86,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/aizu/alds1/binary_search.test.cpp
       title: verify/aizu/alds1/binary_search.test.cpp
+    - icon: ':x:'
+      path: verify/aizu/alds1/priority_queue.test.cpp
+      title: verify/aizu/alds1/priority_queue.test.cpp
   - name: verify/aizu/dsl
     pages:
     - icon: ':heavy_check_mark:'

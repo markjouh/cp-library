@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: graphs/binary_lifts.hpp
     title: graphs/binary_lifts.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: verify/boilerplate.hpp
     title: verify/boilerplate.hpp
   _extendedRequiredBy: []

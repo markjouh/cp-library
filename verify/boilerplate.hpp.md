@@ -6,6 +6,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/aizu/alds1/binary_search.test.cpp
     title: verify/aizu/alds1/binary_search.test.cpp
+  - icon: ':x:'
+    path: verify/aizu/alds1/priority_queue.test.cpp
+    title: verify/aizu/alds1/priority_queue.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/aizu/dsl/rmq.test.cpp
     title: verify/aizu/dsl/rmq.test.cpp
@@ -42,9 +45,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/library_checker/tree/vertex_add_subtree_sum.test.cpp
     title: verify/library_checker/tree/vertex_add_subtree_sum.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/onlinejudge_verify/documentation/build.py\"\
@@ -74,8 +77,9 @@ data:
   path: verify/boilerplate.hpp
   requiredBy: []
   timestamp: '2024-08-26 21:14:45-04:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
+  - verify/aizu/alds1/priority_queue.test.cpp
   - verify/aizu/alds1/binary_search.test.cpp
   - verify/aizu/dsl/rmq.test.cpp
   - verify/aizu/dsl/rsq_and_raq.test.cpp

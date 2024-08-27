@@ -2,15 +2,18 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _extendedVerifiedWith:
+  - icon: ':x:'
+    path: verify/aizu/alds1/priority_queue.test.cpp
+    title: verify/aizu/alds1/priority_queue.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"datastructures/quick_heap.hpp\"\n\ntemplate<int N> struct\
-    \ quick_heap {\n    uint32_t freq[N];\n    uint64_t l0[(N >> 6) + 1], l1[(N >>\
-    \ 12) + 1], root;\n\n    quick_heap() {\n        memset(freq, 0, sizeof freq);\n\
+  bundledCode: "#line 2 \"datastructures/w_ary_tree.hpp\"\n\ntemplate<int N> struct\
+    \ w_ary_tree {\n    uint32_t freq[N];\n    uint64_t l0[(N >> 6) + 1], l1[(N >>\
+    \ 12) + 1], root;\n\n    w_ary_tree() {\n        memset(freq, 0, sizeof freq);\n\
     \        memset(l0, 0, sizeof l0);\n        memset(l1, 0, sizeof l1);\n      \
     \  root = 0;\n    }\n\n    void insert(int x) {\n        freq[x]++;\n        if\
     \ (freq[x] == 1) {\n            l0[x >> 6] |= 1ull << (x & 63);\n            if\
@@ -28,8 +31,8 @@ data:
     \    int get_max() {\n        uint32_t p = 63 - __builtin_clzll(root);\n     \
     \   p = (p << 6) + 63 - __builtin_clzll(l1[p]);\n        p = (p << 6) + 63 - __builtin_clzll(l0[p]);\n\
     \        return p;\n    }\n};\n"
-  code: "#pragma once\n\ntemplate<int N> struct quick_heap {\n    uint32_t freq[N];\n\
-    \    uint64_t l0[(N >> 6) + 1], l1[(N >> 12) + 1], root;\n\n    quick_heap() {\n\
+  code: "#pragma once\n\ntemplate<int N> struct w_ary_tree {\n    uint32_t freq[N];\n\
+    \    uint64_t l0[(N >> 6) + 1], l1[(N >> 12) + 1], root;\n\n    w_ary_tree() {\n\
     \        memset(freq, 0, sizeof freq);\n        memset(l0, 0, sizeof l0);\n  \
     \      memset(l1, 0, sizeof l1);\n        root = 0;\n    }\n\n    void insert(int\
     \ x) {\n        freq[x]++;\n        if (freq[x] == 1) {\n            l0[x >> 6]\
@@ -49,15 +52,16 @@ data:
     \ - __builtin_clzll(l0[p]);\n        return p;\n    }\n};\n"
   dependsOn: []
   isVerificationFile: false
-  path: datastructures/quick_heap.hpp
+  path: datastructures/w_ary_tree.hpp
   requiredBy: []
-  timestamp: '2024-08-26 19:37:00-04:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
-documentation_of: datastructures/quick_heap.hpp
+  timestamp: '2024-08-26 22:02:11-04:00'
+  verificationStatus: LIBRARY_ALL_WA
+  verifiedWith:
+  - verify/aizu/alds1/priority_queue.test.cpp
+documentation_of: datastructures/w_ary_tree.hpp
 layout: document
 redirect_from:
-- /library/datastructures/quick_heap.hpp
-- /library/datastructures/quick_heap.hpp.html
-title: datastructures/quick_heap.hpp
+- /library/datastructures/w_ary_tree.hpp
+- /library/datastructures/w_ary_tree.hpp.html
+title: datastructures/w_ary_tree.hpp
 ---

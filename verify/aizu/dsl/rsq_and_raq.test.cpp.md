@@ -7,7 +7,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: datastructures/fenwick_tree_extended.hpp
     title: Range Add Range Query Fenwick Tree
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: verify/boilerplate.hpp
     title: verify/boilerplate.hpp
   _extendedRequiredBy: []

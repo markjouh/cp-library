@@ -1,22 +1,22 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: graphs/kosaraju_scc.hpp
-    title: graphs/kosaraju_scc.hpp
+  - icon: ':x:'
+    path: datastructures/w_ary_tree.hpp
+    title: datastructures/w_ary_tree.hpp
   - icon: ':question:'
     path: verify/boilerplate.hpp
     title: verify/boilerplate.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.yosupo.jp/problem/scc
+    PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_4_B
     links:
-    - https://judge.yosupo.jp/problem/scc
+    - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_4_B
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
     \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n          \
@@ -29,27 +29,31 @@ data:
     \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
     \ verify/boilerplate.hpp: line 21: unable to process #include in #if / #ifdef\
     \ / #ifndef other than include guards\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/scc\"\n\n#include \"../../boilerplate.hpp\"\
-    \n#include \"../../../graphs/kosaraju_scc.hpp\"\n\nint main() {\n    int n, m;\n\
-    \    cin >> n >> m;\n    vector<vector<int>> g(n);\n    for (int i = 0; i < m;\
-    \ i++) {\n        int u, v;\n        cin >> u >> v;\n        g[u].push_back(v);\n\
-    \    }\n    kosaraju_scc scc(g);\n    cout << scc.sccs << '\\n';\n    for (int\
-    \ i = 0; i < scc.sccs; i++) {\n        cout << sz(scc.members[i]) << ' ';\n  \
-    \      for (int x : scc.members[i]) {\n            cout << x << ' ';\n       \
-    \ }\n        cout << '\\n';\n    }\n}"
+  code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_4_B\"\
+    \n\n#include \"../../boilerplate.hpp\"\n#include \"../../../datastructures/w_ary_tree.hpp\"\
+    \n\nint main() {\n    string s;\n    int x;\n    vector<int> queries;\n    vector<int>\
+    \ vals;\n    while (cin >> s) {\n        if (s == \"end\") {\n            break;\n\
+    \        }\n        if (s == \"insert\") {\n            cin >> x;\n          \
+    \  queries.push_back(x);\n            vals.push_back(x);\n        } else {\n \
+    \           queries.push_back(-1);\n        }\n    }\n    sort(all(vals));\n \
+    \   vals.resize(unique(all(vals)) - begin(vals));\n    w_ary_tree<2000000> ds;\n\
+    \    for (auto x : queries) {\n        if (x == -1) {\n            int mx_idx\
+    \ = ds.get_max();\n            cout << vals[mx_idx] << '\\n';\n            ds.extract(mx_idx);\n\
+    \        } else {\n            ds.insert(lower_bound(all(vals), x) - begin(vals));\n\
+    \        }\n    }\n}"
   dependsOn:
   - verify/boilerplate.hpp
-  - graphs/kosaraju_scc.hpp
+  - datastructures/w_ary_tree.hpp
   isVerificationFile: true
-  path: verify/library_checker/graph/scc.test.cpp
+  path: verify/aizu/alds1/priority_queue.test.cpp
   requiredBy: []
-  timestamp: '2024-08-26 21:14:45-04:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2024-08-26 22:02:11-04:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
-documentation_of: verify/library_checker/graph/scc.test.cpp
+documentation_of: verify/aizu/alds1/priority_queue.test.cpp
 layout: document
 redirect_from:
-- /verify/verify/library_checker/graph/scc.test.cpp
-- /verify/verify/library_checker/graph/scc.test.cpp.html
-title: verify/library_checker/graph/scc.test.cpp
+- /verify/verify/aizu/alds1/priority_queue.test.cpp
+- /verify/verify/aizu/alds1/priority_queue.test.cpp.html
+title: verify/aizu/alds1/priority_queue.test.cpp
 ---

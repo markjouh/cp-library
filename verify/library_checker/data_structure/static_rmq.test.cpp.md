@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: datastructures/sparse_table.hpp
     title: Sparse Table
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: verify/boilerplate.hpp
     title: verify/boilerplate.hpp
   _extendedRequiredBy: []
