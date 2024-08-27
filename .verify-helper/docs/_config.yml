@@ -1,2 +1,2 @@
-exclude: ['local']
+exclude: ['local', 'boilerplate.hpp']
 title: Mark's Library

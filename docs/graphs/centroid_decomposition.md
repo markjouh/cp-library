@@ -5,7 +5,7 @@ documentation_of: ../../graphs/centroid_decomposition.hpp
 
 ### Overview
 
-A centroid of a tree is a vertex that splits the tree into subtrees of size $\leq \frac{n}{2}$ if removed. By this property, recursively splitting a tree by a centroid creates $O(\log{n})$ layers of subgraphs of $O(n)$ total size. Centroid decomposition is a divide and conquer technique for trees that uses this idea.
+A centroid of a tree is a vertex that splits the tree into subtrees of size $\leq \frac{n}{2}$ if removed. By this property, recursively splitting a tree by a centroid creates $O(\log{n})$ layers of subgraphs of $O(n)$ total size each. Centroid decomposition is a divide and conquer technique for trees that uses this idea.
 
 I can't list all its possible applications, but this is a common usage I've personally encountered often.
 
