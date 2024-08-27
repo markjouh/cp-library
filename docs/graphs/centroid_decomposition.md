@@ -1,6 +1,6 @@
 ---
 title: Centroid Decomposition
-documentation_of: ../../graphs/centroid_decomp.hpp
+documentation_of: ../../graphs/centroid_decomposition.hpp
 ---
 
 ### Overview
