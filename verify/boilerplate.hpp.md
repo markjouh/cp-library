@@ -10,6 +10,9 @@ data:
     path: verify/aizu/dsl/rsq_and_raq.test.cpp
     title: verify/aizu/dsl/rsq_and_raq.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/library_checker/data_structure/associative_array.test.cpp
+    title: verify/library_checker/data_structure/associative_array.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/library_checker/data_structure/point_add_range_sum.test.cpp
     title: verify/library_checker/data_structure/point_add_range_sum.test.cpp
   - icon: ':heavy_check_mark:'
@@ -33,6 +36,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/library_checker/tree/rooted_tree_isomorphism.test.cpp
     title: verify/library_checker/tree/rooted_tree_isomorphism.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/library_checker/tree/vertex_add_subtree_sum.test.cpp
+    title: verify/library_checker/tree/vertex_add_subtree_sum.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -71,11 +77,13 @@ data:
   - verify/aizu/dsl/rsq_and_raq.test.cpp
   - verify/library_checker/tree/lca.test.cpp
   - verify/library_checker/tree/rooted_tree_isomorphism.test.cpp
+  - verify/library_checker/tree/vertex_add_subtree_sum.test.cpp
   - verify/library_checker/graph/shortest_path.test.cpp
   - verify/library_checker/graph/scc.test.cpp
   - verify/library_checker/number_theory/enumerate_primes.test.cpp
   - verify/library_checker/data_structure/point_add_range_sum.test.cpp
   - verify/library_checker/data_structure/unionfind.test.cpp
+  - verify/library_checker/data_structure/associative_array.test.cpp
   - verify/library_checker/data_structure/static_rmq.test.cpp
 documentation_of: verify/boilerplate.hpp
 layout: document

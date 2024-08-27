@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/library_checker/data_structure/associative_array.test.cpp
+    title: verify/library_checker/data_structure/associative_array.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"datastructures/hash_table.hpp\"\n#include <ext/pb_ds/assoc_container.hpp>\n\
@@ -28,8 +31,9 @@ data:
   path: datastructures/hash_table.hpp
   requiredBy: []
   timestamp: '2024-08-26 19:37:00-04:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - verify/library_checker/data_structure/associative_array.test.cpp
 documentation_of: datastructures/hash_table.hpp
 layout: document
 redirect_from:

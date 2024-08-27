@@ -9,7 +9,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: datastructures/fenwick_tree_extended.hpp
       title: Range Add Range Query Fenwick Tree
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: datastructures/hash_table.hpp
       title: datastructures/hash_table.hpp
     - icon: ':warning:'
@@ -41,7 +41,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: graphs/dijkstras.hpp
       title: graphs/dijkstras.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: graphs/euler_tour.hpp
       title: graphs/euler_tour.hpp
     - icon: ':heavy_check_mark:'
@@ -92,6 +92,9 @@ data:
   - name: verify/library_checker/data_structure
     pages:
     - icon: ':heavy_check_mark:'
+      path: verify/library_checker/data_structure/associative_array.test.cpp
+      title: verify/library_checker/data_structure/associative_array.test.cpp
+    - icon: ':heavy_check_mark:'
       path: verify/library_checker/data_structure/point_add_range_sum.test.cpp
       title: verify/library_checker/data_structure/point_add_range_sum.test.cpp
     - icon: ':heavy_check_mark:'
@@ -121,5 +124,8 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/library_checker/tree/rooted_tree_isomorphism.test.cpp
       title: verify/library_checker/tree/rooted_tree_isomorphism.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/library_checker/tree/vertex_add_subtree_sum.test.cpp
+      title: verify/library_checker/tree/vertex_add_subtree_sum.test.cpp
 layout: toppage
 ---

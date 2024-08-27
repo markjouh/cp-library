@@ -12,6 +12,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/library_checker/data_structure/point_add_range_sum.test.cpp
     title: verify/library_checker/data_structure/point_add_range_sum.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/library_checker/tree/vertex_add_subtree_sum.test.cpp
+    title: verify/library_checker/tree/vertex_add_subtree_sum.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -48,6 +51,7 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/aizu/dsl/rsq_and_raq.test.cpp
+  - verify/library_checker/tree/vertex_add_subtree_sum.test.cpp
   - verify/library_checker/data_structure/point_add_range_sum.test.cpp
 documentation_of: datastructures/fenwick_tree.hpp
 layout: document
