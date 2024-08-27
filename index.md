@@ -26,7 +26,7 @@ data:
       title: Sparse Table
     - icon: ':heavy_check_mark:'
       path: datastructures/union_find.hpp
-      title: datastructures/union_find.hpp
+      title: Union Find
     - icon: ':heavy_check_mark:'
       path: datastructures/w_ary_tree.hpp
       title: datastructures/w_ary_tree.hpp
