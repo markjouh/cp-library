@@ -1,4 +1,4 @@
-#define PROBLEM "https://judge.yosupo.jp/problem/number_of_substrings"
+#define PROBLEM "https://judge.yosupo.jp/problem/enumerate_palindromes"
 
 #include "../../boilerplate.hpp"
 #include "../../../numeric/binary_search.hpp"
