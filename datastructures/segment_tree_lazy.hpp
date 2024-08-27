@@ -2,11 +2,11 @@
 
 struct lazy_segtree {
     using item_t = pair<int, int>;
-    using lazy_t = int;
+    using upd_t = int;
 
     // Identity element, null update tag
     const item_t id = {INF, 1};
-    const lazy_t lz_id = 0;
+    const upd_t lz_id = 0;
 
     // Associative merge operation
     item_t merge(item_t a, item_t b) {
@@ -18,7 +18,7 @@ struct lazy_segtree {
     }
 
     // Applying a lazy tag to a full segment
-    void apply(int x, lazy_t v) {
+    void apply(int x, upd_t v) {
         lazy[x] += v;
     }
 
@@ -34,27 +34,24 @@ struct lazy_segtree {
         }
     }
 
-    lazy_segtree(int x) {
-        init(x);
-    }
-
+    lazy_segtree(int x) { init(x); }
     lazy_segtree(const vector<item_t> &a) {
         init(sz(a));
         build(a, 0, 0, n);
     }
 
-    item_t query(int l, int r) {
-        return query(l, r + 1, 0, 0, n);
-    }
+    item_t query() { return tree[0]; }
+    item_t query(int p) { return query(p, p + 1, 0, 0, n); }
+    item_t query(int l, int r) { return query(l, r + 1, 0, 0, n); }
 
-    void update(int l, int r, int v) {
-        update(l, r + 1, v, 0, 0, n);
-    }
+    void update(upd_t v) { update(0, n, v, 0, 0, n); }
+    void update(int p, upd_t v) { update(p, p + 1, v, 0, 0, n); }
+    void update(int l, int r, upd_t v) { update(l, r + 1, v, 0, 0, n); }
 
 private:
     int n;
     vector<item_t> tree;
-    vector<lazy_t> lazy;
+    vector<upd_t> lazy;
 
     void init(int sz) {
         n = 1;
