@@ -36,6 +36,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/library_checker/number_theory/enumerate_primes.test.cpp
     title: verify/library_checker/number_theory/enumerate_primes.test.cpp
+  - icon: ':x:'
+    path: verify/library_checker/string/enumerate_palindromes.test.cpp
+    title: verify/library_checker/string/enumerate_palindromes.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/library_checker/tree/lca.test.cpp
     title: verify/library_checker/tree/lca.test.cpp
@@ -45,9 +48,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/library_checker/tree/vertex_add_subtree_sum.test.cpp
     title: verify/library_checker/tree/vertex_add_subtree_sum.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/onlinejudge_verify/documentation/build.py\"\
@@ -77,7 +80,7 @@ data:
   path: verify/boilerplate.hpp
   requiredBy: []
   timestamp: '2024-08-26 21:14:45-04:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/aizu/alds1/priority_queue.test.cpp
   - verify/aizu/alds1/binary_search.test.cpp
@@ -86,6 +89,7 @@ data:
   - verify/library_checker/tree/lca.test.cpp
   - verify/library_checker/tree/rooted_tree_isomorphism.test.cpp
   - verify/library_checker/tree/vertex_add_subtree_sum.test.cpp
+  - verify/library_checker/string/enumerate_palindromes.test.cpp
   - verify/library_checker/graph/shortest_path.test.cpp
   - verify/library_checker/graph/scc.test.cpp
   - verify/library_checker/number_theory/enumerate_primes.test.cpp

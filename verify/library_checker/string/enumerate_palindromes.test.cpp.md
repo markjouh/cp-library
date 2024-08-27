@@ -4,19 +4,22 @@ data:
   - icon: ':question:'
     path: numeric/binary_search.hpp
     title: numeric/binary_search.hpp
+  - icon: ':x:'
+    path: strings/hashing.hpp
+    title: strings/hashing.hpp
   - icon: ':question:'
     path: verify/boilerplate.hpp
     title: verify/boilerplate.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_4_B
+    PROBLEM: https://judge.yosupo.jp/problem/enumerate_palindromes
     links:
-    - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_4_B
+    - https://judge.yosupo.jp/problem/enumerate_palindromes
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
     \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n          \
@@ -29,27 +32,32 @@ data:
     \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
     \ verify/boilerplate.hpp: line 21: unable to process #include in #if / #ifdef\
     \ / #ifndef other than include guards\n"
-  code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_4_B\"\
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/enumerate_palindromes\"\
     \n\n#include \"../../boilerplate.hpp\"\n#include \"../../../numeric/binary_search.hpp\"\
-    \n\nint main() {\n    int n;\n    cin >> n;\n    vector<int> a(n);\n    for (int\
-    \ i = 0; i < n; i++) {\n        cin >> a[i];\n    }\n    sort(all(a));\n    int\
-    \ q;\n    cin >> q;\n    int ans = 0;\n    while (q--) {\n        int x;\n   \
-    \     cin >> x;\n        int idx = bsmin(0, n - 1, [&](int p) {\n            return\
-    \ a[p] >= x;\n        });\n        ans += idx != n && a[idx] == x;\n    }\n  \
-    \  cout << ans << '\\n';\n}"
+    \n#include \"../../../strings/hashing.hpp\"\n\nusing namespace hashing;\n\nint\
+    \ main() {\n    string s;\n    cin >> s;\n    string rev = s;\n    reverse(all(rev));\n\
+    \    str_hash a(s), b(rev);\n    const int n = sz(s);\n    vector<int> ans(2 *\
+    \ n - 1);\n    for (int i = 0; i < n; i++) {\n        ans[2 * i] = 2 * bsmax(0,\
+    \ min(i, n - i - 1), [&](int d) {\n            return a.get(i - d, i) == b.get(n\
+    \ - i - 1 - d, n - i - 1);\n        }) + 1;\n    }\n    for (int i = 0; i < n\
+    \ - 1; i++) {\n        ans[2 * i + 1] = 2 * bsmax(0, min(i, n - i - 2), [&](int\
+    \ d) {\n            return a.get(i - d, i) == b.get(n - i - 2 - d, n - i - 2);\n\
+    \        });\n    }\n    for (int i = 0; i < 2 * n - 1; i++) {\n        cout <<\
+    \ ans[i] << ' ';\n    }\n    cout << '\\n';\n}"
   dependsOn:
   - verify/boilerplate.hpp
   - numeric/binary_search.hpp
+  - strings/hashing.hpp
   isVerificationFile: true
-  path: verify/aizu/alds1/binary_search.test.cpp
+  path: verify/library_checker/string/enumerate_palindromes.test.cpp
   requiredBy: []
-  timestamp: '2024-08-26 21:48:55-04:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2024-08-26 22:20:15-04:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
-documentation_of: verify/aizu/alds1/binary_search.test.cpp
+documentation_of: verify/library_checker/string/enumerate_palindromes.test.cpp
 layout: document
 redirect_from:
-- /verify/verify/aizu/alds1/binary_search.test.cpp
-- /verify/verify/aizu/alds1/binary_search.test.cpp.html
-title: verify/aizu/alds1/binary_search.test.cpp
+- /verify/verify/library_checker/string/enumerate_palindromes.test.cpp
+- /verify/verify/library_checker/string/enumerate_palindromes.test.cpp.html
+title: verify/library_checker/string/enumerate_palindromes.test.cpp
 ---
