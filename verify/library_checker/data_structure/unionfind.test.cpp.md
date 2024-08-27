@@ -4,9 +4,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: datastructures/union_find.hpp
     title: datastructures/union_find.hpp
-  - icon: ':heavy_check_mark:'
-    path: verify/boilerplate.hpp
-    title: verify/boilerplate.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -36,7 +33,6 @@ data:
     \ y;\n        if (t) {\n            cout << (uf.find(x) == uf.find(y)) << '\\\
     n';\n        } else {\n            uf.join(x, y);\n        }\n    }\n}"
   dependsOn:
-  - verify/boilerplate.hpp
   - datastructures/union_find.hpp
   isVerificationFile: true
   path: verify/library_checker/data_structure/unionfind.test.cpp

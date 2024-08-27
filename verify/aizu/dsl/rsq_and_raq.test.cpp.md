@@ -7,9 +7,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: datastructures/fenwick_tree_extended.hpp
     title: Range Add Range Query Fenwick Tree
-  - icon: ':heavy_check_mark:'
-    path: verify/boilerplate.hpp
-    title: verify/boilerplate.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -40,7 +37,6 @@ data:
     \ r) << '\\n';\n        } else {\n            int x;\n            cin >> x;\n\
     \            ft.add(l, r, x);\n        }\n    }\n}"
   dependsOn:
-  - verify/boilerplate.hpp
   - datastructures/fenwick_tree_extended.hpp
   - datastructures/fenwick_tree.hpp
   isVerificationFile: true

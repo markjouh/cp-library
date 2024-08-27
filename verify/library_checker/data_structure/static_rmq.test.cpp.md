@@ -4,9 +4,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: datastructures/sparse_table.hpp
     title: Sparse Table
-  - icon: ':heavy_check_mark:'
-    path: verify/boilerplate.hpp
-    title: verify/boilerplate.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -37,7 +34,6 @@ data:
     \    while (q--) {\n        int l, r;\n        cin >> l >> r;\n        cout <<\
     \ rmq.query(l, r - 1) << '\\n';\n    }\n}"
   dependsOn:
-  - verify/boilerplate.hpp
   - datastructures/sparse_table.hpp
   isVerificationFile: true
   path: verify/library_checker/data_structure/static_rmq.test.cpp

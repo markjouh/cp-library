@@ -4,9 +4,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: numeric/binary_search.hpp
     title: numeric/binary_search.hpp
-  - icon: ':heavy_check_mark:'
-    path: verify/boilerplate.hpp
-    title: verify/boilerplate.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -38,7 +35,6 @@ data:
     \ a[p] >= x;\n        });\n        ans += idx != n && a[idx] == x;\n    }\n  \
     \  cout << ans << '\\n';\n}"
   dependsOn:
-  - verify/boilerplate.hpp
   - numeric/binary_search.hpp
   isVerificationFile: true
   path: verify/aizu/alds1/binary_search.test.cpp

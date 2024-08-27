@@ -7,9 +7,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: strings/hashing.hpp
     title: strings/hashing.hpp
-  - icon: ':heavy_check_mark:'
-    path: verify/boilerplate.hpp
-    title: verify/boilerplate.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -45,7 +42,6 @@ data:
     \        }) + 2;\n    }\n    for (int i = 0; i < 2 * n - 1; i++) {\n        cout\
     \ << ans[i] << ' ';\n    }\n    cout << '\\n';\n}"
   dependsOn:
-  - verify/boilerplate.hpp
   - numeric/binary_search.hpp
   - strings/hashing.hpp
   isVerificationFile: true

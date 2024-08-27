@@ -4,9 +4,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: graphs/dijkstras.hpp
     title: graphs/dijkstras.hpp
-  - icon: ':heavy_check_mark:'
-    path: verify/boilerplate.hpp
-    title: verify/boilerplate.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -42,7 +39,6 @@ data:
     \    cout << u << ' ' << v << '\\n';\n        }\n    } else {\n        cout <<\
     \ -1 << '\\n';\n    }\n}"
   dependsOn:
-  - verify/boilerplate.hpp
   - graphs/dijkstras.hpp
   isVerificationFile: true
   path: verify/library_checker/graph/shortest_path.test.cpp

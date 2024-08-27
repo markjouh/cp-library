@@ -4,9 +4,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: graphs/tree_isomorphism.hpp
     title: graphs/tree_isomorphism.hpp
-  - icon: ':heavy_check_mark:'
-    path: verify/boilerplate.hpp
-    title: verify/boilerplate.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -37,7 +34,6 @@ data:
     \    cout << sz(iso.hashes) << '\\n';\n    for (int x : res) {\n        cout <<\
     \ x << ' ';\n    }\n    cout << '\\n';\n}"
   dependsOn:
-  - verify/boilerplate.hpp
   - graphs/tree_isomorphism.hpp
   isVerificationFile: true
   path: verify/library_checker/tree/rooted_tree_isomorphism.test.cpp

@@ -4,9 +4,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: numeric/number_theory.hpp
     title: numeric/number_theory.hpp
-  - icon: ':heavy_check_mark:'
-    path: verify/boilerplate.hpp
-    title: verify/boilerplate.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -37,7 +34,6 @@ data:
     \    }\n    cout << sz(res) << '\\n';\n    for (int x : res) {\n        cout <<\
     \ x << ' ';\n    }\n    cout << '\\n';\n}"
   dependsOn:
-  - verify/boilerplate.hpp
   - numeric/number_theory.hpp
   isVerificationFile: true
   path: verify/library_checker/number_theory/enumerate_primes.test.cpp

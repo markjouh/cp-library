@@ -4,9 +4,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: datastructures/fenwick_tree.hpp
     title: Fenwick Tree
-  - icon: ':heavy_check_mark:'
-    path: verify/boilerplate.hpp
-    title: verify/boilerplate.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -37,7 +34,6 @@ data:
     \ t >> x >> y;\n        if (t) {\n            cout << ft.sum(x, y - 1) << '\\\
     n';\n        } else {\n            ft.add(x, y);\n        }\n    }\n}"
   dependsOn:
-  - verify/boilerplate.hpp
   - datastructures/fenwick_tree.hpp
   isVerificationFile: true
   path: verify/library_checker/data_structure/point_add_range_sum.test.cpp

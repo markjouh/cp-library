@@ -4,9 +4,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: datastructures/hash_table.hpp
     title: datastructures/hash_table.hpp
-  - icon: ':heavy_check_mark:'
-    path: verify/boilerplate.hpp
-    title: verify/boilerplate.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -36,7 +33,6 @@ data:
     \ (t) {\n            cout << mp[k] << '\\n';\n        } else {\n            ll\
     \ v;\n            cin >> v;\n            mp[k] = v;\n        }\n    }\n}"
   dependsOn:
-  - verify/boilerplate.hpp
   - datastructures/hash_table.hpp
   isVerificationFile: true
   path: verify/library_checker/data_structure/associative_array.test.cpp

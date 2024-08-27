@@ -4,9 +4,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: datastructures/segment_tree.hpp
     title: datastructures/segment_tree.hpp
-  - icon: ':heavy_check_mark:'
-    path: verify/boilerplate.hpp
-    title: verify/boilerplate.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -38,7 +35,6 @@ data:
     \       cout << st.query(x, y) << '\\n';\n        } else {\n            st.set(x,\
     \ y);\n        }\n    }\n}"
   dependsOn:
-  - verify/boilerplate.hpp
   - datastructures/segment_tree.hpp
   isVerificationFile: true
   path: verify/aizu/dsl/rmq.test.cpp

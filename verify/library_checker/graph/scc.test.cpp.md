@@ -4,9 +4,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: graphs/kosaraju_scc.hpp
     title: graphs/kosaraju_scc.hpp
-  - icon: ':heavy_check_mark:'
-    path: verify/boilerplate.hpp
-    title: verify/boilerplate.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -38,7 +35,6 @@ data:
     \      for (int x : scc.members[i]) {\n            cout << x << ' ';\n       \
     \ }\n        cout << '\\n';\n    }\n}"
   dependsOn:
-  - verify/boilerplate.hpp
   - graphs/kosaraju_scc.hpp
   isVerificationFile: true
   path: verify/library_checker/graph/scc.test.cpp

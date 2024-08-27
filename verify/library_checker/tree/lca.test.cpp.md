@@ -4,9 +4,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: graphs/binary_lifts.hpp
     title: graphs/binary_lifts.hpp
-  - icon: ':heavy_check_mark:'
-    path: verify/boilerplate.hpp
-    title: verify/boilerplate.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -36,7 +33,6 @@ data:
     \    binary_lifts bl(g);\n    while (q--) {\n        int u, v;\n        cin >>\
     \ u >> v;\n        cout << bl.lca(u, v) << '\\n';\n    }\n}"
   dependsOn:
-  - verify/boilerplate.hpp
   - graphs/binary_lifts.hpp
   isVerificationFile: true
   path: verify/library_checker/tree/lca.test.cpp

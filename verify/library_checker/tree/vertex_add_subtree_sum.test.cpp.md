@@ -7,9 +7,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: graphs/euler_tour.hpp
     title: graphs/euler_tour.hpp
-  - icon: ':heavy_check_mark:'
-    path: verify/boilerplate.hpp
-    title: verify/boilerplate.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -45,7 +42,6 @@ data:
     \ {\n            int x;\n            cin >> x;\n            ft.add(et.tin[u],\
     \ x);\n        }\n    }\n}"
   dependsOn:
-  - verify/boilerplate.hpp
   - datastructures/fenwick_tree.hpp
   - graphs/euler_tour.hpp
   isVerificationFile: true

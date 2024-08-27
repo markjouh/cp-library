@@ -4,9 +4,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: datastructures/w_ary_tree.hpp
     title: datastructures/w_ary_tree.hpp
-  - icon: ':heavy_check_mark:'
-    path: verify/boilerplate.hpp
-    title: verify/boilerplate.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -42,7 +39,6 @@ data:
     \        } else {\n            ds.insert(lower_bound(all(vals), x) - begin(vals));\n\
     \        }\n    }\n}"
   dependsOn:
-  - verify/boilerplate.hpp
   - datastructures/w_ary_tree.hpp
   isVerificationFile: true
   path: verify/aizu/alds1/priority_queue.test.cpp
