@@ -58,15 +58,15 @@ data:
     - icon: ':warning:'
       path: numeric/binary_search_reals.hpp
       title: numeric/binary_search_reals.hpp
-    - icon: ':warning:'
-      path: numeric/matrix.hpp
-      title: numeric/matrix.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: numeric/mod_int.hpp
       title: numeric/mod_int.hpp
     - icon: ':heavy_check_mark:'
       path: numeric/number_theory.hpp
       title: numeric/number_theory.hpp
+    - icon: ':warning:'
+      path: numeric/square_matrix.hpp
+      title: numeric/square_matrix.hpp
   - name: strings
     pages:
     - icon: ':heavy_check_mark:'
@@ -92,6 +92,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/aizu/dsl/rsq_and_raq.test.cpp
       title: verify/aizu/dsl/rsq_and_raq.test.cpp
+  - name: verify/aizu/ntl
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/aizu/ntl/power.test.cpp
+      title: verify/aizu/ntl/power.test.cpp
   - name: verify/library_checker/data_structure
     pages:
     - icon: ':heavy_check_mark:'
