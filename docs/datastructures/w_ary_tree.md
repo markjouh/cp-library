@@ -5,7 +5,7 @@ documentation_of: ../../datastructures/w_ary_tree.hpp
 
 ### Overview
 
-A tree data structure that takes advantage of hardware intrinsics to support multiset operations on a frequency table in $O(\log_{64}{n})$ time, with an extremely small constant factor to boot.
+A tree data structure that takes advantage of hardware intrinsics to support multiset operations on a frequency table, with $O(\log_{64}{n})$ operations and an extremely small constant factor.
 
 TODO: Implement predecessor/successor queries
 
