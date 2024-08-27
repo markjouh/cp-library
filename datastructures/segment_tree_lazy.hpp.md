@@ -9,81 +9,85 @@ data:
   attributes:
     links: []
   bundledCode: "#line 2 \"datastructures/segment_tree_lazy.hpp\"\n\nstruct lazy_segtree\
-    \ {\n    using item_t = pair<int, int>;\n    using lazy_t = int;\n\n    // Identity\
-    \ element, null update tag\n    const item_t id = {INF, 1};\n    const lazy_t\
-    \ lz_id = 0;\n\n    // Associative merge operation\n    item_t merge(item_t a,\
-    \ item_t b) {\n        if (a.first == b.first) {\n            return {a.first,\
-    \ a.second + b.second};\n        } else {\n            return a.first < b.first\
-    \ ? a : b;\n        }\n    }\n\n    // Applying a lazy tag to a full segment\n\
-    \    void apply(int x, lazy_t v) {\n        lazy[x] += v;\n    }\n\n    // Consuming\
-    \ and propagating a lazy tag\n    void push(int x, int tl, int tr) {\n       \
-    \ if (lazy[x] != lz_id) {\n            tree[x].first += lazy[x];\n           \
-    \ if (tl + 1 != tr) {\n                lazy[2 * x + 1] += lazy[x];\n         \
-    \       lazy[2 * x + 2] += lazy[x];\n            }\n            lazy[x] = lz_id;\n\
-    \        }\n    }\n\n    lazy_segtree(int x) {\n        init(x);\n    }\n\n  \
-    \  lazy_segtree(const vector<item_t> &a) {\n        init(sz(a));\n        build(a,\
-    \ 0, 0, n);\n    }\n\n    item_t query(int l, int r) {\n        return query(l,\
-    \ r + 1, 0, 0, n);\n    }\n\n    void update(int l, int r, int v) {\n        update(l,\
-    \ r + 1, v, 0, 0, n);\n    }\n\nprivate:\n    int n;\n    vector<item_t> tree;\n\
-    \    vector<lazy_t> lazy;\n\n    void init(int sz) {\n        n = 1;\n       \
-    \ while (n < sz) {\n            n *= 2;\n        }\n        tree.resize(2 * n,\
-    \ id);\n        lazy.resize(2 * n, lz_id);\n    }\n\n    void build(const vector<item_t>\
-    \ &a, int x, int tl, int tr) {\n        if (tl + 1 == tr) {\n            if (tl\
-    \ < sz(a)) {\n                tree[x] = a[tl];\n            }\n            return;\n\
-    \        }\n        int mid = (tl + tr) / 2;\n        build(a, 2 * x + 1, tl,\
-    \ mid);\n        build(a, 2 * x + 2, mid, tr);\n        tree[x] = merge(tree[2\
-    \ * x + 1], tree[2 * x + 2]);\n    }\n\n    item_t query(int l, int r, int x,\
-    \ int tl, int tr) {\n        push(x, tl, tr);\n        if (tl >= r || tr <= l)\
-    \ {\n            return id;\n        }\n        if (tl >= l && tr <= r) {\n  \
-    \          return tree[x];\n        }\n        int mid = (tl + tr) / 2;\n    \
-    \    return merge(query(l, r, 2 * x + 1, tl, mid), query(l, r, 2 * x + 2, mid,\
-    \ tr));\n    }\n\n    void update(int l, int r, int v, int x, int tl, int tr)\
-    \ {\n        push(x, tl, tr);\n        if (tl >= r || tr <= l) {\n           \
-    \ return;\n        }\n        if (tl >= l && tr <= r) {\n            apply(x,\
-    \ v);\n            push(x, tl, tr);\n            return;\n        }\n        int\
-    \ mid = (tl + tr) / 2;\n        update(l, r, v, 2 * x + 1, tl, mid);\n       \
-    \ update(l, r, v, 2 * x + 2, mid, tr);\n        tree[x] = merge(tree[2 * x + 1],\
-    \ tree[2 * x + 2]);\n    }\n};\n"
+    \ {\n    using item_t = pair<int, int>;\n    using upd_t = int;\n\n    // Identity\
+    \ element, null update tag\n    const item_t id = {INF, 1};\n    const upd_t lz_id\
+    \ = 0;\n\n    // Associative merge operation\n    item_t merge(item_t a, item_t\
+    \ b) {\n        if (a.first == b.first) {\n            return {a.first, a.second\
+    \ + b.second};\n        } else {\n            return a.first < b.first ? a : b;\n\
+    \        }\n    }\n\n    // Applying a lazy tag to a full segment\n    void apply(int\
+    \ x, upd_t v) {\n        lazy[x] += v;\n    }\n\n    // Consuming and propagating\
+    \ a lazy tag\n    void push(int x, int tl, int tr) {\n        if (lazy[x] != lz_id)\
+    \ {\n            tree[x].first += lazy[x];\n            if (tl + 1 != tr) {\n\
+    \                lazy[2 * x + 1] += lazy[x];\n                lazy[2 * x + 2]\
+    \ += lazy[x];\n            }\n            lazy[x] = lz_id;\n        }\n    }\n\
+    \n    lazy_segtree(int x) { init(x); }\n    lazy_segtree(const vector<item_t>\
+    \ &a) {\n        init(sz(a));\n        build(a, 0, 0, n);\n    }\n\n    item_t\
+    \ query() { return tree[0]; }\n    item_t query(int p) { return query(p, p + 1,\
+    \ 0, 0, n); }\n    item_t query(int l, int r) { return query(l, r + 1, 0, 0, n);\
+    \ }\n\n    void update(upd_t v) { update(0, n, v, 0, 0, n); }\n    void update(int\
+    \ p, upd_t v) { update(p, p + 1, v, 0, 0, n); }\n    void update(int l, int r,\
+    \ upd_t v) { update(l, r + 1, v, 0, 0, n); }\n\nprivate:\n    int n;\n    vector<item_t>\
+    \ tree;\n    vector<upd_t> lazy;\n\n    void init(int sz) {\n        n = 1;\n\
+    \        while (n < sz) {\n            n *= 2;\n        }\n        tree.resize(2\
+    \ * n, id);\n        lazy.resize(2 * n, lz_id);\n    }\n\n    void build(const\
+    \ vector<item_t> &a, int x, int tl, int tr) {\n        if (tl + 1 == tr) {\n \
+    \           if (tl < sz(a)) {\n                tree[x] = a[tl];\n            }\n\
+    \            return;\n        }\n        int mid = (tl + tr) / 2;\n        build(a,\
+    \ 2 * x + 1, tl, mid);\n        build(a, 2 * x + 2, mid, tr);\n        tree[x]\
+    \ = merge(tree[2 * x + 1], tree[2 * x + 2]);\n    }\n\n    item_t query(int l,\
+    \ int r, int x, int tl, int tr) {\n        push(x, tl, tr);\n        if (tl >=\
+    \ r || tr <= l) {\n            return id;\n        }\n        if (tl >= l && tr\
+    \ <= r) {\n            return tree[x];\n        }\n        int mid = (tl + tr)\
+    \ / 2;\n        return merge(query(l, r, 2 * x + 1, tl, mid), query(l, r, 2 *\
+    \ x + 2, mid, tr));\n    }\n\n    void update(int l, int r, int v, int x, int\
+    \ tl, int tr) {\n        push(x, tl, tr);\n        if (tl >= r || tr <= l) {\n\
+    \            return;\n        }\n        if (tl >= l && tr <= r) {\n         \
+    \   apply(x, v);\n            push(x, tl, tr);\n            return;\n        }\n\
+    \        int mid = (tl + tr) / 2;\n        update(l, r, v, 2 * x + 1, tl, mid);\n\
+    \        update(l, r, v, 2 * x + 2, mid, tr);\n        tree[x] = merge(tree[2\
+    \ * x + 1], tree[2 * x + 2]);\n    }\n};\n"
   code: "#pragma once\n\nstruct lazy_segtree {\n    using item_t = pair<int, int>;\n\
-    \    using lazy_t = int;\n\n    // Identity element, null update tag\n    const\
-    \ item_t id = {INF, 1};\n    const lazy_t lz_id = 0;\n\n    // Associative merge\
+    \    using upd_t = int;\n\n    // Identity element, null update tag\n    const\
+    \ item_t id = {INF, 1};\n    const upd_t lz_id = 0;\n\n    // Associative merge\
     \ operation\n    item_t merge(item_t a, item_t b) {\n        if (a.first == b.first)\
     \ {\n            return {a.first, a.second + b.second};\n        } else {\n  \
     \          return a.first < b.first ? a : b;\n        }\n    }\n\n    // Applying\
-    \ a lazy tag to a full segment\n    void apply(int x, lazy_t v) {\n        lazy[x]\
+    \ a lazy tag to a full segment\n    void apply(int x, upd_t v) {\n        lazy[x]\
     \ += v;\n    }\n\n    // Consuming and propagating a lazy tag\n    void push(int\
     \ x, int tl, int tr) {\n        if (lazy[x] != lz_id) {\n            tree[x].first\
     \ += lazy[x];\n            if (tl + 1 != tr) {\n                lazy[2 * x + 1]\
     \ += lazy[x];\n                lazy[2 * x + 2] += lazy[x];\n            }\n  \
-    \          lazy[x] = lz_id;\n        }\n    }\n\n    lazy_segtree(int x) {\n \
-    \       init(x);\n    }\n\n    lazy_segtree(const vector<item_t> &a) {\n     \
-    \   init(sz(a));\n        build(a, 0, 0, n);\n    }\n\n    item_t query(int l,\
-    \ int r) {\n        return query(l, r + 1, 0, 0, n);\n    }\n\n    void update(int\
-    \ l, int r, int v) {\n        update(l, r + 1, v, 0, 0, n);\n    }\n\nprivate:\n\
-    \    int n;\n    vector<item_t> tree;\n    vector<lazy_t> lazy;\n\n    void init(int\
-    \ sz) {\n        n = 1;\n        while (n < sz) {\n            n *= 2;\n     \
-    \   }\n        tree.resize(2 * n, id);\n        lazy.resize(2 * n, lz_id);\n \
-    \   }\n\n    void build(const vector<item_t> &a, int x, int tl, int tr) {\n  \
-    \      if (tl + 1 == tr) {\n            if (tl < sz(a)) {\n                tree[x]\
-    \ = a[tl];\n            }\n            return;\n        }\n        int mid = (tl\
-    \ + tr) / 2;\n        build(a, 2 * x + 1, tl, mid);\n        build(a, 2 * x +\
-    \ 2, mid, tr);\n        tree[x] = merge(tree[2 * x + 1], tree[2 * x + 2]);\n \
-    \   }\n\n    item_t query(int l, int r, int x, int tl, int tr) {\n        push(x,\
-    \ tl, tr);\n        if (tl >= r || tr <= l) {\n            return id;\n      \
-    \  }\n        if (tl >= l && tr <= r) {\n            return tree[x];\n       \
-    \ }\n        int mid = (tl + tr) / 2;\n        return merge(query(l, r, 2 * x\
-    \ + 1, tl, mid), query(l, r, 2 * x + 2, mid, tr));\n    }\n\n    void update(int\
-    \ l, int r, int v, int x, int tl, int tr) {\n        push(x, tl, tr);\n      \
-    \  if (tl >= r || tr <= l) {\n            return;\n        }\n        if (tl >=\
-    \ l && tr <= r) {\n            apply(x, v);\n            push(x, tl, tr);\n  \
-    \          return;\n        }\n        int mid = (tl + tr) / 2;\n        update(l,\
+    \          lazy[x] = lz_id;\n        }\n    }\n\n    lazy_segtree(int x) { init(x);\
+    \ }\n    lazy_segtree(const vector<item_t> &a) {\n        init(sz(a));\n     \
+    \   build(a, 0, 0, n);\n    }\n\n    item_t query() { return tree[0]; }\n    item_t\
+    \ query(int p) { return query(p, p + 1, 0, 0, n); }\n    item_t query(int l, int\
+    \ r) { return query(l, r + 1, 0, 0, n); }\n\n    void update(upd_t v) { update(0,\
+    \ n, v, 0, 0, n); }\n    void update(int p, upd_t v) { update(p, p + 1, v, 0,\
+    \ 0, n); }\n    void update(int l, int r, upd_t v) { update(l, r + 1, v, 0, 0,\
+    \ n); }\n\nprivate:\n    int n;\n    vector<item_t> tree;\n    vector<upd_t> lazy;\n\
+    \n    void init(int sz) {\n        n = 1;\n        while (n < sz) {\n        \
+    \    n *= 2;\n        }\n        tree.resize(2 * n, id);\n        lazy.resize(2\
+    \ * n, lz_id);\n    }\n\n    void build(const vector<item_t> &a, int x, int tl,\
+    \ int tr) {\n        if (tl + 1 == tr) {\n            if (tl < sz(a)) {\n    \
+    \            tree[x] = a[tl];\n            }\n            return;\n        }\n\
+    \        int mid = (tl + tr) / 2;\n        build(a, 2 * x + 1, tl, mid);\n   \
+    \     build(a, 2 * x + 2, mid, tr);\n        tree[x] = merge(tree[2 * x + 1],\
+    \ tree[2 * x + 2]);\n    }\n\n    item_t query(int l, int r, int x, int tl, int\
+    \ tr) {\n        push(x, tl, tr);\n        if (tl >= r || tr <= l) {\n       \
+    \     return id;\n        }\n        if (tl >= l && tr <= r) {\n            return\
+    \ tree[x];\n        }\n        int mid = (tl + tr) / 2;\n        return merge(query(l,\
+    \ r, 2 * x + 1, tl, mid), query(l, r, 2 * x + 2, mid, tr));\n    }\n\n    void\
+    \ update(int l, int r, int v, int x, int tl, int tr) {\n        push(x, tl, tr);\n\
+    \        if (tl >= r || tr <= l) {\n            return;\n        }\n        if\
+    \ (tl >= l && tr <= r) {\n            apply(x, v);\n            push(x, tl, tr);\n\
+    \            return;\n        }\n        int mid = (tl + tr) / 2;\n        update(l,\
     \ r, v, 2 * x + 1, tl, mid);\n        update(l, r, v, 2 * x + 2, mid, tr);\n \
     \       tree[x] = merge(tree[2 * x + 1], tree[2 * x + 2]);\n    }\n};"
   dependsOn: []
   isVerificationFile: false
   path: datastructures/segment_tree_lazy.hpp
   requiredBy: []
-  timestamp: '2024-08-27 17:19:02-04:00'
+  timestamp: '2024-08-27 17:25:32-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: datastructures/segment_tree_lazy.hpp
