@@ -31,7 +31,7 @@ int main() {
     }
     sort(all(vals));
     vals.resize(unique(all(vals)) - begin(vals));
-    w_ary_tree<500000> ds;
+    w_ary_tree<1000000> ds;
     for (int x : queries) {
         if (x == lo) {
             int rem = ds.get_min();
