@@ -4,6 +4,7 @@
 "verify/aizu/dsl/rmq.test.cpp": "2024-08-26 21:14:45 -0400",
 "verify/aizu/dsl/rsq_and_raq.test.cpp": "2024-08-26 21:14:45 -0400",
 "verify/library_checker/data_structure/associative_array.test.cpp": "2024-08-26 21:38:23 -0400",
+"verify/library_checker/data_structure/double_ended_priority_queue.test.cpp": "2024-08-26 23:44:21 -0400",
 "verify/library_checker/data_structure/point_add_range_sum.test.cpp": "2024-08-26 21:14:45 -0400",
 "verify/library_checker/data_structure/static_rmq.test.cpp": "2024-08-26 21:14:45 -0400",
 "verify/library_checker/data_structure/unionfind.test.cpp": "2024-08-26 21:14:45 -0400",
