@@ -52,7 +52,7 @@ data:
       title: graphs/tree_isomorphism.hpp
   - name: numeric
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: numeric/binary_search.hpp
       title: numeric/binary_search.hpp
     - icon: ':warning:'
@@ -81,6 +81,11 @@ data:
       path: verify/boilerplate.hpp
       title: verify/boilerplate.hpp
   verificationCategories:
+  - name: verify/aizu/alds1
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/aizu/alds1/binary_search.test.cpp
+      title: verify/aizu/alds1/binary_search.test.cpp
   - name: verify/aizu/dsl
     pages:
     - icon: ':heavy_check_mark:'

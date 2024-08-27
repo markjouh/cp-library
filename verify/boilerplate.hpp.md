@@ -4,6 +4,9 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: verify/aizu/alds1/binary_search.test.cpp
+    title: verify/aizu/alds1/binary_search.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/aizu/dsl/rmq.test.cpp
     title: verify/aizu/dsl/rmq.test.cpp
   - icon: ':heavy_check_mark:'
@@ -73,6 +76,7 @@ data:
   timestamp: '2024-08-26 21:14:45-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - verify/aizu/alds1/binary_search.test.cpp
   - verify/aizu/dsl/rmq.test.cpp
   - verify/aizu/dsl/rsq_and_raq.test.cpp
   - verify/library_checker/tree/lca.test.cpp

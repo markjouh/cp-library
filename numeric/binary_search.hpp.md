@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/aizu/alds1/binary_search.test.cpp
+    title: verify/aizu/alds1/binary_search.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"numeric/binary_search.hpp\"\n\ntemplate<class T, class U>\
@@ -26,8 +29,9 @@ data:
   path: numeric/binary_search.hpp
   requiredBy: []
   timestamp: '2024-08-26 19:37:00-04:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - verify/aizu/alds1/binary_search.test.cpp
 documentation_of: numeric/binary_search.hpp
 layout: document
 redirect_from:
