@@ -3,14 +3,14 @@
 #include "../../boilerplate.hpp"
 #include "../../../datastructures/w_ary_tree.hpp"
 
-const int lo = numeric_limits<int>::min(), hi = numeric_limits<int>::max();
+const ll lo = numeric_limits<ll>::min(), hi = numeric_limits<ll>::max();
 
 int main() {
     int n, q;
     cin >> n >> q;
-    vector<int> queries, vals;
+    vector<ll> queries, vals;
     for (int i = 0; i < n; i++) {
-        int x;
+        ll x;
         cin >> x;
         queries.push_back(x);
         vals.push_back(x);
@@ -32,7 +32,7 @@ int main() {
     sort(all(vals));
     vals.resize(unique(all(vals)) - begin(vals));
     w_ary_tree<20000000> ds;
-    for (int x : queries) {
+    for (ll x : queries) {
         if (x == lo) {
             int rem = ds.get_min();
             cout << vals[rem] << '\n';
