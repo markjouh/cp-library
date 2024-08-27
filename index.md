@@ -11,7 +11,7 @@ data:
       title: Range Add Range Query Fenwick Tree
     - icon: ':heavy_check_mark:'
       path: datastructures/hash_table.hpp
-      title: datastructures/hash_table.hpp
+      title: Hash Table
     - icon: ':warning:'
       path: datastructures/indexed_set.hpp
       title: datastructures/indexed_set.hpp

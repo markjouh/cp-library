@@ -36,8 +36,14 @@ data:
   - verify/library_checker/data_structure/associative_array.test.cpp
 documentation_of: datastructures/hash_table.hpp
 layout: document
-redirect_from:
-- /library/datastructures/hash_table.hpp
-- /library/datastructures/hash_table.hpp.html
-title: datastructures/hash_table.hpp
+title: Hash Table
 ---
+
+### Overview
+
+A hash table faster than `unordered_map`, using `__gnu_pbds`. The optional custom hash function protects against anti-hash tests, which are generally only a consideration on Codeforces.
+
+### Usage
+
+* `operator[]`: Access a key to read from or update. $O(1)$
+* `hash_table::find(x) != hash_table::end()`: Check if a key exists. $O(1)$
