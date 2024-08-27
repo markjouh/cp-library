@@ -36,7 +36,7 @@ data:
     \            int x;\n            cin >> x;\n            queries.push_back(x);\n\
     \            vals.push_back(x);\n        } else if (t == 1) {\n            queries.push_back(lo);\n\
     \        } else {\n            queries.push_back(hi);\n        }\n    }\n    sort(all(vals));\n\
-    \    vals.resize(unique(all(vals)) - begin(vals));\n    w_ary_tree<10000000> ds;\n\
+    \    vals.resize(unique(all(vals)) - begin(vals));\n    w_ary_tree<20000000> ds;\n\
     \    for (int x : queries) {\n        if (x == lo) {\n            int rem = ds.get_min();\n\
     \            cout << vals[rem] << '\\n';\n            ds.extract(rem);\n     \
     \   } else if (x == hi) {\n            int rem = ds.get_max();\n            cout\
@@ -48,7 +48,7 @@ data:
   isVerificationFile: true
   path: verify/library_checker/data_structure/double_ended_priority_queue.test.cpp
   requiredBy: []
-  timestamp: '2024-08-26 23:13:40-04:00'
+  timestamp: '2024-08-26 23:16:44-04:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/library_checker/data_structure/double_ended_priority_queue.test.cpp
