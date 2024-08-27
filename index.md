@@ -17,7 +17,7 @@ data:
       title: datastructures/indexed_set.hpp
     - icon: ':heavy_check_mark:'
       path: datastructures/segment_tree.hpp
-      title: datastructures/segment_tree.hpp
+      title: Segment Tree
     - icon: ':warning:'
       path: datastructures/segment_tree_lazy.hpp
       title: datastructures/segment_tree_lazy.hpp
