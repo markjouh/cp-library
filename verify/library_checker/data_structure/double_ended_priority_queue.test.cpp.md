@@ -28,27 +28,27 @@ data:
     \ / #ifndef other than include guards\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/double_ended_priority_queue\"\
     \n\n#include \"../../boilerplate.hpp\"\n#include \"../../../datastructures/w_ary_tree.hpp\"\
-    \n\nconst ll lo = numeric_limits<ll>::min(), hi = numeric_limits<ll>::max();\n\
-    \nint main() {\n    int n, q;\n    cin >> n >> q;\n    vector<ll> queries, vals;\n\
-    \    for (int i = 0; i < n; i++) {\n        ll x;\n        cin >> x;\n       \
-    \ queries.push_back(x);\n        vals.push_back(x);\n    }\n    for (int i = 0;\
-    \ i < q; i++) {\n        int t;\n        cin >> t;\n        if (t == 0) {\n  \
-    \          int x;\n            cin >> x;\n            queries.push_back(x);\n\
+    \n\nconst int lo = numeric_limits<int>::min(), hi = numeric_limits<int>::max();\n\
+    \nint main() {\n    int n, q;\n    cin >> n >> q;\n    vector<int> queries, vals;\n\
+    \    for (int i = 0; i < n; i++) {\n        int x;\n        cin >> x;\n      \
+    \  queries.push_back(x);\n        vals.push_back(x);\n    }\n    for (int i =\
+    \ 0; i < q; i++) {\n        int t;\n        cin >> t;\n        if (t == 0) {\n\
+    \            int x;\n            cin >> x;\n            queries.push_back(x);\n\
     \            vals.push_back(x);\n        } else if (t == 1) {\n            queries.push_back(lo);\n\
     \        } else {\n            queries.push_back(hi);\n        }\n    }\n    sort(all(vals));\n\
-    \    vals.resize(unique(all(vals)) - begin(vals));\n    w_ary_tree<20000000> ds;\n\
-    \    for (ll x : queries) {\n        if (x == lo) {\n            int rem = ds.get_min();\n\
-    \            cout << vals[rem] << '\\n';\n            ds.extract(rem);\n     \
-    \   } else if (x == hi) {\n            int rem = ds.get_max();\n            cout\
-    \ << vals[rem] << '\\n';\n            ds.extract(rem);\n        } else {\n   \
-    \         ds.insert(lower_bound(all(vals), x) - begin(vals));\n        }\n   \
-    \ }\n}"
+    \    vals.resize(unique(all(vals)) - begin(vals));\n    w_ary_tree<1'000'000>\
+    \ ds;\n    for (int x : queries) {\n        if (x == lo) {\n            int rem\
+    \ = ds.get_min();\n            cout << vals[rem] << '\\n';\n            ds.extract(rem);\n\
+    \        } else if (x == hi) {\n            int rem = ds.get_max();\n        \
+    \    cout << vals[rem] << '\\n';\n            ds.extract(rem);\n        } else\
+    \ {\n            ds.insert(lower_bound(all(vals), x) - begin(vals));\n       \
+    \ }\n    }\n}"
   dependsOn:
   - datastructures/w_ary_tree.hpp
   isVerificationFile: true
   path: verify/library_checker/data_structure/double_ended_priority_queue.test.cpp
   requiredBy: []
-  timestamp: '2024-08-26 23:20:08-04:00'
+  timestamp: '2024-08-26 23:22:25-04:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/library_checker/data_structure/double_ended_priority_queue.test.cpp
