@@ -4,6 +4,7 @@
 #include "../../../datastructures/w_ary_tree.hpp"
 
 const int lo = numeric_limits<int>::min(), hi = numeric_limits<int>::max();
+const int len = 1 << 18;
 
 int main() {
     int n, q;
@@ -31,18 +32,34 @@ int main() {
     }
     sort(all(vals));
     vals.resize(unique(all(vals)) - begin(vals));
-    w_ary_tree<1'000'000> ds;
+
+    array<int, 3> cnt{};
+    array<w_ary_tree<1 << 18>, 3> ds;
     for (int x : queries) {
         if (x == lo) {
-            int rem = ds.get_min();
-            cout << vals[rem] << '\n';
-            ds.extract(rem);
+            for (int i = 0; i < 3; i++) {
+                if (cnt[i] > 0) {
+                    int rem = ds[i].get_min();
+                    cout << vals[i * len + rem] << '\n';
+                    ds[i].extract(rem);
+                    cnt[i]--;
+                    break;
+                }
+            }
         } else if (x == hi) {
-            int rem = ds.get_max();
-            cout << vals[rem] << '\n';
-            ds.extract(rem);
+            for (int i = 2; i >= 0; i--) {
+                if (cnt[i] > 0) {
+                    int rem = ds[i].get_max();
+                    cout << vals[i * len + rem] << '\n';
+                    ds[i].extract(rem);
+                    cnt[i]--;
+                    break;
+                }
+            }
         } else {
-            ds.insert(lower_bound(all(vals), x) - begin(vals));
+            int idx = lower_bound(all(vals), x) - begin(vals);
+            ds[idx / len].insert(idx % len);
+            cnt[idx / len]++;
         }
     }
 }
