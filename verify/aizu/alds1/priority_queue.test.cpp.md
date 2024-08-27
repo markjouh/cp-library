@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: datastructures/w_ary_tree.hpp
     title: datastructures/w_ary_tree.hpp
   _extendedRequiredBy: []
