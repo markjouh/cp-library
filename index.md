@@ -75,6 +75,11 @@ data:
     - icon: ':warning:'
       path: strings/string_trie.hpp
       title: strings/string_trie.hpp
+  - name: verify
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/boilerplate.hpp
+      title: verify/boilerplate.hpp
   verificationCategories:
   - name: verify/aizu/dsl
     pages:
