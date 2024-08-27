@@ -27,7 +27,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: datastructures/union_find.hpp
       title: datastructures/union_find.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: datastructures/w_ary_tree.hpp
       title: datastructures/w_ary_tree.hpp
   - name: graphs
@@ -97,6 +97,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/library_checker/data_structure/associative_array.test.cpp
       title: verify/library_checker/data_structure/associative_array.test.cpp
+    - icon: ':x:'
+      path: verify/library_checker/data_structure/double_ended_priority_queue.test.cpp
+      title: verify/library_checker/data_structure/double_ended_priority_queue.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/library_checker/data_structure/point_add_range_sum.test.cpp
       title: verify/library_checker/data_structure/point_add_range_sum.test.cpp
