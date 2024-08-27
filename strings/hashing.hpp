@@ -38,6 +38,7 @@ struct str_hash {
     }
 
     hash get(int l, int r) {
+        r++;
         return hash(((hashes[r] - __int128_t(hashes[l]) * pow_b[r - l]) % H_MOD + H_MOD) % H_MOD, r - l);
     }
 
