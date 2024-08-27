@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: numeric/number_theory.hpp
     title: numeric/number_theory.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: verify/boilerplate.hpp
     title: verify/boilerplate.hpp
   _extendedRequiredBy: []

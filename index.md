@@ -27,7 +27,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: datastructures/union_find.hpp
       title: datastructures/union_find.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: datastructures/w_ary_tree.hpp
       title: datastructures/w_ary_tree.hpp
   - name: graphs
@@ -77,7 +77,7 @@ data:
       title: strings/string_trie.hpp
   - name: verify
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: verify/boilerplate.hpp
       title: verify/boilerplate.hpp
   verificationCategories:
@@ -86,7 +86,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/aizu/alds1/binary_search.test.cpp
       title: verify/aizu/alds1/binary_search.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/aizu/alds1/priority_queue.test.cpp
       title: verify/aizu/alds1/priority_queue.test.cpp
   - name: verify/aizu/dsl
