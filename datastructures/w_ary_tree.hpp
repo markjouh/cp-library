@@ -1,10 +1,10 @@
 #pragma once
 
-template<int N> struct quick_heap {
+template<int N> struct w_ary_tree {
     uint32_t freq[N];
     uint64_t l0[(N >> 6) + 1], l1[(N >> 12) + 1], root;
 
-    quick_heap() {
+    w_ary_tree() {
         memset(freq, 0, sizeof freq);
         memset(l0, 0, sizeof l0);
         memset(l1, 0, sizeof l1);
