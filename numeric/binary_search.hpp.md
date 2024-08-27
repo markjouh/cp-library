@@ -6,12 +6,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/aizu/alds1/binary_search.test.cpp
     title: verify/aizu/alds1/binary_search.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/library_checker/string/enumerate_palindromes.test.cpp
     title: verify/library_checker/string/enumerate_palindromes.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"numeric/binary_search.hpp\"\n\ntemplate<class T, class U>\
@@ -32,7 +32,7 @@ data:
   path: numeric/binary_search.hpp
   requiredBy: []
   timestamp: '2024-08-26 19:37:00-04:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/aizu/alds1/binary_search.test.cpp
   - verify/library_checker/string/enumerate_palindromes.test.cpp

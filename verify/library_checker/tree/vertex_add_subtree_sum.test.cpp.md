@@ -7,7 +7,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: graphs/euler_tour.hpp
     title: graphs/euler_tour.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: verify/boilerplate.hpp
     title: verify/boilerplate.hpp
   _extendedRequiredBy: []

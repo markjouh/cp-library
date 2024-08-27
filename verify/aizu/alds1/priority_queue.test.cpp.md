@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: datastructures/w_ary_tree.hpp
     title: datastructures/w_ary_tree.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: verify/boilerplate.hpp
     title: verify/boilerplate.hpp
   _extendedRequiredBy: []

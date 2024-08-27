@@ -52,7 +52,7 @@ data:
       title: graphs/tree_isomorphism.hpp
   - name: numeric
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: numeric/binary_search.hpp
       title: numeric/binary_search.hpp
     - icon: ':warning:'
@@ -69,7 +69,7 @@ data:
       title: numeric/number_theory.hpp
   - name: strings
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: strings/hashing.hpp
       title: strings/hashing.hpp
     - icon: ':warning:'
@@ -77,7 +77,7 @@ data:
       title: strings/string_trie.hpp
   - name: verify
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: verify/boilerplate.hpp
       title: verify/boilerplate.hpp
   verificationCategories:
@@ -126,7 +126,7 @@ data:
       title: verify/library_checker/number_theory/enumerate_primes.test.cpp
   - name: verify/library_checker/string
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/library_checker/string/enumerate_palindromes.test.cpp
       title: verify/library_checker/string/enumerate_palindromes.test.cpp
   - name: verify/library_checker/tree

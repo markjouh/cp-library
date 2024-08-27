@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: numeric/binary_search.hpp
     title: numeric/binary_search.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: strings/hashing.hpp
     title: strings/hashing.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: verify/boilerplate.hpp
     title: verify/boilerplate.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/enumerate_palindromes
@@ -42,8 +42,8 @@ data:
     \ - i - 1 - d, n - i - 1);\n        }) + 1;\n    }\n    for (int i = 0; i < n\
     \ - 1; i++) {\n        ans[2 * i + 1] = 2 * bsmax(0, min(i, n - i - 2), [&](int\
     \ d) {\n            return a.get(i - d, i) == b.get(n - i - 2 - d, n - i - 2);\n\
-    \        });\n    }\n    for (int i = 0; i < 2 * n - 1; i++) {\n        cout <<\
-    \ ans[i] << ' ';\n    }\n    cout << '\\n';\n}"
+    \        }) + 2;\n    }\n    for (int i = 0; i < 2 * n - 1; i++) {\n        cout\
+    \ << ans[i] << ' ';\n    }\n    cout << '\\n';\n}"
   dependsOn:
   - verify/boilerplate.hpp
   - numeric/binary_search.hpp
@@ -51,8 +51,8 @@ data:
   isVerificationFile: true
   path: verify/library_checker/string/enumerate_palindromes.test.cpp
   requiredBy: []
-  timestamp: '2024-08-26 22:20:15-04:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2024-08-26 22:51:38-04:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/library_checker/string/enumerate_palindromes.test.cpp
 layout: document

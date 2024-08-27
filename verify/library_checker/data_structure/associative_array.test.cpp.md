@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: datastructures/hash_table.hpp
     title: datastructures/hash_table.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: verify/boilerplate.hpp
     title: verify/boilerplate.hpp
   _extendedRequiredBy: []

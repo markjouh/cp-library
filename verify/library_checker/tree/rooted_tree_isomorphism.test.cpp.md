@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: graphs/tree_isomorphism.hpp
     title: graphs/tree_isomorphism.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: verify/boilerplate.hpp
     title: verify/boilerplate.hpp
   _extendedRequiredBy: []
