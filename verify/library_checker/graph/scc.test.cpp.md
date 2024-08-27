@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: graphs/kosaraju_scc.hpp
-    title: graphs/kosaraju_scc.hpp
+    title: Kosaraju's SCC
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false

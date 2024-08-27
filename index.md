@@ -46,7 +46,7 @@ data:
       title: graphs/euler_tour.hpp
     - icon: ':heavy_check_mark:'
       path: graphs/kosaraju_scc.hpp
-      title: graphs/kosaraju_scc.hpp
+      title: Kosaraju's SCC
     - icon: ':heavy_check_mark:'
       path: graphs/tree_isomorphism.hpp
       title: graphs/tree_isomorphism.hpp
