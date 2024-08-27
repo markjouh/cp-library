@@ -1,10 +1,9 @@
 #pragma once
-#include "mod_int.hpp"
 
-template<class T, int N> struct matrix {
+template<class T, int N> struct sq_matrix {
     array<array<T, N>, N> vals{};
 
-    matrix() {
+    sq_matrix() {
         for (int i = 0; i < N; i++) {
             vals[i][i] = 1;
         }
@@ -14,8 +13,8 @@ template<class T, int N> struct matrix {
         return vals[p];
     }
 
-    friend matrix pow(matrix base, int exp) {
-        matrix res;
+    friend sq_matrix pow(sq_matrix base, int exp) {
+        sq_matrix res;
         while (exp) {
             if (exp & 1) {
                 res *= base;
@@ -26,7 +25,7 @@ template<class T, int N> struct matrix {
         return res;
     }
 
-    matrix &operator*=(matrix b) {
+    sq_matrix &operator*=(sq_matrix b) {
         array<array<T, N>, N> res{};
         for (int i = 0; i < N; i++) {
             for (int j = 0; j < N; j++) {
@@ -39,7 +38,7 @@ template<class T, int N> struct matrix {
         return *this;
     }
 
-    friend matrix operator*(matrix a, matrix b) {
+    friend sq_matrix operator*(sq_matrix a, sq_matrix b) {
         return a *= b;
     }
 };
