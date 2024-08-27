@@ -37,7 +37,7 @@ data:
       title: graphs/binary_lifts.hpp
     - icon: ':warning:'
       path: graphs/centroid_decomposition.hpp
-      title: graphs/centroid_decomposition.hpp
+      title: Centroid Decomposition
     - icon: ':heavy_check_mark:'
       path: graphs/dijkstras.hpp
       title: graphs/dijkstras.hpp
