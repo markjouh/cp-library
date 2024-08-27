@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: graphs/dijkstras.hpp
-    title: graphs/dijkstras.hpp
+    title: Dijkstra's Shortest Paths
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false

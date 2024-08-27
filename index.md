@@ -40,7 +40,7 @@ data:
       title: Centroid Decomposition
     - icon: ':heavy_check_mark:'
       path: graphs/dijkstras.hpp
-      title: graphs/dijkstras.hpp
+      title: Dijkstra's Shortest Paths
     - icon: ':heavy_check_mark:'
       path: graphs/euler_tour.hpp
       title: graphs/euler_tour.hpp
