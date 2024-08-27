@@ -1,16 +1,31 @@
 #pragma once
 
-template<class T> struct lazy_segtree {
-    const T id = 0;
-    const T lz_id = 0;
+struct lazy_segtree {
+    using item_t = pair<int, int>;
+    using lazy_t = int;
 
-    T merge(T a, T b) {
-        return a + b;
+    // Identity element, null update tag
+    const item_t id = {INF, 1};
+    const lazy_t lz_id = 0;
+
+    // Associative merge operation
+    item_t merge(item_t a, item_t b) {
+        if (a.first == b.first) {
+            return {a.first, a.second + b.second};
+        } else {
+            return a.first < b.first ? a : b;
+        }
     }
 
+    // Applying a lazy tag to a full segment
+    void apply(int x, lazy_t v) {
+        lazy[x] += v;
+    }
+
+    // Consuming and propagating a lazy tag
     void push(int x, int tl, int tr) {
         if (lazy[x] != lz_id) {
-            tree[x] += (tr - tl) * lazy[x]; // Make sure this checks out!
+            tree[x].first += lazy[x];
             if (tl + 1 != tr) {
                 lazy[2 * x + 1] += lazy[x];
                 lazy[2 * x + 2] += lazy[x];
@@ -19,18 +34,16 @@ template<class T> struct lazy_segtree {
         }
     }
 
-    // Modify above ^^
-
     lazy_segtree(int x) {
         init(x);
     }
 
-    lazy_segtree(const vector<T> &a) {
+    lazy_segtree(const vector<item_t> &a) {
         init(sz(a));
         build(a, 0, 0, n);
     }
 
-    T query(int l, int r) {
+    item_t query(int l, int r) {
         return query(l, r + 1, 0, 0, n);
     }
 
@@ -38,13 +51,10 @@ template<class T> struct lazy_segtree {
         update(l, r + 1, v, 0, 0, n);
     }
 
-    // int walk() {
-    //     return walk(0, 0, n);
-    // }
-
 private:
     int n;
-    vector<T> tree, lazy;
+    vector<item_t> tree;
+    vector<lazy_t> lazy;
 
     void init(int sz) {
         n = 1;
@@ -55,7 +65,7 @@ private:
         lazy.resize(2 * n, lz_id);
     }
 
-    void build(vector<T> &a, int x, int tl, int tr) {
+    void build(const vector<item_t> &a, int x, int tl, int tr) {
         if (tl + 1 == tr) {
             if (tl < sz(a)) {
                 tree[x] = a[tl];
@@ -68,7 +78,7 @@ private:
         tree[x] = merge(tree[2 * x + 1], tree[2 * x + 2]);
     }
 
-    T query(int l, int r, int x, int tl, int tr) {
+    item_t query(int l, int r, int x, int tl, int tr) {
         push(x, tl, tr);
         if (tl >= r || tr <= l) {
             return id;
@@ -86,7 +96,7 @@ private:
             return;
         }
         if (tl >= l && tr <= r) {
-            lazy[x] += v;
+            apply(x, v);
             push(x, tl, tr);
             return;
         }
@@ -95,19 +105,4 @@ private:
         update(l, r, v, 2 * x + 2, mid, tr);
         tree[x] = merge(tree[2 * x + 1], tree[2 * x + 2]);
     }
-
-    // int walk(int x, int tl, int tr) {
-    //     push(x, tl, tr);
-    //     if (tl + 1 == tr) {
-    //         return tl;
-    //     }
-    //     int mid = (tl + tr) / 2;
-    //     push(2 * x + 1, tl, mid);
-    //     push(2 * x + 2, mid, tr);
-    //     if (...) {
-    //         return walk(2 * x + 1, tl, mid);
-    //     } else {
-    //         return walk(2 * x + 2, mid, tr);
-    //     }
-    // }
 };
