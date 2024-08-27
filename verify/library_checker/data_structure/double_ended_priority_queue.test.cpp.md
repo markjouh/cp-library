@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: datastructures/w_ary_tree.hpp
-    title: datastructures/w_ary_tree.hpp
+    title: 64-ary Tree
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false

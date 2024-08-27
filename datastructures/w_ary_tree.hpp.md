@@ -64,8 +64,19 @@ data:
   - verify/library_checker/data_structure/double_ended_priority_queue.test.cpp
 documentation_of: datastructures/w_ary_tree.hpp
 layout: document
-redirect_from:
-- /library/datastructures/w_ary_tree.hpp
-- /library/datastructures/w_ary_tree.hpp.html
-title: datastructures/w_ary_tree.hpp
+title: 64-ary Tree
 ---
+
+### Overview
+
+A tree data structure that takes advantage of hardware intrinsics to support multiset operations in $O(\log_{64}{n})$ time, with an extremely small constant factor to boot. Its primary drawback is its memory complexity, which is linear in the magnitude of keys it's able to store.
+
+TODO: Implement predecessor/successor queries
+
+### Usage
+
+* `w_ary_tree<T>(n)`: Builds an empty 64-ary tree capable of storing values $[0, n)$. $O(n)$
+* `insert(x)`: Inserts x into the multiset.
+* `extract(x)`: Erases an instance of x from the multiset.
+* `get_min(x)`: Returns the minimum value in the set.
+* `get_max(x)`: Returns the maximum value in the set.

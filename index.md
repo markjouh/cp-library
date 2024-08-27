@@ -29,7 +29,7 @@ data:
       title: Union Find
     - icon: ':heavy_check_mark:'
       path: datastructures/w_ary_tree.hpp
-      title: datastructures/w_ary_tree.hpp
+      title: 64-ary Tree
   - name: graphs
     pages:
     - icon: ':heavy_check_mark:'
