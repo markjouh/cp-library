@@ -1,6 +1,7 @@
 {
 "verify/aizu/dsl/rmq.test.cpp": "2024-08-26 21:14:45 -0400",
 "verify/aizu/dsl/rsq_and_raq.test.cpp": "2024-08-26 21:14:45 -0400",
+"verify/library_checker/data_structure/associative_array.test.cpp": "2024-08-26 21:38:23 -0400",
 "verify/library_checker/data_structure/point_add_range_sum.test.cpp": "2024-08-26 21:14:45 -0400",
 "verify/library_checker/data_structure/static_rmq.test.cpp": "2024-08-26 21:14:45 -0400",
 "verify/library_checker/data_structure/unionfind.test.cpp": "2024-08-26 21:14:45 -0400",
@@ -8,5 +9,6 @@
 "verify/library_checker/graph/shortest_path.test.cpp": "2024-08-26 21:14:45 -0400",
 "verify/library_checker/number_theory/enumerate_primes.test.cpp": "2024-08-26 21:14:45 -0400",
 "verify/library_checker/tree/lca.test.cpp": "2024-08-26 21:14:45 -0400",
-"verify/library_checker/tree/rooted_tree_isomorphism.test.cpp": "2024-08-26 21:14:45 -0400"
+"verify/library_checker/tree/rooted_tree_isomorphism.test.cpp": "2024-08-26 21:14:45 -0400",
+"verify/library_checker/tree/vertex_add_subtree_sum.test.cpp": "2024-08-26 21:38:23 -0400"
 }
