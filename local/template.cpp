@@ -18,13 +18,11 @@ using ll = long long;
 using pii = pair<int, int>;
 using pll = pair<ll, ll>;
 
-template <class T>
-bool ckmin(T &a, const T &b) {
+template <class T> bool ckmin(T &a, const T &b) {
   return b < a ? a = b, 1 : 0;
 }
 
-template <class T>
-bool ckmax(T &a, const T &b) {
+template <class T> bool ckmax(T &a, const T &b) {
   return b > a ? a = b, 1 : 0;
 }
 
