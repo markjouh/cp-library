@@ -21,7 +21,7 @@ data:
     - icon: ':warning:'
       path: datastructures/segment_tree_lazy.hpp
       title: datastructures/segment_tree_lazy.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: datastructures/sparse_table.hpp
       title: Sparse Table
     - icon: ':heavy_check_mark:'
@@ -108,7 +108,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/library_checker/data_structure/point_add_range_sum.test.cpp
       title: verify/library_checker/data_structure/point_add_range_sum.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/library_checker/data_structure/static_rmq.test.cpp
       title: verify/library_checker/data_structure/static_rmq.test.cpp
     - icon: ':heavy_check_mark:'
