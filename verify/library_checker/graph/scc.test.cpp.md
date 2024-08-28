@@ -24,22 +24,21 @@ data:
     \  File \"/opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
     , line 400, in update\n    raise BundleErrorAt(path, i + 1, \"unable to process\
     \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
-    \ verify/boilerplate.hpp: line 21: unable to process #include in #if / #ifdef\
-    \ / #ifndef other than include guards\n"
+    \ verify/boilerplate.hpp: line 5: unable to process #include in #if / #ifdef /\
+    \ #ifndef other than include guards\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/scc\"\n\n#include \"../../boilerplate.hpp\"\
-    \n#include \"../../../graphs/kosaraju_scc.hpp\"\n\nint main() {\n    int n, m;\n\
-    \    cin >> n >> m;\n    vector<vector<int>> g(n);\n    for (int i = 0; i < m;\
-    \ i++) {\n        int u, v;\n        cin >> u >> v;\n        g[u].push_back(v);\n\
-    \    }\n    kosaraju_scc scc(g);\n    cout << scc.sccs << '\\n';\n    for (int\
-    \ i = 0; i < scc.sccs; i++) {\n        cout << sz(scc.members[i]) << ' ';\n  \
-    \      for (int x : scc.members[i]) {\n            cout << x << ' ';\n       \
-    \ }\n        cout << '\\n';\n    }\n}"
+    \n#include \"../../../graphs/kosaraju_scc.hpp\"\n\nint main() {\n  int n, m;\n\
+    \  cin >> n >> m;\n  vector<vector<int>> g(n);\n  for (int i = 0; i < m; i++)\
+    \ {\n    int u, v;\n    cin >> u >> v;\n    g[u].pb(v);\n  }\n  KosarajuSCC scc(g);\n\
+    \  cout << scc.sccs << '\\n';\n  for (int i = 0; i < scc.sccs; i++) {\n    cout\
+    \ << sz(scc.members[i]) << ' ';\n    for (int x : scc.members[i]) {\n      cout\
+    \ << x << ' ';\n    }\n    cout << '\\n';\n  }\n}"
   dependsOn:
   - graphs/kosaraju_scc.hpp
   isVerificationFile: true
   path: verify/library_checker/graph/scc.test.cpp
   requiredBy: []
-  timestamp: '2024-08-26 21:14:45-04:00'
+  timestamp: '2024-08-28 02:47:08-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/library_checker/graph/scc.test.cpp

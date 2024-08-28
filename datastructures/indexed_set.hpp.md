@@ -16,8 +16,7 @@ data:
     using namespace __gnu_pbds;
 
 
-    template<class T> using indexed_set = tree<T, null_type, less<T>, rb_tree_tag,
-    tree_order_statistics_node_update>;
+    template<class T> using IndSet = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
 
     '
   code: '#pragma once
@@ -28,15 +27,14 @@ data:
     using namespace __gnu_pbds;
 
 
-    template<class T> using indexed_set = tree<T, null_type, less<T>, rb_tree_tag,
-    tree_order_statistics_node_update>;
+    template<class T> using IndSet = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
 
     '
   dependsOn: []
   isVerificationFile: false
   path: datastructures/indexed_set.hpp
   requiredBy: []
-  timestamp: '2024-08-26 19:37:00-04:00'
+  timestamp: '2024-08-28 02:47:08-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: datastructures/indexed_set.hpp

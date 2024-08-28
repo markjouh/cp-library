@@ -24,22 +24,21 @@ data:
     \  File \"/opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
     , line 400, in update\n    raise BundleErrorAt(path, i + 1, \"unable to process\
     \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
-    \ verify/boilerplate.hpp: line 21: unable to process #include in #if / #ifdef\
-    \ / #ifndef other than include guards\n"
+    \ verify/boilerplate.hpp: line 5: unable to process #include in #if / #ifdef /\
+    \ #ifndef other than include guards\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_A\"\
     \n\n#include \"../../boilerplate.hpp\"\n#include \"../../../datastructures/segment_tree.hpp\"\
-    \n\nint op(int x, int y) {\n    return x < y ? x : y;\n}\n\nint id() {\n    return\
-    \ numeric_limits<int>::max();\n}\n\nint main() {\n    int n, q;\n    cin >> n\
-    \ >> q;\n    segment_tree<int, op, id> st(n);\n    while (q--) {\n        bool\
-    \ t;\n        int x, y;\n        cin >> t >> x >> y;\n        if (t) {\n     \
-    \       cout << st.query(x, y) << '\\n';\n        } else {\n            st.set(x,\
-    \ y);\n        }\n    }\n}"
+    \n\nint op(int x, int y) {\n  return x < y ? x : y;\n}\n\nint id() {\n  return\
+    \ numeric_limits<int>::max();\n}\n\nint main() {\n  int n, q;\n  cin >> n >> q;\n\
+    \  SegmentTree<int, op, id> st(n);\n  while (q--) {\n    bool t;\n    int x, y;\n\
+    \    cin >> t >> x >> y;\n    if (t) {\n      cout << st.query(x, y) << '\\n';\n\
+    \    } else {\n      st.set(x, y);\n    }\n  }\n}"
   dependsOn:
   - datastructures/segment_tree.hpp
   isVerificationFile: true
   path: verify/aizu/dsl/rmq.test.cpp
   requiredBy: []
-  timestamp: '2024-08-26 21:14:45-04:00'
+  timestamp: '2024-08-28 02:47:08-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/aizu/dsl/rmq.test.cpp

@@ -14,24 +14,24 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"numeric/binary_search.hpp\"\n\ntemplate<class T, class U>\
-    \ T bsmin(T lo, T hi, U f) {\n    assert(lo <= hi);\n    hi++;\n    for (T i =\
-    \ T(1) << __lg(hi - lo); i > 0; i >>= 1) {\n        hi -= (hi - i >= lo && f(hi\
-    \ - i)) * i;\n    }\n    return hi;\n}\n\ntemplate<class T, class U> T bsmax(T\
-    \ lo, T hi, U f) {\n    assert(lo <= hi);\n    lo--;\n    for (T i = T(1) << __lg(hi\
-    \ - lo); i > 0; i >>= 1) {\n        lo += (lo + i <= hi && f(lo + i)) * i;\n \
-    \   }\n    return lo;\n}\n"
-  code: "#pragma once\n\ntemplate<class T, class U> T bsmin(T lo, T hi, U f) {\n \
-    \   assert(lo <= hi);\n    hi++;\n    for (T i = T(1) << __lg(hi - lo); i > 0;\
-    \ i >>= 1) {\n        hi -= (hi - i >= lo && f(hi - i)) * i;\n    }\n    return\
-    \ hi;\n}\n\ntemplate<class T, class U> T bsmax(T lo, T hi, U f) {\n    assert(lo\
-    \ <= hi);\n    lo--;\n    for (T i = T(1) << __lg(hi - lo); i > 0; i >>= 1) {\n\
-    \        lo += (lo + i <= hi && f(lo + i)) * i;\n    }\n    return lo;\n}\n"
+  bundledCode: "#line 2 \"numeric/binary_search.hpp\"\n\ntemplate <class T, class\
+    \ U>\nT bsmin(T lo, T hi, U f) {\n  assert(lo <= hi);\n  hi++;\n  for (T i = T(1)\
+    \ << __lg(hi - lo); i > 0; i >>= 1) {\n    hi -= (hi - i >= lo && f(hi - i)) *\
+    \ i;\n  }\n  return hi;\n}\n\ntemplate <class T, class U>\nT bsmax(T lo, T hi,\
+    \ U f) {\n  assert(lo <= hi);\n  lo--;\n  for (T i = T(1) << __lg(hi - lo); i\
+    \ > 0; i >>= 1) {\n    lo += (lo + i <= hi && f(lo + i)) * i;\n  }\n  return lo;\n\
+    }\n"
+  code: "#pragma once\n\ntemplate <class T, class U>\nT bsmin(T lo, T hi, U f) {\n\
+    \  assert(lo <= hi);\n  hi++;\n  for (T i = T(1) << __lg(hi - lo); i > 0; i >>=\
+    \ 1) {\n    hi -= (hi - i >= lo && f(hi - i)) * i;\n  }\n  return hi;\n}\n\ntemplate\
+    \ <class T, class U>\nT bsmax(T lo, T hi, U f) {\n  assert(lo <= hi);\n  lo--;\n\
+    \  for (T i = T(1) << __lg(hi - lo); i > 0; i >>= 1) {\n    lo += (lo + i <= hi\
+    \ && f(lo + i)) * i;\n  }\n  return lo;\n}"
   dependsOn: []
   isVerificationFile: false
   path: numeric/binary_search.hpp
   requiredBy: []
-  timestamp: '2024-08-26 19:37:00-04:00'
+  timestamp: '2024-08-28 02:47:08-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/aizu/alds1/binary_search.test.cpp

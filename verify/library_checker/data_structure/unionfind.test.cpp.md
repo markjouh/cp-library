@@ -24,20 +24,20 @@ data:
     \  File \"/opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
     , line 400, in update\n    raise BundleErrorAt(path, i + 1, \"unable to process\
     \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
-    \ verify/boilerplate.hpp: line 21: unable to process #include in #if / #ifdef\
-    \ / #ifndef other than include guards\n"
+    \ verify/boilerplate.hpp: line 5: unable to process #include in #if / #ifdef /\
+    \ #ifndef other than include guards\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/unionfind\"\n\n#include\
     \ \"../../boilerplate.hpp\"\n#include \"../../../datastructures/union_find.hpp\"\
-    \n\nint main() {\n    int n, q;\n    cin >> n >> q;\n    union_find uf(n);\n \
-    \   while (q--) {\n        bool t;\n        int x, y;\n        cin >> t >> x >>\
-    \ y;\n        if (t) {\n            cout << (uf.find(x) == uf.find(y)) << '\\\
-    n';\n        } else {\n            uf.join(x, y);\n        }\n    }\n}"
+    \n\nint main() {\n  int n, q;\n  cin >> n >> q;\n  UnionFind uf(n);\n  while (q--)\
+    \ {\n    bool t;\n    int x, y;\n    cin >> t >> x >> y;\n    if (t) {\n     \
+    \ cout << (uf.find(x) == uf.find(y)) << '\\n';\n    } else {\n      uf.join(x,\
+    \ y);\n    }\n  }\n}"
   dependsOn:
   - datastructures/union_find.hpp
   isVerificationFile: true
   path: verify/library_checker/data_structure/unionfind.test.cpp
   requiredBy: []
-  timestamp: '2024-08-26 21:14:45-04:00'
+  timestamp: '2024-08-28 02:47:08-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/library_checker/data_structure/unionfind.test.cpp

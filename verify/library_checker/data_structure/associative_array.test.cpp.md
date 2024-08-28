@@ -24,20 +24,20 @@ data:
     \  File \"/opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
     , line 400, in update\n    raise BundleErrorAt(path, i + 1, \"unable to process\
     \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
-    \ verify/boilerplate.hpp: line 21: unable to process #include in #if / #ifdef\
-    \ / #ifndef other than include guards\n"
+    \ verify/boilerplate.hpp: line 5: unable to process #include in #if / #ifdef /\
+    \ #ifndef other than include guards\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/associative_array\"\n\n\
     #include \"../../boilerplate.hpp\"\n#include \"../../../datastructures/hash_table.hpp\"\
-    \n\nint main() {\n    int q;\n    cin >> q;\n    hash_table<ll, ll> mp;\n    while\
-    \ (q--) {\n        bool t;\n        ll k;\n        cin >> t >> k;\n        if\
-    \ (t) {\n            cout << mp[k] << '\\n';\n        } else {\n            ll\
-    \ v;\n            cin >> v;\n            mp[k] = v;\n        }\n    }\n}"
+    \n\nint main() {\n  int q;\n  cin >> q;\n  HashTable<ll, ll> mp;\n  while (q--)\
+    \ {\n    bool t;\n    ll k;\n    cin >> t >> k;\n    if (t) {\n      cout << mp[k]\
+    \ << '\\n';\n    } else {\n      ll v;\n      cin >> v;\n      mp[k] = v;\n  \
+    \  }\n  }\n}"
   dependsOn:
   - datastructures/hash_table.hpp
   isVerificationFile: true
   path: verify/library_checker/data_structure/associative_array.test.cpp
   requiredBy: []
-  timestamp: '2024-08-26 21:38:23-04:00'
+  timestamp: '2024-08-28 02:47:08-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/library_checker/data_structure/associative_array.test.cpp

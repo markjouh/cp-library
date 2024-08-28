@@ -24,21 +24,21 @@ data:
     \  File \"/opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
     , line 400, in update\n    raise BundleErrorAt(path, i + 1, \"unable to process\
     \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
-    \ verify/boilerplate.hpp: line 21: unable to process #include in #if / #ifdef\
-    \ / #ifndef other than include guards\n"
+    \ verify/boilerplate.hpp: line 5: unable to process #include in #if / #ifdef /\
+    \ #ifndef other than include guards\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/rooted_tree_isomorphism_classification\"\
     \n\n#include \"../../boilerplate.hpp\"\n#include \"../../../graphs/tree_isomorphism.hpp\"\
-    \n\nint main() {\n    int n;\n    cin >> n;\n    vector<vector<int>> g(n);\n \
-    \   for (int i = 1; i < n; i++) {\n        int p;\n        cin >> p;\n       \
-    \ g[p].push_back(i);\n    }\n    tree_isomorphism iso;\n    auto res = iso.gen(g);\n\
-    \    cout << sz(iso.hashes) << '\\n';\n    for (int x : res) {\n        cout <<\
-    \ x << ' ';\n    }\n    cout << '\\n';\n}"
+    \n\nint main() {\n  int n;\n  cin >> n;\n  vector<vector<int>> g(n);\n  for (int\
+    \ i = 1; i < n; i++) {\n    int p;\n    cin >> p;\n    g[p].push_back(i);\n  }\n\
+    \  TreeIsomorphism iso;\n  auto res = iso.gen(g);\n  cout << sz(iso.hashes) <<\
+    \ '\\n';\n  for (int x : res) {\n    cout << x << ' ';\n  }\n  cout << '\\n';\n\
+    }"
   dependsOn:
   - graphs/tree_isomorphism.hpp
   isVerificationFile: true
   path: verify/library_checker/tree/rooted_tree_isomorphism.test.cpp
   requiredBy: []
-  timestamp: '2024-08-26 21:14:45-04:00'
+  timestamp: '2024-08-28 02:47:08-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/library_checker/tree/rooted_tree_isomorphism.test.cpp

@@ -24,21 +24,21 @@ data:
     \  File \"/opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
     , line 400, in update\n    raise BundleErrorAt(path, i + 1, \"unable to process\
     \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
-    \ verify/boilerplate.hpp: line 21: unable to process #include in #if / #ifdef\
-    \ / #ifndef other than include guards\n"
+    \ verify/boilerplate.hpp: line 5: unable to process #include in #if / #ifdef /\
+    \ #ifndef other than include guards\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/staticrmq\"\n\n#include\
     \ \"../../boilerplate.hpp\"\n#include \"../../../datastructures/sparse_table.hpp\"\
-    \n\nint op(int x, int y) {\n    return x < y ? x : y;\n}\n\nint main() {\n   \
-    \ int n, q;\n    cin >> n >> q;\n    vector<int> a(n);\n    for (int i = 0; i\
-    \ < n; i++) {\n        cin >> a[i];\n    }\n    sparse_table<int, op> rmq(a);\n\
-    \    while (q--) {\n        int l, r;\n        cin >> l >> r;\n        cout <<\
-    \ rmq.query(l, r - 1) << '\\n';\n    }\n}"
+    \n\nint op(int x, int y) {\n  return x < y ? x : y;\n}\n\nint main() {\n  int\
+    \ n, q;\n  cin >> n >> q;\n  vector<int> a(n);\n  for (int i = 0; i < n; i++)\
+    \ {\n    cin >> a[i];\n  }\n  SparseTable<int, op> rmq(a);\n  while (q--) {\n\
+    \    int l, r;\n    cin >> l >> r;\n    cout << rmq.query(l, r - 1) << '\\n';\n\
+    \  }\n}"
   dependsOn:
   - datastructures/sparse_table.hpp
   isVerificationFile: true
   path: verify/library_checker/data_structure/static_rmq.test.cpp
   requiredBy: []
-  timestamp: '2024-08-26 21:14:45-04:00'
+  timestamp: '2024-08-28 02:47:08-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/library_checker/data_structure/static_rmq.test.cpp

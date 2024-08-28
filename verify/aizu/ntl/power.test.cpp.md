@@ -24,18 +24,18 @@ data:
     \  File \"/opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
     , line 400, in update\n    raise BundleErrorAt(path, i + 1, \"unable to process\
     \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
-    \ verify/boilerplate.hpp: line 21: unable to process #include in #if / #ifdef\
-    \ / #ifndef other than include guards\n"
+    \ verify/boilerplate.hpp: line 5: unable to process #include in #if / #ifdef /\
+    \ #ifndef other than include guards\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_B\"\
     \n\n#include \"../../boilerplate.hpp\"\n#include \"../../../numeric/mod_int.hpp\"\
-    \n\nusing mint = mod_int<1000000007>;\n\nint main() {\n    int m, n;\n    cin\
-    \ >> m >> n;\n    cout << pow(mint(m), n) << '\\n';\n}"
+    \n\nusing mint = ModInt<1000000007>;\n\nint main() {\n  int m, n;\n  cin >> m\
+    \ >> n;\n  cout << pow(mint(m), n) << '\\n';\n}"
   dependsOn:
   - numeric/mod_int.hpp
   isVerificationFile: true
   path: verify/aizu/ntl/power.test.cpp
   requiredBy: []
-  timestamp: '2024-08-27 00:00:53-04:00'
+  timestamp: '2024-08-28 02:47:08-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/aizu/ntl/power.test.cpp

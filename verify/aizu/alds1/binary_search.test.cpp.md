@@ -24,22 +24,21 @@ data:
     \  File \"/opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
     , line 400, in update\n    raise BundleErrorAt(path, i + 1, \"unable to process\
     \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
-    \ verify/boilerplate.hpp: line 21: unable to process #include in #if / #ifdef\
-    \ / #ifndef other than include guards\n"
+    \ verify/boilerplate.hpp: line 5: unable to process #include in #if / #ifdef /\
+    \ #ifndef other than include guards\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_4_B\"\
     \n\n#include \"../../boilerplate.hpp\"\n#include \"../../../numeric/binary_search.hpp\"\
-    \n\nint main() {\n    int n;\n    cin >> n;\n    vector<int> a(n);\n    for (int\
-    \ i = 0; i < n; i++) {\n        cin >> a[i];\n    }\n    sort(all(a));\n    int\
-    \ q;\n    cin >> q;\n    int ans = 0;\n    while (q--) {\n        int x;\n   \
-    \     cin >> x;\n        int idx = bsmin(0, n - 1, [&](int p) {\n            return\
-    \ a[p] >= x;\n        });\n        ans += idx != n && a[idx] == x;\n    }\n  \
-    \  cout << ans << '\\n';\n}"
+    \n\nint main() {\n  int n;\n  cin >> n;\n  vector<int> a(n);\n  for (int i = 0;\
+    \ i < n; i++) {\n    cin >> a[i];\n  }\n  sort(all(a));\n  int q;\n  cin >> q;\n\
+    \  int ans = 0;\n  while (q--) {\n    int x;\n    cin >> x;\n    int idx = bsmin(0,\
+    \ n - 1, [&](int p) {\n      return a[p] >= x;\n    });\n    ans += idx != n &&\
+    \ a[idx] == x;\n  }\n  cout << ans << '\\n';\n}"
   dependsOn:
   - numeric/binary_search.hpp
   isVerificationFile: true
   path: verify/aizu/alds1/binary_search.test.cpp
   requiredBy: []
-  timestamp: '2024-08-26 21:48:55-04:00'
+  timestamp: '2024-08-28 02:47:08-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/aizu/alds1/binary_search.test.cpp

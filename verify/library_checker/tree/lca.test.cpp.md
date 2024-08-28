@@ -24,20 +24,20 @@ data:
     \  File \"/opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
     , line 400, in update\n    raise BundleErrorAt(path, i + 1, \"unable to process\
     \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
-    \ verify/boilerplate.hpp: line 21: unable to process #include in #if / #ifdef\
-    \ / #ifndef other than include guards\n"
+    \ verify/boilerplate.hpp: line 5: unable to process #include in #if / #ifdef /\
+    \ #ifndef other than include guards\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/lca\"\n\n#include \"../../boilerplate.hpp\"\
-    \n#include \"../../../graphs/binary_lifts.hpp\"\n\nint main() {\n    int n, q;\n\
-    \    cin >> n >> q;\n    vector<vector<int>> g(n);\n    for (int i = 1; i < n;\
-    \ i++) {\n        int p;\n        cin >> p;\n        g[p].push_back(i);\n    }\n\
-    \    binary_lifts bl(g);\n    while (q--) {\n        int u, v;\n        cin >>\
-    \ u >> v;\n        cout << bl.lca(u, v) << '\\n';\n    }\n}"
+    \n#include \"../../../graphs/binary_lifts.hpp\"\n\nint main() {\n  int n, q;\n\
+    \  cin >> n >> q;\n  vector<vector<int>> g(n);\n  for (int i = 1; i < n; i++)\
+    \ {\n    int p;\n    cin >> p;\n    g[p].pb(i);\n  }\n  BinaryLifting bl(g);\n\
+    \  while (q--) {\n    int u, v;\n    cin >> u >> v;\n    cout << bl.lca(u, v)\
+    \ << '\\n';\n  }\n}"
   dependsOn:
   - graphs/binary_lifts.hpp
   isVerificationFile: true
   path: verify/library_checker/tree/lca.test.cpp
   requiredBy: []
-  timestamp: '2024-08-26 21:14:45-04:00'
+  timestamp: '2024-08-28 02:47:08-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/library_checker/tree/lca.test.cpp
