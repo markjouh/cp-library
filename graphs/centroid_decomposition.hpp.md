@@ -10,10 +10,26 @@ data:
     links: []
   bundledCode: "#line 2 \"graphs/centroid_decomposition.hpp\"\n\nstruct CentroidDecomposition\
     \ {\n\tvector<int> cd_par;\n\n\tCentroidDecomposition(const vector<vector<int>>\
-    \ &g) : cd_par(sz(g)), adj(g), blocked(sz(g)), st_size(sz(g)) {\n\t\tfor (int\
-    \ i = 0; i < sz(g); i++) {\n\t\t\tif (st_size[i] == 0) {\n\t\t\t\tbuild(i, -1);\n\
-    \t\t\t}\n\t\t}\n\t\tblocked.clear();\n\t\tst_size.clear();\n\t}\nprivate:\n\t\
-    const vector<vector<int>> &adj;\n\tvector<bool> blocked;\n\tvector<int> st_size;\n\
+    \ &g) : adj(g) {\n\t\tcd_par.resize(sz(g));\n\t\tblocked.resize(sz(g));\n\t\t\
+    st_size.resize(sz(g));\n\t\tfor (int i = 0; i < sz(g); i++) {\n\t\t\tif (st_size[i]\
+    \ == 0) {\n\t\t\t\tbuild(i, -1);\n\t\t\t}\n\t\t}\n\t\tblocked.clear();\n\t\tst_size.clear();\n\
+    \t}\n\nprivate:\n\tconst vector<vector<int>> &adj;\n\tvector<bool> blocked;\n\t\
+    vector<int> st_size;\n\n\tvoid get_sizes(int u, int par) {\n\t\tst_size[u] = 1;\n\
+    \t\tfor (int v : adj[u]) {\n\t\t\tif (v != par && !blocked[v]) {\n\t\t\t\tget_sizes(v,\
+    \ u);\n\t\t\t\tst_size[u] += st_size[v];\n\t\t\t}\n\t\t}\n\t}\n\n\tint find_centroid(int\
+    \ u, int par, int tree_sz) {\n\t\tint nxt = -1;\n\t\tfor (int v : adj[u]) {\n\t\
+    \t\tif (v != par && !blocked[v] && st_size[v] * 2 > tree_sz) {\n\t\t\t\tnxt =\
+    \ v;\n\t\t\t\tbreak;\n\t\t\t}\n\t\t}\n\t\treturn nxt == -1 ? u : find_centroid(nxt,\
+    \ u, tree_sz);\n\t}\n\n\tvoid build(int u, int par) {\n\t\tget_sizes(u, -1);\n\
+    \t\tconst int root = find_centroid(u, -1, st_size[u]);\n\t\tcd_par[root] = par;\n\
+    \t\tblocked[root] = true;\n\t\tfor (int v : adj[root]) {\n\t\t\tif (!blocked[v])\
+    \ {\n\t\t\t\tbuild(v, root);\n\t\t\t}\n\t\t}\n\t}\n};\n"
+  code: "#pragma once\n\nstruct CentroidDecomposition {\n\tvector<int> cd_par;\n\n\
+    \tCentroidDecomposition(const vector<vector<int>> &g) : adj(g) {\n\t\tcd_par.resize(sz(g));\n\
+    \t\tblocked.resize(sz(g));\n\t\tst_size.resize(sz(g));\n\t\tfor (int i = 0; i\
+    \ < sz(g); i++) {\n\t\t\tif (st_size[i] == 0) {\n\t\t\t\tbuild(i, -1);\n\t\t\t\
+    }\n\t\t}\n\t\tblocked.clear();\n\t\tst_size.clear();\n\t}\n\nprivate:\n\tconst\
+    \ vector<vector<int>> &adj;\n\tvector<bool> blocked;\n\tvector<int> st_size;\n\
     \n\tvoid get_sizes(int u, int par) {\n\t\tst_size[u] = 1;\n\t\tfor (int v : adj[u])\
     \ {\n\t\t\tif (v != par && !blocked[v]) {\n\t\t\t\tget_sizes(v, u);\n\t\t\t\t\
     st_size[u] += st_size[v];\n\t\t\t}\n\t\t}\n\t}\n\n\tint find_centroid(int u, int\
@@ -24,27 +40,11 @@ data:
     const int root = find_centroid(u, -1, st_size[u]);\n\t\tcd_par[root] = par;\n\t\
     \tblocked[root] = true;\n\t\tfor (int v : adj[root]) {\n\t\t\tif (!blocked[v])\
     \ {\n\t\t\t\tbuild(v, root);\n\t\t\t}\n\t\t}\n\t}\n};\n"
-  code: "#pragma once\n\nstruct CentroidDecomposition {\n\tvector<int> cd_par;\n\n\
-    \tCentroidDecomposition(const vector<vector<int>> &g) : cd_par(sz(g)), adj(g),\
-    \ blocked(sz(g)), st_size(sz(g)) {\n\t\tfor (int i = 0; i < sz(g); i++) {\n\t\t\
-    \tif (st_size[i] == 0) {\n\t\t\t\tbuild(i, -1);\n\t\t\t}\n\t\t}\n\t\tblocked.clear();\n\
-    \t\tst_size.clear();\n\t}\nprivate:\n\tconst vector<vector<int>> &adj;\n\tvector<bool>\
-    \ blocked;\n\tvector<int> st_size;\n\n\tvoid get_sizes(int u, int par) {\n\t\t\
-    st_size[u] = 1;\n\t\tfor (int v : adj[u]) {\n\t\t\tif (v != par && !blocked[v])\
-    \ {\n\t\t\t\tget_sizes(v, u);\n\t\t\t\tst_size[u] += st_size[v];\n\t\t\t}\n\t\t\
-    }\n\t}\n\n\tint find_centroid(int u, int par, int tree_sz) {\n\t\tint nxt = -1;\n\
-    \t\tfor (int v : adj[u]) {\n\t\t\tif (v != par && !blocked[v] && st_size[v] *\
-    \ 2 > tree_sz) {\n\t\t\t\tnxt = v;\n\t\t\t\tbreak;\n\t\t\t}\n\t\t}\n\t\treturn\
-    \ nxt == -1 ? u : find_centroid(nxt, u, tree_sz);\n\t}\n\n\tvoid build(int u,\
-    \ int par) {\n\t\tget_sizes(u, -1);\n\t\tconst int root = find_centroid(u, -1,\
-    \ st_size[u]);\n\t\tcd_par[root] = par;\n\t\tblocked[root] = true;\n\t\tfor (int\
-    \ v : adj[root]) {\n\t\t\tif (!blocked[v]) {\n\t\t\t\tbuild(v, root);\n\t\t\t\
-    }\n\t\t}\n\t}\n};\n"
   dependsOn: []
   isVerificationFile: false
   path: graphs/centroid_decomposition.hpp
   requiredBy: []
-  timestamp: '2024-08-28 02:47:08-04:00'
+  timestamp: '2024-08-28 03:11:34-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: graphs/centroid_decomposition.hpp

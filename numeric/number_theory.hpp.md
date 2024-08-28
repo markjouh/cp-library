@@ -24,10 +24,10 @@ data:
     \ {\n      break;\n    }\n    int exp = 0;\n    while (num % p == 0) {\n     \
     \ num /= p;\n      exp++;\n    }\n    if (exp) {\n      res.emplace_back(p, exp);\n\
     \    }\n  }\n  if (num > 1) {\n    res.emplace_back(num, 1);\n  }\n  return res;\n\
-    }\n\ntemplate<class T> vector<T> gen_divisors(vector<pair<T, int>> prime_facs)\
-    \ {\n  vector<T> res = {1};\n  for (auto [p, exp] : prime_facs) {\n    const int\
-    \ prev_layer = sz(res);\n    T coeff = 1;\n    for (int i = 0; i < exp; i++) {\n\
-    \      coeff *= p;\n      for (int j = 0; j < prev_layer; j++) {\n        res.push_back(coeff\
+    }\n\ntemplate<class T> vector<T> gen_divisors(vector<pair<T, int>> facs) {\n \
+    \ vector<T> res = {1};\n  for (auto [p, exp] : facs) {\n    const int prev_layer\
+    \ = sz(res);\n    T coeff = 1;\n    for (int i = 0; i < exp; i++) {\n      coeff\
+    \ *= p;\n      for (int j = 0; j < prev_layer; j++) {\n        res.push_back(coeff\
     \ * res[j]);\n      }\n    }\n  }\n  return res;\n}\n};\n"
   code: "#pragma once\n\nnamespace number_theory {\n\nvector<int> mn_fac, primes;\n\
     \nvoid sieve(int n) {\n  mn_fac.resize(n + 1);\n  for (int i = 2; i <= n; i++)\
@@ -42,16 +42,16 @@ data:
     \    int exp = 0;\n    while (num % p == 0) {\n      num /= p;\n      exp++;\n\
     \    }\n    if (exp) {\n      res.emplace_back(p, exp);\n    }\n  }\n  if (num\
     \ > 1) {\n    res.emplace_back(num, 1);\n  }\n  return res;\n}\n\ntemplate<class\
-    \ T> vector<T> gen_divisors(vector<pair<T, int>> prime_facs) {\n  vector<T> res\
-    \ = {1};\n  for (auto [p, exp] : prime_facs) {\n    const int prev_layer = sz(res);\n\
-    \    T coeff = 1;\n    for (int i = 0; i < exp; i++) {\n      coeff *= p;\n  \
-    \    for (int j = 0; j < prev_layer; j++) {\n        res.push_back(coeff * res[j]);\n\
-    \      }\n    }\n  }\n  return res;\n}\n};\n"
+    \ T> vector<T> gen_divisors(vector<pair<T, int>> facs) {\n  vector<T> res = {1};\n\
+    \  for (auto [p, exp] : facs) {\n    const int prev_layer = sz(res);\n    T coeff\
+    \ = 1;\n    for (int i = 0; i < exp; i++) {\n      coeff *= p;\n      for (int\
+    \ j = 0; j < prev_layer; j++) {\n        res.push_back(coeff * res[j]);\n    \
+    \  }\n    }\n  }\n  return res;\n}\n};\n"
   dependsOn: []
   isVerificationFile: false
   path: numeric/number_theory.hpp
   requiredBy: []
-  timestamp: '2024-08-28 02:47:08-04:00'
+  timestamp: '2024-08-28 03:11:34-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/library_checker/number_theory/enumerate_primes.test.cpp
