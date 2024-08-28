@@ -9,41 +9,41 @@ const ll H_BASE = uniform_int_distribution<ll>(0, H_MOD)(rng);
 
 vector<ll> pow_b = {1};
 
-struct hash {
-    ll val;
-    int len;
+struct Hash {
+  ll val;
+  int len;
 
-    hash(ll x, int y) : val(x), len(y) {}
+  Hash(ll x, int y) : val(x), len(y) {}
 
-    hash operator+(hash b) {
-        return hash((__int128_t(val) * pow_b[b.len] + b.val) % H_MOD, len + b.len);
-    }
+  Hash operator+(Hash b) {
+    return Hash((__int128_t(val) * pow_b[b.len] + b.val) % H_MOD, len + b.len);
+  }
 
-    bool operator==(hash b) {
-        return val == b.val && len == b.len;
-    }
+  bool operator==(Hash b) {
+    return val == b.val && len == b.len;
+  }
 };
 
-struct str_hash {
-    int len;
-    vector<ll> hashes;
+struct StringHash {
+  int len;
+  vector<ll> hashes;
 
-    template<class T> str_hash(const T &s) : len(sz(s)), hashes(len + 1) {
-        for (int i = 0; i < len; i++) {
-            hashes[i + 1] = (__int128_t(hashes[i]) * H_BASE + s[i]) % H_MOD;
-        }
-        while (sz(pow_b) <= len) {
-            pow_b.push_back(__int128_t(pow_b.back()) * H_BASE % H_MOD);
-        }
+  template<class T> StringHash(const T &s) : len(sz(s)), hashes(len + 1) {
+    for (int i = 0; i < len; i++) {
+      hashes[i + 1] = (__int128_t(hashes[i]) * H_BASE + s[i]) % H_MOD;
     }
+    while (sz(pow_b) <= len) {
+      pow_b.push_back(__int128_t(pow_b.back()) * H_BASE % H_MOD);
+    }
+  }
 
-    hash get(int l, int r) {
-        r++;
-        return hash(((hashes[r] - __int128_t(hashes[l]) * pow_b[r - l]) % H_MOD + H_MOD) % H_MOD, r - l);
-    }
+  Hash get(int l, int r) {
+    r++;
+    return Hash(((hashes[r] - __int128_t(hashes[l]) * pow_b[r - l]) % H_MOD + H_MOD) % H_MOD, r - l);
+  }
 
-    hash get() {
-        return get(0, sz(hashes) - 1);
-    }
+  Hash get() {
+    return get(0, sz(hashes) - 1);
+  }
 };
 }

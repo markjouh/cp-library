@@ -4,20 +4,20 @@
 #include "../../../datastructures/fenwick_tree_extended.hpp"
 
 int main() {
-    int n, q;
-    cin >> n >> q;
-    extended_fenwick<ll> ft(n);
-    while (q--) {
-        bool t;
-        int l, r;
-        cin >> t >> l >> r;
-        l--; r--;
-        if (t) {
-            cout << ft.sum(l, r) << '\n';
-        } else {
-            int x;
-            cin >> x;
-            ft.add(l, r, x);
-        }
+  int n, q;
+  cin >> n >> q;
+  DualFenwickTree<ll> ft(n);
+  while (q--) {
+    bool t;
+    int l, r;
+    cin >> t >> l >> r;
+    l--; r--;
+    if (t) {
+      cout << ft.sum(l, r) << '\n';
+    } else {
+      int x;
+      cin >> x;
+      ft.add(l, r, x);
     }
+  }
 }

@@ -3,4 +3,4 @@
 
 using namespace __gnu_pbds;
 
-template<class T> using indexed_set = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
+template<class T> using IndSet = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
