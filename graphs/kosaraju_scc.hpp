@@ -9,7 +9,6 @@ struct KosarajuSCC {
     comp.resize(sz(g), -1);
     t_adj.resize(sz(g));
     vis.resize(sz(g));
-
     ord.reserve(sz(g));
     for (int i = 0; i < sz(g); i++) {
       if (!vis[i]) {
