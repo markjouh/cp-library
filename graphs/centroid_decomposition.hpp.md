@@ -9,42 +9,43 @@ data:
   attributes:
     links: []
   bundledCode: "#line 2 \"graphs/centroid_decomposition.hpp\"\n\nstruct CentroidDecomposition\
-    \ {\n\tvector<int> cd_par;\n\n\tCentroidDecomposition(const vector<vector<int>>\
-    \ &g) : adj(g) {\n\t\tcd_par.resize(sz(g));\n\t\tblocked.resize(sz(g));\n\t\t\
-    st_size.resize(sz(g));\n\t\tfor (int i = 0; i < sz(g); i++) {\n\t\t\tif (st_size[i]\
-    \ == 0) {\n\t\t\t\tbuild(i, -1);\n\t\t\t}\n\t\t}\n\t\tblocked.clear();\n\t\tst_size.clear();\n\
-    \t}\n\nprivate:\n\tconst vector<vector<int>> &adj;\n\tvector<bool> blocked;\n\t\
-    vector<int> st_size;\n\n\tvoid get_sizes(int u, int par) {\n\t\tst_size[u] = 1;\n\
-    \t\tfor (int v : adj[u]) {\n\t\t\tif (v != par && !blocked[v]) {\n\t\t\t\tget_sizes(v,\
-    \ u);\n\t\t\t\tst_size[u] += st_size[v];\n\t\t\t}\n\t\t}\n\t}\n\n\tint find_centroid(int\
-    \ u, int par, int tree_sz) {\n\t\tint nxt = -1;\n\t\tfor (int v : adj[u]) {\n\t\
-    \t\tif (v != par && !blocked[v] && st_size[v] * 2 > tree_sz) {\n\t\t\t\tnxt =\
-    \ v;\n\t\t\t\tbreak;\n\t\t\t}\n\t\t}\n\t\treturn nxt == -1 ? u : find_centroid(nxt,\
-    \ u, tree_sz);\n\t}\n\n\tvoid build(int u, int par) {\n\t\tget_sizes(u, -1);\n\
-    \t\tconst int root = find_centroid(u, -1, st_size[u]);\n\t\tcd_par[root] = par;\n\
-    \t\tblocked[root] = true;\n\t\tfor (int v : adj[root]) {\n\t\t\tif (!blocked[v])\
-    \ {\n\t\t\t\tbuild(v, root);\n\t\t\t}\n\t\t}\n\t}\n};\n"
-  code: "#pragma once\n\nstruct CentroidDecomposition {\n\tvector<int> cd_par;\n\n\
-    \tCentroidDecomposition(const vector<vector<int>> &g) : adj(g) {\n\t\tcd_par.resize(sz(g));\n\
-    \t\tblocked.resize(sz(g));\n\t\tst_size.resize(sz(g));\n\t\tfor (int i = 0; i\
-    \ < sz(g); i++) {\n\t\t\tif (st_size[i] == 0) {\n\t\t\t\tbuild(i, -1);\n\t\t\t\
-    }\n\t\t}\n\t\tblocked.clear();\n\t\tst_size.clear();\n\t}\n\nprivate:\n\tconst\
-    \ vector<vector<int>> &adj;\n\tvector<bool> blocked;\n\tvector<int> st_size;\n\
-    \n\tvoid get_sizes(int u, int par) {\n\t\tst_size[u] = 1;\n\t\tfor (int v : adj[u])\
-    \ {\n\t\t\tif (v != par && !blocked[v]) {\n\t\t\t\tget_sizes(v, u);\n\t\t\t\t\
-    st_size[u] += st_size[v];\n\t\t\t}\n\t\t}\n\t}\n\n\tint find_centroid(int u, int\
-    \ par, int tree_sz) {\n\t\tint nxt = -1;\n\t\tfor (int v : adj[u]) {\n\t\t\tif\
-    \ (v != par && !blocked[v] && st_size[v] * 2 > tree_sz) {\n\t\t\t\tnxt = v;\n\t\
-    \t\t\tbreak;\n\t\t\t}\n\t\t}\n\t\treturn nxt == -1 ? u : find_centroid(nxt, u,\
-    \ tree_sz);\n\t}\n\n\tvoid build(int u, int par) {\n\t\tget_sizes(u, -1);\n\t\t\
-    const int root = find_centroid(u, -1, st_size[u]);\n\t\tcd_par[root] = par;\n\t\
-    \tblocked[root] = true;\n\t\tfor (int v : adj[root]) {\n\t\t\tif (!blocked[v])\
-    \ {\n\t\t\t\tbuild(v, root);\n\t\t\t}\n\t\t}\n\t}\n};\n"
+    \ {\n  vector<int> cd_par;\n\n  CentroidDecomposition(const vector<vector<int>>\
+    \ &g) : adj(g) {\n    cd_par.resize(sz(g));\n    blocked.resize(sz(g));\n    st_size.resize(sz(g));\n\
+    \    for (int i = 0; i < sz(g); i++) {\n      if (st_size[i] == 0) {\n       \
+    \ build(i, -1);\n      }\n    }\n    blocked.clear();\n    st_size.clear();\n\
+    \  }\n\nprivate:\n  const vector<vector<int>> &adj;\n  vector<bool> blocked;\n\
+    \  vector<int> st_size;\n\n  void get_sizes(int u, int par) {\n    st_size[u]\
+    \ = 1;\n    for (int v : adj[u]) {\n      if (v != par && !blocked[v]) {\n   \
+    \     get_sizes(v, u);\n        st_size[u] += st_size[v];\n      }\n    }\n  }\n\
+    \n  int find_centroid(int u, int par, int tree_sz) {\n    int nxt = -1;\n    for\
+    \ (int v : adj[u]) {\n      if (v != par && !blocked[v] && st_size[v] * 2 > tree_sz)\
+    \ {\n        nxt = v;\n        break;\n      }\n    }\n    return nxt == -1 ?\
+    \ u : find_centroid(nxt, u, tree_sz);\n  }\n\n  void build(int u, int par) {\n\
+    \    get_sizes(u, -1);\n    const int root = find_centroid(u, -1, st_size[u]);\n\
+    \    cd_par[root] = par;\n    blocked[root] = true;\n    for (int v : adj[root])\
+    \ {\n      if (!blocked[v]) {\n        build(v, root);\n      }\n    }\n  }\n\
+    };\n"
+  code: "#pragma once\n\nstruct CentroidDecomposition {\n  vector<int> cd_par;\n\n\
+    \  CentroidDecomposition(const vector<vector<int>> &g) : adj(g) {\n    cd_par.resize(sz(g));\n\
+    \    blocked.resize(sz(g));\n    st_size.resize(sz(g));\n    for (int i = 0; i\
+    \ < sz(g); i++) {\n      if (st_size[i] == 0) {\n        build(i, -1);\n     \
+    \ }\n    }\n    blocked.clear();\n    st_size.clear();\n  }\n\nprivate:\n  const\
+    \ vector<vector<int>> &adj;\n  vector<bool> blocked;\n  vector<int> st_size;\n\
+    \n  void get_sizes(int u, int par) {\n    st_size[u] = 1;\n    for (int v : adj[u])\
+    \ {\n      if (v != par && !blocked[v]) {\n        get_sizes(v, u);\n        st_size[u]\
+    \ += st_size[v];\n      }\n    }\n  }\n\n  int find_centroid(int u, int par, int\
+    \ tree_sz) {\n    int nxt = -1;\n    for (int v : adj[u]) {\n      if (v != par\
+    \ && !blocked[v] && st_size[v] * 2 > tree_sz) {\n        nxt = v;\n        break;\n\
+    \      }\n    }\n    return nxt == -1 ? u : find_centroid(nxt, u, tree_sz);\n\
+    \  }\n\n  void build(int u, int par) {\n    get_sizes(u, -1);\n    const int root\
+    \ = find_centroid(u, -1, st_size[u]);\n    cd_par[root] = par;\n    blocked[root]\
+    \ = true;\n    for (int v : adj[root]) {\n      if (!blocked[v]) {\n        build(v,\
+    \ root);\n      }\n    }\n  }\n};\n"
   dependsOn: []
   isVerificationFile: false
   path: graphs/centroid_decomposition.hpp
   requiredBy: []
-  timestamp: '2024-08-28 03:11:34-04:00'
+  timestamp: '2024-08-28 03:16:10-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: graphs/centroid_decomposition.hpp

@@ -14,7 +14,7 @@ data:
   bundledCode: "#line 2 \"graphs/kosaraju_scc.hpp\"\n\nstruct KosarajuSCC {\n  int\
     \ sccs = 0;\n  vector<int> comp;\n  vector<vector<int>> members, c_adj;\n\n  KosarajuSCC(const\
     \ vector<vector<int>> &g) : adj(g) {\n    comp.resize(sz(g), -1);\n    t_adj.resize(sz(g));\n\
-    \    vis.resize(sz(g));\n\n    ord.reserve(sz(g));\n    for (int i = 0; i < sz(g);\
+    \    vis.resize(sz(g));\n    ord.reserve(sz(g));\n    for (int i = 0; i < sz(g);\
     \ i++) {\n      if (!vis[i]) {\n        dfs_setup(i);\n      }\n    }\n    for\
     \ (int i = sz(ord) - 1; i >= 0; i--) {\n      if (comp[ord[i]] == -1) {\n    \
     \    members.emplace_back();\n        dfs_build(ord[i]);\n        sccs++;\n  \
@@ -33,7 +33,7 @@ data:
   code: "#pragma once\n\nstruct KosarajuSCC {\n  int sccs = 0;\n  vector<int> comp;\n\
     \  vector<vector<int>> members, c_adj;\n\n  KosarajuSCC(const vector<vector<int>>\
     \ &g) : adj(g) {\n    comp.resize(sz(g), -1);\n    t_adj.resize(sz(g));\n    vis.resize(sz(g));\n\
-    \n    ord.reserve(sz(g));\n    for (int i = 0; i < sz(g); i++) {\n      if (!vis[i])\
+    \    ord.reserve(sz(g));\n    for (int i = 0; i < sz(g); i++) {\n      if (!vis[i])\
     \ {\n        dfs_setup(i);\n      }\n    }\n    for (int i = sz(ord) - 1; i >=\
     \ 0; i--) {\n      if (comp[ord[i]] == -1) {\n        members.emplace_back();\n\
     \        dfs_build(ord[i]);\n        sccs++;\n      }\n    }\n    t_adj.clear();\n\
@@ -52,7 +52,7 @@ data:
   isVerificationFile: false
   path: graphs/kosaraju_scc.hpp
   requiredBy: []
-  timestamp: '2024-08-28 03:11:34-04:00'
+  timestamp: '2024-08-28 03:16:10-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/library_checker/graph/scc.test.cpp

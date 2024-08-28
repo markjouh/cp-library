@@ -12,26 +12,26 @@ data:
   attributes:
     links: []
   bundledCode: "#line 2 \"graphs/tree_isomorphism.hpp\"\n\nstruct TreeIsomorphism\
-    \ {\n\tmap<vector<int>, int> hashes;\n\n\tvector<int> gen(const vector<vector<int>>\
-    \ &g, int root = 0) {\n\t\tvector<int> res(sz(g));\n\t\tdfs(root, -1, g, res);\n\
-    \t\treturn res;\n\t}\n\nprivate:\n\tvoid dfs(int u, int par, auto &g, auto &res)\
-    \ {\n\t\tvector<int> children;\n\t\tfor (int v : g[u]) {\n\t\t\tif (v != par)\
-    \ {\n\t\t\t\tdfs(v, u, g, res);\n\t\t\t\tchildren.push_back(res[v]);\n\t\t\t}\n\
-    \t\t}\n\t\tsort(all(children));\n\t\tif (!hashes.count(children)) {\n\t\t\thashes[children]\
-    \ = sz(hashes);\n\t\t}\n\t\tres[u] = hashes[children];\n\t}\n};\n"
-  code: "#pragma once\n\nstruct TreeIsomorphism {\n\tmap<vector<int>, int> hashes;\n\
-    \n\tvector<int> gen(const vector<vector<int>> &g, int root = 0) {\n\t\tvector<int>\
-    \ res(sz(g));\n\t\tdfs(root, -1, g, res);\n\t\treturn res;\n\t}\n\nprivate:\n\t\
-    void dfs(int u, int par, auto &g, auto &res) {\n\t\tvector<int> children;\n\t\t\
-    for (int v : g[u]) {\n\t\t\tif (v != par) {\n\t\t\t\tdfs(v, u, g, res);\n\t\t\t\
-    \tchildren.push_back(res[v]);\n\t\t\t}\n\t\t}\n\t\tsort(all(children));\n\t\t\
-    if (!hashes.count(children)) {\n\t\t\thashes[children] = sz(hashes);\n\t\t}\n\t\
-    \tres[u] = hashes[children];\n\t}\n};\n"
+    \ {\n  map<vector<int>, int> hashes;\n\n  vector<int> gen(const vector<vector<int>>\
+    \ &g, int rt = 0) {\n    vector<int> res(sz(g));\n    dfs(rt, -1, g, res);\n \
+    \   return res;\n  }\n\nprivate:\n  void dfs(int u, int par, auto &g, auto &res)\
+    \ {\n    vector<int> children;\n    for (int v : g[u]) {\n      if (v != par)\
+    \ {\n        dfs(v, u, g, res);\n        children.push_back(res[v]);\n      }\n\
+    \    }\n    sort(all(children));\n    if (!hashes.count(children)) {\n      hashes[children]\
+    \ = sz(hashes);\n    }\n    res[u] = hashes[children];\n  }\n};\n"
+  code: "#pragma once\n\nstruct TreeIsomorphism {\n  map<vector<int>, int> hashes;\n\
+    \n  vector<int> gen(const vector<vector<int>> &g, int rt = 0) {\n    vector<int>\
+    \ res(sz(g));\n    dfs(rt, -1, g, res);\n    return res;\n  }\n\nprivate:\n  void\
+    \ dfs(int u, int par, auto &g, auto &res) {\n    vector<int> children;\n    for\
+    \ (int v : g[u]) {\n      if (v != par) {\n        dfs(v, u, g, res);\n      \
+    \  children.push_back(res[v]);\n      }\n    }\n    sort(all(children));\n   \
+    \ if (!hashes.count(children)) {\n      hashes[children] = sz(hashes);\n    }\n\
+    \    res[u] = hashes[children];\n  }\n};\n"
   dependsOn: []
   isVerificationFile: false
   path: graphs/tree_isomorphism.hpp
   requiredBy: []
-  timestamp: '2024-08-28 02:47:08-04:00'
+  timestamp: '2024-08-28 03:16:10-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/library_checker/tree/rooted_tree_isomorphism.test.cpp

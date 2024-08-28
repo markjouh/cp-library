@@ -38,7 +38,7 @@ data:
   isVerificationFile: true
   path: verify/library_checker/tree/rooted_tree_isomorphism.test.cpp
   requiredBy: []
-  timestamp: '2024-08-28 02:47:08-04:00'
+  timestamp: '2024-08-28 03:16:10-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/library_checker/tree/rooted_tree_isomorphism.test.cpp
