@@ -5,7 +5,8 @@ struct SparseTable {
   int n, lg;
   vector<vector<T>> table;
 
-  SparseTable(const vector<T> &a) : n(sz(a)), lg(__lg(n) + 1), table(lg) {
+  SparseTable(const vector<T> &a) : n(sz(a)), lg(__lg(n) + 1) {
+    table.resize(lg);
     table[0] = a;
     for (int i = 1; i < lg; i++) {
       table[i].resize(n - (1 << i) + 1);

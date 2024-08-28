@@ -3,7 +3,9 @@
 struct EulerTour {
   vector<int> tin, tout;
 
-  EulerTour(const vector<vector<int>> &g, int root = 0) : tin(sz(g)), tout(sz(g)), adj(g) {
+  EulerTour(const vector<vector<int>> &g, int root = 0) : adj(g) {
+    tin.resize(sz(g));
+    tout.resize(sz(g));
     dfs(root, -1);
   }
 

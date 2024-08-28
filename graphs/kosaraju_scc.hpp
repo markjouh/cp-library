@@ -5,7 +5,11 @@ struct KosarajuSCC {
   vector<int> comp;
   vector<vector<int>> members, c_adj;
 
-  KosarajuSCC(const vector<vector<int>> &g) : comp(sz(g), -1), adj(g), t_adj(sz(g)), vis(sz(g)) {
+  KosarajuSCC(const vector<vector<int>> &g) : adj(g) {
+    comp.resize(sz(g), -1);
+    t_adj.resize(sz(g));
+    vis.resize(sz(g));
+
     ord.reserve(sz(g));
     for (int i = 0; i < sz(g); i++) {
       if (!vis[i]) {

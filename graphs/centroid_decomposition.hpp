@@ -3,7 +3,10 @@
 struct CentroidDecomposition {
 	vector<int> cd_par;
 
-	CentroidDecomposition(const vector<vector<int>> &g) : cd_par(sz(g)), adj(g), blocked(sz(g)), st_size(sz(g)) {
+	CentroidDecomposition(const vector<vector<int>> &g) : adj(g) {
+		cd_par.resize(sz(g));
+		blocked.resize(sz(g));
+		st_size.resize(sz(g));
 		for (int i = 0; i < sz(g); i++) {
 			if (st_size[i] == 0) {
 				build(i, -1);
@@ -12,6 +15,7 @@ struct CentroidDecomposition {
 		blocked.clear();
 		st_size.clear();
 	}
+
 private:
 	const vector<vector<int>> &adj;
 	vector<bool> blocked;

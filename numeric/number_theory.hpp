@@ -53,9 +53,9 @@ template<class T> vector<pair<T, int>> factor(T num) {
   return res;
 }
 
-template<class T> vector<T> gen_divisors(vector<pair<T, int>> prime_facs) {
+template<class T> vector<T> gen_divisors(vector<pair<T, int>> facs) {
   vector<T> res = {1};
-  for (auto [p, exp] : prime_facs) {
+  for (auto [p, exp] : facs) {
     const int prev_layer = sz(res);
     T coeff = 1;
     for (int i = 0; i < exp; i++) {

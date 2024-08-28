@@ -5,10 +5,14 @@ struct BinaryLifting {
   vector<int> dep;
   vector<vector<int>> up;
 
-  BinaryLifting(const vector<vector<int>> &g, int root = 0) : lg(__lg(sz(g)) + 1), dep(sz(g), -1), up(sz(g), vector<int>(lg, -1)) {
+  BinaryLifting(const vector<vector<int>> &g, int rt = 0) {
+    lg = __lg(sz(g) - 1) + 1;
+    dep.resize(sz(g), -1);
+    up = vector(sz(g), vector<int>(lg, -1));
+
     queue<int> q;
-    dep[root] = 0;
-    q.push(root);
+    dep[rt] = 0;
+    q.push(rt);
     while (sz(q)) {
       int u = q.front();
       q.pop();

@@ -15,4 +15,5 @@ struct CustomHash {
   }
 };
 
-template<class K, class V> using HashTable = __gnu_pbds::gp_hash_table<K, V, CustomHash>;
+template <class T, class U>
+using HashTable = __gnu_pbds::gp_hash_table<T, U, CustomHash>;
