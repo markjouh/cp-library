@@ -54,13 +54,13 @@ data:
     pages:
     - icon: ':heavy_check_mark:'
       path: numeric/binary_search.hpp
-      title: numeric/binary_search.hpp
+      title: Binary Search
     - icon: ':warning:'
       path: numeric/binary_search_reals.hpp
       title: numeric/binary_search_reals.hpp
     - icon: ':heavy_check_mark:'
       path: numeric/mod_int.hpp
-      title: numeric/mod_int.hpp
+      title: Mod Int
     - icon: ':heavy_check_mark:'
       path: numeric/number_theory.hpp
       title: numeric/number_theory.hpp

@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: numeric/binary_search.hpp
-    title: numeric/binary_search.hpp
+    title: Binary Search
   - icon: ':heavy_check_mark:'
     path: strings/hashing.hpp
     title: String Hashing

@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: numeric/mod_int.hpp
-    title: numeric/mod_int.hpp
+    title: Mod Int
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
