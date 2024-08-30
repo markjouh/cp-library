@@ -9,7 +9,7 @@ The fenwick tree is a data structure that stores an array and supports $O(\log{n
 
 ### Usage
 
-* `fenwick_tree<T>(x)`: Builds a fenwick tree of length x, or from the vector x. The complexity is $O(n)$ in both cases.
+* `FenwickTree<T>(x)`: Builds a fenwick tree of length x, or from the vector x. The complexity is $O(n)$ in both cases.
 * `add(k, x)`: Adds x to index k. $O(\log{n})$
 * `sum(l, r)`: Returns the sum of the interval $[l, r]$. $O(\log{n})$.
 

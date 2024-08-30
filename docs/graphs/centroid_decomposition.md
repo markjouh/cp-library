@@ -15,5 +15,5 @@ Broadly, if the objective is to consider all solutions, CD lets us reframe the p
 
 ### Usage
 
-* `centroid_decomp(g)`: Builds a centroid decomposition tree `cd_par` in $O(n \log{n})$.
+* `CentroidDecomposition(g)`: Builds a centroid decomposition tree `cd_par` in $O(n \log{n})$.
 * `cd_par`: Representing the deletion times of vertices during our centroid decomposition using a partially ordered set, `cd_par[x]` is the predecessor of `x`.

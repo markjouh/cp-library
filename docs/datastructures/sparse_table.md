@@ -11,5 +11,5 @@ Sparse tables precompute the result for all subarrays with lengths of powers of 
 
 ### Usage
 
-* `sparse_table<T>(a)`: Builds a sparse table from the vector `a`. $O(n \log{n})$ time and memory.
+* `SparseTable<T>(a)`: Builds a sparse table from the vector `a`. $O(n \log{n})$ time and memory.
 * `query(l, r)`: Returns the range aggregate over the interval $[l, r]$. $O(1)$

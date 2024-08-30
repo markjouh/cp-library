@@ -11,4 +11,4 @@ Produces a condensation graph with edges between component ids `c_adj`, as well 
 
 ### Usage
 
-* `kosaraju_scc(g)`: Computes the SCCs of g and builds a condensation graph. $O(n)$
+* `KosarajuSCC(g)`: Computes the SCCs of g and builds a condensation graph. $O(n)$
