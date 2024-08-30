@@ -1,6 +1,6 @@
 ---
 title: Tree Isomorphism
-documentation_of: ../../graphs/binary_lifts.hpp
+documentation_of: ../../graphs/tree_isomorphism.hpp
 ---
 
 ### Overview
