@@ -1,5 +1,5 @@
 ---
-title: Range Add Range Query Fenwick Tree
+title: Range Add Range Sum Fenwick Tree
 documentation_of: ../../datastructures/fenwick_tree_extended.hpp
 ---
 
