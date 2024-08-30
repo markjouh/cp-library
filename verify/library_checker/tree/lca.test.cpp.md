@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: graphs/binary_lifts.hpp
-    title: graphs/binary_lifts.hpp
+    title: Tree Isomorphism
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false

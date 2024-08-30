@@ -57,8 +57,13 @@ data:
   - verify/library_checker/tree/lca.test.cpp
 documentation_of: graphs/binary_lifts.hpp
 layout: document
-redirect_from:
-- /library/graphs/binary_lifts.hpp
-- /library/graphs/binary_lifts.hpp.html
-title: graphs/binary_lifts.hpp
+title: Tree Isomorphism
 ---
+
+### Overview
+
+A class that takes in rooted trees and computes perfect hashes for all their subtrees in $O(n \log{n})$. Subtrees from different trees can be compared.
+
+### Usage
+
+* `gen(g, root)`: Computes and returns hashes for all subtrees of g.

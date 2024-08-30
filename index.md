@@ -34,7 +34,7 @@ data:
     pages:
     - icon: ':heavy_check_mark:'
       path: graphs/binary_lifts.hpp
-      title: graphs/binary_lifts.hpp
+      title: Tree Isomorphism
     - icon: ':warning:'
       path: graphs/centroid_decomposition.hpp
       title: Centroid Decomposition
