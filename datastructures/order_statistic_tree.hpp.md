@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _extendedVerifiedWith:
+  - icon: ':x:'
+    path: verify/aizu/alds1/number_of_inversions.test.cpp
+    title: verify/aizu/alds1/number_of_inversions.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: '#line 2 "datastructures/order_statistic_tree.hpp"
@@ -41,11 +44,12 @@ data:
   path: datastructures/order_statistic_tree.hpp
   requiredBy: []
   timestamp: '2024-08-30 00:19:12-04:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_WA
+  verifiedWith:
+  - verify/aizu/alds1/number_of_inversions.test.cpp
 documentation_of: datastructures/order_statistic_tree.hpp
 layout: document
-title: Indexed Set
+title: Order Statistic Tree
 ---
 
 ### Overview
