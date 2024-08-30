@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: graphs/tree_isomorphism.hpp
-    title: graphs/tree_isomorphism.hpp
+    title: Tree Isomorphism
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false

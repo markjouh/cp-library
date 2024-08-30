@@ -34,7 +34,7 @@ data:
     pages:
     - icon: ':heavy_check_mark:'
       path: graphs/binary_lifts.hpp
-      title: Tree Isomorphism
+      title: Binary Lifting
     - icon: ':warning:'
       path: graphs/centroid_decomposition.hpp
       title: Centroid Decomposition
@@ -49,7 +49,7 @@ data:
       title: Kosaraju's SCC
     - icon: ':heavy_check_mark:'
       path: graphs/tree_isomorphism.hpp
-      title: graphs/tree_isomorphism.hpp
+      title: Tree Isomorphism
   - name: numeric
     pages:
     - icon: ':heavy_check_mark:'

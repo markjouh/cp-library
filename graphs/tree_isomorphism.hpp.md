@@ -37,8 +37,13 @@ data:
   - verify/library_checker/tree/rooted_tree_isomorphism.test.cpp
 documentation_of: graphs/tree_isomorphism.hpp
 layout: document
-redirect_from:
-- /library/graphs/tree_isomorphism.hpp
-- /library/graphs/tree_isomorphism.hpp.html
-title: graphs/tree_isomorphism.hpp
+title: Tree Isomorphism
 ---
+
+### Overview
+
+A class that takes in rooted trees and computes perfect hashes for all their subtrees in $O(n \log{n})$. Subtrees from different trees can be compared.
+
+### Usage
+
+* `gen(g, root)`: Computes and returns hashes for all subtrees of g.
