@@ -14,13 +14,13 @@ data:
       title: Hash Table
     - icon: ':warning:'
       path: datastructures/indexed_set.hpp
-      title: datastructures/indexed_set.hpp
+      title: Indexed Set
     - icon: ':heavy_check_mark:'
       path: datastructures/segment_tree.hpp
       title: Segment Tree
     - icon: ':warning:'
       path: datastructures/segment_tree_lazy.hpp
-      title: datastructures/segment_tree_lazy.hpp
+      title: Lazy Segment Tree
     - icon: ':heavy_check_mark:'
       path: datastructures/sparse_table.hpp
       title: Sparse Table

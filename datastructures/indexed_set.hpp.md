@@ -43,8 +43,14 @@ data:
   verifiedWith: []
 documentation_of: datastructures/indexed_set.hpp
 layout: document
-redirect_from:
-- /library/datastructures/indexed_set.hpp
-- /library/datastructures/indexed_set.hpp.html
-title: datastructures/indexed_set.hpp
+title: Indexed Set
 ---
+
+### Overview
+
+Basically an `std::set` that supports order statistic queries, using `__gnu_pbds`.
+
+### Usage
+
+* `find_by_order(k)`: Finds the kth item in the set, in increasing order, indexed from 0.
+* `order_of_key(k)`: Counts the number of elements < k.

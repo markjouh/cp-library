@@ -51,6 +51,6 @@ The segment tree is a data structure that stores an array of objects with an ass
 
 ### Usage
 
-* `SegmentTree<T>(x)`: Builds a segment tree of length x, or from the vector x. The complexity is $O(n)$ in both cases.
+* `SegmentTree<T, op, id>(x)`: Builds a segment tree of length x, or from the vector x. The complexity is $O(n)$ in both cases.
 * `set(k, x)`: Sets the value at index k to x.
 * `query(l, r)`: Returns the range aggregate over the interval $[l, r]$.
