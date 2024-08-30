@@ -8,7 +8,7 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: '#line 2 "datastructures/indexed_set.hpp"
+  bundledCode: '#line 2 "datastructures/order_statistic_tree.hpp"
 
 
     #include <ext/pb_ds/assoc_container.hpp>
@@ -19,7 +19,7 @@ data:
 
     template <class T>
 
-    using IndSet = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
+    using OrderStatisticTree = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
 
     '
   code: '#pragma once
@@ -33,17 +33,17 @@ data:
 
     template <class T>
 
-    using IndSet = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
+    using OrderStatisticTree = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
 
     '
   dependsOn: []
   isVerificationFile: false
-  path: datastructures/indexed_set.hpp
+  path: datastructures/order_statistic_tree.hpp
   requiredBy: []
-  timestamp: '2024-08-30 00:07:29-04:00'
+  timestamp: '2024-08-30 00:19:12-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: datastructures/indexed_set.hpp
+documentation_of: datastructures/order_statistic_tree.hpp
 layout: document
 title: Indexed Set
 ---

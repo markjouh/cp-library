@@ -13,7 +13,7 @@ data:
       path: datastructures/hash_table.hpp
       title: Hash Table
     - icon: ':warning:'
-      path: datastructures/indexed_set.hpp
+      path: datastructures/order_statistic_tree.hpp
       title: Indexed Set
     - icon: ':heavy_check_mark:'
       path: datastructures/segment_tree.hpp
