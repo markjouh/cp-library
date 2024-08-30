@@ -1,16 +1,16 @@
 #pragma once
 
 struct StringTrie {
-  struct node {
+  struct Node {
     int nxt[26];
     bool flag = false;
 
-    node() {
+    Node() {
       memset(nxt, -1, sizeof nxt);
     }
   };
 
-  vector<node> trie;
+  vector<Node> trie;
 
   StringTrie() : trie(1) {}
 
