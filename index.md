@@ -8,7 +8,7 @@ data:
       title: Fenwick Tree
     - icon: ':heavy_check_mark:'
       path: datastructures/fenwick_tree_extended.hpp
-      title: Range Add Range Query Fenwick Tree
+      title: Range Add Range Sum Fenwick Tree
     - icon: ':heavy_check_mark:'
       path: datastructures/hash_table.hpp
       title: Hash Table

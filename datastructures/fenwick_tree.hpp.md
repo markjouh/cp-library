@@ -4,7 +4,7 @@ data:
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
     path: datastructures/fenwick_tree_extended.hpp
-    title: Range Add Range Query Fenwick Tree
+    title: Range Add Range Sum Fenwick Tree
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/aizu/dsl/rsq_and_raq.test.cpp

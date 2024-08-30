@@ -50,7 +50,7 @@ data:
   - verify/aizu/dsl/rsq_and_raq.test.cpp
 documentation_of: datastructures/fenwick_tree_extended.hpp
 layout: document
-title: Range Add Range Query Fenwick Tree
+title: Range Add Range Sum Fenwick Tree
 ---
 
 ### Overview
