@@ -71,7 +71,7 @@ data:
     pages:
     - icon: ':heavy_check_mark:'
       path: strings/hashing.hpp
-      title: strings/hashing.hpp
+      title: String Hashing
     - icon: ':warning:'
       path: strings/string_trie.hpp
       title: strings/string_trie.hpp

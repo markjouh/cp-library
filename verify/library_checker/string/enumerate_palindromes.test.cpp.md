@@ -6,7 +6,7 @@ data:
     title: numeric/binary_search.hpp
   - icon: ':heavy_check_mark:'
     path: strings/hashing.hpp
-    title: strings/hashing.hpp
+    title: String Hashing
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
