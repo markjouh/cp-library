@@ -1,6 +1,6 @@
 ---
 title: Indexed Set
-documentation_of: ../../datastructures/indexed_set.hpp
+documentation_of: ../../datastructures/order_statistic_tree.hpp
 ---
 
 ### Overview
