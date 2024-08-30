@@ -1,4 +1,5 @@
 #pragma once
+
 #include "fenwick_tree.hpp"
 
 template <class T>
