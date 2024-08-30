@@ -1,17 +1,14 @@
 ---
 title: Lazy Segment Tree
-documentation_of: ../../datastructures/union_find.hpp
+documentation_of: ../../datastructures/segment_tree_lazy.hpp
 ---
 
 ### Overview
 
-The union find is an online connectivity data structure that only supports edge insertions. Each component is defined by its leader element; vertices with the same leader element are connected - otherwise, they're disconnected.
-
-Queries have inverse Ackermann complexity, which grows so slowly, they're functionally $O(1)$.
+The segment tree is a data structure that stores an array of objects with an associative merge operation and identity element. Lazy propagation allows for a variety of range update operations to be supported in $O(\log{n})$ as well.
 
 ### Usage
 
-* `UnionFind<T>(n)`: Initializes a union find of size n. $O(n)$
-* `size(x)`: Returns the size of x's component.
-* `find(x)`: Returns the leader element of vertex x.
-* `join(x, y)`: If x and y aren't connected, connects them and returns `true`. Otherwise, returns `false`.
+* `LazySegmentTree(x)`: Builds a segment tree of length x, or from the vector x. The complexity is $O(n)$ in both cases.
+* `update(l, r, v)`: Applies an update with value v to the interval $[l, r]$.
+* `query(l, r)`: Returns the range aggregate over the interval $[l, r]$.
