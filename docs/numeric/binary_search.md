@@ -1,6 +1,6 @@
 ---
 title: Binary Search
-documentation_of: ../../strings/binary_search.hpp
+documentation_of: ../../numeric/binary_search.hpp
 ---
 
 ### Overview
