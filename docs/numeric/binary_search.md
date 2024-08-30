@@ -5,7 +5,7 @@ documentation_of: ../../numeric/binary_search.hpp
 
 ### Overview
 
-Given a monotonic boolean function taking in a discrete position value x, calculates the first/last x that returns `true` in $O(\log{(hi - lo)}) * T_f$.
+Given a monotonic boolean function taking in an integer position value x, calculates the first/last x that returns `true` in $O(\log{(hi - lo)}) * T_f$.
 
 ### Usage
 
