@@ -1,5 +1,5 @@
 ---
-title: Indexed Set
+title: Order Statistic Tree
 documentation_of: ../../datastructures/order_statistic_tree.hpp
 ---
 
