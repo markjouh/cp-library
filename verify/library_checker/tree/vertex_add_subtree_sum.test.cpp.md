@@ -6,7 +6,7 @@ data:
     title: Fenwick Tree
   - icon: ':heavy_check_mark:'
     path: graphs/euler_tour.hpp
-    title: graphs/euler_tour.hpp
+    title: Euler Tour
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false

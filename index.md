@@ -43,7 +43,7 @@ data:
       title: Dijkstra's Shortest Paths
     - icon: ':heavy_check_mark:'
       path: graphs/euler_tour.hpp
-      title: graphs/euler_tour.hpp
+      title: Euler Tour
     - icon: ':heavy_check_mark:'
       path: graphs/kosaraju_scc.hpp
       title: Kosaraju's SCC
