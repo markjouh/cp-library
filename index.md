@@ -57,13 +57,13 @@ data:
       title: Binary Search
     - icon: ':warning:'
       path: numeric/binary_search_reals.hpp
-      title: numeric/binary_search_reals.hpp
+      title: Binary Search on Reals
     - icon: ':heavy_check_mark:'
       path: numeric/mod_int.hpp
       title: Mod Int
     - icon: ':heavy_check_mark:'
       path: numeric/number_theory.hpp
-      title: numeric/number_theory.hpp
+      title: Number Theory
     - icon: ':warning:'
       path: numeric/square_matrix.hpp
       title: numeric/square_matrix.hpp

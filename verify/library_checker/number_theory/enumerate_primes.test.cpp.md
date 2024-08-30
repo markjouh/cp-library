@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: numeric/number_theory.hpp
-    title: numeric/number_theory.hpp
+    title: Number Theory
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
