@@ -10,6 +10,7 @@ data:
     links: []
   bundledCode: '#line 2 "datastructures/indexed_set.hpp"
 
+
     #include <ext/pb_ds/assoc_container.hpp>
 
 
@@ -22,6 +23,7 @@ data:
 
     '
   code: '#pragma once
+
 
     #include <ext/pb_ds/assoc_container.hpp>
 
@@ -38,7 +40,7 @@ data:
   isVerificationFile: false
   path: datastructures/indexed_set.hpp
   requiredBy: []
-  timestamp: '2024-08-28 03:11:34-04:00'
+  timestamp: '2024-08-30 00:07:29-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: datastructures/indexed_set.hpp
