@@ -61,6 +61,6 @@ For a reversible operation like addition, supporting prefix operations naturally
 
 ### Usage
 
-* `fenwick_tree<T>(x)`: Builds a fenwick tree of length x, or from the vector x. The complexity is $O(n)$ in both cases.
+* `DualFenwickTree<T>(x)`: Builds a fenwick tree of length x, or from the vector x. The complexity is $O(n)$ in both cases.
 * `add(l, r, x)`: Adds x to the interval $[l, r]$.
 * `sum(l, r)`: Returns the sum of the interval $[l, r]$.

@@ -45,4 +45,4 @@ A hash table faster than `unordered_map`, using `__gnu_pbds`. The optional custo
 ### Usage
 
 * `operator[]`: Access a key to read from or update. $O(1)$
-* `hash_table::find(x) != hash_table::end()`: Check if a key exists. $O(1)$
+* `HashTable::find(x) != HashTable::end()`: Check if a key exists. $O(1)$

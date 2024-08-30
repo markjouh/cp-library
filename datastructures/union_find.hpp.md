@@ -45,7 +45,7 @@ Queries have inverse Ackermann complexity, which grows so slowly, they're functi
 
 ### Usage
 
-* `union_find<T>(n)`: Initializes a union find of size n. $O(n)$
+* `UnionFind<T>(n)`: Initializes a union find of size n. $O(n)$
 * `size(x)`: Returns the size of x's component.
 * `find(x)`: Returns the leader element of vertex x.
 * `join(x, y)`: If x and y aren't connected, connects them and returns `true`. Otherwise, returns `false`.

@@ -69,7 +69,7 @@ TODO: Implement predecessor/successor queries
 
 ### Usage
 
-* `w_ary_tree<T>(n)`: Builds an empty 64-ary tree capable of storing values $[0, n)$. $O(n)$
+* `WAryTree<T>(n)`: Builds an empty 64-ary tree capable of storing values $[0, n)$. $O(n)$
 * `insert(x)`: Inserts x into the multiset.
 * `extract(x)`: Erases an instance of x from the multiset.
 * `get_min(x)`: Returns the minimum value in the set.
