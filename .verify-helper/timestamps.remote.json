@@ -8,6 +8,7 @@
 "verify/library_checker/data_structure/associative_array.test.cpp": "2024-08-30 00:07:29 -0400",
 "verify/library_checker/data_structure/double_ended_priority_queue.test.cpp": "2024-08-28 03:43:10 -0400",
 "verify/library_checker/data_structure/point_add_range_sum.test.cpp": "2024-08-28 03:43:10 -0400",
+"verify/library_checker/data_structure/range_kth_smallest.test.cpp": "2024-08-30 22:26:06 -0400",
 "verify/library_checker/data_structure/static_rmq.test.cpp": "2024-08-28 03:43:10 -0400",
 "verify/library_checker/data_structure/unionfind.test.cpp": "2024-08-28 03:43:10 -0400",
 "verify/library_checker/graph/scc.test.cpp": "2024-08-28 03:43:10 -0400",
