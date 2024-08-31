@@ -1,12 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#ifdef LOCAL
-#include "debug.hpp"
-#else
-#define dbg(...)
-#endif
-
 #define all(x) begin(x), end(x)
 #define sz(x) int(size(x))
 #define pb push_back
