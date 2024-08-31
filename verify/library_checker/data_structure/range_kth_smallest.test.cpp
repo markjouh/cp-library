@@ -1,4 +1,4 @@
-#define PROBLEM "https://judge.yosupo.jp/problem/point_add_range_sum"
+#define PROBLEM "https://judge.yosupo.jp/problem/range_kth_smallest"
 
 #include "../../boilerplate.hpp"
 #include "../../../datastructures/mergesort_tree.hpp"
