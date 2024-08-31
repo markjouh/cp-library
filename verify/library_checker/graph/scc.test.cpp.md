@@ -14,18 +14,41 @@ data:
     PROBLEM: https://judge.yosupo.jp/problem/scc
     links:
     - https://judge.yosupo.jp/problem/scc
-  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/onlinejudge_verify/documentation/build.py\"\
-    , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
-    \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n          \
-    \         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\
-    \  File \"/opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus.py\"\
-    , line 187, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
-    , line 401, in update\n    self.update(self._resolve(pathlib.Path(included), included_from=path))\n\
-    \  File \"/opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
-    , line 400, in update\n    raise BundleErrorAt(path, i + 1, \"unable to process\
-    \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
-    \ verify/boilerplate.hpp: line 5: unable to process #include in #if / #ifdef /\
-    \ #ifndef other than include guards\n"
+  bundledCode: "#line 1 \"verify/library_checker/graph/scc.test.cpp\"\n#define PROBLEM\
+    \ \"https://judge.yosupo.jp/problem/scc\"\n\n#line 1 \"verify/boilerplate.hpp\"\
+    \n#include <bits/stdc++.h>\nusing namespace std;\n\n#define all(x) begin(x), end(x)\n\
+    #define sz(x) int(size(x))\n#define pb push_back\n#define eb emplace_back\n#define\
+    \ fi first\n#define se second\n\nusing ll = long long;\nusing pii = pair<int,\
+    \ int>;\nusing pll = pair<ll, ll>;\n\ntemplate <class T> bool ckmin(T &a, const\
+    \ T &b) {\n  return b < a ? a = b, 1 : 0;\n}\n\ntemplate <class T> bool ckmax(T\
+    \ &a, const T &b) {\n  return b > a ? a = b, 1 : 0;\n}\n\nconst int INF = INT_MAX\
+    \ / 2;\nconst ll INFLL = LLONG_MAX / 2;\n\nstruct InitIO {\n    InitIO() {\n \
+    \       cin.tie(0)->sync_with_stdio(0);\n        cin.exceptions(cin.failbit);\n\
+    \        cout << setprecision(10) << fixed;\n    }\n} init_io;\n#line 2 \"graphs/kosaraju_scc.hpp\"\
+    \n\nstruct KosarajuSCC {\n  int sccs = 0;\n  vector<int> comp;\n  vector<vector<int>>\
+    \ members, c_adj;\n\n  KosarajuSCC(const vector<vector<int>> &g) : adj(g) {\n\
+    \    comp.resize(sz(g), -1);\n    t_adj.resize(sz(g));\n    vis.resize(sz(g));\n\
+    \    ord.reserve(sz(g));\n    for (int i = 0; i < sz(g); i++) {\n      if (!vis[i])\
+    \ {\n        dfs_setup(i);\n      }\n    }\n    for (int i = sz(ord) - 1; i >=\
+    \ 0; i--) {\n      if (comp[ord[i]] == -1) {\n        members.emplace_back();\n\
+    \        dfs_build(ord[i]);\n        sccs++;\n      }\n    }\n    t_adj.clear();\n\
+    \    vis.clear();\n    ord.clear();\n\n    c_adj.resize(sccs);\n    vector<int>\
+    \ prev(sccs, -1);\n    for (int i = 0; i < sccs; i++) {\n      for (int u : members[i])\
+    \ {\n        for (int v : adj[u]) {\n          if (comp[v] != i && prev[comp[v]]\
+    \ < i) {\n            c_adj[i].push_back(comp[v]);\n            prev[comp[v]]\
+    \ = i;\n          }\n        }\n      }\n    }\n  }\n\nprivate:\n  const vector<vector<int>>\
+    \ &adj;\n  vector<vector<int>> t_adj;\n  vector<bool> vis;\n  vector<int> ord;\n\
+    \n  void dfs_setup(int u) {\n    vis[u] = true;\n    for (int v : adj[u]) {\n\
+    \      t_adj[v].push_back(u);\n      if (!vis[v]) {\n        dfs_setup(v);\n \
+    \     }\n    }\n    ord.push_back(u);\n  }\n\n  void dfs_build(int u) {\n    comp[u]\
+    \ = sccs;\n    members[sccs].push_back(u);\n    for (int v : t_adj[u]) {\n   \
+    \   if (comp[v] == -1) {\n        dfs_build(v);\n      }\n    }\n  }\n};\n#line\
+    \ 5 \"verify/library_checker/graph/scc.test.cpp\"\n\nint main() {\n  int n, m;\n\
+    \  cin >> n >> m;\n  vector<vector<int>> g(n);\n  for (int i = 0; i < m; i++)\
+    \ {\n    int u, v;\n    cin >> u >> v;\n    g[u].pb(v);\n  }\n  KosarajuSCC scc(g);\n\
+    \  cout << scc.sccs << '\\n';\n  for (int i = 0; i < scc.sccs; i++) {\n    cout\
+    \ << sz(scc.members[i]) << ' ';\n    for (int x : scc.members[i]) {\n      cout\
+    \ << x << ' ';\n    }\n    cout << '\\n';\n  }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/scc\"\n\n#include \"../../boilerplate.hpp\"\
     \n#include \"../../../graphs/kosaraju_scc.hpp\"\n\nint main() {\n  int n, m;\n\
     \  cin >> n >> m;\n  vector<vector<int>> g(n);\n  for (int i = 0; i < m; i++)\
@@ -38,7 +61,7 @@ data:
   isVerificationFile: true
   path: verify/library_checker/graph/scc.test.cpp
   requiredBy: []
-  timestamp: '2024-08-28 03:43:10-04:00'
+  timestamp: '2024-08-31 12:05:33-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/library_checker/graph/scc.test.cpp

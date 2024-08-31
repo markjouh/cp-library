@@ -14,18 +14,43 @@ data:
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_9_C
     links:
     - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_9_C
-  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/onlinejudge_verify/documentation/build.py\"\
-    , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
-    \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n          \
-    \         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\
-    \  File \"/opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus.py\"\
-    , line 187, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
-    , line 401, in update\n    self.update(self._resolve(pathlib.Path(included), included_from=path))\n\
-    \  File \"/opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
-    , line 400, in update\n    raise BundleErrorAt(path, i + 1, \"unable to process\
-    \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
-    \ verify/boilerplate.hpp: line 5: unable to process #include in #if / #ifdef /\
-    \ #ifndef other than include guards\n"
+  bundledCode: "#line 1 \"verify/aizu/alds1/priority_queue.test.cpp\"\n#define PROBLEM\
+    \ \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_9_C\"\n\n\
+    #line 1 \"verify/boilerplate.hpp\"\n#include <bits/stdc++.h>\nusing namespace\
+    \ std;\n\n#define all(x) begin(x), end(x)\n#define sz(x) int(size(x))\n#define\
+    \ pb push_back\n#define eb emplace_back\n#define fi first\n#define se second\n\
+    \nusing ll = long long;\nusing pii = pair<int, int>;\nusing pll = pair<ll, ll>;\n\
+    \ntemplate <class T> bool ckmin(T &a, const T &b) {\n  return b < a ? a = b, 1\
+    \ : 0;\n}\n\ntemplate <class T> bool ckmax(T &a, const T &b) {\n  return b > a\
+    \ ? a = b, 1 : 0;\n}\n\nconst int INF = INT_MAX / 2;\nconst ll INFLL = LLONG_MAX\
+    \ / 2;\n\nstruct InitIO {\n    InitIO() {\n        cin.tie(0)->sync_with_stdio(0);\n\
+    \        cin.exceptions(cin.failbit);\n        cout << setprecision(10) << fixed;\n\
+    \    }\n} init_io;\n#line 2 \"datastructures/w_ary_tree.hpp\"\n\ntemplate <int\
+    \ N>\nstruct WAryTree {\n  uint32_t freq[N];\n  uint64_t l0[(N >> 6) + 1], l1[(N\
+    \ >> 12) + 1], root;\n\n  WAryTree() {\n    memset(freq, 0, sizeof freq);\n  \
+    \  memset(l0, 0, sizeof l0);\n    memset(l1, 0, sizeof l1);\n    root = 0;\n \
+    \ }\n\n  void insert(int x) {\n    freq[x]++;\n    if (freq[x] == 1) {\n     \
+    \ l0[x >> 6] |= 1ull << (x & 63);\n      if (__builtin_popcountll(l0[x >> 6])\
+    \ == 1) {\n        l1[x >> 12] |= 1ull << ((x >> 6) & 63);\n        if (__builtin_popcountll(l1[x\
+    \ >> 12]) == 1) {\n          root |= 1ull << ((x >> 12) & 63);\n        }\n  \
+    \    }\n    }\n  }\n\n  void extract(int x) {\n    freq[x]--;\n    if (freq[x]\
+    \ == 0) {\n      l0[x >> 6] ^= 1ull << (x & 63);\n      if (__builtin_popcountll(l0[x\
+    \ >> 6]) == 0) {\n        l1[x >> 12] ^= 1ull << ((x >> 6) & 63);\n        if\
+    \ (__builtin_popcountll(l1[x >> 12]) == 0) {\n          root ^= 1ull << ((x >>\
+    \ 12) & 63);\n        }\n      }\n    }\n  }\n\n  int get_min() {\n    uint32_t\
+    \ p = __builtin_ctzll(root);\n    p = (p << 6) + __builtin_ctzll(l1[p]);\n   \
+    \ p = (p << 6) + __builtin_ctzll(l0[p]);\n    return p;\n  }\n\n  int get_max()\
+    \ {\n    uint32_t p = 63 - __builtin_clzll(root);\n    p = (p << 6) + 63 - __builtin_clzll(l1[p]);\n\
+    \    p = (p << 6) + 63 - __builtin_clzll(l0[p]);\n    return p;\n  }\n};\n#line\
+    \ 5 \"verify/aizu/alds1/priority_queue.test.cpp\"\n\nint main() {\n  string s;\n\
+    \  int x;\n  vector<int> queries;\n  vector<int> vals;\n  while (cin >> s) {\n\
+    \    if (s == \"end\") {\n      break;\n    }\n    if (s == \"insert\") {\n  \
+    \    cin >> x;\n      queries.push_back(x);\n      vals.push_back(x);\n    } else\
+    \ {\n      queries.push_back(-1);\n    }\n  }\n  sort(all(vals));\n  vals.resize(unique(all(vals))\
+    \ - begin(vals));\n  WAryTree<2000000> ds;\n  for (auto x : queries) {\n    if\
+    \ (x == -1) {\n      int mx_idx = ds.get_max();\n      cout << vals[mx_idx] <<\
+    \ '\\n';\n      ds.extract(mx_idx);\n    } else {\n      ds.insert(lower_bound(all(vals),\
+    \ x) - begin(vals));\n    }\n  }\n}\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_9_C\"\
     \n\n#include \"../../boilerplate.hpp\"\n#include \"../../../datastructures/w_ary_tree.hpp\"\
     \n\nint main() {\n  string s;\n  int x;\n  vector<int> queries;\n  vector<int>\
@@ -41,7 +66,7 @@ data:
   isVerificationFile: true
   path: verify/aizu/alds1/priority_queue.test.cpp
   requiredBy: []
-  timestamp: '2024-08-28 03:43:10-04:00'
+  timestamp: '2024-08-31 12:05:33-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/aizu/alds1/priority_queue.test.cpp

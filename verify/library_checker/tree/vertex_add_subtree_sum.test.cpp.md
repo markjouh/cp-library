@@ -17,18 +17,41 @@ data:
     PROBLEM: https://judge.yosupo.jp/problem/vertex_add_subtree_sum
     links:
     - https://judge.yosupo.jp/problem/vertex_add_subtree_sum
-  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/onlinejudge_verify/documentation/build.py\"\
-    , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
-    \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n          \
-    \         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\
-    \  File \"/opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus.py\"\
-    , line 187, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
-    , line 401, in update\n    self.update(self._resolve(pathlib.Path(included), included_from=path))\n\
-    \  File \"/opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
-    , line 400, in update\n    raise BundleErrorAt(path, i + 1, \"unable to process\
-    \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
-    \ verify/boilerplate.hpp: line 5: unable to process #include in #if / #ifdef /\
-    \ #ifndef other than include guards\n"
+  bundledCode: "#line 1 \"verify/library_checker/tree/vertex_add_subtree_sum.test.cpp\"\
+    \n#define PROBLEM \"https://judge.yosupo.jp/problem/vertex_add_subtree_sum\"\n\
+    \n#line 1 \"verify/boilerplate.hpp\"\n#include <bits/stdc++.h>\nusing namespace\
+    \ std;\n\n#define all(x) begin(x), end(x)\n#define sz(x) int(size(x))\n#define\
+    \ pb push_back\n#define eb emplace_back\n#define fi first\n#define se second\n\
+    \nusing ll = long long;\nusing pii = pair<int, int>;\nusing pll = pair<ll, ll>;\n\
+    \ntemplate <class T> bool ckmin(T &a, const T &b) {\n  return b < a ? a = b, 1\
+    \ : 0;\n}\n\ntemplate <class T> bool ckmax(T &a, const T &b) {\n  return b > a\
+    \ ? a = b, 1 : 0;\n}\n\nconst int INF = INT_MAX / 2;\nconst ll INFLL = LLONG_MAX\
+    \ / 2;\n\nstruct InitIO {\n    InitIO() {\n        cin.tie(0)->sync_with_stdio(0);\n\
+    \        cin.exceptions(cin.failbit);\n        cout << setprecision(10) << fixed;\n\
+    \    }\n} init_io;\n#line 2 \"datastructures/fenwick_tree.hpp\"\n\ntemplate <class\
+    \ T>\nstruct FenwickTree {\n  int n;\n  vector<T> ft;\n\n  FenwickTree(int x)\
+    \ : n(x), ft(n + 1) {}\n\n  FenwickTree(const vector<T> &a) : n(sz(a)), ft(n +\
+    \ 1) {\n    for (int i = 1; i <= n; i++) {\n      ft[i] += a[i - 1];\n      if\
+    \ (i + (i & -i) <= n) {\n        ft[i + (i & -i)] += ft[i];\n      }\n    }\n\
+    \  }\n\n  void add(int p, T v) {\n    // assert(p >= 0);\n    for (p++; p <= n;\
+    \ p += p & -p) {\n      ft[p] += v;\n    }\n  }\n\n  T sum(int r) {\n    // assert(r\
+    \ < n);\n    T res = 0;\n    for (r++; r > 0; r -= r & -r) {\n      res += ft[r];\n\
+    \    }\n    return res;\n  }\n\n  T sum(int l, int r) {\n    return sum(r) - sum(l\
+    \ - 1);\n  }\n};\n#line 2 \"graphs/euler_tour.hpp\"\n\nstruct EulerTour {\n  vector<int>\
+    \ tin, tout;\n\n  EulerTour(const vector<vector<int>> &g, int root = 0) : adj(g)\
+    \ {\n    tin.resize(sz(g));\n    tout.resize(sz(g));\n    dfs(root, -1);\n  }\n\
+    \nprivate:\n  int time = 0;\n  const vector<vector<int>> &adj;\n\n  void dfs(int\
+    \ u, int par) {\n    tin[u] = time++;\n    for (int v : adj[u]) {\n      if (v\
+    \ != par) {\n        dfs(v, u);\n      }\n    }\n    tout[u] = time;\n  }\n};\n\
+    #line 6 \"verify/library_checker/tree/vertex_add_subtree_sum.test.cpp\"\n\nint\
+    \ main() {\n  int n, q;\n  cin >> n >> q;\n  vector<int> a(n);\n  for (int i =\
+    \ 0; i < n; i++) {\n    cin >> a[i];\n  }\n  vector<vector<int>> g(n);\n  for\
+    \ (int i = 1; i < n; i++) {\n    int p;\n    cin >> p;\n    g[p].pb(i);\n  }\n\
+    \  EulerTour et(g);\n  FenwickTree<ll> ft(n);\n  for (int i = 0; i < n; i++) {\n\
+    \    ft.add(et.tin[i], a[i]);\n  }\n  while (q--) {\n    bool t;\n    int u;\n\
+    \    cin >> t >> u;\n    if (t) {\n      cout << ft.sum(et.tin[u], et.tout[u]\
+    \ - 1) << '\\n';\n    } else {\n      int x;\n      cin >> x;\n      ft.add(et.tin[u],\
+    \ x);\n    }\n  }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/vertex_add_subtree_sum\"\
     \n\n#include \"../../boilerplate.hpp\"\n#include \"../../../datastructures/fenwick_tree.hpp\"\
     \n#include \"../../../graphs/euler_tour.hpp\"\n\nint main() {\n  int n, q;\n \
@@ -45,7 +68,7 @@ data:
   isVerificationFile: true
   path: verify/library_checker/tree/vertex_add_subtree_sum.test.cpp
   requiredBy: []
-  timestamp: '2024-08-28 03:43:10-04:00'
+  timestamp: '2024-08-31 12:05:33-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/library_checker/tree/vertex_add_subtree_sum.test.cpp
