@@ -13,6 +13,9 @@ data:
       path: datastructures/hash_table.hpp
       title: Hash Table
     - icon: ':heavy_check_mark:'
+      path: datastructures/mergesort_tree.hpp
+      title: datastructures/mergesort_tree.hpp
+    - icon: ':heavy_check_mark:'
       path: datastructures/order_statistic_tree.hpp
       title: Order Statistic Tree
     - icon: ':heavy_check_mark:'
@@ -111,6 +114,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/library_checker/data_structure/point_add_range_sum.test.cpp
       title: verify/library_checker/data_structure/point_add_range_sum.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/library_checker/data_structure/range_kth_smallest.test.cpp
+      title: verify/library_checker/data_structure/range_kth_smallest.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/library_checker/data_structure/static_rmq.test.cpp
       title: verify/library_checker/data_structure/static_rmq.test.cpp
