@@ -16,6 +16,9 @@ data:
       path: datastructures/mergesort_tree.hpp
       title: datastructures/mergesort_tree.hpp
     - icon: ':heavy_check_mark:'
+      path: datastructures/mo_queries.hpp
+      title: datastructures/mo_queries.hpp
+    - icon: ':heavy_check_mark:'
       path: datastructures/order_statistic_tree.hpp
       title: Order Statistic Tree
     - icon: ':heavy_check_mark:'
@@ -117,6 +120,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/library_checker/data_structure/range_kth_smallest.test.cpp
       title: verify/library_checker/data_structure/range_kth_smallest.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/library_checker/data_structure/static_range_mode_query.test.cpp
+      title: verify/library_checker/data_structure/static_range_mode_query.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/library_checker/data_structure/static_rmq.test.cpp
       title: verify/library_checker/data_structure/static_rmq.test.cpp
