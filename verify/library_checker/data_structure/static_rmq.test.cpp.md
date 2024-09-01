@@ -2,8 +2,8 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: datastructures/sparse_table.hpp
-    title: datastructures/sparse_table.hpp
+    path: datastructures/static/sparse_table.hpp
+    title: datastructures/static/sparse_table.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -24,7 +24,7 @@ data:
     \ <class T> bool ckmax(T &a, const T &b) {\n  return b > a ? a = b, 1 : 0;\n}\n\
     \nconst int INF = INT_MAX / 2;\nconst ll INFLL = LLONG_MAX / 2;\n\nstruct InitIO\
     \ {\n  InitIO() {\n    cin.tie(0)->sync_with_stdio(0);\n    cin.exceptions(cin.failbit);\n\
-    \    cout << setprecision(10) << fixed;\n  }\n} init_io;\n#line 2 \"datastructures/sparse_table.hpp\"\
+    \    cout << setprecision(10) << fixed;\n  }\n} init_io;\n#line 2 \"datastructures/static/sparse_table.hpp\"\
     \n\ntemplate <class T, T(*op)(T, T)>\nstruct SparseTable {\n  int n, lg;\n  vector<vector<T>>\
     \ table;\n\n  SparseTable(const vector<T> &a) : n(sz(a)), lg(__lg(n) + 1) {\n\
     \    table.resize(lg);\n    table[0] = a;\n    for (int i = 1; i < lg; i++) {\n\
@@ -39,18 +39,18 @@ data:
     \    int l, r;\n    cin >> l >> r;\n    cout << rmq.query(l, r - 1) << '\\n';\n\
     \  }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/staticrmq\"\n\n#include\
-    \ \"../../boilerplate.hpp\"\n#include \"../../../datastructures/sparse_table.hpp\"\
+    \ \"../../boilerplate.hpp\"\n#include \"../../../datastructures/static/sparse_table.hpp\"\
     \n\nint op(int x, int y) {\n  return x < y ? x : y;\n}\n\nint main() {\n  int\
     \ n, q;\n  cin >> n >> q;\n  vector<int> a(n);\n  for (int i = 0; i < n; i++)\
     \ {\n    cin >> a[i];\n  }\n  SparseTable<int, op> rmq(a);\n  while (q--) {\n\
     \    int l, r;\n    cin >> l >> r;\n    cout << rmq.query(l, r - 1) << '\\n';\n\
     \  }\n}"
   dependsOn:
-  - datastructures/sparse_table.hpp
+  - datastructures/static/sparse_table.hpp
   isVerificationFile: true
   path: verify/library_checker/data_structure/static_rmq.test.cpp
   requiredBy: []
-  timestamp: '2024-08-31 21:03:37-04:00'
+  timestamp: '2024-08-31 22:39:57-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/library_checker/data_structure/static_rmq.test.cpp

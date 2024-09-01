@@ -8,7 +8,7 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"graphs/centroid_decomposition.hpp\"\n\nstruct CentroidDecomposition\
+  bundledCode: "#line 2 \"graphs/tree/centroid_decomposition.hpp\"\n\nstruct CentroidDecomposition\
     \ {\n  vector<int> cd_par;\n\n  CentroidDecomposition(const vector<vector<int>>\
     \ &g) : adj(g) {\n    cd_par.resize(sz(g));\n    blocked.resize(sz(g));\n    st_size.resize(sz(g));\n\
     \    for (int i = 0; i < sz(g); i++) {\n      if (st_size[i] == 0) {\n       \
@@ -43,15 +43,15 @@ data:
     \ root);\n      }\n    }\n  }\n};\n"
   dependsOn: []
   isVerificationFile: false
-  path: graphs/centroid_decomposition.hpp
+  path: graphs/tree/centroid_decomposition.hpp
   requiredBy: []
-  timestamp: '2024-08-28 03:16:10-04:00'
+  timestamp: '2024-08-31 22:39:57-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: graphs/centroid_decomposition.hpp
+documentation_of: graphs/tree/centroid_decomposition.hpp
 layout: document
 redirect_from:
-- /library/graphs/centroid_decomposition.hpp
-- /library/graphs/centroid_decomposition.hpp.html
-title: graphs/centroid_decomposition.hpp
+- /library/graphs/tree/centroid_decomposition.hpp
+- /library/graphs/tree/centroid_decomposition.hpp.html
+title: graphs/tree/centroid_decomposition.hpp
 ---

@@ -11,9 +11,9 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"datastructures/mo_queries.hpp\"\n\ntemplate <class T, int\
-    \ B>\nstruct MoQueries {\n  vector<array<int, 3>> queries;\n  vector<T> res;\n\
-    \n  MoQueries() {}\n\n  void insert(int l, int r) {\n    queries.push_back({l,\
+  bundledCode: "#line 2 \"datastructures/static/mo_queries.hpp\"\n\ntemplate <class\
+    \ T, int B>\nstruct MoQueries {\n  vector<array<int, 3>> queries;\n  vector<T>\
+    \ res;\n\n  MoQueries() {}\n\n  void insert(int l, int r) {\n    queries.push_back({l,\
     \ r, sz(queries)});\n  }\n\n  template<class AddL, class DelL, class AddR, class\
     \ DelR, class Query>\n  void solve(AddL add_l, DelL del_l, AddR add_r, DelR del_r,\
     \ Query query) {\n    sort(all(queries), [](array<int, 3> a, array<int, 3> b)\
@@ -42,16 +42,16 @@ data:
     \ Del, Add, Del, Query>(add, del, add, del, query);\n  }\n};"
   dependsOn: []
   isVerificationFile: false
-  path: datastructures/mo_queries.hpp
+  path: datastructures/static/mo_queries.hpp
   requiredBy: []
-  timestamp: '2024-08-31 11:50:10-04:00'
+  timestamp: '2024-08-31 22:39:57-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/library_checker/data_structure/static_range_mode_query.test.cpp
-documentation_of: datastructures/mo_queries.hpp
+documentation_of: datastructures/static/mo_queries.hpp
 layout: document
 redirect_from:
-- /library/datastructures/mo_queries.hpp
-- /library/datastructures/mo_queries.hpp.html
-title: datastructures/mo_queries.hpp
+- /library/datastructures/static/mo_queries.hpp
+- /library/datastructures/static/mo_queries.hpp.html
+title: datastructures/static/mo_queries.hpp
 ---

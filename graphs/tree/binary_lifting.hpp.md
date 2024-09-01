@@ -11,8 +11,8 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"graphs/binary_lifting.hpp\"\n\nstruct BinaryLifting {\n\
-    \  int lg;\n  vector<int> dep;\n  vector<vector<int>> up;\n\n  BinaryLifting(const\
+  bundledCode: "#line 2 \"graphs/tree/binary_lifting.hpp\"\n\nstruct BinaryLifting\
+    \ {\n  int lg;\n  vector<int> dep;\n  vector<vector<int>> up;\n\n  BinaryLifting(const\
     \ vector<vector<int>> &g, int rt = 0) {\n    lg = __lg(sz(g) - 1) + 1;\n    dep.resize(sz(g),\
     \ -1);\n    up = vector(sz(g), vector<int>(lg, -1));\n\n    queue<int> q;\n  \
     \  dep[rt] = 0;\n    q.push(rt);\n    while (sz(q)) {\n      int u = q.front();\n\
@@ -49,16 +49,16 @@ data:
     \ * dep[lca(x, y)];\n  }\n};\n"
   dependsOn: []
   isVerificationFile: false
-  path: graphs/binary_lifting.hpp
+  path: graphs/tree/binary_lifting.hpp
   requiredBy: []
-  timestamp: '2024-08-31 21:03:37-04:00'
+  timestamp: '2024-08-31 22:39:57-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/library_checker/tree/lca.test.cpp
-documentation_of: graphs/binary_lifting.hpp
+documentation_of: graphs/tree/binary_lifting.hpp
 layout: document
 redirect_from:
-- /library/graphs/binary_lifting.hpp
-- /library/graphs/binary_lifting.hpp.html
-title: graphs/binary_lifting.hpp
+- /library/graphs/tree/binary_lifting.hpp
+- /library/graphs/tree/binary_lifting.hpp.html
+title: graphs/tree/binary_lifting.hpp
 ---

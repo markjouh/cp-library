@@ -11,7 +11,7 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: '#line 2 "datastructures/order_statistic_tree.hpp"
+  bundledCode: '#line 2 "datastructures/pbds/order_statistic_tree.hpp"
 
 
     #include <ext/pb_ds/assoc_container.hpp>
@@ -41,16 +41,16 @@ data:
     '
   dependsOn: []
   isVerificationFile: false
-  path: datastructures/order_statistic_tree.hpp
+  path: datastructures/pbds/order_statistic_tree.hpp
   requiredBy: []
-  timestamp: '2024-08-30 00:19:12-04:00'
+  timestamp: '2024-08-31 22:39:57-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/aizu/alds1/number_of_inversions.test.cpp
-documentation_of: datastructures/order_statistic_tree.hpp
+documentation_of: datastructures/pbds/order_statistic_tree.hpp
 layout: document
 redirect_from:
-- /library/datastructures/order_statistic_tree.hpp
-- /library/datastructures/order_statistic_tree.hpp.html
-title: datastructures/order_statistic_tree.hpp
+- /library/datastructures/pbds/order_statistic_tree.hpp
+- /library/datastructures/pbds/order_statistic_tree.hpp.html
+title: datastructures/pbds/order_statistic_tree.hpp
 ---

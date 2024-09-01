@@ -11,8 +11,8 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"datastructures/sparse_table.hpp\"\n\ntemplate <class T,\
-    \ T(*op)(T, T)>\nstruct SparseTable {\n  int n, lg;\n  vector<vector<T>> table;\n\
+  bundledCode: "#line 2 \"datastructures/static/sparse_table.hpp\"\n\ntemplate <class\
+    \ T, T(*op)(T, T)>\nstruct SparseTable {\n  int n, lg;\n  vector<vector<T>> table;\n\
     \n  SparseTable(const vector<T> &a) : n(sz(a)), lg(__lg(n) + 1) {\n    table.resize(lg);\n\
     \    table[0] = a;\n    for (int i = 1; i < lg; i++) {\n      table[i].resize(n\
     \ - (1 << i) + 1);\n      for (int j = 0; j < sz(table[i]); j++) {\n        table[i][j]\
@@ -29,16 +29,16 @@ data:
     \ table[i][r - (1 << i)]);\n  }\n};\n"
   dependsOn: []
   isVerificationFile: false
-  path: datastructures/sparse_table.hpp
+  path: datastructures/static/sparse_table.hpp
   requiredBy: []
-  timestamp: '2024-08-28 03:25:50-04:00'
+  timestamp: '2024-08-31 22:39:57-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/library_checker/data_structure/static_rmq.test.cpp
-documentation_of: datastructures/sparse_table.hpp
+documentation_of: datastructures/static/sparse_table.hpp
 layout: document
 redirect_from:
-- /library/datastructures/sparse_table.hpp
-- /library/datastructures/sparse_table.hpp.html
-title: datastructures/sparse_table.hpp
+- /library/datastructures/static/sparse_table.hpp
+- /library/datastructures/static/sparse_table.hpp.html
+title: datastructures/static/sparse_table.hpp
 ---

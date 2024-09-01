@@ -1,35 +1,41 @@
 ---
 data:
   libraryCategories:
-  - name: datastructures
+  - name: datastructures/pbds
     pages:
     - icon: ':heavy_check_mark:'
-      path: datastructures/dual_fenwick_tree.hpp
-      title: datastructures/dual_fenwick_tree.hpp
+      path: datastructures/pbds/hash_table.hpp
+      title: datastructures/pbds/hash_table.hpp
     - icon: ':heavy_check_mark:'
-      path: datastructures/fenwick_tree.hpp
-      title: datastructures/fenwick_tree.hpp
+      path: datastructures/pbds/order_statistic_tree.hpp
+      title: datastructures/pbds/order_statistic_tree.hpp
+  - name: datastructures/segtreecore
+    pages:
     - icon: ':heavy_check_mark:'
-      path: datastructures/hash_table.hpp
-      title: datastructures/hash_table.hpp
+      path: datastructures/segtreecore/fenwick_tree.hpp
+      title: datastructures/segtreecore/fenwick_tree.hpp
+    - icon: ':heavy_check_mark:'
+      path: datastructures/segtreecore/fenwick_tree_dual.hpp
+      title: datastructures/segtreecore/fenwick_tree_dual.hpp
+    - icon: ':heavy_check_mark:'
+      path: datastructures/segtreecore/segment_tree.hpp
+      title: datastructures/segtreecore/segment_tree.hpp
     - icon: ':warning:'
-      path: datastructures/lazy_segment_tree.hpp
-      title: datastructures/lazy_segment_tree.hpp
+      path: datastructures/segtreecore/segment_tree_lazy.hpp
+      title: datastructures/segtreecore/segment_tree_lazy.hpp
+  - name: datastructures/static
+    pages:
     - icon: ':heavy_check_mark:'
-      path: datastructures/mergesort_tree.hpp
-      title: datastructures/mergesort_tree.hpp
+      path: datastructures/static/mergesort_tree.hpp
+      title: datastructures/static/mergesort_tree.hpp
     - icon: ':heavy_check_mark:'
-      path: datastructures/mo_queries.hpp
-      title: datastructures/mo_queries.hpp
+      path: datastructures/static/mo_queries.hpp
+      title: datastructures/static/mo_queries.hpp
     - icon: ':heavy_check_mark:'
-      path: datastructures/order_statistic_tree.hpp
-      title: datastructures/order_statistic_tree.hpp
-    - icon: ':heavy_check_mark:'
-      path: datastructures/segment_tree.hpp
-      title: datastructures/segment_tree.hpp
-    - icon: ':heavy_check_mark:'
-      path: datastructures/sparse_table.hpp
-      title: datastructures/sparse_table.hpp
+      path: datastructures/static/sparse_table.hpp
+      title: datastructures/static/sparse_table.hpp
+  - name: datastructures
+    pages:
     - icon: ':heavy_check_mark:'
       path: datastructures/union_find.hpp
       title: datastructures/union_find.hpp
@@ -39,23 +45,25 @@ data:
   - name: graphs
     pages:
     - icon: ':heavy_check_mark:'
-      path: graphs/binary_lifting.hpp
-      title: graphs/binary_lifting.hpp
-    - icon: ':warning:'
-      path: graphs/centroid_decomposition.hpp
-      title: graphs/centroid_decomposition.hpp
-    - icon: ':heavy_check_mark:'
       path: graphs/dijkstras.hpp
       title: graphs/dijkstras.hpp
     - icon: ':heavy_check_mark:'
-      path: graphs/euler_tour.hpp
-      title: graphs/euler_tour.hpp
-    - icon: ':heavy_check_mark:'
       path: graphs/kosaraju_scc.hpp
       title: graphs/kosaraju_scc.hpp
+  - name: graphs/tree
+    pages:
     - icon: ':heavy_check_mark:'
-      path: graphs/tree_isomorphism.hpp
-      title: graphs/tree_isomorphism.hpp
+      path: graphs/tree/binary_lifting.hpp
+      title: graphs/tree/binary_lifting.hpp
+    - icon: ':warning:'
+      path: graphs/tree/centroid_decomposition.hpp
+      title: graphs/tree/centroid_decomposition.hpp
+    - icon: ':warning:'
+      path: graphs/tree/euler_tour.hpp
+      title: graphs/tree/euler_tour.hpp
+    - icon: ':heavy_check_mark:'
+      path: graphs/tree/tree_isomorphism.hpp
+      title: graphs/tree/tree_isomorphism.hpp
   - name: numeric
     pages:
     - icon: ':heavy_check_mark:'
@@ -160,7 +168,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/library_checker/tree/rooted_tree_isomorphism.test.cpp
       title: verify/library_checker/tree/rooted_tree_isomorphism.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/library_checker/tree/vertex_add_subtree_sum.test.cpp
       title: verify/library_checker/tree/vertex_add_subtree_sum.test.cpp
 layout: toppage

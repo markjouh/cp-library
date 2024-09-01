@@ -2,11 +2,11 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: datastructures/hash_table.hpp
-    title: datastructures/hash_table.hpp
+    path: datastructures/pbds/hash_table.hpp
+    title: datastructures/pbds/hash_table.hpp
   - icon: ':heavy_check_mark:'
-    path: datastructures/mo_queries.hpp
-    title: datastructures/mo_queries.hpp
+    path: datastructures/static/mo_queries.hpp
+    title: datastructures/static/mo_queries.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -28,16 +28,16 @@ data:
     \ ? a = b, 1 : 0;\n}\n\nconst int INF = INT_MAX / 2;\nconst ll INFLL = LLONG_MAX\
     \ / 2;\n\nstruct InitIO {\n  InitIO() {\n    cin.tie(0)->sync_with_stdio(0);\n\
     \    cin.exceptions(cin.failbit);\n    cout << setprecision(10) << fixed;\n  }\n\
-    } init_io;\n#line 2 \"datastructures/hash_table.hpp\"\n\n#include <ext/pb_ds/assoc_container.hpp>\n\
+    } init_io;\n#line 2 \"datastructures/pbds/hash_table.hpp\"\n\n#include <ext/pb_ds/assoc_container.hpp>\n\
     \nstruct CustomHash {\n  static uint64_t splitmix64(uint64_t x) {\n    x += 0x9e3779b97f4a7c15;\n\
     \    x = (x ^ (x >> 30)) * 0xbf58476d1ce4e5b9;\n    x = (x ^ (x >> 27)) * 0x94d049bb133111eb;\n\
     \    return x ^ (x >> 31);\n  }\n\n  size_t operator()(uint64_t x) const {\n \
     \   static const uint64_t FIXED_RANDOM = chrono::steady_clock::now().time_since_epoch().count();\n\
     \    return splitmix64(x + FIXED_RANDOM);\n  }\n};\n\ntemplate <class T, class\
     \ U>\nusing HashTable = __gnu_pbds::gp_hash_table<T, U, CustomHash>;\n#line 2\
-    \ \"datastructures/mo_queries.hpp\"\n\ntemplate <class T, int B>\nstruct MoQueries\
-    \ {\n  vector<array<int, 3>> queries;\n  vector<T> res;\n\n  MoQueries() {}\n\n\
-    \  void insert(int l, int r) {\n    queries.push_back({l, r, sz(queries)});\n\
+    \ \"datastructures/static/mo_queries.hpp\"\n\ntemplate <class T, int B>\nstruct\
+    \ MoQueries {\n  vector<array<int, 3>> queries;\n  vector<T> res;\n\n  MoQueries()\
+    \ {}\n\n  void insert(int l, int r) {\n    queries.push_back({l, r, sz(queries)});\n\
     \  }\n\n  template<class AddL, class DelL, class AddR, class DelR, class Query>\n\
     \  void solve(AddL add_l, DelL del_l, AddR add_r, DelR del_r, Query query) {\n\
     \    sort(all(queries), [](array<int, 3> a, array<int, 3> b) {\n      if (a[1]\
@@ -62,25 +62,26 @@ data:
     \  };\n  mo.solve(add, del, query);\n  for (auto [x, y] : mo.res) {\n    cout\
     \ << x << ' ' << y << '\\n';\n  }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/static_range_mode_query\"\
-    \n\n#include \"../../boilerplate.hpp\"\n#include \"../../../datastructures/hash_table.hpp\"\
-    \n#include \"../../../datastructures/mo_queries.hpp\"\n\nint main() {\n  int n,\
-    \ q;\n  cin >> n >> q;\n  vector<int> a(n);\n  for (int i = 0; i < n; i++) {\n\
-    \    cin >> a[i];\n  }\n  MoQueries<pair<int, int>, 300> mo;\n  while (q--) {\n\
-    \    int l, r;\n    cin >> l >> r;\n    mo.insert(l, r - 1);\n  }\n  HashTable<int,\
-    \ int> freq;\n  set<pair<int, int>> st;\n  auto add = [&](int p) {\n    if (freq.find(a[p])\
-    \ != freq.end()) {\n      st.extract({freq[a[p]], a[p]});\n    }\n    freq[a[p]]++;\n\
-    \    st.insert({freq[a[p]], a[p]});\n  };\n  auto del = [&](int p) {\n    if (freq.find(a[p])\
-    \ != freq.end()) {\n      st.extract({freq[a[p]], a[p]});\n    }\n    freq[a[p]]--;\n\
-    \    st.insert({freq[a[p]], a[p]});\n  };\n  auto query = [&]() {\n    return\
-    \ make_pair(rbegin(st)->se, rbegin(st)->fi);\n  };\n  mo.solve(add, del, query);\n\
-    \  for (auto [x, y] : mo.res) {\n    cout << x << ' ' << y << '\\n';\n  }\n}"
+    \n\n#include \"../../boilerplate.hpp\"\n#include \"../../../datastructures/pbds/hash_table.hpp\"\
+    \n#include \"../../../datastructures/static/mo_queries.hpp\"\n\nint main() {\n\
+    \  int n, q;\n  cin >> n >> q;\n  vector<int> a(n);\n  for (int i = 0; i < n;\
+    \ i++) {\n    cin >> a[i];\n  }\n  MoQueries<pair<int, int>, 300> mo;\n  while\
+    \ (q--) {\n    int l, r;\n    cin >> l >> r;\n    mo.insert(l, r - 1);\n  }\n\
+    \  HashTable<int, int> freq;\n  set<pair<int, int>> st;\n  auto add = [&](int\
+    \ p) {\n    if (freq.find(a[p]) != freq.end()) {\n      st.extract({freq[a[p]],\
+    \ a[p]});\n    }\n    freq[a[p]]++;\n    st.insert({freq[a[p]], a[p]});\n  };\n\
+    \  auto del = [&](int p) {\n    if (freq.find(a[p]) != freq.end()) {\n      st.extract({freq[a[p]],\
+    \ a[p]});\n    }\n    freq[a[p]]--;\n    st.insert({freq[a[p]], a[p]});\n  };\n\
+    \  auto query = [&]() {\n    return make_pair(rbegin(st)->se, rbegin(st)->fi);\n\
+    \  };\n  mo.solve(add, del, query);\n  for (auto [x, y] : mo.res) {\n    cout\
+    \ << x << ' ' << y << '\\n';\n  }\n}"
   dependsOn:
-  - datastructures/hash_table.hpp
-  - datastructures/mo_queries.hpp
+  - datastructures/pbds/hash_table.hpp
+  - datastructures/static/mo_queries.hpp
   isVerificationFile: true
   path: verify/library_checker/data_structure/static_range_mode_query.test.cpp
   requiredBy: []
-  timestamp: '2024-08-31 21:03:37-04:00'
+  timestamp: '2024-08-31 22:39:57-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/library_checker/data_structure/static_range_mode_query.test.cpp
