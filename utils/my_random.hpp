@@ -1,7 +1,5 @@
 #pragma once
 
-namespace my_random {
-
 mt19937_64 rng_64(chrono::steady_clock::now().time_since_epoch().count());
 
 template <class T>
@@ -20,4 +18,3 @@ void randshuf(T &a) {
     swap(a[i], a[randint(0, i)]);
   }
 }
-};

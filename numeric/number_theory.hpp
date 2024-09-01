@@ -1,7 +1,5 @@
 #pragma once
 
-namespace number_theory {
-
 vector<int> mn_fac, primes;
 
 void sieve(int n) {
@@ -67,4 +65,3 @@ template<class T> vector<T> gen_divisors(vector<pair<T, int>> facs) {
   }
   return res;
 }
-};

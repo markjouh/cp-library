@@ -4,8 +4,6 @@
 #include "../../../numeric/binary_search.hpp"
 #include "../../../strings/hashing.hpp"
 
-using namespace hashing;
-
 int main() {
   string s;
   cin >> s;

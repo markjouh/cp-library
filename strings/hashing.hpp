@@ -1,7 +1,5 @@
 #pragma once
 
-namespace hashing {
-  
 mt19937_64 rng(chrono::steady_clock::now().time_since_epoch().count());
 
 const ll H_MOD = (1ll << 61) - 1;
@@ -49,4 +47,3 @@ struct StringHash {
     return get(0, sz(h) - 1);
   }
 };
-}

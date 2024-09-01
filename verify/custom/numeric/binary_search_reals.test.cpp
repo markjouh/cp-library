@@ -1,10 +1,8 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/aplusb"
 
 #include "../../boilerplate.hpp"
-#include "../../../local/my_random.hpp"
+#include "../../../utils/my_random.hpp"
 #include "../../../numeric/binary_search_reals.hpp"
-
-using namespace my_random;
 
 const int TESTS = 1e6;
 const double MXV = 1e12, ERROR = 1e-3;
