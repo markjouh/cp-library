@@ -94,6 +94,11 @@ data:
     - icon: ':warning:'
       path: strings/string_trie.hpp
       title: strings/string_trie.hpp
+  - name: utils
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: utils/my_random.hpp
+      title: utils/my_random.hpp
   verificationCategories:
   - name: verify/aizu/alds1
     pages:
