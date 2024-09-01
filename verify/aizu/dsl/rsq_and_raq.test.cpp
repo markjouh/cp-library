@@ -1,12 +1,12 @@
 #define PROBLEM "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_G"
 
 #include "../../boilerplate.hpp"
-#include "../../../datastructures/fentree/fenwick_tree_dual.hpp"
+#include "../../../datastructures/fentree/fenwick_tree_range_add_range_sum.hpp"
 
 int main() {
   int n, q;
   cin >> n >> q;
-  DualFenwickTree<ll> ft(n);
+  RangeAddRangeSumFT<ll> ft(n);
   while (q--) {
     bool t;
     int l, r;
