@@ -1,6 +1,14 @@
 ---
 data:
   libraryCategories:
+  - name: datastructures/fentree
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: datastructures/fentree/fenwick_tree.hpp
+      title: datastructures/fentree/fenwick_tree.hpp
+    - icon: ':heavy_check_mark:'
+      path: datastructures/fentree/fenwick_tree_dual.hpp
+      title: datastructures/fentree/fenwick_tree_dual.hpp
   - name: datastructures/pbds
     pages:
     - icon: ':heavy_check_mark:'
@@ -9,20 +17,14 @@ data:
     - icon: ':heavy_check_mark:'
       path: datastructures/pbds/order_statistic_tree.hpp
       title: datastructures/pbds/order_statistic_tree.hpp
-  - name: datastructures/segtreecore
+  - name: datastructures/segtree
     pages:
     - icon: ':heavy_check_mark:'
-      path: datastructures/segtreecore/fenwick_tree.hpp
-      title: datastructures/segtreecore/fenwick_tree.hpp
-    - icon: ':heavy_check_mark:'
-      path: datastructures/segtreecore/fenwick_tree_dual.hpp
-      title: datastructures/segtreecore/fenwick_tree_dual.hpp
-    - icon: ':heavy_check_mark:'
-      path: datastructures/segtreecore/segment_tree.hpp
-      title: datastructures/segtreecore/segment_tree.hpp
+      path: datastructures/segtree/segment_tree.hpp
+      title: datastructures/segtree/segment_tree.hpp
     - icon: ':warning:'
-      path: datastructures/segtreecore/segment_tree_lazy.hpp
-      title: datastructures/segtreecore/segment_tree_lazy.hpp
+      path: datastructures/segtree/segment_tree_lazy.hpp
+      title: datastructures/segtree/segment_tree_lazy.hpp
   - name: datastructures/static
     pages:
     - icon: ':heavy_check_mark:'
@@ -58,7 +60,7 @@ data:
     - icon: ':warning:'
       path: graphs/tree/centroid_decomposition.hpp
       title: graphs/tree/centroid_decomposition.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: graphs/tree/euler_tour.hpp
       title: graphs/tree/euler_tour.hpp
     - icon: ':heavy_check_mark:'
@@ -168,7 +170,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/library_checker/tree/rooted_tree_isomorphism.test.cpp
       title: verify/library_checker/tree/rooted_tree_isomorphism.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/library_checker/tree/vertex_add_subtree_sum.test.cpp
       title: verify/library_checker/tree/vertex_add_subtree_sum.test.cpp
 layout: toppage

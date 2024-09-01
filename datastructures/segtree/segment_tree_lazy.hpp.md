@@ -8,7 +8,7 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"datastructures/segtreecore/segment_tree_lazy.hpp\"\n\nstruct\
+  bundledCode: "#line 2 \"datastructures/segtree/segment_tree_lazy.hpp\"\n\nstruct\
     \ LazySegmentTree {\n  using item_t = pair<int, int>;\n  using upd_t = int;\n\n\
     \  // Identity element, null update tag\n  const item_t id = {INF, 1};\n  const\
     \ upd_t lz_id = 0;\n\n  // Associative merge operation\n  item_t merge(item_t\
@@ -73,15 +73,15 @@ data:
     \ * x + 2]);\n  }\n};"
   dependsOn: []
   isVerificationFile: false
-  path: datastructures/segtreecore/segment_tree_lazy.hpp
+  path: datastructures/segtree/segment_tree_lazy.hpp
   requiredBy: []
-  timestamp: '2024-08-31 22:39:57-04:00'
+  timestamp: '2024-08-31 22:47:38-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: datastructures/segtreecore/segment_tree_lazy.hpp
+documentation_of: datastructures/segtree/segment_tree_lazy.hpp
 layout: document
 redirect_from:
-- /library/datastructures/segtreecore/segment_tree_lazy.hpp
-- /library/datastructures/segtreecore/segment_tree_lazy.hpp.html
-title: datastructures/segtreecore/segment_tree_lazy.hpp
+- /library/datastructures/segtree/segment_tree_lazy.hpp
+- /library/datastructures/segtree/segment_tree_lazy.hpp.html
+title: datastructures/segtree/segment_tree_lazy.hpp
 ---
