@@ -1,7 +1,7 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/range_kth_smallest"
 
 #include "../../boilerplate.hpp"
-#include "../../../datastructures/mergesort_tree.hpp"
+#include "../../../datastructures/static/mergesort_tree.hpp"
 #include "../../../numeric/binary_search.hpp"
 
 int main() {

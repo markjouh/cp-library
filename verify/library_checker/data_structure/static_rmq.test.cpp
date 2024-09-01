@@ -1,7 +1,7 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/staticrmq"
 
 #include "../../boilerplate.hpp"
-#include "../../../datastructures/sparse_table.hpp"
+#include "../../../datastructures/static/sparse_table.hpp"
 
 int op(int x, int y) {
   return x < y ? x : y;

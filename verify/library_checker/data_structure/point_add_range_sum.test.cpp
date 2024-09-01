@@ -1,7 +1,7 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/point_add_range_sum"
 
 #include "../../boilerplate.hpp"
-#include "../../../datastructures/fenwick_tree.hpp"
+#include "../../../datastructures/segtreecore/fenwick_tree.hpp"
 
 int main() {
   int n, q;

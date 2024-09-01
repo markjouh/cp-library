@@ -1,7 +1,7 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/associative_array"
 
 #include "../../boilerplate.hpp"
-#include "../../../datastructures/hash_table.hpp"
+#include "../../../datastructures/pbds/hash_table.hpp"
 
 int main() {
   int q;

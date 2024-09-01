@@ -2,7 +2,7 @@
 
 #include "../../boilerplate.hpp"
 #include "../../../datastructures/fenwick_tree.hpp"
-#include "../../../graphs/euler_tour.hpp"
+#include "../../../graphs/tree/euler_tour.hpp"
 
 int main() {
   int n, q;

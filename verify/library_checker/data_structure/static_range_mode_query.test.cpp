@@ -1,8 +1,8 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/static_range_mode_query"
 
 #include "../../boilerplate.hpp"
-#include "../../../datastructures/hash_table.hpp"
-#include "../../../datastructures/mo_queries.hpp"
+#include "../../../datastructures/pbds/hash_table.hpp"
+#include "../../../datastructures/static/mo_queries.hpp"
 
 int main() {
   int n, q;

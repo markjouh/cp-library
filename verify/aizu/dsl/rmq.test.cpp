@@ -1,7 +1,7 @@
 #define PROBLEM "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_A"
 
 #include "../../boilerplate.hpp"
-#include "../../../datastructures/segment_tree.hpp"
+#include "../../../datastructures/segtreecore/segment_tree.hpp"
 
 int op(int x, int y) {
   return x < y ? x : y;

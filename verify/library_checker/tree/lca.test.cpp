@@ -1,7 +1,7 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/lca"
 
 #include "../../boilerplate.hpp"
-#include "../../../graphs/binary_lifting.hpp"
+#include "../../../graphs/tree/binary_lifting.hpp"
 
 int main() {
   int n, q;
