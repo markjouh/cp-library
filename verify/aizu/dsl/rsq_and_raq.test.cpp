@@ -1,7 +1,7 @@
 #define PROBLEM "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_G"
 
 #include "../../boilerplate.hpp"
-#include "../../../datastructures/segtreecore/fenwick_tree_dual.hpp"
+#include "../../../datastructures/fentree/fenwick_tree_dual.hpp"
 
 int main() {
   int n, q;
