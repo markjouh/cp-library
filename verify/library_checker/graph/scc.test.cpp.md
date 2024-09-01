@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: graphs/kosaraju_scc.hpp
-    title: Kosaraju's SCC
+    title: graphs/kosaraju_scc.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -22,9 +22,9 @@ data:
     \ int>;\nusing pll = pair<ll, ll>;\n\ntemplate <class T> bool ckmin(T &a, const\
     \ T &b) {\n  return b < a ? a = b, 1 : 0;\n}\n\ntemplate <class T> bool ckmax(T\
     \ &a, const T &b) {\n  return b > a ? a = b, 1 : 0;\n}\n\nconst int INF = INT_MAX\
-    \ / 2;\nconst ll INFLL = LLONG_MAX / 2;\n\nstruct InitIO {\n    InitIO() {\n \
-    \       cin.tie(0)->sync_with_stdio(0);\n        cin.exceptions(cin.failbit);\n\
-    \        cout << setprecision(10) << fixed;\n    }\n} init_io;\n#line 2 \"graphs/kosaraju_scc.hpp\"\
+    \ / 2;\nconst ll INFLL = LLONG_MAX / 2;\n\nstruct InitIO {\n  InitIO() {\n   \
+    \ cin.tie(0)->sync_with_stdio(0);\n    cin.exceptions(cin.failbit);\n    cout\
+    \ << setprecision(10) << fixed;\n  }\n} init_io;\n#line 2 \"graphs/kosaraju_scc.hpp\"\
     \n\nstruct KosarajuSCC {\n  int sccs = 0;\n  vector<int> comp;\n  vector<vector<int>>\
     \ members, c_adj;\n\n  KosarajuSCC(const vector<vector<int>> &g) : adj(g) {\n\
     \    comp.resize(sz(g), -1);\n    t_adj.resize(sz(g));\n    vis.resize(sz(g));\n\
@@ -61,7 +61,7 @@ data:
   isVerificationFile: true
   path: verify/library_checker/graph/scc.test.cpp
   requiredBy: []
-  timestamp: '2024-08-31 12:05:33-04:00'
+  timestamp: '2024-08-31 21:03:37-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/library_checker/graph/scc.test.cpp

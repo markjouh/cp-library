@@ -53,15 +53,8 @@ data:
   - verify/aizu/ntl/power.test.cpp
 documentation_of: numeric/mod_int.hpp
 layout: document
-title: Mod Int
+redirect_from:
+- /library/numeric/mod_int.hpp
+- /library/numeric/mod_int.hpp.html
+title: numeric/mod_int.hpp
 ---
-
-### Overview
-
-Class that does arithmetic mod some prime modulus $M$. Commonly used in combinatorics problems.
-
-### Usage
-
-* `ModInt::operator o` For $o \in {+, -, *}$: $O(1)$
-* `ModInt::operator/`: $O(\log{M})$
-* `pow(b, e)`: $O(\log{e})$

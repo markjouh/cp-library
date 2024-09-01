@@ -2,8 +2,8 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: graphs/binary_lifts.hpp
-    title: Binary Lifting
+    path: graphs/binary_lifting.hpp
+    title: graphs/binary_lifting.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -22,9 +22,9 @@ data:
     \ int>;\nusing pll = pair<ll, ll>;\n\ntemplate <class T> bool ckmin(T &a, const\
     \ T &b) {\n  return b < a ? a = b, 1 : 0;\n}\n\ntemplate <class T> bool ckmax(T\
     \ &a, const T &b) {\n  return b > a ? a = b, 1 : 0;\n}\n\nconst int INF = INT_MAX\
-    \ / 2;\nconst ll INFLL = LLONG_MAX / 2;\n\nstruct InitIO {\n    InitIO() {\n \
-    \       cin.tie(0)->sync_with_stdio(0);\n        cin.exceptions(cin.failbit);\n\
-    \        cout << setprecision(10) << fixed;\n    }\n} init_io;\n#line 2 \"graphs/binary_lifts.hpp\"\
+    \ / 2;\nconst ll INFLL = LLONG_MAX / 2;\n\nstruct InitIO {\n  InitIO() {\n   \
+    \ cin.tie(0)->sync_with_stdio(0);\n    cin.exceptions(cin.failbit);\n    cout\
+    \ << setprecision(10) << fixed;\n  }\n} init_io;\n#line 2 \"graphs/binary_lifting.hpp\"\
     \n\nstruct BinaryLifting {\n  int lg;\n  vector<int> dep;\n  vector<vector<int>>\
     \ up;\n\n  BinaryLifting(const vector<vector<int>> &g, int rt = 0) {\n    lg =\
     \ __lg(sz(g) - 1) + 1;\n    dep.resize(sz(g), -1);\n    up = vector(sz(g), vector<int>(lg,\
@@ -48,17 +48,17 @@ data:
     \  while (q--) {\n    int u, v;\n    cin >> u >> v;\n    cout << bl.lca(u, v)\
     \ << '\\n';\n  }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/lca\"\n\n#include \"../../boilerplate.hpp\"\
-    \n#include \"../../../graphs/binary_lifts.hpp\"\n\nint main() {\n  int n, q;\n\
+    \n#include \"../../../graphs/binary_lifting.hpp\"\n\nint main() {\n  int n, q;\n\
     \  cin >> n >> q;\n  vector<vector<int>> g(n);\n  for (int i = 1; i < n; i++)\
     \ {\n    int p;\n    cin >> p;\n    g[p].pb(i);\n  }\n  BinaryLifting bl(g);\n\
     \  while (q--) {\n    int u, v;\n    cin >> u >> v;\n    cout << bl.lca(u, v)\
     \ << '\\n';\n  }\n}"
   dependsOn:
-  - graphs/binary_lifts.hpp
+  - graphs/binary_lifting.hpp
   isVerificationFile: true
   path: verify/library_checker/tree/lca.test.cpp
   requiredBy: []
-  timestamp: '2024-08-31 12:05:33-04:00'
+  timestamp: '2024-08-31 21:03:37-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/library_checker/tree/lca.test.cpp

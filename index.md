@@ -4,14 +4,17 @@ data:
   - name: datastructures
     pages:
     - icon: ':heavy_check_mark:'
-      path: datastructures/fenwick_tree.hpp
-      title: Fenwick Tree
+      path: datastructures/dual_fenwick_tree.hpp
+      title: datastructures/dual_fenwick_tree.hpp
     - icon: ':heavy_check_mark:'
-      path: datastructures/fenwick_tree_extended.hpp
-      title: Range Add Range Sum Fenwick Tree
+      path: datastructures/fenwick_tree.hpp
+      title: datastructures/fenwick_tree.hpp
     - icon: ':heavy_check_mark:'
       path: datastructures/hash_table.hpp
-      title: Hash Table
+      title: datastructures/hash_table.hpp
+    - icon: ':warning:'
+      path: datastructures/lazy_segment_tree.hpp
+      title: datastructures/lazy_segment_tree.hpp
     - icon: ':heavy_check_mark:'
       path: datastructures/mergesort_tree.hpp
       title: datastructures/mergesort_tree.hpp
@@ -20,56 +23,53 @@ data:
       title: datastructures/mo_queries.hpp
     - icon: ':heavy_check_mark:'
       path: datastructures/order_statistic_tree.hpp
-      title: Order Statistic Tree
+      title: datastructures/order_statistic_tree.hpp
     - icon: ':heavy_check_mark:'
       path: datastructures/segment_tree.hpp
-      title: Segment Tree
-    - icon: ':warning:'
-      path: datastructures/segment_tree_lazy.hpp
-      title: Lazy Segment Tree
+      title: datastructures/segment_tree.hpp
     - icon: ':heavy_check_mark:'
       path: datastructures/sparse_table.hpp
-      title: Sparse Table
+      title: datastructures/sparse_table.hpp
     - icon: ':heavy_check_mark:'
       path: datastructures/union_find.hpp
-      title: Union Find
+      title: datastructures/union_find.hpp
     - icon: ':heavy_check_mark:'
       path: datastructures/w_ary_tree.hpp
-      title: 64-ary Tree
+      title: datastructures/w_ary_tree.hpp
   - name: graphs
     pages:
     - icon: ':heavy_check_mark:'
-      path: graphs/binary_lifts.hpp
-      title: Binary Lifting
+      path: graphs/binary_lifting.hpp
+      title: graphs/binary_lifting.hpp
     - icon: ':warning:'
       path: graphs/centroid_decomposition.hpp
-      title: Centroid Decomposition
+      title: graphs/centroid_decomposition.hpp
     - icon: ':heavy_check_mark:'
       path: graphs/dijkstras.hpp
-      title: Dijkstra's Shortest Paths
+      title: graphs/dijkstras.hpp
     - icon: ':heavy_check_mark:'
       path: graphs/euler_tour.hpp
-      title: Euler Tour
+      title: graphs/euler_tour.hpp
     - icon: ':heavy_check_mark:'
       path: graphs/kosaraju_scc.hpp
-      title: Kosaraju's SCC
+      title: graphs/kosaraju_scc.hpp
     - icon: ':heavy_check_mark:'
       path: graphs/tree_isomorphism.hpp
-      title: Tree Isomorphism
+      title: graphs/tree_isomorphism.hpp
   - name: numeric
     pages:
     - icon: ':heavy_check_mark:'
       path: numeric/binary_search.hpp
-      title: Binary Search
+      title: numeric/binary_search.hpp
     - icon: ':warning:'
       path: numeric/binary_search_reals.hpp
-      title: Binary Search on Reals
+      title: numeric/binary_search_reals.hpp
     - icon: ':heavy_check_mark:'
       path: numeric/mod_int.hpp
-      title: Mod Int
+      title: numeric/mod_int.hpp
     - icon: ':heavy_check_mark:'
       path: numeric/number_theory.hpp
-      title: Number Theory
+      title: numeric/number_theory.hpp
     - icon: ':warning:'
       path: numeric/square_matrix.hpp
       title: numeric/square_matrix.hpp
@@ -77,7 +77,7 @@ data:
     pages:
     - icon: ':heavy_check_mark:'
       path: strings/hashing.hpp
-      title: String Hashing
+      title: strings/hashing.hpp
     - icon: ':warning:'
       path: strings/string_trie.hpp
       title: strings/string_trie.hpp

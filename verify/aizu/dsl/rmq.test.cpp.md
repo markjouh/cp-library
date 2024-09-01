@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: datastructures/segment_tree.hpp
-    title: Segment Tree
+    title: datastructures/segment_tree.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -22,11 +22,11 @@ data:
     \ntemplate <class T> bool ckmin(T &a, const T &b) {\n  return b < a ? a = b, 1\
     \ : 0;\n}\n\ntemplate <class T> bool ckmax(T &a, const T &b) {\n  return b > a\
     \ ? a = b, 1 : 0;\n}\n\nconst int INF = INT_MAX / 2;\nconst ll INFLL = LLONG_MAX\
-    \ / 2;\n\nstruct InitIO {\n    InitIO() {\n        cin.tie(0)->sync_with_stdio(0);\n\
-    \        cin.exceptions(cin.failbit);\n        cout << setprecision(10) << fixed;\n\
-    \    }\n} init_io;\n#line 2 \"datastructures/segment_tree.hpp\"\n\ntemplate <class\
-    \ T, T(*op)(T, T), T(*id)()>\nstruct SegmentTree {\n  int n;\n  vector<T> st;\n\
-    \n  SegmentTree(int sz) : n(sz), st(2 * n, id()) {}\n\n  SegmentTree(const vector<T>\
+    \ / 2;\n\nstruct InitIO {\n  InitIO() {\n    cin.tie(0)->sync_with_stdio(0);\n\
+    \    cin.exceptions(cin.failbit);\n    cout << setprecision(10) << fixed;\n  }\n\
+    } init_io;\n#line 2 \"datastructures/segment_tree.hpp\"\n\ntemplate <class T,\
+    \ T(*op)(T, T), T(*id)()>\nstruct SegmentTree {\n  int n;\n  vector<T> st;\n\n\
+    \  SegmentTree(int sz) : n(sz), st(2 * n, id()) {}\n\n  SegmentTree(const vector<T>\
     \ &a) : n(sz(a)), st(2 * n) {\n    copy(begin(a), end(a), begin(st) + n);\n  \
     \  for (int i = n - 1; i > 0; i--) {\n      st[i] = op(st[i << 1], st[i << 1 |\
     \ 1]);\n    }\n  }\n\n  T query(int l, int r) {\n    T ls = id(), rs = id();\n\
@@ -52,7 +52,7 @@ data:
   isVerificationFile: true
   path: verify/aizu/dsl/rmq.test.cpp
   requiredBy: []
-  timestamp: '2024-08-31 12:05:33-04:00'
+  timestamp: '2024-08-31 21:03:37-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/aizu/dsl/rmq.test.cpp

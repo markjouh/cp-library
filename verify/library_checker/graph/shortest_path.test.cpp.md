@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: graphs/dijkstras.hpp
-    title: Dijkstra's Shortest Paths
+    title: graphs/dijkstras.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -23,8 +23,8 @@ data:
     \ T> bool ckmin(T &a, const T &b) {\n  return b < a ? a = b, 1 : 0;\n}\n\ntemplate\
     \ <class T> bool ckmax(T &a, const T &b) {\n  return b > a ? a = b, 1 : 0;\n}\n\
     \nconst int INF = INT_MAX / 2;\nconst ll INFLL = LLONG_MAX / 2;\n\nstruct InitIO\
-    \ {\n    InitIO() {\n        cin.tie(0)->sync_with_stdio(0);\n        cin.exceptions(cin.failbit);\n\
-    \        cout << setprecision(10) << fixed;\n    }\n} init_io;\n#line 2 \"graphs/dijkstras.hpp\"\
+    \ {\n  InitIO() {\n    cin.tie(0)->sync_with_stdio(0);\n    cin.exceptions(cin.failbit);\n\
+    \    cout << setprecision(10) << fixed;\n  }\n} init_io;\n#line 2 \"graphs/dijkstras.hpp\"\
     \n\ntemplate <class T>\nauto dijkstras(const vector<vector<pair<int, int>>> &g,\
     \ int start = 0) {\n  priority_queue<pair<T, int>, vector<pair<T, int>>, greater<pair<T,\
     \ int>>> pq;\n\n  vector<T> dist(sz(g), numeric_limits<T>::max());\n  vector<int>\
@@ -56,7 +56,7 @@ data:
   isVerificationFile: true
   path: verify/library_checker/graph/shortest_path.test.cpp
   requiredBy: []
-  timestamp: '2024-08-31 12:05:33-04:00'
+  timestamp: '2024-08-31 21:03:37-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/library_checker/graph/shortest_path.test.cpp

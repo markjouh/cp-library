@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: graphs/tree_isomorphism.hpp
-    title: Tree Isomorphism
+    title: graphs/tree_isomorphism.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -23,9 +23,9 @@ data:
     \ntemplate <class T> bool ckmin(T &a, const T &b) {\n  return b < a ? a = b, 1\
     \ : 0;\n}\n\ntemplate <class T> bool ckmax(T &a, const T &b) {\n  return b > a\
     \ ? a = b, 1 : 0;\n}\n\nconst int INF = INT_MAX / 2;\nconst ll INFLL = LLONG_MAX\
-    \ / 2;\n\nstruct InitIO {\n    InitIO() {\n        cin.tie(0)->sync_with_stdio(0);\n\
-    \        cin.exceptions(cin.failbit);\n        cout << setprecision(10) << fixed;\n\
-    \    }\n} init_io;\n#line 2 \"graphs/tree_isomorphism.hpp\"\n\nstruct TreeIsomorphism\
+    \ / 2;\n\nstruct InitIO {\n  InitIO() {\n    cin.tie(0)->sync_with_stdio(0);\n\
+    \    cin.exceptions(cin.failbit);\n    cout << setprecision(10) << fixed;\n  }\n\
+    } init_io;\n#line 2 \"graphs/tree_isomorphism.hpp\"\n\nstruct TreeIsomorphism\
     \ {\n  map<vector<int>, int> hashes;\n\n  vector<int> gen(const vector<vector<int>>\
     \ &g, int rt = 0) {\n    vector<int> res(sz(g));\n    dfs(rt, -1, g, res);\n \
     \   return res;\n  }\n\nprivate:\n  void dfs(int u, int par, auto &g, auto &res)\
@@ -50,7 +50,7 @@ data:
   isVerificationFile: true
   path: verify/library_checker/tree/rooted_tree_isomorphism.test.cpp
   requiredBy: []
-  timestamp: '2024-08-31 12:05:33-04:00'
+  timestamp: '2024-08-31 21:03:37-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/library_checker/tree/rooted_tree_isomorphism.test.cpp

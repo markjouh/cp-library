@@ -6,7 +6,7 @@ data:
     title: datastructures/mergesort_tree.hpp
   - icon: ':heavy_check_mark:'
     path: numeric/binary_search.hpp
-    title: Binary Search
+    title: numeric/binary_search.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -26,8 +26,8 @@ data:
     \ T> bool ckmin(T &a, const T &b) {\n  return b < a ? a = b, 1 : 0;\n}\n\ntemplate\
     \ <class T> bool ckmax(T &a, const T &b) {\n  return b > a ? a = b, 1 : 0;\n}\n\
     \nconst int INF = INT_MAX / 2;\nconst ll INFLL = LLONG_MAX / 2;\n\nstruct InitIO\
-    \ {\n    InitIO() {\n        cin.tie(0)->sync_with_stdio(0);\n        cin.exceptions(cin.failbit);\n\
-    \        cout << setprecision(10) << fixed;\n    }\n} init_io;\n#line 2 \"datastructures/mergesort_tree.hpp\"\
+    \ {\n  InitIO() {\n    cin.tie(0)->sync_with_stdio(0);\n    cin.exceptions(cin.failbit);\n\
+    \    cout << setprecision(10) << fixed;\n  }\n} init_io;\n#line 2 \"datastructures/mergesort_tree.hpp\"\
     \n\ntemplate <class T>\nstruct MergesortTree {\n  int n;\n  vector<vector<T>>\
     \ st;\n\n  MergesortTree(const vector<T> &a) : n(sz(a)), st(2 * n) {\n    for\
     \ (int i = 0; i < n; i++) {\n      st[i + n] = {a[i]};\n    }\n    for (int i\
@@ -62,7 +62,7 @@ data:
   isVerificationFile: true
   path: verify/library_checker/data_structure/range_kth_smallest.test.cpp
   requiredBy: []
-  timestamp: '2024-08-31 12:05:33-04:00'
+  timestamp: '2024-08-31 21:03:37-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/library_checker/data_structure/range_kth_smallest.test.cpp

@@ -38,13 +38,8 @@ data:
   - verify/library_checker/graph/shortest_path.test.cpp
 documentation_of: graphs/dijkstras.hpp
 layout: document
-title: Dijkstra's Shortest Paths
+redirect_from:
+- /library/graphs/dijkstras.hpp
+- /library/graphs/dijkstras.hpp.html
+title: graphs/dijkstras.hpp
 ---
-
-### Overview
-
-Given a graph $G = (V, E)$, constructs the shortest paths from a specified starting vertex $s$ to each vertex reachable from $s$ in $O(\lvert E \rvert + \lvert V \rvert \log{\lvert V \rvert})$.
-
-### Usage
-
-* `dijkstras(g, s = 0)`: Returns a pair `dist, from`, the lengths of the shortest paths from s and the parent array of the shortest path tree rooted at s, respectively.

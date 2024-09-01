@@ -8,7 +8,7 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"datastructures/segment_tree_lazy.hpp\"\n\nstruct LazySegmentTree\
+  bundledCode: "#line 2 \"datastructures/lazy_segment_tree.hpp\"\n\nstruct LazySegmentTree\
     \ {\n  using item_t = pair<int, int>;\n  using upd_t = int;\n\n  // Identity element,\
     \ null update tag\n  const item_t id = {INF, 1};\n  const upd_t lz_id = 0;\n\n\
     \  // Associative merge operation\n  item_t merge(item_t a, item_t b) {\n    if\
@@ -73,22 +73,15 @@ data:
     \ * x + 2]);\n  }\n};"
   dependsOn: []
   isVerificationFile: false
-  path: datastructures/segment_tree_lazy.hpp
+  path: datastructures/lazy_segment_tree.hpp
   requiredBy: []
-  timestamp: '2024-08-28 02:47:08-04:00'
+  timestamp: '2024-08-31 21:03:37-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: datastructures/segment_tree_lazy.hpp
+documentation_of: datastructures/lazy_segment_tree.hpp
 layout: document
-title: Lazy Segment Tree
+redirect_from:
+- /library/datastructures/lazy_segment_tree.hpp
+- /library/datastructures/lazy_segment_tree.hpp.html
+title: datastructures/lazy_segment_tree.hpp
 ---
-
-### Overview
-
-The segment tree is a data structure that stores an array of objects with an associative merge operation and identity element. Lazy propagation allows for a variety of range update operations to be supported in $O(\log{n})$ as well.
-
-### Usage
-
-* `LazySegmentTree(x)`: Builds a segment tree of length x, or from the vector x. The complexity is $O(n)$ in both cases.
-* `update(l, r, v)`: Applies an update with value v to the interval $[l, r]$.
-* `query(l, r)`: Returns the range aggregate over the interval $[l, r]$.

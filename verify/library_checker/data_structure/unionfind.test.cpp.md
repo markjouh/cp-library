@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: datastructures/union_find.hpp
-    title: Union Find
+    title: datastructures/union_find.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -23,8 +23,8 @@ data:
     \ T> bool ckmin(T &a, const T &b) {\n  return b < a ? a = b, 1 : 0;\n}\n\ntemplate\
     \ <class T> bool ckmax(T &a, const T &b) {\n  return b > a ? a = b, 1 : 0;\n}\n\
     \nconst int INF = INT_MAX / 2;\nconst ll INFLL = LLONG_MAX / 2;\n\nstruct InitIO\
-    \ {\n    InitIO() {\n        cin.tie(0)->sync_with_stdio(0);\n        cin.exceptions(cin.failbit);\n\
-    \        cout << setprecision(10) << fixed;\n    }\n} init_io;\n#line 2 \"datastructures/union_find.hpp\"\
+    \ {\n  InitIO() {\n    cin.tie(0)->sync_with_stdio(0);\n    cin.exceptions(cin.failbit);\n\
+    \    cout << setprecision(10) << fixed;\n  }\n} init_io;\n#line 2 \"datastructures/union_find.hpp\"\
     \n\nstruct UnionFind {\n  vector<int> a;\n\n  UnionFind(int n) : a(n, -1) {}\n\
     \n  int size(int x) {\n    return -a[find(x)];\n  }\n\n  int find(int x) {\n \
     \   return a[x] < 0 ? x : a[x] = find(a[x]);\n  }\n\n  bool join(int x, int y)\
@@ -46,7 +46,7 @@ data:
   isVerificationFile: true
   path: verify/library_checker/data_structure/unionfind.test.cpp
   requiredBy: []
-  timestamp: '2024-08-31 12:05:33-04:00'
+  timestamp: '2024-08-31 21:03:37-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/library_checker/data_structure/unionfind.test.cpp

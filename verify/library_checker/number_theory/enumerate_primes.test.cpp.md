@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: numeric/number_theory.hpp
-    title: Number Theory
+    title: numeric/number_theory.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -23,8 +23,8 @@ data:
     \ T> bool ckmin(T &a, const T &b) {\n  return b < a ? a = b, 1 : 0;\n}\n\ntemplate\
     \ <class T> bool ckmax(T &a, const T &b) {\n  return b > a ? a = b, 1 : 0;\n}\n\
     \nconst int INF = INT_MAX / 2;\nconst ll INFLL = LLONG_MAX / 2;\n\nstruct InitIO\
-    \ {\n    InitIO() {\n        cin.tie(0)->sync_with_stdio(0);\n        cin.exceptions(cin.failbit);\n\
-    \        cout << setprecision(10) << fixed;\n    }\n} init_io;\n#line 2 \"numeric/number_theory.hpp\"\
+    \ {\n  InitIO() {\n    cin.tie(0)->sync_with_stdio(0);\n    cin.exceptions(cin.failbit);\n\
+    \    cout << setprecision(10) << fixed;\n  }\n} init_io;\n#line 2 \"numeric/number_theory.hpp\"\
     \n\nnamespace number_theory {\n\nvector<int> mn_fac, primes;\n\nvoid sieve(int\
     \ n) {\n  mn_fac.resize(n + 1);\n  for (int i = 2; i <= n; i++) {\n    if (!mn_fac[i])\
     \ {\n      mn_fac[i] = i;\n      primes.push_back(i);\n      for (ll j = 1ll *\
@@ -59,7 +59,7 @@ data:
   isVerificationFile: true
   path: verify/library_checker/number_theory/enumerate_primes.test.cpp
   requiredBy: []
-  timestamp: '2024-08-31 12:05:33-04:00'
+  timestamp: '2024-08-31 21:03:37-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/library_checker/number_theory/enumerate_primes.test.cpp
