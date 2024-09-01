@@ -24,9 +24,9 @@ const int INF = INT_MAX / 2;
 const ll INFLL = LLONG_MAX / 2;
 
 struct InitIO {
-    InitIO() {
-        cin.tie(0)->sync_with_stdio(0);
-        cin.exceptions(cin.failbit);
-        cout << setprecision(10) << fixed;
-    }
+  InitIO() {
+    cin.tie(0)->sync_with_stdio(0);
+    cin.exceptions(cin.failbit);
+    cout << setprecision(10) << fixed;
+  }
 } init_io;
