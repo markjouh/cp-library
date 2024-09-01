@@ -61,7 +61,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: numeric/binary_search.hpp
       title: numeric/binary_search.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: numeric/binary_search_reals.hpp
       title: numeric/binary_search_reals.hpp
     - icon: ':heavy_check_mark:'
@@ -106,6 +106,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/aizu/ntl/power.test.cpp
       title: verify/aizu/ntl/power.test.cpp
+  - name: verify/custom/numeric
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/custom/numeric/binary_search_reals.test.cpp
+      title: verify/custom/numeric/binary_search_reals.test.cpp
   - name: verify/library_checker/data_structure
     pages:
     - icon: ':heavy_check_mark:'
