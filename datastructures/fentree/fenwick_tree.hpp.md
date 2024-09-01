@@ -3,8 +3,8 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
-    path: datastructures/fentree/fenwick_tree_dual.hpp
-    title: datastructures/fentree/fenwick_tree_dual.hpp
+    path: datastructures/fentree/fenwick_tree_range_add_range_sum.hpp
+    title: datastructures/fentree/fenwick_tree_range_add_range_sum.hpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/aizu/dsl/rsq_and_raq.test.cpp
@@ -43,7 +43,7 @@ data:
   isVerificationFile: false
   path: datastructures/fentree/fenwick_tree.hpp
   requiredBy:
-  - datastructures/fentree/fenwick_tree_dual.hpp
+  - datastructures/fentree/fenwick_tree_range_add_range_sum.hpp
   timestamp: '2024-08-31 22:47:38-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:

@@ -5,8 +5,8 @@ data:
     path: datastructures/fentree/fenwick_tree.hpp
     title: datastructures/fentree/fenwick_tree.hpp
   - icon: ':heavy_check_mark:'
-    path: datastructures/fentree/fenwick_tree_dual.hpp
-    title: datastructures/fentree/fenwick_tree_dual.hpp
+    path: datastructures/fentree/fenwick_tree_range_add_range_sum.hpp
+    title: datastructures/fentree/fenwick_tree_range_add_range_sum.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -27,7 +27,7 @@ data:
     \ <class T> bool ckmax(T &a, const T &b) {\n  return b > a ? a = b, 1 : 0;\n}\n\
     \nconst int INF = INT_MAX / 2;\nconst ll INFLL = LLONG_MAX / 2;\n\nstruct InitIO\
     \ {\n  InitIO() {\n    cin.tie(0)->sync_with_stdio(0);\n    cin.exceptions(cin.failbit);\n\
-    \    cout << setprecision(10) << fixed;\n  }\n} init_io;\n#line 2 \"datastructures/fentree/fenwick_tree_dual.hpp\"\
+    \    cout << setprecision(10) << fixed;\n  }\n} init_io;\n#line 2 \"datastructures/fentree/fenwick_tree_range_add_range_sum.hpp\"\
     \n\n#line 2 \"datastructures/fentree/fenwick_tree.hpp\"\n\ntemplate <class T>\n\
     struct FenwickTree {\n  int n;\n  vector<T> ft;\n\n  FenwickTree(int x) : n(x),\
     \ ft(n + 1) {}\n\n  FenwickTree(const vector<T> &a) : n(sz(a)), ft(n + 1) {\n\
@@ -37,32 +37,32 @@ data:
     \ & -p) {\n      ft[p] += v;\n    }\n  }\n\n  T sum(int r) {\n    // assert(r\
     \ < n);\n    T res = 0;\n    for (r++; r > 0; r -= r & -r) {\n      res += ft[r];\n\
     \    }\n    return res;\n  }\n\n  T sum(int l, int r) {\n    return sum(r) - sum(l\
-    \ - 1);\n  }\n};\n#line 4 \"datastructures/fentree/fenwick_tree_dual.hpp\"\n\n\
-    template <class T>\nstruct DualFenwickTree {\n  int n;\n  FenwickTree<T> in_pref,\
-    \ os_pref;\n\n  DualFenwickTree(int x) : n(x), in_pref(n), os_pref(n) {}\n\n \
-    \ T sum(int r) {\n    return in_pref.sum(r - 1) + os_pref.sum(n - r - 1) * (r\
-    \ + 1);\n  }\n\n  T sum(int l, int r) {\n    return sum(r) - (l > 0 ? sum(l -\
-    \ 1) : 0);\n  }\n\n  void add(int r, T v) {\n    in_pref.add(r, v * (r + 1));\n\
-    \    os_pref.add(n - r - 1, v);\n  }\n\n  void add(int l, int r, T v) {\n    add(r,\
-    \ v);\n    if (l > 0) {\n      add(l - 1, T(0) - T(v));\n    }\n  }\n};\n#line\
-    \ 5 \"verify/aizu/dsl/rsq_and_raq.test.cpp\"\n\nint main() {\n  int n, q;\n  cin\
-    \ >> n >> q;\n  DualFenwickTree<ll> ft(n);\n  while (q--) {\n    bool t;\n   \
-    \ int l, r;\n    cin >> t >> l >> r;\n    l--; r--;\n    if (t) {\n      cout\
-    \ << ft.sum(l, r) << '\\n';\n    } else {\n      int x;\n      cin >> x;\n   \
-    \   ft.add(l, r, x);\n    }\n  }\n}\n"
+    \ - 1);\n  }\n};\n#line 4 \"datastructures/fentree/fenwick_tree_range_add_range_sum.hpp\"\
+    \n\ntemplate <class T>\nstruct RangeAddRangeSumFT {\n  int n;\n  FenwickTree<T>\
+    \ in_pref, os_pref;\n\n  RangeAddRangeSumFT(int x) : n(x), in_pref(n), os_pref(n)\
+    \ {}\n\n  T sum(int r) {\n    return in_pref.sum(r - 1) + os_pref.sum(n - r -\
+    \ 1) * (r + 1);\n  }\n\n  T sum(int l, int r) {\n    return sum(r) - (l > 0 ?\
+    \ sum(l - 1) : 0);\n  }\n\n  void add(int r, T v) {\n    in_pref.add(r, v * (r\
+    \ + 1));\n    os_pref.add(n - r - 1, v);\n  }\n\n  void add(int l, int r, T v)\
+    \ {\n    add(r, v);\n    if (l > 0) {\n      add(l - 1, T(0) - T(v));\n    }\n\
+    \  }\n};\n#line 5 \"verify/aizu/dsl/rsq_and_raq.test.cpp\"\n\nint main() {\n \
+    \ int n, q;\n  cin >> n >> q;\n  RangeAddRangeSumFT<ll> ft(n);\n  while (q--)\
+    \ {\n    bool t;\n    int l, r;\n    cin >> t >> l >> r;\n    l--; r--;\n    if\
+    \ (t) {\n      cout << ft.sum(l, r) << '\\n';\n    } else {\n      int x;\n  \
+    \    cin >> x;\n      ft.add(l, r, x);\n    }\n  }\n}\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_G\"\
-    \n\n#include \"../../boilerplate.hpp\"\n#include \"../../../datastructures/fentree/fenwick_tree_dual.hpp\"\
-    \n\nint main() {\n  int n, q;\n  cin >> n >> q;\n  DualFenwickTree<ll> ft(n);\n\
+    \n\n#include \"../../boilerplate.hpp\"\n#include \"../../../datastructures/fentree/fenwick_tree_range_add_range_sum.hpp\"\
+    \n\nint main() {\n  int n, q;\n  cin >> n >> q;\n  RangeAddRangeSumFT<ll> ft(n);\n\
     \  while (q--) {\n    bool t;\n    int l, r;\n    cin >> t >> l >> r;\n    l--;\
     \ r--;\n    if (t) {\n      cout << ft.sum(l, r) << '\\n';\n    } else {\n   \
     \   int x;\n      cin >> x;\n      ft.add(l, r, x);\n    }\n  }\n}"
   dependsOn:
-  - datastructures/fentree/fenwick_tree_dual.hpp
+  - datastructures/fentree/fenwick_tree_range_add_range_sum.hpp
   - datastructures/fentree/fenwick_tree.hpp
   isVerificationFile: true
   path: verify/aizu/dsl/rsq_and_raq.test.cpp
   requiredBy: []
-  timestamp: '2024-08-31 22:47:38-04:00'
+  timestamp: '2024-09-01 01:14:09-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/aizu/dsl/rsq_and_raq.test.cpp

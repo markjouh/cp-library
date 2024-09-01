@@ -6,9 +6,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: datastructures/fentree/fenwick_tree.hpp
       title: datastructures/fentree/fenwick_tree.hpp
+    - icon: ':warning:'
+      path: datastructures/fentree/fenwick_tree_range_add.hpp
+      title: datastructures/fentree/fenwick_tree_range_add.hpp
     - icon: ':heavy_check_mark:'
-      path: datastructures/fentree/fenwick_tree_dual.hpp
-      title: datastructures/fentree/fenwick_tree_dual.hpp
+      path: datastructures/fentree/fenwick_tree_range_add_range_sum.hpp
+      title: datastructures/fentree/fenwick_tree_range_add_range_sum.hpp
   - name: datastructures/pbds
     pages:
     - icon: ':heavy_check_mark:'
