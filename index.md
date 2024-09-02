@@ -33,7 +33,7 @@ data:
       title: datastructures/segtree/segment_tree_lazy.hpp
   - name: datastructures/static
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: datastructures/static/mergesort_tree.hpp
       title: datastructures/static/mergesort_tree.hpp
     - icon: ':heavy_check_mark:'
@@ -74,10 +74,10 @@ data:
       title: graphs/tree/tree_isomorphism.hpp
   - name: numeric
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: numeric/binary_search.hpp
       title: numeric/binary_search.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: numeric/binary_search_reals.hpp
       title: numeric/binary_search_reals.hpp
     - icon: ':heavy_check_mark:'
@@ -99,7 +99,7 @@ data:
       title: strings/string_trie.hpp
   - name: utils
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: utils/my_random.hpp
       title: utils/my_random.hpp
   verificationCategories:
@@ -129,7 +129,7 @@ data:
       title: verify/aizu/ntl/power.test.cpp
   - name: verify/custom/numeric
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/custom/numeric/binary_search_reals.test.cpp
       title: verify/custom/numeric/binary_search_reals.test.cpp
   - name: verify/library_checker/data_structure
@@ -143,7 +143,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/library_checker/data_structure/point_add_range_sum.test.cpp
       title: verify/library_checker/data_structure/point_add_range_sum.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/library_checker/data_structure/range_kth_smallest.test.cpp
       title: verify/library_checker/data_structure/range_kth_smallest.test.cpp
     - icon: ':heavy_check_mark:'

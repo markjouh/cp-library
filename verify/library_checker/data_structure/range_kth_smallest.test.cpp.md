@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: datastructures/static/mergesort_tree.hpp
     title: datastructures/static/mergesort_tree.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: numeric/binary_search.hpp
     title: numeric/binary_search.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/range_kth_smallest
@@ -31,8 +31,8 @@ data:
     #else\n  int res = 0;\n  while (x >>= 1) {\n    res++;\n  }\n  return res;\n#endif\n\
     }\n\ntemplate <class T>\nbool ckmin(T &a, const T &b) {\n  return b < a ? a =\
     \ b, 1 : 0;\n}\n\ntemplate <class T>\nbool ckmax(T &a, const T &b) {\n  return\
-    \ b > a ? a = b, 1 : 0;\n}\n\nconst int INF = INT_MAX / 2;\nconst ll INFLL = LLONG_MAX\
-    \ / 2;\n\nstruct InitIO {\n  InitIO() {\n    cin.tie(0)->sync_with_stdio(0);\n\
+    \ b > a ? a = b, 1 : 0;\n}\n\ntemplate <class T = int>\nstatic constexpr T inf\
+    \ = numeric_limits<T>::max() / 2;\n\nstruct InitIO {\n  InitIO() {\n    cin.tie(0)->sync_with_stdio(0);\n\
     \    cin.exceptions(cin.failbit);\n    cout << setprecision(10) << fixed;\n  }\n\
     } init_io;\n#line 2 \"datastructures/static/mergesort_tree.hpp\"\n\ntemplate <class\
     \ T>\nstruct MergesortTree {\n  int n;\n  vector<vector<T>> st;\n\n  MergesortTree(const\
@@ -45,11 +45,11 @@ data:
     \        l++;\n      }\n      if (r & 1) {\n        r--;\n        rs += lower_bound(all(st[r]),\
     \ v) - begin(st[r]);\n      }\n    }\n    return ls + rs;\n  }\n};\n#line 2 \"\
     numeric/binary_search.hpp\"\n\ntemplate <class T, class U>\nT bsmin(T lo, T hi,\
-    \ U f) {\n  assert(lo <= hi);\n  hi++;\n  for (T i = T(1) << __lg(hi - lo); i\
-    \ > 0; i >>= 1) {\n    hi -= (hi - i >= lo && f(hi - i)) * i;\n  }\n  return hi;\n\
+    \ U f) {\n  assert(lo <= hi);\n  hi++;\n  for (T i = T(1) << lg(hi - lo); i >\
+    \ 0; i >>= 1) {\n    hi -= (hi - i >= lo && f(hi - i)) * i;\n  }\n  return hi;\n\
     }\n\ntemplate <class T, class U>\nT bsmax(T lo, T hi, U f) {\n  assert(lo <= hi);\n\
-    \  lo--;\n  for (T i = T(1) << __lg(hi - lo); i > 0; i >>= 1) {\n    lo += (lo\
-    \ + i <= hi && f(lo + i)) * i;\n  }\n  return lo;\n}\n#line 6 \"verify/library_checker/data_structure/range_kth_smallest.test.cpp\"\
+    \  lo--;\n  for (T i = T(1) << lg(hi - lo); i > 0; i >>= 1) {\n    lo += (lo +\
+    \ i <= hi && f(lo + i)) * i;\n  }\n  return lo;\n}\n#line 6 \"verify/library_checker/data_structure/range_kth_smallest.test.cpp\"\
     \n\nint main() {\n  int n, q;\n  cin >> n >> q;\n  vector<int> a(n);\n  for (int\
     \ i = 0; i < n; i++) {\n    cin >> a[i];\n  }\n  MergesortTree<int> mt(a);\n \
     \ while (q--) {\n    int l, r, k;\n    cin >> l >> r >> k;\n    r--;\n    cout\
@@ -68,8 +68,8 @@ data:
   isVerificationFile: true
   path: verify/library_checker/data_structure/range_kth_smallest.test.cpp
   requiredBy: []
-  timestamp: '2024-09-01 20:48:11-04:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2024-09-01 21:11:12-04:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/library_checker/data_structure/range_kth_smallest.test.cpp
 layout: document

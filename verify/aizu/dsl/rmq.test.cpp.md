@@ -27,8 +27,8 @@ data:
     #else\n  int res = 0;\n  while (x >>= 1) {\n    res++;\n  }\n  return res;\n#endif\n\
     }\n\ntemplate <class T>\nbool ckmin(T &a, const T &b) {\n  return b < a ? a =\
     \ b, 1 : 0;\n}\n\ntemplate <class T>\nbool ckmax(T &a, const T &b) {\n  return\
-    \ b > a ? a = b, 1 : 0;\n}\n\nconst int INF = INT_MAX / 2;\nconst ll INFLL = LLONG_MAX\
-    \ / 2;\n\nstruct InitIO {\n  InitIO() {\n    cin.tie(0)->sync_with_stdio(0);\n\
+    \ b > a ? a = b, 1 : 0;\n}\n\ntemplate <class T = int>\nstatic constexpr T inf\
+    \ = numeric_limits<T>::max() / 2;\n\nstruct InitIO {\n  InitIO() {\n    cin.tie(0)->sync_with_stdio(0);\n\
     \    cin.exceptions(cin.failbit);\n    cout << setprecision(10) << fixed;\n  }\n\
     } init_io;\n#line 2 \"datastructures/segtree/segment_tree.hpp\"\n\ntemplate <class\
     \ T, T(*op)(T, T), T(*id)()>\nstruct SegmentTree {\n  int n;\n  vector<T> st;\n\
@@ -58,7 +58,7 @@ data:
   isVerificationFile: true
   path: verify/aizu/dsl/rmq.test.cpp
   requiredBy: []
-  timestamp: '2024-09-01 20:48:11-04:00'
+  timestamp: '2024-09-01 21:11:12-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/aizu/dsl/rmq.test.cpp

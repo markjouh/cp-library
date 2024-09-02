@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: numeric/binary_search.hpp
     title: numeric/binary_search.hpp
   - icon: ':heavy_check_mark:'
@@ -31,16 +31,16 @@ data:
     #else\n  int res = 0;\n  while (x >>= 1) {\n    res++;\n  }\n  return res;\n#endif\n\
     }\n\ntemplate <class T>\nbool ckmin(T &a, const T &b) {\n  return b < a ? a =\
     \ b, 1 : 0;\n}\n\ntemplate <class T>\nbool ckmax(T &a, const T &b) {\n  return\
-    \ b > a ? a = b, 1 : 0;\n}\n\nconst int INF = INT_MAX / 2;\nconst ll INFLL = LLONG_MAX\
-    \ / 2;\n\nstruct InitIO {\n  InitIO() {\n    cin.tie(0)->sync_with_stdio(0);\n\
+    \ b > a ? a = b, 1 : 0;\n}\n\ntemplate <class T = int>\nstatic constexpr T inf\
+    \ = numeric_limits<T>::max() / 2;\n\nstruct InitIO {\n  InitIO() {\n    cin.tie(0)->sync_with_stdio(0);\n\
     \    cin.exceptions(cin.failbit);\n    cout << setprecision(10) << fixed;\n  }\n\
     } init_io;\n#line 2 \"numeric/binary_search.hpp\"\n\ntemplate <class T, class\
     \ U>\nT bsmin(T lo, T hi, U f) {\n  assert(lo <= hi);\n  hi++;\n  for (T i = T(1)\
-    \ << __lg(hi - lo); i > 0; i >>= 1) {\n    hi -= (hi - i >= lo && f(hi - i)) *\
-    \ i;\n  }\n  return hi;\n}\n\ntemplate <class T, class U>\nT bsmax(T lo, T hi,\
-    \ U f) {\n  assert(lo <= hi);\n  lo--;\n  for (T i = T(1) << __lg(hi - lo); i\
-    \ > 0; i >>= 1) {\n    lo += (lo + i <= hi && f(lo + i)) * i;\n  }\n  return lo;\n\
-    }\n#line 2 \"strings/hashing.hpp\"\n\nmt19937_64 rng(chrono::steady_clock::now().time_since_epoch().count());\n\
+    \ << lg(hi - lo); i > 0; i >>= 1) {\n    hi -= (hi - i >= lo && f(hi - i)) * i;\n\
+    \  }\n  return hi;\n}\n\ntemplate <class T, class U>\nT bsmax(T lo, T hi, U f)\
+    \ {\n  assert(lo <= hi);\n  lo--;\n  for (T i = T(1) << lg(hi - lo); i > 0; i\
+    \ >>= 1) {\n    lo += (lo + i <= hi && f(lo + i)) * i;\n  }\n  return lo;\n}\n\
+    #line 2 \"strings/hashing.hpp\"\n\nmt19937_64 rng(chrono::steady_clock::now().time_since_epoch().count());\n\
     \nconst ll H_MOD = (1ll << 61) - 1;\nconst ll H_BASE = uniform_int_distribution<ll>(0,\
     \ H_MOD)(rng);\n\nvector<ll> pow_b = {1};\n\nusing mul_t = __int128_t;\n\nstruct\
     \ Hash {\n  ll val;\n  int len;\n\n  Hash(ll x, int y) : val(x), len(y) {}\n\n\
@@ -79,7 +79,7 @@ data:
   isVerificationFile: true
   path: verify/library_checker/string/enumerate_palindromes.test.cpp
   requiredBy: []
-  timestamp: '2024-09-01 20:48:11-04:00'
+  timestamp: '2024-09-01 21:11:12-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/library_checker/string/enumerate_palindromes.test.cpp
