@@ -22,6 +22,9 @@ data:
       title: datastructures/pbds/order_statistic_tree.hpp
   - name: datastructures/segtree
     pages:
+    - icon: ':warning:'
+      path: datastructures/segtree/range_set_range_query_contig.hpp
+      title: datastructures/segtree/range_set_range_query_contig.hpp
     - icon: ':heavy_check_mark:'
       path: datastructures/segtree/segment_tree.hpp
       title: datastructures/segtree/segment_tree.hpp
