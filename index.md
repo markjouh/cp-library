@@ -33,7 +33,7 @@ data:
       title: datastructures/segtree/segment_tree_lazy.hpp
   - name: datastructures/static
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: datastructures/static/mergesort_tree.hpp
       title: datastructures/static/mergesort_tree.hpp
     - icon: ':heavy_check_mark:'
@@ -74,7 +74,7 @@ data:
       title: graphs/tree/tree_isomorphism.hpp
   - name: numeric
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: numeric/binary_search.hpp
       title: numeric/binary_search.hpp
     - icon: ':heavy_check_mark:'
@@ -99,9 +99,12 @@ data:
       title: strings/string_trie.hpp
   - name: utils
     pages:
+    - icon: ':warning:'
+      path: utils/debug.hpp
+      title: utils/debug.hpp
     - icon: ':heavy_check_mark:'
-      path: utils/my_random.hpp
-      title: utils/my_random.hpp
+      path: utils/randgen.hpp
+      title: utils/randgen.hpp
   verificationCategories:
   - name: verify/aizu/alds1
     pages:
@@ -143,7 +146,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/library_checker/data_structure/point_add_range_sum.test.cpp
       title: verify/library_checker/data_structure/point_add_range_sum.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/library_checker/data_structure/range_kth_smallest.test.cpp
       title: verify/library_checker/data_structure/range_kth_smallest.test.cpp
     - icon: ':heavy_check_mark:'

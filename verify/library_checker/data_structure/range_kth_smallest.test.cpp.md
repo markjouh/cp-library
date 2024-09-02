@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: datastructures/static/mergesort_tree.hpp
     title: datastructures/static/mergesort_tree.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: numeric/binary_search.hpp
     title: numeric/binary_search.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/range_kth_smallest
@@ -53,23 +53,23 @@ data:
     \n\nint main() {\n  int n, q;\n  cin >> n >> q;\n  vector<int> a(n);\n  for (int\
     \ i = 0; i < n; i++) {\n    cin >> a[i];\n  }\n  MergesortTree<int> mt(a);\n \
     \ while (q--) {\n    int l, r, k;\n    cin >> l >> r >> k;\n    r--;\n    cout\
-    \ << bsmin(0, INF, [&](int x) {\n      return mt.query(l, r, x + 1) >= k + 1;\n\
+    \ << bsmin(0, inf<>, [&](int x) {\n      return mt.query(l, r, x + 1) >= k + 1;\n\
     \    }) << '\\n';\n  }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/range_kth_smallest\"\n\n\
     #include \"../../boilerplate.hpp\"\n#include \"../../../datastructures/static/mergesort_tree.hpp\"\
     \n#include \"../../../numeric/binary_search.hpp\"\n\nint main() {\n  int n, q;\n\
     \  cin >> n >> q;\n  vector<int> a(n);\n  for (int i = 0; i < n; i++) {\n    cin\
     \ >> a[i];\n  }\n  MergesortTree<int> mt(a);\n  while (q--) {\n    int l, r, k;\n\
-    \    cin >> l >> r >> k;\n    r--;\n    cout << bsmin(0, INF, [&](int x) {\n \
-    \     return mt.query(l, r, x + 1) >= k + 1;\n    }) << '\\n';\n  }\n}"
+    \    cin >> l >> r >> k;\n    r--;\n    cout << bsmin(0, inf<>, [&](int x) {\n\
+    \      return mt.query(l, r, x + 1) >= k + 1;\n    }) << '\\n';\n  }\n}"
   dependsOn:
   - datastructures/static/mergesort_tree.hpp
   - numeric/binary_search.hpp
   isVerificationFile: true
   path: verify/library_checker/data_structure/range_kth_smallest.test.cpp
   requiredBy: []
-  timestamp: '2024-09-01 21:11:12-04:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2024-09-01 21:27:07-04:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/library_checker/data_structure/range_kth_smallest.test.cpp
 layout: document

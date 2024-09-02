@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: numeric/binary_search.hpp
     title: numeric/binary_search.hpp
   - icon: ':heavy_check_mark:'
