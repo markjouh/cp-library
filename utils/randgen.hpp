@@ -13,7 +13,7 @@ T randreal(T lo, T hi) {
 }
 
 template <class T>
-void randshuf(T &a) {
+void shuffle_array(T &a) {
   for (int i = 1; i < sz(a); i++) {
     swap(a[i], a[randint(0, i)]);
   }
