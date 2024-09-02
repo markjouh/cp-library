@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/custom/numeric/binary_search_reals.test.cpp
     title: verify/custom/numeric/binary_search_reals.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 2 \"numeric/binary_search_reals.hpp\"\n\ntemplate <class T>\n\
@@ -38,7 +38,7 @@ data:
   path: numeric/binary_search_reals.hpp
   requiredBy: []
   timestamp: '2024-08-28 02:47:08-04:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - verify/custom/numeric/binary_search_reals.test.cpp
 documentation_of: numeric/binary_search_reals.hpp

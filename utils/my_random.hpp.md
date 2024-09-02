@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/custom/numeric/binary_search_reals.test.cpp
     title: verify/custom/numeric/binary_search_reals.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 2 \"utils/my_random.hpp\"\n\nmt19937_64 rng_64(chrono::steady_clock::now().time_since_epoch().count());\n\
@@ -26,7 +26,7 @@ data:
   path: utils/my_random.hpp
   requiredBy: []
   timestamp: '2024-09-01 01:23:14-04:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - verify/custom/numeric/binary_search_reals.test.cpp
 documentation_of: utils/my_random.hpp

@@ -1,7 +1,10 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: datastructures/segtree/range_set_range_query_contig.hpp
+    title: datastructures/segtree/range_set_range_query_contig.hpp
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
@@ -88,7 +91,8 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: datastructures/segtree/segment_tree_lazy.hpp
-  requiredBy: []
+  requiredBy:
+  - datastructures/segtree/range_set_range_query_contig.hpp
   timestamp: '2024-09-01 20:19:28-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
