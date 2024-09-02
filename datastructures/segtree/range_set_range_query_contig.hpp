@@ -1,5 +1,7 @@
 // https://codeforces.com/contest/2000/submission/279265358
 
+#include "segment_tree_lazy.hpp"
+
 struct Seg {
   int len, pref, suff, mx;
 

@@ -1,14 +1,14 @@
 #pragma once
 
 struct BinaryLifting {
-  int lg;
+  int log;
   vector<int> dep;
   vector<vector<int>> up;
 
   BinaryLifting(const vector<vector<int>> &g, int rt = 0) {
-    lg = __lg(sz(g) - 1) + 1;
+    log = lg(sz(g) - 1) + 1;
     dep.resize(sz(g), -1);
-    up = vector(sz(g), vector<int>(lg, -1));
+    up = vector(sz(g), vector<int>(log, -1));
 
     queue<int> q;
     dep[rt] = 0;
@@ -20,7 +20,7 @@ struct BinaryLifting {
         if (dep[v] == -1) {
           dep[v] = dep[u] + 1;
           up[v][0] = u;
-          for (int i = 1; i < lg; i++) {
+          for (int i = 1; i < log; i++) {
             if (up[v][i - 1] == -1) {
               break;
             }
@@ -37,7 +37,7 @@ struct BinaryLifting {
   }
 
   int anc(int x, int k) {
-    for (int i = 0; i < lg; i++) {
+    for (int i = 0; i < log; i++) {
       if (x != -1 && ((k >> i) & 1)) {
         x = up[x][i];
       }
@@ -53,7 +53,7 @@ struct BinaryLifting {
     if (x == y) {
       return x;
     }
-    for (int i = lg - 1; i >= 0; i--) {
+    for (int i = log - 1; i >= 0; i--) {
       if (up[x][i] != up[y][i]) {
         x = up[x][i];
         y = up[y][i];
