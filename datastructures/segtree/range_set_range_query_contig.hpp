@@ -1,6 +1,19 @@
 // https://codeforces.com/contest/2000/submission/279265358
 
-#define IGNORE
+struct Seg {
+  int len, pref, suff, mx;
+
+  Seg(int x) : len(1), pref(x), suff(x), mx(x) {}
+};
+
+Seg op(Seg a, Seg b) {
+  Seg res = a;
+  res.len = a.len + b.len;
+  res.pref = a.pref + (a.pref == a.len ? b.pref : 0);
+  res.suff = b.suff + (b.suff == b.len ? a.suff : 0);
+  res.mx = max({a.mx, b.mx, a.suff + b.pref});
+  return res;
+}
 
 Seg seg_id() {
   return Seg(0);
