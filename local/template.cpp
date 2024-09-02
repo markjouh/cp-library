@@ -59,8 +59,8 @@ bool ckmax(T &a, const T &b) {
   return b > a ? a = b, 1 : 0;
 }
 
-const int INF = INT_MAX / 2;
-const ll INFLL = LLONG_MAX / 2;
+template <class T = int>
+static constexpr T inf = numeric_limits<T>::max() / 2;
 
 void solve() {
 }
