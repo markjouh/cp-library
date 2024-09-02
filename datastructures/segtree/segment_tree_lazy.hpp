@@ -1,112 +1,154 @@
 #pragma once
 
+template <class T, auto op, auto t_id, class U, auto mapping, auto comp, auto u_id>
 struct LazySegmentTree {
-  using item_t = pair<int, int>;
-  using upd_t = int;
-
-  // Identity element, null update tag
-  const item_t id = {INF, 1};
-  const upd_t lz_id = 0;
-
-  // Associative merge operation
-  item_t merge(item_t a, item_t b) {
-    if (a.first == b.first) {
-      return {a.first, a.second + b.second};
-    } else {
-      return a.first < b.first ? a : b;
-    }
+  LazySegmentTree(int x) {
+    init(x);
+    pull_all();
   }
 
-  // Apply a lazy tag to a full segment
-  void apply(int x, upd_t v) {
-    lz[x] += v;
-  }
-
-  // Consume and propagate a lazy tag
-  void push(int x, int tl, int tr) {
-    if (lz[x] != lz_id) {
-      st[x].first += lz[x];
-      if (tl + 1 != tr) {
-        lz[2 * x + 1] += lz[x];
-        lz[2 * x + 2] += lz[x];
-      }
-      lz[x] = lz_id;
-    }
-  }
-
-  LazySegmentTree(int n_) {
-    init(n_);
-  }
-
-  LazySegmentTree(const vector<item_t> &a) {
+  LazySegmentTree(const vector<T> &a) {
     init(sz(a));
-    build(a, 0, 0, n);
+    copy(all(a), begin(st) + size);
+    pull_all();
   }
 
-  item_t query() {
-    return st[0];
+  void set(int p, T v) {
+    push_path(p += size);
+    st[p] = v;
+    pull_path(p);
   }
 
-  item_t query(int l, int r) {
-    return query(l, r + 1, 0, 0, n);
+  void update(int p, U v) {
+    push_path(p += size);
+    st[p] = mapping(st[p], v);
+    pull_path(p);
   }
 
-  void update(int l, int r, upd_t v) {
-    update(l, r + 1, v, 0, 0, n);
+  void update(int l, int r, U v) {
+    update(l, r + 1, v, 1, 0, size);
   }
 
-private:
-  int n;
-  vector<item_t> st;
-  vector<upd_t> lz;
+  T get_all() {
+    return st[1];
+  }
 
-  void init(int sz) {
-    n = 1;
-    while (n < sz) {
-      n *= 2;
+  T get(int p) {
+    push_path(p += size);
+    return st[p];
+  }
+
+  T query(int l, int r) {
+    return query(l, r + 1, 1, 0, size);
+  }
+
+  template <class F>
+  int find_first(F f) {
+    T pref = t_id();
+    int x = 1;
+    while (x < size) {
+      push(x);
+      if (f(op(pref, st[x << 1]))) {
+        x = x << 1;
+      } else {
+        pref = op(pref, st[x << 1]);
+        x = x << 1 | 1;
+      }
     }
-    st.resize(2 * n, id);
-    lz.resize(2 * n, lz_id);
+    return f(op(pref, st[x])) ? x - size : n;
   }
 
-  void build(const vector<item_t> &a, int x, int tl, int tr) {
-    if (tl + 1 == tr) {
-      if (tl < sz(a)) {
-        st[x] = a[tl];
+  template <class F>
+  int find_last(F f) {
+    T suff = t_id();
+    int x = 1;
+    while (x < size) {
+      push(x);
+      if (f(st[x << 1 | 1], suff)) {
+        x = x << 1 | 1;
+      } else {
+        suff = op(st[x << 1 | 1], suff);
+        x = x << 1;
+      }
+    }
+    return f(op(st[x], suff)) ? x - size : -1;
+  }
+  
+private:
+  int n, log, size;
+  vector<T> st;
+  vector<U> lz;
+
+  void init(int x) {
+    n = x;
+    log = lg(n - 1) + 1;
+    size = 1 << log;
+    st.resize(size << 1, t_id());
+    lz.resize(size, u_id());
+  }
+
+  void pull(int x) {
+    st[x] = op(st[x << 1], st[x << 1 | 1]);
+  }
+
+  void pull_path(int x) {
+    for (int i = 1; i <= log; i++) {
+      pull(x >> i);
+    }
+  }
+
+  void pull_all() {
+    for (int i = size - 1; i > 0; i--) {
+      pull(i);
+    }
+  }
+
+  void apply(int x) {
+    st[x] = mapping(st[x], lz[x >> 1]);
+    if (x < size) {
+      lz[x] = comp(lz[x], lz[x >> 1]);
+    }
+  }
+
+  void push(int x) {
+    apply(x << 1);
+    apply(x << 1 | 1);
+    lz[x] = u_id();
+  }
+
+  void push_path(int x) {
+    for (int i = log; i > 0; i--) {
+      push(x >> i);
+    }
+  }
+
+  void update(int l, int r, U v, int x, int tl, int tr) {
+    if (tl >= r || tr <= l) {
+      return;
+    }
+    if (tl >= l && tr <= r) {
+      st[x] = mapping(st[x], v);
+      if (x < size) {
+        lz[x] = comp(lz[x], v);
       }
       return;
     }
-    int mid = (tl + tr) / 2;
-    build(a, 2 * x + 1, tl, mid);
-    build(a, 2 * x + 2, mid, tr);
-    st[x] = merge(st[2 * x + 1], st[2 * x + 2]);
+    push(x);
+    int mid = (tl + tr) >> 1;
+    update(l, r, v, x << 1, tl, mid);
+    update(l, r, v, x << 1 | 1, mid, tr);
+    pull(x);
   }
 
-  item_t query(int l, int r, int x, int tl, int tr) {
-    push(x, tl, tr);
+  T query(int l, int r, int x, int tl, int tr) {
     if (tl >= r || tr <= l) {
-      return id;
+      return t_id();
     }
     if (tl >= l && tr <= r) {
       return st[x];
     }
-    int mid = (tl + tr) / 2;
-    return merge(query(l, r, 2 * x + 1, tl, mid), query(l, r, 2 * x + 2, mid, tr));
-  }
-
-  void update(int l, int r, int v, int x, int tl, int tr) {
-    push(x, tl, tr);
-    if (tl >= r || tr <= l) {
-      return;
-    }
-    if (tl >= l && tr <= r) {
-      apply(x, v);
-      push(x, tl, tr);
-      return;
-    }
-    int mid = (tl + tr) / 2;
-    update(l, r, v, 2 * x + 1, tl, mid);
-    update(l, r, v, 2 * x + 2, mid, tr);
-    st[x] = merge(st[2 * x + 1], st[2 * x + 2]);
+    push(x);
+    int mid = (tl + tr) >> 1;
+    return op(query(l, r, x << 1, tl, mid), query(l, r, x << 1 | 1, mid, tr));
   }
 };
