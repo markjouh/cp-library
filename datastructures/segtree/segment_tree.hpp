@@ -14,6 +14,10 @@ struct SegmentTree {
     }
   }
 
+  T get(int p) {
+    return st[p + n];
+  }
+
   T query(int l, int r) {
     T ls = id(), rs = id();
     for (l += n, r += n + 1; l < r; l >>= 1, r >>= 1) {
