@@ -12,8 +12,12 @@ T randint(T lo, T hi) {
   return uniform_int_distribution<T>(lo, hi)(rng_64);
 }
 
+double randreal() {
+  return uniform_real_distribution<double>(0, 1)(rng_64);
+}
+
 template <class T>
-double randreal(T n = 1) {
+double randreal(T n) {
   return uniform_real_distribution<double>(0, n)(rng_64);
 }
 
