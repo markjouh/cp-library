@@ -55,6 +55,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: graphs/dijkstras.hpp
       title: graphs/dijkstras.hpp
+    - icon: ':warning:'
+      path: graphs/euler_cycle.hpp
+      title: graphs/euler_cycle.hpp
     - icon: ':heavy_check_mark:'
       path: graphs/kosaraju_scc.hpp
       title: graphs/kosaraju_scc.hpp

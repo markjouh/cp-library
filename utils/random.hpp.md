@@ -46,8 +46,8 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/custom/utils/encode.test.cpp
-  - verify/custom/utils/timer.test.cpp
   - verify/custom/utils/debug.test.cpp
+  - verify/custom/utils/timer.test.cpp
   - verify/custom/numeric/binary_search_reals.test.cpp
 documentation_of: utils/random.hpp
 layout: document
