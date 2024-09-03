@@ -5,8 +5,8 @@ data:
     path: numeric/binary_search_reals.hpp
     title: numeric/binary_search_reals.hpp
   - icon: ':heavy_check_mark:'
-    path: utils/randgen.hpp
-    title: utils/randgen.hpp
+    path: utils/random.hpp
+    title: utils/random.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -33,7 +33,7 @@ data:
     \ &a, const T &b) {\n  return b > a ? a = b, 1 : 0;\n}\n\ntemplate <class T =\
     \ int>\nstatic constexpr T inf = numeric_limits<T>::max() / 2;\n\nstruct InitIO\
     \ {\n  InitIO() {\n    cin.tie(0)->sync_with_stdio(0);\n    cin.exceptions(cin.failbit);\n\
-    \    cout << setprecision(10) << fixed;\n  }\n} init_io;\n#line 2 \"utils/randgen.hpp\"\
+    \    cout << setprecision(10) << fixed;\n  }\n} init_io;\n#line 2 \"utils/random.hpp\"\
     \n\nmt19937_64 rng_64(chrono::steady_clock::now().time_since_epoch().count());\n\
     \ntemplate <class T>\nT randint(T lo, T hi) {\n  return uniform_int_distribution<T>(lo,\
     \ hi)(rng_64);\n}\n\ntemplate <class T>\ndouble randreal(T lo, T hi) {\n  return\
@@ -66,29 +66,29 @@ data:
     \  }\n  cerr << \"Tests passed\\n\";\n\n  int a, b;\n  cin >> a >> b;\n  cout\
     \ << a + b << '\\n';\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/aplusb\"\n\n#include \"\
-    ../../boilerplate.hpp\"\n#include \"../../../utils/randgen.hpp\"\n#include \"\
-    ../../../numeric/binary_search_reals.hpp\"\n\nconst int TESTS = 1e6;\nconst double\
-    \ MXV = 1e12, ERROR = 1e-3;\n\nvoid test() {\n  // Search for exact double value,\
-    \ should have no error\n  const double t1 = randreal<double>(0, inf<double>);\n\
-    \  double left = bsmax_reals(0, inf<double>, [&](double x) {\n    return x <=\
-    \ t1;\n  });\n  assert(left == t1);\n  double right = bsmin_reals(0, inf<double>,\
-    \ [&](double x) {\n    return x >= t1;\n  });\n  assert(right == t1);\n\n  //\
-    \ Try computing sqrt\n  const double t2 = randreal<double>(0, MXV);\n  double\
-    \ sqrt_val = bsmax_reals(0, MXV, [&](double x) {\n    return x * x <= t2;\n  });\n\
-    \  double sqrt_res = sqrt_val * sqrt_val;\n  assert(sqrt_res <= t2 && t2 - sqrt_res\
-    \ < ERROR);\n\n  // Try computing cbrt\n  const double t3 = randreal<double>(0,\
-    \ MXV);\n  double cbrt_val = bsmax_reals(0, MXV, [&](double x) {\n    return x\
-    \ * x * x <= t3;\n  });\n  double cbrt_res = cbrt_val * cbrt_val * cbrt_val;\n\
-    \  assert(cbrt_res <= t3 && t3 - cbrt_res < ERROR);\n}\n\nint main() {\n  for\
-    \ (int i = 0; i < TESTS; i++) {\n    test();\n  }\n  cerr << \"Tests passed\\\
-    n\";\n\n  int a, b;\n  cin >> a >> b;\n  cout << a + b << '\\n';\n}"
+    ../../boilerplate.hpp\"\n#include \"../../../utils/random.hpp\"\n#include \"../../../numeric/binary_search_reals.hpp\"\
+    \n\nconst int TESTS = 1e6;\nconst double MXV = 1e12, ERROR = 1e-3;\n\nvoid test()\
+    \ {\n  // Search for exact double value, should have no error\n  const double\
+    \ t1 = randreal<double>(0, inf<double>);\n  double left = bsmax_reals(0, inf<double>,\
+    \ [&](double x) {\n    return x <= t1;\n  });\n  assert(left == t1);\n  double\
+    \ right = bsmin_reals(0, inf<double>, [&](double x) {\n    return x >= t1;\n \
+    \ });\n  assert(right == t1);\n\n  // Try computing sqrt\n  const double t2 =\
+    \ randreal<double>(0, MXV);\n  double sqrt_val = bsmax_reals(0, MXV, [&](double\
+    \ x) {\n    return x * x <= t2;\n  });\n  double sqrt_res = sqrt_val * sqrt_val;\n\
+    \  assert(sqrt_res <= t2 && t2 - sqrt_res < ERROR);\n\n  // Try computing cbrt\n\
+    \  const double t3 = randreal<double>(0, MXV);\n  double cbrt_val = bsmax_reals(0,\
+    \ MXV, [&](double x) {\n    return x * x * x <= t3;\n  });\n  double cbrt_res\
+    \ = cbrt_val * cbrt_val * cbrt_val;\n  assert(cbrt_res <= t3 && t3 - cbrt_res\
+    \ < ERROR);\n}\n\nint main() {\n  for (int i = 0; i < TESTS; i++) {\n    test();\n\
+    \  }\n  cerr << \"Tests passed\\n\";\n\n  int a, b;\n  cin >> a >> b;\n  cout\
+    \ << a + b << '\\n';\n}"
   dependsOn:
-  - utils/randgen.hpp
+  - utils/random.hpp
   - numeric/binary_search_reals.hpp
   isVerificationFile: true
   path: verify/custom/numeric/binary_search_reals.test.cpp
   requiredBy: []
-  timestamp: '2024-09-02 21:02:51-04:00'
+  timestamp: '2024-09-02 21:09:01-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/custom/numeric/binary_search_reals.test.cpp

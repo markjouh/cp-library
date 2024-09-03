@@ -103,8 +103,11 @@ data:
       path: utils/encode.hpp
       title: utils/encode.hpp
     - icon: ':heavy_check_mark:'
-      path: utils/randgen.hpp
-      title: utils/randgen.hpp
+      path: utils/random.hpp
+      title: utils/random.hpp
+    - icon: ':warning:'
+      path: utils/timer.hpp
+      title: utils/timer.hpp
   verificationCategories:
   - name: verify/aizu/alds1
     pages:

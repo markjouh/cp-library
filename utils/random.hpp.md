@@ -11,7 +11,7 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"utils/randgen.hpp\"\n\nmt19937_64 rng_64(chrono::steady_clock::now().time_since_epoch().count());\n\
+  bundledCode: "#line 2 \"utils/random.hpp\"\n\nmt19937_64 rng_64(chrono::steady_clock::now().time_since_epoch().count());\n\
     \ntemplate <class T>\nT randint(T lo, T hi) {\n  return uniform_int_distribution<T>(lo,\
     \ hi)(rng_64);\n}\n\ntemplate <class T>\ndouble randreal(T lo, T hi) {\n  return\
     \ uniform_real_distribution<double>(lo, hi)(rng_64);\n}\n\ntemplate <class T>\n\
@@ -25,16 +25,16 @@ data:
     \ a[randint(0, i)]);\n  }\n}"
   dependsOn: []
   isVerificationFile: false
-  path: utils/randgen.hpp
+  path: utils/random.hpp
   requiredBy: []
-  timestamp: '2024-09-02 21:02:51-04:00'
+  timestamp: '2024-09-02 21:09:01-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/custom/numeric/binary_search_reals.test.cpp
-documentation_of: utils/randgen.hpp
+documentation_of: utils/random.hpp
 layout: document
 redirect_from:
-- /library/utils/randgen.hpp
-- /library/utils/randgen.hpp.html
-title: utils/randgen.hpp
+- /library/utils/random.hpp
+- /library/utils/random.hpp.html
+title: utils/random.hpp
 ---
