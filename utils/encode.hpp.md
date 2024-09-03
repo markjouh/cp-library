@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/custom/utils/encode.test.cpp
+    title: verify/custom/utils/encode.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"utils/encode.hpp\"\n\nconstexpr ll pow_94[10] = {1, 94,\
@@ -43,8 +46,9 @@ data:
   path: utils/encode.hpp
   requiredBy: []
   timestamp: '2024-09-02 21:02:51-04:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - verify/custom/utils/encode.test.cpp
 documentation_of: utils/encode.hpp
 layout: document
 redirect_from:

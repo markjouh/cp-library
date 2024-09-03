@@ -99,16 +99,16 @@ data:
       title: strings/string_trie.hpp
   - name: utils
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: utils/debug.hpp
       title: utils/debug.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: utils/encode.hpp
       title: utils/encode.hpp
     - icon: ':heavy_check_mark:'
       path: utils/random.hpp
       title: utils/random.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: utils/timer.hpp
       title: utils/timer.hpp
   verificationCategories:
@@ -141,6 +141,17 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/custom/numeric/binary_search_reals.test.cpp
       title: verify/custom/numeric/binary_search_reals.test.cpp
+  - name: verify/custom/utils
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/custom/utils/debug.test.cpp
+      title: verify/custom/utils/debug.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/custom/utils/encode.test.cpp
+      title: verify/custom/utils/encode.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/custom/utils/timer.test.cpp
+      title: verify/custom/utils/timer.test.cpp
   - name: verify/library_checker/data_structure
     pages:
     - icon: ':heavy_check_mark:'
