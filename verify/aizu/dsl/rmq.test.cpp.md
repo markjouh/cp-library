@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: datastructures/segtree/segment_tree.hpp
     title: datastructures/segtree/segment_tree.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_A
@@ -35,17 +35,18 @@ data:
     \n  SegmentTree(int sz) : n(sz), st(2 * n, id()) {}\n\n  SegmentTree(const vector<T>\
     \ &a) : n(sz(a)), st(2 * n) {\n    copy(begin(a), end(a), begin(st) + n);\n  \
     \  for (int i = n - 1; i > 0; i--) {\n      st[i] = op(st[i << 1], st[i << 1 |\
-    \ 1]);\n    }\n  }\n\n  T query(int l, int r) {\n    T ls = id(), rs = id();\n\
-    \    for (l += n, r += n + 1; l < r; l >>= 1, r >>= 1) {\n      if (l & 1) {\n\
-    \        ls = op(ls, st[l++]);\n      }\n      if (r & 1) {\n        rs = op(st[--r],\
-    \ rs);\n      }\n    }\n    return op(ls, rs);\n  }\n\n  void set(int p, T val)\
-    \ {\n    for (st[p += n] = val, p >>= 1; p > 0; p >>= 1) {\n      st[p] = op(st[p\
-    \ << 1], st[p << 1 | 1]);\n    }\n  }\n};\n#line 5 \"verify/aizu/dsl/rmq.test.cpp\"\
-    \n\nint op(int x, int y) {\n  return x < y ? x : y;\n}\n\nint id() {\n  return\
-    \ numeric_limits<int>::max();\n}\n\nint main() {\n  int n, q;\n  cin >> n >> q;\n\
-    \  SegmentTree<int, op, id> st(n);\n  while (q--) {\n    bool t;\n    int x, y;\n\
-    \    cin >> t >> x >> y;\n    if (t) {\n      cout << st.query(x, y) << '\\n';\n\
-    \    } else {\n      st.set(x, y);\n    }\n  }\n}\n"
+    \ 1]);\n    }\n  }\n\n  T get(int p) {\n    return st[p + n];\n  }\n\n  T query(int\
+    \ l, int r) {\n    T ls = id(), rs = id();\n    for (l += n, r += n + 1; l < r;\
+    \ l >>= 1, r >>= 1) {\n      if (l & 1) {\n        ls = op(ls, st[l++]);\n   \
+    \   }\n      if (r & 1) {\n        rs = op(st[--r], rs);\n      }\n    }\n   \
+    \ return op(ls, rs);\n  }\n\n  void set(int p, T val) {\n    for (st[p += n] =\
+    \ val, p >>= 1; p > 0; p >>= 1) {\n      st[p] = op(st[p << 1], st[p << 1 | 1]);\n\
+    \    }\n  }\n};\n#line 5 \"verify/aizu/dsl/rmq.test.cpp\"\n\nint op(int x, int\
+    \ y) {\n  return x < y ? x : y;\n}\n\nint id() {\n  return numeric_limits<int>::max();\n\
+    }\n\nint main() {\n  int n, q;\n  cin >> n >> q;\n  SegmentTree<int, op, id> st(n);\n\
+    \  while (q--) {\n    bool t;\n    int x, y;\n    cin >> t >> x >> y;\n    if\
+    \ (t) {\n      cout << st.query(x, y) << '\\n';\n    } else {\n      st.set(x,\
+    \ y);\n    }\n  }\n}\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_A\"\
     \n\n#include \"../../boilerplate.hpp\"\n#include \"../../../datastructures/segtree/segment_tree.hpp\"\
     \n\nint op(int x, int y) {\n  return x < y ? x : y;\n}\n\nint id() {\n  return\
@@ -58,8 +59,8 @@ data:
   isVerificationFile: true
   path: verify/aizu/dsl/rmq.test.cpp
   requiredBy: []
-  timestamp: '2024-09-01 21:11:12-04:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2024-09-02 23:27:02-04:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/aizu/dsl/rmq.test.cpp
 layout: document

@@ -22,12 +22,15 @@ data:
       title: datastructures/pbds/order_statistic_tree.hpp
   - name: datastructures/segtree
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: datastructures/segtree/segment_tree.hpp
       title: datastructures/segtree/segment_tree.hpp
     - icon: ':warning:'
       path: datastructures/segtree/segment_tree_lazy.hpp
       title: datastructures/segtree/segment_tree_lazy.hpp
+    - icon: ':warning:'
+      path: datastructures/segtree/segment_tree_sparse.hpp
+      title: datastructures/segtree/segment_tree_sparse.hpp
   - name: datastructures/static
     pages:
     - icon: ':heavy_check_mark:'
@@ -122,7 +125,7 @@ data:
       title: verify/aizu/alds1/priority_queue.test.cpp
   - name: verify/aizu/dsl
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/aizu/dsl/rmq.test.cpp
       title: verify/aizu/dsl/rmq.test.cpp
     - icon: ':heavy_check_mark:'
