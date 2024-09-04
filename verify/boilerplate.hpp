@@ -36,6 +36,9 @@ using namespace std;
 #define fi first
 #define se second
 
+template <class T>
+using vec = vector<T>;
+
 using ll = long long;
 using pii = pair<int, int>;
 using pll = pair<ll, ll>;
