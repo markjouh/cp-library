@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/custom/datastructure/fenwick_tree_range_add.test.cpp
+    title: verify/custom/datastructure/fenwick_tree_range_add.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"datastructures/fentree/fenwick_tree_range_add.hpp\"\n\n\
@@ -33,8 +36,9 @@ data:
   path: datastructures/fentree/fenwick_tree_range_add.hpp
   requiredBy: []
   timestamp: '2024-09-02 21:02:51-04:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - verify/custom/datastructure/fenwick_tree_range_add.test.cpp
 documentation_of: datastructures/fentree/fenwick_tree_range_add.hpp
 layout: document
 redirect_from:

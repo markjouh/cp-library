@@ -6,7 +6,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: datastructures/fentree/fenwick_tree.hpp
       title: datastructures/fentree/fenwick_tree.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: datastructures/fentree/fenwick_tree_range_add.hpp
       title: datastructures/fentree/fenwick_tree_range_add.hpp
     - icon: ':heavy_check_mark:'
@@ -28,7 +28,7 @@ data:
     - icon: ':warning:'
       path: datastructures/segtree/segment_tree_lazy.hpp
       title: datastructures/segtree/segment_tree_lazy.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: datastructures/segtree/segment_tree_sparse.hpp
       title: datastructures/segtree/segment_tree_sparse.hpp
   - name: datastructures/static
@@ -139,6 +139,14 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/aizu/ntl/power.test.cpp
       title: verify/aizu/ntl/power.test.cpp
+  - name: verify/custom/datastructure
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/custom/datastructure/fenwick_tree_range_add.test.cpp
+      title: verify/custom/datastructure/fenwick_tree_range_add.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/custom/datastructure/segment_tree_sparse.test.cpp
+      title: verify/custom/datastructure/segment_tree_sparse.test.cpp
   - name: verify/custom/numeric
     pages:
     - icon: ':heavy_check_mark:'
