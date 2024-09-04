@@ -108,12 +108,17 @@ data:
     - icon: ':heavy_check_mark:'
       path: utils/encode.hpp
       title: utils/encode.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: utils/random.hpp
       title: utils/random.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: utils/timer.hpp
       title: utils/timer.hpp
+  - name: verify/custom/utils
+    pages:
+    - icon: ':warning:'
+      path: verify/custom/utils/random_graph.cpp
+      title: verify/custom/utils/random_graph.cpp
   verificationCategories:
   - name: verify/aizu/alds1
     pages:
@@ -152,7 +157,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/custom/utils/encode.test.cpp
       title: verify/custom/utils/encode.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/custom/utils/timer.test.cpp
       title: verify/custom/utils/timer.test.cpp
   - name: verify/library_checker/data_structure

@@ -2,8 +2,8 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: utils/debug.hpp
-    title: utils/debug.hpp
+    path: graphs/dijkstras.hpp
+    title: graphs/dijkstras.hpp
   - icon: ':question:'
     path: utils/random.hpp
     title: utils/random.hpp
@@ -11,14 +11,12 @@ data:
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.yosupo.jp/problem/aplusb
     links:
     - https://judge.yosupo.jp/problem/aplusb
-  bundledCode: "#line 1 \"verify/custom/utils/debug.test.cpp\"\n#define PROBLEM \"\
-    https://judge.yosupo.jp/problem/aplusb\"\n\n#line 1 \"verify/boilerplate.hpp\"\
+  bundledCode: "#line 1 \"verify/custom/utils/random_graph.cpp\"\n#define PROBLEM\
+    \ \"https://judge.yosupo.jp/problem/aplusb\"\n\n#line 1 \"verify/boilerplate.hpp\"\
     \n#include <algorithm>\n#include <array>\n#include <bitset>\n#include <cassert>\n\
     #include <chrono>\n#include <climits>\n#include <cmath>\n#include <cstdint>\n\
     #include <cstring>\n#include <functional>\n#include <iomanip>\n#include <iostream>\n\
@@ -68,53 +66,56 @@ data:
     \ {\n  vec<vec<pii>> g(n);\n  for (auto [u, v] : rnd_graph_edges(n, m)) {\n  \
     \  const int w = rnd<>(lo, hi);\n    if (directed) {\n      if (rnd<>(0, 1)) {\n\
     \        swap(u, v);\n      }\n      g[u].eb(v, w);\n    } else {\n      g[u].eb(v,\
-    \ w);\n      g[v].eb(u, w);\n    }\n  }\n  return g;\n}\n#line 2 \"utils/debug.hpp\"\
-    \n\nnamespace debug_internal {\n\nusing namespace std;\n\ntemplate <typename T>\n\
-    concept is_core = requires(T x) {\n  cerr << x;\n};\n\ntemplate <typename T>\n\
-    concept is_pair = requires(T x) {\n  x.first;\n  x.second;\n};\n\ntemplate <typename\
-    \ T>\nconcept is_iterable = ranges::range<T>;\n\ntemplate <typename T>\nvoid print(T\
-    \ x) {\n  if constexpr (is_core<T>) {\n    cerr << x;\n  } else if constexpr (is_pair<T>)\
-    \ {\n    cerr << '(';\n    print(x.first);\n    cerr << \", \";\n    print(x.second);\n\
-    \    cerr << ')';\n  } else if constexpr (is_iterable<T>) {\n    cerr << '[';\n\
-    \    bool flag = false;\n    for (auto y : x) {\n      if (flag) {\n        cerr\
-    \ << \", \";\n      }\n      print(y);\n      flag = true;\n    }\n    cerr <<\
-    \ ']';\n  } else {\n    cerr << \"Unknown type\";\n  }\n}\n\ntemplate <typename\
-    \ T>\nvoid debug(string s, T x) {\n  cerr << \"\\033[1;35m\" << s << \"\\033[0;0m\
-    \ = \";\n  print(x);\n  cerr << endl;\n}\n\ntemplate <typename T, typename...\
-    \ Args>\nvoid debug(string s, T x, Args... args) {\n  int idx = 0, layer = 0;\n\
-    \  while (idx < ssize(s) && (s[idx] != ',' || layer != 0)) {\n    layer += s[idx]\
-    \ == '(' || s[idx] == '{';\n    layer -= s[idx] == ')' || s[idx] == '}';\n   \
-    \ idx++;\n  }\n  cerr << \"\\033[1;35m\" << s.substr(0, idx) << \"\\033[0;0m =\
-    \ \";\n  print(x);\n  cerr << \"\\033[1;32m | \\033[0;0m\";\n  debug(s.substr(s.find_first_not_of('\
-    \ ', idx + 1)), args...);\n}\n}\n\n#define dbg(...) debug_internal::debug(#__VA_ARGS__,\
-    \ __VA_ARGS__)\n#line 6 \"verify/custom/utils/debug.test.cpp\"\n\n// Just some\
-    \ random stuff, make sure\n// the output looks right\n\nint main() {\n  const\
-    \ int n = rnd<>(0, 100);\n  vec<int> p = rnd_vec<>(n, 1, 100);\n  dbg(p);\n\n\
-    \  map<int, vector<int>> mp;\n  for (int i = 0; i < 100; i++) {\n    mp[rnd<>(1,\
-    \ 100)] = rnd_vec(100, 1, 100);\n  }\n  dbg(mp);\n\n  array<double, 100> arr;\n\
-    \  for (int i = 0; i < 100; i++) {\n    arr[i] = rnd<double>(0, 1);\n  }\n  dbg(arr);\n\
-    \n  int a, b;\n  cin >> a >> b;\n  cout << a + b << '\\n';\n}\n"
+    \ w);\n      g[v].eb(u, w);\n    }\n  }\n  return g;\n}\n#line 2 \"graphs/dijkstras.hpp\"\
+    \n\ntemplate <class T>\nauto dijkstras(const vector<vector<pair<int, int>>> &g,\
+    \ int start = 0) {\n  priority_queue<pair<T, int>, vector<pair<T, int>>, greater<pair<T,\
+    \ int>>> pq;\n\n  vector<T> dist(sz(g), numeric_limits<T>::max());\n  vector<int>\
+    \ from(sz(g), -1);\n  \n  dist[start] = 0;\n  pq.emplace(0, start);\n\n  while\
+    \ (sz(pq)) {\n    auto [d, u] = pq.top();\n    pq.pop();\n    if (d != dist[u])\
+    \ {\n      continue;\n    }\n    for (auto [v, w] : g[u]) {\n      if (ckmin(dist[v],\
+    \ d + w)) {\n        from[v] = u;\n        pq.emplace(dist[v], v);\n      }\n\
+    \    }\n  }\n  return make_pair(dist, from);\n}\n#line 6 \"verify/custom/utils/random_graph.cpp\"\
+    \n\n// Doesn't measure the quality of the generated graphs,\n// just a sanity\
+    \ check.\n\nconst int TESTS = 100;\n\nint main() {\n  rep(i, TESTS) {\n    const\
+    \ int n = rnd<>(1e2, 1e4), root = rnd<>(0, n - 1);\n    auto g = rnd_graph(n,\
+    \ n - 1 + rnd<>(1, n));\n\n    vec<int> dist(n, inf<>);\n    queue<int> q;\n \
+    \   dist[root] = 0;\n    q.push(root);\n\n    while (sz(q)) {\n      int u = q.front();\n\
+    \      q.pop();\n      for (int v : g[u]) {\n        if (dist[v] == inf<>) {\n\
+    \          dist[v] = dist[u] + 1;\n          q.push(v);\n        }\n      }\n\
+    \    }\n    assert(find(all(dist), inf<>) == end(dist));\n  }\n\n  rep(i, TESTS)\
+    \ {\n    const int n = rnd<>(1e2, 1e4), root = rnd<>(0, n - 1);\n    auto g =\
+    \ rnd_wgraph(n, n - 1 + rnd<>(1, n));\n    \n    auto from = dijkstras<ll>(g,\
+    \ root).se;\n    from[root] = root;\n    assert(find(all(from), -1) == end(from));\n\
+    \  }\n\n  cerr << \"Tests passed\" << endl;\n\n  int a, b;\n  cin >> a >> b;\n\
+    \  cout << a + b << '\\n';\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/aplusb\"\n\n#include \"\
-    ../../boilerplate.hpp\"\n#include \"../../../utils/random.hpp\"\n#include \"../../../utils/debug.hpp\"\
-    \n\n// Just some random stuff, make sure\n// the output looks right\n\nint main()\
-    \ {\n  const int n = rnd<>(0, 100);\n  vec<int> p = rnd_vec<>(n, 1, 100);\n  dbg(p);\n\
-    \n  map<int, vector<int>> mp;\n  for (int i = 0; i < 100; i++) {\n    mp[rnd<>(1,\
-    \ 100)] = rnd_vec(100, 1, 100);\n  }\n  dbg(mp);\n\n  array<double, 100> arr;\n\
-    \  for (int i = 0; i < 100; i++) {\n    arr[i] = rnd<double>(0, 1);\n  }\n  dbg(arr);\n\
-    \n  int a, b;\n  cin >> a >> b;\n  cout << a + b << '\\n';\n}"
+    ../../boilerplate.hpp\"\n#include \"../../../utils/random.hpp\"\n#include \"../../../graphs/dijkstras.hpp\"\
+    \n\n// Doesn't measure the quality of the generated graphs,\n// just a sanity\
+    \ check.\n\nconst int TESTS = 100;\n\nint main() {\n  rep(i, TESTS) {\n    const\
+    \ int n = rnd<>(1e2, 1e4), root = rnd<>(0, n - 1);\n    auto g = rnd_graph(n,\
+    \ n - 1 + rnd<>(1, n));\n\n    vec<int> dist(n, inf<>);\n    queue<int> q;\n \
+    \   dist[root] = 0;\n    q.push(root);\n\n    while (sz(q)) {\n      int u = q.front();\n\
+    \      q.pop();\n      for (int v : g[u]) {\n        if (dist[v] == inf<>) {\n\
+    \          dist[v] = dist[u] + 1;\n          q.push(v);\n        }\n      }\n\
+    \    }\n    assert(find(all(dist), inf<>) == end(dist));\n  }\n\n  rep(i, TESTS)\
+    \ {\n    const int n = rnd<>(1e2, 1e4), root = rnd<>(0, n - 1);\n    auto g =\
+    \ rnd_wgraph(n, n - 1 + rnd<>(1, n));\n    \n    auto from = dijkstras<ll>(g,\
+    \ root).se;\n    from[root] = root;\n    assert(find(all(from), -1) == end(from));\n\
+    \  }\n\n  cerr << \"Tests passed\" << endl;\n\n  int a, b;\n  cin >> a >> b;\n\
+    \  cout << a + b << '\\n';\n}"
   dependsOn:
   - utils/random.hpp
-  - utils/debug.hpp
-  isVerificationFile: true
-  path: verify/custom/utils/debug.test.cpp
+  - graphs/dijkstras.hpp
+  isVerificationFile: false
+  path: verify/custom/utils/random_graph.cpp
   requiredBy: []
   timestamp: '2024-09-04 17:54:50-04:00'
-  verificationStatus: TEST_ACCEPTED
+  verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: verify/custom/utils/debug.test.cpp
+documentation_of: verify/custom/utils/random_graph.cpp
 layout: document
 redirect_from:
-- /verify/verify/custom/utils/debug.test.cpp
-- /verify/verify/custom/utils/debug.test.cpp.html
-title: verify/custom/utils/debug.test.cpp
+- /library/verify/custom/utils/random_graph.cpp
+- /library/verify/custom/utils/random_graph.cpp.html
+title: verify/custom/utils/random_graph.cpp
 ---

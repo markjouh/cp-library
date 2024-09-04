@@ -27,25 +27,25 @@ data:
     \ r) for (int i = int(r) - 1; i >= int(l); i--)\n#define per2(i, n) per3(i, 0,\
     \ n)\n#define per(...) arg4(__VA_ARGS__, per3, per2) (__VA_ARGS__)\n\n#define\
     \ all(x) begin(x), end(x)\n#define sz(x) int(size(x))\n#define pb push_back\n\
-    #define eb emplace_back\n#define fi first\n#define se second\n\nusing ll = long\
-    \ long;\nusing pii = pair<int, int>;\nusing pll = pair<ll, ll>;\n\ntemplate <class\
-    \ T>\nint lg(T x) {\n#if __has_builtin(__lg)\n  return __lg(x);\n#else\n  int\
-    \ res = 0;\n  while (x >>= 1) {\n    res++;\n  }\n  return res;\n#endif\n}\n\n\
-    template <class T>\nbool ckmin(T &a, const T &b) {\n  return b < a ? a = b, 1\
-    \ : 0;\n}\n\ntemplate <class T>\nbool ckmax(T &a, const T &b) {\n  return b >\
-    \ a ? a = b, 1 : 0;\n}\n\ntemplate <class T = int>\nstatic constexpr T inf = numeric_limits<T>::max()\
-    \ / 2;\n\nstruct InitIO {\n  InitIO() {\n    cin.tie(0)->sync_with_stdio(0);\n\
-    \    cin.exceptions(cin.failbit);\n    cout << setprecision(10) << fixed;\n  }\n\
-    } init_io;\n#line 2 \"datastructures/w_ary_tree.hpp\"\n\ntemplate <int N>\nstruct\
-    \ WAryTree {\n  uint32_t freq[N];\n  uint64_t l0[(N >> 6) + 1], l1[(N >> 12) +\
-    \ 1], root;\n\n  WAryTree() {\n    memset(freq, 0, sizeof freq);\n    memset(l0,\
-    \ 0, sizeof l0);\n    memset(l1, 0, sizeof l1);\n    root = 0;\n  }\n\n  void\
-    \ insert(int x) {\n    freq[x]++;\n    if (freq[x] == 1) {\n      l0[x >> 6] |=\
-    \ 1ull << (x & 63);\n      if (__builtin_popcountll(l0[x >> 6]) == 1) {\n    \
-    \    l1[x >> 12] |= 1ull << ((x >> 6) & 63);\n        if (__builtin_popcountll(l1[x\
-    \ >> 12]) == 1) {\n          root |= 1ull << ((x >> 12) & 63);\n        }\n  \
-    \    }\n    }\n  }\n\n  void extract(int x) {\n    freq[x]--;\n    if (freq[x]\
-    \ == 0) {\n      l0[x >> 6] ^= 1ull << (x & 63);\n      if (__builtin_popcountll(l0[x\
+    #define eb emplace_back\n#define fi first\n#define se second\n\ntemplate <class\
+    \ T>\nusing vec = vector<T>;\n\nusing ll = long long;\nusing pii = pair<int, int>;\n\
+    using pll = pair<ll, ll>;\n\ntemplate <class T>\nint lg(T x) {\n#if __has_builtin(__lg)\n\
+    \  return __lg(x);\n#else\n  int res = 0;\n  while (x >>= 1) {\n    res++;\n \
+    \ }\n  return res;\n#endif\n}\n\ntemplate <class T>\nbool ckmin(T &a, const T\
+    \ &b) {\n  return b < a ? a = b, 1 : 0;\n}\n\ntemplate <class T>\nbool ckmax(T\
+    \ &a, const T &b) {\n  return b > a ? a = b, 1 : 0;\n}\n\ntemplate <class T =\
+    \ int>\nstatic constexpr T inf = numeric_limits<T>::max() / 2;\n\nstruct InitIO\
+    \ {\n  InitIO() {\n    cin.tie(0)->sync_with_stdio(0);\n    cin.exceptions(cin.failbit);\n\
+    \    cout << setprecision(10) << fixed;\n  }\n} init_io;\n#line 2 \"datastructures/w_ary_tree.hpp\"\
+    \n\ntemplate <int N>\nstruct WAryTree {\n  uint32_t freq[N];\n  uint64_t l0[(N\
+    \ >> 6) + 1], l1[(N >> 12) + 1], root;\n\n  WAryTree() {\n    memset(freq, 0,\
+    \ sizeof freq);\n    memset(l0, 0, sizeof l0);\n    memset(l1, 0, sizeof l1);\n\
+    \    root = 0;\n  }\n\n  void insert(int x) {\n    freq[x]++;\n    if (freq[x]\
+    \ == 1) {\n      l0[x >> 6] |= 1ull << (x & 63);\n      if (__builtin_popcountll(l0[x\
+    \ >> 6]) == 1) {\n        l1[x >> 12] |= 1ull << ((x >> 6) & 63);\n        if\
+    \ (__builtin_popcountll(l1[x >> 12]) == 1) {\n          root |= 1ull << ((x >>\
+    \ 12) & 63);\n        }\n      }\n    }\n  }\n\n  void extract(int x) {\n    freq[x]--;\n\
+    \    if (freq[x] == 0) {\n      l0[x >> 6] ^= 1ull << (x & 63);\n      if (__builtin_popcountll(l0[x\
     \ >> 6]) == 0) {\n        l1[x >> 12] ^= 1ull << ((x >> 6) & 63);\n        if\
     \ (__builtin_popcountll(l1[x >> 12]) == 0) {\n          root ^= 1ull << ((x >>\
     \ 12) & 63);\n        }\n      }\n    }\n  }\n\n  int get_min() {\n    uint32_t\
@@ -97,7 +97,7 @@ data:
   isVerificationFile: true
   path: verify/library_checker/data_structure/double_ended_priority_queue.test.cpp
   requiredBy: []
-  timestamp: '2024-09-03 12:19:01-04:00'
+  timestamp: '2024-09-04 17:54:50-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/library_checker/data_structure/double_ended_priority_queue.test.cpp

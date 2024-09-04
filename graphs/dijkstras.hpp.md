@@ -1,7 +1,10 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: verify/custom/utils/random_graph.cpp
+    title: verify/custom/utils/random_graph.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/library_checker/graph/shortest_path.test.cpp
@@ -31,7 +34,8 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: graphs/dijkstras.hpp
-  requiredBy: []
+  requiredBy:
+  - verify/custom/utils/random_graph.cpp
   timestamp: '2024-08-28 02:47:08-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
