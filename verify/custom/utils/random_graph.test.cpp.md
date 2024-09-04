@@ -11,11 +11,13 @@ data:
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
+    '*NOT_SPECIAL_COMMENTS*': ''
+    PROBLEM: https://judge.yosupo.jp/problem/aplusb
     links:
     - https://judge.yosupo.jp/problem/aplusb
-  bundledCode: "#line 1 \"verify/custom/utils/random_graph.cpp\"\n#define PROBLEM\
+  bundledCode: "#line 1 \"verify/custom/utils/random_graph.test.cpp\"\n#define PROBLEM\
     \ \"https://judge.yosupo.jp/problem/aplusb\"\n\n#line 1 \"verify/boilerplate.hpp\"\
     \n#include <algorithm>\n#include <array>\n#include <bitset>\n#include <cassert>\n\
     #include <chrono>\n#include <climits>\n#include <cmath>\n#include <cstdint>\n\
@@ -74,7 +76,7 @@ data:
     \ (sz(pq)) {\n    auto [d, u] = pq.top();\n    pq.pop();\n    if (d != dist[u])\
     \ {\n      continue;\n    }\n    for (auto [v, w] : g[u]) {\n      if (ckmin(dist[v],\
     \ d + w)) {\n        from[v] = u;\n        pq.emplace(dist[v], v);\n      }\n\
-    \    }\n  }\n  return make_pair(dist, from);\n}\n#line 6 \"verify/custom/utils/random_graph.cpp\"\
+    \    }\n  }\n  return make_pair(dist, from);\n}\n#line 6 \"verify/custom/utils/random_graph.test.cpp\"\
     \n\n// Doesn't measure the quality of the generated graphs,\n// just a sanity\
     \ check.\n\nconst int TESTS = 100;\n\nint main() {\n  rep(i, TESTS) {\n    const\
     \ int n = rnd<>(1e2, 1e4), root = rnd<>(0, n - 1);\n    auto g = rnd_graph(n,\
@@ -106,16 +108,16 @@ data:
   dependsOn:
   - utils/random.hpp
   - graphs/dijkstras.hpp
-  isVerificationFile: false
-  path: verify/custom/utils/random_graph.cpp
+  isVerificationFile: true
+  path: verify/custom/utils/random_graph.test.cpp
   requiredBy: []
-  timestamp: '2024-09-04 17:54:50-04:00'
-  verificationStatus: LIBRARY_NO_TESTS
+  timestamp: '2024-09-04 18:11:10-04:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: verify/custom/utils/random_graph.cpp
+documentation_of: verify/custom/utils/random_graph.test.cpp
 layout: document
 redirect_from:
-- /library/verify/custom/utils/random_graph.cpp
-- /library/verify/custom/utils/random_graph.cpp.html
-title: verify/custom/utils/random_graph.cpp
+- /verify/verify/custom/utils/random_graph.test.cpp
+- /verify/verify/custom/utils/random_graph.test.cpp.html
+title: verify/custom/utils/random_graph.test.cpp
 ---

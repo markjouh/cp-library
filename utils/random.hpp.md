@@ -1,10 +1,7 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy:
-  - icon: ':warning:'
-    path: verify/custom/utils/random_graph.cpp
-    title: verify/custom/utils/random_graph.cpp
+  _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/custom/numeric/binary_search_reals.test.cpp
@@ -15,6 +12,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/custom/utils/encode.test.cpp
     title: verify/custom/utils/encode.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/custom/utils/random_graph.test.cpp
+    title: verify/custom/utils/random_graph.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/custom/utils/timer.test.cpp
     title: verify/custom/utils/timer.test.cpp
@@ -87,11 +87,11 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: utils/random.hpp
-  requiredBy:
-  - verify/custom/utils/random_graph.cpp
+  requiredBy: []
   timestamp: '2024-09-04 17:54:50-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - verify/custom/utils/random_graph.test.cpp
   - verify/custom/utils/encode.test.cpp
   - verify/custom/utils/timer.test.cpp
   - verify/custom/utils/debug.test.cpp
