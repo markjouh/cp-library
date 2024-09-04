@@ -108,10 +108,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: utils/encode.hpp
       title: utils/encode.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: utils/random.hpp
       title: utils/random.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: utils/timer.hpp
       title: utils/timer.hpp
   - name: verify/custom/utils
@@ -157,7 +157,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/custom/utils/encode.test.cpp
       title: verify/custom/utils/encode.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/custom/utils/timer.test.cpp
       title: verify/custom/utils/timer.test.cpp
   - name: verify/library_checker/data_structure

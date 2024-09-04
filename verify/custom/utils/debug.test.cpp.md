@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: utils/debug.hpp
     title: utils/debug.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: utils/random.hpp
     title: utils/random.hpp
   _extendedRequiredBy: []

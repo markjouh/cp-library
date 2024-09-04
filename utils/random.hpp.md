@@ -15,12 +15,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/custom/utils/encode.test.cpp
     title: verify/custom/utils/encode.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/custom/utils/timer.test.cpp
     title: verify/custom/utils/timer.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"utils/random.hpp\"\n\n#include <type_traits>\n\nmt19937_64\
@@ -90,7 +90,7 @@ data:
   requiredBy:
   - verify/custom/utils/random_graph.cpp
   timestamp: '2024-09-04 17:54:50-04:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/custom/utils/encode.test.cpp
   - verify/custom/utils/timer.test.cpp

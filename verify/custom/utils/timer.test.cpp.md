@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: utils/random.hpp
     title: utils/random.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: utils/timer.hpp
     title: utils/timer.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/aplusb
@@ -75,14 +75,14 @@ data:
     \ - timer)).count();\n}\n#line 8 \"verify/custom/utils/timer.test.cpp\"\n\n//\
     \ Kind of pointless, but I'll write a test for\n// completionism's sake...\n\n\
     const int TESTS = 10;\n\nint main() {\n  rep(i, TESTS) {\n    const int rand_ms\
-    \ = randint(50, 500);\n    set_timer();\n    usleep(rand_ms * 1000);\n    assert(abs(elapsed()\
+    \ = rnd<>(50, 500);\n    set_timer();\n    usleep(rand_ms * 1000);\n    assert(abs(elapsed()\
     \ - rand_ms) < 10);\n  }\n\n  cerr << \"Tests passed\\n\";\n\n  int a, b;\n  cin\
     \ >> a >> b;\n  cout << a + b << '\\n';\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/aplusb\"\n\n#include <unistd.h>\n\
     \n#include \"../../boilerplate.hpp\"\n#include \"../../../utils/random.hpp\"\n\
     #include \"../../../utils/timer.hpp\"\n\n// Kind of pointless, but I'll write\
     \ a test for\n// completionism's sake...\n\nconst int TESTS = 10;\n\nint main()\
-    \ {\n  rep(i, TESTS) {\n    const int rand_ms = randint(50, 500);\n    set_timer();\n\
+    \ {\n  rep(i, TESTS) {\n    const int rand_ms = rnd<>(50, 500);\n    set_timer();\n\
     \    usleep(rand_ms * 1000);\n    assert(abs(elapsed() - rand_ms) < 10);\n  }\n\
     \n  cerr << \"Tests passed\\n\";\n\n  int a, b;\n  cin >> a >> b;\n  cout << a\
     \ + b << '\\n';\n}"
@@ -92,8 +92,8 @@ data:
   isVerificationFile: true
   path: verify/custom/utils/timer.test.cpp
   requiredBy: []
-  timestamp: '2024-09-04 17:54:50-04:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2024-09-04 18:09:25-04:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/custom/utils/timer.test.cpp
 layout: document
