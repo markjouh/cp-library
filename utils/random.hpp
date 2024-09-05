@@ -4,6 +4,10 @@
 
 mt19937_64 rng_64(chrono::steady_clock::now().time_since_epoch().count());
 
+// ----------------------------------------------------
+// Section: Basic random data generation
+// ----------------------------------------------------
+
 template <class T>
 T rnd(T lo, T hi) {
   static_assert(is_arithmetic_v<T>, "Invalid type for rnd()");
@@ -23,13 +27,17 @@ constexpr T def_val() {
   }
 }
 
-/* ---- Boolean wrapper ---- */
+// ----------------------------------------------------
+//  => Bool wrapper
+// ----------------------------------------------------
 
 bool randbool() {
   return rnd<int>(0, 1);
 }
 
-/* ---- Int wrappers ---- */
+// ----------------------------------------------------
+//  => Int wrappers
+// ----------------------------------------------------
 
 int randint(int lo, int hi) {
   return rnd<int>(lo, hi);
@@ -43,7 +51,9 @@ int randint() {
   return randint(inf<int>);
 }
 
-/* ---- Long long wrappers ---- */
+// ----------------------------------------------------
+//  => Long long wrappers
+// ----------------------------------------------------
 
 ll randlong(ll lo, ll hi) {
   return rnd<ll>(lo, hi);
@@ -57,7 +67,9 @@ ll randlong() {
   return randlong(inf<ll>);
 }
 
-/* ---- Double wrappers ---- */
+// ----------------------------------------------------
+//  => Double wrappers
+// ----------------------------------------------------
 
 double randdoub(double lo, double hi) {
   return rnd<double>(lo, hi);
@@ -71,33 +83,37 @@ double randdoub() {
   return randdoub(1);
 }
 
-/* ---- Vector wrappers ---- */
+// ----------------------------------------------------
+//  => Vector wrappers
+// ----------------------------------------------------
 
 template <class T>
-vec<T> randvec(int n, T lo, T hi) {
-  vec<T> res(n);
-  rep(i, n) {
+vector<T> randvec(int n, T lo, T hi) {
+  vector<T> res(n);
+  for (int i = 0; i < n; i++) {
     res[i] = rnd<T>(lo, hi);
   }
   return res;
 }
 
 template <class T>
-vec<T> randvec(int n, T hi) {
+vector<T> randvec(int n, T hi) {
   return randvec<T>(n, 0, hi);
 }
 
 template <class T>
-vec<T> randvec(int n) {
+vector<T> randvec(int n) {
   return randvec<T>(n, def_val<T>());
 }
 
-/* ---- Array wrappers ---- */
+// ----------------------------------------------------
+//  => Array wrappers
+// ----------------------------------------------------
 
 template <class T, size_t N>
 array<T, N> randarr(T lo, T hi) {
   array<T, N> res;
-  rep(i, N) {
+  for (int i = 0; i < N; i++) {
     res[i] = rnd<T>(lo, hi);
   }
   return res;
@@ -113,28 +129,30 @@ array<T, N> randarr() {
   return randarr<T, N>(def_val<T>());
 }
 
-/* ---- Graph generation from Prufer sequences ---- */
+// ----------------------------------------------------
+// Section: Graph generation from Prufer sequences
+// ----------------------------------------------------
 
-vec<pii> gen_tree_edges(int n) {
-  const vec<int> prufer = randvec(n - 2, 0, n - 1);
-  vec<int> deg(n, 1);
+vector<pair<int, int>> gen_tree_edges(int n) {
+  const vector<int> prufer = randvec(n - 2, 0, n - 1);
+  vector<int> deg(n, 1);
   for (int x : prufer) {
     deg[x]++;
   }
-  priority_queue<int, vec<int>, greater<>> leaves;
-  rep(i, n) {
+  priority_queue<int, vector<int>, greater<>> leaves;
+  for (int i = 0; i < n; i++) {
     if (deg[i] == 1) {
       leaves.push(i);
     }
   }
 
-  vec<pii> res;
+  vector<pair<int, int>> res;
   res.reserve(n - 1);
   for (int v : prufer) {
     int u = leaves.top();
     leaves.pop();
 
-    res.pb(minmax(u, v));
+    res.push_back(minmax(u, v));
     deg[u]--, deg[v]--;
 
     if (deg[v] == 1) {
@@ -143,68 +161,72 @@ vec<pii> gen_tree_edges(int n) {
   }
 
   int r1 = -1, r2 = -1;
-  rep(i, n) {
+  for (int i = 0; i < n; i++) {
     if (deg[i] == 1) {
       (r1 == -1 ? r1 : r2) = i;
     }
   }
   assert(r2 != -1);
-  res.eb(r1, r2);
+  res.emplace_back(r1, r2);
 
   return res;
 }
 
-vec<pii> gen_graph_edges(int n, int m) {
+vector<pair<int, int>> gen_graph_edges(int n, int m) {
   assert(m >= n - 1 && m <= 1ll * n * (n - 1) / 2);
 
   auto res = gen_tree_edges(n);
-  set<pii> have;
+  set<pair<int, int>> have;
   for (auto [u, v] : res) {
     have.emplace(u, v);
   }
 
   while (sz(res) < m) {
-    int u = rnd<>(0, n - 1), v = rnd<>(0, n - 2);
+    int u = randint(n), v = randint(n - 1);
     v += v >= u;
     if (u > v) {
       swap(u, v);
     }
     if (!have.count({u, v})) {
-      res.eb(u, v);
+      res.emplace_back(u, v);
       have.emplace(u, v);
     }
   }
   return res;
 }
 
-vec<vec<int>> gen_graph(int n, int m, bool directed = false) {
-  vec<vec<int>> g(n);
+// ----------------------------------------------------
+//  => Adjacency list wrappers
+// ----------------------------------------------------
+
+vector<vector<int>> gen_graph(int n, int m, bool dir = false) {
+  vector<vector<int>> g(n);
   for (auto [u, v] : gen_graph_edges(n, m)) {
-    if (directed) {
-      if (rnd<>(0, 1)) {
+    if (dir) {
+      if (randbool()) {
         swap(u, v);
       }
-      g[u].pb(v);
+      g[u].push_back(v);
     } else {
-      g[u].pb(v);
-      g[v].pb(u);
+      g[u].push_back(v);
+      g[v].push_back(u);
     }
   }
   return g;
 }
 
-vec<vec<pii>> gen_w_graph(int n, int m, int lo = 1, int hi = inf<>, bool directed = false) {
-  vec<vec<pii>> g(n);
+vector<vector<pair<int, int>>> gen_w_graph(int n, int m, int lo = 1, int hi = inf<>, bool dir = false) {
+  vector<vector<pair<int, int>>> g(n);
   for (auto [u, v] : gen_graph_edges(n, m)) {
-    const int w = rnd<>(lo, hi);
-    if (directed) {
-      if (rnd<>(0, 1)) {
+    const int w = randint(lo, hi);
+    if (dir) {
+      if (randbool()) {
         swap(u, v);
       }
-      g[u].eb(v, w);
+      g[u].emplace_back(v, w);
     } else {
-      g[u].eb(v, w);
-      g[v].eb(u, w);
+      g[u].emplace_back(v, w);
+      g[v].emplace_back(u, w);
     }
   }
   return g;
