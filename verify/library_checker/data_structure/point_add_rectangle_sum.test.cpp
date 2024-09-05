@@ -1,4 +1,4 @@
-#define PROBLEM "https://judge.yosupo.jp/problem/range_kth_smallest"
+#define PROBLEM "https://judge.yosupo.jp/problem/point_add_rectangle_sum"
 
 #include "../../boilerplate.hpp"
 #include "../../../misc/compress.hpp"
