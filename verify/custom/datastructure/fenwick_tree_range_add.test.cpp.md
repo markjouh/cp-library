@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: datastructures/fentree/fenwick_tree_range_add.hpp
     title: datastructures/fentree/fenwick_tree_range_add.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: utils/random.hpp
     title: utils/random.hpp
   _extendedRequiredBy: []
@@ -51,44 +51,43 @@ data:
     }\n\nint randint() {\n  return randint(inf<int>);\n}\n\n/* ---- Long long wrappers\
     \ ---- */\n\nll randlong(ll lo, ll hi) {\n  return rnd<ll>(lo, hi);\n}\n\nll randlong(ll\
     \ hi) {\n  return randlong(0, hi);\n}\n\nll randlong() {\n  return randlong(inf<ll>);\n\
-    }\n\n/* ---- Double wrappers ---- */\n\ntemplate <class T>\ndouble randdoub(T\
-    \ lo, T hi) {\n  return rnd<double>(lo, hi);\n}\n\ntemplate <class T>\ndouble\
-    \ randdoub(T hi) {\n  return randdoub(0, hi);\n}\n\ndouble randdoub() {\n  return\
-    \ randdoub(1);\n}\n\n/* ---- Vector wrappers ---- */\n\ntemplate <class T>\nvec<T>\
-    \ randvec(int n, T lo, T hi) {\n  vec<T> res(n);\n  rep(i, n) {\n    res[i] =\
-    \ rnd<T>(lo, hi);\n  }\n  return res;\n}\n\ntemplate <class T>\nvec<T> randvec(int\
-    \ n, T hi) {\n  return randvec<T>(n, 0, hi);\n}\n\ntemplate <class T>\nvec<T>\
-    \ randvec(int n) {\n  return randvec<T>(n, def_val<T>());\n}\n\n/* ---- Array\
-    \ wrappers ---- */\n\ntemplate <class T, size_t N>\narray<T, N> randarr(T lo,\
-    \ T hi) {\n  array<T, N> res;\n  rep(i, N) {\n    res[i] = rnd<T>(lo, hi);\n \
-    \ }\n  return res;\n}\n\ntemplate <class T, size_t N>\narray<T, N> randarr(T hi)\
-    \ {\n  return randarr<T, N>(0, hi);\n}\n\ntemplate <class T, size_t N>\narray<T,\
-    \ N> randarr() {\n  return randarr<T, N>(def_val<T>());\n}\n\n/* ---- Graph generation\
-    \ from Prufer sequences ---- */\n\nvec<pii> gen_tree_edges(int n) {\n  const vec<int>\
-    \ prufer = randvec(n - 2, 0, n - 1);\n  vec<int> deg(n, 1);\n  for (int x : prufer)\
-    \ {\n    deg[x]++;\n  }\n  priority_queue<int, vec<int>, greater<>> leaves;\n\
-    \  rep(i, n) {\n    if (deg[i] == 1) {\n      leaves.push(i);\n    }\n  }\n\n\
-    \  vec<pii> res;\n  res.reserve(n - 1);\n  for (int v : prufer) {\n    int u =\
-    \ leaves.top();\n    leaves.pop();\n\n    res.pb(minmax(u, v));\n    deg[u]--,\
-    \ deg[v]--;\n\n    if (deg[v] == 1) {\n      leaves.push(v);\n    }\n  }\n\n \
-    \ int r1 = -1, r2 = -1;\n  rep(i, n) {\n    if (deg[i] == 1) {\n      (r1 == -1\
-    \ ? r1 : r2) = i;\n    }\n  }\n  assert(r2 != -1);\n  res.eb(r1, r2);\n\n  return\
-    \ res;\n}\n\nvec<pii> gen_graph_edges(int n, int m) {\n  assert(m >= n - 1 &&\
-    \ m <= 1ll * n * (n - 1) / 2);\n\n  auto res = gen_tree_edges(n);\n  set<pii>\
-    \ have;\n  for (auto [u, v] : res) {\n    have.emplace(u, v);\n  }\n\n  while\
-    \ (sz(res) < m) {\n    int u = rnd<>(0, n - 1), v = rnd<>(0, n - 2);\n    v +=\
-    \ v >= u;\n    if (u > v) {\n      swap(u, v);\n    }\n    if (!have.count({u,\
-    \ v})) {\n      res.eb(u, v);\n      have.emplace(u, v);\n    }\n  }\n  return\
-    \ res;\n}\n\nvec<vec<int>> gen_graph(int n, int m, bool directed = false) {\n\
-    \  vec<vec<int>> g(n);\n  for (auto [u, v] : gen_graph_edges(n, m)) {\n    if\
-    \ (directed) {\n      if (rnd<>(0, 1)) {\n        swap(u, v);\n      }\n     \
-    \ g[u].pb(v);\n    } else {\n      g[u].pb(v);\n      g[v].pb(u);\n    }\n  }\n\
-    \  return g;\n}\n\nvec<vec<pii>> gen_w_graph(int n, int m, int lo = 1, int hi\
-    \ = inf<>, bool directed = false) {\n  vec<vec<pii>> g(n);\n  for (auto [u, v]\
-    \ : gen_graph_edges(n, m)) {\n    const int w = rnd<>(lo, hi);\n    if (directed)\
-    \ {\n      if (rnd<>(0, 1)) {\n        swap(u, v);\n      }\n      g[u].eb(v,\
-    \ w);\n    } else {\n      g[u].eb(v, w);\n      g[v].eb(u, w);\n    }\n  }\n\
-    \  return g;\n}\n#line 2 \"datastructures/fentree/fenwick_tree_range_add.hpp\"\
+    }\n\n/* ---- Double wrappers ---- */\n\ndouble randdoub(double lo, double hi)\
+    \ {\n  return rnd<double>(lo, hi);\n}\n\ndouble randdoub(double hi) {\n  return\
+    \ randdoub(0, hi);\n}\n\ndouble randdoub() {\n  return randdoub(1);\n}\n\n/* ----\
+    \ Vector wrappers ---- */\n\ntemplate <class T>\nvec<T> randvec(int n, T lo, T\
+    \ hi) {\n  vec<T> res(n);\n  rep(i, n) {\n    res[i] = rnd<T>(lo, hi);\n  }\n\
+    \  return res;\n}\n\ntemplate <class T>\nvec<T> randvec(int n, T hi) {\n  return\
+    \ randvec<T>(n, 0, hi);\n}\n\ntemplate <class T>\nvec<T> randvec(int n) {\n  return\
+    \ randvec<T>(n, def_val<T>());\n}\n\n/* ---- Array wrappers ---- */\n\ntemplate\
+    \ <class T, size_t N>\narray<T, N> randarr(T lo, T hi) {\n  array<T, N> res;\n\
+    \  rep(i, N) {\n    res[i] = rnd<T>(lo, hi);\n  }\n  return res;\n}\n\ntemplate\
+    \ <class T, size_t N>\narray<T, N> randarr(T hi) {\n  return randarr<T, N>(0,\
+    \ hi);\n}\n\ntemplate <class T, size_t N>\narray<T, N> randarr() {\n  return randarr<T,\
+    \ N>(def_val<T>());\n}\n\n/* ---- Graph generation from Prufer sequences ----\
+    \ */\n\nvec<pii> gen_tree_edges(int n) {\n  const vec<int> prufer = randvec(n\
+    \ - 2, 0, n - 1);\n  vec<int> deg(n, 1);\n  for (int x : prufer) {\n    deg[x]++;\n\
+    \  }\n  priority_queue<int, vec<int>, greater<>> leaves;\n  rep(i, n) {\n    if\
+    \ (deg[i] == 1) {\n      leaves.push(i);\n    }\n  }\n\n  vec<pii> res;\n  res.reserve(n\
+    \ - 1);\n  for (int v : prufer) {\n    int u = leaves.top();\n    leaves.pop();\n\
+    \n    res.pb(minmax(u, v));\n    deg[u]--, deg[v]--;\n\n    if (deg[v] == 1) {\n\
+    \      leaves.push(v);\n    }\n  }\n\n  int r1 = -1, r2 = -1;\n  rep(i, n) {\n\
+    \    if (deg[i] == 1) {\n      (r1 == -1 ? r1 : r2) = i;\n    }\n  }\n  assert(r2\
+    \ != -1);\n  res.eb(r1, r2);\n\n  return res;\n}\n\nvec<pii> gen_graph_edges(int\
+    \ n, int m) {\n  assert(m >= n - 1 && m <= 1ll * n * (n - 1) / 2);\n\n  auto res\
+    \ = gen_tree_edges(n);\n  set<pii> have;\n  for (auto [u, v] : res) {\n    have.emplace(u,\
+    \ v);\n  }\n\n  while (sz(res) < m) {\n    int u = rnd<>(0, n - 1), v = rnd<>(0,\
+    \ n - 2);\n    v += v >= u;\n    if (u > v) {\n      swap(u, v);\n    }\n    if\
+    \ (!have.count({u, v})) {\n      res.eb(u, v);\n      have.emplace(u, v);\n  \
+    \  }\n  }\n  return res;\n}\n\nvec<vec<int>> gen_graph(int n, int m, bool directed\
+    \ = false) {\n  vec<vec<int>> g(n);\n  for (auto [u, v] : gen_graph_edges(n, m))\
+    \ {\n    if (directed) {\n      if (rnd<>(0, 1)) {\n        swap(u, v);\n    \
+    \  }\n      g[u].pb(v);\n    } else {\n      g[u].pb(v);\n      g[v].pb(u);\n\
+    \    }\n  }\n  return g;\n}\n\nvec<vec<pii>> gen_w_graph(int n, int m, int lo\
+    \ = 1, int hi = inf<>, bool directed = false) {\n  vec<vec<pii>> g(n);\n  for\
+    \ (auto [u, v] : gen_graph_edges(n, m)) {\n    const int w = rnd<>(lo, hi);\n\
+    \    if (directed) {\n      if (rnd<>(0, 1)) {\n        swap(u, v);\n      }\n\
+    \      g[u].eb(v, w);\n    } else {\n      g[u].eb(v, w);\n      g[v].eb(u, w);\n\
+    \    }\n  }\n  return g;\n}\n#line 2 \"datastructures/fentree/fenwick_tree_range_add.hpp\"\
     \n\ntemplate <class T>\nstruct RangeAddFT {\n  int n;\n  vector<T> ft;\n\n  RangeAddFT(int\
     \ n_) : n(n_), ft(n + 1) {}\n\n  RangeAddFT(const vector<T> &a) : n(sz(a)), ft(n\
     \ + 1) {\n    for (int i = 0; i < n; i++) {\n      ft[i + 1] += a[i];\n      ft[i]\
@@ -122,7 +121,7 @@ data:
   isVerificationFile: true
   path: verify/custom/datastructure/fenwick_tree_range_add.test.cpp
   requiredBy: []
-  timestamp: '2024-09-05 16:14:09-04:00'
+  timestamp: '2024-09-05 16:18:48-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/custom/datastructure/fenwick_tree_range_add.test.cpp

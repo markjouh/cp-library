@@ -88,7 +88,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: numeric/binary_search.hpp
       title: numeric/binary_search.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: numeric/binary_search_reals.hpp
       title: numeric/binary_search_reals.hpp
     - icon: ':heavy_check_mark:'
@@ -116,7 +116,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: utils/encode.hpp
       title: utils/encode.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: utils/random.hpp
       title: utils/random.hpp
     - icon: ':heavy_check_mark:'
@@ -157,7 +157,7 @@ data:
       title: verify/custom/datastructure/segment_tree_sparse.test.cpp
   - name: verify/custom/numeric
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/custom/numeric/binary_search_reals.test.cpp
       title: verify/custom/numeric/binary_search_reals.test.cpp
   - name: verify/custom/utils
