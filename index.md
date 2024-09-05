@@ -3,9 +3,12 @@ data:
   libraryCategories:
   - name: datastructures/fentree
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: datastructures/fentree/fenwick_tree.hpp
       title: datastructures/fentree/fenwick_tree.hpp
+    - icon: ':x:'
+      path: datastructures/fentree/fenwick_tree_2d.hpp
+      title: datastructures/fentree/fenwick_tree_2d.hpp
     - icon: ':heavy_check_mark:'
       path: datastructures/fentree/fenwick_tree_range_add.hpp
       title: datastructures/fentree/fenwick_tree_range_add.hpp
@@ -77,7 +80,7 @@ data:
       title: graphs/tree/tree_isomorphism.hpp
   - name: misc
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: misc/compress.hpp
       title: misc/compress.hpp
   - name: numeric
@@ -182,6 +185,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/library_checker/data_structure/point_add_range_sum.test.cpp
       title: verify/library_checker/data_structure/point_add_range_sum.test.cpp
+    - icon: ':x:'
+      path: verify/library_checker/data_structure/point_add_rectangle_sum.test.cpp
+      title: verify/library_checker/data_structure/point_add_rectangle_sum.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/library_checker/data_structure/range_kth_smallest.test.cpp
       title: verify/library_checker/data_structure/range_kth_smallest.test.cpp

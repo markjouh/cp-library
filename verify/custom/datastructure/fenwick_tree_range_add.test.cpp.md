@@ -70,14 +70,14 @@ data:
     \        swap(u, v);\n      }\n      g[u].eb(v, w);\n    } else {\n      g[u].eb(v,\
     \ w);\n      g[v].eb(u, w);\n    }\n  }\n  return g;\n}\n#line 2 \"datastructures/fentree/fenwick_tree_range_add.hpp\"\
     \n\ntemplate <class T>\nstruct RangeAddFT {\n  int n;\n  vector<T> ft;\n\n  RangeAddFT(int\
-    \ x) : n(x), ft(n + 1) {}\n\n  RangeAddFT(const vector<T> &a) : n(sz(a)), ft(n\
+    \ n_) : n(n_), ft(n + 1) {}\n\n  RangeAddFT(const vector<T> &a) : n(sz(a)), ft(n\
     \ + 1) {\n    for (int i = 0; i < n; i++) {\n      ft[i + 1] += a[i];\n      ft[i]\
     \ -= a[i];\n    }\n    for (int i = n; i >= 1; i--) {\n      ft[i - (i & -i)]\
-    \ += ft[i];\n    }\n  }\n\n  void add(int r, T v) {\n    // assert(r < n);\n \
-    \   for (r++; r > 0; r -= r & -r) {\n      ft[r] += v;\n    }\n  }\n\n  void add(int\
-    \ l, int r, T v) {\n    add(r, v);\n    add(l - 1, T(0) - v);\n  }\n\n  T get(int\
-    \ p) {\n    // assert(p >= 0);\n    T res = 0;\n    for (p++; p <= n; p += p &\
-    \ -p) {\n      res += ft[p];\n    }\n    return res;\n  }\n};\n#line 6 \"verify/custom/datastructure/fenwick_tree_range_add.test.cpp\"\
+    \ += ft[i];\n    }\n  }\n\n  void add(int r, T v) {\n    for (r++; r > 0; r -=\
+    \ r & -r) {\n      ft[r] += v;\n    }\n  }\n\n  void add(int l, int r, T v) {\n\
+    \    add(r, v);\n    add(l - 1, T(0) - v);\n  }\n\n  T get(int p) {\n    T res\
+    \ = 0;\n    for (p++; p <= n; p += p & -p) {\n      res += ft[p];\n    }\n   \
+    \ return res;\n  }\n};\n#line 6 \"verify/custom/datastructure/fenwick_tree_range_add.test.cpp\"\
     \n\nconst int N = 1e5, QUERIES = 1e5;\n\nint main() {\n  vec<ll> a = rnd_vec<ll>(N,\
     \ 0, inf<ll>);\n  RangeAddFT<ll> ft(a);\n  rep(i, QUERIES) {\n    if (rnd<>(0,\
     \ 1)) {\n      int l = rnd<>(0, N - 1), r = rnd<>(0, N - 1);\n      if (l > r)\
@@ -102,7 +102,7 @@ data:
   isVerificationFile: true
   path: verify/custom/datastructure/fenwick_tree_range_add.test.cpp
   requiredBy: []
-  timestamp: '2024-09-04 18:49:35-04:00'
+  timestamp: '2024-09-05 15:13:46-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/custom/datastructure/fenwick_tree_range_add.test.cpp
