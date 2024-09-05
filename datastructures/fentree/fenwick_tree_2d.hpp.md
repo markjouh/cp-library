@@ -1,17 +1,14 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: datastructures/fentree/fenwick_tree.hpp
     title: datastructures/fentree/fenwick_tree.hpp
   _extendedRequiredBy: []
-  _extendedVerifiedWith:
-  - icon: ':x:'
-    path: verify/library_checker/data_structure/point_add_rectangle_sum.test.cpp
-    title: verify/library_checker/data_structure/point_add_rectangle_sum.test.cpp
-  _isVerificationFailed: true
+  _extendedVerifiedWith: []
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':warning:'
   attributes:
     links: []
   bundledCode: "#line 2 \"datastructures/fentree/fenwick_tree_2d.hpp\"\n\n#line 2\
@@ -47,9 +44,8 @@ data:
   path: datastructures/fentree/fenwick_tree_2d.hpp
   requiredBy: []
   timestamp: '2024-09-05 15:13:46-04:00'
-  verificationStatus: LIBRARY_ALL_WA
-  verifiedWith:
-  - verify/library_checker/data_structure/point_add_rectangle_sum.test.cpp
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
 documentation_of: datastructures/fentree/fenwick_tree_2d.hpp
 layout: document
 redirect_from:

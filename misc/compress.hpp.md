@@ -6,12 +6,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/aizu/alds1/priority_queue.test.cpp
     title: verify/aizu/alds1/priority_queue.test.cpp
-  - icon: ':x:'
-    path: verify/library_checker/data_structure/point_add_rectangle_sum.test.cpp
-    title: verify/library_checker/data_structure/point_add_rectangle_sum.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"misc/compress.hpp\"\n\ntemplate <class T>\nstruct Compress\
@@ -33,10 +30,9 @@ data:
   path: misc/compress.hpp
   requiredBy: []
   timestamp: '2024-09-05 15:13:46-04:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/aizu/alds1/priority_queue.test.cpp
-  - verify/library_checker/data_structure/point_add_rectangle_sum.test.cpp
 documentation_of: misc/compress.hpp
 layout: document
 redirect_from:

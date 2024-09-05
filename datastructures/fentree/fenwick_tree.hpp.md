@@ -2,7 +2,7 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':x:'
+  - icon: ':warning:'
     path: datastructures/fentree/fenwick_tree_2d.hpp
     title: datastructures/fentree/fenwick_tree_2d.hpp
   - icon: ':heavy_check_mark:'
@@ -15,15 +15,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/library_checker/data_structure/point_add_range_sum.test.cpp
     title: verify/library_checker/data_structure/point_add_range_sum.test.cpp
-  - icon: ':x:'
-    path: verify/library_checker/data_structure/point_add_rectangle_sum.test.cpp
-    title: verify/library_checker/data_structure/point_add_rectangle_sum.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/library_checker/tree/vertex_add_subtree_sum.test.cpp
     title: verify/library_checker/tree/vertex_add_subtree_sum.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"datastructures/fentree/fenwick_tree.hpp\"\n\ntemplate <class\
@@ -50,12 +47,11 @@ data:
   - datastructures/fentree/fenwick_tree_2d.hpp
   - datastructures/fentree/fenwick_tree_range_add_range_sum.hpp
   timestamp: '2024-09-05 15:13:46-04:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/aizu/dsl/rsq_and_raq.test.cpp
   - verify/library_checker/tree/vertex_add_subtree_sum.test.cpp
   - verify/library_checker/data_structure/point_add_range_sum.test.cpp
-  - verify/library_checker/data_structure/point_add_rectangle_sum.test.cpp
 documentation_of: datastructures/fentree/fenwick_tree.hpp
 layout: document
 redirect_from:

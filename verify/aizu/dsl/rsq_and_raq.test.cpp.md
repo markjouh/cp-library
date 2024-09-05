@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: datastructures/fentree/fenwick_tree.hpp
     title: datastructures/fentree/fenwick_tree.hpp
   - icon: ':heavy_check_mark:'
