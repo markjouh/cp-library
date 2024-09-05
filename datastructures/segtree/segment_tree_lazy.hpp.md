@@ -29,7 +29,7 @@ data:
     \        suff = op(st[x << 1 | 1], suff);\n        x = x << 1;\n      }\n    }\n\
     \    return f(op(st[x], suff)) ? x - tree_sz : -1;\n  }\n  \nprivate:\n  int n,\
     \ log, tree_sz;\n  vector<T> st;\n  vector<U> lz;\n\n  void init(int x, T v) {\n\
-    \    n = x;\n    log = lg(n - 1) + 1;\n    tree_sz = 1 << log;\n    st.resize(tree_sz\
+    \    n = x;\n    log = __lg(n - 1) + 1;\n    tree_sz = 1 << log;\n    st.resize(tree_sz\
     \ << 1, v);\n    lz.resize(tree_sz, u_id());\n  }\n\n  void pull(int x) {\n  \
     \  st[x] = op(st[x << 1], st[x << 1 | 1]);\n  }\n\n  void pull_path(int x) {\n\
     \    for (int i = 1; i <= log; i++) {\n      pull(x >> i);\n    }\n  }\n\n  void\
@@ -68,8 +68,8 @@ data:
     \        x = x << 1 | 1;\n      } else {\n        suff = op(st[x << 1 | 1], suff);\n\
     \        x = x << 1;\n      }\n    }\n    return f(op(st[x], suff)) ? x - tree_sz\
     \ : -1;\n  }\n  \nprivate:\n  int n, log, tree_sz;\n  vector<T> st;\n  vector<U>\
-    \ lz;\n\n  void init(int x, T v) {\n    n = x;\n    log = lg(n - 1) + 1;\n   \
-    \ tree_sz = 1 << log;\n    st.resize(tree_sz << 1, v);\n    lz.resize(tree_sz,\
+    \ lz;\n\n  void init(int x, T v) {\n    n = x;\n    log = __lg(n - 1) + 1;\n \
+    \   tree_sz = 1 << log;\n    st.resize(tree_sz << 1, v);\n    lz.resize(tree_sz,\
     \ u_id());\n  }\n\n  void pull(int x) {\n    st[x] = op(st[x << 1], st[x << 1\
     \ | 1]);\n  }\n\n  void pull_path(int x) {\n    for (int i = 1; i <= log; i++)\
     \ {\n      pull(x >> i);\n    }\n  }\n\n  void pull_all() {\n    for (int i =\
@@ -92,7 +92,7 @@ data:
   isVerificationFile: false
   path: datastructures/segtree/segment_tree_lazy.hpp
   requiredBy: []
-  timestamp: '2024-09-02 21:02:51-04:00'
+  timestamp: '2024-09-05 17:05:59-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: datastructures/segtree/segment_tree_lazy.hpp

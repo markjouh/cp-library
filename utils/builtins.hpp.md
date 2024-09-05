@@ -89,17 +89,23 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"utils/timer.hpp\"\n\nchrono::time_point<chrono::high_resolution_clock>\
-    \ timer;\n\nvoid set_timer() {\n  timer = std::chrono::high_resolution_clock::now();\n\
-    }\n\nlong long elapsed() {\n  return (chrono::duration_cast<chrono::milliseconds>(chrono::high_resolution_clock::now()\
-    \ - timer)).count();\n}\n"
-  code: "#pragma once\n\nchrono::time_point<chrono::high_resolution_clock> timer;\n\
-    \nvoid set_timer() {\n  timer = std::chrono::high_resolution_clock::now();\n}\n\
-    \nlong long elapsed() {\n  return (chrono::duration_cast<chrono::milliseconds>(chrono::high_resolution_clock::now()\
-    \ - timer)).count();\n}"
+  bundledCode: "#line 2 \"utils/builtins.hpp\"\n\n#if !__has_builtin(__lg)\ntemplate\
+    \ <class T>\nint __lg(T x) {\n  int res = 0;\n  while (x >>= 1) {\n    res++;\n\
+    \  }\n  return res;\n}\n#endif\n\n#if !__has_builtin(__builtin_popcount)\nint\
+    \ __builtin_popcount(unsigned int x) {\n  int res = 0;\n  for (int i = 0; i <\
+    \ 32; i++) {\n    res += (x >> i) & 1;\n  }\n  return res;\n}\n#endif\n\n#if !__has_builtin(__builtin_popcountll)\n\
+    int __builtin_popcountll(unsigned long long x) {\n  int res = 0;\n  for (int i\
+    \ = 0; i < 64; i++) {\n    res += (x >> i) & 1;\n  }\n  return res;\n}\n}\n#endif\n"
+  code: "#pragma once\n\n#if !__has_builtin(__lg)\ntemplate <class T>\nint __lg(T\
+    \ x) {\n  int res = 0;\n  while (x >>= 1) {\n    res++;\n  }\n  return res;\n\
+    }\n#endif\n\n#if !__has_builtin(__builtin_popcount)\nint __builtin_popcount(unsigned\
+    \ int x) {\n  int res = 0;\n  for (int i = 0; i < 32; i++) {\n    res += (x >>\
+    \ i) & 1;\n  }\n  return res;\n}\n#endif\n\n#if !__has_builtin(__builtin_popcountll)\n\
+    int __builtin_popcountll(unsigned long long x) {\n  int res = 0;\n  for (int i\
+    \ = 0; i < 64; i++) {\n    res += (x >> i) & 1;\n  }\n  return res;\n}\n}\n#endif"
   dependsOn: []
   isVerificationFile: false
-  path: utils/timer.hpp
+  path: utils/builtins.hpp
   requiredBy: []
   timestamp: '2024-09-05 17:05:59-04:00'
   verificationStatus: LIBRARY_ALL_AC
@@ -131,10 +137,10 @@ data:
   - verify/custom/utils/timer.test.cpp
   - verify/custom/utils/debug.test.cpp
   - verify/custom/numeric/binary_search_reals.test.cpp
-documentation_of: utils/timer.hpp
+documentation_of: utils/builtins.hpp
 layout: document
 redirect_from:
-- /library/utils/timer.hpp
-- /library/utils/timer.hpp.html
-title: utils/timer.hpp
+- /library/utils/builtins.hpp
+- /library/utils/builtins.hpp.html
+title: utils/builtins.hpp
 ---

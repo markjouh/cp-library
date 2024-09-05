@@ -111,6 +111,9 @@ data:
   - name: utils
     pages:
     - icon: ':heavy_check_mark:'
+      path: utils/builtins.hpp
+      title: utils/builtins.hpp
+    - icon: ':heavy_check_mark:'
       path: utils/debug.hpp
       title: utils/debug.hpp
     - icon: ':heavy_check_mark:'

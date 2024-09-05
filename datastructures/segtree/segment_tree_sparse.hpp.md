@@ -13,7 +13,7 @@ data:
     links: []
   bundledCode: "#line 2 \"datastructures/segtree/segment_tree_sparse.hpp\"\n\ntemplate\
     \ <class T, T(*op)(T, T), T(*id)()>\nstruct SparseSegmentTree {\n  SparseSegmentTree()\
-    \ {}\n  \n  SparseSegmentTree(int n) {\n    log = lg(n - 1) + 1;\n    tree_sz\
+    \ {}\n  \n  SparseSegmentTree(int n) {\n    log = __lg(n - 1) + 1;\n    tree_sz\
     \ = 1 << log;\n    st.push_back(id());\n    ch.emplace_back(-1, -1);\n  }\n\n\
     \  void set(int p, T v) {\n    vis_buf[0] = idx = 0;\n    int tl = 0, tr = tree_sz;\n\
     \    while (tl + 1 != tr) {\n      int mid = (tl + tr) >> 1;\n      if (p < mid)\
@@ -35,7 +35,7 @@ data:
     \ (tl + tr) >> 1;\n    return op(query(l, r, ch[x].fi, tl, mid), query(l, r, ch[x].se,\
     \ mid, tr));\n  }\n};\n"
   code: "#pragma once\n\ntemplate <class T, T(*op)(T, T), T(*id)()>\nstruct SparseSegmentTree\
-    \ {\n  SparseSegmentTree() {}\n  \n  SparseSegmentTree(int n) {\n    log = lg(n\
+    \ {\n  SparseSegmentTree() {}\n  \n  SparseSegmentTree(int n) {\n    log = __lg(n\
     \ - 1) + 1;\n    tree_sz = 1 << log;\n    st.push_back(id());\n    ch.emplace_back(-1,\
     \ -1);\n  }\n\n  void set(int p, T v) {\n    vis_buf[0] = idx = 0;\n    int tl\
     \ = 0, tr = tree_sz;\n    while (tl + 1 != tr) {\n      int mid = (tl + tr) >>\
@@ -60,7 +60,7 @@ data:
   isVerificationFile: false
   path: datastructures/segtree/segment_tree_sparse.hpp
   requiredBy: []
-  timestamp: '2024-09-02 23:27:02-04:00'
+  timestamp: '2024-09-05 17:05:59-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/custom/datastructure/segment_tree_sparse.test.cpp

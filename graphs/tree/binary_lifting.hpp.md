@@ -13,7 +13,7 @@ data:
     links: []
   bundledCode: "#line 2 \"graphs/tree/binary_lifting.hpp\"\n\nstruct BinaryLifting\
     \ {\n  int log;\n  vector<int> dep;\n  vector<vector<int>> up;\n\n  BinaryLifting(const\
-    \ vector<vector<int>> &g, int rt = 0) {\n    log = lg(sz(g) - 1) + 1;\n    dep.resize(sz(g),\
+    \ vector<vector<int>> &g, int rt = 0) {\n    log = __lg(sz(g) - 1) + 1;\n    dep.resize(sz(g),\
     \ -1);\n    up = vector(sz(g), vector<int>(log, -1));\n\n    queue<int> q;\n \
     \   dep[rt] = 0;\n    q.push(rt);\n    while (sz(q)) {\n      int u = q.front();\n\
     \      q.pop();\n      for (int v : g[u]) {\n        if (dep[v] == -1) {\n   \
@@ -31,7 +31,7 @@ data:
     \ return dep[x] + dep[y] - 2 * dep[lca(x, y)];\n  }\n};\n"
   code: "#pragma once\n\nstruct BinaryLifting {\n  int log;\n  vector<int> dep;\n\
     \  vector<vector<int>> up;\n\n  BinaryLifting(const vector<vector<int>> &g, int\
-    \ rt = 0) {\n    log = lg(sz(g) - 1) + 1;\n    dep.resize(sz(g), -1);\n    up\
+    \ rt = 0) {\n    log = __lg(sz(g) - 1) + 1;\n    dep.resize(sz(g), -1);\n    up\
     \ = vector(sz(g), vector<int>(log, -1));\n\n    queue<int> q;\n    dep[rt] = 0;\n\
     \    q.push(rt);\n    while (sz(q)) {\n      int u = q.front();\n      q.pop();\n\
     \      for (int v : g[u]) {\n        if (dep[v] == -1) {\n          dep[v] = dep[u]\
@@ -51,7 +51,7 @@ data:
   isVerificationFile: false
   path: graphs/tree/binary_lifting.hpp
   requiredBy: []
-  timestamp: '2024-09-01 20:48:11-04:00'
+  timestamp: '2024-09-05 17:05:59-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/library_checker/tree/lca.test.cpp
