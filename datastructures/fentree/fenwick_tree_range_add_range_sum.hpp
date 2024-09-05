@@ -7,7 +7,7 @@ struct RangeAddRangeSumFT {
   int n;
   FenwickTree<T> in_pref, os_pref;
 
-  RangeAddRangeSumFT(int x) : n(x), in_pref(n), os_pref(n) {}
+  RangeAddRangeSumFT(int n_) : n(n_), in_pref(n), os_pref(n) {}
 
   T sum(int r) {
     return in_pref.sum(r - 1) + os_pref.sum(n - r - 1) * (r + 1);

@@ -5,7 +5,7 @@ struct RangeAddFT {
   int n;
   vector<T> ft;
 
-  RangeAddFT(int x) : n(x), ft(n + 1) {}
+  RangeAddFT(int n_) : n(n_), ft(n + 1) {}
 
   RangeAddFT(const vector<T> &a) : n(sz(a)), ft(n + 1) {
     for (int i = 0; i < n; i++) {
@@ -18,7 +18,6 @@ struct RangeAddFT {
   }
 
   void add(int r, T v) {
-    // assert(r < n);
     for (r++; r > 0; r -= r & -r) {
       ft[r] += v;
     }
@@ -30,7 +29,6 @@ struct RangeAddFT {
   }
 
   T get(int p) {
-    // assert(p >= 0);
     T res = 0;
     for (p++; p <= n; p += p & -p) {
       res += ft[p];

@@ -23,6 +23,10 @@ struct Compress {
     return lower_bound(all(vals), x) - begin(vals);
   }
 
+  friend size_t size(const Compress &x) {
+    return size(x.vals);
+  }
+
   T operator[](int p) {
     return vals[p];
   }
