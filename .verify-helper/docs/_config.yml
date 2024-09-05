@@ -1,3 +1,2 @@
 exclude: ['local', 'verify/boilerplate.hpp']
 title: Mark's Library
-theme: jekyll-theme-modernist
