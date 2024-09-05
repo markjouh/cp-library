@@ -19,6 +19,10 @@
 
 using namespace std;
 
+#include "../utils/builtins.hpp"
+#include "../utils/random.hpp"
+#include "../utils/timer.hpp"
+
 #define arg4(a, b, c, d, ...) d
  
 #define rep3(i, l, r) for (int i = int(l); i < int(r); i++)
@@ -42,19 +46,6 @@ using vec = vector<T>;
 using ll = long long;
 using pii = pair<int, int>;
 using pll = pair<ll, ll>;
-
-template <class T>
-int lg(T x) {
-#if __has_builtin(__lg)
-  return __lg(x);
-#else
-  int res = 0;
-  while (x >>= 1) {
-    res++;
-  }
-  return res;
-#endif
-}
 
 template <class T>
 bool ckmin(T &a, const T &b) {

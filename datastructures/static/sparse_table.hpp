@@ -5,7 +5,7 @@ struct SparseTable {
   int n, log;
   vector<vector<T>> table;
 
-  SparseTable(const vector<T> &a) : n(sz(a)), log(lg(n) + 1) {
+  SparseTable(const vector<T> &a) : n(sz(a)), log(__lg(n) + 1) {
     table.resize(log);
     table[0] = a;
     for (int i = 1; i < log; i++) {
@@ -18,7 +18,7 @@ struct SparseTable {
 
   T query(int l, int r) {
     assert(l <= r);
-    int i = lg(++r - l);
+    int i = __lg(++r - l);
     return op(table[i][l], table[i][r - (1 << i)]);
   }
 };

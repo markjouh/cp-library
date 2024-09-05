@@ -5,7 +5,7 @@ struct SparseSegmentTree {
   SparseSegmentTree() {}
   
   SparseSegmentTree(int n) {
-    log = lg(n - 1) + 1;
+    log = __lg(n - 1) + 1;
     tree_sz = 1 << log;
     st.push_back(id());
     ch.emplace_back(-1, -1);

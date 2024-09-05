@@ -1,7 +1,6 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/aplusb"
 
 #include "../../boilerplate.hpp"
-#include "../../../utils/random.hpp"
 #include "../../../datastructures/segtree/segment_tree_sparse.hpp"
 
 const int N = 1e9, QUERIES = 5e4;

@@ -1,7 +1,6 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/aplusb"
 
 #include "../../boilerplate.hpp"
-#include "../../../utils/random.hpp"
 #include "../../../numeric/binary_search_reals.hpp"
 
 const int TESTS = 1e6;

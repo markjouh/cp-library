@@ -1,7 +1,6 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/aplusb"
 
 #include "../../boilerplate.hpp"
-#include "../../../utils/random.hpp"
 #include "../../../datastructures/fentree/fenwick_tree_range_add.hpp"
 
 const int N = 1e5, QUERIES = 1e5;

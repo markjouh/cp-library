@@ -81,7 +81,7 @@ private:
 
   void init(int x, T v) {
     n = x;
-    log = lg(n - 1) + 1;
+    log = __lg(n - 1) + 1;
     tree_sz = 1 << log;
     st.resize(tree_sz << 1, v);
     lz.resize(tree_sz, u_id());

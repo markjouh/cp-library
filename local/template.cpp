@@ -20,7 +20,7 @@
 using namespace std;
 
 #ifdef LOCAL
-#include "debug.hpp"
+#include <utils>
 #else
 #define dbg(...)
 #endif
@@ -45,19 +45,6 @@ using namespace std;
 using ll = long long;
 using pii = pair<int, int>;
 using pll = pair<ll, ll>;
-
-template <class T>
-int lg(T x) {
-#if __has_builtin(__lg)
-  return __lg(x);
-#else
-  int res = 0;
-  while (x >>= 1) {
-    res++;
-  }
-  return res;
-#endif
-}
 
 template <class T>
 bool ckmin(T &a, const T &b) {

@@ -23,7 +23,7 @@ constexpr T def_val() {
   if constexpr (is_floating_point_v<T>) {
     return 1;
   } else {
-    return inf<T>;
+    return numeric_limits<T>::max() / 2;
   }
 }
 
@@ -48,23 +48,23 @@ int randint(int hi) {
 }
 
 int randint() {
-  return randint(inf<int>);
+  return randint(def_val<int>());
 }
 
 // ----------------------------------------------------
 //  => Long long wrappers
 // ----------------------------------------------------
 
-ll randlong(ll lo, ll hi) {
-  return rnd<ll>(lo, hi);
+long long randlong(long long lo, long long hi) {
+  return rnd<long long>(lo, hi);
 }
 
-ll randlong(ll hi) {
+long long randlong(long long hi) {
   return randlong(0, hi);
 }
 
-ll randlong() {
-  return randlong(inf<ll>);
+long long randlong() {
+  return randlong(def_val<long long>());
 }
 
 // ----------------------------------------------------
@@ -166,7 +166,6 @@ vector<pair<int, int>> gen_tree_edges(int n) {
       (r1 == -1 ? r1 : r2) = i;
     }
   }
-  assert(r2 != -1);
   res.emplace_back(r1, r2);
 
   return res;
@@ -181,7 +180,7 @@ vector<pair<int, int>> gen_graph_edges(int n, int m) {
     have.emplace(u, v);
   }
 
-  while (sz(res) < m) {
+  while (ssize(res) < m) {
     int u = randint(n), v = randint(n - 1);
     v += v >= u;
     if (u > v) {
@@ -215,7 +214,7 @@ vector<vector<int>> gen_graph(int n, int m, bool dir = false) {
   return g;
 }
 
-vector<vector<pair<int, int>>> gen_w_graph(int n, int m, int lo = 1, int hi = inf<>, bool dir = false) {
+vector<vector<pair<int, int>>> gen_w_graph(int n, int m, int lo = 1, int hi = def_val<int>(), bool dir = false) {
   vector<vector<pair<int, int>>> g(n);
   for (auto [u, v] : gen_graph_edges(n, m)) {
     const int w = randint(lo, hi);

@@ -3,8 +3,6 @@
 #include <unistd.h>
 
 #include "../../boilerplate.hpp"
-#include "../../../utils/random.hpp"
-#include "../../../utils/timer.hpp"
 
 // Kind of pointless, but I'll write a test for
 // completionism's sake...
