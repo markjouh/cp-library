@@ -5,5 +5,5 @@ exclude:
 plugins:
 - jemoji
 - jekyll-redirect-from
-theme: jekyll-theme-midnight
+theme: jekyll-theme-modernist
 title: Mark's Library
