@@ -59,13 +59,11 @@ ll randlong() {
 
 /* ---- Double wrappers ---- */
 
-template <class T>
-double randdoub(T lo, T hi) {
+double randdoub(double lo, double hi) {
   return rnd<double>(lo, hi);
 }
 
-template <class T>
-double randdoub(T hi) {
+double randdoub(double hi) {
   return randdoub(0, hi);
 }
 
