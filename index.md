@@ -75,6 +75,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: graphs/tree/tree_isomorphism.hpp
       title: graphs/tree/tree_isomorphism.hpp
+  - name: misc
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: misc/compress.hpp
+      title: misc/compress.hpp
   - name: numeric
     pages:
     - icon: ':heavy_check_mark:'

@@ -4,6 +4,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: datastructures/w_ary_tree.hpp
     title: datastructures/w_ary_tree.hpp
+  - icon: ':heavy_check_mark:'
+    path: misc/compress.hpp
+    title: misc/compress.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -53,31 +56,37 @@ data:
     \ p = (p << 6) + __builtin_ctzll(l0[p]);\n    return p;\n  }\n\n  int get_max()\
     \ {\n    uint32_t p = 63 - __builtin_clzll(root);\n    p = (p << 6) + 63 - __builtin_clzll(l1[p]);\n\
     \    p = (p << 6) + 63 - __builtin_clzll(l0[p]);\n    return p;\n  }\n};\n#line\
-    \ 5 \"verify/aizu/alds1/priority_queue.test.cpp\"\n\nint main() {\n  string s;\n\
-    \  int x;\n  vector<int> queries;\n  vector<int> vals;\n  while (cin >> s) {\n\
-    \    if (s == \"end\") {\n      break;\n    }\n    if (s == \"insert\") {\n  \
-    \    cin >> x;\n      queries.push_back(x);\n      vals.push_back(x);\n    } else\
-    \ {\n      queries.push_back(-1);\n    }\n  }\n  sort(all(vals));\n  vals.resize(unique(all(vals))\
-    \ - begin(vals));\n  WAryTree<2000000> ds;\n  for (auto x : queries) {\n    if\
-    \ (x == -1) {\n      int mx_idx = ds.get_max();\n      cout << vals[mx_idx] <<\
-    \ '\\n';\n      ds.extract(mx_idx);\n    } else {\n      ds.insert(lower_bound(all(vals),\
-    \ x) - begin(vals));\n    }\n  }\n}\n"
-  code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_9_C\"\
-    \n\n#include \"../../boilerplate.hpp\"\n#include \"../../../datastructures/w_ary_tree.hpp\"\
-    \n\nint main() {\n  string s;\n  int x;\n  vector<int> queries;\n  vector<int>\
+    \ 2 \"misc/compress.hpp\"\n\ntemplate <class T>\nstruct Compress {\n  vector<T>\
+    \ vals;\n\n  Compress() {}\n\n  Compress(const vector<T> &a) : vals(a) {\n   \
+    \ init();\n  }\n\n  void init() {\n    sort(all(vals));\n    vals.resize(unique(all(vals))\
+    \ - begin(vals));\n  }\n\n  void insert(T x) {\n    vals.push_back(x);\n  }\n\n\
+    \  int get(T x) {\n    return lower_bound(all(vals), x) - begin(vals);\n  }\n\n\
+    \  T operator[](int p) {\n    return vals[p];\n  }\n};\n#line 6 \"verify/aizu/alds1/priority_queue.test.cpp\"\
+    \n\nint main() {\n  string s;\n  int x;\n  vector<int> queries;\n  Compress<int>\
     \ vals;\n  while (cin >> s) {\n    if (s == \"end\") {\n      break;\n    }\n\
     \    if (s == \"insert\") {\n      cin >> x;\n      queries.push_back(x);\n  \
-    \    vals.push_back(x);\n    } else {\n      queries.push_back(-1);\n    }\n \
-    \ }\n  sort(all(vals));\n  vals.resize(unique(all(vals)) - begin(vals));\n  WAryTree<2000000>\
+    \    vals.insert(x);\n    } else {\n      queries.push_back(-1);\n    }\n  }\n\
+    \  vals.init();\n  WAryTree<2000000> ds;\n  for (auto x : queries) {\n    if (x\
+    \ == -1) {\n      int mx_idx = ds.get_max();\n      cout << vals[mx_idx] << '\\\
+    n';\n      ds.extract(mx_idx);\n    } else {\n      ds.insert(vals.get(x));\n\
+    \    }\n  }\n}\n"
+  code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_9_C\"\
+    \n\n#include \"../../boilerplate.hpp\"\n#include \"../../../datastructures/w_ary_tree.hpp\"\
+    \n#include \"../../../misc/compress.hpp\"\n\nint main() {\n  string s;\n  int\
+    \ x;\n  vector<int> queries;\n  Compress<int> vals;\n  while (cin >> s) {\n  \
+    \  if (s == \"end\") {\n      break;\n    }\n    if (s == \"insert\") {\n    \
+    \  cin >> x;\n      queries.push_back(x);\n      vals.insert(x);\n    } else {\n\
+    \      queries.push_back(-1);\n    }\n  }\n  vals.init();\n  WAryTree<2000000>\
     \ ds;\n  for (auto x : queries) {\n    if (x == -1) {\n      int mx_idx = ds.get_max();\n\
     \      cout << vals[mx_idx] << '\\n';\n      ds.extract(mx_idx);\n    } else {\n\
-    \      ds.insert(lower_bound(all(vals), x) - begin(vals));\n    }\n  }\n}"
+    \      ds.insert(vals.get(x));\n    }\n  }\n}"
   dependsOn:
   - datastructures/w_ary_tree.hpp
+  - misc/compress.hpp
   isVerificationFile: true
   path: verify/aizu/alds1/priority_queue.test.cpp
   requiredBy: []
-  timestamp: '2024-09-04 17:54:50-04:00'
+  timestamp: '2024-09-05 13:13:20-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/aizu/alds1/priority_queue.test.cpp
