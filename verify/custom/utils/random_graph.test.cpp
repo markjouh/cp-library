@@ -11,8 +11,8 @@ const int TESTS = 100;
 
 int main() {
   rep(i, TESTS) {
-    const int n = rnd<>(1e2, 1e4), root = rnd<>(0, n - 1);
-    auto g = rnd_graph(n, n - 1 + rnd<>(1, n));
+    const int n = randint(1e2, 1e4), root = randint(n);
+    auto g = gen_graph(n, n - 1 + randint(n));
 
     vec<int> dist(n, inf<>);
     queue<int> q;
@@ -33,8 +33,8 @@ int main() {
   }
 
   rep(i, TESTS) {
-    const int n = rnd<>(1e2, 1e4), root = rnd<>(0, n - 1);
-    auto g = rnd_wgraph(n, n - 1 + rnd<>(1, n));
+    const int n = randint(1e2, 1e4), root = randint(n);
+    auto g = gen_w_graph(n, n - 1 + randint(n));
     
     auto from = dijkstras<ll>(g, root).se;
     from[root] = root;

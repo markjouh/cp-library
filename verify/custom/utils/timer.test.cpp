@@ -13,7 +13,7 @@ const int TESTS = 10;
 
 int main() {
   rep(i, TESTS) {
-    const int rand_ms = rnd<>(50, 500);
+    const int rand_ms = randint(50, 500);
     set_timer();
     usleep(rand_ms * 1000);
     assert(abs(elapsed() - rand_ms) < 10);

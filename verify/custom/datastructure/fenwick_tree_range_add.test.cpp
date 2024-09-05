@@ -7,11 +7,11 @@
 const int N = 1e5, QUERIES = 1e5;
 
 int main() {
-  vec<ll> a = rnd_vec<ll>(N, 0, inf<ll>);
+  vec<ll> a = randvec<ll>(N);
   RangeAddFT<ll> ft(a);
   rep(i, QUERIES) {
-    if (rnd<>(0, 1)) {
-      int l = rnd<>(0, N - 1), r = rnd<>(0, N - 1);
+    if (randbool()) {
+      int l = randint(N), r = randint(N);
       if (l > r) {
         swap(l, r);
       }
@@ -21,7 +21,7 @@ int main() {
       }
       ft.add(l, r, v);
     } else {
-      int p = rnd<>(0, N - 1);
+      int p = randint(N);
       assert(a[p] == ft.get(p));
     }
   }
