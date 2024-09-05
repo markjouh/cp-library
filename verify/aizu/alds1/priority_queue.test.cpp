@@ -2,12 +2,13 @@
 
 #include "../../boilerplate.hpp"
 #include "../../../datastructures/w_ary_tree.hpp"
+#include "../../../misc/compress.hpp"
 
 int main() {
   string s;
   int x;
   vector<int> queries;
-  vector<int> vals;
+  Compress<int> vals;
   while (cin >> s) {
     if (s == "end") {
       break;
@@ -15,13 +16,12 @@ int main() {
     if (s == "insert") {
       cin >> x;
       queries.push_back(x);
-      vals.push_back(x);
+      vals.insert(x);
     } else {
       queries.push_back(-1);
     }
   }
-  sort(all(vals));
-  vals.resize(unique(all(vals)) - begin(vals));
+  vals.init();
   WAryTree<2000000> ds;
   for (auto x : queries) {
     if (x == -1) {
@@ -29,7 +29,7 @@ int main() {
       cout << vals[mx_idx] << '\n';
       ds.extract(mx_idx);
     } else {
-      ds.insert(lower_bound(all(vals), x) - begin(vals));
+      ds.insert(vals.get(x));
     }
   }
 }
