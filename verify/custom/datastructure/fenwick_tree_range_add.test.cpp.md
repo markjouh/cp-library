@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: datastructures/fentree/fenwick_tree_range_add.hpp
     title: datastructures/fentree/fenwick_tree_range_add.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: utils/random.hpp
     title: utils/random.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: utils/timer.hpp
     title: utils/timer.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/aplusb
@@ -107,7 +107,7 @@ data:
     \    add(r, v);\n    add(l - 1, T(0) - v);\n  }\n\n  T get(int p) {\n    T res\
     \ = 0;\n    for (p++; p <= n; p += p & -p) {\n      res += ft[p];\n    }\n   \
     \ return res;\n  }\n};\n#line 5 \"verify/custom/datastructure/fenwick_tree_range_add.test.cpp\"\
-    \n\nconst int N = 1e5, Q = 1e5;\n\nint main() {\n  vec<ll> a = randvec<ll>(N);\n\
+    \n\nconst int N = 1e5, Q = 1e5;\n\nint main() {\n  vector<ll> a = randvec<ll>(N);\n\
     \  RangeAddFT<ll> ft(a);\n  for (int i = 0; i < Q; i++) {\n    if (randbool())\
     \ {\n      int l = randint(N), r = randint(N);\n      if (l > r) {\n        swap(l,\
     \ r);\n      }\n      const int v = rnd<>(1, inf<>);\n      for (int j = l; j\
@@ -117,7 +117,7 @@ data:
     \ << a_ + b_ << '\\n';\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/aplusb\"\n\n#include \"\
     ../../boilerplate.hpp\"\n#include \"../../../datastructures/fentree/fenwick_tree_range_add.hpp\"\
-    \n\nconst int N = 1e5, Q = 1e5;\n\nint main() {\n  vec<ll> a = randvec<ll>(N);\n\
+    \n\nconst int N = 1e5, Q = 1e5;\n\nint main() {\n  vector<ll> a = randvec<ll>(N);\n\
     \  RangeAddFT<ll> ft(a);\n  for (int i = 0; i < Q; i++) {\n    if (randbool())\
     \ {\n      int l = randint(N), r = randint(N);\n      if (l > r) {\n        swap(l,\
     \ r);\n      }\n      const int v = rnd<>(1, inf<>);\n      for (int j = l; j\
@@ -132,8 +132,8 @@ data:
   isVerificationFile: true
   path: verify/custom/datastructure/fenwick_tree_range_add.test.cpp
   requiredBy: []
-  timestamp: '2024-09-05 22:57:47-04:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2024-09-05 23:15:12-04:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/custom/datastructure/fenwick_tree_range_add.test.cpp
 layout: document

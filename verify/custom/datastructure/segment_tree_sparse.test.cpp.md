@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: datastructures/segtree/segment_tree_sparse.hpp
     title: datastructures/segtree/segment_tree_sparse.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: utils/random.hpp
     title: utils/random.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: utils/timer.hpp
     title: utils/timer.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/aplusb
@@ -108,18 +108,18 @@ data:
     \      }\n      idx++;\n    }\n    st[vis_buf[idx--]] = v;\n    while (idx >=\
     \ 0) {\n      pull(vis_buf[idx--]);\n    }\n  }\n\n  T query(int l, int r) {\n\
     \    return query(l, r + 1, 0, 0, tree_sz);\n  }\n\nprivate:\n  int log, tree_sz;\n\
-    \  vector<T> st;\n  vector<pii> ch;\n\n  int vis_buf[32];\n  int idx;\n\n  int\
-    \ get_l(int x) {\n    if (ch[x].fi == -1) {\n      ch[x].fi = sz(st);\n      st.pb(id());\n\
-    \      ch.eb(-1, -1);\n    }\n    return ch[x].fi;\n  }\n\n  int get_r(int x)\
-    \ {\n    if (ch[x].se == -1) {\n      ch[x].se = sz(st);\n      st.pb(id());\n\
-    \      ch.eb(-1, -1);\n    }\n    return ch[x].se;\n  }\n\n  void pull(int x)\
-    \ {\n    if (ch[x].fi == -1) {\n      st[x] = st[ch[x].se];\n    } else if (ch[x].se\
-    \ != -1) {\n      st[x] = op(st[ch[x].fi], st[ch[x].se]);\n    } else {\n    \
-    \  st[x] = st[ch[x].fi];\n    }\n  }\n\n  T query(int l, int r, int x, int tl,\
-    \ int tr) {\n    if (x == -1 || tl >= r || tr <= l) {\n      return id();\n  \
-    \  }\n    if (tl >= l && tr <= r) {\n      return st[x];\n    }\n    int mid =\
-    \ (tl + tr) >> 1;\n    return op(query(l, r, ch[x].fi, tl, mid), query(l, r, ch[x].se,\
-    \ mid, tr));\n  }\n};\n#line 5 \"verify/custom/datastructure/segment_tree_sparse.test.cpp\"\
+    \  vector<T> st;\n  vector<pair<int, int>> ch;\n\n  int vis_buf[32];\n  int idx;\n\
+    \n  int get_l(int x) {\n    if (ch[x].fi == -1) {\n      ch[x].fi = sz(st);\n\
+    \      st.pb(id());\n      ch.eb(-1, -1);\n    }\n    return ch[x].fi;\n  }\n\n\
+    \  int get_r(int x) {\n    if (ch[x].se == -1) {\n      ch[x].se = sz(st);\n \
+    \     st.pb(id());\n      ch.eb(-1, -1);\n    }\n    return ch[x].se;\n  }\n\n\
+    \  void pull(int x) {\n    if (ch[x].fi == -1) {\n      st[x] = st[ch[x].se];\n\
+    \    } else if (ch[x].se != -1) {\n      st[x] = op(st[ch[x].fi], st[ch[x].se]);\n\
+    \    } else {\n      st[x] = st[ch[x].fi];\n    }\n  }\n\n  T query(int l, int\
+    \ r, int x, int tl, int tr) {\n    if (x == -1 || tl >= r || tr <= l) {\n    \
+    \  return id();\n    }\n    if (tl >= l && tr <= r) {\n      return st[x];\n \
+    \   }\n    int mid = (tl + tr) >> 1;\n    return op(query(l, r, ch[x].fi, tl,\
+    \ mid), query(l, r, ch[x].se, mid, tr));\n  }\n};\n#line 5 \"verify/custom/datastructure/segment_tree_sparse.test.cpp\"\
     \n\nconst int N = 1e9, Q = 5e4;\n\nll op(ll x, ll y) {\n  return x + y;\n}\n\n\
     ll id() {\n  return 0;\n}\n\nint main() {\n  vector<pair<int, int>> a;\n  SparseSegmentTree<ll,\
     \ op, id> st(N);\n\n  for (int i = 0; i < Q; i++) {\n    if (randbool()) {\n \
@@ -153,8 +153,8 @@ data:
   isVerificationFile: true
   path: verify/custom/datastructure/segment_tree_sparse.test.cpp
   requiredBy: []
-  timestamp: '2024-09-05 22:57:47-04:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2024-09-05 23:15:12-04:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/custom/datastructure/segment_tree_sparse.test.cpp
 layout: document

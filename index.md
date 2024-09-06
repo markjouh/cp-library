@@ -9,7 +9,7 @@ data:
     - icon: ':warning:'
       path: datastructures/fentree/fenwick_tree_2d.hpp
       title: datastructures/fentree/fenwick_tree_2d.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: datastructures/fentree/fenwick_tree_range_add.hpp
       title: datastructures/fentree/fenwick_tree_range_add.hpp
     - icon: ':heavy_check_mark:'
@@ -31,7 +31,7 @@ data:
     - icon: ':warning:'
       path: datastructures/segtree/segment_tree_lazy.hpp
       title: datastructures/segtree/segment_tree_lazy.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: datastructures/segtree/segment_tree_sparse.hpp
       title: datastructures/segtree/segment_tree_sparse.hpp
   - name: datastructures/static
@@ -55,7 +55,7 @@ data:
       title: datastructures/w_ary_tree.hpp
   - name: graphs
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: graphs/dijkstras.hpp
       title: graphs/dijkstras.hpp
     - icon: ':warning:'
@@ -83,6 +83,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: misc/compress.hpp
       title: misc/compress.hpp
+    - icon: ':warning:'
+      path: misc/template.cpp
+      title: misc/template.cpp
   - name: numeric
     pages:
     - icon: ':heavy_check_mark:'
@@ -118,16 +121,16 @@ data:
       title: utils/bits/stdc++.h
   - name: utils
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: utils/debug.hpp
       title: utils/debug.hpp
     - icon: ':heavy_check_mark:'
       path: utils/encode.hpp
       title: utils/encode.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: utils/random.hpp
       title: utils/random.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: utils/timer.hpp
       title: utils/timer.hpp
   verificationCategories:
@@ -157,10 +160,10 @@ data:
       title: verify/aizu/ntl/power.test.cpp
   - name: verify/custom/datastructure
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/custom/datastructure/fenwick_tree_range_add.test.cpp
       title: verify/custom/datastructure/fenwick_tree_range_add.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/custom/datastructure/segment_tree_sparse.test.cpp
       title: verify/custom/datastructure/segment_tree_sparse.test.cpp
   - name: verify/custom/numeric
@@ -170,13 +173,13 @@ data:
       title: verify/custom/numeric/binary_search_reals.test.cpp
   - name: verify/custom/utils
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/custom/utils/debug.test.cpp
       title: verify/custom/utils/debug.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/custom/utils/encode.test.cpp
       title: verify/custom/utils/encode.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/custom/utils/random_graph.test.cpp
       title: verify/custom/utils/random_graph.test.cpp
     - icon: ':heavy_check_mark:'
@@ -210,7 +213,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/library_checker/graph/scc.test.cpp
       title: verify/library_checker/graph/scc.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/library_checker/graph/shortest_path.test.cpp
       title: verify/library_checker/graph/shortest_path.test.cpp
   - name: verify/library_checker/number_theory

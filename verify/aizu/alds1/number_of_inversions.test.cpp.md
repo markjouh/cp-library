@@ -4,10 +4,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: datastructures/pbds/order_statistic_tree.hpp
     title: datastructures/pbds/order_statistic_tree.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: utils/random.hpp
     title: utils/random.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: utils/timer.hpp
     title: utils/timer.hpp
   _extendedRequiredBy: []

@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: graphs/dijkstras.hpp
     title: graphs/dijkstras.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: utils/random.hpp
     title: utils/random.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: utils/timer.hpp
     title: utils/timer.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/aplusb
@@ -109,9 +109,9 @@ data:
     \ measure the quality of the generated graphs,\n// just a sanity check.\n\nconst\
     \ int TESTS = 100;\n\nint main() {\n  for (int i = 0; i < TESTS; i++) {\n    const\
     \ int n = randint(1e2, 1e4), root = randint(n);\n    auto g = gen_graph(n, n -\
-    \ 1 + randint(n));\n\n    vec<int> dist(n, inf<>);\n    queue<int> q;\n    dist[root]\
-    \ = 0;\n    q.push(root);\n\n    while (sz(q)) {\n      int u = q.front();\n \
-    \     q.pop();\n      for (int v : g[u]) {\n        if (dist[v] == inf<>) {\n\
+    \ 1 + randint(n));\n\n    vector<int> dist(n, inf<>);\n    queue<int> q;\n   \
+    \ dist[root] = 0;\n    q.push(root);\n\n    while (sz(q)) {\n      int u = q.front();\n\
+    \      q.pop();\n      for (int v : g[u]) {\n        if (dist[v] == inf<>) {\n\
     \          dist[v] = dist[u] + 1;\n          q.push(v);\n        }\n      }\n\
     \    }\n    assert(find(all(dist), inf<>) == end(dist));\n  }\n\n  for (int i\
     \ = 0; i < TESTS; i++) {\n    const int n = randint(1e2, 1e4), root = randint(n);\n\
@@ -124,9 +124,9 @@ data:
     \ measure the quality of the generated graphs,\n// just a sanity check.\n\nconst\
     \ int TESTS = 100;\n\nint main() {\n  for (int i = 0; i < TESTS; i++) {\n    const\
     \ int n = randint(1e2, 1e4), root = randint(n);\n    auto g = gen_graph(n, n -\
-    \ 1 + randint(n));\n\n    vec<int> dist(n, inf<>);\n    queue<int> q;\n    dist[root]\
-    \ = 0;\n    q.push(root);\n\n    while (sz(q)) {\n      int u = q.front();\n \
-    \     q.pop();\n      for (int v : g[u]) {\n        if (dist[v] == inf<>) {\n\
+    \ 1 + randint(n));\n\n    vector<int> dist(n, inf<>);\n    queue<int> q;\n   \
+    \ dist[root] = 0;\n    q.push(root);\n\n    while (sz(q)) {\n      int u = q.front();\n\
+    \      q.pop();\n      for (int v : g[u]) {\n        if (dist[v] == inf<>) {\n\
     \          dist[v] = dist[u] + 1;\n          q.push(v);\n        }\n      }\n\
     \    }\n    assert(find(all(dist), inf<>) == end(dist));\n  }\n\n  for (int i\
     \ = 0; i < TESTS; i++) {\n    const int n = randint(1e2, 1e4), root = randint(n);\n\
@@ -141,8 +141,8 @@ data:
   isVerificationFile: true
   path: verify/custom/utils/random_graph.test.cpp
   requiredBy: []
-  timestamp: '2024-09-05 22:57:47-04:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2024-09-05 23:15:12-04:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/custom/utils/random_graph.test.cpp
 layout: document

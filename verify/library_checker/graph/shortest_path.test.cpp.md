@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: graphs/dijkstras.hpp
     title: graphs/dijkstras.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: utils/random.hpp
     title: utils/random.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: utils/timer.hpp
     title: utils/timer.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/shortest_path
@@ -106,24 +106,25 @@ data:
     \ [v, w] : g[u]) {\n      if (ckmin(dist[v], d + w)) {\n        from[v] = u;\n\
     \        pq.emplace(dist[v], v);\n      }\n    }\n  }\n  return make_pair(dist,\
     \ from);\n}\n#line 5 \"verify/library_checker/graph/shortest_path.test.cpp\"\n\
-    \nint main() {\n  int n, m, s, t;\n  cin >> n >> m >> s >> t;\n  vector<vector<pii>>\
-    \ g(n);\n  for (int i = 0; i < m; i++) {\n    int u, v, w;\n    cin >> u >> v\
-    \ >> w;\n    g[u].eb(v, w);\n  }\n  auto [dist, from] = dijkstras<ll>(g, s);\n\
-    \  if (dist[t] != numeric_limits<ll>::max()) {\n    cout << dist[t] << ' ';\n\
-    \    vector<pii> path;\n    int p = t;\n    while (p != s) {\n      path.eb(from[p],\
-    \ p);\n      p = from[p];\n    }\n    reverse(all(path));\n    cout << sz(path)\
-    \ << '\\n';\n    for (auto [u, v] : path) {\n      cout << u << ' ' << v << '\\\
-    n';\n    }\n  } else {\n    cout << -1 << '\\n';\n  }\n}\n"
+    \nint main() {\n  int n, m, s, t;\n  cin >> n >> m >> s >> t;\n  vector<vector<pair<int,\
+    \ int>>> g(n);\n  for (int i = 0; i < m; i++) {\n    int u, v, w;\n    cin >>\
+    \ u >> v >> w;\n    g[u].eb(v, w);\n  }\n  auto [dist, from] = dijkstras<ll>(g,\
+    \ s);\n  if (dist[t] != numeric_limits<ll>::max()) {\n    cout << dist[t] << '\
+    \ ';\n    vector<pair<int, int>> path;\n    int p = t;\n    while (p != s) {\n\
+    \      path.eb(from[p], p);\n      p = from[p];\n    }\n    reverse(all(path));\n\
+    \    cout << sz(path) << '\\n';\n    for (auto [u, v] : path) {\n      cout <<\
+    \ u << ' ' << v << '\\n';\n    }\n  } else {\n    cout << -1 << '\\n';\n  }\n\
+    }\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/shortest_path\"\n\n#include\
     \ \"../../boilerplate.hpp\"\n#include \"../../../graphs/dijkstras.hpp\"\n\nint\
-    \ main() {\n  int n, m, s, t;\n  cin >> n >> m >> s >> t;\n  vector<vector<pii>>\
-    \ g(n);\n  for (int i = 0; i < m; i++) {\n    int u, v, w;\n    cin >> u >> v\
-    \ >> w;\n    g[u].eb(v, w);\n  }\n  auto [dist, from] = dijkstras<ll>(g, s);\n\
-    \  if (dist[t] != numeric_limits<ll>::max()) {\n    cout << dist[t] << ' ';\n\
-    \    vector<pii> path;\n    int p = t;\n    while (p != s) {\n      path.eb(from[p],\
-    \ p);\n      p = from[p];\n    }\n    reverse(all(path));\n    cout << sz(path)\
-    \ << '\\n';\n    for (auto [u, v] : path) {\n      cout << u << ' ' << v << '\\\
-    n';\n    }\n  } else {\n    cout << -1 << '\\n';\n  }\n}"
+    \ main() {\n  int n, m, s, t;\n  cin >> n >> m >> s >> t;\n  vector<vector<pair<int,\
+    \ int>>> g(n);\n  for (int i = 0; i < m; i++) {\n    int u, v, w;\n    cin >>\
+    \ u >> v >> w;\n    g[u].eb(v, w);\n  }\n  auto [dist, from] = dijkstras<ll>(g,\
+    \ s);\n  if (dist[t] != numeric_limits<ll>::max()) {\n    cout << dist[t] << '\
+    \ ';\n    vector<pair<int, int>> path;\n    int p = t;\n    while (p != s) {\n\
+    \      path.eb(from[p], p);\n      p = from[p];\n    }\n    reverse(all(path));\n\
+    \    cout << sz(path) << '\\n';\n    for (auto [u, v] : path) {\n      cout <<\
+    \ u << ' ' << v << '\\n';\n    }\n  } else {\n    cout << -1 << '\\n';\n  }\n}"
   dependsOn:
   - utils/random.hpp
   - utils/timer.hpp
@@ -131,8 +132,8 @@ data:
   isVerificationFile: true
   path: verify/library_checker/graph/shortest_path.test.cpp
   requiredBy: []
-  timestamp: '2024-09-05 22:57:47-04:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2024-09-05 23:15:12-04:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/library_checker/graph/shortest_path.test.cpp
 layout: document

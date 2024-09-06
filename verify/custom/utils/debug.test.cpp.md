@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: utils/debug.hpp
     title: utils/debug.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: utils/random.hpp
     title: utils/random.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: utils/timer.hpp
     title: utils/timer.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/aplusb
@@ -118,14 +118,14 @@ data:
     }\n}\n\n#define dbg(...) debug_internal::debug(#__VA_ARGS__, __VA_ARGS__)\n#line\
     \ 5 \"verify/custom/utils/debug.test.cpp\"\n\n// Just some random stuff, make\
     \ sure\n// the output looks right\n\nint main() {\n  const int n = randint(100);\n\
-    \  vec<int> p = randvec<int>(n);\n  dbg(p);\n\n  map<int, vector<int>> mp;\n \
-    \ for (int i = 0; i < 100; i++) {\n    mp[randint()] = randvec<int>(100);\n  }\n\
-    \  dbg(mp);\n\n  array<double, 100> arr = randarr<double, 100>();\n  dbg(arr);\n\
+    \  vector<int> p = randvec<int>(n);\n  dbg(p);\n\n  map<int, vector<int>> mp;\n\
+    \  for (int i = 0; i < 100; i++) {\n    mp[randint()] = randvec<int>(100);\n \
+    \ }\n  dbg(mp);\n\n  array<double, 100> arr = randarr<double, 100>();\n  dbg(arr);\n\
     \n  int a, b;\n  cin >> a >> b;\n  cout << a + b << '\\n';\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/aplusb\"\n\n#include \"\
     ../../boilerplate.hpp\"\n#include \"../../../utils/debug.hpp\"\n\n// Just some\
     \ random stuff, make sure\n// the output looks right\n\nint main() {\n  const\
-    \ int n = randint(100);\n  vec<int> p = randvec<int>(n);\n  dbg(p);\n\n  map<int,\
+    \ int n = randint(100);\n  vector<int> p = randvec<int>(n);\n  dbg(p);\n\n  map<int,\
     \ vector<int>> mp;\n  for (int i = 0; i < 100; i++) {\n    mp[randint()] = randvec<int>(100);\n\
     \  }\n  dbg(mp);\n\n  array<double, 100> arr = randarr<double, 100>();\n  dbg(arr);\n\
     \n  int a, b;\n  cin >> a >> b;\n  cout << a + b << '\\n';\n}"
@@ -136,8 +136,8 @@ data:
   isVerificationFile: true
   path: verify/custom/utils/debug.test.cpp
   requiredBy: []
-  timestamp: '2024-09-05 22:57:47-04:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2024-09-05 23:15:12-04:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/custom/utils/debug.test.cpp
 layout: document
