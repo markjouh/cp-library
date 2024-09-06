@@ -31,6 +31,9 @@ data:
     - icon: ':warning:'
       path: datastructures/segtree/segment_tree_lazy.hpp
       title: datastructures/segtree/segment_tree_lazy.hpp
+    - icon: ':warning:'
+      path: datastructures/segtree/segment_tree_set.hpp
+      title: datastructures/segtree/segment_tree_set.hpp
     - icon: ':heavy_check_mark:'
       path: datastructures/segtree/segment_tree_sparse.hpp
       title: datastructures/segtree/segment_tree_sparse.hpp
@@ -83,6 +86,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: misc/compress.hpp
       title: misc/compress.hpp
+    - icon: ':warning:'
+      path: misc/monotonic_stack.hpp
+      title: misc/monotonic_stack.hpp
     - icon: ':warning:'
       path: misc/template.cpp
       title: misc/template.cpp
