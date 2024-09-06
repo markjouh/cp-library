@@ -3,19 +3,19 @@
 #include "../../boilerplate.hpp"
 #include "../../../datastructures/fentree/fenwick_tree_range_add.hpp"
 
-const int N = 1e5, QUERIES = 1e5;
+const int N = 1e5, Q = 1e5;
 
 int main() {
   vec<ll> a = randvec<ll>(N);
   RangeAddFT<ll> ft(a);
-  rep(i, QUERIES) {
+  for (int i = 0; i < Q; i++) {
     if (randbool()) {
       int l = randint(N), r = randint(N);
       if (l > r) {
         swap(l, r);
       }
       const int v = rnd<>(1, inf<>);
-      rep(j, l, r + 1) {
+      for (int j = l; j <= r; j++) {
         a[j] += v;
       }
       ft.add(l, r, v);

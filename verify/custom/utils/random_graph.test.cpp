@@ -9,7 +9,7 @@
 const int TESTS = 100;
 
 int main() {
-  rep(i, TESTS) {
+  for (int i = 0; i < TESTS; i++) {
     const int n = randint(1e2, 1e4), root = randint(n);
     auto g = gen_graph(n, n - 1 + randint(n));
 
@@ -31,7 +31,7 @@ int main() {
     assert(find(all(dist), inf<>) == end(dist));
   }
 
-  rep(i, TESTS) {
+  for (int i = 0; i < TESTS; i++) {
     const int n = randint(1e2, 1e4), root = randint(n);
     auto g = gen_w_graph(n, n - 1 + randint(n));
     

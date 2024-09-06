@@ -6,9 +6,9 @@
 const int TESTS = 1000;
 
 int main() {
-  rep(i, TESTS) {
+  for (int i = 0; i < TESTS; i++) {
     array<int, 2500> arr;
-    rep(j, 2500) {
+    for (int j = 0; j < 2500; j++) {
       arr[j] = randint(inf<int>);
     }
     auto enc = encode<decltype(arr), 5>(arr);
@@ -16,10 +16,10 @@ int main() {
     assert(arr == dec);
   }
 
-  rep(i, TESTS) {
+  for (int i = 0; i < TESTS; i++) {
     array<array<int, 50>, 50> arr;
-    rep(j, 50) {
-      rep(k, 50) {
+    for (int j = 0; j < 50; j++) {
+      for (int k = 0; k < 50; k++) {
         arr[j][k] = randint(inf<int>);
       }
     }

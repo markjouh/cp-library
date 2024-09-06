@@ -3,7 +3,7 @@
 #include "../../boilerplate.hpp"
 #include "../../../datastructures/segtree/segment_tree_sparse.hpp"
 
-const int N = 1e9, QUERIES = 5e4;
+const int N = 1e9, Q = 5e4;
 
 ll op(ll x, ll y) {
   return x + y;
@@ -14,10 +14,10 @@ ll id() {
 }
 
 int main() {
-  vector<pii> a;
+  vector<pair<int, int>> a;
   SparseSegmentTree<ll, op, id> st(N);
 
-  rep(i, QUERIES) {
+  for (int i = 0; i < Q; i++) {
     if (randbool()) {
       const int p = randint(N), v = randint(inf<int>);
       bool flag = false;

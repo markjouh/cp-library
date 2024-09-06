@@ -1,37 +1,9 @@
-#include <algorithm>
-#include <array>
-#include <bitset>
-#include <cassert>
-#include <chrono>
-#include <climits>
-#include <cmath>
-#include <cstdint>
-#include <cstring>
-#include <functional>
-#include <iomanip>
-#include <iostream>
-#include <map>
-#include <numeric>
-#include <queue>
-#include <random>
-#include <set>
-#include <vector>
+#include <bits/stdc++.h>
 
 using namespace std;
 
-#include "../utils/builtins.hpp"
 #include "../utils/random.hpp"
 #include "../utils/timer.hpp"
-
-#define arg4(a, b, c, d, ...) d
- 
-#define rep3(i, l, r) for (int i = int(l); i < int(r); i++)
-#define rep2(i, n) rep3(i, 0, n)
-#define rep(...) arg4(__VA_ARGS__, rep3, rep2) (__VA_ARGS__)
- 
-#define per3(i, l, r) for (int i = int(r) - 1; i >= int(l); i--)
-#define per2(i, n) per3(i, 0, n)
-#define per(...) arg4(__VA_ARGS__, per3, per2) (__VA_ARGS__)
 
 #define all(x) begin(x), end(x)
 #define sz(x) int(size(x))
@@ -40,12 +12,7 @@ using namespace std;
 #define fi first
 #define se second
 
-template <class T>
-using vec = vector<T>;
-
 using ll = long long;
-using pii = pair<int, int>;
-using pll = pair<ll, ll>;
 
 template <class T>
 bool ckmin(T &a, const T &b) {

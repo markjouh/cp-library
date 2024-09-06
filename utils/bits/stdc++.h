@@ -145,3 +145,8 @@
 
 #if __cplusplus > 202002L
 #endif
+
+// My builtin ports for clang
+#ifdef LOCAL
+#include "builtins.hpp"
+#endif

@@ -10,7 +10,7 @@
 const int TESTS = 10;
 
 int main() {
-  rep(i, TESTS) {
+  for (int i = 0; i < TESTS; i++) {
     const int rand_ms = randint(50, 500);
     set_timer();
     usleep(rand_ms * 1000);
