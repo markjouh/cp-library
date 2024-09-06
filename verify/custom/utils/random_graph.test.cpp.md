@@ -1,23 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: graphs/dijkstras.hpp
     title: graphs/dijkstras.hpp
-  - icon: ':heavy_check_mark:'
-    path: utils/builtins.hpp
-    title: utils/builtins.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: utils/random.hpp
     title: utils/random.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: utils/timer.hpp
     title: utils/timer.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/aplusb
@@ -25,19 +22,8 @@ data:
     - https://judge.yosupo.jp/problem/aplusb
   bundledCode: "#line 1 \"verify/custom/utils/random_graph.test.cpp\"\n#define PROBLEM\
     \ \"https://judge.yosupo.jp/problem/aplusb\"\n\n#line 1 \"verify/boilerplate.hpp\"\
-    \n#include <algorithm>\n#include <array>\n#include <bitset>\n#include <cassert>\n\
-    #include <chrono>\n#include <climits>\n#include <cmath>\n#include <cstdint>\n\
-    #include <cstring>\n#include <functional>\n#include <iomanip>\n#include <iostream>\n\
-    #include <map>\n#include <numeric>\n#include <queue>\n#include <random>\n#include\
-    \ <set>\n#include <vector>\n\nusing namespace std;\n\n#line 2 \"utils/builtins.hpp\"\
-    \n\n#if !__has_builtin(__lg)\ntemplate <class T>\nint __lg(T x) {\n  int res =\
-    \ 0;\n  while (x >>= 1) {\n    res++;\n  }\n  return res;\n}\n#endif\n\n#if !__has_builtin(__builtin_popcount)\n\
-    int __builtin_popcount(unsigned int x) {\n  int res = 0;\n  for (int i = 0; i\
-    \ < 32; i++) {\n    res += (x >> i) & 1;\n  }\n  return res;\n}\n#endif\n\n#if\
-    \ !__has_builtin(__builtin_popcountll)\nint __builtin_popcountll(unsigned long\
-    \ long x) {\n  int res = 0;\n  for (int i = 0; i < 64; i++) {\n    res += (x >>\
-    \ i) & 1;\n  }\n  return res;\n}\n}\n#endif\n#line 2 \"utils/random.hpp\"\n\n\
-    #include <type_traits>\n\nmt19937_64 rng_64(chrono::steady_clock::now().time_since_epoch().count());\n\
+    \n#include <bits/stdc++.h>\n\nusing namespace std;\n\n#line 2 \"utils/random.hpp\"\
+    \n\n#include <type_traits>\n\nmt19937_64 rng_64(chrono::steady_clock::now().time_since_epoch().count());\n\
     \n// ----------------------------------------------------\n// Section: Basic random\
     \ data generation\n// ----------------------------------------------------\n\n\
     template <class T>\nT rnd(T lo, T hi) {\n  static_assert(is_arithmetic_v<T>, \"\
@@ -103,65 +89,60 @@ data:
     utils/timer.hpp\"\n\nchrono::time_point<chrono::high_resolution_clock> timer;\n\
     \nvoid set_timer() {\n  timer = std::chrono::high_resolution_clock::now();\n}\n\
     \nlong long elapsed() {\n  return (chrono::duration_cast<chrono::milliseconds>(chrono::high_resolution_clock::now()\
-    \ - timer)).count();\n}\n#line 25 \"verify/boilerplate.hpp\"\n\n#define arg4(a,\
-    \ b, c, d, ...) d\n \n#define rep3(i, l, r) for (int i = int(l); i < int(r); i++)\n\
-    #define rep2(i, n) rep3(i, 0, n)\n#define rep(...) arg4(__VA_ARGS__, rep3, rep2)\
-    \ (__VA_ARGS__)\n \n#define per3(i, l, r) for (int i = int(r) - 1; i >= int(l);\
-    \ i--)\n#define per2(i, n) per3(i, 0, n)\n#define per(...) arg4(__VA_ARGS__, per3,\
-    \ per2) (__VA_ARGS__)\n\n#define all(x) begin(x), end(x)\n#define sz(x) int(size(x))\n\
-    #define pb push_back\n#define eb emplace_back\n#define fi first\n#define se second\n\
-    \ntemplate <class T>\nusing vec = vector<T>;\n\nusing ll = long long;\nusing pii\
-    \ = pair<int, int>;\nusing pll = pair<ll, ll>;\n\ntemplate <class T>\nbool ckmin(T\
-    \ &a, const T &b) {\n  return b < a ? a = b, 1 : 0;\n}\n\ntemplate <class T>\n\
-    bool ckmax(T &a, const T &b) {\n  return b > a ? a = b, 1 : 0;\n}\n\ntemplate\
-    \ <class T = int>\nstatic constexpr T inf = numeric_limits<T>::max() / 2;\n\n\
-    struct InitIO {\n  InitIO() {\n    cin.tie(0)->sync_with_stdio(0);\n    cin.exceptions(cin.failbit);\n\
-    \    cout << setprecision(10) << fixed;\n  }\n} init_io;\n#line 2 \"graphs/dijkstras.hpp\"\
-    \n\ntemplate <class T>\nauto dijkstras(const vector<vector<pair<int, int>>> &g,\
-    \ int start = 0) {\n  priority_queue<pair<T, int>, vector<pair<T, int>>, greater<pair<T,\
-    \ int>>> pq;\n\n  vector<T> dist(sz(g), numeric_limits<T>::max());\n  vector<int>\
-    \ from(sz(g), -1);\n  \n  dist[start] = 0;\n  pq.emplace(0, start);\n\n  while\
-    \ (sz(pq)) {\n    auto [d, u] = pq.top();\n    pq.pop();\n    if (d != dist[u])\
-    \ {\n      continue;\n    }\n    for (auto [v, w] : g[u]) {\n      if (ckmin(dist[v],\
-    \ d + w)) {\n        from[v] = u;\n        pq.emplace(dist[v], v);\n      }\n\
-    \    }\n  }\n  return make_pair(dist, from);\n}\n#line 5 \"verify/custom/utils/random_graph.test.cpp\"\
-    \n\n// Doesn't measure the quality of the generated graphs,\n// just a sanity\
-    \ check.\n\nconst int TESTS = 100;\n\nint main() {\n  rep(i, TESTS) {\n    const\
+    \ - timer)).count();\n}\n#line 7 \"verify/boilerplate.hpp\"\n\n#define all(x)\
+    \ begin(x), end(x)\n#define sz(x) int(size(x))\n#define pb push_back\n#define\
+    \ eb emplace_back\n#define fi first\n#define se second\n\nusing ll = long long;\n\
+    \ntemplate <class T>\nbool ckmin(T &a, const T &b) {\n  return b < a ? a = b,\
+    \ 1 : 0;\n}\n\ntemplate <class T>\nbool ckmax(T &a, const T &b) {\n  return b\
+    \ > a ? a = b, 1 : 0;\n}\n\ntemplate <class T = int>\nstatic constexpr T inf =\
+    \ numeric_limits<T>::max() / 2;\n\nstruct InitIO {\n  InitIO() {\n    cin.tie(0)->sync_with_stdio(0);\n\
+    \    cin.exceptions(cin.failbit);\n    cout << setprecision(10) << fixed;\n  }\n\
+    } init_io;\n#line 2 \"graphs/dijkstras.hpp\"\n\ntemplate <class T>\nauto dijkstras(const\
+    \ vector<vector<pair<int, int>>> &g, int start = 0) {\n  priority_queue<pair<T,\
+    \ int>, vector<pair<T, int>>, greater<pair<T, int>>> pq;\n\n  vector<T> dist(sz(g),\
+    \ numeric_limits<T>::max());\n  vector<int> from(sz(g), -1);\n  \n  dist[start]\
+    \ = 0;\n  pq.emplace(0, start);\n\n  while (sz(pq)) {\n    auto [d, u] = pq.top();\n\
+    \    pq.pop();\n    if (d != dist[u]) {\n      continue;\n    }\n    for (auto\
+    \ [v, w] : g[u]) {\n      if (ckmin(dist[v], d + w)) {\n        from[v] = u;\n\
+    \        pq.emplace(dist[v], v);\n      }\n    }\n  }\n  return make_pair(dist,\
+    \ from);\n}\n#line 5 \"verify/custom/utils/random_graph.test.cpp\"\n\n// Doesn't\
+    \ measure the quality of the generated graphs,\n// just a sanity check.\n\nconst\
+    \ int TESTS = 100;\n\nint main() {\n  for (int i = 0; i < TESTS; i++) {\n    const\
     \ int n = randint(1e2, 1e4), root = randint(n);\n    auto g = gen_graph(n, n -\
     \ 1 + randint(n));\n\n    vec<int> dist(n, inf<>);\n    queue<int> q;\n    dist[root]\
     \ = 0;\n    q.push(root);\n\n    while (sz(q)) {\n      int u = q.front();\n \
     \     q.pop();\n      for (int v : g[u]) {\n        if (dist[v] == inf<>) {\n\
     \          dist[v] = dist[u] + 1;\n          q.push(v);\n        }\n      }\n\
-    \    }\n    assert(find(all(dist), inf<>) == end(dist));\n  }\n\n  rep(i, TESTS)\
-    \ {\n    const int n = randint(1e2, 1e4), root = randint(n);\n    auto g = gen_w_graph(n,\
-    \ n - 1 + randint(n));\n    \n    auto from = dijkstras<ll>(g, root).se;\n   \
-    \ from[root] = root;\n    assert(find(all(from), -1) == end(from));\n  }\n\n \
-    \ cerr << \"Tests passed\" << endl;\n\n  int a, b;\n  cin >> a >> b;\n  cout <<\
-    \ a + b << '\\n';\n}\n"
+    \    }\n    assert(find(all(dist), inf<>) == end(dist));\n  }\n\n  for (int i\
+    \ = 0; i < TESTS; i++) {\n    const int n = randint(1e2, 1e4), root = randint(n);\n\
+    \    auto g = gen_w_graph(n, n - 1 + randint(n));\n    \n    auto from = dijkstras<ll>(g,\
+    \ root).se;\n    from[root] = root;\n    assert(find(all(from), -1) == end(from));\n\
+    \  }\n\n  cerr << \"Tests passed\" << endl;\n\n  int a, b;\n  cin >> a >> b;\n\
+    \  cout << a + b << '\\n';\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/aplusb\"\n\n#include \"\
     ../../boilerplate.hpp\"\n#include \"../../../graphs/dijkstras.hpp\"\n\n// Doesn't\
     \ measure the quality of the generated graphs,\n// just a sanity check.\n\nconst\
-    \ int TESTS = 100;\n\nint main() {\n  rep(i, TESTS) {\n    const int n = randint(1e2,\
-    \ 1e4), root = randint(n);\n    auto g = gen_graph(n, n - 1 + randint(n));\n\n\
-    \    vec<int> dist(n, inf<>);\n    queue<int> q;\n    dist[root] = 0;\n    q.push(root);\n\
-    \n    while (sz(q)) {\n      int u = q.front();\n      q.pop();\n      for (int\
-    \ v : g[u]) {\n        if (dist[v] == inf<>) {\n          dist[v] = dist[u] +\
-    \ 1;\n          q.push(v);\n        }\n      }\n    }\n    assert(find(all(dist),\
-    \ inf<>) == end(dist));\n  }\n\n  rep(i, TESTS) {\n    const int n = randint(1e2,\
-    \ 1e4), root = randint(n);\n    auto g = gen_w_graph(n, n - 1 + randint(n));\n\
-    \    \n    auto from = dijkstras<ll>(g, root).se;\n    from[root] = root;\n  \
-    \  assert(find(all(from), -1) == end(from));\n  }\n\n  cerr << \"Tests passed\"\
-    \ << endl;\n\n  int a, b;\n  cin >> a >> b;\n  cout << a + b << '\\n';\n}"
+    \ int TESTS = 100;\n\nint main() {\n  for (int i = 0; i < TESTS; i++) {\n    const\
+    \ int n = randint(1e2, 1e4), root = randint(n);\n    auto g = gen_graph(n, n -\
+    \ 1 + randint(n));\n\n    vec<int> dist(n, inf<>);\n    queue<int> q;\n    dist[root]\
+    \ = 0;\n    q.push(root);\n\n    while (sz(q)) {\n      int u = q.front();\n \
+    \     q.pop();\n      for (int v : g[u]) {\n        if (dist[v] == inf<>) {\n\
+    \          dist[v] = dist[u] + 1;\n          q.push(v);\n        }\n      }\n\
+    \    }\n    assert(find(all(dist), inf<>) == end(dist));\n  }\n\n  for (int i\
+    \ = 0; i < TESTS; i++) {\n    const int n = randint(1e2, 1e4), root = randint(n);\n\
+    \    auto g = gen_w_graph(n, n - 1 + randint(n));\n    \n    auto from = dijkstras<ll>(g,\
+    \ root).se;\n    from[root] = root;\n    assert(find(all(from), -1) == end(from));\n\
+    \  }\n\n  cerr << \"Tests passed\" << endl;\n\n  int a, b;\n  cin >> a >> b;\n\
+    \  cout << a + b << '\\n';\n}"
   dependsOn:
-  - utils/builtins.hpp
   - utils/random.hpp
   - utils/timer.hpp
   - graphs/dijkstras.hpp
   isVerificationFile: true
   path: verify/custom/utils/random_graph.test.cpp
   requiredBy: []
-  timestamp: '2024-09-05 17:05:59-04:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2024-09-05 22:57:47-04:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/custom/utils/random_graph.test.cpp
 layout: document

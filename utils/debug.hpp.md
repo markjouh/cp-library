@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/custom/utils/debug.test.cpp
     title: verify/custom/utils/debug.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 2 \"utils/debug.hpp\"\n\nnamespace debug_internal {\n\nusing\
@@ -54,7 +54,7 @@ data:
   path: utils/debug.hpp
   requiredBy: []
   timestamp: '2024-09-03 12:19:01-04:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - verify/custom/utils/debug.test.cpp
 documentation_of: utils/debug.hpp

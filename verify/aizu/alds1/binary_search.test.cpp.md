@@ -4,13 +4,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: numeric/binary_search.hpp
     title: numeric/binary_search.hpp
-  - icon: ':heavy_check_mark:'
-    path: utils/builtins.hpp
-    title: utils/builtins.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: utils/random.hpp
     title: utils/random.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: utils/timer.hpp
     title: utils/timer.hpp
   _extendedRequiredBy: []
@@ -25,29 +22,18 @@ data:
     - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_4_B
   bundledCode: "#line 1 \"verify/aizu/alds1/binary_search.test.cpp\"\n#define PROBLEM\
     \ \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_4_B\"\n\n\
-    #line 1 \"verify/boilerplate.hpp\"\n#include <algorithm>\n#include <array>\n#include\
-    \ <bitset>\n#include <cassert>\n#include <chrono>\n#include <climits>\n#include\
-    \ <cmath>\n#include <cstdint>\n#include <cstring>\n#include <functional>\n#include\
-    \ <iomanip>\n#include <iostream>\n#include <map>\n#include <numeric>\n#include\
-    \ <queue>\n#include <random>\n#include <set>\n#include <vector>\n\nusing namespace\
-    \ std;\n\n#line 2 \"utils/builtins.hpp\"\n\n#if !__has_builtin(__lg)\ntemplate\
-    \ <class T>\nint __lg(T x) {\n  int res = 0;\n  while (x >>= 1) {\n    res++;\n\
-    \  }\n  return res;\n}\n#endif\n\n#if !__has_builtin(__builtin_popcount)\nint\
-    \ __builtin_popcount(unsigned int x) {\n  int res = 0;\n  for (int i = 0; i <\
-    \ 32; i++) {\n    res += (x >> i) & 1;\n  }\n  return res;\n}\n#endif\n\n#if !__has_builtin(__builtin_popcountll)\n\
-    int __builtin_popcountll(unsigned long long x) {\n  int res = 0;\n  for (int i\
-    \ = 0; i < 64; i++) {\n    res += (x >> i) & 1;\n  }\n  return res;\n}\n}\n#endif\n\
-    #line 2 \"utils/random.hpp\"\n\n#include <type_traits>\n\nmt19937_64 rng_64(chrono::steady_clock::now().time_since_epoch().count());\n\
-    \n// ----------------------------------------------------\n// Section: Basic random\
-    \ data generation\n// ----------------------------------------------------\n\n\
-    template <class T>\nT rnd(T lo, T hi) {\n  static_assert(is_arithmetic_v<T>, \"\
-    Invalid type for rnd()\");\n  if constexpr (is_integral_v<T>) {\n    return uniform_int_distribution<T>(lo,\
-    \ hi)(rng_64);\n  } else {\n    return uniform_real_distribution<T>(lo, hi)(rng_64);\n\
-    \  }\n}\n\ntemplate <class T>\nconstexpr T def_val() {\n  if constexpr (is_floating_point_v<T>)\
-    \ {\n    return 1;\n  } else {\n    return numeric_limits<T>::max() / 2;\n  }\n\
-    }\n\n// ----------------------------------------------------\n//  => Bool wrapper\n\
-    // ----------------------------------------------------\n\nbool randbool() {\n\
-    \  return rnd<int>(0, 1);\n}\n\n// ----------------------------------------------------\n\
+    #line 1 \"verify/boilerplate.hpp\"\n#include <bits/stdc++.h>\n\nusing namespace\
+    \ std;\n\n#line 2 \"utils/random.hpp\"\n\n#include <type_traits>\n\nmt19937_64\
+    \ rng_64(chrono::steady_clock::now().time_since_epoch().count());\n\n// ----------------------------------------------------\n\
+    // Section: Basic random data generation\n// ----------------------------------------------------\n\
+    \ntemplate <class T>\nT rnd(T lo, T hi) {\n  static_assert(is_arithmetic_v<T>,\
+    \ \"Invalid type for rnd()\");\n  if constexpr (is_integral_v<T>) {\n    return\
+    \ uniform_int_distribution<T>(lo, hi)(rng_64);\n  } else {\n    return uniform_real_distribution<T>(lo,\
+    \ hi)(rng_64);\n  }\n}\n\ntemplate <class T>\nconstexpr T def_val() {\n  if constexpr\
+    \ (is_floating_point_v<T>) {\n    return 1;\n  } else {\n    return numeric_limits<T>::max()\
+    \ / 2;\n  }\n}\n\n// ----------------------------------------------------\n//\
+    \  => Bool wrapper\n// ----------------------------------------------------\n\n\
+    bool randbool() {\n  return rnd<int>(0, 1);\n}\n\n// ----------------------------------------------------\n\
     //  => Int wrappers\n// ----------------------------------------------------\n\
     \nint randint(int lo, int hi) {\n  return rnd<int>(lo, hi);\n}\n\nint randint(int\
     \ hi) {\n  return randint(0, hi - 1);\n}\n\nint randint() {\n  return randint(def_val<int>());\n\
@@ -103,31 +89,26 @@ data:
     utils/timer.hpp\"\n\nchrono::time_point<chrono::high_resolution_clock> timer;\n\
     \nvoid set_timer() {\n  timer = std::chrono::high_resolution_clock::now();\n}\n\
     \nlong long elapsed() {\n  return (chrono::duration_cast<chrono::milliseconds>(chrono::high_resolution_clock::now()\
-    \ - timer)).count();\n}\n#line 25 \"verify/boilerplate.hpp\"\n\n#define arg4(a,\
-    \ b, c, d, ...) d\n \n#define rep3(i, l, r) for (int i = int(l); i < int(r); i++)\n\
-    #define rep2(i, n) rep3(i, 0, n)\n#define rep(...) arg4(__VA_ARGS__, rep3, rep2)\
-    \ (__VA_ARGS__)\n \n#define per3(i, l, r) for (int i = int(r) - 1; i >= int(l);\
-    \ i--)\n#define per2(i, n) per3(i, 0, n)\n#define per(...) arg4(__VA_ARGS__, per3,\
-    \ per2) (__VA_ARGS__)\n\n#define all(x) begin(x), end(x)\n#define sz(x) int(size(x))\n\
-    #define pb push_back\n#define eb emplace_back\n#define fi first\n#define se second\n\
-    \ntemplate <class T>\nusing vec = vector<T>;\n\nusing ll = long long;\nusing pii\
-    \ = pair<int, int>;\nusing pll = pair<ll, ll>;\n\ntemplate <class T>\nbool ckmin(T\
-    \ &a, const T &b) {\n  return b < a ? a = b, 1 : 0;\n}\n\ntemplate <class T>\n\
-    bool ckmax(T &a, const T &b) {\n  return b > a ? a = b, 1 : 0;\n}\n\ntemplate\
-    \ <class T = int>\nstatic constexpr T inf = numeric_limits<T>::max() / 2;\n\n\
-    struct InitIO {\n  InitIO() {\n    cin.tie(0)->sync_with_stdio(0);\n    cin.exceptions(cin.failbit);\n\
-    \    cout << setprecision(10) << fixed;\n  }\n} init_io;\n#line 2 \"numeric/binary_search.hpp\"\
-    \n\ntemplate <class T, class U>\nT bsmin(T lo, T hi, U f) {\n  assert(lo <= hi);\n\
-    \  hi++;\n  for (T i = T(1) << __lg(hi - lo); i > 0; i >>= 1) {\n    hi -= (hi\
-    \ - i >= lo && f(hi - i)) * i;\n  }\n  return hi;\n}\n\ntemplate <class T, class\
-    \ U>\nT bsmax(T lo, T hi, U f) {\n  assert(lo <= hi);\n  lo--;\n  for (T i = T(1)\
-    \ << __lg(hi - lo); i > 0; i >>= 1) {\n    lo += (lo + i <= hi && f(lo + i)) *\
-    \ i;\n  }\n  return lo;\n}\n#line 5 \"verify/aizu/alds1/binary_search.test.cpp\"\
-    \n\nint main() {\n  int n;\n  cin >> n;\n  vector<int> a(n);\n  for (int i = 0;\
-    \ i < n; i++) {\n    cin >> a[i];\n  }\n  sort(all(a));\n  int q;\n  cin >> q;\n\
-    \  int ans = 0;\n  while (q--) {\n    int x;\n    cin >> x;\n    int idx = bsmin(0,\
-    \ n - 1, [&](int p) {\n      return a[p] >= x;\n    });\n    ans += idx != n &&\
-    \ a[idx] == x;\n  }\n  cout << ans << '\\n';\n}\n"
+    \ - timer)).count();\n}\n#line 7 \"verify/boilerplate.hpp\"\n\n#define all(x)\
+    \ begin(x), end(x)\n#define sz(x) int(size(x))\n#define pb push_back\n#define\
+    \ eb emplace_back\n#define fi first\n#define se second\n\nusing ll = long long;\n\
+    \ntemplate <class T>\nbool ckmin(T &a, const T &b) {\n  return b < a ? a = b,\
+    \ 1 : 0;\n}\n\ntemplate <class T>\nbool ckmax(T &a, const T &b) {\n  return b\
+    \ > a ? a = b, 1 : 0;\n}\n\ntemplate <class T = int>\nstatic constexpr T inf =\
+    \ numeric_limits<T>::max() / 2;\n\nstruct InitIO {\n  InitIO() {\n    cin.tie(0)->sync_with_stdio(0);\n\
+    \    cin.exceptions(cin.failbit);\n    cout << setprecision(10) << fixed;\n  }\n\
+    } init_io;\n#line 2 \"numeric/binary_search.hpp\"\n\ntemplate <class T, class\
+    \ U>\nT bsmin(T lo, T hi, U f) {\n  assert(lo <= hi);\n  hi++;\n  for (T i = T(1)\
+    \ << __lg(hi - lo); i > 0; i >>= 1) {\n    hi -= (hi - i >= lo && f(hi - i)) *\
+    \ i;\n  }\n  return hi;\n}\n\ntemplate <class T, class U>\nT bsmax(T lo, T hi,\
+    \ U f) {\n  assert(lo <= hi);\n  lo--;\n  for (T i = T(1) << __lg(hi - lo); i\
+    \ > 0; i >>= 1) {\n    lo += (lo + i <= hi && f(lo + i)) * i;\n  }\n  return lo;\n\
+    }\n#line 5 \"verify/aizu/alds1/binary_search.test.cpp\"\n\nint main() {\n  int\
+    \ n;\n  cin >> n;\n  vector<int> a(n);\n  for (int i = 0; i < n; i++) {\n    cin\
+    \ >> a[i];\n  }\n  sort(all(a));\n  int q;\n  cin >> q;\n  int ans = 0;\n  while\
+    \ (q--) {\n    int x;\n    cin >> x;\n    int idx = bsmin(0, n - 1, [&](int p)\
+    \ {\n      return a[p] >= x;\n    });\n    ans += idx != n && a[idx] == x;\n \
+    \ }\n  cout << ans << '\\n';\n}\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_4_B\"\
     \n\n#include \"../../boilerplate.hpp\"\n#include \"../../../numeric/binary_search.hpp\"\
     \n\nint main() {\n  int n;\n  cin >> n;\n  vector<int> a(n);\n  for (int i = 0;\
@@ -136,14 +117,13 @@ data:
     \ n - 1, [&](int p) {\n      return a[p] >= x;\n    });\n    ans += idx != n &&\
     \ a[idx] == x;\n  }\n  cout << ans << '\\n';\n}"
   dependsOn:
-  - utils/builtins.hpp
   - utils/random.hpp
   - utils/timer.hpp
   - numeric/binary_search.hpp
   isVerificationFile: true
   path: verify/aizu/alds1/binary_search.test.cpp
   requiredBy: []
-  timestamp: '2024-09-05 17:05:59-04:00'
+  timestamp: '2024-09-05 22:57:47-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/aizu/alds1/binary_search.test.cpp
