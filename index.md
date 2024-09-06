@@ -108,6 +108,11 @@ data:
     - icon: ':warning:'
       path: strings/string_trie.hpp
       title: strings/string_trie.hpp
+  - name: utils/bits
+    pages:
+    - icon: ':warning:'
+      path: utils/bits/stdc++.h
+      title: utils/bits/stdc++.h
   - name: utils
     pages:
     - icon: ':heavy_check_mark:'
