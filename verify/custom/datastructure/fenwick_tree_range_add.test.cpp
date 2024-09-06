@@ -6,7 +6,7 @@
 const int N = 1e5, Q = 1e5;
 
 int main() {
-  vec<ll> a = randvec<ll>(N);
+  vector<ll> a = randvec<ll>(N);
   RangeAddFT<ll> ft(a);
   for (int i = 0; i < Q; i++) {
     if (randbool()) {

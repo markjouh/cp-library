@@ -8,7 +8,7 @@
 
 int main() {
   const int n = randint(100);
-  vec<int> p = randvec<int>(n);
+  vector<int> p = randvec<int>(n);
   dbg(p);
 
   map<int, vector<int>> mp;

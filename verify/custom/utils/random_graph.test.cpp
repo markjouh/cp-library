@@ -13,7 +13,7 @@ int main() {
     const int n = randint(1e2, 1e4), root = randint(n);
     auto g = gen_graph(n, n - 1 + randint(n));
 
-    vec<int> dist(n, inf<>);
+    vector<int> dist(n, inf<>);
     queue<int> q;
     dist[root] = 0;
     q.push(root);

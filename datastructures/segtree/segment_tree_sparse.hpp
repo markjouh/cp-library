@@ -38,7 +38,7 @@ struct SparseSegmentTree {
 private:
   int log, tree_sz;
   vector<T> st;
-  vector<pii> ch;
+  vector<pair<int, int>> ch;
 
   int vis_buf[32];
   int idx;
