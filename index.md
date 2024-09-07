@@ -15,6 +15,17 @@ data:
     - icon: ':heavy_check_mark:'
       path: datastructures/fentree/fenwick_tree_range_add_range_sum.hpp
       title: datastructures/fentree/fenwick_tree_range_add_range_sum.hpp
+  - name: datastructures
+    pages:
+    - icon: ':warning:'
+      path: datastructures/min_xor_set.hpp
+      title: datastructures/min_xor_set.hpp
+    - icon: ':heavy_check_mark:'
+      path: datastructures/union_find.hpp
+      title: datastructures/union_find.hpp
+    - icon: ':heavy_check_mark:'
+      path: datastructures/w_ary_tree.hpp
+      title: datastructures/w_ary_tree.hpp
   - name: datastructures/pbds
     pages:
     - icon: ':heavy_check_mark:'
@@ -48,14 +59,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: datastructures/static/sparse_table.hpp
       title: datastructures/static/sparse_table.hpp
-  - name: datastructures
-    pages:
-    - icon: ':heavy_check_mark:'
-      path: datastructures/union_find.hpp
-      title: datastructures/union_find.hpp
-    - icon: ':heavy_check_mark:'
-      path: datastructures/w_ary_tree.hpp
-      title: datastructures/w_ary_tree.hpp
   - name: graphs
     pages:
     - icon: ':heavy_check_mark:'
