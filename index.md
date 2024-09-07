@@ -101,6 +101,9 @@ data:
       path: numeric/binary_search_reals.hpp
       title: numeric/binary_search_reals.hpp
     - icon: ':heavy_check_mark:'
+      path: numeric/binary_trie.hpp
+      title: numeric/binary_trie.hpp
+    - icon: ':heavy_check_mark:'
       path: numeric/mod_int.hpp
       title: numeric/mod_int.hpp
     - icon: ':heavy_check_mark:'
@@ -117,14 +120,6 @@ data:
     - icon: ':warning:'
       path: strings/string_trie.hpp
       title: strings/string_trie.hpp
-  - name: utils/bits
-    pages:
-    - icon: ':warning:'
-      path: utils/bits/builtins.hpp
-      title: utils/bits/builtins.hpp
-    - icon: ':warning:'
-      path: utils/bits/stdc++.h
-      title: utils/bits/stdc++.h
   - name: utils
     pages:
     - icon: ':heavy_check_mark:'
@@ -205,6 +200,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/library_checker/data_structure/range_kth_smallest.test.cpp
       title: verify/library_checker/data_structure/range_kth_smallest.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/library_checker/data_structure/set_xor_min.test.cpp
+      title: verify/library_checker/data_structure/set_xor_min.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/library_checker/data_structure/static_range_mode_query.test.cpp
       title: verify/library_checker/data_structure/static_range_mode_query.test.cpp
