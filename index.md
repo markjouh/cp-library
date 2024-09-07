@@ -117,9 +117,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: strings/hashing.hpp
       title: strings/hashing.hpp
-    - icon: ':warning:'
-      path: strings/string_trie.hpp
-      title: strings/string_trie.hpp
   - name: utils
     pages:
     - icon: ':heavy_check_mark:'
