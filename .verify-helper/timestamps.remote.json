@@ -16,6 +16,7 @@
 "verify/library_checker/data_structure/double_ended_priority_queue.test.cpp": "2024-09-05 22:57:47 -0400",
 "verify/library_checker/data_structure/point_add_range_sum.test.cpp": "2024-09-05 22:57:47 -0400",
 "verify/library_checker/data_structure/range_kth_smallest.test.cpp": "2024-09-05 22:57:47 -0400",
+"verify/library_checker/data_structure/set_xor_min.test.cpp": "2024-09-07 12:49:42 -0400",
 "verify/library_checker/data_structure/static_range_mode_query.test.cpp": "2024-09-05 22:57:47 -0400",
 "verify/library_checker/data_structure/static_rmq.test.cpp": "2024-09-05 22:57:47 -0400",
 "verify/library_checker/data_structure/unionfind.test.cpp": "2024-09-05 22:57:47 -0400",
