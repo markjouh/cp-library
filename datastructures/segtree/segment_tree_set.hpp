@@ -2,6 +2,8 @@
 
 // https://codeforces.com/contest/2006/submission/280125218
 
+#include "segment_tree.hpp"
+
 template <class T, T(*op)(T, T), T(*id)()>
 struct SegmentTreeSet {
   int n;
