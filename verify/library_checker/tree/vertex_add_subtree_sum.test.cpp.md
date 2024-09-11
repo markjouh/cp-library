@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: datastructures/fentree/fenwick_tree.hpp
     title: datastructures/fentree/fenwick_tree.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: graphs/tree/euler_tour.hpp
     title: graphs/tree/euler_tour.hpp
   - icon: ':question:'
@@ -15,9 +15,9 @@ data:
     title: utils/timer.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/vertex_add_subtree_sum
@@ -106,9 +106,9 @@ data:
     \n\nint main() {\n  int n, q;\n  cin >> n >> q;\n  vector<int> a(n);\n  for (int\
     \ i = 0; i < n; i++) {\n    cin >> a[i];\n  }\n  vector<vector<int>> g(n);\n \
     \ for (int i = 1; i < n; i++) {\n    int p;\n    cin >> p;\n    g[p].push_back(i);\n\
-    \  }\n  EulerTour et(g);\n  FenwickTree<ll> ft(n);\n  for (int i = 0; i < n; i++)\
-    \ {\n    ft.add(et.tin[i], a[i]);\n  }\n  while (q--) {\n    bool t;\n    int\
-    \ u;\n    cin >> t >> u;\n    if (t) {\n      cout << ft.sum(et.tin[u], et.tout[u]\
+    \  }\n  EulerTour et(g);\n  FenwickTree<i64> ft(n);\n  for (int i = 0; i < n;\
+    \ i++) {\n    ft.add(et.tin[i], a[i]);\n  }\n  while (q--) {\n    bool t;\n  \
+    \  int u;\n    cin >> t >> u;\n    if (t) {\n      cout << ft.sum(et.tin[u], et.tout[u]\
     \ - 1) << '\\n';\n    } else {\n      int x;\n      cin >> x;\n      ft.add(et.tin[u],\
     \ x);\n    }\n  }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/vertex_add_subtree_sum\"\
@@ -117,7 +117,7 @@ data:
     \  cin >> n >> q;\n  vector<int> a(n);\n  for (int i = 0; i < n; i++) {\n    cin\
     \ >> a[i];\n  }\n  vector<vector<int>> g(n);\n  for (int i = 1; i < n; i++) {\n\
     \    int p;\n    cin >> p;\n    g[p].push_back(i);\n  }\n  EulerTour et(g);\n\
-    \  FenwickTree<ll> ft(n);\n  for (int i = 0; i < n; i++) {\n    ft.add(et.tin[i],\
+    \  FenwickTree<i64> ft(n);\n  for (int i = 0; i < n; i++) {\n    ft.add(et.tin[i],\
     \ a[i]);\n  }\n  while (q--) {\n    bool t;\n    int u;\n    cin >> t >> u;\n\
     \    if (t) {\n      cout << ft.sum(et.tin[u], et.tout[u] - 1) << '\\n';\n   \
     \ } else {\n      int x;\n      cin >> x;\n      ft.add(et.tin[u], x);\n    }\n\
@@ -130,8 +130,8 @@ data:
   isVerificationFile: true
   path: verify/library_checker/tree/vertex_add_subtree_sum.test.cpp
   requiredBy: []
-  timestamp: '2024-09-11 14:56:51-04:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2024-09-11 15:33:10-04:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/library_checker/tree/vertex_add_subtree_sum.test.cpp
 layout: document

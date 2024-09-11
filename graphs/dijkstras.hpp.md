@@ -3,15 +3,15 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/custom/utils/random_graph.test.cpp
     title: verify/custom/utils/random_graph.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/library_checker/graph/shortest_path.test.cpp
     title: verify/library_checker/graph/shortest_path.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"graphs/dijkstras.hpp\"\n\ntemplate <class T>\nauto dijkstras(const\
@@ -36,7 +36,7 @@ data:
   path: graphs/dijkstras.hpp
   requiredBy: []
   timestamp: '2024-08-28 02:47:08-04:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/library_checker/graph/shortest_path.test.cpp
   - verify/custom/utils/random_graph.test.cpp

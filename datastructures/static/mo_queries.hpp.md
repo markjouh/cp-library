@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/library_checker/data_structure/static_range_mode_query.test.cpp
     title: verify/library_checker/data_structure/static_range_mode_query.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"datastructures/static/mo_queries.hpp\"\n\ntemplate <class\
@@ -45,7 +45,7 @@ data:
   path: datastructures/static/mo_queries.hpp
   requiredBy: []
   timestamp: '2024-09-11 14:56:51-04:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/library_checker/data_structure/static_range_mode_query.test.cpp
 documentation_of: datastructures/static/mo_queries.hpp

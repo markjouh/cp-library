@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: graphs/dijkstras.hpp
     title: graphs/dijkstras.hpp
   - icon: ':question:'
@@ -12,9 +12,9 @@ data:
     title: utils/timer.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/aplusb
@@ -104,10 +104,10 @@ data:
     \          q.push(v);\n        }\n      }\n    }\n    assert(find(all(dist), INF)\
     \ == end(dist));\n  }\n\n  for (int i = 0; i < TESTS; i++) {\n    const int n\
     \ = randInt(1e2, 1e4), root = randInt(n);\n    auto g = genWeightedGraph(n, n\
-    \ - 1 + randInt(n));\n    \n    auto from = dijkstras<i64>(g, root).se;\n    from[root]\
-    \ = root;\n    assert(find(all(from), -1) == end(from));\n  }\n\n  cerr << \"\
-    Tests passed\" << endl;\n\n  int a, b;\n  cin >> a >> b;\n  cout << a + b << '\\\
-    n';\n}\n"
+    \ - 1 + randInt(n));\n    \n    auto from = dijkstras<i64>(g, root).second;\n\
+    \    from[root] = root;\n    assert(find(all(from), -1) == end(from));\n  }\n\n\
+    \  cerr << \"Tests passed\" << endl;\n\n  int a, b;\n  cin >> a >> b;\n  cout\
+    \ << a + b << '\\n';\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/aplusb\"\n\n#include \"\
     ../../boilerplate.hpp\"\n#include \"../../../graphs/dijkstras.hpp\"\n\n// Doesn't\
     \ measure the quality of the generated graphs,\n// just a sanity check.\n\nconst\
@@ -120,8 +120,8 @@ data:
     \        }\n      }\n    }\n    assert(find(all(dist), INF) == end(dist));\n \
     \ }\n\n  for (int i = 0; i < TESTS; i++) {\n    const int n = randInt(1e2, 1e4),\
     \ root = randInt(n);\n    auto g = genWeightedGraph(n, n - 1 + randInt(n));\n\
-    \    \n    auto from = dijkstras<i64>(g, root).se;\n    from[root] = root;\n \
-    \   assert(find(all(from), -1) == end(from));\n  }\n\n  cerr << \"Tests passed\"\
+    \    \n    auto from = dijkstras<i64>(g, root).second;\n    from[root] = root;\n\
+    \    assert(find(all(from), -1) == end(from));\n  }\n\n  cerr << \"Tests passed\"\
     \ << endl;\n\n  int a, b;\n  cin >> a >> b;\n  cout << a + b << '\\n';\n}"
   dependsOn:
   - utils/random.hpp
@@ -130,8 +130,8 @@ data:
   isVerificationFile: true
   path: verify/custom/utils/random_graph.test.cpp
   requiredBy: []
-  timestamp: '2024-09-11 14:56:51-04:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2024-09-11 15:33:10-04:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/custom/utils/random_graph.test.cpp
 layout: document

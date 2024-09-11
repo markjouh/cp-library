@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: datastructures/pbds/hash_table.hpp
     title: datastructures/pbds/hash_table.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: datastructures/static/mo_queries.hpp
     title: datastructures/static/mo_queries.hpp
   - icon: ':question:'
@@ -15,9 +15,9 @@ data:
     title: utils/timer.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/static_range_mode_query
@@ -119,7 +119,7 @@ data:
     \ a[p]});\n    }\n    freq[a[p]]++;\n    st.insert({freq[a[p]], a[p]});\n  };\n\
     \  auto del = [&](int p) {\n    if (freq.find(a[p]) != freq.end()) {\n      st.extract({freq[a[p]],\
     \ a[p]});\n    }\n    freq[a[p]]--;\n    st.insert({freq[a[p]], a[p]});\n  };\n\
-    \  auto query = [&]() {\n    return make_pair(rbegin(st)->se, rbegin(st)->fi);\n\
+    \  auto query = [&]() {\n    return make_pair(rbegin(st)->second, rbegin(st)->first);\n\
     \  };\n  mo.solve(add, del, query);\n  for (auto [x, y] : mo.res) {\n    cout\
     \ << x << ' ' << y << '\\n';\n  }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/static_range_mode_query\"\
@@ -133,7 +133,7 @@ data:
     \ a[p]});\n    }\n    freq[a[p]]++;\n    st.insert({freq[a[p]], a[p]});\n  };\n\
     \  auto del = [&](int p) {\n    if (freq.find(a[p]) != freq.end()) {\n      st.extract({freq[a[p]],\
     \ a[p]});\n    }\n    freq[a[p]]--;\n    st.insert({freq[a[p]], a[p]});\n  };\n\
-    \  auto query = [&]() {\n    return make_pair(rbegin(st)->se, rbegin(st)->fi);\n\
+    \  auto query = [&]() {\n    return make_pair(rbegin(st)->second, rbegin(st)->first);\n\
     \  };\n  mo.solve(add, del, query);\n  for (auto [x, y] : mo.res) {\n    cout\
     \ << x << ' ' << y << '\\n';\n  }\n}"
   dependsOn:
@@ -144,8 +144,8 @@ data:
   isVerificationFile: true
   path: verify/library_checker/data_structure/static_range_mode_query.test.cpp
   requiredBy: []
-  timestamp: '2024-09-11 14:56:51-04:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2024-09-11 15:33:10-04:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/library_checker/data_structure/static_range_mode_query.test.cpp
 layout: document

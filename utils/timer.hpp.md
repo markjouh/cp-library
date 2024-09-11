@@ -24,7 +24,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/custom/datastructure/fenwick_tree_range_add.test.cpp
     title: verify/custom/datastructure/fenwick_tree_range_add.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/custom/datastructure/segment_tree_sparse.test.cpp
     title: verify/custom/datastructure/segment_tree_sparse.test.cpp
   - icon: ':x:'
@@ -36,7 +36,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/custom/utils/encode.test.cpp
     title: verify/custom/utils/encode.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/custom/utils/random_graph.test.cpp
     title: verify/custom/utils/random_graph.test.cpp
   - icon: ':heavy_check_mark:'
@@ -57,7 +57,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/library_checker/data_structure/set_xor_min.test.cpp
     title: verify/library_checker/data_structure/set_xor_min.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/library_checker/data_structure/static_range_mode_query.test.cpp
     title: verify/library_checker/data_structure/static_range_mode_query.test.cpp
   - icon: ':heavy_check_mark:'
@@ -75,7 +75,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/library_checker/number_theory/enumerate_primes.test.cpp
     title: verify/library_checker/number_theory/enumerate_primes.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/library_checker/string/enumerate_palindromes.test.cpp
     title: verify/library_checker/string/enumerate_palindromes.test.cpp
   - icon: ':heavy_check_mark:'
@@ -84,7 +84,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/library_checker/tree/rooted_tree_isomorphism.test.cpp
     title: verify/library_checker/tree/rooted_tree_isomorphism.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/library_checker/tree/vertex_add_subtree_sum.test.cpp
     title: verify/library_checker/tree/vertex_add_subtree_sum.test.cpp
   _isVerificationFailed: true

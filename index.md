@@ -3,7 +3,7 @@ data:
   libraryCategories:
   - name: datastructures/fentree
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: datastructures/fentree/fenwick_tree.hpp
       title: datastructures/fentree/fenwick_tree.hpp
     - icon: ':warning:'
@@ -28,7 +28,7 @@ data:
       title: datastructures/w_ary_tree.hpp
   - name: datastructures/pbds
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: datastructures/pbds/hash_table.hpp
       title: datastructures/pbds/hash_table.hpp
     - icon: ':heavy_check_mark:'
@@ -45,7 +45,7 @@ data:
     - icon: ':warning:'
       path: datastructures/segtree/segment_tree_set.hpp
       title: datastructures/segtree/segment_tree_set.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: datastructures/segtree/segment_tree_sparse.hpp
       title: datastructures/segtree/segment_tree_sparse.hpp
   - name: datastructures/static
@@ -53,7 +53,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: datastructures/static/mergesort_tree.hpp
       title: datastructures/static/mergesort_tree.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: datastructures/static/mo_queries.hpp
       title: datastructures/static/mo_queries.hpp
     - icon: ':heavy_check_mark:'
@@ -61,7 +61,7 @@ data:
       title: datastructures/static/sparse_table.hpp
   - name: graphs
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: graphs/dijkstras.hpp
       title: graphs/dijkstras.hpp
     - icon: ':warning:'
@@ -78,7 +78,7 @@ data:
     - icon: ':warning:'
       path: graphs/tree/centroid_decomposition.hpp
       title: graphs/tree/centroid_decomposition.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: graphs/tree/euler_tour.hpp
       title: graphs/tree/euler_tour.hpp
     - icon: ':heavy_check_mark:'
@@ -97,7 +97,7 @@ data:
       title: misc/template.cpp
   - name: numeric
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: numeric/binary_search.hpp
       title: numeric/binary_search.hpp
     - icon: ':x:'
@@ -106,6 +106,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: numeric/binary_trie.hpp
       title: numeric/binary_trie.hpp
+    - icon: ':warning:'
+      path: numeric/combo.hpp
+      title: numeric/combo.hpp
     - icon: ':heavy_check_mark:'
       path: numeric/mod_int.hpp
       title: numeric/mod_int.hpp
@@ -117,7 +120,7 @@ data:
       title: numeric/square_matrix.hpp
   - name: strings
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: strings/hashing.hpp
       title: strings/hashing.hpp
   - name: utils
@@ -164,7 +167,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/custom/datastructure/fenwick_tree_range_add.test.cpp
       title: verify/custom/datastructure/fenwick_tree_range_add.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/custom/datastructure/segment_tree_sparse.test.cpp
       title: verify/custom/datastructure/segment_tree_sparse.test.cpp
   - name: verify/custom/numeric
@@ -180,7 +183,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/custom/utils/encode.test.cpp
       title: verify/custom/utils/encode.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/custom/utils/random_graph.test.cpp
       title: verify/custom/utils/random_graph.test.cpp
     - icon: ':heavy_check_mark:'
@@ -203,7 +206,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/library_checker/data_structure/set_xor_min.test.cpp
       title: verify/library_checker/data_structure/set_xor_min.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/library_checker/data_structure/static_range_mode_query.test.cpp
       title: verify/library_checker/data_structure/static_range_mode_query.test.cpp
     - icon: ':heavy_check_mark:'
@@ -227,7 +230,7 @@ data:
       title: verify/library_checker/number_theory/enumerate_primes.test.cpp
   - name: verify/library_checker/string
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/library_checker/string/enumerate_palindromes.test.cpp
       title: verify/library_checker/string/enumerate_palindromes.test.cpp
   - name: verify/library_checker/tree
@@ -238,7 +241,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/library_checker/tree/rooted_tree_isomorphism.test.cpp
       title: verify/library_checker/tree/rooted_tree_isomorphism.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/library_checker/tree/vertex_add_subtree_sum.test.cpp
       title: verify/library_checker/tree/vertex_add_subtree_sum.test.cpp
 layout: toppage

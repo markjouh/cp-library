@@ -6,12 +6,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/library_checker/data_structure/associative_array.test.cpp
     title: verify/library_checker/data_structure/associative_array.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/library_checker/data_structure/static_range_mode_query.test.cpp
     title: verify/library_checker/data_structure/static_range_mode_query.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"datastructures/pbds/hash_table.hpp\"\n\n#include <ext/pb_ds/assoc_container.hpp>\n\
@@ -33,7 +33,7 @@ data:
   path: datastructures/pbds/hash_table.hpp
   requiredBy: []
   timestamp: '2024-08-31 22:39:57-04:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/library_checker/data_structure/static_range_mode_query.test.cpp
   - verify/library_checker/data_structure/associative_array.test.cpp

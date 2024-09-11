@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: graphs/dijkstras.hpp
     title: graphs/dijkstras.hpp
   - icon: ':question:'
