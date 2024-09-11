@@ -8,12 +8,12 @@ const double MXV = 1e12, ERROR = 1e-3;
 
 void test() {
   // Search for exact double value, should have no error
-  const double t1 = randDoub(inf<double>);
-  double left = bsmaxReals(0, inf<double>, [&](double x) {
+  const double t1 = randDoub(1e100);
+  double left = bsmaxReals(0, 1e100, [&](double x) {
     return x <= t1;
   });
   assert(left == t1);
-  double right = bsminReals(0, inf<double>, [&](double x) {
+  double right = bsminReals(0, 1e100, [&](double x) {
     return x >= t1;
   });
   assert(right == t1);
