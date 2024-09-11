@@ -44,30 +44,30 @@ private:
   int idx;
 
   int getL(int x) {
-    if (ch[x].fi == -1) {
-      ch[x].fi = sz(st);
+    if (ch[x].first == -1) {
+      ch[x].first = sz(st);
       st.push_back(id());
       ch.emplace_back(-1, -1);
     }
-    return ch[x].fi;
+    return ch[x].first;
   }
 
   int getR(int x) {
-    if (ch[x].se == -1) {
-      ch[x].se = sz(st);
+    if (ch[x].second == -1) {
+      ch[x].second = sz(st);
       st.push_back(id());
       ch.emplace_back(-1, -1);
     }
-    return ch[x].se;
+    return ch[x].second;
   }
 
   void pull(int x) {
-    if (ch[x].fi == -1) {
-      st[x] = st[ch[x].se];
-    } else if (ch[x].se != -1) {
-      st[x] = op(st[ch[x].fi], st[ch[x].se]);
+    if (ch[x].first == -1) {
+      st[x] = st[ch[x].second];
+    } else if (ch[x].second != -1) {
+      st[x] = op(st[ch[x].first], st[ch[x].second]);
     } else {
-      st[x] = st[ch[x].fi];
+      st[x] = st[ch[x].first];
     }
   }
 
@@ -79,6 +79,6 @@ private:
       return st[x];
     }
     int mid = (tl + tr) >> 1;
-    return op(query(l, r, ch[x].fi, tl, mid), query(l, r, ch[x].se, mid, tr));
+    return op(query(l, r, ch[x].first, tl, mid), query(l, r, ch[x].second, mid, tr));
   }
 };

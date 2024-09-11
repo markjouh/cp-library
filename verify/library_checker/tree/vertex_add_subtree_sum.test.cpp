@@ -18,7 +18,7 @@ int main() {
     g[p].push_back(i);
   }
   EulerTour et(g);
-  FenwickTree<ll> ft(n);
+  FenwickTree<i64> ft(n);
   for (int i = 0; i < n; i++) {
     ft.add(et.tin[i], a[i]);
   }

@@ -22,9 +22,9 @@ int main() {
       const int p = randInt(N), v = randInt(1e9);
       bool flag = false;
       for (auto &b : a) {
-        if (b.fi == p) {
+        if (b.first == p) {
           flag = true;
-          b.se = v;
+          b.second = v;
           break;
         }
       }

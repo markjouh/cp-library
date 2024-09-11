@@ -34,7 +34,7 @@ int main() {
     st.insert({freq[a[p]], a[p]});
   };
   auto query = [&]() {
-    return make_pair(rbegin(st)->se, rbegin(st)->fi);
+    return make_pair(rbegin(st)->second, rbegin(st)->first);
   };
   mo.solve(add, del, query);
   for (auto [x, y] : mo.res) {

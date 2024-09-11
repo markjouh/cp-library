@@ -2,16 +2,16 @@
 
 mt19937_64 rng(chrono::steady_clock::now().time_since_epoch().count());
 
-const ll H_MOD = (1ll << 61) - 1;
-const ll H_BASE = uniform_int_distribution<ll>(0, H_MOD)(rng);
+const i64 H_MOD = (1ll << 61) - 1;
+const i64 H_BASE = uniform_int_distribution<i64>(0, H_MOD)(rng);
 
-vector<ll> powB = {1};
+vector<i64> powB = {1};
 
 struct Hash {
-  ll val;
+  i64 val;
   int len;
 
-  Hash(ll x, int y) : val(x), len(y) {}
+  Hash(i64 x, int y) : val(x), len(y) {}
 
   Hash operator+(Hash b) {
     return Hash((__int128_t(val) * powB[b.len] + b.val) % H_MOD, len + b.len);
@@ -24,7 +24,7 @@ struct Hash {
 
 struct StringHash {
   int len;
-  vector<ll> h;
+  vector<i64> h;
 
   template <class T>
   StringHash(const T &s) : len(sz(s)), h(len + 1) {
