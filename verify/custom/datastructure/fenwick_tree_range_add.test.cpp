@@ -6,8 +6,8 @@
 const int N = 1e5, Q = 1e5;
 
 int main() {
-  vector<ll> a = randVec<ll>(N);
-  RangeAddFT<ll> ft(a);
+  vector<i64> a = randVec<i64>(N);
+  RangeAddFT<i64> ft(a);
   for (int i = 0; i < Q; i++) {
     if (randBool()) {
       int l = randInt(N), r = randInt(N);

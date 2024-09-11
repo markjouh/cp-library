@@ -12,8 +12,8 @@ int main() {
     cin >> u >> v >> w;
     g[u].emplace_back(v, w);
   }
-  auto [dist, from] = dijkstras<ll>(g, s);
-  if (dist[t] != numeric_limits<ll>::max()) {
+  auto [dist, from] = dijkstras<i64>(g, s);
+  if (dist[t] != numeric_limits<i64>::max()) {
     cout << dist[t] << ' ';
     vector<pair<int, int>> path;
     int p = t;

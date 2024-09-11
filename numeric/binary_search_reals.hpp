@@ -2,11 +2,11 @@
 
 template <class T>
 double bsminReals(double lo, double hi, T f) {
-  static_assert(sizeof(uint64_t) >= sizeof(double));
+  static_assert(sizeof(u64) >= sizeof(double));
   assert(lo <= hi);
-  uint64_t l = reinterpret_cast<uint64_t&>(lo), r = reinterpret_cast<uint64_t&>(hi) + 1;
-  for (uint64_t i = 1ull << __lg(r - l); i > 0; i >>= 1) {
-    uint64_t nxt = r - i;
+  u64 l = reinterpret_cast<u64&>(lo), r = reinterpret_cast<u64&>(hi) + 1;
+  for (u64 i = 1ull << __lg(r - l); i > 0; i >>= 1) {
+    u64 nxt = r - i;
     r -= (nxt >= l && f(reinterpret_cast<double&>(nxt))) * i;
   }
   return reinterpret_cast<double&>(r);
@@ -14,11 +14,11 @@ double bsminReals(double lo, double hi, T f) {
 
 template <class T>
 double bsmaxReals(double lo, double hi, T f) {
-  static_assert(sizeof(uint64_t) >= sizeof(double));
+  static_assert(sizeof(u64) >= sizeof(double));
   assert(lo <= hi);
-  uint64_t l = reinterpret_cast<uint64_t&>(lo) - 1, r = reinterpret_cast<uint64_t&>(hi);
-  for (uint64_t i = 1ull << __lg(r - l); i > 0; i >>= 1) {
-    uint64_t nxt = l + i;
+  u64 l = reinterpret_cast<u64&>(lo) - 1, r = reinterpret_cast<u64&>(hi);
+  for (u64 i = 1ull << __lg(r - l); i > 0; i >>= 1) {
+    u64 nxt = l + i;
     l += (nxt <= r && f(reinterpret_cast<double&>(nxt))) * i;
   }
   return reinterpret_cast<double&>(l);

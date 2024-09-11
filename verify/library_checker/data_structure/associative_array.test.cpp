@@ -6,15 +6,15 @@
 int main() {
   int q;
   cin >> q;
-  HashTable<ll, ll> mp;
+  HashTable<i64, i64> mp;
   while (q--) {
     bool t;
-    ll k;
+    i64 k;
     cin >> t >> k;
     if (t) {
       cout << mp[k] << '\n';
     } else {
-      ll v;
+      i64 v;
       cin >> v;
       mp[k] = v;
     }

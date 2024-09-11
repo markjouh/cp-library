@@ -6,7 +6,7 @@
 int main() {
   int n, q;
   cin >> n >> q;
-  RangeAddRangeSumFT<ll> ft(n);
+  RangeAddRangeSumFT<i64> ft(n);
   while (q--) {
     bool t;
     int l, r;

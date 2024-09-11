@@ -10,7 +10,7 @@ int main() {
   for (int i = 1; i < n; i++) {
     int p;
     cin >> p;
-    g[p].pb(i);
+    g[p].push_back(i);
   }
   BinaryLifting bl(g);
   while (q--) {

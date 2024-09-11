@@ -5,17 +5,17 @@
 
 const int N = 1e9, Q = 5e4;
 
-ll op(ll x, ll y) {
+i64 op(i64 x, i64 y) {
   return x + y;
 }
 
-ll id() {
+i64 id() {
   return 0;
 }
 
 int main() {
   vector<pair<int, int>> a;
-  SparseSegmentTree<ll, op, id> st(N);
+  SparseSegmentTree<i64, op, id> st(N);
 
   for (int i = 0; i < Q; i++) {
     if (randBool()) {
@@ -37,7 +37,7 @@ int main() {
       if (l > r) {
         swap(l, r);
       }
-      ll sum = 0;
+      i64 sum = 0;
       for (auto [p, v] : a) {
         if (p >= l && p <= r) {
           sum += v;

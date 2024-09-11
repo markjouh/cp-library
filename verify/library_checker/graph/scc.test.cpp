@@ -10,7 +10,7 @@ int main() {
   for (int i = 0; i < m; i++) {
     int u, v;
     cin >> u >> v;
-    g[u].pb(v);
+    g[u].push_back(v);
   }
   KosarajuSCC scc(g);
   cout << scc.sccs << '\n';

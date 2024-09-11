@@ -15,7 +15,7 @@ int main() {
   for (int i = 1; i < n; i++) {
     int p;
     cin >> p;
-    g[p].pb(i);
+    g[p].push_back(i);
   }
   EulerTour et(g);
   FenwickTree<ll> ft(n);

@@ -36,7 +36,7 @@ int main() {
     const int n = randInt(1e2, 1e4), root = randInt(n);
     auto g = genWeightedGraph(n, n - 1 + randInt(n));
     
-    auto from = dijkstras<ll>(g, root).se;
+    auto from = dijkstras<i64>(g, root).se;
     from[root] = root;
     assert(find(all(from), -1) == end(from));
   }

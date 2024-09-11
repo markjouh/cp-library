@@ -12,7 +12,7 @@ struct MoQueries {
   }
 
   template<class AddL, class DelL, class AddR, class DelR, class Query>
-  void solve(AddL add_l, DelL del_l, AddR add_r, DelR del_r, Query query) {
+  void solve(AddL addL, DelL delL, AddR addR, DelR delR, Query query) {
     sort(all(queries), [](array<int, 3> a, array<int, 3> b) {
       if (a[1] / B != b[1] / B) {
         return a[1] / B < b[1] / B;
@@ -21,19 +21,19 @@ struct MoQueries {
     });
     res.resize(sz(queries));
 
-    int cur_l = 0, cur_r = -1;
+    int curL = 0, curR = -1;
     for (auto [l, r, idx] : queries) {
-      while (cur_l > l) {
-        add_l(--cur_l);
+      while (curL > l) {
+        addL(--curL);
       }
-      while (cur_r < r) {
-        add_r(++cur_r);
+      while (curR < r) {
+        addR(++curR);
       }
-      while (cur_l < l) {
-        del_l(cur_l++);
+      while (curL < l) {
+        delL(curL++);
       }
-      while (cur_r > r) {
-        del_r(cur_r--);
+      while (curR > r) {
+        delR(curR--);
       }
       res[idx] = query();
     }

@@ -16,7 +16,7 @@ int main() {
     int l, r, k;
     cin >> l >> r >> k;
     r--;
-    cout << bsmin(0, inf<>, [&](int x) {
+    cout << bsmin(0, int(1e9), [&](int x) {
       return mt.query(l, r, x + 1) >= k + 1;
     }) << '\n';
   }

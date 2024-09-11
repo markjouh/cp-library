@@ -6,11 +6,11 @@
 int main() {
   int n, q;
   cin >> n >> q;
-  vector<ll> a(n);
+  vector<i64> a(n);
   for (int i = 0; i < n; i++) {
     cin >> a[i];
   }
-  FenwickTree<ll> ft(a);
+  FenwickTree<i64> ft(a);
   while (q--) {
     bool t;
     int x, y;

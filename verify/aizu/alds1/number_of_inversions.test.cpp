@@ -6,7 +6,7 @@
 int main() {
   int n;
   cin >> n;
-  ll ans = 0;
+  i64 ans = 0;
   OrderStatisticTree<int> st;
   for (int i = 0; i < n; i++) {
     int x;

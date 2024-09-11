@@ -4,7 +4,7 @@ template <int MOD>
 struct ModInt {
   int v;
  
-  ModInt(ll x = 0) : v(int(-MOD < x && x < MOD ? x : x % MOD) + (x < 0) * MOD) {}
+  ModInt(i64 x = 0) : v(int(-MOD < x && x < MOD ? x : x % MOD) + (x < 0) * MOD) {}
  
   friend ModInt pow(ModInt base, int exp) {
     ModInt res = 1;

@@ -8,7 +8,7 @@ void sieve(int n) {
     if (!minPF[i]) {
       minPF[i] = i;
       primes.push_back(i);
-      for (ll j = 1ll * i * i; j <= n; j += i) {
+      for (i64 j = 1ll * i * i; j <= n; j += i) {
         if (!minPF[j]) {
           minPF[j] = i;
         }
@@ -52,7 +52,8 @@ vector<pair<T, int>> factor(T num) {
   return res;
 }
 
-template<class T> vector<T> genDivisors(vector<pair<T, int>> facs) {
+template <class T>
+vector<T> genDivisors(vector<pair<T, int>> facs) {
   vector<T> res = {1};
   for (auto [p, exp] : facs) {
     const int oldSize = sz(res);
