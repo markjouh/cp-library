@@ -7,6 +7,7 @@
 "verify/aizu/ntl/power.test.cpp": "2024-09-11 14:56:51 -0400",
 "verify/custom/datastructure/fenwick_tree_range_add.test.cpp": "2024-09-11 14:56:51 -0400",
 "verify/custom/datastructure/segment_tree_sparse.test.cpp": "2024-09-11 15:33:10 -0400",
+"verify/custom/numeric/binary_search_reals.test.cpp": "2024-09-11 15:36:54 -0400",
 "verify/custom/utils/debug.test.cpp": "2024-09-11 14:56:51 -0400",
 "verify/custom/utils/encode.test.cpp": "2024-09-11 14:56:51 -0400",
 "verify/custom/utils/random_graph.test.cpp": "2024-09-11 15:33:10 -0400",
