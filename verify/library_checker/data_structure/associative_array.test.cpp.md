@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: datastructures/pbds/hash_table.hpp
     title: datastructures/pbds/hash_table.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: utils/random.hpp
     title: utils/random.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: utils/timer.hpp
     title: utils/timer.hpp
   _extendedRequiredBy: []
@@ -80,31 +80,30 @@ data:
     \ {\n  timer = std::chrono::high_resolution_clock::now();\n}\n\nlong long elapsed()\
     \ {\n  return (chrono::duration_cast<chrono::milliseconds>(chrono::high_resolution_clock::now()\
     \ - timer)).count();\n}\n#line 7 \"verify/boilerplate.hpp\"\n\n#define all(x)\
-    \ begin(x), end(x)\n#define sz(x) int(size(x))\n#define pb push_back\n#define\
-    \ eb emplace_back\n#define fi first\n#define se second\n\nusing ll = long long;\n\
-    \ntemplate <class T>\nbool ckmin(T &a, const T &b) {\n  return b < a ? a = b,\
-    \ 1 : 0;\n}\n\ntemplate <class T>\nbool ckmax(T &a, const T &b) {\n  return b\
-    \ > a ? a = b, 1 : 0;\n}\n\ntemplate <class T = int>\nstatic constexpr T inf =\
-    \ numeric_limits<T>::max() / 2;\n\nstruct InitIO {\n  InitIO() {\n    cin.tie(0)->sync_with_stdio(0);\n\
-    \    cin.exceptions(cin.failbit);\n    cout << setprecision(10) << fixed;\n  }\n\
-    } init_io;\n#line 2 \"datastructures/pbds/hash_table.hpp\"\n\n#include <ext/pb_ds/assoc_container.hpp>\n\
-    \nstruct CustomHash {\n  static uint64_t splitmix64(uint64_t x) {\n    x += 0x9e3779b97f4a7c15;\n\
-    \    x = (x ^ (x >> 30)) * 0xbf58476d1ce4e5b9;\n    x = (x ^ (x >> 27)) * 0x94d049bb133111eb;\n\
+    \ begin(x), end(x)\n#define sz(x) int(size(x))\n\nusing u32 = unsigned int;\n\
+    using i64 = long long;\nusing u64 = unsigned long long;\n\ntemplate <class T>\n\
+    bool ckmin(T &a, const T &b) {\n  return b < a ? a = b, 1 : 0;\n}\n\ntemplate\
+    \ <class T>\nbool ckmax(T &a, const T &b) {\n  return b > a ? a = b, 1 : 0;\n\
+    }\n\nstruct InitIO {\n  InitIO() {\n    cin.tie(0)->sync_with_stdio(0);\n    cin.exceptions(cin.failbit);\n\
+    \    cout << setprecision(10) << fixed;\n  }\n} init_io;\n#line 2 \"datastructures/pbds/hash_table.hpp\"\
+    \n\n#include <ext/pb_ds/assoc_container.hpp>\n\nstruct CustomHash {\n  static\
+    \ uint64_t splitmix64(uint64_t x) {\n    x += 0x9e3779b97f4a7c15;\n    x = (x\
+    \ ^ (x >> 30)) * 0xbf58476d1ce4e5b9;\n    x = (x ^ (x >> 27)) * 0x94d049bb133111eb;\n\
     \    return x ^ (x >> 31);\n  }\n\n  size_t operator()(uint64_t x) const {\n \
     \   static const uint64_t FIXED_RANDOM = chrono::steady_clock::now().time_since_epoch().count();\n\
     \    return splitmix64(x + FIXED_RANDOM);\n  }\n};\n\ntemplate <class T, class\
     \ U>\nusing HashTable = __gnu_pbds::gp_hash_table<T, U, CustomHash>;\n#line 5\
     \ \"verify/library_checker/data_structure/associative_array.test.cpp\"\n\nint\
-    \ main() {\n  int q;\n  cin >> q;\n  HashTable<ll, ll> mp;\n  while (q--) {\n\
-    \    bool t;\n    ll k;\n    cin >> t >> k;\n    if (t) {\n      cout << mp[k]\
-    \ << '\\n';\n    } else {\n      ll v;\n      cin >> v;\n      mp[k] = v;\n  \
-    \  }\n  }\n}\n"
+    \ main() {\n  int q;\n  cin >> q;\n  HashTable<i64, i64> mp;\n  while (q--) {\n\
+    \    bool t;\n    i64 k;\n    cin >> t >> k;\n    if (t) {\n      cout << mp[k]\
+    \ << '\\n';\n    } else {\n      i64 v;\n      cin >> v;\n      mp[k] = v;\n \
+    \   }\n  }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/associative_array\"\n\n\
     #include \"../../boilerplate.hpp\"\n#include \"../../../datastructures/pbds/hash_table.hpp\"\
-    \n\nint main() {\n  int q;\n  cin >> q;\n  HashTable<ll, ll> mp;\n  while (q--)\
-    \ {\n    bool t;\n    ll k;\n    cin >> t >> k;\n    if (t) {\n      cout << mp[k]\
-    \ << '\\n';\n    } else {\n      ll v;\n      cin >> v;\n      mp[k] = v;\n  \
-    \  }\n  }\n}"
+    \n\nint main() {\n  int q;\n  cin >> q;\n  HashTable<i64, i64> mp;\n  while (q--)\
+    \ {\n    bool t;\n    i64 k;\n    cin >> t >> k;\n    if (t) {\n      cout <<\
+    \ mp[k] << '\\n';\n    } else {\n      i64 v;\n      cin >> v;\n      mp[k] =\
+    \ v;\n    }\n  }\n}"
   dependsOn:
   - utils/random.hpp
   - utils/timer.hpp
@@ -112,7 +111,7 @@ data:
   isVerificationFile: true
   path: verify/library_checker/data_structure/associative_array.test.cpp
   requiredBy: []
-  timestamp: '2024-09-11 14:41:57-04:00'
+  timestamp: '2024-09-11 14:56:51-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/library_checker/data_structure/associative_array.test.cpp

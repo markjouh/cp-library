@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: numeric/binary_search_reals.hpp
     title: numeric/binary_search_reals.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: utils/random.hpp
     title: utils/random.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: utils/timer.hpp
     title: utils/timer.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/aplusb
@@ -80,23 +80,21 @@ data:
     \ {\n  timer = std::chrono::high_resolution_clock::now();\n}\n\nlong long elapsed()\
     \ {\n  return (chrono::duration_cast<chrono::milliseconds>(chrono::high_resolution_clock::now()\
     \ - timer)).count();\n}\n#line 7 \"verify/boilerplate.hpp\"\n\n#define all(x)\
-    \ begin(x), end(x)\n#define sz(x) int(size(x))\n#define pb push_back\n#define\
-    \ eb emplace_back\n#define fi first\n#define se second\n\nusing ll = long long;\n\
-    \ntemplate <class T>\nbool ckmin(T &a, const T &b) {\n  return b < a ? a = b,\
-    \ 1 : 0;\n}\n\ntemplate <class T>\nbool ckmax(T &a, const T &b) {\n  return b\
-    \ > a ? a = b, 1 : 0;\n}\n\ntemplate <class T = int>\nstatic constexpr T inf =\
-    \ numeric_limits<T>::max() / 2;\n\nstruct InitIO {\n  InitIO() {\n    cin.tie(0)->sync_with_stdio(0);\n\
-    \    cin.exceptions(cin.failbit);\n    cout << setprecision(10) << fixed;\n  }\n\
-    } init_io;\n#line 2 \"numeric/binary_search_reals.hpp\"\n\ntemplate <class T>\n\
-    double bsminReals(double lo, double hi, T f) {\n  static_assert(sizeof(uint64_t)\
-    \ >= sizeof(double));\n  assert(lo <= hi);\n  uint64_t l = reinterpret_cast<uint64_t&>(lo),\
-    \ r = reinterpret_cast<uint64_t&>(hi) + 1;\n  for (uint64_t i = 1ull << __lg(r\
-    \ - l); i > 0; i >>= 1) {\n    uint64_t nxt = r - i;\n    r -= (nxt >= l && f(reinterpret_cast<double&>(nxt)))\
+    \ begin(x), end(x)\n#define sz(x) int(size(x))\n\nusing u32 = unsigned int;\n\
+    using i64 = long long;\nusing u64 = unsigned long long;\n\ntemplate <class T>\n\
+    bool ckmin(T &a, const T &b) {\n  return b < a ? a = b, 1 : 0;\n}\n\ntemplate\
+    \ <class T>\nbool ckmax(T &a, const T &b) {\n  return b > a ? a = b, 1 : 0;\n\
+    }\n\nstruct InitIO {\n  InitIO() {\n    cin.tie(0)->sync_with_stdio(0);\n    cin.exceptions(cin.failbit);\n\
+    \    cout << setprecision(10) << fixed;\n  }\n} init_io;\n#line 2 \"numeric/binary_search_reals.hpp\"\
+    \n\ntemplate <class T>\ndouble bsminReals(double lo, double hi, T f) {\n  static_assert(sizeof(u64)\
+    \ >= sizeof(double));\n  assert(lo <= hi);\n  u64 l = reinterpret_cast<u64&>(lo),\
+    \ r = reinterpret_cast<u64&>(hi) + 1;\n  for (u64 i = 1ull << __lg(r - l); i >\
+    \ 0; i >>= 1) {\n    u64 nxt = r - i;\n    r -= (nxt >= l && f(reinterpret_cast<double&>(nxt)))\
     \ * i;\n  }\n  return reinterpret_cast<double&>(r);\n}\n\ntemplate <class T>\n\
-    double bsmaxReals(double lo, double hi, T f) {\n  static_assert(sizeof(uint64_t)\
-    \ >= sizeof(double));\n  assert(lo <= hi);\n  uint64_t l = reinterpret_cast<uint64_t&>(lo)\
-    \ - 1, r = reinterpret_cast<uint64_t&>(hi);\n  for (uint64_t i = 1ull << __lg(r\
-    \ - l); i > 0; i >>= 1) {\n    uint64_t nxt = l + i;\n    l += (nxt <= r && f(reinterpret_cast<double&>(nxt)))\
+    double bsmaxReals(double lo, double hi, T f) {\n  static_assert(sizeof(u64) >=\
+    \ sizeof(double));\n  assert(lo <= hi);\n  u64 l = reinterpret_cast<u64&>(lo)\
+    \ - 1, r = reinterpret_cast<u64&>(hi);\n  for (u64 i = 1ull << __lg(r - l); i\
+    \ > 0; i >>= 1) {\n    u64 nxt = l + i;\n    l += (nxt <= r && f(reinterpret_cast<double&>(nxt)))\
     \ * i;\n  }\n  return reinterpret_cast<double&>(l);\n}\n#line 5 \"verify/custom/numeric/binary_search_reals.test.cpp\"\
     \n\nconst int TESTS = 1e6;\nconst double MXV = 1e12, ERROR = 1e-3;\n\nvoid test()\
     \ {\n  // Search for exact double value, should have no error\n  const double\
@@ -135,8 +133,8 @@ data:
   isVerificationFile: true
   path: verify/custom/numeric/binary_search_reals.test.cpp
   requiredBy: []
-  timestamp: '2024-09-11 14:41:57-04:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2024-09-11 14:56:51-04:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/custom/numeric/binary_search_reals.test.cpp
 layout: document

@@ -1,16 +1,16 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: datastructures/fentree/fenwick_tree.hpp
     title: datastructures/fentree/fenwick_tree.hpp
   - icon: ':heavy_check_mark:'
     path: datastructures/fentree/fenwick_tree_range_add_range_sum.hpp
     title: datastructures/fentree/fenwick_tree_range_add_range_sum.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: utils/random.hpp
     title: utils/random.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: utils/timer.hpp
     title: utils/timer.hpp
   _extendedRequiredBy: []
@@ -83,14 +83,12 @@ data:
     \ {\n  timer = std::chrono::high_resolution_clock::now();\n}\n\nlong long elapsed()\
     \ {\n  return (chrono::duration_cast<chrono::milliseconds>(chrono::high_resolution_clock::now()\
     \ - timer)).count();\n}\n#line 7 \"verify/boilerplate.hpp\"\n\n#define all(x)\
-    \ begin(x), end(x)\n#define sz(x) int(size(x))\n#define pb push_back\n#define\
-    \ eb emplace_back\n#define fi first\n#define se second\n\nusing ll = long long;\n\
-    \ntemplate <class T>\nbool ckmin(T &a, const T &b) {\n  return b < a ? a = b,\
-    \ 1 : 0;\n}\n\ntemplate <class T>\nbool ckmax(T &a, const T &b) {\n  return b\
-    \ > a ? a = b, 1 : 0;\n}\n\ntemplate <class T = int>\nstatic constexpr T inf =\
-    \ numeric_limits<T>::max() / 2;\n\nstruct InitIO {\n  InitIO() {\n    cin.tie(0)->sync_with_stdio(0);\n\
-    \    cin.exceptions(cin.failbit);\n    cout << setprecision(10) << fixed;\n  }\n\
-    } init_io;\n#line 2 \"datastructures/fentree/fenwick_tree_range_add_range_sum.hpp\"\
+    \ begin(x), end(x)\n#define sz(x) int(size(x))\n\nusing u32 = unsigned int;\n\
+    using i64 = long long;\nusing u64 = unsigned long long;\n\ntemplate <class T>\n\
+    bool ckmin(T &a, const T &b) {\n  return b < a ? a = b, 1 : 0;\n}\n\ntemplate\
+    \ <class T>\nbool ckmax(T &a, const T &b) {\n  return b > a ? a = b, 1 : 0;\n\
+    }\n\nstruct InitIO {\n  InitIO() {\n    cin.tie(0)->sync_with_stdio(0);\n    cin.exceptions(cin.failbit);\n\
+    \    cout << setprecision(10) << fixed;\n  }\n} init_io;\n#line 2 \"datastructures/fentree/fenwick_tree_range_add_range_sum.hpp\"\
     \n\n#line 2 \"datastructures/fentree/fenwick_tree.hpp\"\n\ntemplate <class T>\n\
     struct FenwickTree {\n  int n;\n  vector<T> ft;\n\n  FenwickTree(int n_) : n(n_),\
     \ ft(n + 1) {}\n\n  FenwickTree(const vector<T> &a) : n(sz(a)), ft(n + 1) {\n\
@@ -107,13 +105,13 @@ data:
     \  }\n\n  void add(int r, T v) {\n    pref.add(r, v * (r + 1));\n    suff.add(n\
     \ - r - 1, v);\n  }\n\n  void add(int l, int r, T v) {\n    add(r, v);\n    if\
     \ (l > 0) {\n      add(l - 1, T(0) - T(v));\n    }\n  }\n};\n#line 5 \"verify/aizu/dsl/rsq_and_raq.test.cpp\"\
-    \n\nint main() {\n  int n, q;\n  cin >> n >> q;\n  RangeAddRangeSumFT<ll> ft(n);\n\
+    \n\nint main() {\n  int n, q;\n  cin >> n >> q;\n  RangeAddRangeSumFT<i64> ft(n);\n\
     \  while (q--) {\n    bool t;\n    int l, r;\n    cin >> t >> l >> r;\n    l--;\
     \ r--;\n    if (t) {\n      cout << ft.sum(l, r) << '\\n';\n    } else {\n   \
     \   int x;\n      cin >> x;\n      ft.add(l, r, x);\n    }\n  }\n}\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_G\"\
     \n\n#include \"../../boilerplate.hpp\"\n#include \"../../../datastructures/fentree/fenwick_tree_range_add_range_sum.hpp\"\
-    \n\nint main() {\n  int n, q;\n  cin >> n >> q;\n  RangeAddRangeSumFT<ll> ft(n);\n\
+    \n\nint main() {\n  int n, q;\n  cin >> n >> q;\n  RangeAddRangeSumFT<i64> ft(n);\n\
     \  while (q--) {\n    bool t;\n    int l, r;\n    cin >> t >> l >> r;\n    l--;\
     \ r--;\n    if (t) {\n      cout << ft.sum(l, r) << '\\n';\n    } else {\n   \
     \   int x;\n      cin >> x;\n      ft.add(l, r, x);\n    }\n  }\n}"
@@ -125,7 +123,7 @@ data:
   isVerificationFile: true
   path: verify/aizu/dsl/rsq_and_raq.test.cpp
   requiredBy: []
-  timestamp: '2024-09-11 14:41:57-04:00'
+  timestamp: '2024-09-11 14:56:51-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/aizu/dsl/rsq_and_raq.test.cpp

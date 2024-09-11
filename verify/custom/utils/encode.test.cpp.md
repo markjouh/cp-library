@@ -4,10 +4,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: utils/encode.hpp
     title: utils/encode.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: utils/random.hpp
     title: utils/random.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: utils/timer.hpp
     title: utils/timer.hpp
   _extendedRequiredBy: []
@@ -80,38 +80,37 @@ data:
     \ {\n  timer = std::chrono::high_resolution_clock::now();\n}\n\nlong long elapsed()\
     \ {\n  return (chrono::duration_cast<chrono::milliseconds>(chrono::high_resolution_clock::now()\
     \ - timer)).count();\n}\n#line 7 \"verify/boilerplate.hpp\"\n\n#define all(x)\
-    \ begin(x), end(x)\n#define sz(x) int(size(x))\n#define pb push_back\n#define\
-    \ eb emplace_back\n#define fi first\n#define se second\n\nusing ll = long long;\n\
-    \ntemplate <class T>\nbool ckmin(T &a, const T &b) {\n  return b < a ? a = b,\
-    \ 1 : 0;\n}\n\ntemplate <class T>\nbool ckmax(T &a, const T &b) {\n  return b\
-    \ > a ? a = b, 1 : 0;\n}\n\ntemplate <class T = int>\nstatic constexpr T inf =\
-    \ numeric_limits<T>::max() / 2;\n\nstruct InitIO {\n  InitIO() {\n    cin.tie(0)->sync_with_stdio(0);\n\
-    \    cin.exceptions(cin.failbit);\n    cout << setprecision(10) << fixed;\n  }\n\
-    } init_io;\n#line 2 \"utils/encode.hpp\"\n\nconstexpr uint64_t pow94[10] = {1,\
-    \ 94, 8836, 830584, 78074896, 7339040224, 689869781056, 64847759419264, 6095689385410816,\
-    \ 572994802228616704};\n\ntemplate <class T, int W>\nstring encode(T x) {\n  if\
-    \ constexpr (is_integral_v<T>) {\n    string res(W, 0);\n    for (int i = 0; i\
-    \ < W; i++) {\n      res[i] = char(33 + x % 94);\n      x /= 94;\n    }\n    return\
-    \ res;\n  } else {\n    string res;\n    for (auto &y : x) {\n      res += encode<typename\
-    \ T::value_type, W>(y);\n    }\n    return res;\n  }\n}\n\ntemplate <class T,\
-    \ int W>\nT decode(string s) {\n  if constexpr (is_integral_v<T>) {\n    T res\
-    \ = 0;\n    for (int i = 0; i < W; i++) {\n      res += pow94[i] * uint64_t(s[i]\
-    \ - 33);\n    }\n    return res;\n  } else {\n    constexpr int segs = tuple_size_v<T>;\n\
-    \    const int len = ssize(s) / segs;\n    T res;\n    for (int i = 0; i < segs;\
-    \ i++) {\n      res[i] = decode<typename T::value_type, W>(s.substr(len * i, len));\n\
-    \    }\n    return res;\n  }\n}\n\n#define make_encoded(type, x, w) cout << \"\
-    const \" << type << ' ' << #x << \" = decode<\" << type << \", \" << w << \">(R\\\
-    \"zzzzz(\" << encode<decltype(x), w>(x) << \")zzzzz\\\")\" << endl\n#line 5 \"\
-    verify/custom/utils/encode.test.cpp\"\n\nconst int TESTS = 1000;\n\nint main()\
-    \ {\n  for (int i = 0; i < TESTS; i++) {\n    array<int, 2500> arr;\n    for (int\
-    \ j = 0; j < 2500; j++) {\n      arr[j] = randInt(1e9);\n    }\n    auto enc =\
-    \ encode<decltype(arr), 5>(arr);\n    auto dec = decode<decltype(arr), 5>(enc);\n\
-    \    assert(arr == dec);\n  }\n\n  for (int i = 0; i < TESTS; i++) {\n    array<array<int,\
-    \ 50>, 50> arr;\n    for (int j = 0; j < 50; j++) {\n      for (int k = 0; k <\
-    \ 50; k++) {\n        arr[j][k] = randInt(1e9);\n      }\n    }\n    auto enc\
-    \ = encode<decltype(arr), 5>(arr);\n    auto dec = decode<decltype(arr), 5>(enc);\n\
-    \    assert(arr == dec);\n  }\n\n  cerr << \"Tests passed\\n\";\n\n  int a, b;\n\
-    \  cin >> a >> b;\n  cout << a + b << '\\n';\n}\n"
+    \ begin(x), end(x)\n#define sz(x) int(size(x))\n\nusing u32 = unsigned int;\n\
+    using i64 = long long;\nusing u64 = unsigned long long;\n\ntemplate <class T>\n\
+    bool ckmin(T &a, const T &b) {\n  return b < a ? a = b, 1 : 0;\n}\n\ntemplate\
+    \ <class T>\nbool ckmax(T &a, const T &b) {\n  return b > a ? a = b, 1 : 0;\n\
+    }\n\nstruct InitIO {\n  InitIO() {\n    cin.tie(0)->sync_with_stdio(0);\n    cin.exceptions(cin.failbit);\n\
+    \    cout << setprecision(10) << fixed;\n  }\n} init_io;\n#line 2 \"utils/encode.hpp\"\
+    \n\nconstexpr uint64_t pow94[10] = {1, 94, 8836, 830584, 78074896, 7339040224,\
+    \ 689869781056, 64847759419264, 6095689385410816, 572994802228616704};\n\ntemplate\
+    \ <class T, int W>\nstring encode(T x) {\n  if constexpr (is_integral_v<T>) {\n\
+    \    string res(W, 0);\n    for (int i = 0; i < W; i++) {\n      res[i] = char(33\
+    \ + x % 94);\n      x /= 94;\n    }\n    return res;\n  } else {\n    string res;\n\
+    \    for (auto &y : x) {\n      res += encode<typename T::value_type, W>(y);\n\
+    \    }\n    return res;\n  }\n}\n\ntemplate <class T, int W>\nT decode(string\
+    \ s) {\n  if constexpr (is_integral_v<T>) {\n    T res = 0;\n    for (int i =\
+    \ 0; i < W; i++) {\n      res += pow94[i] * uint64_t(s[i] - 33);\n    }\n    return\
+    \ res;\n  } else {\n    constexpr int segs = tuple_size_v<T>;\n    const int len\
+    \ = ssize(s) / segs;\n    T res;\n    for (int i = 0; i < segs; i++) {\n     \
+    \ res[i] = decode<typename T::value_type, W>(s.substr(len * i, len));\n    }\n\
+    \    return res;\n  }\n}\n\n#define make_encoded(type, x, w) cout << \"const \"\
+    \ << type << ' ' << #x << \" = decode<\" << type << \", \" << w << \">(R\\\"zzzzz(\"\
+    \ << encode<decltype(x), w>(x) << \")zzzzz\\\")\" << endl\n#line 5 \"verify/custom/utils/encode.test.cpp\"\
+    \n\nconst int TESTS = 1000;\n\nint main() {\n  for (int i = 0; i < TESTS; i++)\
+    \ {\n    array<int, 2500> arr;\n    for (int j = 0; j < 2500; j++) {\n      arr[j]\
+    \ = randInt(1e9);\n    }\n    auto enc = encode<decltype(arr), 5>(arr);\n    auto\
+    \ dec = decode<decltype(arr), 5>(enc);\n    assert(arr == dec);\n  }\n\n  for\
+    \ (int i = 0; i < TESTS; i++) {\n    array<array<int, 50>, 50> arr;\n    for (int\
+    \ j = 0; j < 50; j++) {\n      for (int k = 0; k < 50; k++) {\n        arr[j][k]\
+    \ = randInt(1e9);\n      }\n    }\n    auto enc = encode<decltype(arr), 5>(arr);\n\
+    \    auto dec = decode<decltype(arr), 5>(enc);\n    assert(arr == dec);\n  }\n\
+    \n  cerr << \"Tests passed\\n\";\n\n  int a, b;\n  cin >> a >> b;\n  cout << a\
+    \ + b << '\\n';\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/aplusb\"\n\n#include \"\
     ../../boilerplate.hpp\"\n#include \"../../../utils/encode.hpp\"\n\nconst int TESTS\
     \ = 1000;\n\nint main() {\n  for (int i = 0; i < TESTS; i++) {\n    array<int,\
@@ -130,7 +129,7 @@ data:
   isVerificationFile: true
   path: verify/custom/utils/encode.test.cpp
   requiredBy: []
-  timestamp: '2024-09-11 14:41:57-04:00'
+  timestamp: '2024-09-11 14:56:51-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/custom/utils/encode.test.cpp

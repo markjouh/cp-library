@@ -4,10 +4,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: utils/debug.hpp
     title: utils/debug.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: utils/random.hpp
     title: utils/random.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: utils/timer.hpp
     title: utils/timer.hpp
   _extendedRequiredBy: []
@@ -80,37 +80,35 @@ data:
     \ {\n  timer = std::chrono::high_resolution_clock::now();\n}\n\nlong long elapsed()\
     \ {\n  return (chrono::duration_cast<chrono::milliseconds>(chrono::high_resolution_clock::now()\
     \ - timer)).count();\n}\n#line 7 \"verify/boilerplate.hpp\"\n\n#define all(x)\
-    \ begin(x), end(x)\n#define sz(x) int(size(x))\n#define pb push_back\n#define\
-    \ eb emplace_back\n#define fi first\n#define se second\n\nusing ll = long long;\n\
-    \ntemplate <class T>\nbool ckmin(T &a, const T &b) {\n  return b < a ? a = b,\
-    \ 1 : 0;\n}\n\ntemplate <class T>\nbool ckmax(T &a, const T &b) {\n  return b\
-    \ > a ? a = b, 1 : 0;\n}\n\ntemplate <class T = int>\nstatic constexpr T inf =\
-    \ numeric_limits<T>::max() / 2;\n\nstruct InitIO {\n  InitIO() {\n    cin.tie(0)->sync_with_stdio(0);\n\
-    \    cin.exceptions(cin.failbit);\n    cout << setprecision(10) << fixed;\n  }\n\
-    } init_io;\n#line 2 \"utils/debug.hpp\"\n\nnamespace debug_internal {\n\nusing\
-    \ namespace std;\n\ntemplate <typename T>\nconcept isCore = requires(T x) {\n\
-    \  cerr << x;\n};\n\ntemplate <typename T>\nconcept isPair = requires(T x) {\n\
-    \  x.first;\n  x.second;\n};\n\ntemplate <typename T>\nconcept isIterable = ranges::range<T>;\n\
-    \ntemplate <typename T>\nvoid print(T x) {\n  if constexpr (isCore<T>) {\n   \
-    \ cerr << x;\n  } else if constexpr (isPair<T>) {\n    cerr << '(';\n    print(x.first);\n\
-    \    cerr << \", \";\n    print(x.second);\n    cerr << ')';\n  } else if constexpr\
-    \ (isIterable<T>) {\n    cerr << '[';\n    bool flag = false;\n    for (auto y\
-    \ : x) {\n      if (flag) {\n        cerr << \", \";\n      }\n      print(y);\n\
-    \      flag = true;\n    }\n    cerr << ']';\n  } else {\n    cerr << \"Unknown\
-    \ type\";\n  }\n}\n\ntemplate <typename T>\nvoid debug(string s, T x) {\n  cerr\
-    \ << \"\\033[1;35m\" << s << \"\\033[0;0m = \";\n  print(x);\n  cerr << endl;\n\
-    }\n\ntemplate <typename T, typename... Args>\nvoid debug(string s, T x, Args...\
-    \ args) {\n  int idx = 0, layer = 0;\n  while (idx < ssize(s) && (s[idx] != ','\
-    \ || layer != 0)) {\n    layer += s[idx] == '(' || s[idx] == '{';\n    layer -=\
-    \ s[idx] == ')' || s[idx] == '}';\n    idx++;\n  }\n  cerr << \"\\033[1;35m\"\
-    \ << s.substr(0, idx) << \"\\033[0;0m = \";\n  print(x);\n  cerr << \"\\033[1;32m\
-    \ | \\033[0;0m\";\n  debug(s.substr(s.find_first_not_of(' ', idx + 1)), args...);\n\
-    }\n}\n\n#define dbg(...) debug_internal::debug(#__VA_ARGS__, __VA_ARGS__)\n#line\
-    \ 5 \"verify/custom/utils/debug.test.cpp\"\n\n// Just some random stuff, make\
-    \ sure\n// the output looks right\n\nint main() {\n  const int n = randInt(100);\n\
-    \  vector<int> p = randVec<int>(n);\n  dbg(p);\n\n  map<int, vector<int>> mp;\n\
-    \  for (int i = 0; i < 100; i++) {\n    mp[randInt()] = randVec<int>(100);\n \
-    \ }\n  dbg(mp);\n\n  array<double, 100> arr = randArr<double, 100>();\n  dbg(arr);\n\
+    \ begin(x), end(x)\n#define sz(x) int(size(x))\n\nusing u32 = unsigned int;\n\
+    using i64 = long long;\nusing u64 = unsigned long long;\n\ntemplate <class T>\n\
+    bool ckmin(T &a, const T &b) {\n  return b < a ? a = b, 1 : 0;\n}\n\ntemplate\
+    \ <class T>\nbool ckmax(T &a, const T &b) {\n  return b > a ? a = b, 1 : 0;\n\
+    }\n\nstruct InitIO {\n  InitIO() {\n    cin.tie(0)->sync_with_stdio(0);\n    cin.exceptions(cin.failbit);\n\
+    \    cout << setprecision(10) << fixed;\n  }\n} init_io;\n#line 2 \"utils/debug.hpp\"\
+    \n\nnamespace debug_internal {\n\nusing namespace std;\n\ntemplate <typename T>\n\
+    concept isCore = requires(T x) {\n  cerr << x;\n};\n\ntemplate <typename T>\n\
+    concept isPair = requires(T x) {\n  x.first;\n  x.second;\n};\n\ntemplate <typename\
+    \ T>\nconcept isIterable = ranges::range<T>;\n\ntemplate <typename T>\nvoid print(T\
+    \ x) {\n  if constexpr (isCore<T>) {\n    cerr << x;\n  } else if constexpr (isPair<T>)\
+    \ {\n    cerr << '(';\n    print(x.first);\n    cerr << \", \";\n    print(x.second);\n\
+    \    cerr << ')';\n  } else if constexpr (isIterable<T>) {\n    cerr << '[';\n\
+    \    bool flag = false;\n    for (auto y : x) {\n      if (flag) {\n        cerr\
+    \ << \", \";\n      }\n      print(y);\n      flag = true;\n    }\n    cerr <<\
+    \ ']';\n  } else {\n    cerr << \"Unknown type\";\n  }\n}\n\ntemplate <typename\
+    \ T>\nvoid debug(string s, T x) {\n  cerr << \"\\033[1;35m\" << s << \"\\033[0;0m\
+    \ = \";\n  print(x);\n  cerr << endl;\n}\n\ntemplate <typename T, typename...\
+    \ Args>\nvoid debug(string s, T x, Args... args) {\n  int idx = 0, layer = 0;\n\
+    \  while (idx < ssize(s) && (s[idx] != ',' || layer != 0)) {\n    layer += s[idx]\
+    \ == '(' || s[idx] == '{';\n    layer -= s[idx] == ')' || s[idx] == '}';\n   \
+    \ idx++;\n  }\n  cerr << \"\\033[1;35m\" << s.substr(0, idx) << \"\\033[0;0m =\
+    \ \";\n  print(x);\n  cerr << \"\\033[1;32m | \\033[0;0m\";\n  debug(s.substr(s.find_first_not_of('\
+    \ ', idx + 1)), args...);\n}\n}\n\n#define dbg(...) debug_internal::debug(#__VA_ARGS__,\
+    \ __VA_ARGS__)\n#line 5 \"verify/custom/utils/debug.test.cpp\"\n\n// Just some\
+    \ random stuff, make sure\n// the output looks right\n\nint main() {\n  const\
+    \ int n = randInt(100);\n  vector<int> p = randVec<int>(n);\n  dbg(p);\n\n  map<int,\
+    \ vector<int>> mp;\n  for (int i = 0; i < 100; i++) {\n    mp[randInt()] = randVec<int>(100);\n\
+    \  }\n  dbg(mp);\n\n  array<double, 100> arr = randArr<double, 100>();\n  dbg(arr);\n\
     \n  int a, b;\n  cin >> a >> b;\n  cout << a + b << '\\n';\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/aplusb\"\n\n#include \"\
     ../../boilerplate.hpp\"\n#include \"../../../utils/debug.hpp\"\n\n// Just some\
@@ -126,7 +124,7 @@ data:
   isVerificationFile: true
   path: verify/custom/utils/debug.test.cpp
   requiredBy: []
-  timestamp: '2024-09-11 14:41:57-04:00'
+  timestamp: '2024-09-11 14:56:51-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/custom/utils/debug.test.cpp

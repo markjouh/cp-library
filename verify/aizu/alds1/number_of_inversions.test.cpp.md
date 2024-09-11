@@ -4,10 +4,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: datastructures/pbds/order_statistic_tree.hpp
     title: datastructures/pbds/order_statistic_tree.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: utils/random.hpp
     title: utils/random.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: utils/timer.hpp
     title: utils/timer.hpp
   _extendedRequiredBy: []
@@ -80,23 +80,22 @@ data:
     \ {\n  timer = std::chrono::high_resolution_clock::now();\n}\n\nlong long elapsed()\
     \ {\n  return (chrono::duration_cast<chrono::milliseconds>(chrono::high_resolution_clock::now()\
     \ - timer)).count();\n}\n#line 7 \"verify/boilerplate.hpp\"\n\n#define all(x)\
-    \ begin(x), end(x)\n#define sz(x) int(size(x))\n#define pb push_back\n#define\
-    \ eb emplace_back\n#define fi first\n#define se second\n\nusing ll = long long;\n\
-    \ntemplate <class T>\nbool ckmin(T &a, const T &b) {\n  return b < a ? a = b,\
-    \ 1 : 0;\n}\n\ntemplate <class T>\nbool ckmax(T &a, const T &b) {\n  return b\
-    \ > a ? a = b, 1 : 0;\n}\n\ntemplate <class T = int>\nstatic constexpr T inf =\
-    \ numeric_limits<T>::max() / 2;\n\nstruct InitIO {\n  InitIO() {\n    cin.tie(0)->sync_with_stdio(0);\n\
-    \    cin.exceptions(cin.failbit);\n    cout << setprecision(10) << fixed;\n  }\n\
-    } init_io;\n#line 2 \"datastructures/pbds/order_statistic_tree.hpp\"\n\n#include\
-    \ <ext/pb_ds/assoc_container.hpp>\n\nusing namespace __gnu_pbds;\n\ntemplate <class\
-    \ T>\nusing OrderStatisticTree = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;\n\
-    #line 5 \"verify/aizu/alds1/number_of_inversions.test.cpp\"\n\nint main() {\n\
-    \  int n;\n  cin >> n;\n  ll ans = 0;\n  OrderStatisticTree<int> st;\n  for (int\
-    \ i = 0; i < n; i++) {\n    int x;\n    cin >> x;\n    ans += sz(st) - st.order_of_key(x\
-    \ + 1);\n    st.insert(x);\n  }\n  cout << ans << '\\n';\n}\n"
+    \ begin(x), end(x)\n#define sz(x) int(size(x))\n\nusing u32 = unsigned int;\n\
+    using i64 = long long;\nusing u64 = unsigned long long;\n\ntemplate <class T>\n\
+    bool ckmin(T &a, const T &b) {\n  return b < a ? a = b, 1 : 0;\n}\n\ntemplate\
+    \ <class T>\nbool ckmax(T &a, const T &b) {\n  return b > a ? a = b, 1 : 0;\n\
+    }\n\nstruct InitIO {\n  InitIO() {\n    cin.tie(0)->sync_with_stdio(0);\n    cin.exceptions(cin.failbit);\n\
+    \    cout << setprecision(10) << fixed;\n  }\n} init_io;\n#line 2 \"datastructures/pbds/order_statistic_tree.hpp\"\
+    \n\n#include <ext/pb_ds/assoc_container.hpp>\n\nusing namespace __gnu_pbds;\n\n\
+    template <class T>\nusing OrderStatisticTree = tree<T, null_type, less<T>, rb_tree_tag,\
+    \ tree_order_statistics_node_update>;\n#line 5 \"verify/aizu/alds1/number_of_inversions.test.cpp\"\
+    \n\nint main() {\n  int n;\n  cin >> n;\n  i64 ans = 0;\n  OrderStatisticTree<int>\
+    \ st;\n  for (int i = 0; i < n; i++) {\n    int x;\n    cin >> x;\n    ans +=\
+    \ sz(st) - st.order_of_key(x + 1);\n    st.insert(x);\n  }\n  cout << ans << '\\\
+    n';\n}\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_5_D\"\
     \n\n#include \"../../boilerplate.hpp\"\n#include \"../../../datastructures/pbds/order_statistic_tree.hpp\"\
-    \n\nint main() {\n  int n;\n  cin >> n;\n  ll ans = 0;\n  OrderStatisticTree<int>\
+    \n\nint main() {\n  int n;\n  cin >> n;\n  i64 ans = 0;\n  OrderStatisticTree<int>\
     \ st;\n  for (int i = 0; i < n; i++) {\n    int x;\n    cin >> x;\n    ans +=\
     \ sz(st) - st.order_of_key(x + 1);\n    st.insert(x);\n  }\n  cout << ans << '\\\
     n';\n}"
@@ -107,7 +106,7 @@ data:
   isVerificationFile: true
   path: verify/aizu/alds1/number_of_inversions.test.cpp
   requiredBy: []
-  timestamp: '2024-09-11 14:41:57-04:00'
+  timestamp: '2024-09-11 14:56:51-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/aizu/alds1/number_of_inversions.test.cpp

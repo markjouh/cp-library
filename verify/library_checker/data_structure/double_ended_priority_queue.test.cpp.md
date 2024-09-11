@@ -4,10 +4,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: datastructures/w_ary_tree.hpp
     title: datastructures/w_ary_tree.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: utils/random.hpp
     title: utils/random.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: utils/timer.hpp
     title: utils/timer.hpp
   _extendedRequiredBy: []
@@ -80,23 +80,21 @@ data:
     \ {\n  timer = std::chrono::high_resolution_clock::now();\n}\n\nlong long elapsed()\
     \ {\n  return (chrono::duration_cast<chrono::milliseconds>(chrono::high_resolution_clock::now()\
     \ - timer)).count();\n}\n#line 7 \"verify/boilerplate.hpp\"\n\n#define all(x)\
-    \ begin(x), end(x)\n#define sz(x) int(size(x))\n#define pb push_back\n#define\
-    \ eb emplace_back\n#define fi first\n#define se second\n\nusing ll = long long;\n\
-    \ntemplate <class T>\nbool ckmin(T &a, const T &b) {\n  return b < a ? a = b,\
-    \ 1 : 0;\n}\n\ntemplate <class T>\nbool ckmax(T &a, const T &b) {\n  return b\
-    \ > a ? a = b, 1 : 0;\n}\n\ntemplate <class T = int>\nstatic constexpr T inf =\
-    \ numeric_limits<T>::max() / 2;\n\nstruct InitIO {\n  InitIO() {\n    cin.tie(0)->sync_with_stdio(0);\n\
-    \    cin.exceptions(cin.failbit);\n    cout << setprecision(10) << fixed;\n  }\n\
-    } init_io;\n#line 2 \"datastructures/w_ary_tree.hpp\"\n\ntemplate <int N>\nstruct\
-    \ WAryTree {\n  uint32_t freq[N];\n  uint64_t l0[(N >> 6) + 1], l1[(N >> 12) +\
-    \ 1], root;\n\n  WAryTree() {\n    memset(freq, 0, sizeof freq);\n    memset(l0,\
-    \ 0, sizeof l0);\n    memset(l1, 0, sizeof l1);\n    root = 0;\n  }\n\n  void\
-    \ insert(int x) {\n    freq[x]++;\n    if (freq[x] == 1) {\n      l0[x >> 6] |=\
-    \ 1ull << (x & 63);\n      if (__builtin_popcountll(l0[x >> 6]) == 1) {\n    \
-    \    l1[x >> 12] |= 1ull << ((x >> 6) & 63);\n        if (__builtin_popcountll(l1[x\
-    \ >> 12]) == 1) {\n          root |= 1ull << ((x >> 12) & 63);\n        }\n  \
-    \    }\n    }\n  }\n\n  void remove(int x) {\n    freq[x]--;\n    if (freq[x]\
-    \ == 0) {\n      l0[x >> 6] ^= 1ull << (x & 63);\n      if (__builtin_popcountll(l0[x\
+    \ begin(x), end(x)\n#define sz(x) int(size(x))\n\nusing u32 = unsigned int;\n\
+    using i64 = long long;\nusing u64 = unsigned long long;\n\ntemplate <class T>\n\
+    bool ckmin(T &a, const T &b) {\n  return b < a ? a = b, 1 : 0;\n}\n\ntemplate\
+    \ <class T>\nbool ckmax(T &a, const T &b) {\n  return b > a ? a = b, 1 : 0;\n\
+    }\n\nstruct InitIO {\n  InitIO() {\n    cin.tie(0)->sync_with_stdio(0);\n    cin.exceptions(cin.failbit);\n\
+    \    cout << setprecision(10) << fixed;\n  }\n} init_io;\n#line 2 \"datastructures/w_ary_tree.hpp\"\
+    \n\ntemplate <int N>\nstruct WAryTree {\n  uint32_t freq[N];\n  uint64_t l0[(N\
+    \ >> 6) + 1], l1[(N >> 12) + 1], root;\n\n  WAryTree() {\n    memset(freq, 0,\
+    \ sizeof freq);\n    memset(l0, 0, sizeof l0);\n    memset(l1, 0, sizeof l1);\n\
+    \    root = 0;\n  }\n\n  void insert(int x) {\n    freq[x]++;\n    if (freq[x]\
+    \ == 1) {\n      l0[x >> 6] |= 1ull << (x & 63);\n      if (__builtin_popcountll(l0[x\
+    \ >> 6]) == 1) {\n        l1[x >> 12] |= 1ull << ((x >> 6) & 63);\n        if\
+    \ (__builtin_popcountll(l1[x >> 12]) == 1) {\n          root |= 1ull << ((x >>\
+    \ 12) & 63);\n        }\n      }\n    }\n  }\n\n  void remove(int x) {\n    freq[x]--;\n\
+    \    if (freq[x] == 0) {\n      l0[x >> 6] ^= 1ull << (x & 63);\n      if (__builtin_popcountll(l0[x\
     \ >> 6]) == 0) {\n        l1[x >> 12] ^= 1ull << ((x >> 6) & 63);\n        if\
     \ (__builtin_popcountll(l1[x >> 12]) == 0) {\n          root ^= 1ull << ((x >>\
     \ 12) & 63);\n        }\n      }\n    }\n  }\n\n  int getMin() {\n    uint32_t\
@@ -150,7 +148,7 @@ data:
   isVerificationFile: true
   path: verify/library_checker/data_structure/double_ended_priority_queue.test.cpp
   requiredBy: []
-  timestamp: '2024-09-11 14:41:57-04:00'
+  timestamp: '2024-09-11 14:56:51-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/library_checker/data_structure/double_ended_priority_queue.test.cpp

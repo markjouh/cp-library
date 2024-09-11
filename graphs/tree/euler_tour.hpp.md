@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/library_checker/tree/vertex_add_subtree_sum.test.cpp
     title: verify/library_checker/tree/vertex_add_subtree_sum.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 2 \"graphs/tree/euler_tour.hpp\"\n\nstruct EulerTour {\n  vector<int>\
@@ -28,7 +28,7 @@ data:
   path: graphs/tree/euler_tour.hpp
   requiredBy: []
   timestamp: '2024-08-31 22:39:57-04:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - verify/library_checker/tree/vertex_add_subtree_sum.test.cpp
 documentation_of: graphs/tree/euler_tour.hpp

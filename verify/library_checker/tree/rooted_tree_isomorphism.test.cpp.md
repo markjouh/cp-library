@@ -4,10 +4,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: graphs/tree/tree_isomorphism.hpp
     title: graphs/tree/tree_isomorphism.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: utils/random.hpp
     title: utils/random.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: utils/timer.hpp
     title: utils/timer.hpp
   _extendedRequiredBy: []
@@ -80,21 +80,20 @@ data:
     \ {\n  timer = std::chrono::high_resolution_clock::now();\n}\n\nlong long elapsed()\
     \ {\n  return (chrono::duration_cast<chrono::milliseconds>(chrono::high_resolution_clock::now()\
     \ - timer)).count();\n}\n#line 7 \"verify/boilerplate.hpp\"\n\n#define all(x)\
-    \ begin(x), end(x)\n#define sz(x) int(size(x))\n#define pb push_back\n#define\
-    \ eb emplace_back\n#define fi first\n#define se second\n\nusing ll = long long;\n\
-    \ntemplate <class T>\nbool ckmin(T &a, const T &b) {\n  return b < a ? a = b,\
-    \ 1 : 0;\n}\n\ntemplate <class T>\nbool ckmax(T &a, const T &b) {\n  return b\
-    \ > a ? a = b, 1 : 0;\n}\n\ntemplate <class T = int>\nstatic constexpr T inf =\
-    \ numeric_limits<T>::max() / 2;\n\nstruct InitIO {\n  InitIO() {\n    cin.tie(0)->sync_with_stdio(0);\n\
-    \    cin.exceptions(cin.failbit);\n    cout << setprecision(10) << fixed;\n  }\n\
-    } init_io;\n#line 2 \"graphs/tree/tree_isomorphism.hpp\"\n\nstruct TreeIsomorphism\
-    \ {\n  map<vector<int>, int> hashes;\n\n  vector<int> gen(const vector<vector<int>>\
-    \ &g, int rt = 0) {\n    vector<int> res(sz(g));\n    dfs(rt, -1, g, res);\n \
-    \   return res;\n  }\n\nprivate:\n  void dfs(int u, int par, auto &g, auto &res)\
-    \ {\n    vector<int> children;\n    for (int v : g[u]) {\n      if (v != par)\
-    \ {\n        dfs(v, u, g, res);\n        children.push_back(res[v]);\n      }\n\
-    \    }\n    sort(all(children));\n    if (!hashes.count(children)) {\n      hashes[children]\
-    \ = sz(hashes);\n    }\n    res[u] = hashes[children];\n  }\n};\n#line 5 \"verify/library_checker/tree/rooted_tree_isomorphism.test.cpp\"\
+    \ begin(x), end(x)\n#define sz(x) int(size(x))\n\nusing u32 = unsigned int;\n\
+    using i64 = long long;\nusing u64 = unsigned long long;\n\ntemplate <class T>\n\
+    bool ckmin(T &a, const T &b) {\n  return b < a ? a = b, 1 : 0;\n}\n\ntemplate\
+    \ <class T>\nbool ckmax(T &a, const T &b) {\n  return b > a ? a = b, 1 : 0;\n\
+    }\n\nstruct InitIO {\n  InitIO() {\n    cin.tie(0)->sync_with_stdio(0);\n    cin.exceptions(cin.failbit);\n\
+    \    cout << setprecision(10) << fixed;\n  }\n} init_io;\n#line 2 \"graphs/tree/tree_isomorphism.hpp\"\
+    \n\nstruct TreeIsomorphism {\n  map<vector<int>, int> hashes;\n\n  vector<int>\
+    \ gen(const vector<vector<int>> &g, int rt = 0) {\n    vector<int> res(sz(g));\n\
+    \    dfs(rt, -1, g, res);\n    return res;\n  }\n\nprivate:\n  void dfs(int u,\
+    \ int par, auto &g, auto &res) {\n    vector<int> children;\n    for (int v :\
+    \ g[u]) {\n      if (v != par) {\n        dfs(v, u, g, res);\n        children.push_back(res[v]);\n\
+    \      }\n    }\n    sort(all(children));\n    if (!hashes.count(children)) {\n\
+    \      hashes[children] = sz(hashes);\n    }\n    res[u] = hashes[children];\n\
+    \  }\n};\n#line 5 \"verify/library_checker/tree/rooted_tree_isomorphism.test.cpp\"\
     \n\nint main() {\n  int n;\n  cin >> n;\n  vector<vector<int>> g(n);\n  for (int\
     \ i = 1; i < n; i++) {\n    int p;\n    cin >> p;\n    g[p].push_back(i);\n  }\n\
     \  TreeIsomorphism iso;\n  auto res = iso.gen(g);\n  cout << sz(iso.hashes) <<\
@@ -114,7 +113,7 @@ data:
   isVerificationFile: true
   path: verify/library_checker/tree/rooted_tree_isomorphism.test.cpp
   requiredBy: []
-  timestamp: '2024-09-11 14:41:57-04:00'
+  timestamp: '2024-09-11 14:56:51-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/library_checker/tree/rooted_tree_isomorphism.test.cpp

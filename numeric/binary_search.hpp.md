@@ -9,12 +9,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/library_checker/data_structure/range_kth_smallest.test.cpp
     title: verify/library_checker/data_structure/range_kth_smallest.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/library_checker/string/enumerate_palindromes.test.cpp
     title: verify/library_checker/string/enumerate_palindromes.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"numeric/binary_search.hpp\"\n\ntemplate <class T, class\
@@ -35,7 +35,7 @@ data:
   path: numeric/binary_search.hpp
   requiredBy: []
   timestamp: '2024-09-05 17:05:59-04:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/aizu/alds1/binary_search.test.cpp
   - verify/library_checker/data_structure/range_kth_smallest.test.cpp

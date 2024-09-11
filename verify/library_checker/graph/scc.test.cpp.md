@@ -4,10 +4,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: graphs/kosaraju_scc.hpp
     title: graphs/kosaraju_scc.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: utils/random.hpp
     title: utils/random.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: utils/timer.hpp
     title: utils/timer.hpp
   _extendedRequiredBy: []
@@ -80,44 +80,43 @@ data:
     \ {\n  timer = std::chrono::high_resolution_clock::now();\n}\n\nlong long elapsed()\
     \ {\n  return (chrono::duration_cast<chrono::milliseconds>(chrono::high_resolution_clock::now()\
     \ - timer)).count();\n}\n#line 7 \"verify/boilerplate.hpp\"\n\n#define all(x)\
-    \ begin(x), end(x)\n#define sz(x) int(size(x))\n#define pb push_back\n#define\
-    \ eb emplace_back\n#define fi first\n#define se second\n\nusing ll = long long;\n\
-    \ntemplate <class T>\nbool ckmin(T &a, const T &b) {\n  return b < a ? a = b,\
-    \ 1 : 0;\n}\n\ntemplate <class T>\nbool ckmax(T &a, const T &b) {\n  return b\
-    \ > a ? a = b, 1 : 0;\n}\n\ntemplate <class T = int>\nstatic constexpr T inf =\
-    \ numeric_limits<T>::max() / 2;\n\nstruct InitIO {\n  InitIO() {\n    cin.tie(0)->sync_with_stdio(0);\n\
-    \    cin.exceptions(cin.failbit);\n    cout << setprecision(10) << fixed;\n  }\n\
-    } init_io;\n#line 2 \"graphs/kosaraju_scc.hpp\"\n\nstruct KosarajuSCC {\n  int\
-    \ sccs = 0;\n  vector<int> comp;\n  vector<vector<int>> members, adjC;\n\n  KosarajuSCC(const\
-    \ vector<vector<int>> &g) : adj(g) {\n    comp.resize(sz(g), -1);\n    adjT.resize(sz(g));\n\
-    \    vis.resize(sz(g));\n    ord.reserve(sz(g));\n    for (int i = 0; i < sz(g);\
-    \ i++) {\n      if (!vis[i]) {\n        dfs_setup(i);\n      }\n    }\n    for\
-    \ (int i = sz(ord) - 1; i >= 0; i--) {\n      if (comp[ord[i]] == -1) {\n    \
-    \    members.emplace_back();\n        dfs_build(ord[i]);\n        sccs++;\n  \
-    \    }\n    }\n    adjT.clear();\n    vis.clear();\n    ord.clear();\n\n    adjC.resize(sccs);\n\
-    \    vector<int> prev(sccs, -1);\n    for (int i = 0; i < sccs; i++) {\n     \
-    \ for (int u : members[i]) {\n        for (int v : adj[u]) {\n          if (comp[v]\
-    \ != i && prev[comp[v]] < i) {\n            adjC[i].push_back(comp[v]);\n    \
-    \        prev[comp[v]] = i;\n          }\n        }\n      }\n    }\n  }\n\nprivate:\n\
-    \  const vector<vector<int>> &adj;\n  vector<vector<int>> adjT;\n  vector<bool>\
-    \ vis;\n  vector<int> ord;\n\n  void dfs_setup(int u) {\n    vis[u] = true;\n\
-    \    for (int v : adj[u]) {\n      adjT[v].push_back(u);\n      if (!vis[v]) {\n\
-    \        dfs_setup(v);\n      }\n    }\n    ord.push_back(u);\n  }\n\n  void dfs_build(int\
-    \ u) {\n    comp[u] = sccs;\n    members[sccs].push_back(u);\n    for (int v :\
-    \ adjT[u]) {\n      if (comp[v] == -1) {\n        dfs_build(v);\n      }\n   \
-    \ }\n  }\n};\n#line 5 \"verify/library_checker/graph/scc.test.cpp\"\n\nint main()\
-    \ {\n  int n, m;\n  cin >> n >> m;\n  vector<vector<int>> g(n);\n  for (int i\
-    \ = 0; i < m; i++) {\n    int u, v;\n    cin >> u >> v;\n    g[u].pb(v);\n  }\n\
-    \  KosarajuSCC scc(g);\n  cout << scc.sccs << '\\n';\n  for (int i = 0; i < scc.sccs;\
-    \ i++) {\n    cout << sz(scc.members[i]) << ' ';\n    for (int x : scc.members[i])\
+    \ begin(x), end(x)\n#define sz(x) int(size(x))\n\nusing u32 = unsigned int;\n\
+    using i64 = long long;\nusing u64 = unsigned long long;\n\ntemplate <class T>\n\
+    bool ckmin(T &a, const T &b) {\n  return b < a ? a = b, 1 : 0;\n}\n\ntemplate\
+    \ <class T>\nbool ckmax(T &a, const T &b) {\n  return b > a ? a = b, 1 : 0;\n\
+    }\n\nstruct InitIO {\n  InitIO() {\n    cin.tie(0)->sync_with_stdio(0);\n    cin.exceptions(cin.failbit);\n\
+    \    cout << setprecision(10) << fixed;\n  }\n} init_io;\n#line 2 \"graphs/kosaraju_scc.hpp\"\
+    \n\nstruct KosarajuSCC {\n  int sccs = 0;\n  vector<int> comp;\n  vector<vector<int>>\
+    \ members, adjC;\n\n  KosarajuSCC(const vector<vector<int>> &g) : adj(g) {\n \
+    \   comp.resize(sz(g), -1);\n    adjT.resize(sz(g));\n    vis.resize(sz(g));\n\
+    \    ord.reserve(sz(g));\n    for (int i = 0; i < sz(g); i++) {\n      if (!vis[i])\
+    \ {\n        dfs_setup(i);\n      }\n    }\n    for (int i = sz(ord) - 1; i >=\
+    \ 0; i--) {\n      if (comp[ord[i]] == -1) {\n        members.emplace_back();\n\
+    \        dfs_build(ord[i]);\n        sccs++;\n      }\n    }\n    adjT.clear();\n\
+    \    vis.clear();\n    ord.clear();\n\n    adjC.resize(sccs);\n    vector<int>\
+    \ prev(sccs, -1);\n    for (int i = 0; i < sccs; i++) {\n      for (int u : members[i])\
+    \ {\n        for (int v : adj[u]) {\n          if (comp[v] != i && prev[comp[v]]\
+    \ < i) {\n            adjC[i].push_back(comp[v]);\n            prev[comp[v]] =\
+    \ i;\n          }\n        }\n      }\n    }\n  }\n\nprivate:\n  const vector<vector<int>>\
+    \ &adj;\n  vector<vector<int>> adjT;\n  vector<bool> vis;\n  vector<int> ord;\n\
+    \n  void dfs_setup(int u) {\n    vis[u] = true;\n    for (int v : adj[u]) {\n\
+    \      adjT[v].push_back(u);\n      if (!vis[v]) {\n        dfs_setup(v);\n  \
+    \    }\n    }\n    ord.push_back(u);\n  }\n\n  void dfs_build(int u) {\n    comp[u]\
+    \ = sccs;\n    members[sccs].push_back(u);\n    for (int v : adjT[u]) {\n    \
+    \  if (comp[v] == -1) {\n        dfs_build(v);\n      }\n    }\n  }\n};\n#line\
+    \ 5 \"verify/library_checker/graph/scc.test.cpp\"\n\nint main() {\n  int n, m;\n\
+    \  cin >> n >> m;\n  vector<vector<int>> g(n);\n  for (int i = 0; i < m; i++)\
+    \ {\n    int u, v;\n    cin >> u >> v;\n    g[u].push_back(v);\n  }\n  KosarajuSCC\
+    \ scc(g);\n  cout << scc.sccs << '\\n';\n  for (int i = 0; i < scc.sccs; i++)\
+    \ {\n    cout << sz(scc.members[i]) << ' ';\n    for (int x : scc.members[i])\
     \ {\n      cout << x << ' ';\n    }\n    cout << '\\n';\n  }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/scc\"\n\n#include \"../../boilerplate.hpp\"\
     \n#include \"../../../graphs/kosaraju_scc.hpp\"\n\nint main() {\n  int n, m;\n\
     \  cin >> n >> m;\n  vector<vector<int>> g(n);\n  for (int i = 0; i < m; i++)\
-    \ {\n    int u, v;\n    cin >> u >> v;\n    g[u].pb(v);\n  }\n  KosarajuSCC scc(g);\n\
-    \  cout << scc.sccs << '\\n';\n  for (int i = 0; i < scc.sccs; i++) {\n    cout\
-    \ << sz(scc.members[i]) << ' ';\n    for (int x : scc.members[i]) {\n      cout\
-    \ << x << ' ';\n    }\n    cout << '\\n';\n  }\n}"
+    \ {\n    int u, v;\n    cin >> u >> v;\n    g[u].push_back(v);\n  }\n  KosarajuSCC\
+    \ scc(g);\n  cout << scc.sccs << '\\n';\n  for (int i = 0; i < scc.sccs; i++)\
+    \ {\n    cout << sz(scc.members[i]) << ' ';\n    for (int x : scc.members[i])\
+    \ {\n      cout << x << ' ';\n    }\n    cout << '\\n';\n  }\n}"
   dependsOn:
   - utils/random.hpp
   - utils/timer.hpp
@@ -125,7 +124,7 @@ data:
   isVerificationFile: true
   path: verify/library_checker/graph/scc.test.cpp
   requiredBy: []
-  timestamp: '2024-09-11 14:41:57-04:00'
+  timestamp: '2024-09-11 14:56:51-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/library_checker/graph/scc.test.cpp

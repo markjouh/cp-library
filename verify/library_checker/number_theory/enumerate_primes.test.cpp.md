@@ -4,10 +4,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: numeric/sieve_factor.hpp
     title: numeric/sieve_factor.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: utils/random.hpp
     title: utils/random.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: utils/timer.hpp
     title: utils/timer.hpp
   _extendedRequiredBy: []
@@ -80,31 +80,29 @@ data:
     \ {\n  timer = std::chrono::high_resolution_clock::now();\n}\n\nlong long elapsed()\
     \ {\n  return (chrono::duration_cast<chrono::milliseconds>(chrono::high_resolution_clock::now()\
     \ - timer)).count();\n}\n#line 7 \"verify/boilerplate.hpp\"\n\n#define all(x)\
-    \ begin(x), end(x)\n#define sz(x) int(size(x))\n#define pb push_back\n#define\
-    \ eb emplace_back\n#define fi first\n#define se second\n\nusing ll = long long;\n\
-    \ntemplate <class T>\nbool ckmin(T &a, const T &b) {\n  return b < a ? a = b,\
-    \ 1 : 0;\n}\n\ntemplate <class T>\nbool ckmax(T &a, const T &b) {\n  return b\
-    \ > a ? a = b, 1 : 0;\n}\n\ntemplate <class T = int>\nstatic constexpr T inf =\
-    \ numeric_limits<T>::max() / 2;\n\nstruct InitIO {\n  InitIO() {\n    cin.tie(0)->sync_with_stdio(0);\n\
-    \    cin.exceptions(cin.failbit);\n    cout << setprecision(10) << fixed;\n  }\n\
-    } init_io;\n#line 2 \"numeric/sieve_factor.hpp\"\n\nvector<int> minPF, primes;\n\
-    \nvoid sieve(int n) {\n  minPF.resize(n + 1);\n  for (int i = 2; i <= n; i++)\
-    \ {\n    if (!minPF[i]) {\n      minPF[i] = i;\n      primes.push_back(i);\n \
-    \     for (ll j = 1ll * i * i; j <= n; j += i) {\n        if (!minPF[j]) {\n \
-    \         minPF[j] = i;\n        }\n      }\n    }\n  }\n}\n\ntemplate <class\
-    \ T>\nvector<pair<T, int>> factor(T num) {\n  vector<pair<T, int>> res;\n\n  if\
-    \ (num <= sz(minPF) - 1) {\n    while (num > 1) {\n      int fac = minPF[num];\n\
-    \      res.emplace_back(fac, 0);\n      while (num % fac == 0) {\n        num\
-    \ /= fac;\n        res.back().second++;\n      }\n    }\n    return res;\n  }\n\
-    \n  for (int p : primes) {\n    if (1ll * p * p > num) {\n      break;\n    }\n\
-    \    int exp = 0;\n    while (num % p == 0) {\n      num /= p;\n      exp++;\n\
-    \    }\n    if (exp) {\n      res.emplace_back(p, exp);\n    }\n  }\n  if (num\
-    \ > 1) {\n    res.emplace_back(num, 1);\n  }\n  return res;\n}\n\ntemplate<class\
-    \ T> vector<T> genDivisors(vector<pair<T, int>> facs) {\n  vector<T> res = {1};\n\
-    \  for (auto [p, exp] : facs) {\n    const int oldSize = sz(res);\n    T coeff\
-    \ = 1;\n    for (int i = 0; i < exp; i++) {\n      coeff *= p;\n      for (int\
-    \ j = 0; j < oldSize; j++) {\n        res.push_back(coeff * res[j]);\n      }\n\
-    \    }\n  }\n  return res;\n}\n#line 5 \"verify/library_checker/number_theory/enumerate_primes.test.cpp\"\
+    \ begin(x), end(x)\n#define sz(x) int(size(x))\n\nusing u32 = unsigned int;\n\
+    using i64 = long long;\nusing u64 = unsigned long long;\n\ntemplate <class T>\n\
+    bool ckmin(T &a, const T &b) {\n  return b < a ? a = b, 1 : 0;\n}\n\ntemplate\
+    \ <class T>\nbool ckmax(T &a, const T &b) {\n  return b > a ? a = b, 1 : 0;\n\
+    }\n\nstruct InitIO {\n  InitIO() {\n    cin.tie(0)->sync_with_stdio(0);\n    cin.exceptions(cin.failbit);\n\
+    \    cout << setprecision(10) << fixed;\n  }\n} init_io;\n#line 2 \"numeric/sieve_factor.hpp\"\
+    \n\nvector<int> minPF, primes;\n\nvoid sieve(int n) {\n  minPF.resize(n + 1);\n\
+    \  for (int i = 2; i <= n; i++) {\n    if (!minPF[i]) {\n      minPF[i] = i;\n\
+    \      primes.push_back(i);\n      for (i64 j = 1ll * i * i; j <= n; j += i) {\n\
+    \        if (!minPF[j]) {\n          minPF[j] = i;\n        }\n      }\n    }\n\
+    \  }\n}\n\ntemplate <class T>\nvector<pair<T, int>> factor(T num) {\n  vector<pair<T,\
+    \ int>> res;\n\n  if (num <= sz(minPF) - 1) {\n    while (num > 1) {\n      int\
+    \ fac = minPF[num];\n      res.emplace_back(fac, 0);\n      while (num % fac ==\
+    \ 0) {\n        num /= fac;\n        res.back().second++;\n      }\n    }\n  \
+    \  return res;\n  }\n\n  for (int p : primes) {\n    if (1ll * p * p > num) {\n\
+    \      break;\n    }\n    int exp = 0;\n    while (num % p == 0) {\n      num\
+    \ /= p;\n      exp++;\n    }\n    if (exp) {\n      res.emplace_back(p, exp);\n\
+    \    }\n  }\n  if (num > 1) {\n    res.emplace_back(num, 1);\n  }\n  return res;\n\
+    }\n\ntemplate <class T>\nvector<T> genDivisors(vector<pair<T, int>> facs) {\n\
+    \  vector<T> res = {1};\n  for (auto [p, exp] : facs) {\n    const int oldSize\
+    \ = sz(res);\n    T coeff = 1;\n    for (int i = 0; i < exp; i++) {\n      coeff\
+    \ *= p;\n      for (int j = 0; j < oldSize; j++) {\n        res.push_back(coeff\
+    \ * res[j]);\n      }\n    }\n  }\n  return res;\n}\n#line 5 \"verify/library_checker/number_theory/enumerate_primes.test.cpp\"\
     \n\nint main() {\n  int n, a, b;\n  cin >> n >> a >> b;\n  sieve(n);\n  cout <<\
     \ sz(primes) << ' ';\n  vector<int> res;\n  for (int i = b; i < sz(primes); i\
     \ += a) {\n    res.push_back(primes[i]);\n  }\n  cout << sz(res) << '\\n';\n \
@@ -122,7 +120,7 @@ data:
   isVerificationFile: true
   path: verify/library_checker/number_theory/enumerate_primes.test.cpp
   requiredBy: []
-  timestamp: '2024-09-11 14:41:57-04:00'
+  timestamp: '2024-09-11 14:56:51-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/library_checker/number_theory/enumerate_primes.test.cpp

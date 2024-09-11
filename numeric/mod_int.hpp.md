@@ -12,7 +12,7 @@ data:
   attributes:
     links: []
   bundledCode: "#line 2 \"numeric/mod_int.hpp\"\n\ntemplate <int MOD>\nstruct ModInt\
-    \ {\n  int v;\n \n  ModInt(ll x = 0) : v(int(-MOD < x && x < MOD ? x : x % MOD)\
+    \ {\n  int v;\n \n  ModInt(i64 x = 0) : v(int(-MOD < x && x < MOD ? x : x % MOD)\
     \ + (x < 0) * MOD) {}\n \n  friend ModInt pow(ModInt base, int exp) {\n    ModInt\
     \ res = 1;\n    while (exp) {\n      if (exp & 1) {\n        res *= base;\n  \
     \    }\n      base *= base;\n      exp >>= 1;\n    }\n    return res;\n  }\n \n\
@@ -27,7 +27,7 @@ data:
     \ ModInt b) {\n    return a *= b;\n  }\n \n  friend ModInt operator/(ModInt a,\
     \ ModInt b) {\n    return a /= b;\n  }\n \n  friend ostream &operator<<(ostream\
     \ &os, ModInt a) {\n    return os << a.v;\n  }\n};\n"
-  code: "#pragma once\n\ntemplate <int MOD>\nstruct ModInt {\n  int v;\n \n  ModInt(ll\
+  code: "#pragma once\n\ntemplate <int MOD>\nstruct ModInt {\n  int v;\n \n  ModInt(i64\
     \ x = 0) : v(int(-MOD < x && x < MOD ? x : x % MOD) + (x < 0) * MOD) {}\n \n \
     \ friend ModInt pow(ModInt base, int exp) {\n    ModInt res = 1;\n    while (exp)\
     \ {\n      if (exp & 1) {\n        res *= base;\n      }\n      base *= base;\n\
@@ -47,7 +47,7 @@ data:
   isVerificationFile: false
   path: numeric/mod_int.hpp
   requiredBy: []
-  timestamp: '2024-08-28 02:47:08-04:00'
+  timestamp: '2024-09-11 14:56:51-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/aizu/ntl/power.test.cpp

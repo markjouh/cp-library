@@ -1,23 +1,23 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: datastructures/fentree/fenwick_tree.hpp
     title: datastructures/fentree/fenwick_tree.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: graphs/tree/euler_tour.hpp
     title: graphs/tree/euler_tour.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: utils/random.hpp
     title: utils/random.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: utils/timer.hpp
     title: utils/timer.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/vertex_add_subtree_sum
@@ -83,16 +83,14 @@ data:
     \ {\n  timer = std::chrono::high_resolution_clock::now();\n}\n\nlong long elapsed()\
     \ {\n  return (chrono::duration_cast<chrono::milliseconds>(chrono::high_resolution_clock::now()\
     \ - timer)).count();\n}\n#line 7 \"verify/boilerplate.hpp\"\n\n#define all(x)\
-    \ begin(x), end(x)\n#define sz(x) int(size(x))\n#define pb push_back\n#define\
-    \ eb emplace_back\n#define fi first\n#define se second\n\nusing ll = long long;\n\
-    \ntemplate <class T>\nbool ckmin(T &a, const T &b) {\n  return b < a ? a = b,\
-    \ 1 : 0;\n}\n\ntemplate <class T>\nbool ckmax(T &a, const T &b) {\n  return b\
-    \ > a ? a = b, 1 : 0;\n}\n\ntemplate <class T = int>\nstatic constexpr T inf =\
-    \ numeric_limits<T>::max() / 2;\n\nstruct InitIO {\n  InitIO() {\n    cin.tie(0)->sync_with_stdio(0);\n\
-    \    cin.exceptions(cin.failbit);\n    cout << setprecision(10) << fixed;\n  }\n\
-    } init_io;\n#line 2 \"datastructures/fentree/fenwick_tree.hpp\"\n\ntemplate <class\
-    \ T>\nstruct FenwickTree {\n  int n;\n  vector<T> ft;\n\n  FenwickTree(int n_)\
-    \ : n(n_), ft(n + 1) {}\n\n  FenwickTree(const vector<T> &a) : n(sz(a)), ft(n\
+    \ begin(x), end(x)\n#define sz(x) int(size(x))\n\nusing u32 = unsigned int;\n\
+    using i64 = long long;\nusing u64 = unsigned long long;\n\ntemplate <class T>\n\
+    bool ckmin(T &a, const T &b) {\n  return b < a ? a = b, 1 : 0;\n}\n\ntemplate\
+    \ <class T>\nbool ckmax(T &a, const T &b) {\n  return b > a ? a = b, 1 : 0;\n\
+    }\n\nstruct InitIO {\n  InitIO() {\n    cin.tie(0)->sync_with_stdio(0);\n    cin.exceptions(cin.failbit);\n\
+    \    cout << setprecision(10) << fixed;\n  }\n} init_io;\n#line 2 \"datastructures/fentree/fenwick_tree.hpp\"\
+    \n\ntemplate <class T>\nstruct FenwickTree {\n  int n;\n  vector<T> ft;\n\n  FenwickTree(int\
+    \ n_) : n(n_), ft(n + 1) {}\n\n  FenwickTree(const vector<T> &a) : n(sz(a)), ft(n\
     \ + 1) {\n    for (int i = 1; i <= n; i++) {\n      ft[i] += a[i - 1];\n     \
     \ if (i + (i & -i) <= n) {\n        ft[i + (i & -i)] += ft[i];\n      }\n    }\n\
     \  }\n\n  void add(int p, T v) {\n    for (p++; p <= n; p += p & -p) {\n     \
@@ -107,7 +105,7 @@ data:
     \ tout[u] = time;\n  }\n};\n#line 6 \"verify/library_checker/tree/vertex_add_subtree_sum.test.cpp\"\
     \n\nint main() {\n  int n, q;\n  cin >> n >> q;\n  vector<int> a(n);\n  for (int\
     \ i = 0; i < n; i++) {\n    cin >> a[i];\n  }\n  vector<vector<int>> g(n);\n \
-    \ for (int i = 1; i < n; i++) {\n    int p;\n    cin >> p;\n    g[p].pb(i);\n\
+    \ for (int i = 1; i < n; i++) {\n    int p;\n    cin >> p;\n    g[p].push_back(i);\n\
     \  }\n  EulerTour et(g);\n  FenwickTree<ll> ft(n);\n  for (int i = 0; i < n; i++)\
     \ {\n    ft.add(et.tin[i], a[i]);\n  }\n  while (q--) {\n    bool t;\n    int\
     \ u;\n    cin >> t >> u;\n    if (t) {\n      cout << ft.sum(et.tin[u], et.tout[u]\
@@ -118,11 +116,12 @@ data:
     \n#include \"../../../graphs/tree/euler_tour.hpp\"\n\nint main() {\n  int n, q;\n\
     \  cin >> n >> q;\n  vector<int> a(n);\n  for (int i = 0; i < n; i++) {\n    cin\
     \ >> a[i];\n  }\n  vector<vector<int>> g(n);\n  for (int i = 1; i < n; i++) {\n\
-    \    int p;\n    cin >> p;\n    g[p].pb(i);\n  }\n  EulerTour et(g);\n  FenwickTree<ll>\
-    \ ft(n);\n  for (int i = 0; i < n; i++) {\n    ft.add(et.tin[i], a[i]);\n  }\n\
-    \  while (q--) {\n    bool t;\n    int u;\n    cin >> t >> u;\n    if (t) {\n\
-    \      cout << ft.sum(et.tin[u], et.tout[u] - 1) << '\\n';\n    } else {\n   \
-    \   int x;\n      cin >> x;\n      ft.add(et.tin[u], x);\n    }\n  }\n}"
+    \    int p;\n    cin >> p;\n    g[p].push_back(i);\n  }\n  EulerTour et(g);\n\
+    \  FenwickTree<ll> ft(n);\n  for (int i = 0; i < n; i++) {\n    ft.add(et.tin[i],\
+    \ a[i]);\n  }\n  while (q--) {\n    bool t;\n    int u;\n    cin >> t >> u;\n\
+    \    if (t) {\n      cout << ft.sum(et.tin[u], et.tout[u] - 1) << '\\n';\n   \
+    \ } else {\n      int x;\n      cin >> x;\n      ft.add(et.tin[u], x);\n    }\n\
+    \  }\n}"
   dependsOn:
   - utils/random.hpp
   - utils/timer.hpp
@@ -131,8 +130,8 @@ data:
   isVerificationFile: true
   path: verify/library_checker/tree/vertex_add_subtree_sum.test.cpp
   requiredBy: []
-  timestamp: '2024-09-11 14:41:57-04:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2024-09-11 14:56:51-04:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/library_checker/tree/vertex_add_subtree_sum.test.cpp
 layout: document

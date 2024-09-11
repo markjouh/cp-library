@@ -4,10 +4,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: numeric/binary_trie.hpp
     title: numeric/binary_trie.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: utils/random.hpp
     title: utils/random.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: utils/timer.hpp
     title: utils/timer.hpp
   _extendedRequiredBy: []
@@ -80,30 +80,29 @@ data:
     \ {\n  timer = std::chrono::high_resolution_clock::now();\n}\n\nlong long elapsed()\
     \ {\n  return (chrono::duration_cast<chrono::milliseconds>(chrono::high_resolution_clock::now()\
     \ - timer)).count();\n}\n#line 7 \"verify/boilerplate.hpp\"\n\n#define all(x)\
-    \ begin(x), end(x)\n#define sz(x) int(size(x))\n#define pb push_back\n#define\
-    \ eb emplace_back\n#define fi first\n#define se second\n\nusing ll = long long;\n\
-    \ntemplate <class T>\nbool ckmin(T &a, const T &b) {\n  return b < a ? a = b,\
-    \ 1 : 0;\n}\n\ntemplate <class T>\nbool ckmax(T &a, const T &b) {\n  return b\
-    \ > a ? a = b, 1 : 0;\n}\n\ntemplate <class T = int>\nstatic constexpr T inf =\
-    \ numeric_limits<T>::max() / 2;\n\nstruct InitIO {\n  InitIO() {\n    cin.tie(0)->sync_with_stdio(0);\n\
-    \    cin.exceptions(cin.failbit);\n    cout << setprecision(10) << fixed;\n  }\n\
-    } init_io;\n#line 2 \"numeric/binary_trie.hpp\"\n\nstruct BinaryTrie {\n  vector<array<int,\
-    \ 2>> nxt;\n  vector<int> cnt;\n\n  BinaryTrie() : nxt(1, {-1, -1}), cnt(1, 0)\
-    \ {}\n\n  int count(unsigned int x) {\n    int pos = 0;\n    for (int i = 31;\
-    \ i >= 0; i--) {\n      pos = nxt[pos][(x >> i) & 1];\n      if (pos == -1) {\n\
-    \        return 0;\n      }\n    }\n    return cnt[pos];\n  }\n\n  void insert(unsigned\
-    \ int x) {\n    int pos = 0;\n    for (int i = 31; i >= 0; i--) {\n      bool\
-    \ dir = (x >> i) & 1;\n      if (nxt[pos][dir] == -1) {\n        nxt[pos][dir]\
-    \ = sz(nxt);\n        nxt.push_back({-1, -1});\n        cnt.push_back(0);\n  \
-    \    }\n      pos = nxt[pos][dir];\n      cnt[pos]++;\n    }\n  }\n\n  void remove(unsigned\
-    \ int x) {\n    int pos = 0;\n    for (int i = 31; i >= 0; i--) {\n      pos =\
-    \ nxt[pos][(x >> i) & 1];\n      cnt[pos]--;\n    }\n  }\n\n  unsigned int minXor(unsigned\
-    \ int x) {\n    int pos = 0;\n    unsigned int res = 0;\n    for (int i = 31;\
-    \ i >= 0; i--) {\n      bool dir = (x >> i) & 1;\n      if (nxt[pos][dir] == -1\
-    \ || cnt[nxt[pos][dir]] == 0) {\n        res |= 1 << i;\n        pos = nxt[pos][dir\
-    \ ^ 1];\n      } else {\n        pos = nxt[pos][dir];\n      }\n    }\n    return\
-    \ res;\n  }\n\n  unsigned int maxXor(unsigned int x) {\n    static const unsigned\
-    \ int mask = -1;\n    return mask ^ minXor(x ^ mask);\n  }\n};\n#line 5 \"verify/library_checker/data_structure/set_xor_min.test.cpp\"\
+    \ begin(x), end(x)\n#define sz(x) int(size(x))\n\nusing u32 = unsigned int;\n\
+    using i64 = long long;\nusing u64 = unsigned long long;\n\ntemplate <class T>\n\
+    bool ckmin(T &a, const T &b) {\n  return b < a ? a = b, 1 : 0;\n}\n\ntemplate\
+    \ <class T>\nbool ckmax(T &a, const T &b) {\n  return b > a ? a = b, 1 : 0;\n\
+    }\n\nstruct InitIO {\n  InitIO() {\n    cin.tie(0)->sync_with_stdio(0);\n    cin.exceptions(cin.failbit);\n\
+    \    cout << setprecision(10) << fixed;\n  }\n} init_io;\n#line 2 \"numeric/binary_trie.hpp\"\
+    \n\nstruct BinaryTrie {\n  vector<array<int, 2>> nxt;\n  vector<int> cnt;\n\n\
+    \  BinaryTrie() : nxt(1, {-1, -1}), cnt(1, 0) {}\n\n  int count(unsigned int x)\
+    \ {\n    int pos = 0;\n    for (int i = 31; i >= 0; i--) {\n      pos = nxt[pos][(x\
+    \ >> i) & 1];\n      if (pos == -1) {\n        return 0;\n      }\n    }\n   \
+    \ return cnt[pos];\n  }\n\n  void insert(unsigned int x) {\n    int pos = 0;\n\
+    \    for (int i = 31; i >= 0; i--) {\n      bool dir = (x >> i) & 1;\n      if\
+    \ (nxt[pos][dir] == -1) {\n        nxt[pos][dir] = sz(nxt);\n        nxt.push_back({-1,\
+    \ -1});\n        cnt.push_back(0);\n      }\n      pos = nxt[pos][dir];\n    \
+    \  cnt[pos]++;\n    }\n  }\n\n  void remove(unsigned int x) {\n    int pos = 0;\n\
+    \    for (int i = 31; i >= 0; i--) {\n      pos = nxt[pos][(x >> i) & 1];\n  \
+    \    cnt[pos]--;\n    }\n  }\n\n  unsigned int minXor(unsigned int x) {\n    int\
+    \ pos = 0;\n    unsigned int res = 0;\n    for (int i = 31; i >= 0; i--) {\n \
+    \     bool dir = (x >> i) & 1;\n      if (nxt[pos][dir] == -1 || cnt[nxt[pos][dir]]\
+    \ == 0) {\n        res |= 1 << i;\n        pos = nxt[pos][dir ^ 1];\n      } else\
+    \ {\n        pos = nxt[pos][dir];\n      }\n    }\n    return res;\n  }\n\n  unsigned\
+    \ int maxXor(unsigned int x) {\n    static const unsigned int mask = -1;\n   \
+    \ return mask ^ minXor(x ^ mask);\n  }\n};\n#line 5 \"verify/library_checker/data_structure/set_xor_min.test.cpp\"\
     \n\nint main() {\n  int q;\n  cin >> q;\n  BinaryTrie bt;\n  while (q--) {\n \
     \   int t, x;\n    cin >> t >> x;\n    if (t == 0) {\n      if (bt.count(x) ==\
     \ 0) {\n        bt.insert(x);\n      }\n    } else if (t == 1) {\n      if (bt.count(x)\
@@ -123,7 +122,7 @@ data:
   isVerificationFile: true
   path: verify/library_checker/data_structure/set_xor_min.test.cpp
   requiredBy: []
-  timestamp: '2024-09-11 14:41:57-04:00'
+  timestamp: '2024-09-11 14:56:51-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/library_checker/data_structure/set_xor_min.test.cpp

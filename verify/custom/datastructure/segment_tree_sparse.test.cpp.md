@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: datastructures/segtree/segment_tree_sparse.hpp
     title: datastructures/segtree/segment_tree_sparse.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: utils/random.hpp
     title: utils/random.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: utils/timer.hpp
     title: utils/timer.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/aplusb
@@ -80,60 +80,58 @@ data:
     \ {\n  timer = std::chrono::high_resolution_clock::now();\n}\n\nlong long elapsed()\
     \ {\n  return (chrono::duration_cast<chrono::milliseconds>(chrono::high_resolution_clock::now()\
     \ - timer)).count();\n}\n#line 7 \"verify/boilerplate.hpp\"\n\n#define all(x)\
-    \ begin(x), end(x)\n#define sz(x) int(size(x))\n#define pb push_back\n#define\
-    \ eb emplace_back\n#define fi first\n#define se second\n\nusing ll = long long;\n\
-    \ntemplate <class T>\nbool ckmin(T &a, const T &b) {\n  return b < a ? a = b,\
-    \ 1 : 0;\n}\n\ntemplate <class T>\nbool ckmax(T &a, const T &b) {\n  return b\
-    \ > a ? a = b, 1 : 0;\n}\n\ntemplate <class T = int>\nstatic constexpr T inf =\
-    \ numeric_limits<T>::max() / 2;\n\nstruct InitIO {\n  InitIO() {\n    cin.tie(0)->sync_with_stdio(0);\n\
-    \    cin.exceptions(cin.failbit);\n    cout << setprecision(10) << fixed;\n  }\n\
-    } init_io;\n#line 2 \"datastructures/segtree/segment_tree_sparse.hpp\"\n\ntemplate\
-    \ <class T, T(*op)(T, T), T(*id)()>\nstruct SparseSegmentTree {\n  SparseSegmentTree()\
-    \ {}\n  \n  SparseSegmentTree(int n) {\n    log = __lg(n - 1) + 1;\n    treeSize\
-    \ = 1 << log;\n    st.push_back(id());\n    ch.emplace_back(-1, -1);\n  }\n\n\
-    \  void set(int p, T v) {\n    buf[0] = idx = 0;\n    int tl = 0, tr = treeSize;\n\
-    \    while (tl + 1 != tr) {\n      int mid = (tl + tr) >> 1;\n      if (p < mid)\
-    \ {\n        buf[idx + 1] = getL(buf[idx]);\n        tr = mid;\n      } else {\n\
-    \        buf[idx + 1] = getR(buf[idx]);\n        tl = mid;\n      }\n      idx++;\n\
-    \    }\n    st[buf[idx--]] = v;\n    while (idx >= 0) {\n      pull(buf[idx--]);\n\
-    \    }\n  }\n\n  T query(int l, int r) {\n    return query(l, r + 1, 0, 0, treeSize);\n\
-    \  }\n\nprivate:\n  int log, treeSize;\n  vector<T> st;\n  vector<pair<int, int>>\
-    \ ch;\n\n  int buf[32];\n  int idx;\n\n  int getL(int x) {\n    if (ch[x].fi ==\
-    \ -1) {\n      ch[x].fi = sz(st);\n      st.push_back(id());\n      ch.emplace_back(-1,\
-    \ -1);\n    }\n    return ch[x].fi;\n  }\n\n  int getR(int x) {\n    if (ch[x].se\
-    \ == -1) {\n      ch[x].se = sz(st);\n      st.push_back(id());\n      ch.emplace_back(-1,\
-    \ -1);\n    }\n    return ch[x].se;\n  }\n\n  void pull(int x) {\n    if (ch[x].fi\
-    \ == -1) {\n      st[x] = st[ch[x].se];\n    } else if (ch[x].se != -1) {\n  \
-    \    st[x] = op(st[ch[x].fi], st[ch[x].se]);\n    } else {\n      st[x] = st[ch[x].fi];\n\
-    \    }\n  }\n\n  T query(int l, int r, int x, int tl, int tr) {\n    if (x ==\
-    \ -1 || tl >= r || tr <= l) {\n      return id();\n    }\n    if (tl >= l && tr\
-    \ <= r) {\n      return st[x];\n    }\n    int mid = (tl + tr) >> 1;\n    return\
-    \ op(query(l, r, ch[x].fi, tl, mid), query(l, r, ch[x].se, mid, tr));\n  }\n};\n\
-    #line 5 \"verify/custom/datastructure/segment_tree_sparse.test.cpp\"\n\nconst\
-    \ int N = 1e9, Q = 5e4;\n\nll op(ll x, ll y) {\n  return x + y;\n}\n\nll id()\
-    \ {\n  return 0;\n}\n\nint main() {\n  vector<pair<int, int>> a;\n  SparseSegmentTree<ll,\
+    \ begin(x), end(x)\n#define sz(x) int(size(x))\n\nusing u32 = unsigned int;\n\
+    using i64 = long long;\nusing u64 = unsigned long long;\n\ntemplate <class T>\n\
+    bool ckmin(T &a, const T &b) {\n  return b < a ? a = b, 1 : 0;\n}\n\ntemplate\
+    \ <class T>\nbool ckmax(T &a, const T &b) {\n  return b > a ? a = b, 1 : 0;\n\
+    }\n\nstruct InitIO {\n  InitIO() {\n    cin.tie(0)->sync_with_stdio(0);\n    cin.exceptions(cin.failbit);\n\
+    \    cout << setprecision(10) << fixed;\n  }\n} init_io;\n#line 2 \"datastructures/segtree/segment_tree_sparse.hpp\"\
+    \n\ntemplate <class T, T(*op)(T, T), T(*id)()>\nstruct SparseSegmentTree {\n \
+    \ SparseSegmentTree() {}\n  \n  SparseSegmentTree(int n) {\n    log = __lg(n -\
+    \ 1) + 1;\n    treeSize = 1 << log;\n    st.push_back(id());\n    ch.emplace_back(-1,\
+    \ -1);\n  }\n\n  void set(int p, T v) {\n    buf[0] = idx = 0;\n    int tl = 0,\
+    \ tr = treeSize;\n    while (tl + 1 != tr) {\n      int mid = (tl + tr) >> 1;\n\
+    \      if (p < mid) {\n        buf[idx + 1] = getL(buf[idx]);\n        tr = mid;\n\
+    \      } else {\n        buf[idx + 1] = getR(buf[idx]);\n        tl = mid;\n \
+    \     }\n      idx++;\n    }\n    st[buf[idx--]] = v;\n    while (idx >= 0) {\n\
+    \      pull(buf[idx--]);\n    }\n  }\n\n  T query(int l, int r) {\n    return\
+    \ query(l, r + 1, 0, 0, treeSize);\n  }\n\nprivate:\n  int log, treeSize;\n  vector<T>\
+    \ st;\n  vector<pair<int, int>> ch;\n\n  int buf[32];\n  int idx;\n\n  int getL(int\
+    \ x) {\n    if (ch[x].fi == -1) {\n      ch[x].fi = sz(st);\n      st.push_back(id());\n\
+    \      ch.emplace_back(-1, -1);\n    }\n    return ch[x].fi;\n  }\n\n  int getR(int\
+    \ x) {\n    if (ch[x].se == -1) {\n      ch[x].se = sz(st);\n      st.push_back(id());\n\
+    \      ch.emplace_back(-1, -1);\n    }\n    return ch[x].se;\n  }\n\n  void pull(int\
+    \ x) {\n    if (ch[x].fi == -1) {\n      st[x] = st[ch[x].se];\n    } else if\
+    \ (ch[x].se != -1) {\n      st[x] = op(st[ch[x].fi], st[ch[x].se]);\n    } else\
+    \ {\n      st[x] = st[ch[x].fi];\n    }\n  }\n\n  T query(int l, int r, int x,\
+    \ int tl, int tr) {\n    if (x == -1 || tl >= r || tr <= l) {\n      return id();\n\
+    \    }\n    if (tl >= l && tr <= r) {\n      return st[x];\n    }\n    int mid\
+    \ = (tl + tr) >> 1;\n    return op(query(l, r, ch[x].fi, tl, mid), query(l, r,\
+    \ ch[x].se, mid, tr));\n  }\n};\n#line 5 \"verify/custom/datastructure/segment_tree_sparse.test.cpp\"\
+    \n\nconst int N = 1e9, Q = 5e4;\n\ni64 op(i64 x, i64 y) {\n  return x + y;\n}\n\
+    \ni64 id() {\n  return 0;\n}\n\nint main() {\n  vector<pair<int, int>> a;\n  SparseSegmentTree<i64,\
     \ op, id> st(N);\n\n  for (int i = 0; i < Q; i++) {\n    if (randBool()) {\n \
     \     const int p = randInt(N), v = randInt(1e9);\n      bool flag = false;\n\
     \      for (auto &b : a) {\n        if (b.fi == p) {\n          flag = true;\n\
     \          b.se = v;\n          break;\n        }\n      }\n      if (!flag) {\n\
     \        a.emplace_back(p, v);\n      }\n      st.set(p, v);\n    } else {\n \
     \     int l = randInt(N), r = randInt(N);\n      if (l > r) {\n        swap(l,\
-    \ r);\n      }\n      ll sum = 0;\n      for (auto [p, v] : a) {\n        if (p\
-    \ >= l && p <= r) {\n          sum += v;\n        }\n      }\n      assert(st.query(l,\
+    \ r);\n      }\n      i64 sum = 0;\n      for (auto [p, v] : a) {\n        if\
+    \ (p >= l && p <= r) {\n          sum += v;\n        }\n      }\n      assert(st.query(l,\
     \ r) == sum);\n    }\n  }\n\n  cerr << \"Tests passed\\n\";\n\n  int a_, b_;\n\
     \  cin >> a_ >> b_;\n  cout << a_ + b_ << '\\n';\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/aplusb\"\n\n#include \"\
     ../../boilerplate.hpp\"\n#include \"../../../datastructures/segtree/segment_tree_sparse.hpp\"\
-    \n\nconst int N = 1e9, Q = 5e4;\n\nll op(ll x, ll y) {\n  return x + y;\n}\n\n\
-    ll id() {\n  return 0;\n}\n\nint main() {\n  vector<pair<int, int>> a;\n  SparseSegmentTree<ll,\
+    \n\nconst int N = 1e9, Q = 5e4;\n\ni64 op(i64 x, i64 y) {\n  return x + y;\n}\n\
+    \ni64 id() {\n  return 0;\n}\n\nint main() {\n  vector<pair<int, int>> a;\n  SparseSegmentTree<i64,\
     \ op, id> st(N);\n\n  for (int i = 0; i < Q; i++) {\n    if (randBool()) {\n \
     \     const int p = randInt(N), v = randInt(1e9);\n      bool flag = false;\n\
     \      for (auto &b : a) {\n        if (b.fi == p) {\n          flag = true;\n\
     \          b.se = v;\n          break;\n        }\n      }\n      if (!flag) {\n\
     \        a.emplace_back(p, v);\n      }\n      st.set(p, v);\n    } else {\n \
     \     int l = randInt(N), r = randInt(N);\n      if (l > r) {\n        swap(l,\
-    \ r);\n      }\n      ll sum = 0;\n      for (auto [p, v] : a) {\n        if (p\
-    \ >= l && p <= r) {\n          sum += v;\n        }\n      }\n      assert(st.query(l,\
+    \ r);\n      }\n      i64 sum = 0;\n      for (auto [p, v] : a) {\n        if\
+    \ (p >= l && p <= r) {\n          sum += v;\n        }\n      }\n      assert(st.query(l,\
     \ r) == sum);\n    }\n  }\n\n  cerr << \"Tests passed\\n\";\n\n  int a_, b_;\n\
     \  cin >> a_ >> b_;\n  cout << a_ + b_ << '\\n';\n}"
   dependsOn:
@@ -143,8 +141,8 @@ data:
   isVerificationFile: true
   path: verify/custom/datastructure/segment_tree_sparse.test.cpp
   requiredBy: []
-  timestamp: '2024-09-11 14:41:57-04:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2024-09-11 14:56:51-04:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/custom/datastructure/segment_tree_sparse.test.cpp
 layout: document
