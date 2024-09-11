@@ -25,7 +25,7 @@ struct WAryTree {
     }
   }
 
-  void extract(int x) {
+  void remove(int x) {
     freq[x]--;
     if (freq[x] == 0) {
       l0[x >> 6] ^= 1ull << (x & 63);
@@ -38,14 +38,14 @@ struct WAryTree {
     }
   }
 
-  int get_min() {
+  int getMin() {
     uint32_t p = __builtin_ctzll(root);
     p = (p << 6) + __builtin_ctzll(l1[p]);
     p = (p << 6) + __builtin_ctzll(l0[p]);
     return p;
   }
 
-  int get_max() {
+  int getMax() {
     uint32_t p = 63 - __builtin_clzll(root);
     p = (p << 6) + 63 - __builtin_clzll(l1[p]);
     p = (p << 6) + 63 - __builtin_clzll(l0[p]);

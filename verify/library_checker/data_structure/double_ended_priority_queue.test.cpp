@@ -39,9 +39,9 @@ int main() {
     if (x == LO) {
       for (int i = 0; i < 3; i++) {
         if (cnt[i] > 0) {
-          int rem = ds[i].get_min();
+          int rem = ds[i].getMin();
           cout << vals[i * N + rem] << '\n';
-          ds[i].extract(rem);
+          ds[i].remove(rem);
           cnt[i]--;
           break;
         }
@@ -49,9 +49,9 @@ int main() {
     } else if (x == HI) {
       for (int i = 2; i >= 0; i--) {
         if (cnt[i] > 0) {
-          int rem = ds[i].get_max();
+          int rem = ds[i].getMax();
           cout << vals[i * N + rem] << '\n';
-          ds[i].extract(rem);
+          ds[i].remove(rem);
           cnt[i]--;
           break;
         }

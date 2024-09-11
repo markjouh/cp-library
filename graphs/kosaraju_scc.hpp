@@ -3,11 +3,11 @@
 struct KosarajuSCC {
   int sccs = 0;
   vector<int> comp;
-  vector<vector<int>> members, c_adj;
+  vector<vector<int>> members, adjC;
 
   KosarajuSCC(const vector<vector<int>> &g) : adj(g) {
     comp.resize(sz(g), -1);
-    t_adj.resize(sz(g));
+    adjT.resize(sz(g));
     vis.resize(sz(g));
     ord.reserve(sz(g));
     for (int i = 0; i < sz(g); i++) {
@@ -22,17 +22,17 @@ struct KosarajuSCC {
         sccs++;
       }
     }
-    t_adj.clear();
+    adjT.clear();
     vis.clear();
     ord.clear();
 
-    c_adj.resize(sccs);
+    adjC.resize(sccs);
     vector<int> prev(sccs, -1);
     for (int i = 0; i < sccs; i++) {
       for (int u : members[i]) {
         for (int v : adj[u]) {
           if (comp[v] != i && prev[comp[v]] < i) {
-            c_adj[i].push_back(comp[v]);
+            adjC[i].push_back(comp[v]);
             prev[comp[v]] = i;
           }
         }
@@ -42,14 +42,14 @@ struct KosarajuSCC {
 
 private:
   const vector<vector<int>> &adj;
-  vector<vector<int>> t_adj;
+  vector<vector<int>> adjT;
   vector<bool> vis;
   vector<int> ord;
 
   void dfs_setup(int u) {
     vis[u] = true;
     for (int v : adj[u]) {
-      t_adj[v].push_back(u);
+      adjT[v].push_back(u);
       if (!vis[v]) {
         dfs_setup(v);
       }
@@ -60,7 +60,7 @@ private:
   void dfs_build(int u) {
     comp[u] = sccs;
     members[sccs].push_back(u);
-    for (int v : t_adj[u]) {
+    for (int v : adjT[u]) {
       if (comp[v] == -1) {
         dfs_build(v);
       }

@@ -5,12 +5,12 @@
 template <class T>
 struct RangeAddRangeSumFT {
   int n;
-  FenwickTree<T> in_pref, os_pref;
+  FenwickTree<T> pref, suff;
 
-  RangeAddRangeSumFT(int n_) : n(n_), in_pref(n), os_pref(n) {}
+  RangeAddRangeSumFT(int n_) : n(n_), pref(n), suff(n) {}
 
   T sum(int r) {
-    return in_pref.sum(r - 1) + os_pref.sum(n - r - 1) * (r + 1);
+    return pref.sum(r - 1) + suff.sum(n - r - 1) * (r + 1);
   }
 
   T sum(int l, int r) {
@@ -18,8 +18,8 @@ struct RangeAddRangeSumFT {
   }
 
   void add(int r, T v) {
-    in_pref.add(r, v * (r + 1));
-    os_pref.add(n - r - 1, v);
+    pref.add(r, v * (r + 1));
+    suff.add(n - r - 1, v);
   }
 
   void add(int l, int r, T v) {

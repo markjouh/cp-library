@@ -6,21 +6,21 @@
 const int N = 1e5, Q = 1e5;
 
 int main() {
-  vector<ll> a = randvec<ll>(N);
+  vector<ll> a = randVec<ll>(N);
   RangeAddFT<ll> ft(a);
   for (int i = 0; i < Q; i++) {
-    if (randbool()) {
-      int l = randint(N), r = randint(N);
+    if (randBool()) {
+      int l = randInt(N), r = randInt(N);
       if (l > r) {
         swap(l, r);
       }
-      const int v = rnd<>(1, inf<>);
+      const int v = randInt(1e9);
       for (int j = l; j <= r; j++) {
         a[j] += v;
       }
       ft.add(l, r, v);
     } else {
-      int p = randint(N);
+      int p = randInt(N);
       assert(a[p] == ft.get(p));
     }
   }

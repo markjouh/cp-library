@@ -39,7 +39,7 @@ struct BinaryTrie {
     }
   }
 
-  unsigned int min_xor(unsigned int x) {
+  unsigned int minXor(unsigned int x) {
     int pos = 0;
     unsigned int res = 0;
     for (int i = 31; i >= 0; i--) {
@@ -54,8 +54,8 @@ struct BinaryTrie {
     return res;
   }
 
-  unsigned int max_xor(unsigned int x) {
+  unsigned int maxXor(unsigned int x) {
     static const unsigned int mask = -1;
-    return mask ^ min_xor(x ^ mask);
+    return mask ^ minXor(x ^ mask);
   }
 };

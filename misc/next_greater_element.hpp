@@ -1,7 +1,7 @@
 #pragma once
 
 template <class T>
-pair<vector<int>, vector<int>> monotonic_stack(vector<T> a, bool greater = false) {
+pair<vector<int>, vector<int>> findNGE(vector<T> a, bool greater = false) {
   const int n = sz(a);
   vector<int> prev(n, -1), nxt(n, n);
 

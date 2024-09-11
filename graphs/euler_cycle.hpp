@@ -3,7 +3,7 @@
 // https://cp-algorithms.com/graph/euler_path.html
 // https://codeforces.com/contest/1994/submission/279728160
 
-vector<int> euler_cycle(const vector<vector<int>> &g) {
+vector<int> findEulerCycle(const vector<vector<int>> &g) {
   vector<vector<pair<int, int>>> h(sz(g));
   vector<int> deg(sz(g));
   int cnt = 0;

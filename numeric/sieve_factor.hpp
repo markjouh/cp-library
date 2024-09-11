@@ -1,28 +1,29 @@
 #pragma once
 
-vector<int> mn_fac, primes;
+vector<int> minPF, primes;
 
 void sieve(int n) {
-  mn_fac.resize(n + 1);
+  minPF.resize(n + 1);
   for (int i = 2; i <= n; i++) {
-    if (!mn_fac[i]) {
-      mn_fac[i] = i;
+    if (!minPF[i]) {
+      minPF[i] = i;
       primes.push_back(i);
       for (ll j = 1ll * i * i; j <= n; j += i) {
-        if (!mn_fac[j]) {
-          mn_fac[j] = i;
+        if (!minPF[j]) {
+          minPF[j] = i;
         }
       }
     }
   }
 }
 
-template<class T> vector<pair<T, int>> factor(T num) {
+template <class T>
+vector<pair<T, int>> factor(T num) {
   vector<pair<T, int>> res;
 
-  if (num <= sz(mn_fac) - 1) {
+  if (num <= sz(minPF) - 1) {
     while (num > 1) {
-      int fac = mn_fac[num];
+      int fac = minPF[num];
       res.emplace_back(fac, 0);
       while (num % fac == 0) {
         num /= fac;
@@ -51,14 +52,14 @@ template<class T> vector<pair<T, int>> factor(T num) {
   return res;
 }
 
-template<class T> vector<T> gen_divisors(vector<pair<T, int>> facs) {
+template<class T> vector<T> genDivisors(vector<pair<T, int>> facs) {
   vector<T> res = {1};
   for (auto [p, exp] : facs) {
-    const int prev_layer = sz(res);
+    const int oldSize = sz(res);
     T coeff = 1;
     for (int i = 0; i < exp; i++) {
       coeff *= p;
-      for (int j = 0; j < prev_layer; j++) {
+      for (int j = 0; j < oldSize; j++) {
         res.push_back(coeff * res[j]);
       }
     }

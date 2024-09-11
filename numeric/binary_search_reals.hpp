@@ -1,7 +1,7 @@
 #pragma once
 
 template <class T>
-double bsmin_reals(double lo, double hi, T f) {
+double bsminReals(double lo, double hi, T f) {
   static_assert(sizeof(uint64_t) >= sizeof(double));
   assert(lo <= hi);
   uint64_t l = reinterpret_cast<uint64_t&>(lo), r = reinterpret_cast<uint64_t&>(hi) + 1;
@@ -13,7 +13,7 @@ double bsmin_reals(double lo, double hi, T f) {
 }
 
 template <class T>
-double bsmax_reals(double lo, double hi, T f) {
+double bsmaxReals(double lo, double hi, T f) {
   static_assert(sizeof(uint64_t) >= sizeof(double));
   assert(lo <= hi);
   uint64_t l = reinterpret_cast<uint64_t&>(lo) - 1, r = reinterpret_cast<uint64_t&>(hi);

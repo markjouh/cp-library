@@ -19,7 +19,7 @@ int main() {
         bt.remove(x);
       }
     } else {
-      cout << bt.min_xor(x) << '\n';
+      cout << bt.minXor(x) << '\n';
     }
   }
 }

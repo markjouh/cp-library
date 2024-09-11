@@ -6,57 +6,57 @@ struct SparseSegmentTree {
   
   SparseSegmentTree(int n) {
     log = __lg(n - 1) + 1;
-    tree_sz = 1 << log;
+    treeSize = 1 << log;
     st.push_back(id());
     ch.emplace_back(-1, -1);
   }
 
   void set(int p, T v) {
-    vis_buf[0] = idx = 0;
-    int tl = 0, tr = tree_sz;
+    buf[0] = idx = 0;
+    int tl = 0, tr = treeSize;
     while (tl + 1 != tr) {
       int mid = (tl + tr) >> 1;
       if (p < mid) {
-        vis_buf[idx + 1] = get_l(vis_buf[idx]);
+        buf[idx + 1] = getL(buf[idx]);
         tr = mid;
       } else {
-        vis_buf[idx + 1] = get_r(vis_buf[idx]);
+        buf[idx + 1] = getR(buf[idx]);
         tl = mid;
       }
       idx++;
     }
-    st[vis_buf[idx--]] = v;
+    st[buf[idx--]] = v;
     while (idx >= 0) {
-      pull(vis_buf[idx--]);
+      pull(buf[idx--]);
     }
   }
 
   T query(int l, int r) {
-    return query(l, r + 1, 0, 0, tree_sz);
+    return query(l, r + 1, 0, 0, treeSize);
   }
 
 private:
-  int log, tree_sz;
+  int log, treeSize;
   vector<T> st;
   vector<pair<int, int>> ch;
 
-  int vis_buf[32];
+  int buf[32];
   int idx;
 
-  int get_l(int x) {
+  int getL(int x) {
     if (ch[x].fi == -1) {
       ch[x].fi = sz(st);
-      st.pb(id());
-      ch.eb(-1, -1);
+      st.push_back(id());
+      ch.emplace_back(-1, -1);
     }
     return ch[x].fi;
   }
 
-  int get_r(int x) {
+  int getR(int x) {
     if (ch[x].se == -1) {
       ch[x].se = sz(st);
-      st.pb(id());
-      ch.eb(-1, -1);
+      st.push_back(id());
+      ch.emplace_back(-1, -1);
     }
     return ch[x].se;
   }

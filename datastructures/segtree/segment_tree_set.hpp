@@ -25,7 +25,7 @@ struct SegmentTreeSet {
     used.emplace(x, p);
   }
 
-  void extract(T x) {
+  void remove(T x) {
     auto it = used.lower_bound({x, -1});
     assert(it->fi == x);
     st.set(it->se, id());

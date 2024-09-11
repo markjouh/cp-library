@@ -8,31 +8,31 @@ const double MXV = 1e12, ERROR = 1e-3;
 
 void test() {
   // Search for exact double value, should have no error
-  const double t1 = randdoub(inf<double>);
-  double left = bsmax_reals(0, inf<double>, [&](double x) {
+  const double t1 = randDoub(inf<double>);
+  double left = bsmaxReals(0, inf<double>, [&](double x) {
     return x <= t1;
   });
   assert(left == t1);
-  double right = bsmin_reals(0, inf<double>, [&](double x) {
+  double right = bsminReals(0, inf<double>, [&](double x) {
     return x >= t1;
   });
   assert(right == t1);
 
   // Try computing sqrt
-  const double t2 = randdoub(MXV);
-  double sqrt_val = bsmax_reals(0, MXV, [&](double x) {
+  const double t2 = randDoub(MXV);
+  double sqrtVal = bsmaxReals(0, MXV, [&](double x) {
     return x * x <= t2;
   });
-  double sqrt_res = sqrt_val * sqrt_val;
-  assert(sqrt_res <= t2 && t2 - sqrt_res < ERROR);
+  double sqrtProd = sqrtVal * sqrtVal;
+  assert(sqrtProd <= t2 && t2 - sqrtProd < ERROR);
 
   // Try computing cbrt
-  const double t3 = randdoub(MXV);
-  double cbrt_val = bsmax_reals(0, MXV, [&](double x) {
+  const double t3 = randDoub(MXV);
+  double cbrtVal = bsmaxReals(0, MXV, [&](double x) {
     return x * x * x <= t3;
   });
-  double cbrt_res = cbrt_val * cbrt_val * cbrt_val;
-  assert(cbrt_res <= t3 && t3 - cbrt_res < ERROR);
+  double cbrtProd = cbrtVal * cbrtVal * cbrtVal;
+  assert(cbrtProd <= t3 && t3 - cbrtProd < ERROR);
 }
 
 int main() {

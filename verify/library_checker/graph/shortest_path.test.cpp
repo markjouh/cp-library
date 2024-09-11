@@ -10,7 +10,7 @@ int main() {
   for (int i = 0; i < m; i++) {
     int u, v, w;
     cin >> u >> v >> w;
-    g[u].eb(v, w);
+    g[u].emplace_back(v, w);
   }
   auto [dist, from] = dijkstras<ll>(g, s);
   if (dist[t] != numeric_limits<ll>::max()) {
@@ -18,7 +18,7 @@ int main() {
     vector<pair<int, int>> path;
     int p = t;
     while (p != s) {
-      path.eb(from[p], p);
+      path.emplace_back(from[p], p);
       p = from[p];
     }
     reverse(all(path));

@@ -25,9 +25,9 @@ int main() {
   WAryTree<2000000> ds;
   for (auto x : queries) {
     if (x == -1) {
-      int mx_idx = ds.get_max();
+      int mx_idx = ds.getMax();
       cout << vals[mx_idx] << '\n';
-      ds.extract(mx_idx);
+      ds.remove(mx_idx);
     } else {
       ds.insert(vals.get(x));
     }

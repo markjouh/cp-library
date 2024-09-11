@@ -18,8 +18,8 @@ int main() {
   SparseSegmentTree<ll, op, id> st(N);
 
   for (int i = 0; i < Q; i++) {
-    if (randbool()) {
-      const int p = randint(N), v = randint(inf<int>);
+    if (randBool()) {
+      const int p = randInt(N), v = randInt(1e9);
       bool flag = false;
       for (auto &b : a) {
         if (b.fi == p) {
@@ -29,11 +29,11 @@ int main() {
         }
       }
       if (!flag) {
-        a.eb(p, v);
+        a.emplace_back(p, v);
       }
       st.set(p, v);
     } else {
-      int l = randint(N), r = randint(N);
+      int l = randInt(N), r = randInt(N);
       if (l > r) {
         swap(l, r);
       }

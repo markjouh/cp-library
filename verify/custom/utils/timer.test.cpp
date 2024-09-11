@@ -11,10 +11,10 @@ const int TESTS = 10;
 
 int main() {
   for (int i = 0; i < TESTS; i++) {
-    const int rand_ms = randint(50, 500);
-    set_timer();
-    usleep(rand_ms * 1000);
-    assert(abs(elapsed() - rand_ms) < 10);
+    const int randMs = randInt(50, 500);
+    startTimer();
+    usleep(randMs * 1000);
+    assert(abs(elapsed() - randMs) < 10);
   }
 
   cerr << "Tests passed\n";

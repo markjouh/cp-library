@@ -2,7 +2,7 @@
 
 chrono::time_point<chrono::high_resolution_clock> timer;
 
-void set_timer() {
+void startTimer() {
   timer = std::chrono::high_resolution_clock::now();
 }
 

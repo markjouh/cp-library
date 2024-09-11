@@ -9,7 +9,7 @@ int main() {
   for (int i = 0; i < TESTS; i++) {
     array<int, 2500> arr;
     for (int j = 0; j < 2500; j++) {
-      arr[j] = randint(inf<int>);
+      arr[j] = randInt(1e9);
     }
     auto enc = encode<decltype(arr), 5>(arr);
     auto dec = decode<decltype(arr), 5>(enc);
@@ -20,7 +20,7 @@ int main() {
     array<array<int, 50>, 50> arr;
     for (int j = 0; j < 50; j++) {
       for (int k = 0; k < 50; k++) {
-        arr[j][k] = randint(inf<int>);
+        arr[j][k] = randInt(1e9);
       }
     }
     auto enc = encode<decltype(arr), 5>(arr);

@@ -1,7 +1,7 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/enumerate_primes"
 
 #include "../../boilerplate.hpp"
-#include "../../../numeric/number_theory.hpp"
+#include "../../../numeric/sieve_factor.hpp"
 
 int main() {
   int n, a, b;

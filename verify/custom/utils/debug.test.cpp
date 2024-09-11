@@ -7,17 +7,17 @@
 // the output looks right
 
 int main() {
-  const int n = randint(100);
-  vector<int> p = randvec<int>(n);
+  const int n = randInt(100);
+  vector<int> p = randVec<int>(n);
   dbg(p);
 
   map<int, vector<int>> mp;
   for (int i = 0; i < 100; i++) {
-    mp[randint()] = randvec<int>(100);
+    mp[randInt()] = randVec<int>(100);
   }
   dbg(mp);
 
-  array<double, 100> arr = randarr<double, 100>();
+  array<double, 100> arr = randArr<double, 100>();
   dbg(arr);
 
   int a, b;

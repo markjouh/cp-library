@@ -7,13 +7,14 @@
 // just a sanity check.
 
 const int TESTS = 100;
+const int INF = INT_MAX / 2;
 
 int main() {
   for (int i = 0; i < TESTS; i++) {
-    const int n = randint(1e2, 1e4), root = randint(n);
-    auto g = gen_graph(n, n - 1 + randint(n));
+    const int n = randInt(1e2, 1e4), root = randInt(n);
+    auto g = genGraph(n, n - 1 + randInt(n));
 
-    vector<int> dist(n, inf<>);
+    vector<int> dist(n, INF);
     queue<int> q;
     dist[root] = 0;
     q.push(root);
@@ -22,18 +23,18 @@ int main() {
       int u = q.front();
       q.pop();
       for (int v : g[u]) {
-        if (dist[v] == inf<>) {
+        if (dist[v] == INF) {
           dist[v] = dist[u] + 1;
           q.push(v);
         }
       }
     }
-    assert(find(all(dist), inf<>) == end(dist));
+    assert(find(all(dist), INF) == end(dist));
   }
 
   for (int i = 0; i < TESTS; i++) {
-    const int n = randint(1e2, 1e4), root = randint(n);
-    auto g = gen_w_graph(n, n - 1 + randint(n));
+    const int n = randInt(1e2, 1e4), root = randInt(n);
+    auto g = genWeightedGraph(n, n - 1 + randInt(n));
     
     auto from = dijkstras<ll>(g, root).se;
     from[root] = root;

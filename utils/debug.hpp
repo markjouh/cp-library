@@ -5,30 +5,30 @@ namespace debug_internal {
 using namespace std;
 
 template <typename T>
-concept is_core = requires(T x) {
+concept isCore = requires(T x) {
   cerr << x;
 };
 
 template <typename T>
-concept is_pair = requires(T x) {
+concept isPair = requires(T x) {
   x.first;
   x.second;
 };
 
 template <typename T>
-concept is_iterable = ranges::range<T>;
+concept isIterable = ranges::range<T>;
 
 template <typename T>
 void print(T x) {
-  if constexpr (is_core<T>) {
+  if constexpr (isCore<T>) {
     cerr << x;
-  } else if constexpr (is_pair<T>) {
+  } else if constexpr (isPair<T>) {
     cerr << '(';
     print(x.first);
     cerr << ", ";
     print(x.second);
     cerr << ')';
-  } else if constexpr (is_iterable<T>) {
+  } else if constexpr (isIterable<T>) {
     cerr << '[';
     bool flag = false;
     for (auto y : x) {
