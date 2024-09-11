@@ -26,72 +26,62 @@ data:
   bundledCode: "#line 1 \"verify/library_checker/string/enumerate_palindromes.test.cpp\"\
     \n#define PROBLEM \"https://judge.yosupo.jp/problem/enumerate_palindromes\"\n\n\
     #line 1 \"verify/boilerplate.hpp\"\n#include <bits/stdc++.h>\n\nusing namespace\
-    \ std;\n\n#line 2 \"utils/random.hpp\"\n\n#include <type_traits>\n\nmt19937_64\
-    \ rng_64(chrono::steady_clock::now().time_since_epoch().count());\n\n// ----------------------------------------------------\n\
-    // Section: Basic random data generation\n// ----------------------------------------------------\n\
-    \ntemplate <class T>\nT rnd(T lo, T hi) {\n  static_assert(is_arithmetic_v<T>,\
-    \ \"Invalid type for rnd()\");\n  if constexpr (is_integral_v<T>) {\n    return\
-    \ uniform_int_distribution<T>(lo, hi)(rng_64);\n  } else {\n    return uniform_real_distribution<T>(lo,\
-    \ hi)(rng_64);\n  }\n}\n\ntemplate <class T>\nconstexpr T def_val() {\n  if constexpr\
-    \ (is_floating_point_v<T>) {\n    return 1;\n  } else {\n    return numeric_limits<T>::max()\
-    \ / 2;\n  }\n}\n\n// ----------------------------------------------------\n//\
-    \  => Bool wrapper\n// ----------------------------------------------------\n\n\
-    bool randbool() {\n  return rnd<int>(0, 1);\n}\n\n// ----------------------------------------------------\n\
-    //  => Int wrappers\n// ----------------------------------------------------\n\
-    \nint randint(int lo, int hi) {\n  return rnd<int>(lo, hi);\n}\n\nint randint(int\
-    \ hi) {\n  return randint(0, hi - 1);\n}\n\nint randint() {\n  return randint(def_val<int>());\n\
-    }\n\n// ----------------------------------------------------\n//  => Long long\
-    \ wrappers\n// ----------------------------------------------------\n\nlong long\
-    \ randlong(long long lo, long long hi) {\n  return rnd<long long>(lo, hi);\n}\n\
-    \nlong long randlong(long long hi) {\n  return randlong(0, hi);\n}\n\nlong long\
-    \ randlong() {\n  return randlong(def_val<long long>());\n}\n\n// ----------------------------------------------------\n\
-    //  => Double wrappers\n// ----------------------------------------------------\n\
-    \ndouble randdoub(double lo, double hi) {\n  return rnd<double>(lo, hi);\n}\n\n\
-    double randdoub(double hi) {\n  return randdoub(0, hi);\n}\n\ndouble randdoub()\
-    \ {\n  return randdoub(1);\n}\n\n// ----------------------------------------------------\n\
-    //  => Vector wrappers\n// ----------------------------------------------------\n\
-    \ntemplate <class T>\nvector<T> randvec(int n, T lo, T hi) {\n  vector<T> res(n);\n\
-    \  for (int i = 0; i < n; i++) {\n    res[i] = rnd<T>(lo, hi);\n  }\n  return\
-    \ res;\n}\n\ntemplate <class T>\nvector<T> randvec(int n, T hi) {\n  return randvec<T>(n,\
-    \ 0, hi);\n}\n\ntemplate <class T>\nvector<T> randvec(int n) {\n  return randvec<T>(n,\
-    \ def_val<T>());\n}\n\n// ----------------------------------------------------\n\
-    //  => Array wrappers\n// ----------------------------------------------------\n\
-    \ntemplate <class T, size_t N>\narray<T, N> randarr(T lo, T hi) {\n  array<T,\
-    \ N> res;\n  for (int i = 0; i < N; i++) {\n    res[i] = rnd<T>(lo, hi);\n  }\n\
-    \  return res;\n}\n\ntemplate <class T, size_t N>\narray<T, N> randarr(T hi) {\n\
-    \  return randarr<T, N>(0, hi);\n}\n\ntemplate <class T, size_t N>\narray<T, N>\
-    \ randarr() {\n  return randarr<T, N>(def_val<T>());\n}\n\n// ----------------------------------------------------\n\
-    // Section: Graph generation from Prufer sequences\n// ----------------------------------------------------\n\
-    \nvector<pair<int, int>> gen_tree_edges(int n) {\n  const vector<int> prufer =\
-    \ randvec(n - 2, 0, n - 1);\n  vector<int> deg(n, 1);\n  for (int x : prufer)\
-    \ {\n    deg[x]++;\n  }\n  priority_queue<int, vector<int>, greater<>> leaves;\n\
-    \  for (int i = 0; i < n; i++) {\n    if (deg[i] == 1) {\n      leaves.push(i);\n\
-    \    }\n  }\n\n  vector<pair<int, int>> res;\n  res.reserve(n - 1);\n  for (int\
-    \ v : prufer) {\n    int u = leaves.top();\n    leaves.pop();\n\n    res.push_back(minmax(u,\
+    \ std;\n\n#line 2 \"utils/random.hpp\"\n\n#include <type_traits>\n\n// ----------------------------------------------------\n\
+    // Basic random data generation\n// ----------------------------------------------------\n\
+    \nmt19937_64 rngEngine(chrono::steady_clock::now().time_since_epoch().count());\n\
+    \ntemplate <class T>\nT myRand(T lo, T hi) {\n  static_assert(is_arithmetic_v<T>,\
+    \ \"Invalid type for myRand()\");\n  if constexpr (is_integral_v<T>) {\n    return\
+    \ uniform_int_distribution<T>(lo, hi)(rngEngine);\n  } else {\n    return uniform_real_distribution<T>(lo,\
+    \ hi)(rngEngine);\n  }\n}\n\ntemplate <class T>\nconstexpr T defaultVal() {\n\
+    \  if constexpr (is_floating_point_v<T>) {\n    return 1;\n  } else {\n    return\
+    \ numeric_limits<T>::max() / 2;\n  }\n}\n\nbool randBool() {\n  return myRand<int>(0,\
+    \ 1);\n}\n\nint randInt(int lo, int hi) {\n  return myRand<int>(lo, hi);\n}\n\n\
+    int randInt(int hi) {\n  return randInt(0, hi - 1);\n}\n\nint randInt() {\n  return\
+    \ randInt(defaultVal<int>());\n}\n\nlong long randLong(long long lo, long long\
+    \ hi) {\n  return myRand<long long>(lo, hi);\n}\n\nlong long randLong(long long\
+    \ hi) {\n  return randLong(0, hi);\n}\n\nlong long randLong() {\n  return randLong(defaultVal<long\
+    \ long>());\n}\n\ndouble randDoub(double lo, double hi) {\n  return myRand<double>(lo,\
+    \ hi);\n}\n\ndouble randDoub(double hi) {\n  return randDoub(0, hi);\n}\n\ndouble\
+    \ randDoub() {\n  return randDoub(1);\n}\n\ntemplate <class T>\nvector<T> randVec(int\
+    \ n, T lo, T hi) {\n  vector<T> res(n);\n  for (int i = 0; i < n; i++) {\n   \
+    \ res[i] = myRand<T>(lo, hi);\n  }\n  return res;\n}\n\ntemplate <class T>\nvector<T>\
+    \ randVec(int n, T hi) {\n  return randVec<T>(n, 0, hi);\n}\n\ntemplate <class\
+    \ T>\nvector<T> randVec(int n) {\n  return randVec<T>(n, defaultVal<T>());\n}\n\
+    \ntemplate <class T, size_t N>\narray<T, N> randArr(T lo, T hi) {\n  array<T,\
+    \ N> res;\n  for (int i = 0; i < N; i++) {\n    res[i] = myRand<T>(lo, hi);\n\
+    \  }\n  return res;\n}\n\ntemplate <class T, size_t N>\narray<T, N> randArr(T\
+    \ hi) {\n  return randArr<T, N>(0, hi);\n}\n\ntemplate <class T, size_t N>\narray<T,\
+    \ N> randArr() {\n  return randArr<T, N>(defaultVal<T>());\n}\n\n// ----------------------------------------------------\n\
+    // Graph generation from Prufer sequences\n// ----------------------------------------------------\n\
+    \nvector<pair<int, int>> genTreeEdges(int n) {\n  const vector<int> prufer = randVec(n\
+    \ - 2, 0, n - 1);\n  vector<int> deg(n, 1);\n  for (int x : prufer) {\n    deg[x]++;\n\
+    \  }\n  priority_queue<int, vector<int>, greater<>> leaves;\n  for (int i = 0;\
+    \ i < n; i++) {\n    if (deg[i] == 1) {\n      leaves.push(i);\n    }\n  }\n\n\
+    \  vector<pair<int, int>> res;\n  res.reserve(n - 1);\n  for (int v : prufer)\
+    \ {\n    int u = leaves.top();\n    leaves.pop();\n\n    res.push_back(minmax(u,\
     \ v));\n    deg[u]--, deg[v]--;\n\n    if (deg[v] == 1) {\n      leaves.push(v);\n\
-    \    }\n  }\n\n  int r1 = -1, r2 = -1;\n  for (int i = 0; i < n; i++) {\n    if\
-    \ (deg[i] == 1) {\n      (r1 == -1 ? r1 : r2) = i;\n    }\n  }\n  res.emplace_back(r1,\
-    \ r2);\n\n  return res;\n}\n\nvector<pair<int, int>> gen_graph_edges(int n, int\
-    \ m) {\n  assert(m >= n - 1 && m <= 1ll * n * (n - 1) / 2);\n\n  auto res = gen_tree_edges(n);\n\
-    \  set<pair<int, int>> have;\n  for (auto [u, v] : res) {\n    have.emplace(u,\
-    \ v);\n  }\n\n  while (ssize(res) < m) {\n    int u = randint(n), v = randint(n\
-    \ - 1);\n    v += v >= u;\n    if (u > v) {\n      swap(u, v);\n    }\n    if\
-    \ (!have.count({u, v})) {\n      res.emplace_back(u, v);\n      have.emplace(u,\
-    \ v);\n    }\n  }\n  return res;\n}\n\n// ----------------------------------------------------\n\
-    //  => Adjacency list wrappers\n// ----------------------------------------------------\n\
-    \nvector<vector<int>> gen_graph(int n, int m, bool dir = false) {\n  vector<vector<int>>\
-    \ g(n);\n  for (auto [u, v] : gen_graph_edges(n, m)) {\n    if (dir) {\n     \
-    \ if (randbool()) {\n        swap(u, v);\n      }\n      g[u].push_back(v);\n\
-    \    } else {\n      g[u].push_back(v);\n      g[v].push_back(u);\n    }\n  }\n\
-    \  return g;\n}\n\nvector<vector<pair<int, int>>> gen_w_graph(int n, int m, int\
-    \ lo = 1, int hi = def_val<int>(), bool dir = false) {\n  vector<vector<pair<int,\
-    \ int>>> g(n);\n  for (auto [u, v] : gen_graph_edges(n, m)) {\n    const int w\
-    \ = randint(lo, hi);\n    if (dir) {\n      if (randbool()) {\n        swap(u,\
-    \ v);\n      }\n      g[u].emplace_back(v, w);\n    } else {\n      g[u].emplace_back(v,\
-    \ w);\n      g[v].emplace_back(u, w);\n    }\n  }\n  return g;\n}\n#line 2 \"\
-    utils/timer.hpp\"\n\nchrono::time_point<chrono::high_resolution_clock> timer;\n\
-    \nvoid set_timer() {\n  timer = std::chrono::high_resolution_clock::now();\n}\n\
-    \nlong long elapsed() {\n  return (chrono::duration_cast<chrono::milliseconds>(chrono::high_resolution_clock::now()\
+    \    }\n  }\n\n  int rootA = -1, rootB = -1;\n  for (int i = 0; i < n; i++) {\n\
+    \    if (deg[i] == 1) {\n      (rootA == -1 ? rootA : rootB) = i;\n    }\n  }\n\
+    \  res.emplace_back(rootA, rootB);\n\n  return res;\n}\n\nvector<pair<int, int>>\
+    \ genGraphEdges(int n, int m) {\n  assert(m >= n - 1 && m <= 1ll * n * (n - 1)\
+    \ / 2);\n\n  auto res = genTreeEdges(n);\n  set<pair<int, int>> have;\n  for (auto\
+    \ [u, v] : res) {\n    have.emplace(u, v);\n  }\n\n  while (ssize(res) < m) {\n\
+    \    int u = randInt(n), v = randInt(n - 1);\n    v += v >= u;\n    if (u > v)\
+    \ {\n      swap(u, v);\n    }\n    if (!have.count({u, v})) {\n      res.emplace_back(u,\
+    \ v);\n      have.emplace(u, v);\n    }\n  }\n  return res;\n}\n\nvector<vector<int>>\
+    \ genGraph(int n, int m, bool dir = false) {\n  vector<vector<int>> g(n);\n  for\
+    \ (auto [u, v] : genGraphEdges(n, m)) {\n    if (dir) {\n      if (randBool())\
+    \ {\n        swap(u, v);\n      }\n      g[u].push_back(v);\n    } else {\n  \
+    \    g[u].push_back(v);\n      g[v].push_back(u);\n    }\n  }\n  return g;\n}\n\
+    \nvector<vector<pair<int, int>>> genWeightedGraph(int n, int m, int lo = 1, int\
+    \ hi = defaultVal<int>(), bool dir = false) {\n  vector<vector<pair<int, int>>>\
+    \ g(n);\n  for (auto [u, v] : genGraphEdges(n, m)) {\n    const int w = randInt(lo,\
+    \ hi);\n    if (dir) {\n      if (randBool()) {\n        swap(u, v);\n      }\n\
+    \      g[u].emplace_back(v, w);\n    } else {\n      g[u].emplace_back(v, w);\n\
+    \      g[v].emplace_back(u, w);\n    }\n  }\n  return g;\n}\n#line 2 \"utils/timer.hpp\"\
+    \n\nchrono::time_point<chrono::high_resolution_clock> timer;\n\nvoid startTimer()\
+    \ {\n  timer = std::chrono::high_resolution_clock::now();\n}\n\nlong long elapsed()\
+    \ {\n  return (chrono::duration_cast<chrono::milliseconds>(chrono::high_resolution_clock::now()\
     \ - timer)).count();\n}\n#line 7 \"verify/boilerplate.hpp\"\n\n#define all(x)\
     \ begin(x), end(x)\n#define sz(x) int(size(x))\n#define pb push_back\n#define\
     \ eb emplace_back\n#define fi first\n#define se second\n\nusing ll = long long;\n\
@@ -108,17 +98,17 @@ data:
     \ > 0; i >>= 1) {\n    lo += (lo + i <= hi && f(lo + i)) * i;\n  }\n  return lo;\n\
     }\n#line 2 \"strings/hashing.hpp\"\n\nmt19937_64 rng(chrono::steady_clock::now().time_since_epoch().count());\n\
     \nconst ll H_MOD = (1ll << 61) - 1;\nconst ll H_BASE = uniform_int_distribution<ll>(0,\
-    \ H_MOD)(rng);\n\nvector<ll> pow_b = {1};\n\nusing mul_t = __int128_t;\n\nstruct\
-    \ Hash {\n  ll val;\n  int len;\n\n  Hash(ll x, int y) : val(x), len(y) {}\n\n\
-    \  Hash operator+(Hash b) {\n    return Hash((mul_t(val) * pow_b[b.len] + b.val)\
-    \ % H_MOD, len + b.len);\n  }\n\n  bool operator==(Hash b) {\n    return val ==\
-    \ b.val && len == b.len;\n  }\n};\n\nstruct StringHash {\n  int len;\n  vector<ll>\
-    \ h;\n\n  template <class T>\n  StringHash(const T &s) : len(sz(s)), h(len + 1)\
-    \ {\n    for (int i = 0; i < len; i++) {\n      h[i + 1] = (mul_t(h[i]) * H_BASE\
-    \ + s[i]) % H_MOD;\n    }\n    while (sz(pow_b) <= len) {\n      pow_b.push_back(mul_t(pow_b.back())\
+    \ H_MOD)(rng);\n\nvector<ll> powB = {1};\n\nstruct Hash {\n  ll val;\n  int len;\n\
+    \n  Hash(ll x, int y) : val(x), len(y) {}\n\n  Hash operator+(Hash b) {\n    return\
+    \ Hash((__int128_t(val) * powB[b.len] + b.val) % H_MOD, len + b.len);\n  }\n\n\
+    \  bool operator==(Hash b) {\n    return val == b.val && len == b.len;\n  }\n\
+    };\n\nstruct StringHash {\n  int len;\n  vector<ll> h;\n\n  template <class T>\n\
+    \  StringHash(const T &s) : len(sz(s)), h(len + 1) {\n    for (int i = 0; i <\
+    \ len; i++) {\n      h[i + 1] = (__int128_t(h[i]) * H_BASE + s[i]) % H_MOD;\n\
+    \    }\n    while (sz(powB) <= len) {\n      powB.push_back(__int128_t(powB.back())\
     \ * H_BASE % H_MOD);\n    }\n  }\n\n  Hash get(int l, int r) {\n    r++;\n   \
-    \ return Hash(((h[r] - mul_t(h[l]) * pow_b[r - l]) % H_MOD + H_MOD) % H_MOD, r\
-    \ - l);\n  }\n\n  Hash get() {\n    return get(0, sz(h) - 1);\n  }\n};\n#line\
+    \ return Hash(((h[r] - __int128_t(h[l]) * powB[r - l]) % H_MOD + H_MOD) % H_MOD,\
+    \ r - l);\n  }\n\n  Hash get() {\n    return get(0, sz(h) - 1);\n  }\n};\n#line\
     \ 6 \"verify/library_checker/string/enumerate_palindromes.test.cpp\"\n\nint main()\
     \ {\n  string s;\n  cin >> s;\n  string rev = s;\n  reverse(all(rev));\n  StringHash\
     \ a(s), b(rev);\n  const int n = sz(s);\n  vector<int> ans(2 * n - 1);\n  for\
@@ -147,7 +137,7 @@ data:
   isVerificationFile: true
   path: verify/library_checker/string/enumerate_palindromes.test.cpp
   requiredBy: []
-  timestamp: '2024-09-05 22:57:47-04:00'
+  timestamp: '2024-09-11 14:41:57-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/library_checker/string/enumerate_palindromes.test.cpp

@@ -11,7 +11,7 @@ data:
     - https://codeforces.com/contest/1994/submission/279728160
     - https://cp-algorithms.com/graph/euler_path.html
   bundledCode: "#line 2 \"graphs/euler_cycle.hpp\"\n\n// https://cp-algorithms.com/graph/euler_path.html\n\
-    // https://codeforces.com/contest/1994/submission/279728160\n\nvector<int> euler_cycle(const\
+    // https://codeforces.com/contest/1994/submission/279728160\n\nvector<int> findEulerCycle(const\
     \ vector<vector<int>> &g) {\n  vector<vector<pair<int, int>>> h(sz(g));\n  vector<int>\
     \ deg(sz(g));\n  int cnt = 0;\n  for (int u = 0; u < sz(g); u++) {\n    int self\
     \ = 0;\n    for (int v : g[u]) {\n      if ((u == v && self % 2) || u < v) {\n\
@@ -24,7 +24,7 @@ data:
     \ h[u].pop_back();\n\n      deg[u]--, deg[v]--;\n      removed[idx] = true;\n\n\
     \      stk.push_back(v);\n    }\n  }\n  return res;\n}\n"
   code: "#pragma once\n\n// https://cp-algorithms.com/graph/euler_path.html\n// https://codeforces.com/contest/1994/submission/279728160\n\
-    \nvector<int> euler_cycle(const vector<vector<int>> &g) {\n  vector<vector<pair<int,\
+    \nvector<int> findEulerCycle(const vector<vector<int>> &g) {\n  vector<vector<pair<int,\
     \ int>>> h(sz(g));\n  vector<int> deg(sz(g));\n  int cnt = 0;\n  for (int u =\
     \ 0; u < sz(g); u++) {\n    int self = 0;\n    for (int v : g[u]) {\n      if\
     \ ((u == v && self % 2) || u < v) {\n        h[u].emplace_back(v, cnt);\n    \
@@ -40,7 +40,7 @@ data:
   isVerificationFile: false
   path: graphs/euler_cycle.hpp
   requiredBy: []
-  timestamp: '2024-09-05 16:37:25-04:00'
+  timestamp: '2024-09-11 14:41:57-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: graphs/euler_cycle.hpp

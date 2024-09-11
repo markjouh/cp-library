@@ -90,8 +90,8 @@ data:
       path: misc/compress.hpp
       title: misc/compress.hpp
     - icon: ':warning:'
-      path: misc/monotonic_stack.hpp
-      title: misc/monotonic_stack.hpp
+      path: misc/next_greater_element.hpp
+      title: misc/next_greater_element.hpp
     - icon: ':warning:'
       path: misc/template.cpp
       title: misc/template.cpp
@@ -110,8 +110,8 @@ data:
       path: numeric/mod_int.hpp
       title: numeric/mod_int.hpp
     - icon: ':heavy_check_mark:'
-      path: numeric/number_theory.hpp
-      title: numeric/number_theory.hpp
+      path: numeric/sieve_factor.hpp
+      title: numeric/sieve_factor.hpp
     - icon: ':warning:'
       path: numeric/square_matrix.hpp
       title: numeric/square_matrix.hpp

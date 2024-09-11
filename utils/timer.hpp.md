@@ -93,18 +93,18 @@ data:
   attributes:
     links: []
   bundledCode: "#line 2 \"utils/timer.hpp\"\n\nchrono::time_point<chrono::high_resolution_clock>\
-    \ timer;\n\nvoid set_timer() {\n  timer = std::chrono::high_resolution_clock::now();\n\
+    \ timer;\n\nvoid startTimer() {\n  timer = std::chrono::high_resolution_clock::now();\n\
     }\n\nlong long elapsed() {\n  return (chrono::duration_cast<chrono::milliseconds>(chrono::high_resolution_clock::now()\
     \ - timer)).count();\n}\n"
   code: "#pragma once\n\nchrono::time_point<chrono::high_resolution_clock> timer;\n\
-    \nvoid set_timer() {\n  timer = std::chrono::high_resolution_clock::now();\n}\n\
-    \nlong long elapsed() {\n  return (chrono::duration_cast<chrono::milliseconds>(chrono::high_resolution_clock::now()\
+    \nvoid startTimer() {\n  timer = std::chrono::high_resolution_clock::now();\n\
+    }\n\nlong long elapsed() {\n  return (chrono::duration_cast<chrono::milliseconds>(chrono::high_resolution_clock::now()\
     \ - timer)).count();\n}"
   dependsOn: []
   isVerificationFile: false
   path: utils/timer.hpp
   requiredBy: []
-  timestamp: '2024-09-05 17:05:59-04:00'
+  timestamp: '2024-09-11 14:41:57-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/aizu/dsl/rmq.test.cpp
