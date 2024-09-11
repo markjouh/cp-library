@@ -4,10 +4,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: datastructures/pbds/hash_table.hpp
     title: datastructures/pbds/hash_table.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: utils/random.hpp
     title: utils/random.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: utils/timer.hpp
     title: utils/timer.hpp
   _extendedRequiredBy: []

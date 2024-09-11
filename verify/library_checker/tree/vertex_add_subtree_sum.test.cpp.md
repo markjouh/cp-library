@@ -7,10 +7,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: graphs/tree/euler_tour.hpp
     title: graphs/tree/euler_tour.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: utils/random.hpp
     title: utils/random.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: utils/timer.hpp
     title: utils/timer.hpp
   _extendedRequiredBy: []

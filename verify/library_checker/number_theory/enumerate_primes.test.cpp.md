@@ -4,10 +4,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: numeric/sieve_factor.hpp
     title: numeric/sieve_factor.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: utils/random.hpp
     title: utils/random.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: utils/timer.hpp
     title: utils/timer.hpp
   _extendedRequiredBy: []

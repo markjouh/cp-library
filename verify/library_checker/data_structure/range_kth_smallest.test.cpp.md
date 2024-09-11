@@ -7,10 +7,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: numeric/binary_search.hpp
     title: numeric/binary_search.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: utils/random.hpp
     title: utils/random.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: utils/timer.hpp
     title: utils/timer.hpp
   _extendedRequiredBy: []

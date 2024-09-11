@@ -4,10 +4,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: utils/encode.hpp
     title: utils/encode.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: utils/random.hpp
     title: utils/random.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: utils/timer.hpp
     title: utils/timer.hpp
   _extendedRequiredBy: []

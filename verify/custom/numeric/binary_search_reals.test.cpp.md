@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: numeric/binary_search_reals.hpp
     title: numeric/binary_search_reals.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: utils/random.hpp
     title: utils/random.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: utils/timer.hpp
     title: utils/timer.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/aplusb
@@ -98,34 +98,34 @@ data:
     \ * i;\n  }\n  return reinterpret_cast<double&>(l);\n}\n#line 5 \"verify/custom/numeric/binary_search_reals.test.cpp\"\
     \n\nconst int TESTS = 1e6;\nconst double MXV = 1e12, ERROR = 1e-3;\n\nvoid test()\
     \ {\n  // Search for exact double value, should have no error\n  const double\
-    \ t1 = randDoub(inf<double>);\n  double left = bsmaxReals(0, inf<double>, [&](double\
-    \ x) {\n    return x <= t1;\n  });\n  assert(left == t1);\n  double right = bsminReals(0,\
-    \ inf<double>, [&](double x) {\n    return x >= t1;\n  });\n  assert(right ==\
-    \ t1);\n\n  // Try computing sqrt\n  const double t2 = randDoub(MXV);\n  double\
-    \ sqrtVal = bsmaxReals(0, MXV, [&](double x) {\n    return x * x <= t2;\n  });\n\
-    \  double sqrtProd = sqrtVal * sqrtVal;\n  assert(sqrtProd <= t2 && t2 - sqrtProd\
-    \ < ERROR);\n\n  // Try computing cbrt\n  const double t3 = randDoub(MXV);\n \
-    \ double cbrtVal = bsmaxReals(0, MXV, [&](double x) {\n    return x * x * x <=\
-    \ t3;\n  });\n  double cbrtProd = cbrtVal * cbrtVal * cbrtVal;\n  assert(cbrtProd\
-    \ <= t3 && t3 - cbrtProd < ERROR);\n}\n\nint main() {\n  for (int i = 0; i < TESTS;\
-    \ i++) {\n    test();\n  }\n  cerr << \"Tests passed\\n\";\n\n  int a, b;\n  cin\
-    \ >> a >> b;\n  cout << a + b << '\\n';\n}\n"
+    \ t1 = randDoub(1e100);\n  double left = bsmaxReals(0, 1e100, [&](double x) {\n\
+    \    return x <= t1;\n  });\n  assert(left == t1);\n  double right = bsminReals(0,\
+    \ 1e100, [&](double x) {\n    return x >= t1;\n  });\n  assert(right == t1);\n\
+    \n  // Try computing sqrt\n  const double t2 = randDoub(MXV);\n  double sqrtVal\
+    \ = bsmaxReals(0, MXV, [&](double x) {\n    return x * x <= t2;\n  });\n  double\
+    \ sqrtProd = sqrtVal * sqrtVal;\n  assert(sqrtProd <= t2 && t2 - sqrtProd < ERROR);\n\
+    \n  // Try computing cbrt\n  const double t3 = randDoub(MXV);\n  double cbrtVal\
+    \ = bsmaxReals(0, MXV, [&](double x) {\n    return x * x * x <= t3;\n  });\n \
+    \ double cbrtProd = cbrtVal * cbrtVal * cbrtVal;\n  assert(cbrtProd <= t3 && t3\
+    \ - cbrtProd < ERROR);\n}\n\nint main() {\n  for (int i = 0; i < TESTS; i++) {\n\
+    \    test();\n  }\n  cerr << \"Tests passed\\n\";\n\n  int a, b;\n  cin >> a >>\
+    \ b;\n  cout << a + b << '\\n';\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/aplusb\"\n\n#include \"\
     ../../boilerplate.hpp\"\n#include \"../../../numeric/binary_search_reals.hpp\"\
     \n\nconst int TESTS = 1e6;\nconst double MXV = 1e12, ERROR = 1e-3;\n\nvoid test()\
     \ {\n  // Search for exact double value, should have no error\n  const double\
-    \ t1 = randDoub(inf<double>);\n  double left = bsmaxReals(0, inf<double>, [&](double\
-    \ x) {\n    return x <= t1;\n  });\n  assert(left == t1);\n  double right = bsminReals(0,\
-    \ inf<double>, [&](double x) {\n    return x >= t1;\n  });\n  assert(right ==\
-    \ t1);\n\n  // Try computing sqrt\n  const double t2 = randDoub(MXV);\n  double\
-    \ sqrtVal = bsmaxReals(0, MXV, [&](double x) {\n    return x * x <= t2;\n  });\n\
-    \  double sqrtProd = sqrtVal * sqrtVal;\n  assert(sqrtProd <= t2 && t2 - sqrtProd\
-    \ < ERROR);\n\n  // Try computing cbrt\n  const double t3 = randDoub(MXV);\n \
-    \ double cbrtVal = bsmaxReals(0, MXV, [&](double x) {\n    return x * x * x <=\
-    \ t3;\n  });\n  double cbrtProd = cbrtVal * cbrtVal * cbrtVal;\n  assert(cbrtProd\
-    \ <= t3 && t3 - cbrtProd < ERROR);\n}\n\nint main() {\n  for (int i = 0; i < TESTS;\
-    \ i++) {\n    test();\n  }\n  cerr << \"Tests passed\\n\";\n\n  int a, b;\n  cin\
-    \ >> a >> b;\n  cout << a + b << '\\n';\n}"
+    \ t1 = randDoub(1e100);\n  double left = bsmaxReals(0, 1e100, [&](double x) {\n\
+    \    return x <= t1;\n  });\n  assert(left == t1);\n  double right = bsminReals(0,\
+    \ 1e100, [&](double x) {\n    return x >= t1;\n  });\n  assert(right == t1);\n\
+    \n  // Try computing sqrt\n  const double t2 = randDoub(MXV);\n  double sqrtVal\
+    \ = bsmaxReals(0, MXV, [&](double x) {\n    return x * x <= t2;\n  });\n  double\
+    \ sqrtProd = sqrtVal * sqrtVal;\n  assert(sqrtProd <= t2 && t2 - sqrtProd < ERROR);\n\
+    \n  // Try computing cbrt\n  const double t3 = randDoub(MXV);\n  double cbrtVal\
+    \ = bsmaxReals(0, MXV, [&](double x) {\n    return x * x * x <= t3;\n  });\n \
+    \ double cbrtProd = cbrtVal * cbrtVal * cbrtVal;\n  assert(cbrtProd <= t3 && t3\
+    \ - cbrtProd < ERROR);\n}\n\nint main() {\n  for (int i = 0; i < TESTS; i++) {\n\
+    \    test();\n  }\n  cerr << \"Tests passed\\n\";\n\n  int a, b;\n  cin >> a >>\
+    \ b;\n  cout << a + b << '\\n';\n}"
   dependsOn:
   - utils/random.hpp
   - utils/timer.hpp
@@ -133,8 +133,8 @@ data:
   isVerificationFile: true
   path: verify/custom/numeric/binary_search_reals.test.cpp
   requiredBy: []
-  timestamp: '2024-09-11 14:56:51-04:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2024-09-11 15:36:54-04:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/custom/numeric/binary_search_reals.test.cpp
 layout: document

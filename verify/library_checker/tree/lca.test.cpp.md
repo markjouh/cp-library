@@ -4,10 +4,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: graphs/tree/binary_lifting.hpp
     title: graphs/tree/binary_lifting.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: utils/random.hpp
     title: utils/random.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: utils/timer.hpp
     title: utils/timer.hpp
   _extendedRequiredBy: []

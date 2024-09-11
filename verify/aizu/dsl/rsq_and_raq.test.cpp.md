@@ -7,10 +7,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: datastructures/fentree/fenwick_tree_range_add_range_sum.hpp
     title: datastructures/fentree/fenwick_tree_range_add_range_sum.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: utils/random.hpp
     title: utils/random.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: utils/timer.hpp
     title: utils/timer.hpp
   _extendedRequiredBy: []
