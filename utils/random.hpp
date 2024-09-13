@@ -67,6 +67,14 @@ double randDoub() {
   return randDoub(1);
 }
 
+string randStr(int n, int k) {
+  string s(n, ' ');
+  for (int i = 0; i < n; i++) {
+    s[i] = char('a' + randInt(k));
+  }
+  return s;
+}
+
 template <class T>
 vector<T> randVec(int n, T lo, T hi) {
   vector<T> res(n);
