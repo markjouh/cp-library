@@ -61,6 +61,9 @@ data:
       title: datastructures/static/sparse_table.hpp
   - name: graphs
     pages:
+    - icon: ':warning:'
+      path: graphs/bfs01.hpp
+      title: graphs/bfs01.hpp
     - icon: ':heavy_check_mark:'
       path: graphs/dijkstras.hpp
       title: graphs/dijkstras.hpp

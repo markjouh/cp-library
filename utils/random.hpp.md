@@ -108,16 +108,18 @@ data:
     \ hi) {\n  return randLong(0, hi);\n}\n\nlong long randLong() {\n  return randLong(defaultVal<long\
     \ long>());\n}\n\ndouble randDoub(double lo, double hi) {\n  return myRand<double>(lo,\
     \ hi);\n}\n\ndouble randDoub(double hi) {\n  return randDoub(0, hi);\n}\n\ndouble\
-    \ randDoub() {\n  return randDoub(1);\n}\n\ntemplate <class T>\nvector<T> randVec(int\
-    \ n, T lo, T hi) {\n  vector<T> res(n);\n  for (int i = 0; i < n; i++) {\n   \
-    \ res[i] = myRand<T>(lo, hi);\n  }\n  return res;\n}\n\ntemplate <class T>\nvector<T>\
-    \ randVec(int n, T hi) {\n  return randVec<T>(n, 0, hi);\n}\n\ntemplate <class\
-    \ T>\nvector<T> randVec(int n) {\n  return randVec<T>(n, defaultVal<T>());\n}\n\
-    \ntemplate <class T, size_t N>\narray<T, N> randArr(T lo, T hi) {\n  array<T,\
-    \ N> res;\n  for (int i = 0; i < N; i++) {\n    res[i] = myRand<T>(lo, hi);\n\
-    \  }\n  return res;\n}\n\ntemplate <class T, size_t N>\narray<T, N> randArr(T\
-    \ hi) {\n  return randArr<T, N>(0, hi);\n}\n\ntemplate <class T, size_t N>\narray<T,\
-    \ N> randArr() {\n  return randArr<T, N>(defaultVal<T>());\n}\n\n// ----------------------------------------------------\n\
+    \ randDoub() {\n  return randDoub(1);\n}\n\nstring randStr(int n, int k) {\n \
+    \ string s(n, ' ');\n  for (int i = 0; i < n; i++) {\n    s[i] = char('a' + randInt(k));\n\
+    \  }\n  return s;\n}\n\ntemplate <class T>\nvector<T> randVec(int n, T lo, T hi)\
+    \ {\n  vector<T> res(n);\n  for (int i = 0; i < n; i++) {\n    res[i] = myRand<T>(lo,\
+    \ hi);\n  }\n  return res;\n}\n\ntemplate <class T>\nvector<T> randVec(int n,\
+    \ T hi) {\n  return randVec<T>(n, 0, hi);\n}\n\ntemplate <class T>\nvector<T>\
+    \ randVec(int n) {\n  return randVec<T>(n, defaultVal<T>());\n}\n\ntemplate <class\
+    \ T, size_t N>\narray<T, N> randArr(T lo, T hi) {\n  array<T, N> res;\n  for (int\
+    \ i = 0; i < N; i++) {\n    res[i] = myRand<T>(lo, hi);\n  }\n  return res;\n\
+    }\n\ntemplate <class T, size_t N>\narray<T, N> randArr(T hi) {\n  return randArr<T,\
+    \ N>(0, hi);\n}\n\ntemplate <class T, size_t N>\narray<T, N> randArr() {\n  return\
+    \ randArr<T, N>(defaultVal<T>());\n}\n\n// ----------------------------------------------------\n\
     // Graph generation from Prufer sequences\n// ----------------------------------------------------\n\
     \nvector<pair<int, int>> genTreeEdges(int n) {\n  const vector<int> prufer = randVec(n\
     \ - 2, 0, n - 1);\n  vector<int> deg(n, 1);\n  for (int x : prufer) {\n    deg[x]++;\n\
@@ -161,16 +163,18 @@ data:
     \ hi) {\n  return randLong(0, hi);\n}\n\nlong long randLong() {\n  return randLong(defaultVal<long\
     \ long>());\n}\n\ndouble randDoub(double lo, double hi) {\n  return myRand<double>(lo,\
     \ hi);\n}\n\ndouble randDoub(double hi) {\n  return randDoub(0, hi);\n}\n\ndouble\
-    \ randDoub() {\n  return randDoub(1);\n}\n\ntemplate <class T>\nvector<T> randVec(int\
-    \ n, T lo, T hi) {\n  vector<T> res(n);\n  for (int i = 0; i < n; i++) {\n   \
-    \ res[i] = myRand<T>(lo, hi);\n  }\n  return res;\n}\n\ntemplate <class T>\nvector<T>\
-    \ randVec(int n, T hi) {\n  return randVec<T>(n, 0, hi);\n}\n\ntemplate <class\
-    \ T>\nvector<T> randVec(int n) {\n  return randVec<T>(n, defaultVal<T>());\n}\n\
-    \ntemplate <class T, size_t N>\narray<T, N> randArr(T lo, T hi) {\n  array<T,\
-    \ N> res;\n  for (int i = 0; i < N; i++) {\n    res[i] = myRand<T>(lo, hi);\n\
-    \  }\n  return res;\n}\n\ntemplate <class T, size_t N>\narray<T, N> randArr(T\
-    \ hi) {\n  return randArr<T, N>(0, hi);\n}\n\ntemplate <class T, size_t N>\narray<T,\
-    \ N> randArr() {\n  return randArr<T, N>(defaultVal<T>());\n}\n\n// ----------------------------------------------------\n\
+    \ randDoub() {\n  return randDoub(1);\n}\n\nstring randStr(int n, int k) {\n \
+    \ string s(n, ' ');\n  for (int i = 0; i < n; i++) {\n    s[i] = char('a' + randInt(k));\n\
+    \  }\n  return s;\n}\n\ntemplate <class T>\nvector<T> randVec(int n, T lo, T hi)\
+    \ {\n  vector<T> res(n);\n  for (int i = 0; i < n; i++) {\n    res[i] = myRand<T>(lo,\
+    \ hi);\n  }\n  return res;\n}\n\ntemplate <class T>\nvector<T> randVec(int n,\
+    \ T hi) {\n  return randVec<T>(n, 0, hi);\n}\n\ntemplate <class T>\nvector<T>\
+    \ randVec(int n) {\n  return randVec<T>(n, defaultVal<T>());\n}\n\ntemplate <class\
+    \ T, size_t N>\narray<T, N> randArr(T lo, T hi) {\n  array<T, N> res;\n  for (int\
+    \ i = 0; i < N; i++) {\n    res[i] = myRand<T>(lo, hi);\n  }\n  return res;\n\
+    }\n\ntemplate <class T, size_t N>\narray<T, N> randArr(T hi) {\n  return randArr<T,\
+    \ N>(0, hi);\n}\n\ntemplate <class T, size_t N>\narray<T, N> randArr() {\n  return\
+    \ randArr<T, N>(defaultVal<T>());\n}\n\n// ----------------------------------------------------\n\
     // Graph generation from Prufer sequences\n// ----------------------------------------------------\n\
     \nvector<pair<int, int>> genTreeEdges(int n) {\n  const vector<int> prufer = randVec(n\
     \ - 2, 0, n - 1);\n  vector<int> deg(n, 1);\n  for (int x : prufer) {\n    deg[x]++;\n\
@@ -202,7 +206,7 @@ data:
   isVerificationFile: false
   path: utils/random.hpp
   requiredBy: []
-  timestamp: '2024-09-11 14:41:57-04:00'
+  timestamp: '2024-09-13 16:07:33-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/aizu/dsl/rmq.test.cpp
