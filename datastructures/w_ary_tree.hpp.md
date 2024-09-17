@@ -54,8 +54,8 @@ data:
   timestamp: '2024-09-11 14:41:57-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/aizu/alds1/priority_queue.test.cpp
   - verify/library_checker/data_structure/double_ended_priority_queue.test.cpp
+  - verify/aizu/alds1/priority_queue.test.cpp
 documentation_of: datastructures/w_ary_tree.hpp
 layout: document
 redirect_from:

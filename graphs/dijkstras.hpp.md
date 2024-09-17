@@ -38,8 +38,8 @@ data:
   timestamp: '2024-08-28 02:47:08-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/library_checker/graph/shortest_path.test.cpp
   - verify/custom/utils/random_graph.test.cpp
+  - verify/library_checker/graph/shortest_path.test.cpp
 documentation_of: graphs/dijkstras.hpp
 layout: document
 redirect_from:

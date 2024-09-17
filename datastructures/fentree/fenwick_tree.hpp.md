@@ -49,9 +49,9 @@ data:
   timestamp: '2024-09-05 15:13:46-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/aizu/dsl/rsq_and_raq.test.cpp
-  - verify/library_checker/tree/vertex_add_subtree_sum.test.cpp
   - verify/library_checker/data_structure/point_add_range_sum.test.cpp
+  - verify/library_checker/tree/vertex_add_subtree_sum.test.cpp
+  - verify/aizu/dsl/rsq_and_raq.test.cpp
 documentation_of: datastructures/fentree/fenwick_tree.hpp
 layout: document
 redirect_from:

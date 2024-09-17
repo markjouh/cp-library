@@ -35,8 +35,8 @@ data:
   timestamp: '2024-08-31 22:39:57-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/library_checker/data_structure/static_range_mode_query.test.cpp
   - verify/library_checker/data_structure/associative_array.test.cpp
+  - verify/library_checker/data_structure/static_range_mode_query.test.cpp
 documentation_of: datastructures/pbds/hash_table.hpp
 layout: document
 redirect_from:

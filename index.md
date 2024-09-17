@@ -68,11 +68,17 @@ data:
       path: graphs/dijkstras.hpp
       title: graphs/dijkstras.hpp
     - icon: ':warning:'
+      path: graphs/dijkstras_k.hpp
+      title: graphs/dijkstras_k.hpp
+    - icon: ':warning:'
       path: graphs/euler_cycle.hpp
       title: graphs/euler_cycle.hpp
     - icon: ':heavy_check_mark:'
       path: graphs/kosaraju_scc.hpp
       title: graphs/kosaraju_scc.hpp
+    - icon: ':warning:'
+      path: graphs/topsort.hpp
+      title: graphs/topsort.hpp
   - name: graphs/tree
     pages:
     - icon: ':heavy_check_mark:'
