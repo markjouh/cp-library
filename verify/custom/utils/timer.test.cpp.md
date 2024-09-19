@@ -1,15 +1,31 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: misc/template.h
     title: misc/template.h
+  - icon: ':heavy_check_mark:'
+    path: utils/debug.h
+    title: utils/debug.h
+  - icon: ':heavy_check_mark:'
+    path: utils/encode.h
+    title: utils/encode.h
+  - icon: ':heavy_check_mark:'
+    path: utils/my_random.h
+    title: utils/my_random.h
+  - icon: ':heavy_check_mark:'
+    path: utils/my_timer.h
+    title: utils/my_timer.h
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
-  attributes: {}
+  _verificationStatusIcon: ':heavy_check_mark:'
+  attributes:
+    '*NOT_SPECIAL_COMMENTS*': ''
+    PROBLEM: https://judge.yosupo.jp/problem/aplusb
+    links:
+    - https://judge.yosupo.jp/problem/aplusb
   bundledCode: "#line 1 \"verify/custom/utils/timer.test.cpp\"\n#define PROBLEM \"\
     https://judge.yosupo.jp/problem/aplusb\"\n\n#include <unistd.h>\n\n#line 1 \"\
     misc/template.h\"\n#include <bits/stdc++.h>\n\nusing namespace std;\n\n#ifdef\
@@ -40,11 +56,15 @@ data:
     \    cout << a + b << '\\n';\n}"
   dependsOn:
   - misc/template.h
+  - utils/debug.h
+  - utils/encode.h
+  - utils/my_random.h
+  - utils/my_timer.h
   isVerificationFile: true
   path: verify/custom/utils/timer.test.cpp
   requiredBy: []
   timestamp: '2024-09-19 17:47:28-04:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/custom/utils/timer.test.cpp
 layout: document

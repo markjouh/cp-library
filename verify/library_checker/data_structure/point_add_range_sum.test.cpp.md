@@ -4,15 +4,31 @@ data:
   - icon: ':heavy_check_mark:'
     path: datastructures/bit/bit.h
     title: datastructures/bit/bit.h
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: misc/template.h
     title: misc/template.h
+  - icon: ':heavy_check_mark:'
+    path: utils/debug.h
+    title: utils/debug.h
+  - icon: ':heavy_check_mark:'
+    path: utils/encode.h
+    title: utils/encode.h
+  - icon: ':heavy_check_mark:'
+    path: utils/my_random.h
+    title: utils/my_random.h
+  - icon: ':heavy_check_mark:'
+    path: utils/my_timer.h
+    title: utils/my_timer.h
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
-  attributes: {}
+  attributes:
+    '*NOT_SPECIAL_COMMENTS*': ''
+    PROBLEM: https://judge.yosupo.jp/problem/point_add_range_sum
+    links:
+    - https://judge.yosupo.jp/problem/point_add_range_sum
   bundledCode: "#line 1 \"verify/library_checker/data_structure/point_add_range_sum.test.cpp\"\
     \n#define PROBLEM \"https://judge.yosupo.jp/problem/point_add_range_sum\"\n\n\
     #line 1 \"misc/template.h\"\n#include <bits/stdc++.h>\n\nusing namespace std;\n\
@@ -52,6 +68,10 @@ data:
     \      } else {\n            ft.add(x, y);\n        }\n    }\n}"
   dependsOn:
   - misc/template.h
+  - utils/debug.h
+  - utils/encode.h
+  - utils/my_random.h
+  - utils/my_timer.h
   - datastructures/bit/bit.h
   isVerificationFile: true
   path: verify/library_checker/data_structure/point_add_range_sum.test.cpp

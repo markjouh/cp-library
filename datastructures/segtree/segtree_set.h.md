@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: datastructures/segtree/segtree.h
     title: datastructures/segtree/segtree.h
   _extendedRequiredBy: []

@@ -1,6 +1,18 @@
 ---
 data:
-  _extendedDependsOn: []
+  _extendedDependsOn:
+  - icon: ':heavy_check_mark:'
+    path: utils/debug.h
+    title: utils/debug.h
+  - icon: ':heavy_check_mark:'
+    path: utils/encode.h
+    title: utils/encode.h
+  - icon: ':heavy_check_mark:'
+    path: utils/my_random.h
+    title: utils/my_random.h
+  - icon: ':heavy_check_mark:'
+    path: utils/my_timer.h
+    title: utils/my_timer.h
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
@@ -12,7 +24,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/aizu/alds1/priority_queue.test.cpp
     title: verify/aizu/alds1/priority_queue.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/aizu/dsl/rmq.test.cpp
     title: verify/aizu/dsl/rmq.test.cpp
   - icon: ':heavy_check_mark:'
@@ -21,25 +33,25 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/aizu/ntl/power.test.cpp
     title: verify/aizu/ntl/power.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/custom/datastructure/fenwick_tree_range_add.test.cpp
     title: verify/custom/datastructure/fenwick_tree_range_add.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/custom/datastructure/segment_tree_sparse.test.cpp
     title: verify/custom/datastructure/segment_tree_sparse.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/custom/numeric/binary_search_reals.test.cpp
     title: verify/custom/numeric/binary_search_reals.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/custom/utils/debug.test.cpp
     title: verify/custom/utils/debug.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/custom/utils/encode.test.cpp
     title: verify/custom/utils/encode.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/custom/utils/random_graph.test.cpp
     title: verify/custom/utils/random_graph.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/custom/utils/timer.test.cpp
     title: verify/custom/utils/timer.test.cpp
   - icon: ':heavy_check_mark:'
@@ -87,9 +99,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/library_checker/tree/vertex_add_subtree_sum.test.cpp
     title: verify/library_checker/tree/vertex_add_subtree_sum.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: h
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"misc/template.h\"\n#include <bits/stdc++.h>\n\nusing namespace\
@@ -120,12 +132,16 @@ data:
     \ = b, 1 : 0;\n}\n\nstruct InitIO {\n    InitIO() {\n        cin.tie(0)->sync_with_stdio(0);\n\
     \        cin.exceptions(cin.failbit);\n        cout << setprecision(10) << fixed;\n\
     \    }\n} init_io;"
-  dependsOn: []
+  dependsOn:
+  - utils/debug.h
+  - utils/encode.h
+  - utils/my_random.h
+  - utils/my_timer.h
   isVerificationFile: false
   path: misc/template.h
   requiredBy: []
   timestamp: '2024-09-19 17:13:58-04:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/custom/utils/encode.test.cpp
   - verify/custom/utils/debug.test.cpp

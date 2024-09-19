@@ -4,15 +4,31 @@ data:
   - icon: ':heavy_check_mark:'
     path: datastructures/pbds/hash_table.h
     title: datastructures/pbds/hash_table.h
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: misc/template.h
     title: misc/template.h
+  - icon: ':heavy_check_mark:'
+    path: utils/debug.h
+    title: utils/debug.h
+  - icon: ':heavy_check_mark:'
+    path: utils/encode.h
+    title: utils/encode.h
+  - icon: ':heavy_check_mark:'
+    path: utils/my_random.h
+    title: utils/my_random.h
+  - icon: ':heavy_check_mark:'
+    path: utils/my_timer.h
+    title: utils/my_timer.h
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
-  attributes: {}
+  attributes:
+    '*NOT_SPECIAL_COMMENTS*': ''
+    PROBLEM: https://judge.yosupo.jp/problem/associative_array
+    links:
+    - https://judge.yosupo.jp/problem/associative_array
   bundledCode: "#line 1 \"verify/library_checker/data_structure/associative_array.test.cpp\"\
     \n#define PROBLEM \"https://judge.yosupo.jp/problem/associative_array\"\n\n#line\
     \ 1 \"misc/template.h\"\n#include <bits/stdc++.h>\n\nusing namespace std;\n\n\
@@ -49,6 +65,10 @@ data:
     \ v;\n            cin >> v;\n            mp[k] = v;\n        }\n    }\n}"
   dependsOn:
   - misc/template.h
+  - utils/debug.h
+  - utils/encode.h
+  - utils/my_random.h
+  - utils/my_timer.h
   - datastructures/pbds/hash_table.h
   isVerificationFile: true
   path: verify/library_checker/data_structure/associative_array.test.cpp

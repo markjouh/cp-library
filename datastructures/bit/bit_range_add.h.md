@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/custom/datastructure/fenwick_tree_range_add.test.cpp
     title: verify/custom/datastructure/fenwick_tree_range_add.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: h
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"datastructures/bit/bit_range_add.h\"\n\ntemplate <class\
@@ -37,7 +37,7 @@ data:
   path: datastructures/bit/bit_range_add.h
   requiredBy: []
   timestamp: '2024-09-19 17:13:58-04:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/custom/datastructure/fenwick_tree_range_add.test.cpp
 documentation_of: datastructures/bit/bit_range_add.h

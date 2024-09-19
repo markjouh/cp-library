@@ -26,7 +26,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: datastructures/bit/bit_dual.h
       title: datastructures/bit/bit_dual.h
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: datastructures/bit/bit_range_add.h
       title: datastructures/bit/bit_range_add.h
   - name: datastructures/pbds
@@ -39,7 +39,7 @@ data:
       title: datastructures/pbds/order_statistic_tree.h
   - name: datastructures/segtree
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: datastructures/segtree/segtree.h
       title: datastructures/segtree/segtree.h
     - icon: ':warning:'
@@ -48,7 +48,7 @@ data:
     - icon: ':warning:'
       path: datastructures/segtree/segtree_set.h
       title: datastructures/segtree/segtree_set.h
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: datastructures/segtree/segtree_sparse.h
       title: datastructures/segtree/segtree_sparse.h
   - name: datastructures/static
@@ -67,7 +67,7 @@ data:
     - icon: ':warning:'
       path: graphs/bfs01.h
       title: graphs/bfs01.h
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: graphs/dijkstras.h
       title: graphs/dijkstras.h
     - icon: ':warning:'
@@ -104,7 +104,7 @@ data:
     - icon: ':warning:'
       path: misc/next_greater_element.h
       title: misc/next_greater_element.h
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: misc/template.h
       title: misc/template.h
   - name: numeric
@@ -112,7 +112,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: numeric/binsearch.h
       title: numeric/binsearch.h
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: numeric/binsearch_reals.h
       title: numeric/binsearch_reals.h
     - icon: ':warning:'
@@ -137,16 +137,16 @@ data:
       title: strings/hashing.h
   - name: utils
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: utils/debug.h
       title: utils/debug.h
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: utils/encode.h
       title: utils/encode.h
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: utils/my_random.h
       title: utils/my_random.h
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: utils/my_timer.h
       title: utils/my_timer.h
   verificationCategories:
@@ -163,7 +163,7 @@ data:
       title: verify/aizu/alds1/priority_queue.test.cpp
   - name: verify/aizu/dsl
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/aizu/dsl/rmq.test.cpp
       title: verify/aizu/dsl/rmq.test.cpp
     - icon: ':heavy_check_mark:'
@@ -176,29 +176,29 @@ data:
       title: verify/aizu/ntl/power.test.cpp
   - name: verify/custom/datastructure
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/custom/datastructure/fenwick_tree_range_add.test.cpp
       title: verify/custom/datastructure/fenwick_tree_range_add.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/custom/datastructure/segment_tree_sparse.test.cpp
       title: verify/custom/datastructure/segment_tree_sparse.test.cpp
   - name: verify/custom/numeric
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/custom/numeric/binary_search_reals.test.cpp
       title: verify/custom/numeric/binary_search_reals.test.cpp
   - name: verify/custom/utils
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/custom/utils/debug.test.cpp
       title: verify/custom/utils/debug.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/custom/utils/encode.test.cpp
       title: verify/custom/utils/encode.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/custom/utils/random_graph.test.cpp
       title: verify/custom/utils/random_graph.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/custom/utils/timer.test.cpp
       title: verify/custom/utils/timer.test.cpp
   - name: verify/library_checker/data_structure

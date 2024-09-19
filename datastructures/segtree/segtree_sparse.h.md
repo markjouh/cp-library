@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/custom/datastructure/segment_tree_sparse.test.cpp
     title: verify/custom/datastructure/segment_tree_sparse.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: h
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"datastructures/segtree/segtree_sparse.h\"\n\ntemplate <class\
@@ -70,7 +70,7 @@ data:
   path: datastructures/segtree/segtree_sparse.h
   requiredBy: []
   timestamp: '2024-09-19 17:13:58-04:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/custom/datastructure/segment_tree_sparse.test.cpp
 documentation_of: datastructures/segtree/segtree_sparse.h
