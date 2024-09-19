@@ -2,17 +2,14 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: datastructures/static/mergesort_tree.hpp
-    title: datastructures/static/mergesort_tree.hpp
+    path: datastructures/static/mergesort_tree.h
+    title: datastructures/static/mergesort_tree.h
+  - icon: ':question:'
+    path: misc/template.h
+    title: misc/template.h
   - icon: ':heavy_check_mark:'
-    path: numeric/binary_search.hpp
-    title: numeric/binary_search.hpp
-  - icon: ':heavy_check_mark:'
-    path: utils/random.hpp
-    title: utils/random.hpp
-  - icon: ':heavy_check_mark:'
-    path: utils/timer.hpp
-    title: utils/timer.hpp
+    path: numeric/binsearch.h
+    title: numeric/binsearch.h
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -25,109 +22,59 @@ data:
     - https://judge.yosupo.jp/problem/range_kth_smallest
   bundledCode: "#line 1 \"verify/library_checker/data_structure/range_kth_smallest.test.cpp\"\
     \n#define PROBLEM \"https://judge.yosupo.jp/problem/range_kth_smallest\"\n\n#line\
-    \ 1 \"verify/boilerplate.hpp\"\n#include <bits/stdc++.h>\n\nusing namespace std;\n\
-    \n#line 2 \"utils/random.hpp\"\n\n#include <type_traits>\n\n// ----------------------------------------------------\n\
-    // Basic random data generation\n// ----------------------------------------------------\n\
-    \nmt19937_64 rngEngine(chrono::steady_clock::now().time_since_epoch().count());\n\
-    \ntemplate <class T>\nT myRand(T lo, T hi) {\n  static_assert(is_arithmetic_v<T>,\
-    \ \"Invalid type for myRand()\");\n  if constexpr (is_integral_v<T>) {\n    return\
-    \ uniform_int_distribution<T>(lo, hi)(rngEngine);\n  } else {\n    return uniform_real_distribution<T>(lo,\
-    \ hi)(rngEngine);\n  }\n}\n\ntemplate <class T>\nconstexpr T defaultVal() {\n\
-    \  if constexpr (is_floating_point_v<T>) {\n    return 1;\n  } else {\n    return\
-    \ numeric_limits<T>::max() / 2;\n  }\n}\n\nbool randBool() {\n  return myRand<int>(0,\
-    \ 1);\n}\n\nint randInt(int lo, int hi) {\n  return myRand<int>(lo, hi);\n}\n\n\
-    int randInt(int hi) {\n  return randInt(0, hi - 1);\n}\n\nint randInt() {\n  return\
-    \ randInt(defaultVal<int>());\n}\n\nlong long randLong(long long lo, long long\
-    \ hi) {\n  return myRand<long long>(lo, hi);\n}\n\nlong long randLong(long long\
-    \ hi) {\n  return randLong(0, hi);\n}\n\nlong long randLong() {\n  return randLong(defaultVal<long\
-    \ long>());\n}\n\ndouble randDoub(double lo, double hi) {\n  return myRand<double>(lo,\
-    \ hi);\n}\n\ndouble randDoub(double hi) {\n  return randDoub(0, hi);\n}\n\ndouble\
-    \ randDoub() {\n  return randDoub(1);\n}\n\nstring randStr(int n, int k) {\n \
-    \ string s(n, ' ');\n  for (int i = 0; i < n; i++) {\n    s[i] = char('a' + randInt(k));\n\
-    \  }\n  return s;\n}\n\ntemplate <class T>\nvector<T> randVec(int n, T lo, T hi)\
-    \ {\n  vector<T> res(n);\n  for (int i = 0; i < n; i++) {\n    res[i] = myRand<T>(lo,\
-    \ hi);\n  }\n  return res;\n}\n\ntemplate <class T>\nvector<T> randVec(int n,\
-    \ T hi) {\n  return randVec<T>(n, 0, hi);\n}\n\ntemplate <class T>\nvector<T>\
-    \ randVec(int n) {\n  return randVec<T>(n, defaultVal<T>());\n}\n\ntemplate <class\
-    \ T, size_t N>\narray<T, N> randArr(T lo, T hi) {\n  array<T, N> res;\n  for (int\
-    \ i = 0; i < N; i++) {\n    res[i] = myRand<T>(lo, hi);\n  }\n  return res;\n\
-    }\n\ntemplate <class T, size_t N>\narray<T, N> randArr(T hi) {\n  return randArr<T,\
-    \ N>(0, hi);\n}\n\ntemplate <class T, size_t N>\narray<T, N> randArr() {\n  return\
-    \ randArr<T, N>(defaultVal<T>());\n}\n\n// ----------------------------------------------------\n\
-    // Graph generation from Prufer sequences\n// ----------------------------------------------------\n\
-    \nvector<pair<int, int>> genTreeEdges(int n) {\n  const vector<int> prufer = randVec(n\
-    \ - 2, 0, n - 1);\n  vector<int> deg(n, 1);\n  for (int x : prufer) {\n    deg[x]++;\n\
-    \  }\n  priority_queue<int, vector<int>, greater<>> leaves;\n  for (int i = 0;\
-    \ i < n; i++) {\n    if (deg[i] == 1) {\n      leaves.push(i);\n    }\n  }\n\n\
-    \  vector<pair<int, int>> res;\n  res.reserve(n - 1);\n  for (int v : prufer)\
-    \ {\n    int u = leaves.top();\n    leaves.pop();\n\n    res.push_back(minmax(u,\
-    \ v));\n    deg[u]--, deg[v]--;\n\n    if (deg[v] == 1) {\n      leaves.push(v);\n\
-    \    }\n  }\n\n  int rootA = -1, rootB = -1;\n  for (int i = 0; i < n; i++) {\n\
-    \    if (deg[i] == 1) {\n      (rootA == -1 ? rootA : rootB) = i;\n    }\n  }\n\
-    \  res.emplace_back(rootA, rootB);\n\n  return res;\n}\n\nvector<pair<int, int>>\
-    \ genGraphEdges(int n, int m) {\n  assert(m >= n - 1 && m <= 1ll * n * (n - 1)\
-    \ / 2);\n\n  auto res = genTreeEdges(n);\n  set<pair<int, int>> have;\n  for (auto\
-    \ [u, v] : res) {\n    have.emplace(u, v);\n  }\n\n  while (ssize(res) < m) {\n\
-    \    int u = randInt(n), v = randInt(n - 1);\n    v += v >= u;\n    if (u > v)\
-    \ {\n      swap(u, v);\n    }\n    if (!have.count({u, v})) {\n      res.emplace_back(u,\
-    \ v);\n      have.emplace(u, v);\n    }\n  }\n  return res;\n}\n\nvector<vector<int>>\
-    \ genGraph(int n, int m, bool dir = false) {\n  vector<vector<int>> g(n);\n  for\
-    \ (auto [u, v] : genGraphEdges(n, m)) {\n    if (dir) {\n      if (randBool())\
-    \ {\n        swap(u, v);\n      }\n      g[u].push_back(v);\n    } else {\n  \
-    \    g[u].push_back(v);\n      g[v].push_back(u);\n    }\n  }\n  return g;\n}\n\
-    \nvector<vector<pair<int, int>>> genWeightedGraph(int n, int m, int lo = 1, int\
-    \ hi = defaultVal<int>(), bool dir = false) {\n  vector<vector<pair<int, int>>>\
-    \ g(n);\n  for (auto [u, v] : genGraphEdges(n, m)) {\n    const int w = randInt(lo,\
-    \ hi);\n    if (dir) {\n      if (randBool()) {\n        swap(u, v);\n      }\n\
-    \      g[u].emplace_back(v, w);\n    } else {\n      g[u].emplace_back(v, w);\n\
-    \      g[v].emplace_back(u, w);\n    }\n  }\n  return g;\n}\n#line 2 \"utils/timer.hpp\"\
-    \n\nchrono::time_point<chrono::high_resolution_clock> timer;\n\nvoid startTimer()\
-    \ {\n  timer = std::chrono::high_resolution_clock::now();\n}\n\nlong long elapsed()\
-    \ {\n  return (chrono::duration_cast<chrono::milliseconds>(chrono::high_resolution_clock::now()\
-    \ - timer)).count();\n}\n#line 7 \"verify/boilerplate.hpp\"\n\n#define all(x)\
-    \ begin(x), end(x)\n#define sz(x) int(size(x))\n\nusing u32 = unsigned int;\n\
-    using i64 = long long;\nusing u64 = unsigned long long;\n\ntemplate <class T>\n\
-    bool ckmin(T &a, const T &b) {\n  return b < a ? a = b, 1 : 0;\n}\n\ntemplate\
-    \ <class T>\nbool ckmax(T &a, const T &b) {\n  return b > a ? a = b, 1 : 0;\n\
-    }\n\nstruct InitIO {\n  InitIO() {\n    cin.tie(0)->sync_with_stdio(0);\n    cin.exceptions(cin.failbit);\n\
-    \    cout << setprecision(10) << fixed;\n  }\n} init_io;\n#line 2 \"datastructures/static/mergesort_tree.hpp\"\
-    \n\ntemplate <class T>\nstruct MergesortTree {\n  int n;\n  vector<vector<T>>\
-    \ st;\n\n  MergesortTree(const vector<T> &a) : n(sz(a)), st(2 * n) {\n    for\
-    \ (int i = 0; i < n; i++) {\n      st[i + n] = {a[i]};\n    }\n    for (int i\
-    \ = n - 1; i > 0; i--) {\n      merge(begin(st[i << 1]), end(st[i << 1]), begin(st[i\
-    \ << 1 | 1]),\n        end(st[i << 1 | 1]), back_inserter(st[i]));\n    }\n  }\n\
-    \n  T query(int l, int r, T v) {\n    T ls = 0, rs = 0;\n    for (l += n, r +=\
-    \ n + 1; l < r; l >>= 1, r >>= 1) {\n      if (l & 1) {\n        ls += lower_bound(all(st[l]),\
-    \ v) - begin(st[l]);\n        l++;\n      }\n      if (r & 1) {\n        r--;\n\
-    \        rs += lower_bound(all(st[r]), v) - begin(st[r]);\n      }\n    }\n  \
-    \  return ls + rs;\n  }\n};\n#line 2 \"numeric/binary_search.hpp\"\n\ntemplate\
-    \ <class T, class U>\nT bsmin(T lo, T hi, U f) {\n  assert(lo <= hi);\n  hi++;\n\
-    \  for (T i = T(1) << __lg(hi - lo); i > 0; i >>= 1) {\n    hi -= (hi - i >= lo\
-    \ && f(hi - i)) * i;\n  }\n  return hi;\n}\n\ntemplate <class T, class U>\nT bsmax(T\
-    \ lo, T hi, U f) {\n  assert(lo <= hi);\n  lo--;\n  for (T i = T(1) << __lg(hi\
-    \ - lo); i > 0; i >>= 1) {\n    lo += (lo + i <= hi && f(lo + i)) * i;\n  }\n\
-    \  return lo;\n}\n#line 6 \"verify/library_checker/data_structure/range_kth_smallest.test.cpp\"\
-    \n\nint main() {\n  int n, q;\n  cin >> n >> q;\n  vector<int> a(n);\n  for (int\
-    \ i = 0; i < n; i++) {\n    cin >> a[i];\n  }\n  MergesortTree<int> mt(a);\n \
-    \ while (q--) {\n    int l, r, k;\n    cin >> l >> r >> k;\n    r--;\n    cout\
-    \ << bsmin(0, int(1e9), [&](int x) {\n      return mt.query(l, r, x + 1) >= k\
-    \ + 1;\n    }) << '\\n';\n  }\n}\n"
+    \ 1 \"misc/template.h\"\n#include <bits/stdc++.h>\n\nusing namespace std;\n\n\
+    #ifdef LOCAL\n#include <utils>\n#else\n#define dbg(...)\n#endif\n\n#define arg4(a,\
+    \ b, c, d, ...) d\n \n#define rep3(i, l, r) for (int i = int(l); i < int(r); i++)\n\
+    #define rep2(i, n) rep3(i, 0, n)\n#define rep(...) arg4(__VA_ARGS__, rep3, rep2)\
+    \ (__VA_ARGS__)\n \n#define per3(i, l, r) for (int i = int(r) - 1; i >= int(l);\
+    \ i--)\n#define per2(i, n) per3(i, 0, n)\n#define per(...) arg4(__VA_ARGS__, per3,\
+    \ per2) (__VA_ARGS__)\n\n#define all(x) begin(x), end(x)\n#define sz(x) int(size(x))\n\
+    #define pb push_back\n#define eb emplace_back\n#define f first\n#define s second\n\
+    \nusing ll = long long;\nusing u32 = unsigned int;\nusing u64 = unsigned long\
+    \ long;\n\ntemplate <class T>\nbool ckmin(T &a, const T &b) {\n    return b <\
+    \ a ? a = b, 1 : 0;\n}\n\ntemplate <class T>\nbool ckmax(T &a, const T &b) {\n\
+    \    return b > a ? a = b, 1 : 0;\n}\n\nstruct InitIO {\n    InitIO() {\n    \
+    \    cin.tie(0)->sync_with_stdio(0);\n        cin.exceptions(cin.failbit);\n \
+    \       cout << setprecision(10) << fixed;\n    }\n} init_io;\n#line 2 \"datastructures/static/mergesort_tree.h\"\
+    \n\ntemplate <class T>\nstruct MergesortTree {\n    int n;\n    vector<vector<T>>\
+    \ st;\n\n    MergesortTree(const vector<T> &a) : n(sz(a)), st(2 * n) {\n     \
+    \   for (int i = 0; i < n; i++) {\n            st[i + n] = {a[i]};\n        }\n\
+    \        for (int i = n - 1; i > 0; i--) {\n            merge(begin(st[i << 1]),\
+    \ end(st[i << 1]), begin(st[i << 1 | 1]),\n                end(st[i << 1 | 1]),\
+    \ back_inserter(st[i]));\n        }\n    }\n\n    T query(int l, int r, T v) {\n\
+    \        T ls = 0, rs = 0;\n        for (l += n, r += n + 1; l < r; l >>= 1, r\
+    \ >>= 1) {\n            if (l & 1) {\n                ls += lower_bound(all(st[l]),\
+    \ v) - begin(st[l]);\n                l++;\n            }\n            if (r &\
+    \ 1) {\n                r--;\n                rs += lower_bound(all(st[r]), v)\
+    \ - begin(st[r]);\n            }\n        }\n        return ls + rs;\n    }\n\
+    };\n#line 2 \"numeric/binsearch.h\"\n\ntemplate <class T, class U>\nT bsmin(T\
+    \ lo, T hi, U f) {\n    assert(lo <= hi);\n    hi++;\n    for (T i = T(1) << __lg(hi\
+    \ - lo); i > 0; i >>= 1) {\n        hi -= (hi - i >= lo && f(hi - i)) * i;\n \
+    \   }\n    return hi;\n}\n\ntemplate <class T, class U>\nT bsmax(T lo, T hi, U\
+    \ f) {\n    assert(lo <= hi);\n    lo--;\n    for (T i = T(1) << __lg(hi - lo);\
+    \ i > 0; i >>= 1) {\n        lo += (lo + i <= hi && f(lo + i)) * i;\n    }\n \
+    \   return lo;\n}\n#line 6 \"verify/library_checker/data_structure/range_kth_smallest.test.cpp\"\
+    \n\nint main() {\n    int n, q;\n    cin >> n >> q;\n    vector<int> a(n);\n \
+    \   for (int i = 0; i < n; i++) {\n        cin >> a[i];\n    }\n    MergesortTree<int>\
+    \ mt(a);\n    while (q--) {\n        int l, r, k;\n        cin >> l >> r >> k;\n\
+    \        r--;\n        cout << bsmin(0, int(1e9), [&](int x) {\n            return\
+    \ mt.query(l, r, x + 1) >= k + 1;\n        }) << '\\n';\n    }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/range_kth_smallest\"\n\n\
-    #include \"../../boilerplate.hpp\"\n#include \"../../../datastructures/static/mergesort_tree.hpp\"\
-    \n#include \"../../../numeric/binary_search.hpp\"\n\nint main() {\n  int n, q;\n\
-    \  cin >> n >> q;\n  vector<int> a(n);\n  for (int i = 0; i < n; i++) {\n    cin\
-    \ >> a[i];\n  }\n  MergesortTree<int> mt(a);\n  while (q--) {\n    int l, r, k;\n\
-    \    cin >> l >> r >> k;\n    r--;\n    cout << bsmin(0, int(1e9), [&](int x)\
-    \ {\n      return mt.query(l, r, x + 1) >= k + 1;\n    }) << '\\n';\n  }\n}"
+    #include \"../../../misc/template.h\"\n#include \"../../../datastructures/static/mergesort_tree.h\"\
+    \n#include \"../../../numeric/binsearch.h\"\n\nint main() {\n    int n, q;\n \
+    \   cin >> n >> q;\n    vector<int> a(n);\n    for (int i = 0; i < n; i++) {\n\
+    \        cin >> a[i];\n    }\n    MergesortTree<int> mt(a);\n    while (q--) {\n\
+    \        int l, r, k;\n        cin >> l >> r >> k;\n        r--;\n        cout\
+    \ << bsmin(0, int(1e9), [&](int x) {\n            return mt.query(l, r, x + 1)\
+    \ >= k + 1;\n        }) << '\\n';\n    }\n}"
   dependsOn:
-  - utils/random.hpp
-  - utils/timer.hpp
-  - datastructures/static/mergesort_tree.hpp
-  - numeric/binary_search.hpp
+  - misc/template.h
+  - datastructures/static/mergesort_tree.h
+  - numeric/binsearch.h
   isVerificationFile: true
   path: verify/library_checker/data_structure/range_kth_smallest.test.cpp
   requiredBy: []
-  timestamp: '2024-09-13 16:07:33-04:00'
+  timestamp: '2024-09-19 17:13:58-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/library_checker/data_structure/range_kth_smallest.test.cpp
