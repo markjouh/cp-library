@@ -13,9 +13,6 @@ data:
     path: verify/aizu/alds1/priority_queue.test.cpp
     title: verify/aizu/alds1/priority_queue.test.cpp
   - icon: ':heavy_check_mark:'
-    path: verify/aizu/dsl/rmq.test.cpp
-    title: verify/aizu/dsl/rmq.test.cpp
-  - icon: ':heavy_check_mark:'
     path: verify/aizu/dsl/rsq_and_raq.test.cpp
     title: verify/aizu/dsl/rsq_and_raq.test.cpp
   - icon: ':heavy_check_mark:'
@@ -39,6 +36,9 @@ data:
   - icon: ':x:'
     path: verify/custom/utils/random_graph.test.cpp
     title: verify/custom/utils/random_graph.test.cpp
+  - icon: ':x:'
+    path: verify/custom/utils/timer.test.cpp
+    title: verify/custom/utils/timer.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/library_checker/data_structure/associative_array.test.cpp
     title: verify/library_checker/data_structure/associative_array.test.cpp
@@ -126,6 +126,7 @@ data:
   verifiedWith:
   - verify/custom/utils/encode.test.cpp
   - verify/custom/utils/debug.test.cpp
+  - verify/custom/utils/timer.test.cpp
   - verify/custom/utils/random_graph.test.cpp
   - verify/custom/datastructure/fenwick_tree_range_add.test.cpp
   - verify/custom/datastructure/segment_tree_sparse.test.cpp
@@ -149,7 +150,6 @@ data:
   - verify/aizu/alds1/priority_queue.test.cpp
   - verify/aizu/alds1/number_of_inversions.test.cpp
   - verify/aizu/alds1/binary_search.test.cpp
-  - verify/aizu/dsl/rmq.test.cpp
   - verify/aizu/dsl/rsq_and_raq.test.cpp
 documentation_of: misc/template.h
 layout: document

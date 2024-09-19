@@ -1,19 +1,19 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
-  _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: verify/aizu/dsl/rmq.test.cpp
-    title: verify/aizu/dsl/rmq.test.cpp
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: datastructures/segtree/segtree_set.h
+    title: datastructures/segtree/segtree_set.h
+  _extendedVerifiedWith: []
   _isVerificationFailed: false
-  _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _pathExtension: h
+  _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"datastructures/segtree/segtree.hpp\"\n\ntemplate <class\
-    \ T, T(*op)(T, T), T(*id)()>\nstruct Segtree {\n    int n;\n    vector<T> st;\n\
-    \n    Segtree(int n_) : n(n_), st(2 * n, id()) {}\n\n    Segtree(const vector<T>\
+  bundledCode: "#line 2 \"datastructures/segtree/segtree.h\"\n\ntemplate <class T,\
+    \ T(*op)(T, T), T(*id)()>\nstruct Segtree {\n    int n;\n    vector<T> st;\n\n\
+    \    Segtree(int n_) : n(n_), st(2 * n, id()) {}\n\n    Segtree(const vector<T>\
     \ &a) : n(sz(a)), st(2 * n) {\n        copy(begin(a), end(a), begin(st) + n);\n\
     \        for (int i = n - 1; i > 0; i--) {\n            st[i] = op(st[i << 1],\
     \ st[i << 1 | 1]);\n        }\n    }\n\n    T get(int p) {\n        return st[p\
@@ -38,16 +38,16 @@ data:
     \         st[p] = op(st[p << 1], st[p << 1 | 1]);\n        }\n    }\n};"
   dependsOn: []
   isVerificationFile: false
-  path: datastructures/segtree/segtree.hpp
-  requiredBy: []
-  timestamp: '2024-09-19 17:13:58-04:00'
-  verificationStatus: LIBRARY_ALL_AC
-  verifiedWith:
-  - verify/aizu/dsl/rmq.test.cpp
-documentation_of: datastructures/segtree/segtree.hpp
+  path: datastructures/segtree/segtree.h
+  requiredBy:
+  - datastructures/segtree/segtree_set.h
+  timestamp: '2024-09-19 17:47:28-04:00'
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
+documentation_of: datastructures/segtree/segtree.h
 layout: document
 redirect_from:
-- /library/datastructures/segtree/segtree.hpp
-- /library/datastructures/segtree/segtree.hpp.html
-title: datastructures/segtree/segtree.hpp
+- /library/datastructures/segtree/segtree.h
+- /library/datastructures/segtree/segtree.h.html
+title: datastructures/segtree/segtree.h
 ---

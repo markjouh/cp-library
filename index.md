@@ -39,9 +39,9 @@ data:
       title: datastructures/pbds/order_statistic_tree.h
   - name: datastructures/segtree
     pages:
-    - icon: ':heavy_check_mark:'
-      path: datastructures/segtree/segtree.hpp
-      title: datastructures/segtree/segtree.hpp
+    - icon: ':warning:'
+      path: datastructures/segtree/segtree.h
+      title: datastructures/segtree/segtree.h
     - icon: ':warning:'
       path: datastructures/segtree/segtree_lazy.h
       title: datastructures/segtree/segtree_lazy.h
@@ -163,7 +163,7 @@ data:
       title: verify/aizu/alds1/priority_queue.test.cpp
   - name: verify/aizu/dsl
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/aizu/dsl/rmq.test.cpp
       title: verify/aizu/dsl/rmq.test.cpp
     - icon: ':heavy_check_mark:'
