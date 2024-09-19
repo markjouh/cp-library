@@ -5,10 +5,13 @@ data:
   - icon: ':warning:'
     path: datastructures/segtree/segtree_set.h
     title: datastructures/segtree/segtree_set.h
-  _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _extendedVerifiedWith:
+  - icon: ':x:'
+    path: verify/aizu/dsl/rmq.test.cpp
+    title: verify/aizu/dsl/rmq.test.cpp
+  _isVerificationFailed: true
   _pathExtension: h
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 2 \"datastructures/segtree/segtree.h\"\n\ntemplate <class T,\
@@ -42,8 +45,9 @@ data:
   requiredBy:
   - datastructures/segtree/segtree_set.h
   timestamp: '2024-09-19 17:47:28-04:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_WA
+  verifiedWith:
+  - verify/aizu/dsl/rmq.test.cpp
 documentation_of: datastructures/segtree/segtree.h
 layout: document
 redirect_from:

@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':x:'
     path: datastructures/segtree/segtree.h
     title: datastructures/segtree/segtree.h
   _extendedRequiredBy: []

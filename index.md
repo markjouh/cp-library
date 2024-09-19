@@ -39,7 +39,7 @@ data:
       title: datastructures/pbds/order_statistic_tree.h
   - name: datastructures/segtree
     pages:
-    - icon: ':warning:'
+    - icon: ':x:'
       path: datastructures/segtree/segtree.h
       title: datastructures/segtree/segtree.h
     - icon: ':warning:'

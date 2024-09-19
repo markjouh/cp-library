@@ -12,11 +12,7 @@ data:
   _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
-  attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.yosupo.jp/problem/lca
-    links:
-    - https://judge.yosupo.jp/problem/lca
+  attributes: {}
   bundledCode: "#line 1 \"verify/library_checker/tree/lca.test.cpp\"\n#define PROBLEM\
     \ \"https://judge.yosupo.jp/problem/lca\"\n\n#line 1 \"misc/template.h\"\n#include\
     \ <bits/stdc++.h>\n\nusing namespace std;\n\n#ifdef LOCAL\n#include <utils>\n\

@@ -12,6 +12,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/aizu/alds1/priority_queue.test.cpp
     title: verify/aizu/alds1/priority_queue.test.cpp
+  - icon: ':x:'
+    path: verify/aizu/dsl/rmq.test.cpp
+    title: verify/aizu/dsl/rmq.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/aizu/dsl/rsq_and_raq.test.cpp
     title: verify/aizu/dsl/rsq_and_raq.test.cpp
@@ -150,6 +153,7 @@ data:
   - verify/aizu/alds1/priority_queue.test.cpp
   - verify/aizu/alds1/number_of_inversions.test.cpp
   - verify/aizu/alds1/binary_search.test.cpp
+  - verify/aizu/dsl/rmq.test.cpp
   - verify/aizu/dsl/rsq_and_raq.test.cpp
 documentation_of: misc/template.h
 layout: document

@@ -15,11 +15,7 @@ data:
   _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
-  attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.yosupo.jp/problem/enumerate_palindromes
-    links:
-    - https://judge.yosupo.jp/problem/enumerate_palindromes
+  attributes: {}
   bundledCode: "#line 1 \"verify/library_checker/string/enumerate_palindromes.test.cpp\"\
     \n#define PROBLEM \"https://judge.yosupo.jp/problem/enumerate_palindromes\"\n\n\
     #line 1 \"misc/template.h\"\n#include <bits/stdc++.h>\n\nusing namespace std;\n\
