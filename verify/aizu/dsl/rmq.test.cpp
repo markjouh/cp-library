@@ -1,28 +1,28 @@
 #define PROBLEM "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_A"
 
-#include "../../boilerplate.hpp"
-#include "../../../datastructures/segtree/segment_tree.hpp"
+#include "../../../misc/template.h"
+#include "../../../datastructures/segtree/segtree.hpp"
 
 int op(int x, int y) {
-  return x < y ? x : y;
+    return x < y ? x : y;
 }
 
 int id() {
-  return numeric_limits<int>::max();
+    return INT_MAX;
 }
 
 int main() {
-  int n, q;
-  cin >> n >> q;
-  SegmentTree<int, op, id> st(n);
-  while (q--) {
-    bool t;
-    int x, y;
-    cin >> t >> x >> y;
-    if (t) {
-      cout << st.query(x, y) << '\n';
-    } else {
-      st.set(x, y);
+    int n, q;
+    cin >> n >> q;
+    Segtree<int, op, id> st(n);
+    while (q--) {
+        bool t;
+        int x, y;
+        cin >> t >> x >> y;
+        if (t) {
+            cout << st.query(x, y) << '\n';
+        } else {
+            st.set(x, y);
+        }
     }
-  }
 }

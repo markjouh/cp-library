@@ -1,4 +1,4 @@
-#include "debug.hpp"
-#include "encode.hpp"
-#include "random.hpp"
-#include "timer.hpp"
+#include "debug.h"
+#include "encode.h"
+#include "my_random.h"
+#include "my_timer.h"
