@@ -4,8 +4,7 @@
 
 #include "../../boilerplate.hpp"
 
-// Kind of pointless, but I'll write a test for
-// completionism's sake...
+// Just for completionism's sake...
 
 const int T = 10;
 
