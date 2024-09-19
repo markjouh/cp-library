@@ -20,12 +20,12 @@ data:
     )\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt: ../../boilerplate.hpp:\
     \ line -1: no such header\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/aplusb\"\n\n#include <unistd.h>\n\
-    \n#include \"../../boilerplate.hpp\"\n\n// Kind of pointless, but I'll write a\
-    \ test for\n// completionism's sake...\n\nconst int T = 10;\n\nint main() {\n\
-    \    for (int i = 0; i < T; i++) {\n        const int rand_ms = rand_int(50, 500);\n\
-    \n        start_timer();\n        usleep(rand_ms * 1000);\n        assert(abs(elapsed()\
-    \ - rand_ms) < 10);\n    }\n\n    cerr << \"Tests passed\\n\";\n\n    int a, b;\n\
-    \    cin >> a >> b;\n    cout << a + b << '\\n';\n}"
+    \n#include \"../../boilerplate.hpp\"\n\n// Just for completionism's sake...\n\n\
+    const int T = 10;\n\nint main() {\n    for (int i = 0; i < T; i++) {\n       \
+    \ const int rand_ms = rand_int(50, 500);\n\n        start_timer();\n        usleep(rand_ms\
+    \ * 1000);\n        assert(abs(elapsed() - rand_ms) < 10);\n    }\n\n    cerr\
+    \ << \"Tests passed\\n\";\n\n    int a, b;\n    cin >> a >> b;\n    cout << a\
+    \ + b << '\\n';\n}"
   dependsOn: []
   isVerificationFile: true
   path: verify/custom/utils/timer.test.cpp
