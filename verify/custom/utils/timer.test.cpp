@@ -2,7 +2,7 @@
 
 #include <unistd.h>
 
-#include "../../boilerplate.hpp"
+#include "../../../misc/template.h"
 
 // Just for completionism's sake...
 
