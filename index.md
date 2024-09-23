@@ -62,6 +62,14 @@ data:
     - icon: ':heavy_check_mark:'
       path: datastructures/static/sparse_table.h
       title: datastructures/static/sparse_table.h
+  - name: geometry
+    pages:
+    - icon: ':warning:'
+      path: geometry/integer_lattice.h
+      title: geometry/integer_lattice.h
+    - icon: ':warning:'
+      path: geometry/primitives.h
+      title: geometry/primitives.h
   - name: graphs
     pages:
     - icon: ':warning:'
