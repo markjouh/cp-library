@@ -3,6 +3,8 @@
 // Simple stuff for counting lattice points when we have integer vertices.
 // Fully tested on CSES Polygon Lattice Points.
 
+#include "primitives.h"
+
 template <class T>
 T lattice_seg(const Point<T> &s) {
     auto a = s.p, b = s.p + s.d;
