@@ -1,7 +1,10 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: geometry/integer_lattice.h
+    title: geometry/integer_lattice.h
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: h
@@ -161,7 +164,8 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: geometry/primitives.h
-  requiredBy: []
+  requiredBy:
+  - geometry/integer_lattice.h
   timestamp: '2024-09-22 22:20:12-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []

@@ -127,8 +127,8 @@ data:
       path: numeric/combo.h
       title: numeric/combo.h
     - icon: ':heavy_check_mark:'
-      path: numeric/mod_int.h
-      title: numeric/mod_int.h
+      path: numeric/mint.h
+      title: numeric/mint.h
     - icon: ':warning:'
       path: numeric/mod_math.h
       title: numeric/mod_math.h

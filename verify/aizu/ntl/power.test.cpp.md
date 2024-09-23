@@ -5,8 +5,8 @@ data:
     path: misc/template.h
     title: misc/template.h
   - icon: ':heavy_check_mark:'
-    path: numeric/mod_int.h
-    title: numeric/mod_int.h
+    path: numeric/mint.h
+    title: numeric/mint.h
   - icon: ':heavy_check_mark:'
     path: utils/debug.h
     title: utils/debug.h
@@ -43,41 +43,39 @@ data:
     \ a ? a = b, 1 : 0;\n}\n\ntemplate <class T>\nbool ckmax(T &a, const T &b) {\n\
     \    return b > a ? a = b, 1 : 0;\n}\n\nstruct InitIO {\n    InitIO() {\n    \
     \    cin.tie(0)->sync_with_stdio(0);\n        cin.exceptions(cin.failbit);\n \
-    \       cout << setprecision(10) << fixed;\n    }\n} init_io;\n#line 2 \"numeric/mod_int.h\"\
-    \n\ntemplate <int MOD>\nstruct ModInt {\n    int v;\n \n    ModInt(ll x = 0) :\
-    \ v(int(-MOD < x && x < MOD ? x : x % MOD) + (x < 0) * MOD) {}\n \n    friend\
-    \ ModInt pow(ModInt base, int exp) {\n        ModInt res = 1;\n        while (exp)\
-    \ {\n            if (exp & 1) {\n                res *= base;\n            }\n\
-    \            base *= base;\n            exp >>= 1;\n        }\n        return\
-    \ res;\n    }\n \n    ModInt &operator+=(ModInt b) {\n        if ((v += b.v) >=\
-    \ MOD) {\n            v -= MOD;\n        }\n        return *this;\n    }\n \n\
-    \    ModInt &operator-=(ModInt b) {\n        if ((v -= b.v) < 0) {\n         \
-    \   v += MOD;\n        }\n        return *this;\n    }\n \n    ModInt &operator*=(ModInt\
-    \ b) {\n        v = int(1ll * v * b.v % MOD);\n        return *this;\n    }\n\
-    \ \n    ModInt &operator/=(ModInt b) {\n        v = int(1ll * v * pow(b, MOD -\
-    \ 2).v % MOD);\n        return *this;\n    }\n \n    friend ModInt operator+(ModInt\
-    \ a, ModInt b) {\n        return a += b;\n    }\n \n    friend ModInt operator-(ModInt\
-    \ a, ModInt b) {\n        return a -= b;\n    }\n \n    friend ModInt operator*(ModInt\
-    \ a, ModInt b) {\n        return a *= b;\n    }\n \n    friend ModInt operator/(ModInt\
-    \ a, ModInt b) {\n        return a /= b;\n    }\n \n    friend ostream &operator<<(ostream\
-    \ &os, ModInt a) {\n        return os << a.v;\n    }\n};\n#line 5 \"verify/aizu/ntl/power.test.cpp\"\
-    \n\nusing mint = ModInt<1000000007>;\n\nint main() {\n    int m, n;\n    cin >>\
-    \ m >> n;\n    cout << pow(mint(m), n) << '\\n';\n}\n"
+    \       cout << setprecision(10) << fixed;\n    }\n} init_io;\n#line 2 \"numeric/mint.h\"\
+    \n\ntemplate <int MOD>\nstruct Mint {\n    int v;\n \n    Mint(ll x = 0) : v(int(-MOD\
+    \ < x && x < MOD ? x : x % MOD) + (x < 0) * MOD) {}\n \n    friend Mint pow(Mint\
+    \ base, int exp) {\n        Mint res = 1;\n        while (exp) {\n           \
+    \ if (exp & 1) res *= base;\n            base *= base;\n            exp >>= 1;\n\
+    \        }\n        return res;\n    }\n \n    Mint &operator+=(const Mint &b)\
+    \ { if ((v += b.v) >= MOD) v -= MOD; return *this; }\n    Mint &operator-=(const\
+    \ Mint &b) { if ((v -= b.v) < 0) v += MOD; return *this; }\n    Mint &operator*=(const\
+    \ Mint &b) { v = int(1ll * v * b.v % MOD); return *this; }\n    Mint &operator/=(const\
+    \ Mint &b) { v = int(1ll * v * pow(b, MOD - 2).v % MOD); return *this; }\n \n\
+    \    Mint operator+(const Mint &b) { return *this += b; }\n    Mint operator-(const\
+    \ Mint &b) { return *this -= b; }\n    Mint operator*(const Mint &b) { return\
+    \ *this *= b; }\n    Mint operator/(const Mint &b) { return *this /= b; }\n \n\
+    \    friend ostream &operator<<(ostream &os, const Mint &a) { return os << a.v;\
+    \ }\n};\n\n// using mi = Mint<int(1e9 + 7)>;\n// using mi = Mint<998244353>;\n\
+    #line 5 \"verify/aizu/ntl/power.test.cpp\"\n\nusing mi = Mint<1000000007>;\n\n\
+    int main() {\n    int m, n;\n    cin >> m >> n;\n    cout << pow(mi(m), n) <<\
+    \ '\\n';\n}\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_B\"\
-    \n\n#include \"../../../misc/template.h\"\n#include \"../../../numeric/mod_int.h\"\
-    \n\nusing mint = ModInt<1000000007>;\n\nint main() {\n    int m, n;\n    cin >>\
-    \ m >> n;\n    cout << pow(mint(m), n) << '\\n';\n}"
+    \n\n#include \"../../../misc/template.h\"\n#include \"../../../numeric/mint.h\"\
+    \n\nusing mi = Mint<1000000007>;\n\nint main() {\n    int m, n;\n    cin >> m\
+    \ >> n;\n    cout << pow(mi(m), n) << '\\n';\n}"
   dependsOn:
   - misc/template.h
   - utils/debug.h
   - utils/encode.h
   - utils/my_random.h
   - utils/my_timer.h
-  - numeric/mod_int.h
+  - numeric/mint.h
   isVerificationFile: true
   path: verify/aizu/ntl/power.test.cpp
   requiredBy: []
-  timestamp: '2024-09-19 17:13:58-04:00'
+  timestamp: '2024-09-23 12:38:14-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/aizu/ntl/power.test.cpp
