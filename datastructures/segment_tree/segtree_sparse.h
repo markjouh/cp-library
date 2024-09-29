@@ -1,6 +1,6 @@
 #pragma once
 
-template <class T, T(*op)(T, T), T(*id)()>
+template <class T, auto op, auto id>
 struct SparseSegtree {
     SparseSegtree() {}
     

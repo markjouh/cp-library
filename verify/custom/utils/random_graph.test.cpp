@@ -1,9 +1,9 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/aplusb"
 
 #include "../../../misc/template.h"
-#include "../../../graphs/dijkstras.h"
+#include "../../../graphs/shortest_paths/dijkstras.h"
 
-// Just a sanity check - makes sure the result is valid
+// Just a sanity check - makes sure the result is connected
 
 const int T = 100;
 const int INF = INT_MAX / 2;

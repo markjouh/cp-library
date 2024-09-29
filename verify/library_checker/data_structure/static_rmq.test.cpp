@@ -1,7 +1,7 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/staticrmq"
 
 #include "../../../misc/template.h"
-#include "../../../datastructures/static/sparse_table.h"
+#include "../../../datastructures/static/rmq.h"
 
 int op(int x, int y) {
     return x < y ? x : y;
@@ -14,7 +14,7 @@ int main() {
     for (int i = 0; i < n; i++) {
         cin >> a[i];
     }
-    SparseTable<int, op> rmq(a);
+    RMQ<int, op> rmq(a);
     while (q--) {
         int l, r;
         cin >> l >> r;

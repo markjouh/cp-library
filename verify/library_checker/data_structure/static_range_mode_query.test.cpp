@@ -38,7 +38,7 @@ int main() {
     };
 
     auto query = [&]() {
-        return make_pair(rbegin(st)->s, rbegin(st)->f);
+        return make_pair(rbegin(st)->second, rbegin(st)->first);
     };
 
     mo.solve(add, del, query);
