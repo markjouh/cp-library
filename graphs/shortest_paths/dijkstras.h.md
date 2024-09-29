@@ -4,6 +4,9 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: verify/custom/utils/random_graph.test.cpp
+    title: verify/custom/utils/random_graph.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/library_checker/graph/shortest_path.test.cpp
     title: verify/library_checker/graph/shortest_path.test.cpp
   _isVerificationFailed: false
@@ -37,6 +40,7 @@ data:
   timestamp: '2024-09-29 00:35:58-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - verify/custom/utils/random_graph.test.cpp
   - verify/library_checker/graph/shortest_path.test.cpp
 documentation_of: graphs/shortest_paths/dijkstras.h
 layout: document

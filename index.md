@@ -9,7 +9,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: common/compress.h
       title: common/compress.h
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: common/hash_table.h
       title: common/hash_table.h
     - icon: ':heavy_check_mark:'
@@ -56,12 +56,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: datastructures/static/mergesort_tree.h
       title: datastructures/static/mergesort_tree.h
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: datastructures/static/mo_queries.h
       title: datastructures/static/mo_queries.h
-    - icon: ':x:'
-      path: datastructures/static/sparse_table.h
-      title: datastructures/static/sparse_table.h
+    - icon: ':heavy_check_mark:'
+      path: datastructures/static/rmq.h
+      title: datastructures/static/rmq.h
   - name: esoteric
     pages:
     - icon: ':warning:'
@@ -113,7 +113,7 @@ data:
       title: graphs/trees/tree_isomorphism.h
   - name: misc
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: misc/template.h
       title: misc/template.h
   - name: numeric
@@ -141,21 +141,21 @@ data:
     - icon: ':heavy_check_mark:'
       path: strings/hashing.h
       title: strings/hashing.h
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: strings/suffix_array.h
       title: strings/suffix_array.h
   - name: utils
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: utils/debug.h
       title: utils/debug.h
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: utils/encode.h
       title: utils/encode.h
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: utils/my_random.h
       title: utils/my_random.h
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: utils/my_timer.h
       title: utils/my_timer.h
   verificationCategories:
@@ -204,7 +204,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/custom/utils/encode.test.cpp
       title: verify/custom/utils/encode.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/custom/utils/random_graph.test.cpp
       title: verify/custom/utils/random_graph.test.cpp
     - icon: ':heavy_check_mark:'
@@ -227,10 +227,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/library_checker/data_structure/set_xor_min.test.cpp
       title: verify/library_checker/data_structure/set_xor_min.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/library_checker/data_structure/static_range_mode_query.test.cpp
       title: verify/library_checker/data_structure/static_range_mode_query.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/library_checker/data_structure/static_rmq.test.cpp
       title: verify/library_checker/data_structure/static_rmq.test.cpp
     - icon: ':heavy_check_mark:'
@@ -254,6 +254,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/library_checker/string/enumerate_palindromes.test.cpp
       title: verify/library_checker/string/enumerate_palindromes.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/library_checker/string/suffix_array.test.cpp
+      title: verify/library_checker/string/suffix_array.test.cpp
   - name: verify/library_checker/tree
     pages:
     - icon: ':heavy_check_mark:'

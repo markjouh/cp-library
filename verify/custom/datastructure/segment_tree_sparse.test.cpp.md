@@ -4,19 +4,19 @@ data:
   - icon: ':heavy_check_mark:'
     path: datastructures/segment_tree/segtree_sparse.h
     title: datastructures/segment_tree/segtree_sparse.h
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: misc/template.h
     title: misc/template.h
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: utils/debug.h
     title: utils/debug.h
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: utils/encode.h
     title: utils/encode.h
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: utils/my_random.h
     title: utils/my_random.h
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: utils/my_timer.h
     title: utils/my_timer.h
   _extendedRequiredBy: []
@@ -36,8 +36,8 @@ data:
     \ int(size(x))\n\nusing ll = long long;\nusing ld = long double;\n\ntemplate <class\
     \ T>\nbool ckmin(T &a, T b) {\n    return b < a ? a = b, 1 : 0;\n}\ntemplate <class\
     \ T>\nbool ckmax(T &a, T b) {\n    return b > a ? a = b, 1 : 0;\n}\n#line 2 \"\
-    datastructures/segment_tree/segtree_sparse.h\"\n\ntemplate <class T, T(*op)(T,\
-    \ T), T(*id)()>\nstruct SparseSegtree {\n    SparseSegtree() {}\n    \n    SparseSegtree(int\
+    datastructures/segment_tree/segtree_sparse.h\"\n\ntemplate <class T, auto op,\
+    \ auto id>\nstruct SparseSegtree {\n    SparseSegtree() {}\n    \n    SparseSegtree(int\
     \ n) {\n        log = __lg(n - 1) + 1;\n        tree_sz = 1 << log;\n        st.push_back(id());\n\
     \        ch.emplace_back(-1, -1);\n    }\n\n    void set(int p, T v) {\n     \
     \   buf[0] = idx = 0;\n        int tl = 0, tr = tree_sz;\n        while (tl +\
@@ -105,7 +105,7 @@ data:
   isVerificationFile: true
   path: verify/custom/datastructure/segment_tree_sparse.test.cpp
   requiredBy: []
-  timestamp: '2024-09-29 00:35:58-04:00'
+  timestamp: '2024-09-29 00:50:10-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/custom/datastructure/segment_tree_sparse.test.cpp

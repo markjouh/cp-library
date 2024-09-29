@@ -1,32 +1,32 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: common/hash_table.h
     title: common/hash_table.h
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: datastructures/static/mo_queries.h
     title: datastructures/static/mo_queries.h
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: misc/template.h
     title: misc/template.h
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: utils/debug.h
     title: utils/debug.h
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: utils/encode.h
     title: utils/encode.h
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: utils/my_random.h
     title: utils/my_random.h
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: utils/my_timer.h
     title: utils/my_timer.h
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/static_range_mode_query
@@ -73,9 +73,9 @@ data:
     \        st.insert({freq[a[p]], a[p]});\n    };\n\n    auto del = [&](int p) {\n\
     \        if (freq.find(a[p]) != freq.end()) {\n            st.extract({freq[a[p]],\
     \ a[p]});\n        }\n        freq[a[p]]--;\n        st.insert({freq[a[p]], a[p]});\n\
-    \    };\n\n    auto query = [&]() {\n        return make_pair(rbegin(st)->s, rbegin(st)->f);\n\
-    \    };\n\n    mo.solve(add, del, query);\n    for (auto [x, y] : mo.res) {\n\
-    \        cout << x << ' ' << y << '\\n';\n    }\n}\n"
+    \    };\n\n    auto query = [&]() {\n        return make_pair(rbegin(st)->second,\
+    \ rbegin(st)->first);\n    };\n\n    mo.solve(add, del, query);\n    for (auto\
+    \ [x, y] : mo.res) {\n        cout << x << ' ' << y << '\\n';\n    }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/static_range_mode_query\"\
     \n\n#include \"../../../misc/template.h\"\n#include \"../../../common/hash_table.h\"\
     \n#include \"../../../datastructures/static/mo_queries.h\"\n\nint main() {\n \
@@ -88,9 +88,9 @@ data:
     \        st.insert({freq[a[p]], a[p]});\n    };\n\n    auto del = [&](int p) {\n\
     \        if (freq.find(a[p]) != freq.end()) {\n            st.extract({freq[a[p]],\
     \ a[p]});\n        }\n        freq[a[p]]--;\n        st.insert({freq[a[p]], a[p]});\n\
-    \    };\n\n    auto query = [&]() {\n        return make_pair(rbegin(st)->s, rbegin(st)->f);\n\
-    \    };\n\n    mo.solve(add, del, query);\n    for (auto [x, y] : mo.res) {\n\
-    \        cout << x << ' ' << y << '\\n';\n    }\n}"
+    \    };\n\n    auto query = [&]() {\n        return make_pair(rbegin(st)->second,\
+    \ rbegin(st)->first);\n    };\n\n    mo.solve(add, del, query);\n    for (auto\
+    \ [x, y] : mo.res) {\n        cout << x << ' ' << y << '\\n';\n    }\n}"
   dependsOn:
   - misc/template.h
   - utils/debug.h
@@ -102,8 +102,8 @@ data:
   isVerificationFile: true
   path: verify/library_checker/data_structure/static_range_mode_query.test.cpp
   requiredBy: []
-  timestamp: '2024-09-29 00:35:58-04:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2024-09-29 00:50:10-04:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/library_checker/data_structure/static_range_mode_query.test.cpp
 layout: document

@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/library_checker/string/suffix_array.test.cpp
+    title: verify/library_checker/string/suffix_array.test.cpp
   _isVerificationFailed: false
   _pathExtension: h
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"strings/suffix_array.h\"\n\nauto gen_sa(const string &s)\
@@ -56,8 +59,9 @@ data:
   path: strings/suffix_array.h
   requiredBy: []
   timestamp: '2024-09-29 00:35:58-04:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - verify/library_checker/string/suffix_array.test.cpp
 documentation_of: strings/suffix_array.h
 layout: document
 redirect_from:
