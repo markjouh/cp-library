@@ -25,11 +25,20 @@ data:
     path: verify/aizu/ntl/power.test.cpp
     title: verify/aizu/ntl/power.test.cpp
   - icon: ':heavy_check_mark:'
-    path: verify/custom/datastructure/fenwick_tree_range_add.test.cpp
-    title: verify/custom/datastructure/fenwick_tree_range_add.test.cpp
+    path: verify/custom/datastructure/bit_2d.test.cpp
+    title: verify/custom/datastructure/bit_2d.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/custom/datastructure/bit_range_add.test.cpp
+    title: verify/custom/datastructure/bit_range_add.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/custom/datastructure/segment_tree_sparse.test.cpp
     title: verify/custom/datastructure/segment_tree_sparse.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/custom/datastructure/segtree_set.test.cpp
+    title: verify/custom/datastructure/segtree_set.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/custom/graphs/topsort.test.cpp
+    title: verify/custom/graphs/topsort.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/custom/numeric/binary_search_reals.test.cpp
     title: verify/custom/numeric/binary_search_reals.test.cpp
@@ -146,8 +155,11 @@ data:
   - verify/custom/utils/debug.test.cpp
   - verify/custom/utils/timer.test.cpp
   - verify/custom/utils/random_graph.test.cpp
-  - verify/custom/datastructure/fenwick_tree_range_add.test.cpp
+  - verify/custom/graphs/topsort.test.cpp
+  - verify/custom/datastructure/bit_2d.test.cpp
+  - verify/custom/datastructure/segtree_set.test.cpp
   - verify/custom/datastructure/segment_tree_sparse.test.cpp
+  - verify/custom/datastructure/bit_range_add.test.cpp
   - verify/custom/numeric/binary_search_reals.test.cpp
   - verify/library_checker/data_structure/double_ended_priority_queue.test.cpp
   - verify/library_checker/data_structure/static_rmq.test.cpp

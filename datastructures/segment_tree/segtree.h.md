@@ -2,13 +2,16 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: datastructures/segment_tree/segtree_set.h
     title: datastructures/segment_tree/segtree_set.h
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/aizu/dsl/rmq.test.cpp
     title: verify/aizu/dsl/rmq.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/custom/datastructure/segtree_set.test.cpp
+    title: verify/custom/datastructure/segtree_set.test.cpp
   _isVerificationFailed: false
   _pathExtension: h
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -47,6 +50,7 @@ data:
   timestamp: '2024-09-29 00:35:58-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - verify/custom/datastructure/segtree_set.test.cpp
   - verify/aizu/dsl/rmq.test.cpp
 documentation_of: datastructures/segment_tree/segtree.h
 layout: document

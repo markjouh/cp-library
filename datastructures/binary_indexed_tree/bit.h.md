@@ -2,7 +2,7 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: datastructures/binary_indexed_tree/bit_2d.h
     title: datastructures/binary_indexed_tree/bit_2d.h
   - icon: ':heavy_check_mark:'
@@ -12,6 +12,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/aizu/dsl/rsq_and_raq.test.cpp
     title: verify/aizu/dsl/rsq_and_raq.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/custom/datastructure/bit_2d.test.cpp
+    title: verify/custom/datastructure/bit_2d.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/library_checker/data_structure/point_add_range_sum.test.cpp
     title: verify/library_checker/data_structure/point_add_range_sum.test.cpp
@@ -52,6 +55,7 @@ data:
   timestamp: '2024-09-29 00:35:58-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - verify/custom/datastructure/bit_2d.test.cpp
   - verify/library_checker/data_structure/point_add_range_sum.test.cpp
   - verify/library_checker/tree/vertex_add_subtree_sum.test.cpp
   - verify/aizu/dsl/rsq_and_raq.test.cpp

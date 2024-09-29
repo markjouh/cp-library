@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/custom/graphs/topsort.test.cpp
+    title: verify/custom/graphs/topsort.test.cpp
   _isVerificationFailed: false
   _pathExtension: h
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"graphs/topsort.h\"\n\nauto topsort(const vector<vector<int>>\
@@ -29,8 +32,9 @@ data:
   path: graphs/topsort.h
   requiredBy: []
   timestamp: '2024-09-19 17:13:58-04:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - verify/custom/graphs/topsort.test.cpp
 documentation_of: graphs/topsort.h
 layout: document
 redirect_from:

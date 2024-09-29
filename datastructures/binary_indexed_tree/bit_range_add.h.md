@@ -4,8 +4,8 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: verify/custom/datastructure/fenwick_tree_range_add.test.cpp
-    title: verify/custom/datastructure/fenwick_tree_range_add.test.cpp
+    path: verify/custom/datastructure/bit_range_add.test.cpp
+    title: verify/custom/datastructure/bit_range_add.test.cpp
   _isVerificationFailed: false
   _pathExtension: h
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -39,7 +39,7 @@ data:
   timestamp: '2024-09-29 00:35:58-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/custom/datastructure/fenwick_tree_range_add.test.cpp
+  - verify/custom/datastructure/bit_range_add.test.cpp
 documentation_of: datastructures/binary_indexed_tree/bit_range_add.h
 layout: document
 redirect_from:

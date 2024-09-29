@@ -29,8 +29,8 @@ data:
     PROBLEM: https://judge.yosupo.jp/problem/aplusb
     links:
     - https://judge.yosupo.jp/problem/aplusb
-  bundledCode: "#line 1 \"verify/custom/datastructure/fenwick_tree_range_add.test.cpp\"\
-    \n#define PROBLEM \"https://judge.yosupo.jp/problem/aplusb\"\n\n#line 1 \"misc/template.h\"\
+  bundledCode: "#line 1 \"verify/custom/datastructure/bit_range_add.test.cpp\"\n#define\
+    \ PROBLEM \"https://judge.yosupo.jp/problem/aplusb\"\n\n#line 1 \"misc/template.h\"\
     \n#include <bits/stdc++.h>\n\nusing namespace std;\n\n#ifdef LOCAL\n#include <utils>\n\
     #else\n#define dbg(...)\n#endif\n\n#define all(x) begin(x), end(x)\n#define sz(x)\
     \ int(size(x))\n\nusing ll = long long;\nusing ld = long double;\n\ntemplate <class\
@@ -46,7 +46,7 @@ data:
     \       }\n    }\n\n    void add(int l, int r, T v) {\n        add(r, v);\n  \
     \      add(l - 1, T(0) - v);\n    }\n\n    T get(int p) {\n        T res = 0;\n\
     \        for (p++; p <= n; p += p & -p) {\n            res += ft[p];\n       \
-    \ }\n        return res;\n    }\n};\n#line 5 \"verify/custom/datastructure/fenwick_tree_range_add.test.cpp\"\
+    \ }\n        return res;\n    }\n};\n#line 5 \"verify/custom/datastructure/bit_range_add.test.cpp\"\
     \n\nconst int N = 1e5, Q = 1e5;\n\nint main() {\n    vector<ll> a = rand_vec<ll>(N);\n\
     \    RangeAddBIT<ll> ft(a);\n    for (int i = 0; i < Q; i++) {\n        if (rand_bool())\
     \ {\n            int l = rand_int(N), r = rand_int(N);\n            if (l > r)\
@@ -75,15 +75,15 @@ data:
   - utils/my_timer.h
   - datastructures/binary_indexed_tree/bit_range_add.h
   isVerificationFile: true
-  path: verify/custom/datastructure/fenwick_tree_range_add.test.cpp
+  path: verify/custom/datastructure/bit_range_add.test.cpp
   requiredBy: []
-  timestamp: '2024-09-29 00:35:58-04:00'
+  timestamp: '2024-09-29 01:50:21-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: verify/custom/datastructure/fenwick_tree_range_add.test.cpp
+documentation_of: verify/custom/datastructure/bit_range_add.test.cpp
 layout: document
 redirect_from:
-- /verify/verify/custom/datastructure/fenwick_tree_range_add.test.cpp
-- /verify/verify/custom/datastructure/fenwick_tree_range_add.test.cpp.html
-title: verify/custom/datastructure/fenwick_tree_range_add.test.cpp
+- /verify/verify/custom/datastructure/bit_range_add.test.cpp
+- /verify/verify/custom/datastructure/bit_range_add.test.cpp.html
+title: verify/custom/datastructure/bit_range_add.test.cpp
 ---

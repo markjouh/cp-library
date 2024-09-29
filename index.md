@@ -20,7 +20,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: datastructures/binary_indexed_tree/bit.h
       title: datastructures/binary_indexed_tree/bit.h
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: datastructures/binary_indexed_tree/bit_2d.h
       title: datastructures/binary_indexed_tree/bit_2d.h
     - icon: ':heavy_check_mark:'
@@ -45,7 +45,7 @@ data:
     - icon: ':warning:'
       path: datastructures/segment_tree/segtree_lazy.h
       title: datastructures/segment_tree/segtree_lazy.h
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: datastructures/segment_tree/segtree_set.h
       title: datastructures/segment_tree/segtree_set.h
     - icon: ':heavy_check_mark:'
@@ -86,7 +86,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: graphs/kosaraju_scc.h
       title: graphs/kosaraju_scc.h
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: graphs/topsort.h
       title: graphs/topsort.h
   - name: graphs/shortest_paths
@@ -186,11 +186,22 @@ data:
   - name: verify/custom/datastructure
     pages:
     - icon: ':heavy_check_mark:'
-      path: verify/custom/datastructure/fenwick_tree_range_add.test.cpp
-      title: verify/custom/datastructure/fenwick_tree_range_add.test.cpp
+      path: verify/custom/datastructure/bit_2d.test.cpp
+      title: verify/custom/datastructure/bit_2d.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/custom/datastructure/bit_range_add.test.cpp
+      title: verify/custom/datastructure/bit_range_add.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/custom/datastructure/segment_tree_sparse.test.cpp
       title: verify/custom/datastructure/segment_tree_sparse.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/custom/datastructure/segtree_set.test.cpp
+      title: verify/custom/datastructure/segtree_set.test.cpp
+  - name: verify/custom/graphs
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/custom/graphs/topsort.test.cpp
+      title: verify/custom/graphs/topsort.test.cpp
   - name: verify/custom/numeric
     pages:
     - icon: ':heavy_check_mark:'

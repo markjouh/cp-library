@@ -5,10 +5,13 @@ data:
     path: datastructures/segment_tree/segtree.h
     title: datastructures/segment_tree/segtree.h
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/custom/datastructure/segtree_set.test.cpp
+    title: verify/custom/datastructure/segtree_set.test.cpp
   _isVerificationFailed: false
   _pathExtension: h
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"datastructures/segment_tree/segtree_set.h\"\n\n#line 2 \"\
@@ -26,7 +29,7 @@ data:
     \ p > 0; p >>= 1) {\n            st[p] = op(st[p << 1], st[p << 1 | 1]);\n   \
     \     }\n    }\n};\n#line 4 \"datastructures/segment_tree/segtree_set.h\"\n\n\
     template <class T, auto op, auto id>\nstruct SegtreeSet {\n    int n;\n    set<int>\
-    \ free;\n    set<pair<T, int>> used;\n    SegmentTree<T, op, id> st;\n\n    SegtreeSet(int\
+    \ free;\n    set<pair<T, int>> used;\n    Segtree<T, op, id> st;\n\n    SegtreeSet(int\
     \ n_) : n(n_), st(n) {\n        for (int i = 0; i < n; i++) {\n            free.insert(i);\n\
     \        }\n    }\n\n    void insert(T x) {\n        assert(!free.empty());\n\
     \        T p = *begin(free);\n        free.erase(begin(free));\n        st.set(p,\
@@ -36,12 +39,12 @@ data:
     \    T query() {\n        return st.query(0, n - 1);\n    }\n};\n"
   code: "#pragma once\n\n#include \"segtree.h\"\n\ntemplate <class T, auto op, auto\
     \ id>\nstruct SegtreeSet {\n    int n;\n    set<int> free;\n    set<pair<T, int>>\
-    \ used;\n    SegmentTree<T, op, id> st;\n\n    SegtreeSet(int n_) : n(n_), st(n)\
-    \ {\n        for (int i = 0; i < n; i++) {\n            free.insert(i);\n    \
-    \    }\n    }\n\n    void insert(T x) {\n        assert(!free.empty());\n    \
-    \    T p = *begin(free);\n        free.erase(begin(free));\n        st.set(p,\
-    \ x);\n        used.emplace(x, p);\n    }\n\n    void remove(T x) {\n        auto\
-    \ it = used.lower_bound({x, -1});\n        assert(it->first == x);\n        st.set(it->second,\
+    \ used;\n    Segtree<T, op, id> st;\n\n    SegtreeSet(int n_) : n(n_), st(n) {\n\
+    \        for (int i = 0; i < n; i++) {\n            free.insert(i);\n        }\n\
+    \    }\n\n    void insert(T x) {\n        assert(!free.empty());\n        T p\
+    \ = *begin(free);\n        free.erase(begin(free));\n        st.set(p, x);\n \
+    \       used.emplace(x, p);\n    }\n\n    void remove(T x) {\n        auto it\
+    \ = used.lower_bound({x, -1});\n        assert(it->first == x);\n        st.set(it->second,\
     \ id());\n        free.insert(it->second);\n        used.erase(it);\n    }\n\n\
     \    T query() {\n        return st.query(0, n - 1);\n    }\n};"
   dependsOn:
@@ -49,9 +52,10 @@ data:
   isVerificationFile: false
   path: datastructures/segment_tree/segtree_set.h
   requiredBy: []
-  timestamp: '2024-09-29 00:35:58-04:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  timestamp: '2024-09-29 01:50:21-04:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - verify/custom/datastructure/segtree_set.test.cpp
 documentation_of: datastructures/segment_tree/segtree_set.h
 layout: document
 redirect_from:
