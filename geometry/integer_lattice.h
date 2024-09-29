@@ -1,8 +1,5 @@
 #pragma once
 
-// Simple stuff for counting lattice points when we have integer vertices.
-// Fully tested on CSES Polygon Lattice Points.
-
 #include "primitives.h"
 
 template <class T>

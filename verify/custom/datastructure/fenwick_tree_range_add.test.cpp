@@ -1,7 +1,7 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/aplusb"
 
 #include "../../../misc/template.h"
-#include "../../../datastructures/bit/bit_range_add.h"
+#include "../../../datastructures/binary_indexed_tree/bit_range_add.h"
 
 const int N = 1e5, Q = 1e5;
 

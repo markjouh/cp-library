@@ -2,7 +2,7 @@
 
 #include "segtree.h"
 
-template <class T, T(*op)(T, T), T(*id)()>
+template <class T, auto op, auto id>
 struct SegtreeSet {
     int n;
     set<int> free;
@@ -25,9 +25,9 @@ struct SegtreeSet {
 
     void remove(T x) {
         auto it = used.lower_bound({x, -1});
-        assert(it->fi == x);
-        st.set(it->se, id());
-        free.insert(it->se);
+        assert(it->first == x);
+        st.set(it->second, id());
+        free.insert(it->second);
         used.erase(it);
     }
 

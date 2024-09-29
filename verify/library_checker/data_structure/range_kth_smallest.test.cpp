@@ -2,7 +2,7 @@
 
 #include "../../../misc/template.h"
 #include "../../../datastructures/static/mergesort_tree.h"
-#include "../../../numeric/binsearch.h"
+#include "../../../common/binsearch.h"
 
 int main() {
     int n, q;

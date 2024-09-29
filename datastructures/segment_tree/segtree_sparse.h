@@ -32,7 +32,7 @@ struct SparseSegtree {
     }
 
     T query(int l, int r) {
-        return query(l, r + 1, 0, 0, tree_sz);
+        return get(l, r + 1, 0, 0, tree_sz);
     }
 
 private:
@@ -71,7 +71,7 @@ private:
         }
     }
 
-    T query(int l, int r, int x, int tl, int tr) {
+    T get(int l, int r, int x, int tl, int tr) {
         if (x == -1 || tl >= r || tr <= l) {
             return id();
         }
@@ -79,6 +79,6 @@ private:
             return st[x];
         }
         int mid = (tl + tr) >> 1;
-        return op(query(l, r, ch[x].first, tl, mid), query(l, r, ch[x].second, mid, tr));
+        return op(get(l, r, ch[x].first, tl, mid), get(l, r, ch[x].second, mid, tr));
     }
 };

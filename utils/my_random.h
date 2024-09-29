@@ -140,13 +140,13 @@ vector<pair<int, int>> gen_tree_edges(int n) {
         }
     }
 
-    int rootA = -1, rootB = -1;
+    int x = -1, y = -1;
     for (int i = 0; i < n; i++) {
         if (deg[i] == 1) {
-            (rootA == -1 ? rootA : rootB) = i;
+            (x == -1 ? x : y) = i;
         }
     }
-    res.emplace_back(rootA, rootB);
+    res.emplace_back(x, y);
 
     return res;
 }
@@ -175,10 +175,10 @@ vector<pair<int, int>> gen_graph_edges(int n, int m) {
     return res;
 }
 
-vector<vector<int>> gen_graph(int n, int m, bool dir = false) {
+vector<vector<int>> gen_graph(int n, int m, bool directed = false) {
     vector<vector<int>> g(n);
     for (auto [u, v] : gen_graph_edges(n, m)) {
-        if (dir) {
+        if (directed) {
             if (rand_bool()) {
                 swap(u, v);
             }
@@ -191,11 +191,11 @@ vector<vector<int>> gen_graph(int n, int m, bool dir = false) {
     return g;
 }
 
-vector<vector<pair<int, int>>> gen_weighted_graph(int n, int m, int lo = 1, int hi = default_val<int>(), bool dir = false) {
+vector<vector<pair<int, int>>> gen_weighted_graph(int n, int m, int lo = 1, int hi = default_val<int>(), bool directed = false) {
     vector<vector<pair<int, int>>> g(n);
     for (auto [u, v] : gen_graph_edges(n, m)) {
         const int w = rand_int(lo, hi);
-        if (dir) {
+        if (directed) {
             if (rand_bool()) {
                 swap(u, v);
             }

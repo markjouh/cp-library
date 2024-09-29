@@ -1,7 +1,7 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/point_add_range_sum"
 
 #include "../../../misc/template.h"
-#include "../../../datastructures/bit/bit.h"
+#include "../../../datastructures/binary_indexed_tree/bit.h"
 
 int main() {
     int n, q;

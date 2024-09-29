@@ -1,8 +1,7 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/vertex_add_subtree_sum"
 
 #include "../../../misc/template.h"
-#include "../../../datastructures/bit/bit.h"
-#include "../../../graphs/tree/euler_tour.h"
+#include "../../../datastructures/binary_indexed_tree/bit.h"
 
 int main() {
     int n, q;
@@ -17,21 +16,36 @@ int main() {
         cin >> p;
         g[p].push_back(i);
     }
-    EulerTour et(g);
+    
+    int time = 0;
+    vector<int> tin(n), tout(n);
+
+    auto dfs = [&](auto &&self, int u, int par) -> void {
+        tin[u] = time++;
+        for (int v : g[u]) {
+            if (v != par) {
+                self(self, v, u);
+            }
+        }
+        tout[u] = time;
+    };
+
+    dfs(dfs, 0, -1);
+
     BIT<ll> ft(n);
     for (int i = 0; i < n; i++) {
-        ft.add(et.tin[i], a[i]);
+        ft.add(tin[i], a[i]);
     }
     while (q--) {
         bool t;
         int u;
         cin >> t >> u;
         if (t) {
-            cout << ft.sum(et.tin[u], et.tout[u] - 1) << '\n';
+            cout << ft.sum(tin[u], tout[u] - 1) << '\n';
         } else {
             int x;
             cin >> x;
-            ft.add(et.tin[u], x);
+            ft.add(tin[u], x);
         }
     }
 }

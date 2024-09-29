@@ -17,7 +17,8 @@ auto dijkstras(const vector<vector<pair<int, int>>> &g, int start = 0) {
             continue;
         }
         for (auto [v, w] : g[u]) {
-            if (ckmin(dist[v], d + w)) {
+            if (d + w < dist[v]) {
+                dist[v] = d + w;
                 from[v] = u;
                 pq.emplace(dist[v], v);
             }

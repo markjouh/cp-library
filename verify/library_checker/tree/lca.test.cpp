@@ -1,7 +1,7 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/lca"
 
 #include "../../../misc/template.h"
-#include "../../../graphs/tree/binary_lifting.h"
+#include "../../../graphs/trees/binary_lifting.h"
 
 int main() {
     int n, q;

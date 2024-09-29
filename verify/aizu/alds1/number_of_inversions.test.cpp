@@ -1,7 +1,7 @@
 #define PROBLEM "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_5_D"
 
 #include "../../../misc/template.h"
-#include "../../../datastructures/pbds/order_statistic_tree.h"
+#include "../../../common/order_statistic_tree.h"
 
 int main() {
     int n;

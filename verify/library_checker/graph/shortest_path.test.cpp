@@ -1,7 +1,7 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/shortest_path"
 
 #include "../../../misc/template.h"
-#include "../../../graphs/dijkstras.h"
+#include "../../../graphs/shortest_paths/dijkstras.h"
 
 int main() {
     int n, m, s, t;

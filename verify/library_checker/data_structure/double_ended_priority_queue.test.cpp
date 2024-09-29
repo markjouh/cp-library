@@ -1,7 +1,7 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/double_ended_priority_queue"
 
 #include "../../../misc/template.h"
-#include "../../../datastructures/w_ary_tree.h"
+#include "../../../esoteric/w_ary_tree.h"
 
 const int N = 1 << 18;
 

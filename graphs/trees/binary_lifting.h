@@ -31,11 +31,7 @@ struct BinaryLifting {
             }
         }
     }
-
-    int par(int x) {
-        return up[x][0];
-    }
-
+    
     int anc(int x, int k) {
         for (int i = 0; i < log; i++) {
             if (x != -1 && ((k >> i) & 1)) {

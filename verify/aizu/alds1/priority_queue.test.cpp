@@ -1,8 +1,8 @@
 #define PROBLEM "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_9_C"
 
 #include "../../../misc/template.h"
-#include "../../../datastructures/w_ary_tree.h"
-#include "../../../misc/compress.h"
+#include "../../../esoteric/w_ary_tree.h"
+#include "../../../common/compress.h"
 
 int main() {
     string s;

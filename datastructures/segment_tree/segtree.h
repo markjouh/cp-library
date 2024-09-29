@@ -1,6 +1,6 @@
 #pragma once
 
-template <class T, T(*op)(T, T), T(*id)()>
+template <class T, auto op, auto id>
 struct Segtree {
     int n;
     vector<T> st;
@@ -8,7 +8,7 @@ struct Segtree {
     Segtree(int n_) : n(n_), st(2 * n, id()) {}
 
     Segtree(const vector<T> &a) : n(sz(a)), st(2 * n) {
-        copy(begin(a), end(a), begin(st) + n);
+        copy(all(a), begin(st) + n);
         for (int i = n - 1; i > 0; i--) {
             st[i] = op(st[i << 1], st[i << 1 | 1]);
         }

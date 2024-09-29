@@ -1,7 +1,5 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/aplusb"
 
-#include <unistd.h>
-
 #include "../../../misc/template.h"
 
 // Just for completionism's sake...

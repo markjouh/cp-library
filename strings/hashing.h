@@ -17,8 +17,8 @@ struct Hash {
         return Hash((__int128_t(val) * pow_b[b.len] + b.val) % H_MOD, len + b.len);
     }
 
-    bool operator==(Hash b) {
-        return val == b.val && len == b.len;
+    friend bool operator==(const Hash &a, const Hash &b) {
+        return a.val == b.val && a.len == b.len;
     }
 };
 

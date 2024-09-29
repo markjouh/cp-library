@@ -1,7 +1,7 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/aplusb"
 
 #include "../../../misc/template.h"
-#include "../../../datastructures/segtree/segtree_sparse.h"
+#include "../../../datastructures/segment_tree/segtree_sparse.h"
 
 const int N = 1e9, Q = 5e4;
 

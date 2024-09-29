@@ -18,7 +18,7 @@ void sieve(int n) {
 }
 
 template <class T>
-vector<pair<T, int>> factorize(T x) {
+auto factorize(T x) {
     vector<pair<T, int>> res;
 
     // O(log x) if sieved up to x
@@ -55,7 +55,7 @@ vector<pair<T, int>> factorize(T x) {
 }
 
 template <class T>
-vector<T> gen_divisors(T x) {
+auto gen_divisors(T x) {
     vector<T> res = {1};
     for (auto [p, exp] : factorize(x)) {
         const int old_size = sz(res);
