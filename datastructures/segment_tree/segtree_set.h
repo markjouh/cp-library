@@ -7,7 +7,7 @@ struct SegtreeSet {
     int n;
     set<int> free;
     set<pair<T, int>> used;
-    SegmentTree<T, op, id> st;
+    Segtree<T, op, id> st;
 
     SegtreeSet(int n_) : n(n_), st(n) {
         for (int i = 0; i < n; i++) {
