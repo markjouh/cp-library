@@ -2,7 +2,7 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: misc/template.h
     title: misc/template.h
   _extendedVerifiedWith:
@@ -40,9 +40,6 @@ data:
     path: verify/custom/utils/encode.test.cpp
     title: verify/custom/utils/encode.test.cpp
   - icon: ':heavy_check_mark:'
-    path: verify/custom/utils/random_graph.test.cpp
-    title: verify/custom/utils/random_graph.test.cpp
-  - icon: ':heavy_check_mark:'
     path: verify/custom/utils/timer.test.cpp
     title: verify/custom/utils/timer.test.cpp
   - icon: ':heavy_check_mark:'
@@ -60,10 +57,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/library_checker/data_structure/set_xor_min.test.cpp
     title: verify/library_checker/data_structure/set_xor_min.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/library_checker/data_structure/static_range_mode_query.test.cpp
     title: verify/library_checker/data_structure/static_range_mode_query.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/library_checker/data_structure/static_rmq.test.cpp
     title: verify/library_checker/data_structure/static_rmq.test.cpp
   - icon: ':heavy_check_mark:'
@@ -90,9 +87,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/library_checker/tree/vertex_add_subtree_sum.test.cpp
     title: verify/library_checker/tree/vertex_add_subtree_sum.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: h
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"utils/encode.h\"\n\nconstexpr uint64_t pow94[10] = {1, 94,\
@@ -137,12 +134,11 @@ data:
   requiredBy:
   - misc/template.h
   timestamp: '2024-09-19 17:13:58-04:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/custom/utils/encode.test.cpp
   - verify/custom/utils/debug.test.cpp
   - verify/custom/utils/timer.test.cpp
-  - verify/custom/utils/random_graph.test.cpp
   - verify/custom/datastructure/fenwick_tree_range_add.test.cpp
   - verify/custom/datastructure/segment_tree_sparse.test.cpp
   - verify/custom/numeric/binary_search_reals.test.cpp

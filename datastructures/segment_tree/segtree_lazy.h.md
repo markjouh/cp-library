@@ -8,29 +8,29 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"datastructures/segtree/segtree_lazy.h\"\n\ntemplate <class\
-    \ T, auto op, auto t_id, class U, auto mapping, auto comp, auto u_id>\nstruct\
-    \ LazySegtree {\n    LazySegtree(int n_, T v = t_id()) {\n        init(n_, v);\n\
-    \        pull_all();\n    }\n\n    LazySegtree(const vector<T> &a) {\n       \
-    \ init(sz(a), t_id());\n        copy(all(a), begin(st) + tree_sz);\n        pull_all();\n\
-    \    }\n\n    void set(int p, T v) {\n        push_path(p += tree_sz);\n     \
-    \   st[p] = v;\n        pull_path(p);\n    }\n\n    void update(int p, U v) {\n\
-    \        push_path(p += tree_sz);\n        st[p] = mapping(st[p], v);\n      \
-    \  pull_path(p);\n    }\n\n    void update(int l, int r, U v) {\n        update(l,\
-    \ r + 1, v, 1, 0, tree_sz);\n    }\n\n    T get_all() {\n        return st[1];\n\
-    \    }\n\n    T get(int p) {\n        push_path(p += tree_sz);\n        return\
-    \ st[p];\n    }\n\n    T query(int l, int r) {\n        return query(l, r + 1,\
-    \ 1, 0, tree_sz);\n    }\n\n    template <class F>\n    int find_first(F f) {\n\
-    \        T pref = t_id();\n        int x = 1;\n        while (x < tree_sz) {\n\
-    \            push(x);\n            if (f(op(pref, st[x << 1]))) {\n          \
-    \      x = x << 1;\n            } else {\n                pref = op(pref, st[x\
-    \ << 1]);\n                x = x << 1 | 1;\n            }\n        }\n       \
-    \ return f(op(pref, st[x])) ? x - tree_sz : n;\n    }\n\n    template <class F>\n\
-    \    int find_last(F f) {\n        T suff = t_id();\n        int x = 1;\n    \
-    \    while (x < tree_sz) {\n            push(x);\n            if (f(st[x << 1\
-    \ | 1], suff)) {\n                x = x << 1 | 1;\n            } else {\n    \
-    \            suff = op(st[x << 1 | 1], suff);\n                x = x << 1;\n \
-    \           }\n        }\n        return f(op(st[x], suff)) ? x - tree_sz : -1;\n\
+  bundledCode: "#line 2 \"datastructures/segment_tree/segtree_lazy.h\"\n\ntemplate\
+    \ <class T, auto op, auto t_id, class U, auto mapping, auto comp, auto u_id>\n\
+    struct LazySegtree {\n    LazySegtree(int n_, T v = t_id()) {\n        init(n_,\
+    \ v);\n        pull_all();\n    }\n\n    LazySegtree(const vector<T> &a) {\n \
+    \       init(sz(a), t_id());\n        copy(all(a), begin(st) + tree_sz);\n   \
+    \     pull_all();\n    }\n\n    void set(int p, T v) {\n        push_path(p +=\
+    \ tree_sz);\n        st[p] = v;\n        pull_path(p);\n    }\n\n    void update(int\
+    \ p, U v) {\n        push_path(p += tree_sz);\n        st[p] = mapping(st[p],\
+    \ v);\n        pull_path(p);\n    }\n\n    void update(int l, int r, U v) {\n\
+    \        update(l, r + 1, v, 1, 0, tree_sz);\n    }\n\n    T get_all() {\n   \
+    \     return st[1];\n    }\n\n    T get(int p) {\n        push_path(p += tree_sz);\n\
+    \        return st[p];\n    }\n\n    T query(int l, int r) {\n        return query(l,\
+    \ r + 1, 1, 0, tree_sz);\n    }\n\n    template <class F>\n    int find_first(F\
+    \ f) {\n        T pref = t_id();\n        int x = 1;\n        while (x < tree_sz)\
+    \ {\n            push(x);\n            if (f(op(pref, st[x << 1]))) {\n      \
+    \          x = x << 1;\n            } else {\n                pref = op(pref,\
+    \ st[x << 1]);\n                x = x << 1 | 1;\n            }\n        }\n  \
+    \      return f(op(pref, st[x])) ? x - tree_sz : n;\n    }\n\n    template <class\
+    \ F>\n    int find_last(F f) {\n        T suff = t_id();\n        int x = 1;\n\
+    \        while (x < tree_sz) {\n            push(x);\n            if (f(st[x <<\
+    \ 1 | 1], suff)) {\n                x = x << 1 | 1;\n            } else {\n  \
+    \              suff = op(st[x << 1 | 1], suff);\n                x = x << 1;\n\
+    \            }\n        }\n        return f(op(st[x], suff)) ? x - tree_sz : -1;\n\
     \    }\n    \nprivate:\n    int n, log, tree_sz;\n    vector<T> st;\n    vector<U>\
     \ lz;\n\n    void init(int n_, T v) {\n        n = n_;\n        log = __lg(n -\
     \ 1) + 1;\n        tree_sz = 1 << log;\n        st.resize(tree_sz << 1, v);\n\
@@ -103,15 +103,15 @@ data:
     \ query(l, r, x << 1 | 1, mid, tr));\n    }\n};"
   dependsOn: []
   isVerificationFile: false
-  path: datastructures/segtree/segtree_lazy.h
+  path: datastructures/segment_tree/segtree_lazy.h
   requiredBy: []
-  timestamp: '2024-09-19 17:13:58-04:00'
+  timestamp: '2024-09-29 00:35:58-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: datastructures/segtree/segtree_lazy.h
+documentation_of: datastructures/segment_tree/segtree_lazy.h
 layout: document
 redirect_from:
-- /library/datastructures/segtree/segtree_lazy.h
-- /library/datastructures/segtree/segtree_lazy.h.html
-title: datastructures/segtree/segtree_lazy.h
+- /library/datastructures/segment_tree/segtree_lazy.h
+- /library/datastructures/segment_tree/segtree_lazy.h.html
+title: datastructures/segment_tree/segtree_lazy.h
 ---

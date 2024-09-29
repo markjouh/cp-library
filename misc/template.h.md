@@ -1,16 +1,16 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: utils/debug.h
     title: utils/debug.h
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: utils/encode.h
     title: utils/encode.h
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: utils/my_random.h
     title: utils/my_random.h
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: utils/my_timer.h
     title: utils/my_timer.h
   _extendedRequiredBy: []
@@ -49,9 +49,6 @@ data:
     path: verify/custom/utils/encode.test.cpp
     title: verify/custom/utils/encode.test.cpp
   - icon: ':heavy_check_mark:'
-    path: verify/custom/utils/random_graph.test.cpp
-    title: verify/custom/utils/random_graph.test.cpp
-  - icon: ':heavy_check_mark:'
     path: verify/custom/utils/timer.test.cpp
     title: verify/custom/utils/timer.test.cpp
   - icon: ':heavy_check_mark:'
@@ -69,10 +66,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/library_checker/data_structure/set_xor_min.test.cpp
     title: verify/library_checker/data_structure/set_xor_min.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/library_checker/data_structure/static_range_mode_query.test.cpp
     title: verify/library_checker/data_structure/static_range_mode_query.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/library_checker/data_structure/static_rmq.test.cpp
     title: verify/library_checker/data_structure/static_rmq.test.cpp
   - icon: ':heavy_check_mark:'
@@ -99,39 +96,23 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/library_checker/tree/vertex_add_subtree_sum.test.cpp
     title: verify/library_checker/tree/vertex_add_subtree_sum.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: h
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"misc/template.h\"\n#include <bits/stdc++.h>\n\nusing namespace\
     \ std;\n\n#ifdef LOCAL\n#include <utils>\n#else\n#define dbg(...)\n#endif\n\n\
-    #define arg4(a, b, c, d, ...) d\n \n#define rep3(i, l, r) for (int i = int(l);\
-    \ i < int(r); i++)\n#define rep2(i, n) rep3(i, 0, n)\n#define rep(...) arg4(__VA_ARGS__,\
-    \ rep3, rep2) (__VA_ARGS__)\n \n#define per3(i, l, r) for (int i = int(r) - 1;\
-    \ i >= int(l); i--)\n#define per2(i, n) per3(i, 0, n)\n#define per(...) arg4(__VA_ARGS__,\
-    \ per3, per2) (__VA_ARGS__)\n\n#define all(x) begin(x), end(x)\n#define sz(x)\
-    \ int(size(x))\n#define pb push_back\n#define eb emplace_back\n#define f first\n\
-    #define s second\n\nusing ll = long long;\nusing u32 = unsigned int;\nusing u64\
-    \ = unsigned long long;\n\ntemplate <class T>\nbool ckmin(T &a, const T &b) {\n\
-    \    return b < a ? a = b, 1 : 0;\n}\n\ntemplate <class T>\nbool ckmax(T &a, const\
-    \ T &b) {\n    return b > a ? a = b, 1 : 0;\n}\n\nstruct InitIO {\n    InitIO()\
-    \ {\n        cin.tie(0)->sync_with_stdio(0);\n        cin.exceptions(cin.failbit);\n\
-    \        cout << setprecision(10) << fixed;\n    }\n} init_io;\n"
+    #define all(x) begin(x), end(x)\n#define sz(x) int(size(x))\n\nusing ll = long\
+    \ long;\nusing ld = long double;\n\ntemplate <class T>\nbool ckmin(T &a, T b)\
+    \ {\n    return b < a ? a = b, 1 : 0;\n}\ntemplate <class T>\nbool ckmax(T &a,\
+    \ T b) {\n    return b > a ? a = b, 1 : 0;\n}\n"
   code: "#include <bits/stdc++.h>\n\nusing namespace std;\n\n#ifdef LOCAL\n#include\
-    \ <utils>\n#else\n#define dbg(...)\n#endif\n\n#define arg4(a, b, c, d, ...) d\n\
-    \ \n#define rep3(i, l, r) for (int i = int(l); i < int(r); i++)\n#define rep2(i,\
-    \ n) rep3(i, 0, n)\n#define rep(...) arg4(__VA_ARGS__, rep3, rep2) (__VA_ARGS__)\n\
-    \ \n#define per3(i, l, r) for (int i = int(r) - 1; i >= int(l); i--)\n#define\
-    \ per2(i, n) per3(i, 0, n)\n#define per(...) arg4(__VA_ARGS__, per3, per2) (__VA_ARGS__)\n\
-    \n#define all(x) begin(x), end(x)\n#define sz(x) int(size(x))\n#define pb push_back\n\
-    #define eb emplace_back\n#define f first\n#define s second\n\nusing ll = long\
-    \ long;\nusing u32 = unsigned int;\nusing u64 = unsigned long long;\n\ntemplate\
-    \ <class T>\nbool ckmin(T &a, const T &b) {\n    return b < a ? a = b, 1 : 0;\n\
-    }\n\ntemplate <class T>\nbool ckmax(T &a, const T &b) {\n    return b > a ? a\
-    \ = b, 1 : 0;\n}\n\nstruct InitIO {\n    InitIO() {\n        cin.tie(0)->sync_with_stdio(0);\n\
-    \        cin.exceptions(cin.failbit);\n        cout << setprecision(10) << fixed;\n\
-    \    }\n} init_io;"
+    \ <utils>\n#else\n#define dbg(...)\n#endif\n\n#define all(x) begin(x), end(x)\n\
+    #define sz(x) int(size(x))\n\nusing ll = long long;\nusing ld = long double;\n\
+    \ntemplate <class T>\nbool ckmin(T &a, T b) {\n    return b < a ? a = b, 1 : 0;\n\
+    }\ntemplate <class T>\nbool ckmax(T &a, T b) {\n    return b > a ? a = b, 1 :\
+    \ 0;\n}"
   dependsOn:
   - utils/debug.h
   - utils/encode.h
@@ -140,13 +121,12 @@ data:
   isVerificationFile: false
   path: misc/template.h
   requiredBy: []
-  timestamp: '2024-09-19 17:13:58-04:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2024-09-29 00:35:58-04:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/custom/utils/encode.test.cpp
   - verify/custom/utils/debug.test.cpp
   - verify/custom/utils/timer.test.cpp
-  - verify/custom/utils/random_graph.test.cpp
   - verify/custom/datastructure/fenwick_tree_range_add.test.cpp
   - verify/custom/datastructure/segment_tree_sparse.test.cpp
   - verify/custom/numeric/binary_search_reals.test.cpp

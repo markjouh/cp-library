@@ -1,6 +1,34 @@
 ---
 data:
   libraryCategories:
+  - name: common
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: common/binsearch.h
+      title: common/binsearch.h
+    - icon: ':heavy_check_mark:'
+      path: common/compress.h
+      title: common/compress.h
+    - icon: ':question:'
+      path: common/hash_table.h
+      title: common/hash_table.h
+    - icon: ':heavy_check_mark:'
+      path: common/order_statistic_tree.h
+      title: common/order_statistic_tree.h
+  - name: datastructures/binary_indexed_tree
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: datastructures/binary_indexed_tree/bit.h
+      title: datastructures/binary_indexed_tree/bit.h
+    - icon: ':warning:'
+      path: datastructures/binary_indexed_tree/bit_2d.h
+      title: datastructures/binary_indexed_tree/bit_2d.h
+    - icon: ':heavy_check_mark:'
+      path: datastructures/binary_indexed_tree/bit_dual.h
+      title: datastructures/binary_indexed_tree/bit_dual.h
+    - icon: ':heavy_check_mark:'
+      path: datastructures/binary_indexed_tree/bit_range_add.h
+      title: datastructures/binary_indexed_tree/bit_range_add.h
   - name: datastructures
     pages:
     - icon: ':heavy_check_mark:'
@@ -9,59 +37,39 @@ data:
     - icon: ':heavy_check_mark:'
       path: datastructures/dsu.h
       title: datastructures/dsu.h
-    - icon: ':warning:'
-      path: datastructures/min_xor_set.h
-      title: datastructures/min_xor_set.h
-    - icon: ':heavy_check_mark:'
-      path: datastructures/w_ary_tree.h
-      title: datastructures/w_ary_tree.h
-  - name: datastructures/bit
+  - name: datastructures/segment_tree
     pages:
     - icon: ':heavy_check_mark:'
-      path: datastructures/bit/bit.h
-      title: datastructures/bit/bit.h
+      path: datastructures/segment_tree/segtree.h
+      title: datastructures/segment_tree/segtree.h
     - icon: ':warning:'
-      path: datastructures/bit/bit_2d.h
-      title: datastructures/bit/bit_2d.h
-    - icon: ':heavy_check_mark:'
-      path: datastructures/bit/bit_dual.h
-      title: datastructures/bit/bit_dual.h
-    - icon: ':heavy_check_mark:'
-      path: datastructures/bit/bit_range_add.h
-      title: datastructures/bit/bit_range_add.h
-  - name: datastructures/pbds
-    pages:
-    - icon: ':heavy_check_mark:'
-      path: datastructures/pbds/hash_table.h
-      title: datastructures/pbds/hash_table.h
-    - icon: ':heavy_check_mark:'
-      path: datastructures/pbds/order_statistic_tree.h
-      title: datastructures/pbds/order_statistic_tree.h
-  - name: datastructures/segtree
-    pages:
-    - icon: ':heavy_check_mark:'
-      path: datastructures/segtree/segtree.h
-      title: datastructures/segtree/segtree.h
+      path: datastructures/segment_tree/segtree_lazy.h
+      title: datastructures/segment_tree/segtree_lazy.h
     - icon: ':warning:'
-      path: datastructures/segtree/segtree_lazy.h
-      title: datastructures/segtree/segtree_lazy.h
-    - icon: ':warning:'
-      path: datastructures/segtree/segtree_set.h
-      title: datastructures/segtree/segtree_set.h
+      path: datastructures/segment_tree/segtree_set.h
+      title: datastructures/segment_tree/segtree_set.h
     - icon: ':heavy_check_mark:'
-      path: datastructures/segtree/segtree_sparse.h
-      title: datastructures/segtree/segtree_sparse.h
+      path: datastructures/segment_tree/segtree_sparse.h
+      title: datastructures/segment_tree/segtree_sparse.h
   - name: datastructures/static
     pages:
     - icon: ':heavy_check_mark:'
       path: datastructures/static/mergesort_tree.h
       title: datastructures/static/mergesort_tree.h
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: datastructures/static/mo_queries.h
       title: datastructures/static/mo_queries.h
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: datastructures/static/sparse_table.h
       title: datastructures/static/sparse_table.h
+  - name: esoteric
+    pages:
+    - icon: ':warning:'
+      path: esoteric/min_xor_set.h
+      title: esoteric/min_xor_set.h
+    - icon: ':heavy_check_mark:'
+      path: esoteric/w_ary_tree.h
+      title: esoteric/w_ary_tree.h
   - name: geometry
     pages:
     - icon: ':warning:'
@@ -73,15 +81,6 @@ data:
   - name: graphs
     pages:
     - icon: ':warning:'
-      path: graphs/bfs01.h
-      title: graphs/bfs01.h
-    - icon: ':heavy_check_mark:'
-      path: graphs/dijkstras.h
-      title: graphs/dijkstras.h
-    - icon: ':warning:'
-      path: graphs/dijkstras_k_shortest.h
-      title: graphs/dijkstras_k_shortest.h
-    - icon: ':warning:'
       path: graphs/euler_cycle.h
       title: graphs/euler_cycle.h
     - icon: ':heavy_check_mark:'
@@ -90,36 +89,35 @@ data:
     - icon: ':warning:'
       path: graphs/topsort.h
       title: graphs/topsort.h
-  - name: graphs/tree
+  - name: graphs/shortest_paths
+    pages:
+    - icon: ':warning:'
+      path: graphs/shortest_paths/bfs01.h
+      title: graphs/shortest_paths/bfs01.h
+    - icon: ':heavy_check_mark:'
+      path: graphs/shortest_paths/dijkstras.h
+      title: graphs/shortest_paths/dijkstras.h
+    - icon: ':warning:'
+      path: graphs/shortest_paths/dijkstras_k_shortest.h
+      title: graphs/shortest_paths/dijkstras_k_shortest.h
+  - name: graphs/trees
     pages:
     - icon: ':heavy_check_mark:'
-      path: graphs/tree/binary_lifting.h
-      title: graphs/tree/binary_lifting.h
+      path: graphs/trees/binary_lifting.h
+      title: graphs/trees/binary_lifting.h
     - icon: ':warning:'
-      path: graphs/tree/centroid_decomposition.h
-      title: graphs/tree/centroid_decomposition.h
+      path: graphs/trees/centroid_decomposition.h
+      title: graphs/trees/centroid_decomposition.h
     - icon: ':heavy_check_mark:'
-      path: graphs/tree/euler_tour.h
-      title: graphs/tree/euler_tour.h
-    - icon: ':heavy_check_mark:'
-      path: graphs/tree/tree_isomorphism.h
-      title: graphs/tree/tree_isomorphism.h
+      path: graphs/trees/tree_isomorphism.h
+      title: graphs/trees/tree_isomorphism.h
   - name: misc
     pages:
-    - icon: ':heavy_check_mark:'
-      path: misc/compress.h
-      title: misc/compress.h
-    - icon: ':warning:'
-      path: misc/next_greater_element.h
-      title: misc/next_greater_element.h
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: misc/template.h
       title: misc/template.h
   - name: numeric
     pages:
-    - icon: ':heavy_check_mark:'
-      path: numeric/binsearch.h
-      title: numeric/binsearch.h
     - icon: ':heavy_check_mark:'
       path: numeric/binsearch_reals.h
       title: numeric/binsearch_reals.h
@@ -143,18 +141,21 @@ data:
     - icon: ':heavy_check_mark:'
       path: strings/hashing.h
       title: strings/hashing.h
+    - icon: ':warning:'
+      path: strings/suffix_array.h
+      title: strings/suffix_array.h
   - name: utils
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: utils/debug.h
       title: utils/debug.h
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: utils/encode.h
       title: utils/encode.h
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: utils/my_random.h
       title: utils/my_random.h
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: utils/my_timer.h
       title: utils/my_timer.h
   verificationCategories:
@@ -203,7 +204,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/custom/utils/encode.test.cpp
       title: verify/custom/utils/encode.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/custom/utils/random_graph.test.cpp
       title: verify/custom/utils/random_graph.test.cpp
     - icon: ':heavy_check_mark:'
@@ -226,10 +227,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/library_checker/data_structure/set_xor_min.test.cpp
       title: verify/library_checker/data_structure/set_xor_min.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/library_checker/data_structure/static_range_mode_query.test.cpp
       title: verify/library_checker/data_structure/static_range_mode_query.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/library_checker/data_structure/static_rmq.test.cpp
       title: verify/library_checker/data_structure/static_rmq.test.cpp
     - icon: ':heavy_check_mark:'

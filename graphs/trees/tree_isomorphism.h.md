@@ -11,7 +11,7 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"graphs/tree/tree_isomorphism.h\"\n\nstruct TreeIsomorphism\
+  bundledCode: "#line 2 \"graphs/trees/tree_isomorphism.h\"\n\nstruct TreeIsomorphism\
     \ {\n    map<vector<int>, int> hashes;\n\n    vector<int> gen(const vector<vector<int>>\
     \ &g, int rt = 0) {\n        vector<int> res(sz(g));\n        dfs(rt, -1, g, res);\n\
     \        return res;\n    }\n\nprivate:\n    void dfs(int u, int par, auto &g,\
@@ -31,16 +31,16 @@ data:
     \    }\n};\n"
   dependsOn: []
   isVerificationFile: false
-  path: graphs/tree/tree_isomorphism.h
+  path: graphs/trees/tree_isomorphism.h
   requiredBy: []
-  timestamp: '2024-09-19 17:13:58-04:00'
+  timestamp: '2024-09-29 00:35:58-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/library_checker/tree/rooted_tree_isomorphism.test.cpp
-documentation_of: graphs/tree/tree_isomorphism.h
+documentation_of: graphs/trees/tree_isomorphism.h
 layout: document
 redirect_from:
-- /library/graphs/tree/tree_isomorphism.h
-- /library/graphs/tree/tree_isomorphism.h.html
-title: graphs/tree/tree_isomorphism.h
+- /library/graphs/trees/tree_isomorphism.h
+- /library/graphs/trees/tree_isomorphism.h.html
+title: graphs/trees/tree_isomorphism.h
 ---

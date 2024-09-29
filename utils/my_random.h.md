@@ -2,7 +2,7 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: misc/template.h
     title: misc/template.h
   _extendedVerifiedWith:
@@ -40,9 +40,6 @@ data:
     path: verify/custom/utils/encode.test.cpp
     title: verify/custom/utils/encode.test.cpp
   - icon: ':heavy_check_mark:'
-    path: verify/custom/utils/random_graph.test.cpp
-    title: verify/custom/utils/random_graph.test.cpp
-  - icon: ':heavy_check_mark:'
     path: verify/custom/utils/timer.test.cpp
     title: verify/custom/utils/timer.test.cpp
   - icon: ':heavy_check_mark:'
@@ -60,10 +57,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/library_checker/data_structure/set_xor_min.test.cpp
     title: verify/library_checker/data_structure/set_xor_min.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/library_checker/data_structure/static_range_mode_query.test.cpp
     title: verify/library_checker/data_structure/static_range_mode_query.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/library_checker/data_structure/static_rmq.test.cpp
     title: verify/library_checker/data_structure/static_rmq.test.cpp
   - icon: ':heavy_check_mark:'
@@ -90,9 +87,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/library_checker/tree/vertex_add_subtree_sum.test.cpp
     title: verify/library_checker/tree/vertex_add_subtree_sum.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: h
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"utils/my_random.h\"\n\n#include <type_traits>\n#include\
@@ -133,30 +130,30 @@ data:
     \ int>> res;\n    res.reserve(n - 1);\n    for (int v : prufer) {\n        int\
     \ u = leaves.top();\n        leaves.pop();\n\n        res.push_back(minmax(u,\
     \ v));\n        deg[u]--, deg[v]--;\n\n        if (deg[v] == 1) {\n          \
-    \  leaves.push(v);\n        }\n    }\n\n    int rootA = -1, rootB = -1;\n    for\
-    \ (int i = 0; i < n; i++) {\n        if (deg[i] == 1) {\n            (rootA ==\
-    \ -1 ? rootA : rootB) = i;\n        }\n    }\n    res.emplace_back(rootA, rootB);\n\
-    \n    return res;\n}\n\n// Generate arbitrary graphs by adding extra edges to\
-    \ a spanning tree (probably not uniform, but good enough)\nvector<pair<int, int>>\
-    \ gen_graph_edges(int n, int m) {\n    assert(m >= n - 1 && m <= 1ll * n * (n\
-    \ - 1) / 2);\n\n    auto res = gen_tree_edges(n);\n    set<pair<int, int>> have;\n\
-    \    for (auto [u, v] : res) {\n        have.emplace(u, v);\n    }\n\n    while\
-    \ (ssize(res) < m) {\n        int u = rand_int(n), v = rand_int(n - 1);\n    \
-    \    v += v >= u;\n        if (u > v) {\n            swap(u, v);\n        }\n\
-    \        if (!have.count({u, v})) {\n            res.emplace_back(u, v);\n   \
-    \         have.emplace(u, v);\n        }\n    }\n    return res;\n}\n\nvector<vector<int>>\
-    \ gen_graph(int n, int m, bool dir = false) {\n    vector<vector<int>> g(n);\n\
-    \    for (auto [u, v] : gen_graph_edges(n, m)) {\n        if (dir) {\n       \
-    \     if (rand_bool()) {\n                swap(u, v);\n            }\n       \
-    \     g[u].push_back(v);\n        } else {\n            g[u].push_back(v);\n \
-    \           g[v].push_back(u);\n        }\n    }\n    return g;\n}\n\nvector<vector<pair<int,\
-    \ int>>> gen_weighted_graph(int n, int m, int lo = 1, int hi = default_val<int>(),\
-    \ bool dir = false) {\n    vector<vector<pair<int, int>>> g(n);\n    for (auto\
-    \ [u, v] : gen_graph_edges(n, m)) {\n        const int w = rand_int(lo, hi);\n\
-    \        if (dir) {\n            if (rand_bool()) {\n                swap(u, v);\n\
-    \            }\n            g[u].emplace_back(v, w);\n        } else {\n     \
-    \       g[u].emplace_back(v, w);\n            g[v].emplace_back(u, w);\n     \
-    \   }\n    }\n    return g;\n}\n"
+    \  leaves.push(v);\n        }\n    }\n\n    int x = -1, y = -1;\n    for (int\
+    \ i = 0; i < n; i++) {\n        if (deg[i] == 1) {\n            (x == -1 ? x :\
+    \ y) = i;\n        }\n    }\n    res.emplace_back(x, y);\n\n    return res;\n\
+    }\n\n// Generate arbitrary graphs by adding extra edges to a spanning tree (probably\
+    \ not uniform, but good enough)\nvector<pair<int, int>> gen_graph_edges(int n,\
+    \ int m) {\n    assert(m >= n - 1 && m <= 1ll * n * (n - 1) / 2);\n\n    auto\
+    \ res = gen_tree_edges(n);\n    set<pair<int, int>> have;\n    for (auto [u, v]\
+    \ : res) {\n        have.emplace(u, v);\n    }\n\n    while (ssize(res) < m) {\n\
+    \        int u = rand_int(n), v = rand_int(n - 1);\n        v += v >= u;\n   \
+    \     if (u > v) {\n            swap(u, v);\n        }\n        if (!have.count({u,\
+    \ v})) {\n            res.emplace_back(u, v);\n            have.emplace(u, v);\n\
+    \        }\n    }\n    return res;\n}\n\nvector<vector<int>> gen_graph(int n,\
+    \ int m, bool directed = false) {\n    vector<vector<int>> g(n);\n    for (auto\
+    \ [u, v] : gen_graph_edges(n, m)) {\n        if (directed) {\n            if (rand_bool())\
+    \ {\n                swap(u, v);\n            }\n            g[u].push_back(v);\n\
+    \        } else {\n            g[u].push_back(v);\n            g[v].push_back(u);\n\
+    \        }\n    }\n    return g;\n}\n\nvector<vector<pair<int, int>>> gen_weighted_graph(int\
+    \ n, int m, int lo = 1, int hi = default_val<int>(), bool directed = false) {\n\
+    \    vector<vector<pair<int, int>>> g(n);\n    for (auto [u, v] : gen_graph_edges(n,\
+    \ m)) {\n        const int w = rand_int(lo, hi);\n        if (directed) {\n  \
+    \          if (rand_bool()) {\n                swap(u, v);\n            }\n  \
+    \          g[u].emplace_back(v, w);\n        } else {\n            g[u].emplace_back(v,\
+    \ w);\n            g[v].emplace_back(u, w);\n        }\n    }\n    return g;\n\
+    }\n"
   code: "#pragma once\n\n#include <type_traits>\n#include <random>\n\nmt19937_64 rng_engine(chrono::steady_clock::now().time_since_epoch().count());\n\
     \n// Core of random data generation\ntemplate <class T>\nT my_rand(T lo, T hi)\
     \ {\n    static_assert(is_arithmetic_v<T>, \"Invalid type for my_rand()\");\n\
@@ -194,42 +191,41 @@ data:
     \ int>> res;\n    res.reserve(n - 1);\n    for (int v : prufer) {\n        int\
     \ u = leaves.top();\n        leaves.pop();\n\n        res.push_back(minmax(u,\
     \ v));\n        deg[u]--, deg[v]--;\n\n        if (deg[v] == 1) {\n          \
-    \  leaves.push(v);\n        }\n    }\n\n    int rootA = -1, rootB = -1;\n    for\
-    \ (int i = 0; i < n; i++) {\n        if (deg[i] == 1) {\n            (rootA ==\
-    \ -1 ? rootA : rootB) = i;\n        }\n    }\n    res.emplace_back(rootA, rootB);\n\
-    \n    return res;\n}\n\n// Generate arbitrary graphs by adding extra edges to\
-    \ a spanning tree (probably not uniform, but good enough)\nvector<pair<int, int>>\
-    \ gen_graph_edges(int n, int m) {\n    assert(m >= n - 1 && m <= 1ll * n * (n\
-    \ - 1) / 2);\n\n    auto res = gen_tree_edges(n);\n    set<pair<int, int>> have;\n\
-    \    for (auto [u, v] : res) {\n        have.emplace(u, v);\n    }\n\n    while\
-    \ (ssize(res) < m) {\n        int u = rand_int(n), v = rand_int(n - 1);\n    \
-    \    v += v >= u;\n        if (u > v) {\n            swap(u, v);\n        }\n\
-    \        if (!have.count({u, v})) {\n            res.emplace_back(u, v);\n   \
-    \         have.emplace(u, v);\n        }\n    }\n    return res;\n}\n\nvector<vector<int>>\
-    \ gen_graph(int n, int m, bool dir = false) {\n    vector<vector<int>> g(n);\n\
-    \    for (auto [u, v] : gen_graph_edges(n, m)) {\n        if (dir) {\n       \
-    \     if (rand_bool()) {\n                swap(u, v);\n            }\n       \
-    \     g[u].push_back(v);\n        } else {\n            g[u].push_back(v);\n \
-    \           g[v].push_back(u);\n        }\n    }\n    return g;\n}\n\nvector<vector<pair<int,\
-    \ int>>> gen_weighted_graph(int n, int m, int lo = 1, int hi = default_val<int>(),\
-    \ bool dir = false) {\n    vector<vector<pair<int, int>>> g(n);\n    for (auto\
-    \ [u, v] : gen_graph_edges(n, m)) {\n        const int w = rand_int(lo, hi);\n\
-    \        if (dir) {\n            if (rand_bool()) {\n                swap(u, v);\n\
-    \            }\n            g[u].emplace_back(v, w);\n        } else {\n     \
-    \       g[u].emplace_back(v, w);\n            g[v].emplace_back(u, w);\n     \
-    \   }\n    }\n    return g;\n}"
+    \  leaves.push(v);\n        }\n    }\n\n    int x = -1, y = -1;\n    for (int\
+    \ i = 0; i < n; i++) {\n        if (deg[i] == 1) {\n            (x == -1 ? x :\
+    \ y) = i;\n        }\n    }\n    res.emplace_back(x, y);\n\n    return res;\n\
+    }\n\n// Generate arbitrary graphs by adding extra edges to a spanning tree (probably\
+    \ not uniform, but good enough)\nvector<pair<int, int>> gen_graph_edges(int n,\
+    \ int m) {\n    assert(m >= n - 1 && m <= 1ll * n * (n - 1) / 2);\n\n    auto\
+    \ res = gen_tree_edges(n);\n    set<pair<int, int>> have;\n    for (auto [u, v]\
+    \ : res) {\n        have.emplace(u, v);\n    }\n\n    while (ssize(res) < m) {\n\
+    \        int u = rand_int(n), v = rand_int(n - 1);\n        v += v >= u;\n   \
+    \     if (u > v) {\n            swap(u, v);\n        }\n        if (!have.count({u,\
+    \ v})) {\n            res.emplace_back(u, v);\n            have.emplace(u, v);\n\
+    \        }\n    }\n    return res;\n}\n\nvector<vector<int>> gen_graph(int n,\
+    \ int m, bool directed = false) {\n    vector<vector<int>> g(n);\n    for (auto\
+    \ [u, v] : gen_graph_edges(n, m)) {\n        if (directed) {\n            if (rand_bool())\
+    \ {\n                swap(u, v);\n            }\n            g[u].push_back(v);\n\
+    \        } else {\n            g[u].push_back(v);\n            g[v].push_back(u);\n\
+    \        }\n    }\n    return g;\n}\n\nvector<vector<pair<int, int>>> gen_weighted_graph(int\
+    \ n, int m, int lo = 1, int hi = default_val<int>(), bool directed = false) {\n\
+    \    vector<vector<pair<int, int>>> g(n);\n    for (auto [u, v] : gen_graph_edges(n,\
+    \ m)) {\n        const int w = rand_int(lo, hi);\n        if (directed) {\n  \
+    \          if (rand_bool()) {\n                swap(u, v);\n            }\n  \
+    \          g[u].emplace_back(v, w);\n        } else {\n            g[u].emplace_back(v,\
+    \ w);\n            g[v].emplace_back(u, w);\n        }\n    }\n    return g;\n\
+    }"
   dependsOn: []
   isVerificationFile: false
   path: utils/my_random.h
   requiredBy:
   - misc/template.h
-  timestamp: '2024-09-19 17:13:58-04:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2024-09-29 00:35:58-04:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/custom/utils/encode.test.cpp
   - verify/custom/utils/debug.test.cpp
   - verify/custom/utils/timer.test.cpp
-  - verify/custom/utils/random_graph.test.cpp
   - verify/custom/datastructure/fenwick_tree_range_add.test.cpp
   - verify/custom/datastructure/segment_tree_sparse.test.cpp
   - verify/custom/numeric/binary_search_reals.test.cpp

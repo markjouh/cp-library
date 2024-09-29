@@ -14,12 +14,12 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"datastructures/w_ary_tree.h\"\n\ntemplate <int N>\nstruct\
-    \ WAryTree {\n    uint32_t freq[N];\n    uint64_t l0[(N >> 6) + 1], l1[(N >> 12)\
-    \ + 1], root;\n\n    WAryTree() {\n        memset(freq, 0, sizeof freq);\n   \
-    \     memset(l0, 0, sizeof l0);\n        memset(l1, 0, sizeof l1);\n        root\
-    \ = 0;\n    }\n\n    void insert(int x) {\n        freq[x]++;\n        if (freq[x]\
-    \ == 1) {\n            l0[x >> 6] |= 1ull << (x & 63);\n            if (__builtin_popcountll(l0[x\
+  bundledCode: "#line 2 \"esoteric/w_ary_tree.h\"\n\ntemplate <int N>\nstruct WAryTree\
+    \ {\n    uint32_t freq[N];\n    uint64_t l0[(N >> 6) + 1], l1[(N >> 12) + 1],\
+    \ root;\n\n    WAryTree() {\n        memset(freq, 0, sizeof freq);\n        memset(l0,\
+    \ 0, sizeof l0);\n        memset(l1, 0, sizeof l1);\n        root = 0;\n    }\n\
+    \n    void insert(int x) {\n        freq[x]++;\n        if (freq[x] == 1) {\n\
+    \            l0[x >> 6] |= 1ull << (x & 63);\n            if (__builtin_popcountll(l0[x\
     \ >> 6]) == 1) {\n                l1[x >> 12] |= 1ull << ((x >> 6) & 63);\n  \
     \              if (__builtin_popcountll(l1[x >> 12]) == 1) {\n               \
     \     root |= 1ull << ((x >> 12) & 63);\n                }\n            }\n  \
@@ -54,17 +54,17 @@ data:
     \ - __builtin_clzll(l0[p]);\n        return p;\n    }\n};\n"
   dependsOn: []
   isVerificationFile: false
-  path: datastructures/w_ary_tree.h
+  path: esoteric/w_ary_tree.h
   requiredBy: []
-  timestamp: '2024-09-19 17:13:58-04:00'
+  timestamp: '2024-09-29 00:35:58-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/library_checker/data_structure/double_ended_priority_queue.test.cpp
   - verify/aizu/alds1/priority_queue.test.cpp
-documentation_of: datastructures/w_ary_tree.h
+documentation_of: esoteric/w_ary_tree.h
 layout: document
 redirect_from:
-- /library/datastructures/w_ary_tree.h
-- /library/datastructures/w_ary_tree.h.html
-title: datastructures/w_ary_tree.h
+- /library/esoteric/w_ary_tree.h
+- /library/esoteric/w_ary_tree.h.html
+title: esoteric/w_ary_tree.h
 ---
