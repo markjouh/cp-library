@@ -1,16 +1,16 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: utils/debug.h
     title: utils/debug.h
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: utils/encode.h
     title: utils/encode.h
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: utils/my_random.h
     title: utils/my_random.h
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: utils/my_timer.h
     title: utils/my_timer.h
   _extendedRequiredBy: []
@@ -105,15 +105,15 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/library_checker/tree/lca.test.cpp
     title: verify/library_checker/tree/lca.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/library_checker/tree/rooted_tree_isomorphism.test.cpp
     title: verify/library_checker/tree/rooted_tree_isomorphism.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/library_checker/tree/vertex_add_subtree_sum.test.cpp
     title: verify/library_checker/tree/vertex_add_subtree_sum.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: h
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"misc/template.h\"\n#include <bits/stdc++.h>\n\nusing namespace\
@@ -136,8 +136,8 @@ data:
   isVerificationFile: false
   path: misc/template.h
   requiredBy: []
-  timestamp: '2024-09-29 00:35:58-04:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2024-10-05 23:54:04-04:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/custom/utils/encode.test.cpp
   - verify/custom/utils/debug.test.cpp

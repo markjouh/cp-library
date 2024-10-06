@@ -2,9 +2,12 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: misc/template.h
     title: misc/template.h
+  - icon: ':question:'
+    path: utils/my_timer.h
+    title: utils/my_timer.h
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/aizu/alds1/binary_search.test.cpp
@@ -96,19 +99,20 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/library_checker/tree/lca.test.cpp
     title: verify/library_checker/tree/lca.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/library_checker/tree/rooted_tree_isomorphism.test.cpp
     title: verify/library_checker/tree/rooted_tree_isomorphism.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/library_checker/tree/vertex_add_subtree_sum.test.cpp
     title: verify/library_checker/tree/vertex_add_subtree_sum.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: h
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"utils/my_random.h\"\n\n#include <type_traits>\n#include\
-    \ <random>\n\nmt19937_64 rng_engine(chrono::steady_clock::now().time_since_epoch().count());\n\
+  bundledCode: "#line 2 \"utils/my_random.h\"\n\n#include <cassert>\n#include <chrono>\n\
+    #include <queue>\n#include <random>\n#include <set>\n#include <type_traits>\n\n\
+    using namespace std;\n\nmt19937_64 rng_engine(chrono::steady_clock::now().time_since_epoch().count());\n\
     \n// Core of random data generation\ntemplate <class T>\nT my_rand(T lo, T hi)\
     \ {\n    static_assert(is_arithmetic_v<T>, \"Invalid type for my_rand()\");\n\
     \    if constexpr (is_integral_v<T>) {\n        return uniform_int_distribution<T>(lo,\
@@ -169,7 +173,9 @@ data:
     \          g[u].emplace_back(v, w);\n        } else {\n            g[u].emplace_back(v,\
     \ w);\n            g[v].emplace_back(u, w);\n        }\n    }\n    return g;\n\
     }\n"
-  code: "#pragma once\n\n#include <type_traits>\n#include <random>\n\nmt19937_64 rng_engine(chrono::steady_clock::now().time_since_epoch().count());\n\
+  code: "#pragma once\n\n#include <cassert>\n#include <chrono>\n#include <queue>\n\
+    #include <random>\n#include <set>\n#include <type_traits>\n\nusing namespace std;\n\
+    \nmt19937_64 rng_engine(chrono::steady_clock::now().time_since_epoch().count());\n\
     \n// Core of random data generation\ntemplate <class T>\nT my_rand(T lo, T hi)\
     \ {\n    static_assert(is_arithmetic_v<T>, \"Invalid type for my_rand()\");\n\
     \    if constexpr (is_integral_v<T>) {\n        return uniform_int_distribution<T>(lo,\
@@ -234,9 +240,10 @@ data:
   isVerificationFile: false
   path: utils/my_random.h
   requiredBy:
+  - utils/my_timer.h
   - misc/template.h
-  timestamp: '2024-09-29 00:35:58-04:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2024-10-05 23:54:04-04:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/custom/utils/encode.test.cpp
   - verify/custom/utils/debug.test.cpp

@@ -17,7 +17,7 @@ data:
       title: common/order_statistic_tree.h
   - name: datastructures/binary_indexed_tree
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: datastructures/binary_indexed_tree/bit.h
       title: datastructures/binary_indexed_tree/bit.h
     - icon: ':heavy_check_mark:'
@@ -108,12 +108,12 @@ data:
     - icon: ':warning:'
       path: graphs/trees/centroid_decomposition.h
       title: graphs/trees/centroid_decomposition.h
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: graphs/trees/tree_isomorphism.h
       title: graphs/trees/tree_isomorphism.h
   - name: misc
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: misc/template.h
       title: misc/template.h
   - name: numeric
@@ -146,16 +146,16 @@ data:
       title: strings/suffix_array.h
   - name: utils
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: utils/debug.h
       title: utils/debug.h
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: utils/encode.h
       title: utils/encode.h
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: utils/my_random.h
       title: utils/my_random.h
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: utils/my_timer.h
       title: utils/my_timer.h
   verificationCategories:
@@ -273,10 +273,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/library_checker/tree/lca.test.cpp
       title: verify/library_checker/tree/lca.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/library_checker/tree/rooted_tree_isomorphism.test.cpp
       title: verify/library_checker/tree/rooted_tree_isomorphism.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/library_checker/tree/vertex_add_subtree_sum.test.cpp
       title: verify/library_checker/tree/vertex_add_subtree_sum.test.cpp
 layout: toppage

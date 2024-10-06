@@ -4,19 +4,19 @@ data:
   - icon: ':heavy_check_mark:'
     path: common/binsearch.h
     title: common/binsearch.h
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: misc/template.h
     title: misc/template.h
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: utils/debug.h
     title: utils/debug.h
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: utils/encode.h
     title: utils/encode.h
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: utils/my_random.h
     title: utils/my_random.h
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: utils/my_timer.h
     title: utils/my_timer.h
   _extendedRequiredBy: []
@@ -67,7 +67,7 @@ data:
   isVerificationFile: true
   path: verify/aizu/alds1/binary_search.test.cpp
   requiredBy: []
-  timestamp: '2024-09-29 00:35:58-04:00'
+  timestamp: '2024-10-05 23:54:04-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/aizu/alds1/binary_search.test.cpp

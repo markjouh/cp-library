@@ -1,19 +1,19 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: misc/template.h
     title: misc/template.h
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: utils/debug.h
     title: utils/debug.h
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: utils/encode.h
     title: utils/encode.h
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: utils/my_random.h
     title: utils/my_random.h
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: utils/my_timer.h
     title: utils/my_timer.h
   _extendedRequiredBy: []
@@ -34,18 +34,19 @@ data:
     \ T>\nbool ckmin(T &a, T b) {\n    return b < a ? a = b, 1 : 0;\n}\ntemplate <class\
     \ T>\nbool ckmax(T &a, T b) {\n    return b > a ? a = b, 1 : 0;\n}\n#line 4 \"\
     verify/custom/utils/timer.test.cpp\"\n\n// Just for completionism's sake...\n\n\
-    const int T = 10;\n\nint main() {\n    for (int i = 0; i < T; i++) {\n       \
-    \ const int rand_ms = rand_int(50, 500);\n\n        start_timer();\n        usleep(rand_ms\
-    \ * 1000);\n        assert(abs(elapsed() - rand_ms) < 10);\n    }\n\n    cerr\
-    \ << \"Tests passed\\n\";\n\n    int a, b;\n    cin >> a >> b;\n    cout << a\
-    \ + b << '\\n';\n}\n"
+    const int T = 50;\n\nint main() {\n    for (int i = 0; i < T; i++) {\n       \
+    \ const long long rand_ns = rand_int(1e6, 1e7);\n\n        timer::start();\n \
+    \       this_thread::sleep_for(chrono::nanoseconds(rand_ns));\n        long long\
+    \ elapsed = timer::get_ns();\n\n        assert(abs(elapsed - rand_ns) < 1e7);\n\
+    \    }\n\n    cerr << \"Tests passed\\n\";\n\n    int a, b;\n    cin >> a >> b;\n\
+    \    cout << a + b << '\\n';\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/aplusb\"\n\n#include \"\
     ../../../misc/template.h\"\n\n// Just for completionism's sake...\n\nconst int\
-    \ T = 10;\n\nint main() {\n    for (int i = 0; i < T; i++) {\n        const int\
-    \ rand_ms = rand_int(50, 500);\n\n        start_timer();\n        usleep(rand_ms\
-    \ * 1000);\n        assert(abs(elapsed() - rand_ms) < 10);\n    }\n\n    cerr\
-    \ << \"Tests passed\\n\";\n\n    int a, b;\n    cin >> a >> b;\n    cout << a\
-    \ + b << '\\n';\n}"
+    \ T = 50;\n\nint main() {\n    for (int i = 0; i < T; i++) {\n        const long\
+    \ long rand_ns = rand_int(1e6, 1e7);\n\n        timer::start();\n        this_thread::sleep_for(chrono::nanoseconds(rand_ns));\n\
+    \        long long elapsed = timer::get_ns();\n\n        assert(abs(elapsed -\
+    \ rand_ns) < 1e7);\n    }\n\n    cerr << \"Tests passed\\n\";\n\n    int a, b;\n\
+    \    cin >> a >> b;\n    cout << a + b << '\\n';\n}"
   dependsOn:
   - misc/template.h
   - utils/debug.h
@@ -55,7 +56,7 @@ data:
   isVerificationFile: true
   path: verify/custom/utils/timer.test.cpp
   requiredBy: []
-  timestamp: '2024-09-29 00:35:58-04:00'
+  timestamp: '2024-10-05 23:54:04-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/custom/utils/timer.test.cpp

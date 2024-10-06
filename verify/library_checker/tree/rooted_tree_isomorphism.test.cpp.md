@@ -1,29 +1,29 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: graphs/trees/tree_isomorphism.h
     title: graphs/trees/tree_isomorphism.h
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: misc/template.h
     title: misc/template.h
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: utils/debug.h
     title: utils/debug.h
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: utils/encode.h
     title: utils/encode.h
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: utils/my_random.h
     title: utils/my_random.h
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: utils/my_timer.h
     title: utils/my_timer.h
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/rooted_tree_isomorphism_classification
@@ -68,8 +68,8 @@ data:
   isVerificationFile: true
   path: verify/library_checker/tree/rooted_tree_isomorphism.test.cpp
   requiredBy: []
-  timestamp: '2024-09-29 00:35:58-04:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2024-10-05 23:54:04-04:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/library_checker/tree/rooted_tree_isomorphism.test.cpp
 layout: document

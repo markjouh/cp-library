@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: datastructures/binary_indexed_tree/bit.h
     title: datastructures/binary_indexed_tree/bit.h
   _extendedRequiredBy: []

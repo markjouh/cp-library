@@ -18,12 +18,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/library_checker/data_structure/point_add_range_sum.test.cpp
     title: verify/library_checker/data_structure/point_add_range_sum.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/library_checker/tree/vertex_add_subtree_sum.test.cpp
     title: verify/library_checker/tree/vertex_add_subtree_sum.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: h
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"datastructures/binary_indexed_tree/bit.h\"\n\ntemplate <class\
@@ -53,7 +53,7 @@ data:
   - datastructures/binary_indexed_tree/bit_dual.h
   - datastructures/binary_indexed_tree/bit_2d.h
   timestamp: '2024-09-29 00:35:58-04:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/custom/datastructure/bit_2d.test.cpp
   - verify/library_checker/data_structure/point_add_range_sum.test.cpp

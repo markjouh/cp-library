@@ -1,25 +1,25 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: datastructures/binary_indexed_tree/bit.h
     title: datastructures/binary_indexed_tree/bit.h
   - icon: ':heavy_check_mark:'
     path: datastructures/binary_indexed_tree/bit_2d.h
     title: datastructures/binary_indexed_tree/bit_2d.h
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: misc/template.h
     title: misc/template.h
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: utils/debug.h
     title: utils/debug.h
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: utils/encode.h
     title: utils/encode.h
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: utils/my_random.h
     title: utils/my_random.h
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: utils/my_timer.h
     title: utils/my_timer.h
   _extendedRequiredBy: []
@@ -58,14 +58,31 @@ data:
     \ return res;\n    }\n\n    T sum(int r1, int c1, int r2, int c2) {\n        return\
     \ sum(r2, c2) - sum(r2, c1 - 1) - sum(r1 - 1, c2) + sum(r1 - 1, c1 - 1);\n   \
     \ }\n};\n#line 5 \"verify/custom/datastructure/bit_2d.test.cpp\"\n\nconst int\
-    \ N = 100, M = 100, Q = 1e4;\nconst int MXV = 1e6;\n\nint main() {\n    vector<vector<ll>>\
+    \ N = 500, M = 500, Q = 1e5;\nconst int MXV = 1e6;\n\nint main() {\n    vector<vector<ll>>\
     \ a(N, vector<ll>(M));\n    BIT2D<ll> ft(N, M);\n\n    for (int i = 0; i < N;\
     \ i++) {\n        a[i] = rand_vec<ll>(M, 0, MXV);\n        for (int j = 0; j <\
     \ M; j++) {\n            ft.add(i, j, a[i][j]);\n        }\n    }\n\n    for (int\
     \ i = 0; i < Q; i++) {\n        if (rand_bool()) {\n            int r = rand_int(N),\
-    \ c = rand_int(M);\n            const int v = rand_int(MXV);\n            \n \
-    \           a[r][c] += v;\n            ft.add(r, c, v);\n        } else {\n  \
-    \          int r1 = rand_int(N), c1 = rand_int(M), r2 = rand_int(N), c2 = rand_int(M);\n\
+    \ c = rand_int(M);\n            const int v = rand_int(MXV);\n\n            a[r][c]\
+    \ += v;\n            ft.add(r, c, v);\n        } else {\n            int r1 =\
+    \ rand_int(N), c1 = rand_int(M), r2 = rand_int(N), c2 = rand_int(M);\n       \
+    \     if (r1 > r2) {\n                swap(r1, r2);\n            }\n         \
+    \   if (c1 > c2) {\n                swap(c1, c2);\n            }\n           \
+    \ ll brute = 0;\n            for (int r = r1; r <= r2; r++) {\n              \
+    \  for (int c = c1; c <= c2; c++) {\n                    brute += a[r][c];\n \
+    \               }\n            }\n            assert(brute == ft.sum(r1, c1, r2,\
+    \ c2));\n        }\n    }\n\n    cerr << \"Tests passed\\n\";\n    int a_, b_;\n\
+    \    cin >> a_ >> b_;\n    cout << a_ + b_ << '\\n';\n}\n"
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/aplusb\"\n\n#include \"\
+    ../../../misc/template.h\"\n#include \"../../../datastructures/binary_indexed_tree/bit_2d.h\"\
+    \n\nconst int N = 500, M = 500, Q = 1e5;\nconst int MXV = 1e6;\n\nint main() {\n\
+    \    vector<vector<ll>> a(N, vector<ll>(M));\n    BIT2D<ll> ft(N, M);\n\n    for\
+    \ (int i = 0; i < N; i++) {\n        a[i] = rand_vec<ll>(M, 0, MXV);\n       \
+    \ for (int j = 0; j < M; j++) {\n            ft.add(i, j, a[i][j]);\n        }\n\
+    \    }\n\n    for (int i = 0; i < Q; i++) {\n        if (rand_bool()) {\n    \
+    \        int r = rand_int(N), c = rand_int(M);\n            const int v = rand_int(MXV);\n\
+    \n            a[r][c] += v;\n            ft.add(r, c, v);\n        } else {\n\
+    \            int r1 = rand_int(N), c1 = rand_int(M), r2 = rand_int(N), c2 = rand_int(M);\n\
     \            if (r1 > r2) {\n                swap(r1, r2);\n            }\n  \
     \          if (c1 > c2) {\n                swap(c1, c2);\n            }\n    \
     \        ll brute = 0;\n            for (int r = r1; r <= r2; r++) {\n       \
@@ -73,23 +90,6 @@ data:
     \                }\n            }\n            assert(brute == ft.sum(r1, c1,\
     \ r2, c2));\n        }\n    }\n\n    cerr << \"Tests passed\\n\";\n    int a_,\
     \ b_;\n    cin >> a_ >> b_;\n    cout << a_ + b_ << '\\n';\n}\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/aplusb\"\n\n#include \"\
-    ../../../misc/template.h\"\n#include \"../../../datastructures/binary_indexed_tree/bit_2d.h\"\
-    \n\nconst int N = 100, M = 100, Q = 1e4;\nconst int MXV = 1e6;\n\nint main() {\n\
-    \    vector<vector<ll>> a(N, vector<ll>(M));\n    BIT2D<ll> ft(N, M);\n\n    for\
-    \ (int i = 0; i < N; i++) {\n        a[i] = rand_vec<ll>(M, 0, MXV);\n       \
-    \ for (int j = 0; j < M; j++) {\n            ft.add(i, j, a[i][j]);\n        }\n\
-    \    }\n\n    for (int i = 0; i < Q; i++) {\n        if (rand_bool()) {\n    \
-    \        int r = rand_int(N), c = rand_int(M);\n            const int v = rand_int(MXV);\n\
-    \            \n            a[r][c] += v;\n            ft.add(r, c, v);\n     \
-    \   } else {\n            int r1 = rand_int(N), c1 = rand_int(M), r2 = rand_int(N),\
-    \ c2 = rand_int(M);\n            if (r1 > r2) {\n                swap(r1, r2);\n\
-    \            }\n            if (c1 > c2) {\n                swap(c1, c2);\n  \
-    \          }\n            ll brute = 0;\n            for (int r = r1; r <= r2;\
-    \ r++) {\n                for (int c = c1; c <= c2; c++) {\n                 \
-    \   brute += a[r][c];\n                }\n            }\n            assert(brute\
-    \ == ft.sum(r1, c1, r2, c2));\n        }\n    }\n\n    cerr << \"Tests passed\\\
-    n\";\n    int a_, b_;\n    cin >> a_ >> b_;\n    cout << a_ + b_ << '\\n';\n}\n"
   dependsOn:
   - misc/template.h
   - utils/debug.h
@@ -101,7 +101,7 @@ data:
   isVerificationFile: true
   path: verify/custom/datastructure/bit_2d.test.cpp
   requiredBy: []
-  timestamp: '2024-09-29 01:50:21-04:00'
+  timestamp: '2024-10-05 23:54:04-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/custom/datastructure/bit_2d.test.cpp
