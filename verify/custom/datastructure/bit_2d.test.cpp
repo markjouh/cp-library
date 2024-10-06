@@ -3,7 +3,7 @@
 #include "../../../misc/template.h"
 #include "../../../datastructures/binary_indexed_tree/bit_2d.h"
 
-const int N = 100, M = 100, Q = 1e4;
+const int N = 500, M = 500, Q = 1e5;
 const int MXV = 1e6;
 
 int main() {
@@ -21,7 +21,7 @@ int main() {
         if (rand_bool()) {
             int r = rand_int(N), c = rand_int(M);
             const int v = rand_int(MXV);
-            
+
             a[r][c] += v;
             ft.add(r, c, v);
         } else {

@@ -4,15 +4,17 @@
 
 // Just for completionism's sake...
 
-const int T = 10;
+const int T = 50;
 
 int main() {
     for (int i = 0; i < T; i++) {
-        const int rand_ms = rand_int(50, 500);
+        const long long rand_ns = rand_int(1e6, 1e7);
 
-        start_timer();
-        usleep(rand_ms * 1000);
-        assert(abs(elapsed() - rand_ms) < 10);
+        timer::start();
+        this_thread::sleep_for(chrono::nanoseconds(rand_ns));
+        long long elapsed = timer::get_ns();
+
+        assert(abs(elapsed - rand_ns) < 1e7);
     }
 
     cerr << "Tests passed\n";

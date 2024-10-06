@@ -1,25 +1,18 @@
 #pragma once
 
+template <class T>
 struct BinaryTrie {
+    static const int W = sizeof(T) * 8;
     vector<array<int, 2>> nxt;
     vector<int> cnt;
+    T filter = 0;
 
     BinaryTrie() : nxt(1, {-1, -1}), cnt(1, 0) {}
 
-    int count(unsigned int x) {
+    void add(T x, int v = 1) {
+        x ^= filter;
         int pos = 0;
-        for (int i = 31; i >= 0; i--) {
-            pos = nxt[pos][(x >> i) & 1];
-            if (pos == -1) {
-                return 0;
-            }
-        }
-        return cnt[pos];
-    }
-
-    void insert(unsigned int x) {
-        int pos = 0;
-        for (int i = 31; i >= 0; i--) {
+        for (int i = W - 1; i >= 0; i--) {
             bool dir = (x >> i) & 1;
             if (nxt[pos][dir] == -1) {
                 nxt[pos][dir] = sz(nxt);
@@ -27,25 +20,23 @@ struct BinaryTrie {
                 cnt.push_back(0);
             }
             pos = nxt[pos][dir];
-            cnt[pos]++;
+            cnt[pos] += v;
         }
     }
 
-    void remove(unsigned int x) {
-        int pos = 0;
-        for (int i = 31; i >= 0; i--) {
-            pos = nxt[pos][(x >> i) & 1];
-            cnt[pos]--;
-        }
+    BinaryTrie &operator^=(T x) {
+        filter ^= x;
+        return *this;
     }
 
-    unsigned int min_xor(unsigned int x) {
+    T min_xor(T x) {
+        x ^= filter;
         int pos = 0;
-        unsigned int res = 0;
-        for (int i = 31; i >= 0; i--) {
+        T res = 0;
+        for (int i = W - 1; i >= 0; i--) {
             bool dir = (x >> i) & 1;
             if (nxt[pos][dir] == -1 || cnt[nxt[pos][dir]] == 0) {
-                res |= 1 << i;
+                res |= T(1) << i;
                 pos = nxt[pos][dir ^ 1];
             } else {
                 pos = nxt[pos][dir];
@@ -54,8 +45,8 @@ struct BinaryTrie {
         return res;
     }
 
-    unsigned int max_xor(unsigned int x) {
-        static const unsigned int mask = -1;
+    T max_xor(T x) {
+        static const T mask = -1;
         return mask ^ min_xor(x ^ mask);
     }
 };
