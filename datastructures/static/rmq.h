@@ -1,6 +1,15 @@
 #pragma once
 
-template <class T, auto op>
+template <class T>
+T min_f(T x, T y) {
+    return x < y ? x : y;
+}
+template <class T>
+T max_f(T x, T y) {
+    return x > y ? x : y;
+}
+
+template <class T, auto op = min_f<T>>
 struct RMQ {
     int n, log;
     vector<vector<T>> st;

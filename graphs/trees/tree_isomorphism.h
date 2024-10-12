@@ -3,9 +3,9 @@
 struct TreeIsomorphism {
     map<vector<int>, int> hashes;
 
-    vector<int> gen(const vector<vector<int>> &g, int rt = 0) {
+    vector<int> gen(const vector<vector<int>> &g, int r = 0) {
         vector<int> res(sz(g));
-        dfs(rt, -1, g, res);
+        dfs(r, -1, g, res);
         return res;
     }
 

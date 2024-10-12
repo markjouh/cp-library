@@ -32,6 +32,11 @@ constexpr T default_val() {
     }
 }
 
+template <class T>
+void rand_shuf(T &a) {
+    shuffle(begin(a), end(a), rng_engine);
+}
+
 bool rand_bool() {
     return my_rand<int>(0, 1);
 }
@@ -48,28 +53,28 @@ int rand_int() {
     return rand_int(default_val<int>());
 }
 
-long long rand_long(long long lo, long long hi) {
+long long rand_ll(long long lo, long long hi) {
     return my_rand<long long>(lo, hi);
 }
 
-long long rand_long(long long hi) {
-    return rand_long(0, hi);
+long long rand_ll(long long hi) {
+    return rand_ll(0, hi);
 }
 
-long long rand_long() {
-    return rand_long(default_val<long long>());
+long long rand_ll() {
+    return rand_ll(default_val<long long>());
 }
 
-double rand_doub(double lo, double hi) {
+double rand_db(double lo, double hi) {
     return my_rand<double>(lo, hi);
 }
 
-double rand_doub(double hi) {
-    return rand_doub(0, hi);
+double rand_db(double hi) {
+    return rand_db(0, hi);
 }
 
-double rand_doub() {
-    return rand_doub(1);
+double rand_db() {
+    return rand_db(1);
 }
 
 string rand_str(int n, int k) {

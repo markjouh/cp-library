@@ -8,7 +8,7 @@ const double MXV = 1e12, ERR = 1e-3;
 
 void test() {
     // Search for exact double value, should have no ERR
-    const double t1 = rand_doub(1e100);
+    const double t1 = rand_db(1e100);
     double left = bsmax_reals(0, 1e100, [&](double x) {
         return x <= t1;
     });
@@ -19,7 +19,7 @@ void test() {
     assert(right == t1);
 
     // Try computing sqrt
-    const double t2 = rand_doub(MXV);
+    const double t2 = rand_db(MXV);
     double sqrt_val = bsmax_reals(0, MXV, [&](double x) {
         return x * x <= t2;
     });
@@ -27,7 +27,7 @@ void test() {
     assert(sqrt_prod <= t2 && t2 - sqrt_prod < ERR);
 
     // Try computing cbrt
-    const double t3 = rand_doub(MXV);
+    const double t3 = rand_db(MXV);
     double cbrt_val = bsmax_reals(0, MXV, [&](double x) {
         return x * x * x <= t3;
     });
