@@ -11,9 +11,6 @@ data:
     path: utils/debug.h
     title: utils/debug.h
   - icon: ':question:'
-    path: utils/encode.h
-    title: utils/encode.h
-  - icon: ':question:'
     path: utils/my_random.h
     title: utils/my_random.h
   - icon: ':question:'
@@ -38,8 +35,8 @@ data:
     \ b < a ? a = b, 1 : 0;\n}\ntemplate <class T>\nbool ckmax(T &a, T b) {\n    return\
     \ b > a ? a = b, 1 : 0;\n}\n#line 2 \"graphs/trees/tree_isomorphism.h\"\n\nstruct\
     \ TreeIsomorphism {\n    map<vector<int>, int> hashes;\n\n    vector<int> gen(const\
-    \ vector<vector<int>> &g, int rt = 0) {\n        vector<int> res(sz(g));\n   \
-    \     dfs(rt, -1, g, res);\n        return res;\n    }\n\nprivate:\n    void dfs(int\
+    \ vector<vector<int>> &g, int r = 0) {\n        vector<int> res(sz(g));\n    \
+    \    dfs(r, -1, g, res);\n        return res;\n    }\n\nprivate:\n    void dfs(int\
     \ u, int par, auto &g, auto &res) {\n        vector<int> children;\n        for\
     \ (int v : g[u]) {\n            if (v != par) {\n                dfs(v, u, g,\
     \ res);\n                children.push_back(res[v]);\n            }\n        }\n\
@@ -61,14 +58,13 @@ data:
   dependsOn:
   - misc/template.h
   - utils/debug.h
-  - utils/encode.h
   - utils/my_random.h
   - utils/my_timer.h
   - graphs/trees/tree_isomorphism.h
   isVerificationFile: true
   path: verify/library_checker/tree/rooted_tree_isomorphism.test.cpp
   requiredBy: []
-  timestamp: '2024-10-05 23:54:04-04:00'
+  timestamp: '2024-10-12 02:07:15-04:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/library_checker/tree/rooted_tree_isomorphism.test.cpp

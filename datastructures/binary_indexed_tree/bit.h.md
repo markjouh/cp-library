@@ -50,15 +50,15 @@ data:
   isVerificationFile: false
   path: datastructures/binary_indexed_tree/bit.h
   requiredBy:
-  - datastructures/binary_indexed_tree/bit_dual.h
   - datastructures/binary_indexed_tree/bit_2d.h
+  - datastructures/binary_indexed_tree/bit_dual.h
   timestamp: '2024-09-29 00:35:58-04:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
-  - verify/custom/datastructure/bit_2d.test.cpp
-  - verify/library_checker/data_structure/point_add_range_sum.test.cpp
-  - verify/library_checker/tree/vertex_add_subtree_sum.test.cpp
   - verify/aizu/dsl/rsq_and_raq.test.cpp
+  - verify/library_checker/tree/vertex_add_subtree_sum.test.cpp
+  - verify/library_checker/data_structure/point_add_range_sum.test.cpp
+  - verify/custom/datastructure/bit_2d.test.cpp
 documentation_of: datastructures/binary_indexed_tree/bit.h
 layout: document
 redirect_from:

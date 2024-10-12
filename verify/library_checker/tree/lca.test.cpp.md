@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: graphs/trees/binary_lifting.h
     title: graphs/trees/binary_lifting.h
   - icon: ':question:'
@@ -11,9 +11,6 @@ data:
     path: utils/debug.h
     title: utils/debug.h
   - icon: ':question:'
-    path: utils/encode.h
-    title: utils/encode.h
-  - icon: ':question:'
     path: utils/my_random.h
     title: utils/my_random.h
   - icon: ':question:'
@@ -21,9 +18,9 @@ data:
     title: utils/my_timer.h
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/lca
@@ -71,15 +68,14 @@ data:
   dependsOn:
   - misc/template.h
   - utils/debug.h
-  - utils/encode.h
   - utils/my_random.h
   - utils/my_timer.h
   - graphs/trees/binary_lifting.h
   isVerificationFile: true
   path: verify/library_checker/tree/lca.test.cpp
   requiredBy: []
-  timestamp: '2024-10-05 23:54:04-04:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2024-10-12 02:07:15-04:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/library_checker/tree/lca.test.cpp
 layout: document

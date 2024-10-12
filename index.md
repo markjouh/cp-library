@@ -67,6 +67,9 @@ data:
     - icon: ':warning:'
       path: esoteric/min_xor_set.h
       title: esoteric/min_xor_set.h
+    - icon: ':warning:'
+      path: esoteric/permutations.h
+      title: esoteric/permutations.h
     - icon: ':heavy_check_mark:'
       path: esoteric/w_ary_tree.h
       title: esoteric/w_ary_tree.h
@@ -102,15 +105,23 @@ data:
       title: graphs/shortest_paths/dijkstras_k_shortest.h
   - name: graphs/trees
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: graphs/trees/binary_lifting.h
       title: graphs/trees/binary_lifting.h
     - icon: ':warning:'
       path: graphs/trees/centroid_decomposition.h
       title: graphs/trees/centroid_decomposition.h
+    - icon: ':warning:'
+      path: graphs/trees/lca.h
+      title: graphs/trees/lca.h
     - icon: ':x:'
       path: graphs/trees/tree_isomorphism.h
       title: graphs/trees/tree_isomorphism.h
+  - name: heuristic
+    pages:
+    - icon: ':warning:'
+      path: heuristic/simulated_annealing.h
+      title: heuristic/simulated_annealing.h
   - name: misc
     pages:
     - icon: ':question:'
@@ -149,9 +160,6 @@ data:
     - icon: ':question:'
       path: utils/debug.h
       title: utils/debug.h
-    - icon: ':question:'
-      path: utils/encode.h
-      title: utils/encode.h
     - icon: ':question:'
       path: utils/my_random.h
       title: utils/my_random.h
@@ -213,9 +221,6 @@ data:
       path: verify/custom/utils/debug.test.cpp
       title: verify/custom/utils/debug.test.cpp
     - icon: ':heavy_check_mark:'
-      path: verify/custom/utils/encode.test.cpp
-      title: verify/custom/utils/encode.test.cpp
-    - icon: ':heavy_check_mark:'
       path: verify/custom/utils/random_graph.test.cpp
       title: verify/custom/utils/random_graph.test.cpp
     - icon: ':heavy_check_mark:'
@@ -270,7 +275,7 @@ data:
       title: verify/library_checker/string/suffix_array.test.cpp
   - name: verify/library_checker/tree
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/library_checker/tree/lca.test.cpp
       title: verify/library_checker/tree/lca.test.cpp
     - icon: ':x:'

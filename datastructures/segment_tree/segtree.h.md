@@ -50,8 +50,8 @@ data:
   timestamp: '2024-09-29 00:35:58-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/custom/datastructure/segtree_set.test.cpp
   - verify/aizu/dsl/rmq.test.cpp
+  - verify/custom/datastructure/segtree_set.test.cpp
 documentation_of: datastructures/segment_tree/segtree.h
 layout: document
 redirect_from:

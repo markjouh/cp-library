@@ -11,9 +11,6 @@ data:
     path: utils/debug.h
     title: utils/debug.h
   - icon: ':question:'
-    path: utils/encode.h
-    title: utils/encode.h
-  - icon: ':question:'
     path: utils/my_random.h
     title: utils/my_random.h
   - icon: ':question:'
@@ -53,14 +50,13 @@ data:
   dependsOn:
   - misc/template.h
   - utils/debug.h
-  - utils/encode.h
   - utils/my_random.h
   - utils/my_timer.h
   - common/order_statistic_tree.h
   isVerificationFile: true
   path: verify/aizu/alds1/number_of_inversions.test.cpp
   requiredBy: []
-  timestamp: '2024-10-05 23:54:04-04:00'
+  timestamp: '2024-10-12 02:07:15-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/aizu/alds1/number_of_inversions.test.cpp

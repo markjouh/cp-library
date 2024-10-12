@@ -37,9 +37,9 @@ data:
   timestamp: '2024-09-29 00:35:58-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - verify/aizu/alds1/binary_search.test.cpp
   - verify/library_checker/data_structure/range_kth_smallest.test.cpp
   - verify/library_checker/string/enumerate_palindromes.test.cpp
-  - verify/aizu/alds1/binary_search.test.cpp
 documentation_of: common/binsearch.h
 layout: document
 redirect_from:

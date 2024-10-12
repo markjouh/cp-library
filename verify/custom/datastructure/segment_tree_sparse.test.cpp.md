@@ -11,9 +11,6 @@ data:
     path: utils/debug.h
     title: utils/debug.h
   - icon: ':question:'
-    path: utils/encode.h
-    title: utils/encode.h
-  - icon: ':question:'
     path: utils/my_random.h
     title: utils/my_random.h
   - icon: ':question:'
@@ -98,14 +95,13 @@ data:
   dependsOn:
   - misc/template.h
   - utils/debug.h
-  - utils/encode.h
   - utils/my_random.h
   - utils/my_timer.h
   - datastructures/segment_tree/segtree_sparse.h
   isVerificationFile: true
   path: verify/custom/datastructure/segment_tree_sparse.test.cpp
   requiredBy: []
-  timestamp: '2024-10-05 23:54:04-04:00'
+  timestamp: '2024-10-12 02:07:15-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/custom/datastructure/segment_tree_sparse.test.cpp

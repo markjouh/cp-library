@@ -11,9 +11,6 @@ data:
     path: utils/debug.h
     title: utils/debug.h
   - icon: ':question:'
-    path: utils/encode.h
-    title: utils/encode.h
-  - icon: ':question:'
     path: utils/my_random.h
     title: utils/my_random.h
   - icon: ':question:'
@@ -37,7 +34,9 @@ data:
     \ double;\n\ntemplate <class T>\nbool ckmin(T &a, T b) {\n    return b < a ? a\
     \ = b, 1 : 0;\n}\ntemplate <class T>\nbool ckmax(T &a, T b) {\n    return b >\
     \ a ? a = b, 1 : 0;\n}\n#line 2 \"datastructures/static/rmq.h\"\n\ntemplate <class\
-    \ T, auto op>\nstruct RMQ {\n    int n, log;\n    vector<vector<T>> st;\n\n  \
+    \ T>\nT min_f(T x, T y) {\n    return x < y ? x : y;\n}\ntemplate <class T>\n\
+    T max_f(T x, T y) {\n    return x > y ? x : y;\n}\n\ntemplate <class T, auto op\
+    \ = min_f<T>>\nstruct RMQ {\n    int n, log;\n    vector<vector<T>> st;\n\n  \
     \  RMQ() {}\n    RMQ(const vector<T> &a) : n(sz(a)), log(__lg(n) + 1) {\n    \
     \    st.resize(log);\n        st[0] = a;\n        for (int i = 1; i < log; i++)\
     \ {\n            st[i].resize(n - (1 << i) + 1);\n            for (int j = 0;\
@@ -60,14 +59,13 @@ data:
   dependsOn:
   - misc/template.h
   - utils/debug.h
-  - utils/encode.h
   - utils/my_random.h
   - utils/my_timer.h
   - datastructures/static/rmq.h
   isVerificationFile: true
   path: verify/library_checker/data_structure/static_rmq.test.cpp
   requiredBy: []
-  timestamp: '2024-10-05 23:54:04-04:00'
+  timestamp: '2024-10-12 02:07:15-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/library_checker/data_structure/static_rmq.test.cpp

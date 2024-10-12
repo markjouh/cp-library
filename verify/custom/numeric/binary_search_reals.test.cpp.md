@@ -11,9 +11,6 @@ data:
     path: utils/debug.h
     title: utils/debug.h
   - icon: ':question:'
-    path: utils/encode.h
-    title: utils/encode.h
-  - icon: ':question:'
     path: utils/my_random.h
     title: utils/my_random.h
   - icon: ':question:'
@@ -50,14 +47,14 @@ data:
     \ i;\n    }\n    return reinterpret_cast<double&>(l);\n}\n#line 5 \"verify/custom/numeric/binary_search_reals.test.cpp\"\
     \n\nconst int T = 1e6;\nconst double MXV = 1e12, ERR = 1e-3;\n\nvoid test() {\n\
     \    // Search for exact double value, should have no ERR\n    const double t1\
-    \ = rand_doub(1e100);\n    double left = bsmax_reals(0, 1e100, [&](double x) {\n\
+    \ = rand_db(1e100);\n    double left = bsmax_reals(0, 1e100, [&](double x) {\n\
     \        return x <= t1;\n    });\n    assert(left == t1);\n    double right =\
     \ bsmin_reals(0, 1e100, [&](double x) {\n        return x >= t1;\n    });\n  \
-    \  assert(right == t1);\n\n    // Try computing sqrt\n    const double t2 = rand_doub(MXV);\n\
+    \  assert(right == t1);\n\n    // Try computing sqrt\n    const double t2 = rand_db(MXV);\n\
     \    double sqrt_val = bsmax_reals(0, MXV, [&](double x) {\n        return x *\
     \ x <= t2;\n    });\n    double sqrt_prod = sqrt_val * sqrt_val;\n    assert(sqrt_prod\
     \ <= t2 && t2 - sqrt_prod < ERR);\n\n    // Try computing cbrt\n    const double\
-    \ t3 = rand_doub(MXV);\n    double cbrt_val = bsmax_reals(0, MXV, [&](double x)\
+    \ t3 = rand_db(MXV);\n    double cbrt_val = bsmax_reals(0, MXV, [&](double x)\
     \ {\n        return x * x * x <= t3;\n    });\n    double cbrt_prod = cbrt_val\
     \ * cbrt_val * cbrt_val;\n    assert(cbrt_prod <= t3 && t3 - cbrt_prod < ERR);\n\
     }\n\nint main() {\n    for (int i = 0; i < T; i++) {\n        test();\n    }\n\
@@ -67,14 +64,14 @@ data:
     ../../../misc/template.h\"\n#include \"../../../numeric/binsearch_reals.h\"\n\n\
     const int T = 1e6;\nconst double MXV = 1e12, ERR = 1e-3;\n\nvoid test() {\n  \
     \  // Search for exact double value, should have no ERR\n    const double t1 =\
-    \ rand_doub(1e100);\n    double left = bsmax_reals(0, 1e100, [&](double x) {\n\
-    \        return x <= t1;\n    });\n    assert(left == t1);\n    double right =\
+    \ rand_db(1e100);\n    double left = bsmax_reals(0, 1e100, [&](double x) {\n \
+    \       return x <= t1;\n    });\n    assert(left == t1);\n    double right =\
     \ bsmin_reals(0, 1e100, [&](double x) {\n        return x >= t1;\n    });\n  \
-    \  assert(right == t1);\n\n    // Try computing sqrt\n    const double t2 = rand_doub(MXV);\n\
+    \  assert(right == t1);\n\n    // Try computing sqrt\n    const double t2 = rand_db(MXV);\n\
     \    double sqrt_val = bsmax_reals(0, MXV, [&](double x) {\n        return x *\
     \ x <= t2;\n    });\n    double sqrt_prod = sqrt_val * sqrt_val;\n    assert(sqrt_prod\
     \ <= t2 && t2 - sqrt_prod < ERR);\n\n    // Try computing cbrt\n    const double\
-    \ t3 = rand_doub(MXV);\n    double cbrt_val = bsmax_reals(0, MXV, [&](double x)\
+    \ t3 = rand_db(MXV);\n    double cbrt_val = bsmax_reals(0, MXV, [&](double x)\
     \ {\n        return x * x * x <= t3;\n    });\n    double cbrt_prod = cbrt_val\
     \ * cbrt_val * cbrt_val;\n    assert(cbrt_prod <= t3 && t3 - cbrt_prod < ERR);\n\
     }\n\nint main() {\n    for (int i = 0; i < T; i++) {\n        test();\n    }\n\
@@ -83,14 +80,13 @@ data:
   dependsOn:
   - misc/template.h
   - utils/debug.h
-  - utils/encode.h
   - utils/my_random.h
   - utils/my_timer.h
   - numeric/binsearch_reals.h
   isVerificationFile: true
   path: verify/custom/numeric/binary_search_reals.test.cpp
   requiredBy: []
-  timestamp: '2024-10-05 23:54:04-04:00'
+  timestamp: '2024-10-12 02:07:15-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/custom/numeric/binary_search_reals.test.cpp
