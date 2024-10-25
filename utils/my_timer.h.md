@@ -80,9 +80,9 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"utils/my_timer.h\"\n\n#include <cassert>\n#include <chrono>\n\
+  bundledCode: "#line 1 \"utils/my_timer.h\"\n\n\n\n#include <cassert>\n#include <chrono>\n\
     #include <climits>\n#include <iostream>\n#include <map>\n#include <unistd.h>\n\
-    #include <thread>\n\n#line 2 \"utils/my_random.h\"\n\n#line 5 \"utils/my_random.h\"\
+    #include <thread>\n\n#line 1 \"utils/my_random.h\"\n\n\n\n#line 6 \"utils/my_random.h\"\
     \n#include <queue>\n#include <random>\n#include <set>\n#include <type_traits>\n\
     \nusing namespace std;\n\nmt19937_64 rng_engine(chrono::steady_clock::now().time_since_epoch().count());\n\
     \n// Core of random data generation\ntemplate <class T>\nT my_rand(T lo, T hi)\
@@ -145,30 +145,31 @@ data:
     \ hi);\n        if (directed) {\n            if (rand_bool()) {\n            \
     \    swap(u, v);\n            }\n            g[u].emplace_back(v, w);\n      \
     \  } else {\n            g[u].emplace_back(v, w);\n            g[v].emplace_back(u,\
-    \ w);\n        }\n    }\n    return g;\n}\n#line 12 \"utils/my_timer.h\"\n\nnamespace\
-    \ timer {\n\nusing namespace std;\nusing namespace chrono;\n\ntime_point<high_resolution_clock>\
+    \ w);\n        }\n    }\n    return g;\n}\n\n\n#line 13 \"utils/my_timer.h\"\n\
+    \nnamespace timer {\n\nusing namespace std;\nusing namespace chrono;\n\ntime_point<high_resolution_clock>\
     \ timer;\n\nvoid start() {\n    timer = high_resolution_clock::now();\n}\n\nlong\
     \ long get_ns() {\n    return duration_cast<nanoseconds>(high_resolution_clock::now()\
     \ - timer).count();\n}\nlong long get_ms() {\n    return duration_cast<milliseconds>(high_resolution_clock::now()\
     \ - timer).count();\n}\n\nvoid sleep_ns(long long ns) {\n    this_thread::sleep_for(chrono::nanoseconds(ns));\n\
     }\nvoid sleep_ms(long long ms) {\n    this_thread::sleep_for(chrono::milliseconds(ms));\n\
-    }\n\n};\n"
-  code: "#pragma once\n\n#include <cassert>\n#include <chrono>\n#include <climits>\n\
-    #include <iostream>\n#include <map>\n#include <unistd.h>\n#include <thread>\n\n\
-    #include \"my_random.h\"\n\nnamespace timer {\n\nusing namespace std;\nusing namespace\
-    \ chrono;\n\ntime_point<high_resolution_clock> timer;\n\nvoid start() {\n    timer\
-    \ = high_resolution_clock::now();\n}\n\nlong long get_ns() {\n    return duration_cast<nanoseconds>(high_resolution_clock::now()\
-    \ - timer).count();\n}\nlong long get_ms() {\n    return duration_cast<milliseconds>(high_resolution_clock::now()\
+    }\n\n};\n\n\n"
+  code: "#ifndef MY_TIMER_H\n#define MY_TIMER_H\n\n#include <cassert>\n#include <chrono>\n\
+    #include <climits>\n#include <iostream>\n#include <map>\n#include <unistd.h>\n\
+    #include <thread>\n\n#include \"my_random.h\"\n\nnamespace timer {\n\nusing namespace\
+    \ std;\nusing namespace chrono;\n\ntime_point<high_resolution_clock> timer;\n\n\
+    void start() {\n    timer = high_resolution_clock::now();\n}\n\nlong long get_ns()\
+    \ {\n    return duration_cast<nanoseconds>(high_resolution_clock::now() - timer).count();\n\
+    }\nlong long get_ms() {\n    return duration_cast<milliseconds>(high_resolution_clock::now()\
     \ - timer).count();\n}\n\nvoid sleep_ns(long long ns) {\n    this_thread::sleep_for(chrono::nanoseconds(ns));\n\
     }\nvoid sleep_ms(long long ms) {\n    this_thread::sleep_for(chrono::milliseconds(ms));\n\
-    }\n\n};"
+    }\n\n};\n\n#endif // MY_TIMER_H"
   dependsOn:
   - utils/my_random.h
   isVerificationFile: false
   path: utils/my_timer.h
   requiredBy:
   - misc/template.h
-  timestamp: '2024-10-12 02:07:15-04:00'
+  timestamp: '2024-10-25 19:46:34-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/aizu/alds1/priority_queue.test.cpp

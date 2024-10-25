@@ -33,7 +33,7 @@ data:
     \ begin(x), end(x)\n#define sz(x) int(size(x))\n\nusing ll = long long;\n\ntemplate\
     \ <class T>\nbool ckmin(T &a, T b) {\n    return b < a ? a = b, 1 : 0;\n}\ntemplate\
     \ <class T>\nbool ckmax(T &a, T b) {\n    return b > a ? a = b, 1 : 0;\n}\n#line\
-    \ 2 \"graphs/trees/tree_hashing.h\"\n\nstruct TreeHashing {\n    map<vector<int>,\
+    \ 1 \"graphs/trees/tree_hashing.h\"\nstruct TreeHashing {\n    map<vector<int>,\
     \ int> hash;\n\n    auto add(const vector<vector<int>> &g, int r = 0) {\n    \
     \    vector<int> res(sz(g));\n        \n        auto dfs = [&](auto &&self, int\
     \ u, int par) -> void {\n            vector<int> ch;\n            for (int v :\
@@ -64,7 +64,7 @@ data:
   isVerificationFile: true
   path: verify/library_checker/tree/rooted_tree_isomorphism.test.cpp
   requiredBy: []
-  timestamp: '2024-10-25 19:29:34-04:00'
+  timestamp: '2024-10-25 19:46:34-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/library_checker/tree/rooted_tree_isomorphism.test.cpp

@@ -32,8 +32,8 @@ data:
     #else\n#define dbg(...)\n#endif\n\n#define all(x) begin(x), end(x)\n#define sz(x)\
     \ int(size(x))\n\nusing ll = long long;\n\ntemplate <class T>\nbool ckmin(T &a,\
     \ T b) {\n    return b < a ? a = b, 1 : 0;\n}\ntemplate <class T>\nbool ckmax(T\
-    \ &a, T b) {\n    return b > a ? a = b, 1 : 0;\n}\n#line 2 \"graphs/kosaraju_scc.h\"\
-    \n\nstruct KosarajuSCC {\n    int sccs = 0;\n    vector<int> comp;\n    vector<vector<int>>\
+    \ &a, T b) {\n    return b > a ? a = b, 1 : 0;\n}\n#line 1 \"graphs/kosaraju_scc.h\"\
+    \nstruct KosarajuSCC {\n    int sccs = 0;\n    vector<int> comp;\n    vector<vector<int>>\
     \ members, cg;\n\n    KosarajuSCC(const vector<vector<int>> &g_) : g(g_) {\n \
     \       comp.resize(sz(g), -1);\n        tg.resize(sz(g));\n        vis.resize(sz(g));\n\
     \        ord.reserve(sz(g));\n        for (int i = 0; i < sz(g); i++) {\n    \
@@ -77,7 +77,7 @@ data:
   isVerificationFile: true
   path: verify/library_checker/graph/scc.test.cpp
   requiredBy: []
-  timestamp: '2024-10-25 19:29:34-04:00'
+  timestamp: '2024-10-25 19:46:34-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/library_checker/graph/scc.test.cpp

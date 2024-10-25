@@ -8,7 +8,7 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"graphs/euler_cycle.h\"\n\nauto euler_cycle(const vector<vector<int>>\
+  bundledCode: "#line 1 \"graphs/euler_cycle.h\"\nauto euler_cycle(const vector<vector<int>>\
     \ &g) {\n    vector<vector<pair<int, int>>> h(sz(g));\n    vector<int> deg(sz(g));\n\
     \    int cnt = 0;\n    for (int u = 0; u < sz(g); u++) {\n        int self = 0;\n\
     \        for (int v : g[u]) {\n            if ((u == v && self % 2) || u < v)\
@@ -22,7 +22,7 @@ data:
     \ = h[u].back();\n            h[u].pop_back();\n\n            deg[u]--, deg[v]--;\n\
     \            removed[idx] = true;\n\n            stk.push_back(v);\n        }\n\
     \    }\n    return res;\n}\n"
-  code: "#pragma once\n\nauto euler_cycle(const vector<vector<int>> &g) {\n    vector<vector<pair<int,\
+  code: "auto euler_cycle(const vector<vector<int>> &g) {\n    vector<vector<pair<int,\
     \ int>>> h(sz(g));\n    vector<int> deg(sz(g));\n    int cnt = 0;\n    for (int\
     \ u = 0; u < sz(g); u++) {\n        int self = 0;\n        for (int v : g[u])\
     \ {\n            if ((u == v && self % 2) || u < v) {\n                h[u].emplace_back(v,\
@@ -40,7 +40,7 @@ data:
   isVerificationFile: false
   path: graphs/euler_cycle.h
   requiredBy: []
-  timestamp: '2024-09-19 17:13:58-04:00'
+  timestamp: '2024-10-25 19:46:34-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: graphs/euler_cycle.h

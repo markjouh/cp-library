@@ -80,9 +80,9 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"utils/my_random.h\"\n\n#include <cassert>\n#include <chrono>\n\
-    #include <queue>\n#include <random>\n#include <set>\n#include <type_traits>\n\n\
-    using namespace std;\n\nmt19937_64 rng_engine(chrono::steady_clock::now().time_since_epoch().count());\n\
+  bundledCode: "#line 1 \"utils/my_random.h\"\n\n\n\n#include <cassert>\n#include\
+    \ <chrono>\n#include <queue>\n#include <random>\n#include <set>\n#include <type_traits>\n\
+    \nusing namespace std;\n\nmt19937_64 rng_engine(chrono::steady_clock::now().time_since_epoch().count());\n\
     \n// Core of random data generation\ntemplate <class T>\nT my_rand(T lo, T hi)\
     \ {\n    static_assert(is_arithmetic_v<T>, \"Invalid type for my_rand()\");\n\
     \    if constexpr (is_integral_v<T>) {\n        return uniform_int_distribution<T>(lo,\
@@ -143,10 +143,10 @@ data:
     \ hi);\n        if (directed) {\n            if (rand_bool()) {\n            \
     \    swap(u, v);\n            }\n            g[u].emplace_back(v, w);\n      \
     \  } else {\n            g[u].emplace_back(v, w);\n            g[v].emplace_back(u,\
-    \ w);\n        }\n    }\n    return g;\n}\n"
-  code: "#pragma once\n\n#include <cassert>\n#include <chrono>\n#include <queue>\n\
-    #include <random>\n#include <set>\n#include <type_traits>\n\nusing namespace std;\n\
-    \nmt19937_64 rng_engine(chrono::steady_clock::now().time_since_epoch().count());\n\
+    \ w);\n        }\n    }\n    return g;\n}\n\n\n"
+  code: "#ifndef MY_RANDOM_H\n#define MY_RANDOM_H\n\n#include <cassert>\n#include\
+    \ <chrono>\n#include <queue>\n#include <random>\n#include <set>\n#include <type_traits>\n\
+    \nusing namespace std;\n\nmt19937_64 rng_engine(chrono::steady_clock::now().time_since_epoch().count());\n\
     \n// Core of random data generation\ntemplate <class T>\nT my_rand(T lo, T hi)\
     \ {\n    static_assert(is_arithmetic_v<T>, \"Invalid type for my_rand()\");\n\
     \    if constexpr (is_integral_v<T>) {\n        return uniform_int_distribution<T>(lo,\
@@ -207,14 +207,14 @@ data:
     \ hi);\n        if (directed) {\n            if (rand_bool()) {\n            \
     \    swap(u, v);\n            }\n            g[u].emplace_back(v, w);\n      \
     \  } else {\n            g[u].emplace_back(v, w);\n            g[v].emplace_back(u,\
-    \ w);\n        }\n    }\n    return g;\n}"
+    \ w);\n        }\n    }\n    return g;\n}\n\n#endif // MY_RANDOM_H"
   dependsOn: []
   isVerificationFile: false
   path: utils/my_random.h
   requiredBy:
   - misc/template.h
   - utils/my_timer.h
-  timestamp: '2024-10-12 02:07:15-04:00'
+  timestamp: '2024-10-25 19:46:34-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/aizu/alds1/priority_queue.test.cpp

@@ -32,8 +32,8 @@ data:
     \ LOCAL\n#include <utils>\n#else\n#define dbg(...)\n#endif\n\n#define all(x) begin(x),\
     \ end(x)\n#define sz(x) int(size(x))\n\nusing ll = long long;\n\ntemplate <class\
     \ T>\nbool ckmin(T &a, T b) {\n    return b < a ? a = b, 1 : 0;\n}\ntemplate <class\
-    \ T>\nbool ckmax(T &a, T b) {\n    return b > a ? a = b, 1 : 0;\n}\n#line 2 \"\
-    graphs/shortest_paths/dijkstras.h\"\n\ntemplate <class T>\nauto dijkstras(const\
+    \ T>\nbool ckmax(T &a, T b) {\n    return b > a ? a = b, 1 : 0;\n}\n#line 1 \"\
+    graphs/shortest_paths/dijkstras.h\"\ntemplate <class T>\nauto dijkstras(const\
     \ vector<vector<pair<int, int>>> &g, int start = 0) {\n    priority_queue<pair<T,\
     \ int>, vector<pair<T, int>>, greater<pair<T, int>>> pq;\n\n    vector<T> dist(sz(g),\
     \ numeric_limits<T>::max());\n    vector<int> from(sz(g), -1);\n    \n    dist[start]\
@@ -74,7 +74,7 @@ data:
   isVerificationFile: true
   path: verify/library_checker/graph/shortest_path.test.cpp
   requiredBy: []
-  timestamp: '2024-10-25 19:29:34-04:00'
+  timestamp: '2024-10-25 19:46:34-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/library_checker/graph/shortest_path.test.cpp

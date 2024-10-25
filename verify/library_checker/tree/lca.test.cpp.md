@@ -32,8 +32,8 @@ data:
     #else\n#define dbg(...)\n#endif\n\n#define all(x) begin(x), end(x)\n#define sz(x)\
     \ int(size(x))\n\nusing ll = long long;\n\ntemplate <class T>\nbool ckmin(T &a,\
     \ T b) {\n    return b < a ? a = b, 1 : 0;\n}\ntemplate <class T>\nbool ckmax(T\
-    \ &a, T b) {\n    return b > a ? a = b, 1 : 0;\n}\n#line 2 \"graphs/trees/binary_lifting.h\"\
-    \n\nstruct BinaryLifting {\n    int log;\n    vector<int> dep;\n    vector<vector<int>>\
+    \ &a, T b) {\n    return b > a ? a = b, 1 : 0;\n}\n#line 1 \"graphs/trees/binary_lifting.h\"\
+    \nstruct BinaryLifting {\n    int log;\n    vector<int> dep;\n    vector<vector<int>>\
     \ up;\n\n    BinaryLifting(const vector<vector<int>> &g, int root = 0) {\n   \
     \     log = __lg(sz(g)) + 1;\n        dep.resize(sz(g), -1);\n        up = vector(sz(g),\
     \ vector<int>(log, -1));\n\n        queue<int> q;\n        dep[root] = 0;\n  \
@@ -74,7 +74,7 @@ data:
   isVerificationFile: true
   path: verify/library_checker/tree/lca.test.cpp
   requiredBy: []
-  timestamp: '2024-10-25 19:29:34-04:00'
+  timestamp: '2024-10-25 19:46:34-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/library_checker/tree/lca.test.cpp
