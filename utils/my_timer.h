@@ -1,4 +1,5 @@
-#pragma once
+#ifndef MY_TIMER_H
+#define MY_TIMER_H
 
 #include <cassert>
 #include <chrono>
@@ -36,3 +37,5 @@ void sleep_ms(long long ms) {
 }
 
 };
+
+#endif // MY_TIMER_H

@@ -1,4 +1,5 @@
-#pragma once
+#ifndef MY_RANDOM_H
+#define MY_RANDOM_H
 
 #include <cassert>
 #include <chrono>
@@ -218,3 +219,5 @@ vector<vector<pair<int, int>>> gen_weighted_graph(int n, int m, int lo = 1, int 
     }
     return g;
 }
+
+#endif // MY_RANDOM_H

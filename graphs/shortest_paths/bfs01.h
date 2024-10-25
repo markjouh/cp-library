@@ -1,5 +1,3 @@
-#pragma once
-
 int dq[1 << 17];
  
 auto bfs01(const vector<vector<pair<int, bool>>> &g, int start = 0) {

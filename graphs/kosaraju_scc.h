@@ -1,5 +1,3 @@
-#pragma once
-
 struct KosarajuSCC {
     int sccs = 0;
     vector<int> comp;

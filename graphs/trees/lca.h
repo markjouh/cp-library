@@ -1,5 +1,3 @@
-#pragma once
-
 #include "../../datastructures/static/rmq.h"
 
 struct LCA {

@@ -1,5 +1,3 @@
-#pragma once
-
 template <class T>
 auto dijkstras_k_shortest(const vector<vector<pair<int, int>>> &g, int k, int start = 0) {
     priority_queue<pair<T, int>, vector<pair<T, int>>, greater<pair<T, int>>> pq;

@@ -1,4 +1,7 @@
-#pragma once
+#ifndef DEBUG_H
+#define DEBUG_H
+
+#include <iostream>
 
 namespace debug_internal {
 
@@ -67,3 +70,5 @@ void debug(string s, T x, Args... args) {
 }
 
 #define dbg(...) debug_internal::debug(#__VA_ARGS__, __VA_ARGS__)
+
+#endif // DEBUG_H

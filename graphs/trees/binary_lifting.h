@@ -1,5 +1,3 @@
-#pragma once
-
 struct BinaryLifting {
     int log;
     vector<int> dep;

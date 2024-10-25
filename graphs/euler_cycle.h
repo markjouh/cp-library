@@ -1,5 +1,3 @@
-#pragma once
-
 auto euler_cycle(const vector<vector<int>> &g) {
     vector<vector<pair<int, int>>> h(sz(g));
     vector<int> deg(sz(g));

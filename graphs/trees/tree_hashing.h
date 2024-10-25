@@ -1,5 +1,3 @@
-#pragma once
-
 struct TreeHashing {
     map<vector<int>, int> hash;
 

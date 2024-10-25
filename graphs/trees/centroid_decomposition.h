@@ -1,5 +1,3 @@
-#pragma once
-
 struct CentroidDecomp {
     int root;
     vector<int> par;
