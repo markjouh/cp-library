@@ -3,36 +3,37 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/aizu/alds1/priority_queue.test.cpp
     title: verify/aizu/alds1/priority_queue.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: h
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 2 \"common/compress.h\"\n\ntemplate <class T>\nstruct Compress\
-    \ {\n    vector<T> vals;\n\n    Compress() {}\n    Compress(const vector<T> &a)\
-    \ : vals(a) {\n        init();\n    }\n    T operator[](int p) {\n        return\
-    \ vals[p];\n    }\n    friend size_t size(const Compress &x) {\n        return\
-    \ size(x.vals);\n    }\n\n    void init() {\n        sort(all(vals));\n      \
-    \  vals.resize(unique(all(vals)) - begin(vals));\n    }\n    void insert(T x)\
-    \ {\n        vals.push_back(x);\n    }\n    int get(T x) {\n        return lower_bound(all(vals),\
-    \ x) - begin(vals);\n    }\n};\n"
+    \ {\n    vector<T> vals;\n    bool ready = true;\n \n    void init() {\n     \
+    \   if (!ready) {\n            sort(all(vals));\n            vals.resize(unique(all(vals))\
+    \ - begin(vals));\n            ready = true;\n        }\n    }\n    void add(T\
+    \ x) {\n        vals.push_back(x);\n        ready = false;\n    }\n \n    int\
+    \ size() {\n        init();\n        return vals.size();\n    }\n    int operator[](int\
+    \ p) {\n        init();\n        return vals[p];\n    }\n    int get(T x) {\n\
+    \        init();\n        return lower_bound(all(vals), x) - begin(vals);\n  \
+    \  }\n};\n"
   code: "#pragma once\n\ntemplate <class T>\nstruct Compress {\n    vector<T> vals;\n\
-    \n    Compress() {}\n    Compress(const vector<T> &a) : vals(a) {\n        init();\n\
-    \    }\n    T operator[](int p) {\n        return vals[p];\n    }\n    friend\
-    \ size_t size(const Compress &x) {\n        return size(x.vals);\n    }\n\n  \
-    \  void init() {\n        sort(all(vals));\n        vals.resize(unique(all(vals))\
-    \ - begin(vals));\n    }\n    void insert(T x) {\n        vals.push_back(x);\n\
-    \    }\n    int get(T x) {\n        return lower_bound(all(vals), x) - begin(vals);\n\
-    \    }\n};"
+    \    bool ready = true;\n \n    void init() {\n        if (!ready) {\n       \
+    \     sort(all(vals));\n            vals.resize(unique(all(vals)) - begin(vals));\n\
+    \            ready = true;\n        }\n    }\n    void add(T x) {\n        vals.push_back(x);\n\
+    \        ready = false;\n    }\n \n    int size() {\n        init();\n       \
+    \ return vals.size();\n    }\n    int operator[](int p) {\n        init();\n \
+    \       return vals[p];\n    }\n    int get(T x) {\n        init();\n        return\
+    \ lower_bound(all(vals), x) - begin(vals);\n    }\n};"
   dependsOn: []
   isVerificationFile: false
   path: common/compress.h
   requiredBy: []
-  timestamp: '2024-09-29 00:35:58-04:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2024-10-25 19:29:34-04:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - verify/aizu/alds1/priority_queue.test.cpp
 documentation_of: common/compress.h

@@ -1,17 +1,14 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: datastructures/binary_indexed_tree/bit.h
     title: datastructures/binary_indexed_tree/bit.h
   _extendedRequiredBy: []
-  _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: verify/custom/datastructure/bit_2d.test.cpp
-    title: verify/custom/datastructure/bit_2d.test.cpp
+  _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: h
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':warning:'
   attributes:
     links: []
   bundledCode: "#line 2 \"datastructures/binary_indexed_tree/bit_2d.h\"\n\n#line 2\
@@ -49,9 +46,8 @@ data:
   path: datastructures/binary_indexed_tree/bit_2d.h
   requiredBy: []
   timestamp: '2024-09-29 00:35:58-04:00'
-  verificationStatus: LIBRARY_ALL_AC
-  verifiedWith:
-  - verify/custom/datastructure/bit_2d.test.cpp
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
 documentation_of: datastructures/binary_indexed_tree/bit_2d.h
 layout: document
 redirect_from:

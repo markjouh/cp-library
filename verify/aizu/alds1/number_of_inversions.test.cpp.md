@@ -30,17 +30,16 @@ data:
     \ PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_5_D\"\
     \n\n#line 1 \"misc/template.h\"\n#include <bits/stdc++.h>\n\nusing namespace std;\n\
     \n#ifdef LOCAL\n#include <utils>\n#else\n#define dbg(...)\n#endif\n\n#define all(x)\
-    \ begin(x), end(x)\n#define sz(x) int(size(x))\n\nusing ll = long long;\nusing\
-    \ ld = long double;\n\ntemplate <class T>\nbool ckmin(T &a, T b) {\n    return\
-    \ b < a ? a = b, 1 : 0;\n}\ntemplate <class T>\nbool ckmax(T &a, T b) {\n    return\
-    \ b > a ? a = b, 1 : 0;\n}\n#line 2 \"common/order_statistic_tree.h\"\n\n#include\
-    \ <ext/pb_ds/assoc_container.hpp>\n\nusing namespace __gnu_pbds;\n\ntemplate <class\
-    \ T>\nusing OSTree = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;\n\
-    #line 5 \"verify/aizu/alds1/number_of_inversions.test.cpp\"\n\nint main() {\n\
-    \    int n;\n    cin >> n;\n    ll ans = 0;\n    OSTree<int> st;\n    for (int\
-    \ i = 0; i < n; i++) {\n        int x;\n        cin >> x;\n        ans += sz(st)\
-    \ - st.order_of_key(x + 1);\n        st.insert(x);\n    }\n    cout << ans <<\
-    \ '\\n';\n}\n"
+    \ begin(x), end(x)\n#define sz(x) int(size(x))\n\nusing ll = long long;\n\ntemplate\
+    \ <class T>\nbool ckmin(T &a, T b) {\n    return b < a ? a = b, 1 : 0;\n}\ntemplate\
+    \ <class T>\nbool ckmax(T &a, T b) {\n    return b > a ? a = b, 1 : 0;\n}\n#line\
+    \ 2 \"common/order_statistic_tree.h\"\n\n#include <ext/pb_ds/assoc_container.hpp>\n\
+    \nusing namespace __gnu_pbds;\n\ntemplate <class T>\nusing OSTree = tree<T, null_type,\
+    \ less<T>, rb_tree_tag, tree_order_statistics_node_update>;\n#line 5 \"verify/aizu/alds1/number_of_inversions.test.cpp\"\
+    \n\nint main() {\n    int n;\n    cin >> n;\n    ll ans = 0;\n    OSTree<int>\
+    \ st;\n    for (int i = 0; i < n; i++) {\n        int x;\n        cin >> x;\n\
+    \        ans += sz(st) - st.order_of_key(x + 1);\n        st.insert(x);\n    }\n\
+    \    cout << ans << '\\n';\n}\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_5_D\"\
     \n\n#include \"../../../misc/template.h\"\n#include \"../../../common/order_statistic_tree.h\"\
     \n\nint main() {\n    int n;\n    cin >> n;\n    ll ans = 0;\n    OSTree<int>\
@@ -56,7 +55,7 @@ data:
   isVerificationFile: true
   path: verify/aizu/alds1/number_of_inversions.test.cpp
   requiredBy: []
-  timestamp: '2024-10-12 02:07:15-04:00'
+  timestamp: '2024-10-25 19:29:34-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/aizu/alds1/number_of_inversions.test.cpp

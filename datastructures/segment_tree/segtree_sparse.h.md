@@ -2,18 +2,15 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: verify/custom/datastructure/segment_tree_sparse.test.cpp
-    title: verify/custom/datastructure/segment_tree_sparse.test.cpp
+  _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: h
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':warning:'
   attributes:
     links: []
   bundledCode: "#line 2 \"datastructures/segment_tree/segtree_sparse.h\"\n\ntemplate\
-    \ <class T, auto op, auto id>\nstruct SparseSegtree {\n    SparseSegtree() {}\n\
-    \    \n    SparseSegtree(int n) {\n        log = __lg(n - 1) + 1;\n        tree_sz\
+    \ <class T, auto op, auto id>\nstruct SegtreeSparse {\n    SegtreeSparse() {}\n\
+    \    \n    SegtreeSparse(int n) {\n        log = __lg(n) + 1;\n        tree_sz\
     \ = 1 << log;\n        st.push_back(id());\n        ch.emplace_back(-1, -1);\n\
     \    }\n\n    void set(int p, T v) {\n        buf[0] = idx = 0;\n        int tl\
     \ = 0, tr = tree_sz;\n        while (tl + 1 != tr) {\n            int mid = (tl\
@@ -38,18 +35,18 @@ data:
     \ tr <= r) {\n            return st[x];\n        }\n        int mid = (tl + tr)\
     \ >> 1;\n        return op(get(l, r, ch[x].first, tl, mid), get(l, r, ch[x].second,\
     \ mid, tr));\n    }\n};\n"
-  code: "#pragma once\n\ntemplate <class T, auto op, auto id>\nstruct SparseSegtree\
-    \ {\n    SparseSegtree() {}\n    \n    SparseSegtree(int n) {\n        log = __lg(n\
-    \ - 1) + 1;\n        tree_sz = 1 << log;\n        st.push_back(id());\n      \
-    \  ch.emplace_back(-1, -1);\n    }\n\n    void set(int p, T v) {\n        buf[0]\
-    \ = idx = 0;\n        int tl = 0, tr = tree_sz;\n        while (tl + 1 != tr)\
-    \ {\n            int mid = (tl + tr) >> 1;\n            if (p < mid) {\n     \
-    \           buf[idx + 1] = get_l(buf[idx]);\n                tr = mid;\n     \
-    \       } else {\n                buf[idx + 1] = get_r(buf[idx]);\n          \
-    \      tl = mid;\n            }\n            idx++;\n        }\n        st[buf[idx--]]\
-    \ = v;\n        while (idx >= 0) {\n            pull(buf[idx--]);\n        }\n\
-    \    }\n\n    T query(int l, int r) {\n        return get(l, r + 1, 0, 0, tree_sz);\n\
-    \    }\n\nprivate:\n    int log, tree_sz;\n    vector<T> st;\n    vector<pair<int,\
+  code: "#pragma once\n\ntemplate <class T, auto op, auto id>\nstruct SegtreeSparse\
+    \ {\n    SegtreeSparse() {}\n    \n    SegtreeSparse(int n) {\n        log = __lg(n)\
+    \ + 1;\n        tree_sz = 1 << log;\n        st.push_back(id());\n        ch.emplace_back(-1,\
+    \ -1);\n    }\n\n    void set(int p, T v) {\n        buf[0] = idx = 0;\n     \
+    \   int tl = 0, tr = tree_sz;\n        while (tl + 1 != tr) {\n            int\
+    \ mid = (tl + tr) >> 1;\n            if (p < mid) {\n                buf[idx +\
+    \ 1] = get_l(buf[idx]);\n                tr = mid;\n            } else {\n   \
+    \             buf[idx + 1] = get_r(buf[idx]);\n                tl = mid;\n   \
+    \         }\n            idx++;\n        }\n        st[buf[idx--]] = v;\n    \
+    \    while (idx >= 0) {\n            pull(buf[idx--]);\n        }\n    }\n\n \
+    \   T query(int l, int r) {\n        return get(l, r + 1, 0, 0, tree_sz);\n  \
+    \  }\n\nprivate:\n    int log, tree_sz;\n    vector<T> st;\n    vector<pair<int,\
     \ int>> ch;\n\n    int buf[32];\n    int idx;\n\n    int get_l(int x) {\n    \
     \    if (ch[x].first == -1) {\n            ch[x].first = sz(st);\n           \
     \ st.push_back(id());\n            ch.emplace_back(-1, -1);\n        }\n     \
@@ -69,10 +66,9 @@ data:
   isVerificationFile: false
   path: datastructures/segment_tree/segtree_sparse.h
   requiredBy: []
-  timestamp: '2024-09-29 00:50:10-04:00'
-  verificationStatus: LIBRARY_ALL_AC
-  verifiedWith:
-  - verify/custom/datastructure/segment_tree_sparse.test.cpp
+  timestamp: '2024-10-25 19:29:34-04:00'
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
 documentation_of: datastructures/segment_tree/segtree_sparse.h
 layout: document
 redirect_from:

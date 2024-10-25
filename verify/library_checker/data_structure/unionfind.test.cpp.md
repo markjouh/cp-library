@@ -30,21 +30,20 @@ data:
     \n#define PROBLEM \"https://judge.yosupo.jp/problem/unionfind\"\n\n#line 1 \"\
     misc/template.h\"\n#include <bits/stdc++.h>\n\nusing namespace std;\n\n#ifdef\
     \ LOCAL\n#include <utils>\n#else\n#define dbg(...)\n#endif\n\n#define all(x) begin(x),\
-    \ end(x)\n#define sz(x) int(size(x))\n\nusing ll = long long;\nusing ld = long\
-    \ double;\n\ntemplate <class T>\nbool ckmin(T &a, T b) {\n    return b < a ? a\
-    \ = b, 1 : 0;\n}\ntemplate <class T>\nbool ckmax(T &a, T b) {\n    return b >\
-    \ a ? a = b, 1 : 0;\n}\n#line 2 \"datastructures/dsu.h\"\n\nstruct DSU {\n   \
-    \ vector<int> a;\n\n    DSU(int n) : a(n, -1) {}\n\n    int size(int x) {\n  \
-    \      return -a[find(x)];\n    }\n\n    int find(int x) {\n        return a[x]\
-    \ < 0 ? x : a[x] = find(a[x]);\n    }\n\n    bool join(int x, int y) {\n     \
-    \   x = find(x);\n        y = find(y);\n        if (x == y) {\n            return\
-    \ 0;\n        }\n        if (a[x] > a[y]) {\n            swap(x, y);\n       \
-    \ }\n        a[x] += a[y];\n        a[y] = x;\n        return 1;\n    }\n};\n\
-    #line 5 \"verify/library_checker/data_structure/unionfind.test.cpp\"\n\nint main()\
-    \ {\n    int n, q;\n    cin >> n >> q;\n    DSU dsu(n);\n    while (q--) {\n \
-    \       bool t;\n        int x, y;\n        cin >> t >> x >> y;\n        if (t)\
-    \ {\n            cout << (dsu.find(x) == dsu.find(y)) << '\\n';\n        } else\
-    \ {\n            dsu.join(x, y);\n        }\n    }\n}\n"
+    \ end(x)\n#define sz(x) int(size(x))\n\nusing ll = long long;\n\ntemplate <class\
+    \ T>\nbool ckmin(T &a, T b) {\n    return b < a ? a = b, 1 : 0;\n}\ntemplate <class\
+    \ T>\nbool ckmax(T &a, T b) {\n    return b > a ? a = b, 1 : 0;\n}\n#line 2 \"\
+    datastructures/dsu.h\"\n\nstruct DSU {\n    vector<int> a;\n\n    DSU(int n) :\
+    \ a(n, -1) {}\n\n    int size(int x) {\n        return -a[find(x)];\n    }\n\n\
+    \    int find(int x) {\n        return a[x] < 0 ? x : a[x] = find(a[x]);\n   \
+    \ }\n\n    bool join(int x, int y) {\n        x = find(x);\n        y = find(y);\n\
+    \        if (x == y) {\n            return 0;\n        }\n        if (a[x] > a[y])\
+    \ {\n            swap(x, y);\n        }\n        a[x] += a[y];\n        a[y] =\
+    \ x;\n        return 1;\n    }\n};\n#line 5 \"verify/library_checker/data_structure/unionfind.test.cpp\"\
+    \n\nint main() {\n    int n, q;\n    cin >> n >> q;\n    DSU dsu(n);\n    while\
+    \ (q--) {\n        bool t;\n        int x, y;\n        cin >> t >> x >> y;\n \
+    \       if (t) {\n            cout << (dsu.find(x) == dsu.find(y)) << '\\n';\n\
+    \        } else {\n            dsu.join(x, y);\n        }\n    }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/unionfind\"\n\n#include\
     \ \"../../../misc/template.h\"\n#include \"../../../datastructures/dsu.h\"\n\n\
     int main() {\n    int n, q;\n    cin >> n >> q;\n    DSU dsu(n);\n    while (q--)\
@@ -60,7 +59,7 @@ data:
   isVerificationFile: true
   path: verify/library_checker/data_structure/unionfind.test.cpp
   requiredBy: []
-  timestamp: '2024-10-12 02:07:15-04:00'
+  timestamp: '2024-10-25 19:29:34-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/library_checker/data_structure/unionfind.test.cpp

@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: esoteric/w_ary_tree.h
     title: esoteric/w_ary_tree.h
   - icon: ':question:'
@@ -30,29 +30,28 @@ data:
     \n#define PROBLEM \"https://judge.yosupo.jp/problem/double_ended_priority_queue\"\
     \n\n#line 1 \"misc/template.h\"\n#include <bits/stdc++.h>\n\nusing namespace std;\n\
     \n#ifdef LOCAL\n#include <utils>\n#else\n#define dbg(...)\n#endif\n\n#define all(x)\
-    \ begin(x), end(x)\n#define sz(x) int(size(x))\n\nusing ll = long long;\nusing\
-    \ ld = long double;\n\ntemplate <class T>\nbool ckmin(T &a, T b) {\n    return\
-    \ b < a ? a = b, 1 : 0;\n}\ntemplate <class T>\nbool ckmax(T &a, T b) {\n    return\
-    \ b > a ? a = b, 1 : 0;\n}\n#line 2 \"esoteric/w_ary_tree.h\"\n\ntemplate <int\
-    \ N>\nstruct WAryTree {\n    uint32_t freq[N];\n    uint64_t l0[(N >> 6) + 1],\
-    \ l1[(N >> 12) + 1], root;\n\n    WAryTree() {\n        memset(freq, 0, sizeof\
-    \ freq);\n        memset(l0, 0, sizeof l0);\n        memset(l1, 0, sizeof l1);\n\
-    \        root = 0;\n    }\n\n    void insert(int x) {\n        freq[x]++;\n  \
-    \      if (freq[x] == 1) {\n            l0[x >> 6] |= 1ull << (x & 63);\n    \
-    \        if (__builtin_popcountll(l0[x >> 6]) == 1) {\n                l1[x >>\
-    \ 12] |= 1ull << ((x >> 6) & 63);\n                if (__builtin_popcountll(l1[x\
-    \ >> 12]) == 1) {\n                    root |= 1ull << ((x >> 12) & 63);\n   \
-    \             }\n            }\n        }\n    }\n\n    void remove(int x) {\n\
-    \        freq[x]--;\n        if (freq[x] == 0) {\n            l0[x >> 6] ^= 1ull\
-    \ << (x & 63);\n            if (__builtin_popcountll(l0[x >> 6]) == 0) {\n   \
-    \             l1[x >> 12] ^= 1ull << ((x >> 6) & 63);\n                if (__builtin_popcountll(l1[x\
-    \ >> 12]) == 0) {\n                    root ^= 1ull << ((x >> 12) & 63);\n   \
-    \             }\n            }\n        }\n    }\n\n    int get_min() {\n    \
-    \    uint32_t p = __builtin_ctzll(root);\n        p = (p << 6) + __builtin_ctzll(l1[p]);\n\
-    \        p = (p << 6) + __builtin_ctzll(l0[p]);\n        return p;\n    }\n\n\
-    \    int get_max() {\n        uint32_t p = 63 - __builtin_clzll(root);\n     \
-    \   p = (p << 6) + 63 - __builtin_clzll(l1[p]);\n        p = (p << 6) + 63 - __builtin_clzll(l0[p]);\n\
-    \        return p;\n    }\n};\n#line 5 \"verify/library_checker/data_structure/double_ended_priority_queue.test.cpp\"\
+    \ begin(x), end(x)\n#define sz(x) int(size(x))\n\nusing ll = long long;\n\ntemplate\
+    \ <class T>\nbool ckmin(T &a, T b) {\n    return b < a ? a = b, 1 : 0;\n}\ntemplate\
+    \ <class T>\nbool ckmax(T &a, T b) {\n    return b > a ? a = b, 1 : 0;\n}\n#line\
+    \ 2 \"esoteric/w_ary_tree.h\"\n\ntemplate <int N>\nstruct WAryTree {\n    uint32_t\
+    \ freq[N];\n    uint64_t l0[(N >> 6) + 1], l1[(N >> 12) + 1], root;\n\n    WAryTree()\
+    \ {\n        memset(freq, 0, sizeof freq);\n        memset(l0, 0, sizeof l0);\n\
+    \        memset(l1, 0, sizeof l1);\n        root = 0;\n    }\n\n    void insert(int\
+    \ x) {\n        freq[x]++;\n        if (freq[x] == 1) {\n            l0[x >> 6]\
+    \ |= 1ull << (x & 63);\n            if (__builtin_popcountll(l0[x >> 6]) == 1)\
+    \ {\n                l1[x >> 12] |= 1ull << ((x >> 6) & 63);\n               \
+    \ if (__builtin_popcountll(l1[x >> 12]) == 1) {\n                    root |= 1ull\
+    \ << ((x >> 12) & 63);\n                }\n            }\n        }\n    }\n\n\
+    \    void remove(int x) {\n        freq[x]--;\n        if (freq[x] == 0) {\n \
+    \           l0[x >> 6] ^= 1ull << (x & 63);\n            if (__builtin_popcountll(l0[x\
+    \ >> 6]) == 0) {\n                l1[x >> 12] ^= 1ull << ((x >> 6) & 63);\n  \
+    \              if (__builtin_popcountll(l1[x >> 12]) == 0) {\n               \
+    \     root ^= 1ull << ((x >> 12) & 63);\n                }\n            }\n  \
+    \      }\n    }\n\n    int get_min() {\n        uint32_t p = __builtin_ctzll(root);\n\
+    \        p = (p << 6) + __builtin_ctzll(l1[p]);\n        p = (p << 6) + __builtin_ctzll(l0[p]);\n\
+    \        return p;\n    }\n\n    int get_max() {\n        uint32_t p = 63 - __builtin_clzll(root);\n\
+    \        p = (p << 6) + 63 - __builtin_clzll(l1[p]);\n        p = (p << 6) + 63\
+    \ - __builtin_clzll(l0[p]);\n        return p;\n    }\n};\n#line 5 \"verify/library_checker/data_structure/double_ended_priority_queue.test.cpp\"\
     \n\nconst int N = 1 << 18;\n\nint main() {\n    int n, q;\n    cin >> n >> q;\n\
     \    vector<int> queries, vals;\n    for (int i = 0; i < n; i++) {\n        int\
     \ x;\n        cin >> x;\n        queries.push_back(x);\n        vals.push_back(x);\n\
@@ -106,7 +105,7 @@ data:
   isVerificationFile: true
   path: verify/library_checker/data_structure/double_ended_priority_queue.test.cpp
   requiredBy: []
-  timestamp: '2024-10-12 02:07:15-04:00'
+  timestamp: '2024-10-25 19:29:34-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/library_checker/data_structure/double_ended_priority_queue.test.cpp

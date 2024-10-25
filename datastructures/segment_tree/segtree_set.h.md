@@ -5,13 +5,10 @@ data:
     path: datastructures/segment_tree/segtree.h
     title: datastructures/segment_tree/segtree.h
   _extendedRequiredBy: []
-  _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: verify/custom/datastructure/segtree_set.test.cpp
-    title: verify/custom/datastructure/segtree_set.test.cpp
+  _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: h
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':warning:'
   attributes:
     links: []
   bundledCode: "#line 2 \"datastructures/segment_tree/segtree_set.h\"\n\n#line 2 \"\
@@ -53,9 +50,8 @@ data:
   path: datastructures/segment_tree/segtree_set.h
   requiredBy: []
   timestamp: '2024-09-29 01:50:21-04:00'
-  verificationStatus: LIBRARY_ALL_AC
-  verifiedWith:
-  - verify/custom/datastructure/segtree_set.test.cpp
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
 documentation_of: datastructures/segment_tree/segtree_set.h
 layout: document
 redirect_from:

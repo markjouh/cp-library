@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: common/compress.h
     title: common/compress.h
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: esoteric/w_ary_tree.h
     title: esoteric/w_ary_tree.h
   - icon: ':question:'
@@ -21,9 +21,9 @@ data:
     title: utils/my_timer.h
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_9_C
@@ -33,35 +33,35 @@ data:
     \ \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_9_C\"\n\n\
     #line 1 \"misc/template.h\"\n#include <bits/stdc++.h>\n\nusing namespace std;\n\
     \n#ifdef LOCAL\n#include <utils>\n#else\n#define dbg(...)\n#endif\n\n#define all(x)\
-    \ begin(x), end(x)\n#define sz(x) int(size(x))\n\nusing ll = long long;\nusing\
-    \ ld = long double;\n\ntemplate <class T>\nbool ckmin(T &a, T b) {\n    return\
-    \ b < a ? a = b, 1 : 0;\n}\ntemplate <class T>\nbool ckmax(T &a, T b) {\n    return\
-    \ b > a ? a = b, 1 : 0;\n}\n#line 2 \"esoteric/w_ary_tree.h\"\n\ntemplate <int\
-    \ N>\nstruct WAryTree {\n    uint32_t freq[N];\n    uint64_t l0[(N >> 6) + 1],\
-    \ l1[(N >> 12) + 1], root;\n\n    WAryTree() {\n        memset(freq, 0, sizeof\
-    \ freq);\n        memset(l0, 0, sizeof l0);\n        memset(l1, 0, sizeof l1);\n\
-    \        root = 0;\n    }\n\n    void insert(int x) {\n        freq[x]++;\n  \
-    \      if (freq[x] == 1) {\n            l0[x >> 6] |= 1ull << (x & 63);\n    \
-    \        if (__builtin_popcountll(l0[x >> 6]) == 1) {\n                l1[x >>\
-    \ 12] |= 1ull << ((x >> 6) & 63);\n                if (__builtin_popcountll(l1[x\
-    \ >> 12]) == 1) {\n                    root |= 1ull << ((x >> 12) & 63);\n   \
-    \             }\n            }\n        }\n    }\n\n    void remove(int x) {\n\
-    \        freq[x]--;\n        if (freq[x] == 0) {\n            l0[x >> 6] ^= 1ull\
-    \ << (x & 63);\n            if (__builtin_popcountll(l0[x >> 6]) == 0) {\n   \
-    \             l1[x >> 12] ^= 1ull << ((x >> 6) & 63);\n                if (__builtin_popcountll(l1[x\
-    \ >> 12]) == 0) {\n                    root ^= 1ull << ((x >> 12) & 63);\n   \
-    \             }\n            }\n        }\n    }\n\n    int get_min() {\n    \
-    \    uint32_t p = __builtin_ctzll(root);\n        p = (p << 6) + __builtin_ctzll(l1[p]);\n\
-    \        p = (p << 6) + __builtin_ctzll(l0[p]);\n        return p;\n    }\n\n\
-    \    int get_max() {\n        uint32_t p = 63 - __builtin_clzll(root);\n     \
-    \   p = (p << 6) + 63 - __builtin_clzll(l1[p]);\n        p = (p << 6) + 63 - __builtin_clzll(l0[p]);\n\
-    \        return p;\n    }\n};\n#line 2 \"common/compress.h\"\n\ntemplate <class\
-    \ T>\nstruct Compress {\n    vector<T> vals;\n\n    Compress() {}\n    Compress(const\
-    \ vector<T> &a) : vals(a) {\n        init();\n    }\n    T operator[](int p) {\n\
-    \        return vals[p];\n    }\n    friend size_t size(const Compress &x) {\n\
-    \        return size(x.vals);\n    }\n\n    void init() {\n        sort(all(vals));\n\
-    \        vals.resize(unique(all(vals)) - begin(vals));\n    }\n    void insert(T\
-    \ x) {\n        vals.push_back(x);\n    }\n    int get(T x) {\n        return\
+    \ begin(x), end(x)\n#define sz(x) int(size(x))\n\nusing ll = long long;\n\ntemplate\
+    \ <class T>\nbool ckmin(T &a, T b) {\n    return b < a ? a = b, 1 : 0;\n}\ntemplate\
+    \ <class T>\nbool ckmax(T &a, T b) {\n    return b > a ? a = b, 1 : 0;\n}\n#line\
+    \ 2 \"esoteric/w_ary_tree.h\"\n\ntemplate <int N>\nstruct WAryTree {\n    uint32_t\
+    \ freq[N];\n    uint64_t l0[(N >> 6) + 1], l1[(N >> 12) + 1], root;\n\n    WAryTree()\
+    \ {\n        memset(freq, 0, sizeof freq);\n        memset(l0, 0, sizeof l0);\n\
+    \        memset(l1, 0, sizeof l1);\n        root = 0;\n    }\n\n    void insert(int\
+    \ x) {\n        freq[x]++;\n        if (freq[x] == 1) {\n            l0[x >> 6]\
+    \ |= 1ull << (x & 63);\n            if (__builtin_popcountll(l0[x >> 6]) == 1)\
+    \ {\n                l1[x >> 12] |= 1ull << ((x >> 6) & 63);\n               \
+    \ if (__builtin_popcountll(l1[x >> 12]) == 1) {\n                    root |= 1ull\
+    \ << ((x >> 12) & 63);\n                }\n            }\n        }\n    }\n\n\
+    \    void remove(int x) {\n        freq[x]--;\n        if (freq[x] == 0) {\n \
+    \           l0[x >> 6] ^= 1ull << (x & 63);\n            if (__builtin_popcountll(l0[x\
+    \ >> 6]) == 0) {\n                l1[x >> 12] ^= 1ull << ((x >> 6) & 63);\n  \
+    \              if (__builtin_popcountll(l1[x >> 12]) == 0) {\n               \
+    \     root ^= 1ull << ((x >> 12) & 63);\n                }\n            }\n  \
+    \      }\n    }\n\n    int get_min() {\n        uint32_t p = __builtin_ctzll(root);\n\
+    \        p = (p << 6) + __builtin_ctzll(l1[p]);\n        p = (p << 6) + __builtin_ctzll(l0[p]);\n\
+    \        return p;\n    }\n\n    int get_max() {\n        uint32_t p = 63 - __builtin_clzll(root);\n\
+    \        p = (p << 6) + 63 - __builtin_clzll(l1[p]);\n        p = (p << 6) + 63\
+    \ - __builtin_clzll(l0[p]);\n        return p;\n    }\n};\n#line 2 \"common/compress.h\"\
+    \n\ntemplate <class T>\nstruct Compress {\n    vector<T> vals;\n    bool ready\
+    \ = true;\n \n    void init() {\n        if (!ready) {\n            sort(all(vals));\n\
+    \            vals.resize(unique(all(vals)) - begin(vals));\n            ready\
+    \ = true;\n        }\n    }\n    void add(T x) {\n        vals.push_back(x);\n\
+    \        ready = false;\n    }\n \n    int size() {\n        init();\n       \
+    \ return vals.size();\n    }\n    int operator[](int p) {\n        init();\n \
+    \       return vals[p];\n    }\n    int get(T x) {\n        init();\n        return\
     \ lower_bound(all(vals), x) - begin(vals);\n    }\n};\n#line 6 \"verify/aizu/alds1/priority_queue.test.cpp\"\
     \n\nint main() {\n    string s;\n    int x;\n    vector<int> queries;\n    Compress<int>\
     \ vals;\n    while (cin >> s) {\n        if (s == \"end\") {\n            break;\n\
@@ -92,8 +92,8 @@ data:
   isVerificationFile: true
   path: verify/aizu/alds1/priority_queue.test.cpp
   requiredBy: []
-  timestamp: '2024-10-12 02:07:15-04:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2024-10-25 19:29:34-04:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/aizu/alds1/priority_queue.test.cpp
 layout: document

@@ -6,7 +6,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: common/binsearch.h
       title: common/binsearch.h
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: common/compress.h
       title: common/compress.h
     - icon: ':heavy_check_mark:'
@@ -17,16 +17,16 @@ data:
       title: common/order_statistic_tree.h
   - name: datastructures/binary_indexed_tree
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: datastructures/binary_indexed_tree/bit.h
       title: datastructures/binary_indexed_tree/bit.h
-    - icon: ':heavy_check_mark:'
+    - icon: ':warning:'
       path: datastructures/binary_indexed_tree/bit_2d.h
       title: datastructures/binary_indexed_tree/bit_2d.h
     - icon: ':heavy_check_mark:'
       path: datastructures/binary_indexed_tree/bit_dual.h
       title: datastructures/binary_indexed_tree/bit_dual.h
-    - icon: ':heavy_check_mark:'
+    - icon: ':warning:'
       path: datastructures/binary_indexed_tree/bit_range_add.h
       title: datastructures/binary_indexed_tree/bit_range_add.h
   - name: datastructures
@@ -45,10 +45,13 @@ data:
     - icon: ':warning:'
       path: datastructures/segment_tree/segtree_lazy.h
       title: datastructures/segment_tree/segtree_lazy.h
-    - icon: ':heavy_check_mark:'
+    - icon: ':warning:'
+      path: datastructures/segment_tree/segtree_range_update.h
+      title: datastructures/segment_tree/segtree_range_update.h
+    - icon: ':warning:'
       path: datastructures/segment_tree/segtree_set.h
       title: datastructures/segment_tree/segtree_set.h
-    - icon: ':heavy_check_mark:'
+    - icon: ':warning:'
       path: datastructures/segment_tree/segtree_sparse.h
       title: datastructures/segment_tree/segtree_sparse.h
   - name: datastructures/static
@@ -70,7 +73,7 @@ data:
     - icon: ':warning:'
       path: esoteric/permutations.h
       title: esoteric/permutations.h
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: esoteric/w_ary_tree.h
       title: esoteric/w_ary_tree.h
   - name: geometry
@@ -89,7 +92,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: graphs/kosaraju_scc.h
       title: graphs/kosaraju_scc.h
-    - icon: ':heavy_check_mark:'
+    - icon: ':warning:'
       path: graphs/topsort.h
       title: graphs/topsort.h
   - name: graphs/shortest_paths
@@ -105,7 +108,7 @@ data:
       title: graphs/shortest_paths/dijkstras_k_shortest.h
   - name: graphs/trees
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: graphs/trees/binary_lifting.h
       title: graphs/trees/binary_lifting.h
     - icon: ':warning:'
@@ -114,9 +117,9 @@ data:
     - icon: ':warning:'
       path: graphs/trees/lca.h
       title: graphs/trees/lca.h
-    - icon: ':x:'
-      path: graphs/trees/tree_isomorphism.h
-      title: graphs/trees/tree_isomorphism.h
+    - icon: ':heavy_check_mark:'
+      path: graphs/trees/tree_hashing.h
+      title: graphs/trees/tree_hashing.h
   - name: heuristic
     pages:
     - icon: ':warning:'
@@ -129,7 +132,7 @@ data:
       title: misc/template.h
   - name: numeric
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':warning:'
       path: numeric/binsearch_reals.h
       title: numeric/binsearch_reals.h
     - icon: ':warning:'
@@ -175,7 +178,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/aizu/alds1/number_of_inversions.test.cpp
       title: verify/aizu/alds1/number_of_inversions.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/aizu/alds1/priority_queue.test.cpp
       title: verify/aizu/alds1/priority_queue.test.cpp
   - name: verify/aizu/dsl
@@ -191,41 +194,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/aizu/ntl/power.test.cpp
       title: verify/aizu/ntl/power.test.cpp
-  - name: verify/custom/datastructure
-    pages:
-    - icon: ':heavy_check_mark:'
-      path: verify/custom/datastructure/bit_2d.test.cpp
-      title: verify/custom/datastructure/bit_2d.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: verify/custom/datastructure/bit_range_add.test.cpp
-      title: verify/custom/datastructure/bit_range_add.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: verify/custom/datastructure/segment_tree_sparse.test.cpp
-      title: verify/custom/datastructure/segment_tree_sparse.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: verify/custom/datastructure/segtree_set.test.cpp
-      title: verify/custom/datastructure/segtree_set.test.cpp
-  - name: verify/custom/graphs
-    pages:
-    - icon: ':heavy_check_mark:'
-      path: verify/custom/graphs/topsort.test.cpp
-      title: verify/custom/graphs/topsort.test.cpp
-  - name: verify/custom/numeric
-    pages:
-    - icon: ':heavy_check_mark:'
-      path: verify/custom/numeric/binary_search_reals.test.cpp
-      title: verify/custom/numeric/binary_search_reals.test.cpp
-  - name: verify/custom/utils
-    pages:
-    - icon: ':heavy_check_mark:'
-      path: verify/custom/utils/debug.test.cpp
-      title: verify/custom/utils/debug.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: verify/custom/utils/random_graph.test.cpp
-      title: verify/custom/utils/random_graph.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: verify/custom/utils/timer.test.cpp
-      title: verify/custom/utils/timer.test.cpp
   - name: verify/library_checker/data_structure
     pages:
     - icon: ':heavy_check_mark:'
@@ -275,13 +243,13 @@ data:
       title: verify/library_checker/string/suffix_array.test.cpp
   - name: verify/library_checker/tree
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/library_checker/tree/lca.test.cpp
       title: verify/library_checker/tree/lca.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/library_checker/tree/rooted_tree_isomorphism.test.cpp
       title: verify/library_checker/tree/rooted_tree_isomorphism.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/library_checker/tree/vertex_add_subtree_sum.test.cpp
       title: verify/library_checker/tree/vertex_add_subtree_sum.test.cpp
 layout: toppage

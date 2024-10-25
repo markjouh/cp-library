@@ -33,32 +33,32 @@ data:
     \n#define PROBLEM \"https://judge.yosupo.jp/problem/enumerate_palindromes\"\n\n\
     #line 1 \"misc/template.h\"\n#include <bits/stdc++.h>\n\nusing namespace std;\n\
     \n#ifdef LOCAL\n#include <utils>\n#else\n#define dbg(...)\n#endif\n\n#define all(x)\
-    \ begin(x), end(x)\n#define sz(x) int(size(x))\n\nusing ll = long long;\nusing\
-    \ ld = long double;\n\ntemplate <class T>\nbool ckmin(T &a, T b) {\n    return\
-    \ b < a ? a = b, 1 : 0;\n}\ntemplate <class T>\nbool ckmax(T &a, T b) {\n    return\
-    \ b > a ? a = b, 1 : 0;\n}\n#line 2 \"common/binsearch.h\"\n\ntemplate <class\
-    \ T, class U>\nT bsmin(T lo, T hi, U f) {\n    assert(lo <= hi);\n    hi++;\n\
-    \    for (T i = T(1) << __lg(hi - lo); i > 0; i >>= 1) {\n        hi -= (hi -\
-    \ i >= lo && f(hi - i)) * i;\n    }\n    return hi;\n}\n\ntemplate <class T, class\
-    \ U>\nT bsmax(T lo, T hi, U f) {\n    assert(lo <= hi);\n    lo--;\n    for (T\
-    \ i = T(1) << __lg(hi - lo); i > 0; i >>= 1) {\n        lo += (lo + i <= hi &&\
-    \ f(lo + i)) * i;\n    }\n    return lo;\n}\n#line 2 \"strings/hashing.h\"\n\n\
-    mt19937_64 rng(chrono::steady_clock::now().time_since_epoch().count());\n\nconst\
-    \ ll H_MOD = (1ll << 61) - 1;\nconst ll H_BASE = uniform_int_distribution<ll>(0,\
-    \ H_MOD)(rng);\n\nvector<ll> pow_b = {1};\n\nstruct Hash {\n    ll val;\n    int\
+    \ begin(x), end(x)\n#define sz(x) int(size(x))\n\nusing ll = long long;\n\ntemplate\
+    \ <class T>\nbool ckmin(T &a, T b) {\n    return b < a ? a = b, 1 : 0;\n}\ntemplate\
+    \ <class T>\nbool ckmax(T &a, T b) {\n    return b > a ? a = b, 1 : 0;\n}\n#line\
+    \ 2 \"common/binsearch.h\"\n\ntemplate <class T, class U>\nT bsmin(T lo, T hi,\
+    \ U f) {\n    assert(lo <= hi);\n    hi++;\n    for (T i = T(1) << __lg(hi - lo);\
+    \ i > 0; i >>= 1) {\n        hi -= (hi - i >= lo && f(hi - i)) * i;\n    }\n \
+    \   return hi;\n}\n\ntemplate <class T, class U>\nT bsmax(T lo, T hi, U f) {\n\
+    \    assert(lo <= hi);\n    lo--;\n    for (T i = T(1) << __lg(hi - lo); i > 0;\
+    \ i >>= 1) {\n        lo += (lo + i <= hi && f(lo + i)) * i;\n    }\n    return\
+    \ lo;\n}\n#line 2 \"strings/hashing.h\"\n\nnamespace hashing {\n\nmt19937_64 rng(chrono::steady_clock::now().time_since_epoch().count());\n\
+    \nconst ll MOD = (1ll << 61) - 1;\nconst ll B = uniform_int_distribution<ll>(0,\
+    \ MOD)(rng);\n\nvector<ll> pow_b = {1};\n\nstruct Hash {\n    ll val;\n    int\
     \ len;\n\n    Hash(ll x, int y) : val(x), len(y) {}\n\n    Hash operator+(Hash\
-    \ b) {\n        return Hash((__int128_t(val) * pow_b[b.len] + b.val) % H_MOD,\
-    \ len + b.len);\n    }\n\n    friend bool operator==(const Hash &a, const Hash\
-    \ &b) {\n        return a.val == b.val && a.len == b.len;\n    }\n};\n\nstruct\
-    \ StringHash {\n    int len;\n    vector<ll> h;\n\n    template <class T>\n  \
-    \  StringHash(const T &s) : len(sz(s)), h(len + 1) {\n        for (int i = 0;\
-    \ i < len; i++) {\n            h[i + 1] = (__int128_t(h[i]) * H_BASE + s[i]) %\
-    \ H_MOD;\n        }\n        while (sz(pow_b) <= len) {\n            pow_b.push_back(__int128_t(pow_b.back())\
-    \ * H_BASE % H_MOD);\n        }\n    }\n\n    Hash get(int l, int r) {\n     \
-    \   r++;\n        return Hash(((h[r] - __int128_t(h[l]) * pow_b[r - l]) % H_MOD\
-    \ + H_MOD) % H_MOD, r - l);\n    }\n\n    Hash get() {\n        return get(0,\
-    \ sz(h) - 1);\n    }\n};\n#line 6 \"verify/library_checker/string/enumerate_palindromes.test.cpp\"\
-    \n\nint main() {\n    string s;\n    cin >> s;\n    string rev = s;\n    reverse(all(rev));\n\
+    \ b) {\n        return Hash((__int128_t(val) * pow_b[b.len] + b.val) % MOD, len\
+    \ + b.len);\n    }\n\n    friend bool operator==(const Hash a, const Hash b) {\n\
+    \        return a.val == b.val && a.len == b.len;\n    }\n};\n\nstruct StringHash\
+    \ {\n    int len;\n    vector<ll> h;\n\n    template <class T>\n    StringHash(const\
+    \ T &s) : len(sz(s)), h(len + 1) {\n        for (int i = 0; i < len; i++) {\n\
+    \            h[i + 1] = (__int128_t(h[i]) * B + s[i]) % MOD;\n        }\n    \
+    \    while (sz(pow_b) <= len) {\n            pow_b.push_back(__int128_t(pow_b.back())\
+    \ * B % MOD);\n        }\n    }\n\n    Hash get(int l, int r) {\n        assert(l\
+    \ < ++r);\n        return Hash(((h[r] - __int128_t(h[l]) * pow_b[r - l]) % MOD\
+    \ + MOD) % MOD, r - l);\n    }\n\n    Hash get() {\n        return get(0, sz(h)\
+    \ - 2);\n    }\n};\n}\n\nusing hashing::Hash;\nusing hashing::StringHash;\n#line\
+    \ 6 \"verify/library_checker/string/enumerate_palindromes.test.cpp\"\n\nint main()\
+    \ {\n    string s;\n    cin >> s;\n    string rev = s;\n    reverse(all(rev));\n\
     \    StringHash a(s), b(rev);\n    const int n = sz(s);\n    vector<int> ans(2\
     \ * n - 1);\n    for (int i = 0; i < n; i++) {\n        ans[2 * i] = 2 * bsmax(0,\
     \ min(i, n - i - 1), [&](int d) {\n            return a.get(i - d, i) == b.get(n\
@@ -89,7 +89,7 @@ data:
   isVerificationFile: true
   path: verify/library_checker/string/enumerate_palindromes.test.cpp
   requiredBy: []
-  timestamp: '2024-10-12 02:07:15-04:00'
+  timestamp: '2024-10-25 19:29:34-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/library_checker/string/enumerate_palindromes.test.cpp

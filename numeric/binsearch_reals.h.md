@@ -2,13 +2,10 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: verify/custom/numeric/binary_search_reals.test.cpp
-    title: verify/custom/numeric/binary_search_reals.test.cpp
+  _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: h
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':warning:'
   attributes:
     links: []
   bundledCode: "#line 2 \"numeric/binsearch_reals.h\"\n\ntemplate <class T>\ndouble\
@@ -40,9 +37,8 @@ data:
   path: numeric/binsearch_reals.h
   requiredBy: []
   timestamp: '2024-09-19 17:13:58-04:00'
-  verificationStatus: LIBRARY_ALL_AC
-  verifiedWith:
-  - verify/custom/numeric/binary_search_reals.test.cpp
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
 documentation_of: numeric/binsearch_reals.h
 layout: document
 redirect_from:
