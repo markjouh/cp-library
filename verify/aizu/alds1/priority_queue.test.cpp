@@ -16,12 +16,11 @@ int main() {
         if (s == "insert") {
             cin >> x;
             queries.push_back(x);
-            vals.insert(x);
+            vals.add(x);
         } else {
             queries.push_back(-1);
         }
     }
-    vals.init();
     WAryTree<2000000> ds;
     for (auto x : queries) {
         if (x == -1) {
