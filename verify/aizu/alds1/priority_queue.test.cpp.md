@@ -1,29 +1,29 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: common/compress.h
     title: common/compress.h
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: esoteric/w_ary_tree.h
     title: esoteric/w_ary_tree.h
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: misc/template.h
     title: misc/template.h
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: utils/debug.h
     title: utils/debug.h
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: utils/my_random.h
     title: utils/my_random.h
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: utils/my_timer.h
     title: utils/my_timer.h
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_9_C
@@ -66,22 +66,22 @@ data:
     \n\nint main() {\n    string s;\n    int x;\n    vector<int> queries;\n    Compress<int>\
     \ vals;\n    while (cin >> s) {\n        if (s == \"end\") {\n            break;\n\
     \        }\n        if (s == \"insert\") {\n            cin >> x;\n          \
-    \  queries.push_back(x);\n            vals.insert(x);\n        } else {\n    \
-    \        queries.push_back(-1);\n        }\n    }\n    vals.init();\n    WAryTree<2000000>\
-    \ ds;\n    for (auto x : queries) {\n        if (x == -1) {\n            int idx\
-    \ = ds.get_max();\n            cout << vals[idx] << '\\n';\n            ds.remove(idx);\n\
-    \        } else {\n            ds.insert(vals.get(x));\n        }\n    }\n}\n"
+    \  queries.push_back(x);\n            vals.add(x);\n        } else {\n       \
+    \     queries.push_back(-1);\n        }\n    }\n    WAryTree<2000000> ds;\n  \
+    \  for (auto x : queries) {\n        if (x == -1) {\n            int idx = ds.get_max();\n\
+    \            cout << vals[idx] << '\\n';\n            ds.remove(idx);\n      \
+    \  } else {\n            ds.insert(vals.get(x));\n        }\n    }\n}\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_9_C\"\
     \n\n#include \"../../../misc/template.h\"\n#include \"../../../esoteric/w_ary_tree.h\"\
     \n#include \"../../../common/compress.h\"\n\nint main() {\n    string s;\n   \
     \ int x;\n    vector<int> queries;\n    Compress<int> vals;\n    while (cin >>\
     \ s) {\n        if (s == \"end\") {\n            break;\n        }\n        if\
     \ (s == \"insert\") {\n            cin >> x;\n            queries.push_back(x);\n\
-    \            vals.insert(x);\n        } else {\n            queries.push_back(-1);\n\
-    \        }\n    }\n    vals.init();\n    WAryTree<2000000> ds;\n    for (auto\
-    \ x : queries) {\n        if (x == -1) {\n            int idx = ds.get_max();\n\
-    \            cout << vals[idx] << '\\n';\n            ds.remove(idx);\n      \
-    \  } else {\n            ds.insert(vals.get(x));\n        }\n    }\n}"
+    \            vals.add(x);\n        } else {\n            queries.push_back(-1);\n\
+    \        }\n    }\n    WAryTree<2000000> ds;\n    for (auto x : queries) {\n \
+    \       if (x == -1) {\n            int idx = ds.get_max();\n            cout\
+    \ << vals[idx] << '\\n';\n            ds.remove(idx);\n        } else {\n    \
+    \        ds.insert(vals.get(x));\n        }\n    }\n}"
   dependsOn:
   - misc/template.h
   - utils/debug.h
@@ -92,8 +92,8 @@ data:
   isVerificationFile: true
   path: verify/aizu/alds1/priority_queue.test.cpp
   requiredBy: []
-  timestamp: '2024-10-25 19:29:34-04:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2024-10-25 19:41:49-04:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/aizu/alds1/priority_queue.test.cpp
 layout: document

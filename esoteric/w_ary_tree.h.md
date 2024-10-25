@@ -3,15 +3,15 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/aizu/alds1/priority_queue.test.cpp
     title: verify/aizu/alds1/priority_queue.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/library_checker/data_structure/double_ended_priority_queue.test.cpp
     title: verify/library_checker/data_structure/double_ended_priority_queue.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: h
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"esoteric/w_ary_tree.h\"\n\ntemplate <int N>\nstruct WAryTree\
@@ -57,7 +57,7 @@ data:
   path: esoteric/w_ary_tree.h
   requiredBy: []
   timestamp: '2024-09-29 00:35:58-04:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/aizu/alds1/priority_queue.test.cpp
   - verify/library_checker/data_structure/double_ended_priority_queue.test.cpp

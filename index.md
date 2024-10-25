@@ -6,7 +6,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: common/binsearch.h
       title: common/binsearch.h
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: common/compress.h
       title: common/compress.h
     - icon: ':heavy_check_mark:'
@@ -73,7 +73,7 @@ data:
     - icon: ':warning:'
       path: esoteric/permutations.h
       title: esoteric/permutations.h
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: esoteric/w_ary_tree.h
       title: esoteric/w_ary_tree.h
   - name: geometry
@@ -127,7 +127,7 @@ data:
       title: heuristic/simulated_annealing.h
   - name: misc
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: misc/template.h
       title: misc/template.h
   - name: numeric
@@ -160,13 +160,13 @@ data:
       title: strings/suffix_array.h
   - name: utils
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: utils/debug.h
       title: utils/debug.h
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: utils/my_random.h
       title: utils/my_random.h
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: utils/my_timer.h
       title: utils/my_timer.h
   verificationCategories:
@@ -178,7 +178,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/aizu/alds1/number_of_inversions.test.cpp
       title: verify/aizu/alds1/number_of_inversions.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/aizu/alds1/priority_queue.test.cpp
       title: verify/aizu/alds1/priority_queue.test.cpp
   - name: verify/aizu/dsl

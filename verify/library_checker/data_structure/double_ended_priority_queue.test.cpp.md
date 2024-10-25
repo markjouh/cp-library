@@ -1,19 +1,19 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: esoteric/w_ary_tree.h
     title: esoteric/w_ary_tree.h
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: misc/template.h
     title: misc/template.h
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: utils/debug.h
     title: utils/debug.h
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: utils/my_random.h
     title: utils/my_random.h
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: utils/my_timer.h
     title: utils/my_timer.h
   _extendedRequiredBy: []

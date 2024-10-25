@@ -2,10 +2,10 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: misc/template.h
     title: misc/template.h
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: utils/my_timer.h
     title: utils/my_timer.h
   _extendedVerifiedWith:
@@ -15,7 +15,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/aizu/alds1/number_of_inversions.test.cpp
     title: verify/aizu/alds1/number_of_inversions.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/aizu/alds1/priority_queue.test.cpp
     title: verify/aizu/alds1/priority_queue.test.cpp
   - icon: ':heavy_check_mark:'
@@ -75,9 +75,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/library_checker/tree/vertex_add_subtree_sum.test.cpp
     title: verify/library_checker/tree/vertex_add_subtree_sum.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: h
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"utils/my_random.h\"\n\n#include <cassert>\n#include <chrono>\n\
@@ -215,7 +215,7 @@ data:
   - misc/template.h
   - utils/my_timer.h
   timestamp: '2024-10-12 02:07:15-04:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/aizu/alds1/priority_queue.test.cpp
   - verify/aizu/alds1/binary_search.test.cpp
