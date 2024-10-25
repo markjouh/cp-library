@@ -1,11 +1,11 @@
 #pragma once
 
 template <class T, auto op, auto id>
-struct SparseSegtree {
-    SparseSegtree() {}
+struct SegtreeSparse {
+    SegtreeSparse() {}
     
-    SparseSegtree(int n) {
-        log = __lg(n - 1) + 1;
+    SegtreeSparse(int n) {
+        log = __lg(n) + 1;
         tree_sz = 1 << log;
         st.push_back(id());
         ch.emplace_back(-1, -1);

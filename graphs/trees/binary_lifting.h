@@ -6,7 +6,7 @@ struct BinaryLifting {
     vector<vector<int>> up;
 
     BinaryLifting(const vector<vector<int>> &g, int root = 0) {
-        log = __lg(sz(g) - 1) + 1;
+        log = __lg(sz(g)) + 1;
         dep.resize(sz(g), -1);
         up = vector(sz(g), vector<int>(log, -1));
 

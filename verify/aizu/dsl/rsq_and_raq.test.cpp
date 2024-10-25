@@ -6,7 +6,7 @@
 int main() {
     int n, q;
     cin >> n >> q;
-    DualBIT<ll> ft(n);
+    BITDual<ll> ft(n);
     while (q--) {
         bool t;
         int l, r;

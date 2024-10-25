@@ -3,26 +3,30 @@
 template <class T>
 struct Compress {
     vector<T> vals;
-
-    Compress() {}
-    Compress(const vector<T> &a) : vals(a) {
-        init();
+    bool ready = true;
+ 
+    void init() {
+        if (!ready) {
+            sort(all(vals));
+            vals.resize(unique(all(vals)) - begin(vals));
+            ready = true;
+        }
     }
-    T operator[](int p) {
+    void add(T x) {
+        vals.push_back(x);
+        ready = false;
+    }
+ 
+    int size() {
+        init();
+        return vals.size();
+    }
+    int operator[](int p) {
+        init();
         return vals[p];
     }
-    friend size_t size(const Compress &x) {
-        return size(x.vals);
-    }
-
-    void init() {
-        sort(all(vals));
-        vals.resize(unique(all(vals)) - begin(vals));
-    }
-    void insert(T x) {
-        vals.push_back(x);
-    }
     int get(T x) {
+        init();
         return lower_bound(all(vals), x) - begin(vals);
     }
 };

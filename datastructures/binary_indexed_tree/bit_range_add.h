@@ -1,13 +1,13 @@
 #pragma once
 
 template <class T>
-struct RangeAddBIT {
+struct BITRU {
     int n;
     vector<T> ft;
 
-    RangeAddBIT(int n_) : n(n_), ft(n + 1) {}
+    BITRU(int n_) : n(n_), ft(n + 1) {}
 
-    RangeAddBIT(const vector<T> &a) : n(sz(a)), ft(n + 1) {
+    BITRU(const vector<T> &a) : n(sz(a)), ft(n + 1) {
         for (int i = 0; i < n; i++) {
             ft[i + 1] += a[i];
             ft[i] -= a[i];

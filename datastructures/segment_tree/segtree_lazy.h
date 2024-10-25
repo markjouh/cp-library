@@ -1,13 +1,13 @@
 #pragma once
 
 template <class T, auto op, auto t_id, class U, auto mapping, auto comp, auto u_id>
-struct LazySegtree {
-    LazySegtree(int n_, T v = t_id()) {
+struct SegtreeLazy {
+    SegtreeLazy(int n_, T v = t_id()) {
         init(n_, v);
         pull_all();
     }
 
-    LazySegtree(const vector<T> &a) {
+    SegtreeLazy(const vector<T> &a) {
         init(sz(a), t_id());
         copy(all(a), begin(st) + tree_sz);
         pull_all();
@@ -64,7 +64,7 @@ struct LazySegtree {
         int x = 1;
         while (x < tree_sz) {
             push(x);
-            if (f(st[x << 1 | 1], suff)) {
+            if (f(op(st[x << 1 | 1], suff))) {
                 x = x << 1 | 1;
             } else {
                 suff = op(st[x << 1 | 1], suff);

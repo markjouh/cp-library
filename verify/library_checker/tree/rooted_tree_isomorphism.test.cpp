@@ -1,7 +1,7 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/rooted_tree_isomorphism_classification"
 
 #include "../../../misc/template.h"
-#include "../../../graphs/trees/tree_isomorphism.h"
+#include "../../../graphs/trees/tree_hashing.h"
 
 int main() {
     int n;
@@ -12,9 +12,9 @@ int main() {
         cin >> p;
         g[p].push_back(i);
     }
-    TreeIsomorphism iso;
-    auto res = iso.gen(g);
-    cout << sz(iso.hashes) << '\n';
+    TreeHashing iso;
+    auto res = iso.add(g);
+    cout << sz(iso.hash) << '\n';
     for (int x : res) {
         cout << x << ' ';
     }

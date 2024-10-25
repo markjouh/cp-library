@@ -3,11 +3,11 @@
 #include "bit.h"
 
 template <class T>
-struct DualBIT {
+struct BITDual {
     int n;
     BIT<T> pref, suff;
 
-    DualBIT(int n_) : n(n_), pref(n), suff(n) {}
+    BITDual(int n_) : n(n_), pref(n), suff(n) {}
 
     T sum(int r) {
         return pref.sum(r - 1) + suff.sum(n - r - 1) * (r + 1);

@@ -12,7 +12,6 @@ using namespace std;
 #define sz(x) int(size(x))
 
 using ll = long long;
-using ld = long double;
 
 template <class T>
 bool ckmin(T &a, T b) {
