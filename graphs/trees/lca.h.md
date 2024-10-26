@@ -11,7 +11,7 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"datastructures/static/rmq.h\"\n\ntemplate <class T>\nT min_f(T\
+  bundledCode: "#line 1 \"datastructures/static/rmq.h\"\ntemplate <class T>\nT min_f(T\
     \ x, T y) {\n    return x < y ? x : y;\n}\ntemplate <class T>\nT max_f(T x, T\
     \ y) {\n    return x > y ? x : y;\n}\n\ntemplate <class T, auto op = min_f<T>>\n\
     struct RMQ {\n    int n, log;\n    vector<vector<T>> st;\n\n    RMQ() {}\n   \
@@ -54,7 +54,7 @@ data:
   isVerificationFile: false
   path: graphs/trees/lca.h
   requiredBy: []
-  timestamp: '2024-10-25 19:46:34-04:00'
+  timestamp: '2024-10-25 20:41:56-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: graphs/trees/lca.h

@@ -11,8 +11,8 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"datastructures/static/mo_queries.h\"\n\ntemplate <class\
-    \ T, int B>\nstruct MoQueries {\n    vector<array<int, 3>> queries;\n    vector<T>\
+  bundledCode: "#line 1 \"datastructures/static/mo_queries.h\"\ntemplate <class T,\
+    \ int B>\nstruct MoQueries {\n    vector<array<int, 3>> queries;\n    vector<T>\
     \ res;\n\n    MoQueries() {}\n\n    void insert(int l, int r) {\n        queries.push_back({l,\
     \ r, sz(queries)});\n    }\n\n    template<class AddL, class DelL, class AddR,\
     \ class DelR, class Query>\n    void solve(AddL addL, DelL delL, AddR addR, DelR\
@@ -28,9 +28,9 @@ data:
     \        }\n    }\n\n    template<class Add, class Del, class Query>\n    void\
     \ solve(Add add, Del del, Query query) {\n        solve<Add, Del, Add, Del, Query>(add,\
     \ del, add, del, query);\n    }\n};\n"
-  code: "#pragma once\n\ntemplate <class T, int B>\nstruct MoQueries {\n    vector<array<int,\
-    \ 3>> queries;\n    vector<T> res;\n\n    MoQueries() {}\n\n    void insert(int\
-    \ l, int r) {\n        queries.push_back({l, r, sz(queries)});\n    }\n\n    template<class\
+  code: "template <class T, int B>\nstruct MoQueries {\n    vector<array<int, 3>>\
+    \ queries;\n    vector<T> res;\n\n    MoQueries() {}\n\n    void insert(int l,\
+    \ int r) {\n        queries.push_back({l, r, sz(queries)});\n    }\n\n    template<class\
     \ AddL, class DelL, class AddR, class DelR, class Query>\n    void solve(AddL\
     \ addL, DelL delL, AddR addR, DelR delR, Query query) {\n        sort(all(queries),\
     \ [](array<int, 3> a, array<int, 3> b) {\n            if (a[1] / B != b[1] / B)\
@@ -48,7 +48,7 @@ data:
   isVerificationFile: false
   path: datastructures/static/mo_queries.h
   requiredBy: []
-  timestamp: '2024-09-19 17:13:58-04:00'
+  timestamp: '2024-10-25 20:41:56-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/library_checker/data_structure/static_range_mode_query.test.cpp

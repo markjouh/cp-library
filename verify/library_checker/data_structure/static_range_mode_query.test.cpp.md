@@ -66,9 +66,9 @@ data:
     \    }\n\n    size_t operator()(uint64_t x) const {\n        static const uint64_t\
     \ FIXED_RANDOM = chrono::steady_clock::now().time_since_epoch().count();\n   \
     \     return splitmix64(x + FIXED_RANDOM);\n    }\n};\n\ntemplate <class T, class\
-    \ U>\nusing HashTable = __gnu_pbds::gp_hash_table<T, U, CustomHash>;\n#line 2\
-    \ \"datastructures/static/mo_queries.h\"\n\ntemplate <class T, int B>\nstruct\
-    \ MoQueries {\n    vector<array<int, 3>> queries;\n    vector<T> res;\n\n    MoQueries()\
+    \ U>\nusing HashTable = __gnu_pbds::gp_hash_table<T, U, CustomHash>;\n#line 1\
+    \ \"datastructures/static/mo_queries.h\"\ntemplate <class T, int B>\nstruct MoQueries\
+    \ {\n    vector<array<int, 3>> queries;\n    vector<T> res;\n\n    MoQueries()\
     \ {}\n\n    void insert(int l, int r) {\n        queries.push_back({l, r, sz(queries)});\n\
     \    }\n\n    template<class AddL, class DelL, class AddR, class DelR, class Query>\n\
     \    void solve(AddL addL, DelL delL, AddR addR, DelR delR, Query query) {\n \
@@ -121,7 +121,7 @@ data:
   isVerificationFile: true
   path: verify/library_checker/data_structure/static_range_mode_query.test.cpp
   requiredBy: []
-  timestamp: '2024-10-25 20:32:34-04:00'
+  timestamp: '2024-10-25 20:41:56-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/library_checker/data_structure/static_range_mode_query.test.cpp

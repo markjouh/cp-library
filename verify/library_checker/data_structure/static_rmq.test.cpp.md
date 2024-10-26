@@ -56,8 +56,8 @@ data:
     \   }\n    return lo;\n}\n\nconst int INF = INT_MAX / 2;\nconst ll INFL = LLONG_MAX\
     \ / 2;\n\n// void solve() {\n// }\n\n// int main() {\n//     cin.tie(0)->sync_with_stdio(0);\n\
     //     cin.exceptions(cin.failbit);\n\n//     int t = 1;\n//     // cin >> t;\n\
-    //     while (t--) {\n//         solve();\n//     }\n// }\n#line 2 \"datastructures/static/rmq.h\"\
-    \n\ntemplate <class T>\nT min_f(T x, T y) {\n    return x < y ? x : y;\n}\ntemplate\
+    //     while (t--) {\n//         solve();\n//     }\n// }\n#line 1 \"datastructures/static/rmq.h\"\
+    \ntemplate <class T>\nT min_f(T x, T y) {\n    return x < y ? x : y;\n}\ntemplate\
     \ <class T>\nT max_f(T x, T y) {\n    return x > y ? x : y;\n}\n\ntemplate <class\
     \ T, auto op = min_f<T>>\nstruct RMQ {\n    int n, log;\n    vector<vector<T>>\
     \ st;\n\n    RMQ() {}\n    RMQ(const vector<T> &a) : n(sz(a)), log(__lg(n) + 1)\
@@ -88,7 +88,7 @@ data:
   isVerificationFile: true
   path: verify/library_checker/data_structure/static_rmq.test.cpp
   requiredBy: []
-  timestamp: '2024-10-25 20:32:34-04:00'
+  timestamp: '2024-10-25 20:41:56-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/library_checker/data_structure/static_rmq.test.cpp
