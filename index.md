@@ -6,7 +6,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: common/binsearch.h
       title: common/binsearch.h
-    - icon: ':heavy_check_mark:'
+    - icon: ':warning:'
       path: common/compress.h
       title: common/compress.h
     - icon: ':heavy_check_mark:'
@@ -37,6 +37,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: datastructures/dsu.h
       title: datastructures/dsu.h
+    - icon: ':warning:'
+      path: datastructures/min_xor_set.h
+      title: datastructures/min_xor_set.h
   - name: datastructures/segment_tree
     pages:
     - icon: ':heavy_check_mark:'
@@ -65,17 +68,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: datastructures/static/rmq.h
       title: datastructures/static/rmq.h
-  - name: esoteric
-    pages:
-    - icon: ':warning:'
-      path: esoteric/min_xor_set.h
-      title: esoteric/min_xor_set.h
-    - icon: ':warning:'
-      path: esoteric/permutations.h
-      title: esoteric/permutations.h
-    - icon: ':heavy_check_mark:'
-      path: esoteric/w_ary_tree.h
-      title: esoteric/w_ary_tree.h
   - name: geometry
     pages:
     - icon: ':warning:'
@@ -175,9 +167,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/aizu/alds1/number_of_inversions.test.cpp
       title: verify/aizu/alds1/number_of_inversions.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: verify/aizu/alds1/priority_queue.test.cpp
-      title: verify/aizu/alds1/priority_queue.test.cpp
   - name: verify/aizu/dsl
     pages:
     - icon: ':heavy_check_mark:'
@@ -196,9 +185,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/library_checker/data_structure/associative_array.test.cpp
       title: verify/library_checker/data_structure/associative_array.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: verify/library_checker/data_structure/double_ended_priority_queue.test.cpp
-      title: verify/library_checker/data_structure/double_ended_priority_queue.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/library_checker/data_structure/point_add_range_sum.test.cpp
       title: verify/library_checker/data_structure/point_add_range_sum.test.cpp

@@ -2,13 +2,10 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: verify/aizu/alds1/priority_queue.test.cpp
-    title: verify/aizu/alds1/priority_queue.test.cpp
+  _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: h
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':warning:'
   attributes:
     links: []
   bundledCode: "#line 1 \"common/compress.h\"\ntemplate <class T>\nstruct Compress\
@@ -33,9 +30,8 @@ data:
   path: common/compress.h
   requiredBy: []
   timestamp: '2024-10-25 20:08:44-04:00'
-  verificationStatus: LIBRARY_ALL_AC
-  verifiedWith:
-  - verify/aizu/alds1/priority_queue.test.cpp
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
 documentation_of: common/compress.h
 layout: document
 redirect_from:

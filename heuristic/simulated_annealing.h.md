@@ -16,7 +16,7 @@ data:
     \ >= 1) {\n            break;\n        }\n\n        edit();\n        new_cost\
     \ = eval();\n\n        double temp = temp_start * pow(temp_end / temp_start, elapsed_frac);\n\
     \        if (new_cost < cur_cost || double(rand()) / RAND_MAX < exp((cur_cost\
-    \ - new_cost) / temp) {\n            cur_cost = new_cost;\n        } else {\n\
+    \ - new_cost) / temp)) {\n            cur_cost = new_cost;\n        } else {\n\
     \            undo();\n        }\n\n        mn_cost = min(mn_cost, cur_cost);\n\
     \    }\n    return mn_cost;\n}\n"
   code: "template <class T, auto edit, auto undo, auto eval>\nT anneal(int ms) {\n\
@@ -26,14 +26,14 @@ data:
     \ / ms;\n        if (elapsed_frac >= 1) {\n            break;\n        }\n\n \
     \       edit();\n        new_cost = eval();\n\n        double temp = temp_start\
     \ * pow(temp_end / temp_start, elapsed_frac);\n        if (new_cost < cur_cost\
-    \ || double(rand()) / RAND_MAX < exp((cur_cost - new_cost) / temp) {\n       \
-    \     cur_cost = new_cost;\n        } else {\n            undo();\n        }\n\
+    \ || double(rand()) / RAND_MAX < exp((cur_cost - new_cost) / temp)) {\n      \
+    \      cur_cost = new_cost;\n        } else {\n            undo();\n        }\n\
     \n        mn_cost = min(mn_cost, cur_cost);\n    }\n    return mn_cost;\n}"
   dependsOn: []
   isVerificationFile: false
   path: heuristic/simulated_annealing.h
   requiredBy: []
-  timestamp: '2024-10-25 20:01:05-04:00'
+  timestamp: '2024-10-25 20:15:09-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: heuristic/simulated_annealing.h

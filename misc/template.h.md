@@ -19,9 +19,6 @@ data:
     path: verify/aizu/alds1/number_of_inversions.test.cpp
     title: verify/aizu/alds1/number_of_inversions.test.cpp
   - icon: ':heavy_check_mark:'
-    path: verify/aizu/alds1/priority_queue.test.cpp
-    title: verify/aizu/alds1/priority_queue.test.cpp
-  - icon: ':heavy_check_mark:'
     path: verify/aizu/dsl/rmq.test.cpp
     title: verify/aizu/dsl/rmq.test.cpp
   - icon: ':heavy_check_mark:'
@@ -33,9 +30,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/library_checker/data_structure/associative_array.test.cpp
     title: verify/library_checker/data_structure/associative_array.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verify/library_checker/data_structure/double_ended_priority_queue.test.cpp
-    title: verify/library_checker/data_structure/double_ended_priority_queue.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/library_checker/data_structure/point_add_range_sum.test.cpp
     title: verify/library_checker/data_structure/point_add_range_sum.test.cpp
@@ -104,7 +98,6 @@ data:
   timestamp: '2024-10-25 19:46:34-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/aizu/alds1/priority_queue.test.cpp
   - verify/aizu/alds1/binary_search.test.cpp
   - verify/aizu/alds1/number_of_inversions.test.cpp
   - verify/aizu/ntl/power.test.cpp
@@ -115,7 +108,6 @@ data:
   - verify/library_checker/data_structure/set_xor_min.test.cpp
   - verify/library_checker/data_structure/point_add_range_sum.test.cpp
   - verify/library_checker/data_structure/unionfind.test.cpp
-  - verify/library_checker/data_structure/double_ended_priority_queue.test.cpp
   - verify/library_checker/data_structure/static_range_mode_query.test.cpp
   - verify/library_checker/data_structure/range_kth_smallest.test.cpp
   - verify/library_checker/data_structure/associative_array.test.cpp
