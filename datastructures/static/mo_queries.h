@@ -1,5 +1,3 @@
-#pragma once
-
 template <class T, int B>
 struct MoQueries {
     vector<array<int, 3>> queries;

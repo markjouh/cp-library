@@ -8,10 +8,12 @@ struct SegtreeRU {
     void update(int l, int r, T v) {
         for (l += n, r += n + 1; l < r; l >>= 1, r >>= 1) {
             if (l & 1) {
-                ckmax(st[l++], v);
+                st[l] = op(st[l], v);
+                l++;
             }
             if (r & 1) {
-                ckmax(st[--r], v);
+                r--;
+                st[r] = op(st[r], v);
             }
         }
     }
@@ -19,7 +21,7 @@ struct SegtreeRU {
     int get(int p) {
         T res = id();
         for (p += n; p > 0; p >>= 1) {
-            ckmax(res, st[p]);
+            res = op(res, st[p]);
         }
         return res;
     }

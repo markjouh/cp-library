@@ -1,5 +1,3 @@
-#pragma once
-
 template <class T>
 T min_f(T x, T y) {
     return x < y ? x : y;
