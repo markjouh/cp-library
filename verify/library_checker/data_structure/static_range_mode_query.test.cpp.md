@@ -36,7 +36,7 @@ data:
     \ begin(x), end(x)\n#define sz(x) int(size(x))\n\nusing ll = long long;\n\ntemplate\
     \ <class T>\nbool ckmin(T &a, T b) {\n    return b < a ? a = b, 1 : 0;\n}\ntemplate\
     \ <class T>\nbool ckmax(T &a, T b) {\n    return b > a ? a = b, 1 : 0;\n}\n#line\
-    \ 2 \"common/hash_table.h\"\n\n#include <ext/pb_ds/assoc_container.hpp>\n\nstruct\
+    \ 1 \"common/hash_table.h\"\n#include <ext/pb_ds/assoc_container.hpp>\n\nstruct\
     \ CustomHash {\n    static uint64_t splitmix64(uint64_t x) {\n        x += 0x9e3779b97f4a7c15;\n\
     \        x = (x ^ (x >> 30)) * 0xbf58476d1ce4e5b9;\n        x = (x ^ (x >> 27))\
     \ * 0x94d049bb133111eb;\n        return x ^ (x >> 31);\n    }\n\n    size_t operator()(uint64_t\
@@ -97,7 +97,7 @@ data:
   isVerificationFile: true
   path: verify/library_checker/data_structure/static_range_mode_query.test.cpp
   requiredBy: []
-  timestamp: '2024-10-25 19:46:34-04:00'
+  timestamp: '2024-10-25 20:08:44-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/library_checker/data_structure/static_range_mode_query.test.cpp

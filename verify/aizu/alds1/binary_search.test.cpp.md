@@ -33,8 +33,8 @@ data:
     \ begin(x), end(x)\n#define sz(x) int(size(x))\n\nusing ll = long long;\n\ntemplate\
     \ <class T>\nbool ckmin(T &a, T b) {\n    return b < a ? a = b, 1 : 0;\n}\ntemplate\
     \ <class T>\nbool ckmax(T &a, T b) {\n    return b > a ? a = b, 1 : 0;\n}\n#line\
-    \ 2 \"common/binsearch.h\"\n\ntemplate <class T, class U>\nT bsmin(T lo, T hi,\
-    \ U f) {\n    assert(lo <= hi);\n    hi++;\n    for (T i = T(1) << __lg(hi - lo);\
+    \ 1 \"common/binsearch.h\"\ntemplate <class T, class U>\nT bsmin(T lo, T hi, U\
+    \ f) {\n    assert(lo <= hi);\n    hi++;\n    for (T i = T(1) << __lg(hi - lo);\
     \ i > 0; i >>= 1) {\n        hi -= (hi - i >= lo && f(hi - i)) * i;\n    }\n \
     \   return hi;\n}\n\ntemplate <class T, class U>\nT bsmax(T lo, T hi, U f) {\n\
     \    assert(lo <= hi);\n    lo--;\n    for (T i = T(1) << __lg(hi - lo); i > 0;\
@@ -63,7 +63,7 @@ data:
   isVerificationFile: true
   path: verify/aizu/alds1/binary_search.test.cpp
   requiredBy: []
-  timestamp: '2024-10-25 19:46:34-04:00'
+  timestamp: '2024-10-25 20:08:44-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/aizu/alds1/binary_search.test.cpp

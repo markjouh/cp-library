@@ -32,7 +32,7 @@ data:
     \ begin(x), end(x)\n#define sz(x) int(size(x))\n\nusing ll = long long;\n\ntemplate\
     \ <class T>\nbool ckmin(T &a, T b) {\n    return b < a ? a = b, 1 : 0;\n}\ntemplate\
     \ <class T>\nbool ckmax(T &a, T b) {\n    return b > a ? a = b, 1 : 0;\n}\n#line\
-    \ 2 \"datastructures/segment_tree/segtree.h\"\n\ntemplate <class T, auto op, auto\
+    \ 1 \"datastructures/segment_tree/segtree.h\"\ntemplate <class T, auto op, auto\
     \ id>\nstruct Segtree {\n    int n;\n    vector<T> st;\n\n    Segtree(int n_)\
     \ : n(n_), st(2 * n, id()) {}\n\n    Segtree(const vector<T> &a) : n(sz(a)), st(2\
     \ * n) {\n        copy(all(a), begin(st) + n);\n        for (int i = n - 1; i\
@@ -66,7 +66,7 @@ data:
   isVerificationFile: true
   path: verify/aizu/dsl/rmq.test.cpp
   requiredBy: []
-  timestamp: '2024-10-25 19:46:34-04:00'
+  timestamp: '2024-10-25 20:08:44-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/aizu/dsl/rmq.test.cpp

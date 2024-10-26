@@ -54,9 +54,9 @@ data:
     \        p = (p << 6) + __builtin_ctzll(l1[p]);\n        p = (p << 6) + __builtin_ctzll(l0[p]);\n\
     \        return p;\n    }\n\n    int get_max() {\n        uint32_t p = 63 - __builtin_clzll(root);\n\
     \        p = (p << 6) + 63 - __builtin_clzll(l1[p]);\n        p = (p << 6) + 63\
-    \ - __builtin_clzll(l0[p]);\n        return p;\n    }\n};\n#line 2 \"common/compress.h\"\
-    \n\ntemplate <class T>\nstruct Compress {\n    vector<T> vals;\n    bool ready\
-    \ = true;\n \n    void init() {\n        if (!ready) {\n            sort(all(vals));\n\
+    \ - __builtin_clzll(l0[p]);\n        return p;\n    }\n};\n#line 1 \"common/compress.h\"\
+    \ntemplate <class T>\nstruct Compress {\n    vector<T> vals;\n    bool ready =\
+    \ true;\n \n    void init() {\n        if (!ready) {\n            sort(all(vals));\n\
     \            vals.resize(unique(all(vals)) - begin(vals));\n            ready\
     \ = true;\n        }\n    }\n    void add(T x) {\n        vals.push_back(x);\n\
     \        ready = false;\n    }\n \n    int size() {\n        init();\n       \
@@ -92,7 +92,7 @@ data:
   isVerificationFile: true
   path: verify/aizu/alds1/priority_queue.test.cpp
   requiredBy: []
-  timestamp: '2024-10-25 20:01:05-04:00'
+  timestamp: '2024-10-25 20:08:44-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/aizu/alds1/priority_queue.test.cpp

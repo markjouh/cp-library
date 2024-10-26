@@ -33,9 +33,9 @@ data:
     \ begin(x), end(x)\n#define sz(x) int(size(x))\n\nusing ll = long long;\n\ntemplate\
     \ <class T>\nbool ckmin(T &a, T b) {\n    return b < a ? a = b, 1 : 0;\n}\ntemplate\
     \ <class T>\nbool ckmax(T &a, T b) {\n    return b > a ? a = b, 1 : 0;\n}\n#line\
-    \ 2 \"datastructures/binary_indexed_tree/bit.h\"\n\ntemplate <class T>\nstruct\
-    \ BIT {\n    int n;\n    vector<T> ft;\n\n    BIT(int n_) : n(n_), ft(n + 1) {}\n\
-    \n    BIT(const vector<T> &a) : n(sz(a)), ft(n + 1) {\n        for (int i = 1;\
+    \ 1 \"datastructures/binary_indexed_tree/bit.h\"\ntemplate <class T>\nstruct BIT\
+    \ {\n    int n;\n    vector<T> ft;\n\n    BIT(int n_) : n(n_), ft(n + 1) {}\n\n\
+    \    BIT(const vector<T> &a) : n(sz(a)), ft(n + 1) {\n        for (int i = 1;\
     \ i <= n; i++) {\n            ft[i] += a[i - 1];\n            if (i + (i & -i)\
     \ <= n) {\n                ft[i + (i & -i)] += ft[i];\n            }\n       \
     \ }\n    }\n\n    void add(int p, T v) {\n        for (p++; p <= n; p += p & -p)\
@@ -80,7 +80,7 @@ data:
   isVerificationFile: true
   path: verify/library_checker/tree/vertex_add_subtree_sum.test.cpp
   requiredBy: []
-  timestamp: '2024-10-25 19:46:34-04:00'
+  timestamp: '2024-10-25 20:08:44-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/library_checker/tree/vertex_add_subtree_sum.test.cpp

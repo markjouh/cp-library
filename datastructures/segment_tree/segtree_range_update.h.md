@@ -8,28 +8,28 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"datastructures/segment_tree/segtree_range_update.h\"\n\n\
-    template <class T, auto op, auto id>\nstruct SegtreeRU {\n    int n;\n    vector<T>\
-    \ st;\n\n    SegtreeRU(int n_) : n(n_), st(2 * n, id()) {}\n\n    void update(int\
-    \ l, int r, T v) {\n        for (l += n, r += n + 1; l < r; l >>= 1, r >>= 1)\
-    \ {\n            if (l & 1) {\n                ckmax(st[l++], v);\n          \
-    \  }\n            if (r & 1) {\n                ckmax(st[--r], v);\n         \
-    \   }\n        }\n    }\n\n    int get(int p) {\n        T res = id();\n     \
-    \   for (p += n; p > 0; p >>= 1) {\n            ckmax(res, st[p]);\n        }\n\
-    \        return res;\n    }\n};\n"
-  code: "#pragma once\n\ntemplate <class T, auto op, auto id>\nstruct SegtreeRU {\n\
-    \    int n;\n    vector<T> st;\n\n    SegtreeRU(int n_) : n(n_), st(2 * n, id())\
-    \ {}\n\n    void update(int l, int r, T v) {\n        for (l += n, r += n + 1;\
-    \ l < r; l >>= 1, r >>= 1) {\n            if (l & 1) {\n                ckmax(st[l++],\
-    \ v);\n            }\n            if (r & 1) {\n                ckmax(st[--r],\
-    \ v);\n            }\n        }\n    }\n\n    int get(int p) {\n        T res\
-    \ = id();\n        for (p += n; p > 0; p >>= 1) {\n            ckmax(res, st[p]);\n\
-    \        }\n        return res;\n    }\n};"
+  bundledCode: "#line 1 \"datastructures/segment_tree/segtree_range_update.h\"\ntemplate\
+    \ <class T, auto op, auto id>\nstruct SegtreeRU {\n    int n;\n    vector<T> st;\n\
+    \n    SegtreeRU(int n_) : n(n_), st(2 * n, id()) {}\n\n    void update(int l,\
+    \ int r, T v) {\n        for (l += n, r += n + 1; l < r; l >>= 1, r >>= 1) {\n\
+    \            if (l & 1) {\n                ckmax(st[l++], v);\n            }\n\
+    \            if (r & 1) {\n                ckmax(st[--r], v);\n            }\n\
+    \        }\n    }\n\n    int get(int p) {\n        T res = id();\n        for\
+    \ (p += n; p > 0; p >>= 1) {\n            ckmax(res, st[p]);\n        }\n    \
+    \    return res;\n    }\n};\n"
+  code: "template <class T, auto op, auto id>\nstruct SegtreeRU {\n    int n;\n  \
+    \  vector<T> st;\n\n    SegtreeRU(int n_) : n(n_), st(2 * n, id()) {}\n\n    void\
+    \ update(int l, int r, T v) {\n        for (l += n, r += n + 1; l < r; l >>= 1,\
+    \ r >>= 1) {\n            if (l & 1) {\n                ckmax(st[l++], v);\n \
+    \           }\n            if (r & 1) {\n                ckmax(st[--r], v);\n\
+    \            }\n        }\n    }\n\n    int get(int p) {\n        T res = id();\n\
+    \        for (p += n; p > 0; p >>= 1) {\n            ckmax(res, st[p]);\n    \
+    \    }\n        return res;\n    }\n};"
   dependsOn: []
   isVerificationFile: false
   path: datastructures/segment_tree/segtree_range_update.h
   requiredBy: []
-  timestamp: '2024-10-25 19:29:34-04:00'
+  timestamp: '2024-10-25 20:08:44-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: datastructures/segment_tree/segtree_range_update.h

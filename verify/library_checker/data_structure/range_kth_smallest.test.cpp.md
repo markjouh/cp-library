@@ -47,11 +47,11 @@ data:
     \             ls += lower_bound(all(st[l]), v) - begin(st[l]);\n             \
     \   l++;\n            }\n            if (r & 1) {\n                r--;\n    \
     \            rs += lower_bound(all(st[r]), v) - begin(st[r]);\n            }\n\
-    \        }\n        return ls + rs;\n    }\n};\n#line 2 \"common/binsearch.h\"\
-    \n\ntemplate <class T, class U>\nT bsmin(T lo, T hi, U f) {\n    assert(lo <=\
-    \ hi);\n    hi++;\n    for (T i = T(1) << __lg(hi - lo); i > 0; i >>= 1) {\n \
-    \       hi -= (hi - i >= lo && f(hi - i)) * i;\n    }\n    return hi;\n}\n\ntemplate\
-    \ <class T, class U>\nT bsmax(T lo, T hi, U f) {\n    assert(lo <= hi);\n    lo--;\n\
+    \        }\n        return ls + rs;\n    }\n};\n#line 1 \"common/binsearch.h\"\
+    \ntemplate <class T, class U>\nT bsmin(T lo, T hi, U f) {\n    assert(lo <= hi);\n\
+    \    hi++;\n    for (T i = T(1) << __lg(hi - lo); i > 0; i >>= 1) {\n        hi\
+    \ -= (hi - i >= lo && f(hi - i)) * i;\n    }\n    return hi;\n}\n\ntemplate <class\
+    \ T, class U>\nT bsmax(T lo, T hi, U f) {\n    assert(lo <= hi);\n    lo--;\n\
     \    for (T i = T(1) << __lg(hi - lo); i > 0; i >>= 1) {\n        lo += (lo +\
     \ i <= hi && f(lo + i)) * i;\n    }\n    return lo;\n}\n#line 6 \"verify/library_checker/data_structure/range_kth_smallest.test.cpp\"\
     \n\nint main() {\n    int n, q;\n    cin >> n >> q;\n    vector<int> a(n);\n \
@@ -77,7 +77,7 @@ data:
   isVerificationFile: true
   path: verify/library_checker/data_structure/range_kth_smallest.test.cpp
   requiredBy: []
-  timestamp: '2024-10-25 19:46:34-04:00'
+  timestamp: '2024-10-25 20:08:44-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/library_checker/data_structure/range_kth_smallest.test.cpp

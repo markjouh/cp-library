@@ -11,8 +11,7 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: '#line 2 "common/order_statistic_tree.h"
-
+  bundledCode: '#line 1 "common/order_statistic_tree.h"
 
     #include <ext/pb_ds/assoc_container.hpp>
 
@@ -25,10 +24,7 @@ data:
     using OSTree = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
 
     '
-  code: '#pragma once
-
-
-    #include <ext/pb_ds/assoc_container.hpp>
+  code: '#include <ext/pb_ds/assoc_container.hpp>
 
 
     using namespace __gnu_pbds;
@@ -43,7 +39,7 @@ data:
   isVerificationFile: false
   path: common/order_statistic_tree.h
   requiredBy: []
-  timestamp: '2024-09-29 00:35:58-04:00'
+  timestamp: '2024-10-25 20:08:44-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/aizu/alds1/number_of_inversions.test.cpp

@@ -36,16 +36,16 @@ data:
     \ begin(x), end(x)\n#define sz(x) int(size(x))\n\nusing ll = long long;\n\ntemplate\
     \ <class T>\nbool ckmin(T &a, T b) {\n    return b < a ? a = b, 1 : 0;\n}\ntemplate\
     \ <class T>\nbool ckmax(T &a, T b) {\n    return b > a ? a = b, 1 : 0;\n}\n#line\
-    \ 2 \"datastructures/binary_indexed_tree/bit_dual.h\"\n\n#line 2 \"datastructures/binary_indexed_tree/bit.h\"\
-    \n\ntemplate <class T>\nstruct BIT {\n    int n;\n    vector<T> ft;\n\n    BIT(int\
-    \ n_) : n(n_), ft(n + 1) {}\n\n    BIT(const vector<T> &a) : n(sz(a)), ft(n +\
-    \ 1) {\n        for (int i = 1; i <= n; i++) {\n            ft[i] += a[i - 1];\n\
-    \            if (i + (i & -i) <= n) {\n                ft[i + (i & -i)] += ft[i];\n\
-    \            }\n        }\n    }\n\n    void add(int p, T v) {\n        for (p++;\
-    \ p <= n; p += p & -p) {\n            ft[p] += v;\n        }\n    }\n\n    T sum(int\
-    \ r) {\n        T res = 0;\n        for (r++; r > 0; r -= r & -r) {\n        \
-    \    res += ft[r];\n        }\n        return res;\n    }\n\n    T sum(int l,\
-    \ int r) {\n        return sum(r) - sum(l - 1);\n    }\n};\n#line 4 \"datastructures/binary_indexed_tree/bit_dual.h\"\
+    \ 1 \"datastructures/binary_indexed_tree/bit.h\"\ntemplate <class T>\nstruct BIT\
+    \ {\n    int n;\n    vector<T> ft;\n\n    BIT(int n_) : n(n_), ft(n + 1) {}\n\n\
+    \    BIT(const vector<T> &a) : n(sz(a)), ft(n + 1) {\n        for (int i = 1;\
+    \ i <= n; i++) {\n            ft[i] += a[i - 1];\n            if (i + (i & -i)\
+    \ <= n) {\n                ft[i + (i & -i)] += ft[i];\n            }\n       \
+    \ }\n    }\n\n    void add(int p, T v) {\n        for (p++; p <= n; p += p & -p)\
+    \ {\n            ft[p] += v;\n        }\n    }\n\n    T sum(int r) {\n       \
+    \ T res = 0;\n        for (r++; r > 0; r -= r & -r) {\n            res += ft[r];\n\
+    \        }\n        return res;\n    }\n\n    T sum(int l, int r) {\n        return\
+    \ sum(r) - sum(l - 1);\n    }\n};\n#line 2 \"datastructures/binary_indexed_tree/bit_dual.h\"\
     \n\ntemplate <class T>\nstruct BITDual {\n    int n;\n    BIT<T> pref, suff;\n\
     \n    BITDual(int n_) : n(n_), pref(n), suff(n) {}\n\n    T sum(int r) {\n   \
     \     return pref.sum(r - 1) + suff.sum(n - r - 1) * (r + 1);\n    }\n\n    T\
@@ -76,7 +76,7 @@ data:
   isVerificationFile: true
   path: verify/aizu/dsl/rsq_and_raq.test.cpp
   requiredBy: []
-  timestamp: '2024-10-25 19:46:34-04:00'
+  timestamp: '2024-10-25 20:08:44-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/aizu/dsl/rsq_and_raq.test.cpp

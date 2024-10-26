@@ -32,9 +32,9 @@ data:
     \ LOCAL\n#include <utils>\n#else\n#define dbg(...)\n#endif\n\n#define all(x) begin(x),\
     \ end(x)\n#define sz(x) int(size(x))\n\nusing ll = long long;\n\ntemplate <class\
     \ T>\nbool ckmin(T &a, T b) {\n    return b < a ? a = b, 1 : 0;\n}\ntemplate <class\
-    \ T>\nbool ckmax(T &a, T b) {\n    return b > a ? a = b, 1 : 0;\n}\n#line 2 \"\
-    datastructures/binary_trie.h\"\n\ntemplate <class T>\nstruct BinaryTrie {\n  \
-    \  static const int W = sizeof(T) * 8;\n    vector<array<int, 2>> nxt;\n    vector<int>\
+    \ T>\nbool ckmax(T &a, T b) {\n    return b > a ? a = b, 1 : 0;\n}\n#line 1 \"\
+    datastructures/binary_trie.h\"\ntemplate <class T>\nstruct BinaryTrie {\n    static\
+    \ const int W = sizeof(T) * 8;\n    vector<array<int, 2>> nxt;\n    vector<int>\
     \ cnt;\n    T filter = 0;\n\n    BinaryTrie() : nxt(1, {-1, -1}), cnt(1, 0) {}\n\
     \n    void add(T x, int v = 1) {\n        x ^= filter;\n        int pos = 0;\n\
     \        for (int i = W - 1; i >= 0; i--) {\n            bool dir = (x >> i) &\
@@ -73,7 +73,7 @@ data:
   isVerificationFile: true
   path: verify/library_checker/data_structure/set_xor_min.test.cpp
   requiredBy: []
-  timestamp: '2024-10-25 19:46:34-04:00'
+  timestamp: '2024-10-25 20:08:44-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/library_checker/data_structure/set_xor_min.test.cpp

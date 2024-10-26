@@ -33,7 +33,7 @@ data:
     \ begin(x), end(x)\n#define sz(x) int(size(x))\n\nusing ll = long long;\n\ntemplate\
     \ <class T>\nbool ckmin(T &a, T b) {\n    return b < a ? a = b, 1 : 0;\n}\ntemplate\
     \ <class T>\nbool ckmax(T &a, T b) {\n    return b > a ? a = b, 1 : 0;\n}\n#line\
-    \ 2 \"common/order_statistic_tree.h\"\n\n#include <ext/pb_ds/assoc_container.hpp>\n\
+    \ 1 \"common/order_statistic_tree.h\"\n#include <ext/pb_ds/assoc_container.hpp>\n\
     \nusing namespace __gnu_pbds;\n\ntemplate <class T>\nusing OSTree = tree<T, null_type,\
     \ less<T>, rb_tree_tag, tree_order_statistics_node_update>;\n#line 5 \"verify/aizu/alds1/number_of_inversions.test.cpp\"\
     \n\nint main() {\n    int n;\n    cin >> n;\n    ll ans = 0;\n    OSTree<int>\
@@ -55,7 +55,7 @@ data:
   isVerificationFile: true
   path: verify/aizu/alds1/number_of_inversions.test.cpp
   requiredBy: []
-  timestamp: '2024-10-25 19:46:34-04:00'
+  timestamp: '2024-10-25 20:08:44-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/aizu/alds1/number_of_inversions.test.cpp
