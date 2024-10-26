@@ -8,11 +8,11 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"numeric/square_matrix.h\"\n\ntemplate <class T, int N>\n\
-    struct SquareMatrix {\n    array<array<T, N>, N> vals{};\n\n    SquareMatrix()\
-    \ {\n        for (int i = 0; i < N; i++) {\n            vals[i][i] = 1;\n    \
-    \    }\n    }\n\n    array<T, N> &operator[](int p) {\n        return vals[p];\n\
-    \    }\n\n    friend SquareMatrix pow(SquareMatrix base, int exp) {\n        SquareMatrix\
+  bundledCode: "#line 1 \"numeric/square_matrix.h\"\ntemplate <class T, int N>\nstruct\
+    \ SquareMatrix {\n    array<array<T, N>, N> vals{};\n\n    SquareMatrix() {\n\
+    \        for (int i = 0; i < N; i++) {\n            vals[i][i] = 1;\n        }\n\
+    \    }\n\n    array<T, N> &operator[](int p) {\n        return vals[p];\n    }\n\
+    \n    friend SquareMatrix pow(SquareMatrix base, int exp) {\n        SquareMatrix\
     \ res;\n        while (exp) {\n            if (exp & 1) {\n                res\
     \ *= base;\n            }\n            base *= base;\n            exp >>= 1;\n\
     \        }\n        return res;\n    }\n\n    SquareMatrix &operator*=(SquareMatrix\
@@ -22,9 +22,9 @@ data:
     \                }\n            }\n        }\n        vals = res;\n        return\
     \ *this;\n    }\n\n    friend SquareMatrix operator*(SquareMatrix a, SquareMatrix\
     \ b) {\n        return a *= b;\n    }\n};\n"
-  code: "#pragma once\n\ntemplate <class T, int N>\nstruct SquareMatrix {\n    array<array<T,\
-    \ N>, N> vals{};\n\n    SquareMatrix() {\n        for (int i = 0; i < N; i++)\
-    \ {\n            vals[i][i] = 1;\n        }\n    }\n\n    array<T, N> &operator[](int\
+  code: "template <class T, int N>\nstruct SquareMatrix {\n    array<array<T, N>,\
+    \ N> vals{};\n\n    SquareMatrix() {\n        for (int i = 0; i < N; i++) {\n\
+    \            vals[i][i] = 1;\n        }\n    }\n\n    array<T, N> &operator[](int\
     \ p) {\n        return vals[p];\n    }\n\n    friend SquareMatrix pow(SquareMatrix\
     \ base, int exp) {\n        SquareMatrix res;\n        while (exp) {\n       \
     \     if (exp & 1) {\n                res *= base;\n            }\n          \
@@ -40,7 +40,7 @@ data:
   isVerificationFile: false
   path: numeric/square_matrix.h
   requiredBy: []
-  timestamp: '2024-09-19 17:13:58-04:00'
+  timestamp: '2024-10-25 20:01:05-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: numeric/square_matrix.h

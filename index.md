@@ -135,9 +135,6 @@ data:
     - icon: ':warning:'
       path: numeric/binsearch_reals.h
       title: numeric/binsearch_reals.h
-    - icon: ':warning:'
-      path: numeric/combo.h
-      title: numeric/combo.h
     - icon: ':heavy_check_mark:'
       path: numeric/mint.h
       title: numeric/mint.h

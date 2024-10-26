@@ -11,7 +11,7 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"numeric/sieve_factor.h\"\n\nvector<int> mn_factor, primes;\n\
+  bundledCode: "#line 1 \"numeric/sieve_factor.h\"\nvector<int> mn_factor, primes;\n\
     \nvoid sieve(int n) {\n    mn_factor.resize(n + 1);\n    for (int i = 2; i <=\
     \ n; i++) {\n        if (!mn_factor[i]) {\n            mn_factor[i] = i;\n   \
     \         primes.push_back(i);\n            for (ll j = 1ll * i * i; j <= n; j\
@@ -32,12 +32,12 @@ data:
     \        T coeff = 1;\n        for (int i = 0; i < exp; i++) {\n            coeff\
     \ *= p;\n            for (int j = 0; j < old_size; j++) {\n                res.push_back(coeff\
     \ * res[j]);\n            }\n        }\n    }\n    return res;\n}\n"
-  code: "#pragma once\n\nvector<int> mn_factor, primes;\n\nvoid sieve(int n) {\n \
-    \   mn_factor.resize(n + 1);\n    for (int i = 2; i <= n; i++) {\n        if (!mn_factor[i])\
-    \ {\n            mn_factor[i] = i;\n            primes.push_back(i);\n       \
-    \     for (ll j = 1ll * i * i; j <= n; j += i) {\n                if (!mn_factor[j])\
-    \ {\n                    mn_factor[j] = i;\n                }\n            }\n\
-    \        }\n    }\n}\n\ntemplate <class T>\nauto factorize(T x) {\n    vector<pair<T,\
+  code: "vector<int> mn_factor, primes;\n\nvoid sieve(int n) {\n    mn_factor.resize(n\
+    \ + 1);\n    for (int i = 2; i <= n; i++) {\n        if (!mn_factor[i]) {\n  \
+    \          mn_factor[i] = i;\n            primes.push_back(i);\n            for\
+    \ (ll j = 1ll * i * i; j <= n; j += i) {\n                if (!mn_factor[j]) {\n\
+    \                    mn_factor[j] = i;\n                }\n            }\n   \
+    \     }\n    }\n}\n\ntemplate <class T>\nauto factorize(T x) {\n    vector<pair<T,\
     \ int>> res;\n\n    // O(log x) if sieved up to x\n    if (x <= sz(mn_factor)\
     \ - 1) {\n        while (x > 1) {\n            int y = mn_factor[x];\n       \
     \     res.emplace_back(y, 0);\n            while (x % y == 0) {\n            \
@@ -57,7 +57,7 @@ data:
   isVerificationFile: false
   path: numeric/sieve_factor.h
   requiredBy: []
-  timestamp: '2024-09-29 00:35:58-04:00'
+  timestamp: '2024-10-25 20:01:05-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/library_checker/number_theory/enumerate_primes.test.cpp

@@ -33,7 +33,7 @@ data:
     \ begin(x), end(x)\n#define sz(x) int(size(x))\n\nusing ll = long long;\n\ntemplate\
     \ <class T>\nbool ckmin(T &a, T b) {\n    return b < a ? a = b, 1 : 0;\n}\ntemplate\
     \ <class T>\nbool ckmax(T &a, T b) {\n    return b > a ? a = b, 1 : 0;\n}\n#line\
-    \ 2 \"numeric/sieve_factor.h\"\n\nvector<int> mn_factor, primes;\n\nvoid sieve(int\
+    \ 1 \"numeric/sieve_factor.h\"\nvector<int> mn_factor, primes;\n\nvoid sieve(int\
     \ n) {\n    mn_factor.resize(n + 1);\n    for (int i = 2; i <= n; i++) {\n   \
     \     if (!mn_factor[i]) {\n            mn_factor[i] = i;\n            primes.push_back(i);\n\
     \            for (ll j = 1ll * i * i; j <= n; j += i) {\n                if (!mn_factor[j])\
@@ -76,7 +76,7 @@ data:
   isVerificationFile: true
   path: verify/library_checker/number_theory/enumerate_primes.test.cpp
   requiredBy: []
-  timestamp: '2024-10-25 19:46:34-04:00'
+  timestamp: '2024-10-25 20:01:05-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/library_checker/number_theory/enumerate_primes.test.cpp

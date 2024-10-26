@@ -11,40 +11,39 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"geometry/integer_lattice.h\"\n\n#line 2 \"geometry/primitives.h\"\
-    \n\ntemplate <class T>\nusing prod_t = conditional_t<is_same_v<T, int>, ll, conditional_t<is_same_v<T,\
-    \ ll>, __int128_t, T>>;\n\ntemplate <class T>\nbool safe_eq(T a, T b = 0) {\n\
-    \    static constexpr ld EPS = 1e-9;\n    if constexpr (is_floating_point_v<T>)\
-    \ {\n        return abs(a - b) < EPS;\n    }\n    return a == b;\n}\n\ntemplate\
-    \ <class T>\nstruct Point {\n    T x, y;\n\n    Point(T x_ = 0, T y_ = 0) : x(x_),\
-    \ y(y_) {}\n\n    template <class U>\n    operator Point<U>() const {\n      \
-    \  return Point<U>(static_cast<U>(x), static_cast<U>(y));\n    }\n\n    // Cast\
-    \ b onto the line colinear to a and multiply their magnitudes\n    // Is b pointing\
-    \ in the same direction as a?\n    friend prod_t<T> operator*(Point a, const Point\
-    \ &b) {\n        return prod_t<T>(a.x) * b.x + prod_t<T>(a.y) * b.y;\n    }\n\
-    \    // Align a horizontally along the x axis and integrate the parallelogram\n\
-    \    // Which side of a is b on?\n    friend prod_t<T> operator^(Point a, const\
-    \ Point &b) {\n        return prod_t<T>(a.x) * b.y - prod_t<T>(a.y) * b.x;\n \
-    \   }\n\n    Point &operator+=(const Point &b) {\n        x += b.x, y += b.y;\n\
-    \        return *this;\n    }\n    Point &operator-=(const Point &b) {\n     \
-    \   x -= b.x, y -= b.y;\n        return *this;\n    }\n    Point &operator*=(T\
-    \ fac) {\n        x *= fac, y *= fac;\n        return *this;\n    }\n    Point\
-    \ &operator/=(T fac) {\n        x /= fac, y /= fac;\n        return *this;\n \
-    \   }\n    friend Point operator+(Point a, const Point &b) {\n        return a\
-    \ += b;\n    }\n    friend Point operator-(Point a, const Point &b) {\n      \
-    \  return a -= b;\n    }\n    friend Point operator*(Point a, T b) {\n       \
-    \ return a *= b;\n    }\n    friend Point operator/(Point a, T b) {\n        return\
-    \ a /= b;\n    }\n    friend bool operator<(const Point &a, const Point &b) {\n\
-    \        return a.x < b.x || (a.x == b.x && a.y < b.y);\n    }\n    friend bool\
-    \ operator>(const Point &a, const Point &b) {\n        return b < a;\n    }\n\
-    \    friend bool operator==(const Point &a, const Point &b) {\n        return\
-    \ a.x == b.x && a.y == b.y;\n    }\n    friend bool operator!=(const Point &a,\
-    \ const Point &b) {\n        return !(a == b);\n    }\n    int side() const {\n\
-    \        return y < 0 ? -1 : y == 0 && x >= 0 ? 0 : 1;\n    }\n    friend bool\
-    \ comp_angle(const Point &a, const Point &b) {\n        return a.side() < b.side()\
-    \ || (a.side() == b.side() && (a ^ b) > 0);\n    }\n    friend prod_t<T> mag_sq(const\
-    \ Point &a) {\n        return a * a;\n    }\n    friend ld mag(const Point &a)\
-    \ {\n        return sqrt(mag_sq(a));\n    }\n    friend prod_t<T> dist_sq(const\
+  bundledCode: "#line 1 \"geometry/primitives.h\"\ntemplate <class T>\nusing prod_t\
+    \ = conditional_t<is_same_v<T, int>, ll, conditional_t<is_same_v<T, ll>, __int128_t,\
+    \ T>>;\n\ntemplate <class T>\nbool safe_eq(T a, T b = 0) {\n    static constexpr\
+    \ ld EPS = 1e-9;\n    if constexpr (is_floating_point_v<T>) {\n        return\
+    \ abs(a - b) < EPS;\n    }\n    return a == b;\n}\n\ntemplate <class T>\nstruct\
+    \ Point {\n    T x, y;\n\n    Point(T x_ = 0, T y_ = 0) : x(x_), y(y_) {}\n\n\
+    \    template <class U>\n    operator Point<U>() const {\n        return Point<U>(static_cast<U>(x),\
+    \ static_cast<U>(y));\n    }\n\n    // Cast b onto the line colinear to a and\
+    \ multiply their magnitudes\n    // Is b pointing in the same direction as a?\n\
+    \    friend prod_t<T> operator*(Point a, const Point &b) {\n        return prod_t<T>(a.x)\
+    \ * b.x + prod_t<T>(a.y) * b.y;\n    }\n    // Align a horizontally along the\
+    \ x axis and integrate the parallelogram\n    // Which side of a is b on?\n  \
+    \  friend prod_t<T> operator^(Point a, const Point &b) {\n        return prod_t<T>(a.x)\
+    \ * b.y - prod_t<T>(a.y) * b.x;\n    }\n\n    Point &operator+=(const Point &b)\
+    \ {\n        x += b.x, y += b.y;\n        return *this;\n    }\n    Point &operator-=(const\
+    \ Point &b) {\n        x -= b.x, y -= b.y;\n        return *this;\n    }\n   \
+    \ Point &operator*=(T fac) {\n        x *= fac, y *= fac;\n        return *this;\n\
+    \    }\n    Point &operator/=(T fac) {\n        x /= fac, y /= fac;\n        return\
+    \ *this;\n    }\n    friend Point operator+(Point a, const Point &b) {\n     \
+    \   return a += b;\n    }\n    friend Point operator-(Point a, const Point &b)\
+    \ {\n        return a -= b;\n    }\n    friend Point operator*(Point a, T b) {\n\
+    \        return a *= b;\n    }\n    friend Point operator/(Point a, T b) {\n \
+    \       return a /= b;\n    }\n    friend bool operator<(const Point &a, const\
+    \ Point &b) {\n        return a.x < b.x || (a.x == b.x && a.y < b.y);\n    }\n\
+    \    friend bool operator>(const Point &a, const Point &b) {\n        return b\
+    \ < a;\n    }\n    friend bool operator==(const Point &a, const Point &b) {\n\
+    \        return a.x == b.x && a.y == b.y;\n    }\n    friend bool operator!=(const\
+    \ Point &a, const Point &b) {\n        return !(a == b);\n    }\n    int side()\
+    \ const {\n        return y < 0 ? -1 : y == 0 && x >= 0 ? 0 : 1;\n    }\n    friend\
+    \ bool comp_angle(const Point &a, const Point &b) {\n        return a.side() <\
+    \ b.side() || (a.side() == b.side() && (a ^ b) > 0);\n    }\n    friend prod_t<T>\
+    \ mag_sq(const Point &a) {\n        return a * a;\n    }\n    friend ld mag(const\
+    \ Point &a) {\n        return sqrt(mag_sq(a));\n    }\n    friend prod_t<T> dist_sq(const\
     \ Point &a, const Point &b) {\n        return mag_sq(a - b);\n    }\n    friend\
     \ ld dist(const Point &a, const Point &b) {\n        return mag(a - b);\n    }\n\
     \    friend istream &operator>>(istream &is, Point &a) {\n        return is >>\
@@ -92,7 +91,7 @@ data:
     \ {\n        auto nxt = v[i == sz(v) - 1 ? 0 : i + 1];\n        auto seg = Line(v[i],\
     \ nxt);\n        if (on_seg(p, seg)) {\n            return -1;\n        }\n  \
     \      res ^= ((p.y < v[i].y) - (p.y < nxt.y)) * ((v[i] - p) ^ (nxt - p)) > 0;\n\
-    \    }\n    return res;\n}\n#line 4 \"geometry/integer_lattice.h\"\n\ntemplate\
+    \    }\n    return res;\n}\n#line 2 \"geometry/integer_lattice.h\"\n\ntemplate\
     \ <class T>\nT lattice_seg(const Point<T> &s) {\n    auto a = s.p, b = s.p + s.d;\n\
     \    return gcd(b.x - a.x, b.y - a.y); // (inside, on boundary)\n}\n\ntemplate\
     \ <class T>\npair<ll, ll> lattice_poly(const vector<Point<T>> &v) {\n    pair<ll,\
@@ -100,20 +99,20 @@ data:
     \ - 1 ? 0 : i + 1];\n        auto seg = Line<T>(v[i], nxt);\n        res.first\
     \ += v[i] ^ nxt;\n        res.second += lattice_seg(seg);\n    }\n    res.first\
     \ = (abs(res.first) - res.second + 2) / 2;\n    return res;\n}\n"
-  code: "#pragma once\n\n#include \"primitives.h\"\n\ntemplate <class T>\nT lattice_seg(const\
-    \ Point<T> &s) {\n    auto a = s.p, b = s.p + s.d;\n    return gcd(b.x - a.x,\
-    \ b.y - a.y); // (inside, on boundary)\n}\n\ntemplate <class T>\npair<ll, ll>\
-    \ lattice_poly(const vector<Point<T>> &v) {\n    pair<ll, ll> res;\n    for (int\
-    \ i = 0; i < sz(v); i++) {\n        auto nxt = v[i == sz(v) - 1 ? 0 : i + 1];\n\
-    \        auto seg = Line<T>(v[i], nxt);\n        res.first += v[i] ^ nxt;\n  \
-    \      res.second += lattice_seg(seg);\n    }\n    res.first = (abs(res.first)\
-    \ - res.second + 2) / 2;\n    return res;\n}"
+  code: "#include \"primitives.h\"\n\ntemplate <class T>\nT lattice_seg(const Point<T>\
+    \ &s) {\n    auto a = s.p, b = s.p + s.d;\n    return gcd(b.x - a.x, b.y - a.y);\
+    \ // (inside, on boundary)\n}\n\ntemplate <class T>\npair<ll, ll> lattice_poly(const\
+    \ vector<Point<T>> &v) {\n    pair<ll, ll> res;\n    for (int i = 0; i < sz(v);\
+    \ i++) {\n        auto nxt = v[i == sz(v) - 1 ? 0 : i + 1];\n        auto seg\
+    \ = Line<T>(v[i], nxt);\n        res.first += v[i] ^ nxt;\n        res.second\
+    \ += lattice_seg(seg);\n    }\n    res.first = (abs(res.first) - res.second +\
+    \ 2) / 2;\n    return res;\n}"
   dependsOn:
   - geometry/primitives.h
   isVerificationFile: false
   path: geometry/integer_lattice.h
   requiredBy: []
-  timestamp: '2024-09-29 00:35:58-04:00'
+  timestamp: '2024-10-25 20:01:05-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: geometry/integer_lattice.h

@@ -42,7 +42,7 @@ data:
     \   return hi;\n}\n\ntemplate <class T, class U>\nT bsmax(T lo, T hi, U f) {\n\
     \    assert(lo <= hi);\n    lo--;\n    for (T i = T(1) << __lg(hi - lo); i > 0;\
     \ i >>= 1) {\n        lo += (lo + i <= hi && f(lo + i)) * i;\n    }\n    return\
-    \ lo;\n}\n#line 2 \"strings/hashing.h\"\n\nnamespace hashing {\n\nmt19937_64 rng(chrono::steady_clock::now().time_since_epoch().count());\n\
+    \ lo;\n}\n#line 1 \"strings/hashing.h\"\nnamespace hashing {\n\nmt19937_64 rng(chrono::steady_clock::now().time_since_epoch().count());\n\
     \nconst ll MOD = (1ll << 61) - 1;\nconst ll B = uniform_int_distribution<ll>(0,\
     \ MOD)(rng);\n\nvector<ll> pow_b = {1};\n\nstruct Hash {\n    ll val;\n    int\
     \ len;\n\n    Hash(ll x, int y) : val(x), len(y) {}\n\n    Hash operator+(Hash\
@@ -89,7 +89,7 @@ data:
   isVerificationFile: true
   path: verify/library_checker/string/enumerate_palindromes.test.cpp
   requiredBy: []
-  timestamp: '2024-10-25 19:46:34-04:00'
+  timestamp: '2024-10-25 20:01:05-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/library_checker/string/enumerate_palindromes.test.cpp

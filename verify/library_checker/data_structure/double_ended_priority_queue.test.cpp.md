@@ -33,7 +33,7 @@ data:
     \ begin(x), end(x)\n#define sz(x) int(size(x))\n\nusing ll = long long;\n\ntemplate\
     \ <class T>\nbool ckmin(T &a, T b) {\n    return b < a ? a = b, 1 : 0;\n}\ntemplate\
     \ <class T>\nbool ckmax(T &a, T b) {\n    return b > a ? a = b, 1 : 0;\n}\n#line\
-    \ 2 \"esoteric/w_ary_tree.h\"\n\ntemplate <int N>\nstruct WAryTree {\n    uint32_t\
+    \ 1 \"esoteric/w_ary_tree.h\"\ntemplate <int N>\nstruct WAryTree {\n    uint32_t\
     \ freq[N];\n    uint64_t l0[(N >> 6) + 1], l1[(N >> 12) + 1], root;\n\n    WAryTree()\
     \ {\n        memset(freq, 0, sizeof freq);\n        memset(l0, 0, sizeof l0);\n\
     \        memset(l1, 0, sizeof l1);\n        root = 0;\n    }\n\n    void insert(int\
@@ -105,7 +105,7 @@ data:
   isVerificationFile: true
   path: verify/library_checker/data_structure/double_ended_priority_queue.test.cpp
   requiredBy: []
-  timestamp: '2024-10-25 19:46:34-04:00'
+  timestamp: '2024-10-25 20:01:05-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/library_checker/data_structure/double_ended_priority_queue.test.cpp

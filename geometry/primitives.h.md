@@ -11,7 +11,7 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"geometry/primitives.h\"\n\ntemplate <class T>\nusing prod_t\
+  bundledCode: "#line 1 \"geometry/primitives.h\"\ntemplate <class T>\nusing prod_t\
     \ = conditional_t<is_same_v<T, int>, ll, conditional_t<is_same_v<T, ll>, __int128_t,\
     \ T>>;\n\ntemplate <class T>\nbool safe_eq(T a, T b = 0) {\n    static constexpr\
     \ ld EPS = 1e-9;\n    if constexpr (is_floating_point_v<T>) {\n        return\
@@ -92,22 +92,22 @@ data:
     \ nxt);\n        if (on_seg(p, seg)) {\n            return -1;\n        }\n  \
     \      res ^= ((p.y < v[i].y) - (p.y < nxt.y)) * ((v[i] - p) ^ (nxt - p)) > 0;\n\
     \    }\n    return res;\n}\n"
-  code: "#pragma once\n\ntemplate <class T>\nusing prod_t = conditional_t<is_same_v<T,\
-    \ int>, ll, conditional_t<is_same_v<T, ll>, __int128_t, T>>;\n\ntemplate <class\
-    \ T>\nbool safe_eq(T a, T b = 0) {\n    static constexpr ld EPS = 1e-9;\n    if\
-    \ constexpr (is_floating_point_v<T>) {\n        return abs(a - b) < EPS;\n   \
-    \ }\n    return a == b;\n}\n\ntemplate <class T>\nstruct Point {\n    T x, y;\n\
-    \n    Point(T x_ = 0, T y_ = 0) : x(x_), y(y_) {}\n\n    template <class U>\n\
-    \    operator Point<U>() const {\n        return Point<U>(static_cast<U>(x), static_cast<U>(y));\n\
-    \    }\n\n    // Cast b onto the line colinear to a and multiply their magnitudes\n\
-    \    // Is b pointing in the same direction as a?\n    friend prod_t<T> operator*(Point\
-    \ a, const Point &b) {\n        return prod_t<T>(a.x) * b.x + prod_t<T>(a.y) *\
-    \ b.y;\n    }\n    // Align a horizontally along the x axis and integrate the\
-    \ parallelogram\n    // Which side of a is b on?\n    friend prod_t<T> operator^(Point\
-    \ a, const Point &b) {\n        return prod_t<T>(a.x) * b.y - prod_t<T>(a.y) *\
-    \ b.x;\n    }\n\n    Point &operator+=(const Point &b) {\n        x += b.x, y\
-    \ += b.y;\n        return *this;\n    }\n    Point &operator-=(const Point &b)\
-    \ {\n        x -= b.x, y -= b.y;\n        return *this;\n    }\n    Point &operator*=(T\
+  code: "template <class T>\nusing prod_t = conditional_t<is_same_v<T, int>, ll, conditional_t<is_same_v<T,\
+    \ ll>, __int128_t, T>>;\n\ntemplate <class T>\nbool safe_eq(T a, T b = 0) {\n\
+    \    static constexpr ld EPS = 1e-9;\n    if constexpr (is_floating_point_v<T>)\
+    \ {\n        return abs(a - b) < EPS;\n    }\n    return a == b;\n}\n\ntemplate\
+    \ <class T>\nstruct Point {\n    T x, y;\n\n    Point(T x_ = 0, T y_ = 0) : x(x_),\
+    \ y(y_) {}\n\n    template <class U>\n    operator Point<U>() const {\n      \
+    \  return Point<U>(static_cast<U>(x), static_cast<U>(y));\n    }\n\n    // Cast\
+    \ b onto the line colinear to a and multiply their magnitudes\n    // Is b pointing\
+    \ in the same direction as a?\n    friend prod_t<T> operator*(Point a, const Point\
+    \ &b) {\n        return prod_t<T>(a.x) * b.x + prod_t<T>(a.y) * b.y;\n    }\n\
+    \    // Align a horizontally along the x axis and integrate the parallelogram\n\
+    \    // Which side of a is b on?\n    friend prod_t<T> operator^(Point a, const\
+    \ Point &b) {\n        return prod_t<T>(a.x) * b.y - prod_t<T>(a.y) * b.x;\n \
+    \   }\n\n    Point &operator+=(const Point &b) {\n        x += b.x, y += b.y;\n\
+    \        return *this;\n    }\n    Point &operator-=(const Point &b) {\n     \
+    \   x -= b.x, y -= b.y;\n        return *this;\n    }\n    Point &operator*=(T\
     \ fac) {\n        x *= fac, y *= fac;\n        return *this;\n    }\n    Point\
     \ &operator/=(T fac) {\n        x /= fac, y /= fac;\n        return *this;\n \
     \   }\n    friend Point operator+(Point a, const Point &b) {\n        return a\
@@ -178,7 +178,7 @@ data:
   path: geometry/primitives.h
   requiredBy:
   - geometry/integer_lattice.h
-  timestamp: '2024-09-29 00:35:58-04:00'
+  timestamp: '2024-10-25 20:01:05-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: geometry/primitives.h
