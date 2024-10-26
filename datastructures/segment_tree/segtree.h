@@ -1,5 +1,3 @@
-#pragma once
-
 template <class T, auto op, auto id>
 struct Segtree {
     int n;

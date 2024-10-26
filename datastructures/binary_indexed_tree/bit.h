@@ -1,5 +1,3 @@
-#pragma once
-
 template <class T>
 struct BIT {
     int n;

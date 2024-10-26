@@ -1,5 +1,3 @@
-#pragma once
-
 template <class T>
 struct BinaryTrie {
     static const int W = sizeof(T) * 8;

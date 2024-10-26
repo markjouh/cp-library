@@ -1,5 +1,3 @@
-#pragma once
-
 template <class T, auto op, auto t_id, class U, auto mapping, auto comp, auto u_id>
 struct SegtreeLazy {
     SegtreeLazy(int n_, T v = t_id()) {

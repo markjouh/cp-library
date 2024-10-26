@@ -1,5 +1,3 @@
-#pragma once
-
 #include "segtree.h"
 
 template <class T, auto op, auto id>

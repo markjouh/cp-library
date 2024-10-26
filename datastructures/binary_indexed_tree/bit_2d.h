@@ -1,5 +1,3 @@
-#pragma once
-
 #include "bit.h"
 
 template <class T>

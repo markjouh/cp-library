@@ -1,5 +1,3 @@
-#pragma once
-
 struct DSU {
     vector<int> a;
 

@@ -1,5 +1,3 @@
-#pragma once
-
 template <class T, class U>
 T bsmin(T lo, T hi, U f) {
     assert(lo <= hi);
