@@ -1,6 +1,6 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/lca"
 
-#include "../../../misc/template.h"
+#include "../../../template/template.h"
 #include "../../../graphs/trees/binary_lifting.h"
 
 int main() {

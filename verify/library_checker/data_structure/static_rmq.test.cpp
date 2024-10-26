@@ -1,6 +1,6 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/staticrmq"
 
-#include "../../../misc/template.h"
+#include "../../../template/template.h"
 #include "../../../datastructures/static/rmq.h"
 
 int op(int x, int y) {

@@ -1,6 +1,6 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/vertex_add_subtree_sum"
 
-#include "../../../misc/template.h"
+#include "../../../template/template.h"
 #include "../../../datastructures/binary_indexed_tree/bit.h"
 
 int main() {

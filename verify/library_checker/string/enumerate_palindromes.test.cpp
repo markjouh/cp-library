@@ -1,7 +1,6 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/enumerate_palindromes"
 
-#include "../../../misc/template.h"
-#include "../../../common/binsearch.h"
+#include "../../../template/template.h"
 #include "../../../strings/hashing.h"
 
 int main() {

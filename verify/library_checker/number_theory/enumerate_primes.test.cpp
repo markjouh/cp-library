@@ -1,6 +1,6 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/enumerate_primes"
 
-#include "../../../misc/template.h"
+#include "../../../template/template.h"
 #include "../../../numeric/sieve_factor.h"
 
 int main() {

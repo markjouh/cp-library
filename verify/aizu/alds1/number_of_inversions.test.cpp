@@ -1,13 +1,12 @@
 #define PROBLEM "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_5_D"
 
-#include "../../../misc/template.h"
-#include "../../../common/order_statistic_tree.h"
+#include "../../../template/template.h"
 
 int main() {
     int n;
     cin >> n;
     ll ans = 0;
-    OSTree<int> st;
+    oset<int> st;
     for (int i = 0; i < n; i++) {
         int x;
         cin >> x;

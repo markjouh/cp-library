@@ -1,6 +1,6 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/rooted_tree_isomorphism_classification"
 
-#include "../../../misc/template.h"
+#include "../../../template/template.h"
 #include "../../../graphs/trees/tree_hashing.h"
 
 int main() {

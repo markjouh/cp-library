@@ -1,6 +1,6 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/scc"
 
-#include "../../../misc/template.h"
+#include "../../../template/template.h"
 #include "../../../graphs/kosaraju_scc.h"
 
 int main() {

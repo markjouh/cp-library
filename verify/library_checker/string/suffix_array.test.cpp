@@ -1,6 +1,6 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/suffixarray"
 
-#include "../../../misc/template.h"
+#include "../../../template/template.h"
 #include "../../../strings/suffix_array.h"
 
 int main() {

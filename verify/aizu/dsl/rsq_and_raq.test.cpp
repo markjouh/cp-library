@@ -1,6 +1,6 @@
 #define PROBLEM "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_G"
 
-#include "../../../misc/template.h"
+#include "../../../template/template.h"
 #include "../../../datastructures/binary_indexed_tree/bit_dual.h"
 
 int main() {

@@ -1,6 +1,6 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/set_xor_min"
 
-#include "../../../misc/template.h"
+#include "../../../template/template.h"
 #include "../../../datastructures/binary_trie.h"
 
 int main() {

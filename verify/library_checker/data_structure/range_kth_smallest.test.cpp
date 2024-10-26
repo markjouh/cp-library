@@ -1,8 +1,7 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/range_kth_smallest"
 
-#include "../../../misc/template.h"
+#include "../../../template/template.h"
 #include "../../../datastructures/static/mergesort_tree.h"
-#include "../../../common/binsearch.h"
 
 int main() {
     int n, q;

@@ -1,6 +1,6 @@
 #define PROBLEM "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_B"
 
-#include "../../../misc/template.h"
+#include "../../../template/template.h"
 #include "../../../numeric/mint.h"
 
 using mi = Mint<1000000007>;

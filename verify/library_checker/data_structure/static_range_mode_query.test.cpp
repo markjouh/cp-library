@@ -1,7 +1,7 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/static_range_mode_query"
 
-#include "../../../misc/template.h"
-#include "../../../common/hash_table.h"
+#include "../../../template/template.h"
+#include "../../../datastructures/hash_table.h"
 #include "../../../datastructures/static/mo_queries.h"
 
 int main() {
