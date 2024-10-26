@@ -1,5 +1,3 @@
-#pragma once
-
 vector<int> mn_factor, primes;
 
 void sieve(int n) {

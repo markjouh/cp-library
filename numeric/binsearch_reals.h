@@ -1,5 +1,3 @@
-#pragma once
-
 template <class T>
 double bsmin_reals(double lo, double hi, T f) {
     static_assert(sizeof(uint64_t) >= sizeof(double));

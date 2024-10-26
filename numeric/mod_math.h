@@ -1,5 +1,3 @@
-#pragma once
-
 ll madd(ll a, ll b, ll mod) {
     return (a + b) % mod;
 }

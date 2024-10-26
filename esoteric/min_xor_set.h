@@ -1,5 +1,3 @@
-#pragma once
-
 template <class T>
 struct MinXorSet {
     multiset<T> xors, vals;

@@ -1,5 +1,3 @@
-#pragma once
-
 template <class T, int N>
 struct SquareMatrix {
     array<array<T, N>, N> vals{};

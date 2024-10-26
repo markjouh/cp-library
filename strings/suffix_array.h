@@ -1,5 +1,3 @@
-#pragma once
-
 auto gen_sa(const string &s) {
     const int n = sz(s) + 1;
 

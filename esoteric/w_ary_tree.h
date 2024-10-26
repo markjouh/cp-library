@@ -1,5 +1,3 @@
-#pragma once
-
 template <int N>
 struct WAryTree {
     uint32_t freq[N];

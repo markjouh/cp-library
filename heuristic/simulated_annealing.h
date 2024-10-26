@@ -1,5 +1,3 @@
-#pragma once
-
 template <class T, auto edit, auto undo, auto eval>
 T anneal(int ms) {
     const double temp_start = 10, temp_end = 0.001;

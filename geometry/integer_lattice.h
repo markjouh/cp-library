@@ -1,5 +1,3 @@
-#pragma once
-
 #include "primitives.h"
 
 template <class T>

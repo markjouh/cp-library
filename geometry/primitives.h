@@ -1,5 +1,3 @@
-#pragma once
-
 template <class T>
 using prod_t = conditional_t<is_same_v<T, int>, ll, conditional_t<is_same_v<T, ll>, __int128_t, T>>;
 
