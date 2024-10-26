@@ -14,7 +14,7 @@ T anneal(int ms) {
         new_cost = eval();
 
         double temp = temp_start * pow(temp_end / temp_start, elapsed_frac);
-        if (new_cost < cur_cost || double(rand()) / RAND_MAX < exp((cur_cost - new_cost) / temp) {
+        if (new_cost < cur_cost || double(rand()) / RAND_MAX < exp((cur_cost - new_cost) / temp)) {
             cur_cost = new_cost;
         } else {
             undo();
