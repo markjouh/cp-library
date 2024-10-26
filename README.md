@@ -8,5 +8,5 @@ My library of template code for competitive programming.
 
 ## Notes
 * Inclusive intervals and 0-indexing for all interfaces.
-* Templates use features up to C++17, local utilities are unrestricted and might use very new features. GCC builtins are generally avoided for portability.
-* Templates are tested with [verification helper](https://github.com/online-judge-tools/verification-helper) using the solutions in [verify](verify), which can also serve as example usages.
+* Templates use features up to C++17, local utilities are unrestricted and might use very new features.
+* Templates are tested with [verification helper](https://github.com/online-judge-tools/verification-helper) using the solutions in [verify](verify) (which also serve as usage examples).

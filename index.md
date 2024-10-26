@@ -1,20 +1,6 @@
 ---
 data:
   libraryCategories:
-  - name: common
-    pages:
-    - icon: ':heavy_check_mark:'
-      path: common/binsearch.h
-      title: common/binsearch.h
-    - icon: ':warning:'
-      path: common/compress.h
-      title: common/compress.h
-    - icon: ':heavy_check_mark:'
-      path: common/hash_table.h
-      title: common/hash_table.h
-    - icon: ':heavy_check_mark:'
-      path: common/order_statistic_tree.h
-      title: common/order_statistic_tree.h
   - name: datastructures/binary_indexed_tree
     pages:
     - icon: ':heavy_check_mark:'
@@ -34,9 +20,15 @@ data:
     - icon: ':heavy_check_mark:'
       path: datastructures/binary_trie.h
       title: datastructures/binary_trie.h
+    - icon: ':warning:'
+      path: datastructures/compress.h
+      title: datastructures/compress.h
     - icon: ':heavy_check_mark:'
       path: datastructures/dsu.h
       title: datastructures/dsu.h
+    - icon: ':heavy_check_mark:'
+      path: datastructures/hash_table.h
+      title: datastructures/hash_table.h
     - icon: ':warning:'
       path: datastructures/min_xor_set.h
       title: datastructures/min_xor_set.h
@@ -117,11 +109,6 @@ data:
     - icon: ':warning:'
       path: heuristic/simulated_annealing.h
       title: heuristic/simulated_annealing.h
-  - name: misc
-    pages:
-    - icon: ':heavy_check_mark:'
-      path: misc/template.h
-      title: misc/template.h
   - name: numeric
     pages:
     - icon: ':warning:'
@@ -147,6 +134,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: strings/suffix_array.h
       title: strings/suffix_array.h
+  - name: template
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: template/template.h
+      title: template/template.h
   - name: utils
     pages:
     - icon: ':heavy_check_mark:'

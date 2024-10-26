@@ -3,8 +3,8 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
-    path: misc/template.h
-    title: misc/template.h
+    path: template/template.h
+    title: template/template.h
   - icon: ':heavy_check_mark:'
     path: utils/my_timer.h
     title: utils/my_timer.h
@@ -206,7 +206,7 @@ data:
   isVerificationFile: false
   path: utils/my_random.h
   requiredBy:
-  - misc/template.h
+  - template/template.h
   - utils/my_timer.h
   timestamp: '2024-10-25 19:46:34-04:00'
   verificationStatus: LIBRARY_ALL_AC

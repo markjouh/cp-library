@@ -14,7 +14,7 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"common/hash_table.h\"\n#include <ext/pb_ds/assoc_container.hpp>\n\
+  bundledCode: "#line 1 \"datastructures/hash_table.h\"\n#include <ext/pb_ds/assoc_container.hpp>\n\
     \nstruct CustomHash {\n    static uint64_t splitmix64(uint64_t x) {\n        x\
     \ += 0x9e3779b97f4a7c15;\n        x = (x ^ (x >> 30)) * 0xbf58476d1ce4e5b9;\n\
     \        x = (x ^ (x >> 27)) * 0x94d049bb133111eb;\n        return x ^ (x >> 31);\n\
@@ -31,17 +31,17 @@ data:
     \ class U>\nusing HashTable = __gnu_pbds::gp_hash_table<T, U, CustomHash>;"
   dependsOn: []
   isVerificationFile: false
-  path: common/hash_table.h
+  path: datastructures/hash_table.h
   requiredBy: []
-  timestamp: '2024-10-25 20:08:44-04:00'
+  timestamp: '2024-10-25 20:32:34-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/library_checker/data_structure/static_range_mode_query.test.cpp
   - verify/library_checker/data_structure/associative_array.test.cpp
-documentation_of: common/hash_table.h
+documentation_of: datastructures/hash_table.h
 layout: document
 redirect_from:
-- /library/common/hash_table.h
-- /library/common/hash_table.h.html
-title: common/hash_table.h
+- /library/datastructures/hash_table.h
+- /library/datastructures/hash_table.h.html
+title: datastructures/hash_table.h
 ---

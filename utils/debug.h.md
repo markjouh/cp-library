@@ -3,8 +3,8 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
-    path: misc/template.h
-    title: misc/template.h
+    path: template/template.h
+    title: template/template.h
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/aizu/alds1/binary_search.test.cpp
@@ -118,7 +118,7 @@ data:
   isVerificationFile: false
   path: utils/debug.h
   requiredBy:
-  - misc/template.h
+  - template/template.h
   timestamp: '2024-10-25 19:46:34-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
