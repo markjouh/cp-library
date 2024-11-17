@@ -20,9 +20,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: datastructures/binary_trie.h
       title: datastructures/binary_trie.h
-    - icon: ':warning:'
-      path: datastructures/compress.h
-      title: datastructures/compress.h
     - icon: ':heavy_check_mark:'
       path: datastructures/dsu.h
       title: datastructures/dsu.h
@@ -30,8 +27,8 @@ data:
       path: datastructures/hash_table.h
       title: datastructures/hash_table.h
     - icon: ':warning:'
-      path: datastructures/min_xor_set.h
-      title: datastructures/min_xor_set.h
+      path: datastructures/w_ary_tree.h
+      title: datastructures/w_ary_tree.h
   - name: datastructures/segment_tree
     pages:
     - icon: ':heavy_check_mark:'
@@ -51,7 +48,7 @@ data:
       title: datastructures/segment_tree/segtree_sparse.h
   - name: datastructures/static
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: datastructures/static/mergesort_tree.h
       title: datastructures/static/mergesort_tree.h
     - icon: ':heavy_check_mark:'
@@ -112,6 +109,9 @@ data:
   - name: numeric
     pages:
     - icon: ':warning:'
+      path: numeric/binsearch.h
+      title: numeric/binsearch.h
+    - icon: ':warning:'
       path: numeric/binsearch_reals.h
       title: numeric/binsearch_reals.h
     - icon: ':heavy_check_mark:'
@@ -128,7 +128,7 @@ data:
       title: numeric/square_matrix.h
   - name: strings
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: strings/hashing.h
       title: strings/hashing.h
     - icon: ':heavy_check_mark:'
@@ -136,27 +136,35 @@ data:
       title: strings/suffix_array.h
   - name: template
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template/template.h
       title: template/template.h
+  - name: utils/bits
+    pages:
+    - icon: ':question:'
+      path: utils/bits/stdc++.h
+      title: utils/bits/stdc++.h
   - name: utils
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':warning:'
+      path: utils/compat.h
+      title: utils/compat.h
+    - icon: ':warning:'
       path: utils/debug.h
       title: utils/debug.h
-    - icon: ':heavy_check_mark:'
+    - icon: ':warning:'
       path: utils/my_random.h
       title: utils/my_random.h
-    - icon: ':heavy_check_mark:'
+    - icon: ':warning:'
       path: utils/my_timer.h
       title: utils/my_timer.h
   verificationCategories:
   - name: verify/aizu/alds1
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/aizu/alds1/binary_search.test.cpp
       title: verify/aizu/alds1/binary_search.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/aizu/alds1/number_of_inversions.test.cpp
       title: verify/aizu/alds1/number_of_inversions.test.cpp
   - name: verify/aizu/dsl
@@ -180,7 +188,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/library_checker/data_structure/point_add_range_sum.test.cpp
       title: verify/library_checker/data_structure/point_add_range_sum.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/library_checker/data_structure/range_kth_smallest.test.cpp
       title: verify/library_checker/data_structure/range_kth_smallest.test.cpp
     - icon: ':heavy_check_mark:'
@@ -210,7 +218,7 @@ data:
       title: verify/library_checker/number_theory/enumerate_primes.test.cpp
   - name: verify/library_checker/string
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/library_checker/string/enumerate_palindromes.test.cpp
       title: verify/library_checker/string/enumerate_palindromes.test.cpp
     - icon: ':heavy_check_mark:'
