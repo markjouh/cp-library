@@ -1,3 +1,4 @@
 #include "debug.h"
+#include "compat.h"
 #include "my_random.h"
 #include "my_timer.h"
