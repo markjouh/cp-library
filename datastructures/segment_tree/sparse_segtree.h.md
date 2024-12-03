@@ -8,9 +8,9 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"datastructures/segment_tree/segtree_sparse.h\"\ntemplate\
-    \ <class T, auto op, auto id>\nstruct SegtreeSparse {\n    SegtreeSparse() {}\n\
-    \    \n    SegtreeSparse(int n) {\n        log = __lg(n) + 1;\n        tree_sz\
+  bundledCode: "#line 1 \"datastructures/segment_tree/sparse_segtree.h\"\ntemplate\
+    \ <class T, auto op, auto id>\nstruct sparse_segtree {\n    sparse_segtree() {}\n\
+    \    \n    sparse_segtree(int n) {\n        log = __lg(n) + 1;\n        tree_sz\
     \ = 1 << log;\n        st.push_back(id());\n        ch.emplace_back(-1, -1);\n\
     \    }\n\n    void set(int p, T v) {\n        buf[0] = idx = 0;\n        int tl\
     \ = 0, tr = tree_sz;\n        while (tl + 1 != tr) {\n            int mid = (tl\
@@ -35,8 +35,8 @@ data:
     \ tr <= r) {\n            return st[x];\n        }\n        int mid = (tl + tr)\
     \ >> 1;\n        return op(get(l, r, ch[x].first, tl, mid), get(l, r, ch[x].second,\
     \ mid, tr));\n    }\n};\n"
-  code: "template <class T, auto op, auto id>\nstruct SegtreeSparse {\n    SegtreeSparse()\
-    \ {}\n    \n    SegtreeSparse(int n) {\n        log = __lg(n) + 1;\n        tree_sz\
+  code: "template <class T, auto op, auto id>\nstruct sparse_segtree {\n    sparse_segtree()\
+    \ {}\n    \n    sparse_segtree(int n) {\n        log = __lg(n) + 1;\n        tree_sz\
     \ = 1 << log;\n        st.push_back(id());\n        ch.emplace_back(-1, -1);\n\
     \    }\n\n    void set(int p, T v) {\n        buf[0] = idx = 0;\n        int tl\
     \ = 0, tr = tree_sz;\n        while (tl + 1 != tr) {\n            int mid = (tl\
@@ -63,15 +63,15 @@ data:
     \ mid, tr));\n    }\n};"
   dependsOn: []
   isVerificationFile: false
-  path: datastructures/segment_tree/segtree_sparse.h
+  path: datastructures/segment_tree/sparse_segtree.h
   requiredBy: []
-  timestamp: '2024-10-25 20:08:44-04:00'
+  timestamp: '2024-12-02 22:41:32-05:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: datastructures/segment_tree/segtree_sparse.h
+documentation_of: datastructures/segment_tree/sparse_segtree.h
 layout: document
 redirect_from:
-- /library/datastructures/segment_tree/segtree_sparse.h
-- /library/datastructures/segment_tree/segtree_sparse.h.html
-title: datastructures/segment_tree/segtree_sparse.h
+- /library/datastructures/segment_tree/sparse_segtree.h
+- /library/datastructures/segment_tree/sparse_segtree.h.html
+title: datastructures/segment_tree/sparse_segtree.h
 ---

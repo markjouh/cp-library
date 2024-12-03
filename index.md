@@ -1,20 +1,6 @@
 ---
 data:
   libraryCategories:
-  - name: datastructures/binary_indexed_tree
-    pages:
-    - icon: ':heavy_check_mark:'
-      path: datastructures/binary_indexed_tree/bit.h
-      title: datastructures/binary_indexed_tree/bit.h
-    - icon: ':warning:'
-      path: datastructures/binary_indexed_tree/bit_2d.h
-      title: datastructures/binary_indexed_tree/bit_2d.h
-    - icon: ':heavy_check_mark:'
-      path: datastructures/binary_indexed_tree/bit_dual.h
-      title: datastructures/binary_indexed_tree/bit_dual.h
-    - icon: ':warning:'
-      path: datastructures/binary_indexed_tree/bit_range_add.h
-      title: datastructures/binary_indexed_tree/bit_range_add.h
   - name: datastructures
     pages:
     - icon: ':heavy_check_mark:'
@@ -26,26 +12,46 @@ data:
     - icon: ':heavy_check_mark:'
       path: datastructures/hash_table.h
       title: datastructures/hash_table.h
+    - icon: ':question:'
+      path: datastructures/ordered_set.h
+      title: datastructures/ordered_set.h
     - icon: ':warning:'
       path: datastructures/w_ary_tree.h
       title: datastructures/w_ary_tree.h
+  - name: datastructures/fenwick_tree
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: datastructures/fenwick_tree/dual_fentree.h
+      title: datastructures/fenwick_tree/dual_fentree.h
+    - icon: ':heavy_check_mark:'
+      path: datastructures/fenwick_tree/fentree.h
+      title: datastructures/fenwick_tree/fentree.h
+    - icon: ':warning:'
+      path: datastructures/fenwick_tree/fentree_2d.h
+      title: datastructures/fenwick_tree/fentree_2d.h
+    - icon: ':warning:'
+      path: datastructures/fenwick_tree/ru_fentree.h
+      title: datastructures/fenwick_tree/ru_fentree.h
   - name: datastructures/segment_tree
     pages:
+    - icon: ':warning:'
+      path: datastructures/segment_tree/lazy_segtree.h
+      title: datastructures/segment_tree/lazy_segtree.h
+    - icon: ':warning:'
+      path: datastructures/segment_tree/persistent_segtree.h
+      title: datastructures/segment_tree/persistent_segtree.h
+    - icon: ':warning:'
+      path: datastructures/segment_tree/range_update_segtree.h
+      title: datastructures/segment_tree/range_update_segtree.h
     - icon: ':heavy_check_mark:'
       path: datastructures/segment_tree/segtree.h
       title: datastructures/segment_tree/segtree.h
     - icon: ':warning:'
-      path: datastructures/segment_tree/segtree_lazy.h
-      title: datastructures/segment_tree/segtree_lazy.h
-    - icon: ':warning:'
-      path: datastructures/segment_tree/segtree_range_update.h
-      title: datastructures/segment_tree/segtree_range_update.h
-    - icon: ':warning:'
       path: datastructures/segment_tree/segtree_set.h
       title: datastructures/segment_tree/segtree_set.h
     - icon: ':warning:'
-      path: datastructures/segment_tree/segtree_sparse.h
-      title: datastructures/segment_tree/segtree_sparse.h
+      path: datastructures/segment_tree/sparse_segtree.h
+      title: datastructures/segment_tree/sparse_segtree.h
   - name: datastructures/static
     pages:
     - icon: ':x:'
@@ -55,8 +61,8 @@ data:
       path: datastructures/static/mo_queries.h
       title: datastructures/static/mo_queries.h
     - icon: ':heavy_check_mark:'
-      path: datastructures/static/rmq.h
-      title: datastructures/static/rmq.h
+      path: datastructures/static/sparse_table.h
+      title: datastructures/static/sparse_table.h
   - name: geometry
     pages:
     - icon: ':warning:'
@@ -96,8 +102,8 @@ data:
       path: graphs/trees/centroid_decomposition.h
       title: graphs/trees/centroid_decomposition.h
     - icon: ':warning:'
-      path: graphs/trees/lca.h
-      title: graphs/trees/lca.h
+      path: graphs/trees/rmq_lca.h
+      title: graphs/trees/rmq_lca.h
     - icon: ':heavy_check_mark:'
       path: graphs/trees/tree_hashing.h
       title: graphs/trees/tree_hashing.h
@@ -109,17 +115,11 @@ data:
   - name: numeric
     pages:
     - icon: ':warning:'
-      path: numeric/binsearch.h
-      title: numeric/binsearch.h
-    - icon: ':warning:'
       path: numeric/binsearch_reals.h
       title: numeric/binsearch_reals.h
     - icon: ':heavy_check_mark:'
       path: numeric/mint.h
       title: numeric/mint.h
-    - icon: ':warning:'
-      path: numeric/mod_math.h
-      title: numeric/mod_math.h
     - icon: ':heavy_check_mark:'
       path: numeric/sieve_factor.h
       title: numeric/sieve_factor.h
@@ -128,7 +128,7 @@ data:
       title: numeric/square_matrix.h
   - name: strings
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: strings/hashing.h
       title: strings/hashing.h
     - icon: ':heavy_check_mark:'
@@ -146,25 +146,22 @@ data:
       title: utils/bits/stdc++.h
   - name: utils
     pages:
-    - icon: ':warning:'
+    - icon: ':question:'
       path: utils/compat.h
       title: utils/compat.h
-    - icon: ':warning:'
+    - icon: ':question:'
       path: utils/debug.h
       title: utils/debug.h
-    - icon: ':warning:'
-      path: utils/my_random.h
-      title: utils/my_random.h
-    - icon: ':warning:'
-      path: utils/my_timer.h
-      title: utils/my_timer.h
+    - icon: ':question:'
+      path: utils/random.h
+      title: utils/random.h
   verificationCategories:
   - name: verify/aizu/alds1
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/aizu/alds1/binary_search.test.cpp
       title: verify/aizu/alds1/binary_search.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/aizu/alds1/number_of_inversions.test.cpp
       title: verify/aizu/alds1/number_of_inversions.test.cpp
   - name: verify/aizu/dsl
@@ -218,7 +215,7 @@ data:
       title: verify/library_checker/number_theory/enumerate_primes.test.cpp
   - name: verify/library_checker/string
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/library_checker/string/enumerate_palindromes.test.cpp
       title: verify/library_checker/string/enumerate_palindromes.test.cpp
     - icon: ':heavy_check_mark:'

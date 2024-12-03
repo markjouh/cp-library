@@ -6,10 +6,10 @@ data:
     path: template/template.h
     title: template/template.h
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/aizu/alds1/binary_search.test.cpp
     title: verify/aizu/alds1/binary_search.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/aizu/alds1/number_of_inversions.test.cpp
     title: verify/aizu/alds1/number_of_inversions.test.cpp
   - icon: ':heavy_check_mark:'
@@ -51,7 +51,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/library_checker/number_theory/enumerate_primes.test.cpp
     title: verify/library_checker/number_theory/enumerate_primes.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/library_checker/string/enumerate_palindromes.test.cpp
     title: verify/library_checker/string/enumerate_palindromes.test.cpp
   - icon: ':heavy_check_mark:'

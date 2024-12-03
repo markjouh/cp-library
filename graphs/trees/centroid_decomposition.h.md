@@ -8,9 +8,9 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"graphs/trees/centroid_decomposition.h\"\nstruct CentroidDecomp\
+  bundledCode: "#line 1 \"graphs/trees/centroid_decomposition.h\"\nstruct centroid_decomp\
     \ {\n    int root;\n    vector<int> par;\n    vector<vector<int>> h;\n\n    const\
-    \ vector<int> &operator[](int u) {\n        return h[u];\n    }\n\n    CentroidDecomp(const\
+    \ vector<int> &operator[](int u) {\n        return h[u];\n    }\n\n    centroid_decomp(const\
     \ vector<vector<int>> &g_) : g(g_) {\n        const int n = sz(g);\n        par.resize(n);\n\
     \        blocked.resize(n);\n        size_st.resize(n);\n        for (int i =\
     \ 0; i < n; i++) {\n            if (size_st[i] == 0) {\n                build(i,\
@@ -31,9 +31,9 @@ data:
     \ -1, size_st[u]);\n        par[cent] = u_par;\n        blocked[cent] = true;\n\
     \        for (int v : g[cent]) {\n            if (!blocked[v]) {\n           \
     \     build(v, cent);\n            }\n        }\n    }\n};\n"
-  code: "struct CentroidDecomp {\n    int root;\n    vector<int> par;\n    vector<vector<int>>\
+  code: "struct centroid_decomp {\n    int root;\n    vector<int> par;\n    vector<vector<int>>\
     \ h;\n\n    const vector<int> &operator[](int u) {\n        return h[u];\n   \
-    \ }\n\n    CentroidDecomp(const vector<vector<int>> &g_) : g(g_) {\n        const\
+    \ }\n\n    centroid_decomp(const vector<vector<int>> &g_) : g(g_) {\n        const\
     \ int n = sz(g);\n        par.resize(n);\n        blocked.resize(n);\n       \
     \ size_st.resize(n);\n        for (int i = 0; i < n; i++) {\n            if (size_st[i]\
     \ == 0) {\n                build(i, -1);\n            }\n        }\n        blocked.clear();\n\
@@ -57,7 +57,7 @@ data:
   isVerificationFile: false
   path: graphs/trees/centroid_decomposition.h
   requiredBy: []
-  timestamp: '2024-10-25 19:46:34-04:00'
+  timestamp: '2024-12-02 22:41:32-05:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: graphs/trees/centroid_decomposition.h

@@ -11,8 +11,8 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"graphs/trees/binary_lifting.h\"\nstruct BinaryLifting {\n\
-    \    int log;\n    vector<int> dep;\n    vector<vector<int>> up;\n\n    BinaryLifting(const\
+  bundledCode: "#line 1 \"graphs/trees/binary_lifting.h\"\nstruct binary_lifting {\n\
+    \    int log;\n    vector<int> dep;\n    vector<vector<int>> up;\n\n    binary_lifting(const\
     \ vector<vector<int>> &g, int root = 0) {\n        log = __lg(sz(g)) + 1;\n  \
     \      dep.resize(sz(g), -1);\n        up = vector(sz(g), vector<int>(log, -1));\n\
     \n        queue<int> q;\n        dep[root] = 0;\n        q.push(root);\n     \
@@ -33,9 +33,9 @@ data:
     \            y = up[y][i];\n            }\n        }\n        return up[x][0];\n\
     \    }\n\n    int dist(int x, int y) {\n        return dep[x] + dep[y] - 2 * dep[lca(x,\
     \ y)];\n    }\n};\n"
-  code: "struct BinaryLifting {\n    int log;\n    vector<int> dep;\n    vector<vector<int>>\
-    \ up;\n\n    BinaryLifting(const vector<vector<int>> &g, int root = 0) {\n   \
-    \     log = __lg(sz(g)) + 1;\n        dep.resize(sz(g), -1);\n        up = vector(sz(g),\
+  code: "struct binary_lifting {\n    int log;\n    vector<int> dep;\n    vector<vector<int>>\
+    \ up;\n\n    binary_lifting(const vector<vector<int>> &g, int root = 0) {\n  \
+    \      log = __lg(sz(g)) + 1;\n        dep.resize(sz(g), -1);\n        up = vector(sz(g),\
     \ vector<int>(log, -1));\n\n        queue<int> q;\n        dep[root] = 0;\n  \
     \      q.push(root);\n        while (sz(q)) {\n            int u = q.front();\n\
     \            q.pop();\n            for (int v : g[u]) {\n                if (dep[v]\
@@ -58,7 +58,7 @@ data:
   isVerificationFile: false
   path: graphs/trees/binary_lifting.h
   requiredBy: []
-  timestamp: '2024-10-25 19:46:34-04:00'
+  timestamp: '2024-12-02 22:41:32-05:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/library_checker/tree/lca.test.cpp

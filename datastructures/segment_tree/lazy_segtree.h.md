@@ -8,11 +8,11 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"datastructures/segment_tree/segtree_lazy.h\"\ntemplate <class\
+  bundledCode: "#line 1 \"datastructures/segment_tree/lazy_segtree.h\"\ntemplate <class\
     \ T, auto op, auto t_id, class U, auto mapping, auto comp, auto u_id>\nstruct\
-    \ SegtreeLazy {\n    SegtreeLazy(int n_, T v = t_id()) {\n        init(n_, v);\n\
-    \        pull_all();\n    }\n\n    SegtreeLazy(const vector<T> &a) {\n       \
-    \ init(sz(a), t_id());\n        copy(all(a), begin(st) + tree_sz);\n        pull_all();\n\
+    \ lazy_segtree {\n    lazy_segtree(int n_, T v = t_id()) {\n        init(n_, v);\n\
+    \        pull_all();\n    }\n\n    lazy_segtree(const vector<T> &a) {\n      \
+    \  init(sz(a), t_id());\n        copy(all(a), begin(st) + tree_sz);\n        pull_all();\n\
     \    }\n\n    void set(int p, T v) {\n        push_path(p += tree_sz);\n     \
     \   st[p] = v;\n        pull_path(p);\n    }\n\n    void update(int p, U v) {\n\
     \        push_path(p += tree_sz);\n        st[p] = mapping(st[p], v);\n      \
@@ -56,8 +56,8 @@ data:
     \ (tl + tr) >> 1;\n        return op(query(l, r, x << 1, tl, mid), query(l, r,\
     \ x << 1 | 1, mid, tr));\n    }\n};\n"
   code: "template <class T, auto op, auto t_id, class U, auto mapping, auto comp,\
-    \ auto u_id>\nstruct SegtreeLazy {\n    SegtreeLazy(int n_, T v = t_id()) {\n\
-    \        init(n_, v);\n        pull_all();\n    }\n\n    SegtreeLazy(const vector<T>\
+    \ auto u_id>\nstruct lazy_segtree {\n    lazy_segtree(int n_, T v = t_id()) {\n\
+    \        init(n_, v);\n        pull_all();\n    }\n\n    lazy_segtree(const vector<T>\
     \ &a) {\n        init(sz(a), t_id());\n        copy(all(a), begin(st) + tree_sz);\n\
     \        pull_all();\n    }\n\n    void set(int p, T v) {\n        push_path(p\
     \ += tree_sz);\n        st[p] = v;\n        pull_path(p);\n    }\n\n    void update(int\
@@ -103,15 +103,15 @@ data:
     \ x << 1 | 1, mid, tr));\n    }\n};"
   dependsOn: []
   isVerificationFile: false
-  path: datastructures/segment_tree/segtree_lazy.h
+  path: datastructures/segment_tree/lazy_segtree.h
   requiredBy: []
-  timestamp: '2024-10-25 20:08:44-04:00'
+  timestamp: '2024-12-02 22:41:32-05:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: datastructures/segment_tree/segtree_lazy.h
+documentation_of: datastructures/segment_tree/lazy_segtree.h
 layout: document
 redirect_from:
-- /library/datastructures/segment_tree/segtree_lazy.h
-- /library/datastructures/segment_tree/segtree_lazy.h.html
-title: datastructures/segment_tree/segtree_lazy.h
+- /library/datastructures/segment_tree/lazy_segtree.h
+- /library/datastructures/segment_tree/lazy_segtree.h.html
+title: datastructures/segment_tree/lazy_segtree.h
 ---

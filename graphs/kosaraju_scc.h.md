@@ -11,10 +11,10 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"graphs/kosaraju_scc.h\"\nstruct KosarajuSCC {\n    int sccs\
-    \ = 0;\n    vector<int> comp;\n    vector<vector<int>> members, cg;\n\n    KosarajuSCC(const\
-    \ vector<vector<int>> &g_) : g(g_) {\n        comp.resize(sz(g), -1);\n      \
-    \  tg.resize(sz(g));\n        vis.resize(sz(g));\n        ord.reserve(sz(g));\n\
+  bundledCode: "#line 1 \"graphs/kosaraju_scc.h\"\nstruct kosaraju_scc {\n    int\
+    \ sccs = 0;\n    vector<int> comp;\n    vector<vector<int>> members, cg;\n\n \
+    \   kosaraju_scc(const vector<vector<int>> &g_) : g(g_) {\n        comp.resize(sz(g),\
+    \ -1);\n        tg.resize(sz(g));\n        vis.resize(sz(g));\n        ord.reserve(sz(g));\n\
     \        for (int i = 0; i < sz(g); i++) {\n            if (!vis[i]) {\n     \
     \           dfs_setup(i);\n            }\n        }\n        for (int i = sz(ord)\
     \ - 1; i >= 0; i--) {\n            if (comp[ord[i]] == -1) {\n               \
@@ -33,9 +33,9 @@ data:
     \ }\n\n    void dfs_build(int u) {\n        comp[u] = sccs;\n        members[sccs].push_back(u);\n\
     \        for (int v : tg[u]) {\n            if (comp[v] == -1) {\n           \
     \     dfs_build(v);\n            }\n        }\n    }\n};\n"
-  code: "struct KosarajuSCC {\n    int sccs = 0;\n    vector<int> comp;\n    vector<vector<int>>\
-    \ members, cg;\n\n    KosarajuSCC(const vector<vector<int>> &g_) : g(g_) {\n \
-    \       comp.resize(sz(g), -1);\n        tg.resize(sz(g));\n        vis.resize(sz(g));\n\
+  code: "struct kosaraju_scc {\n    int sccs = 0;\n    vector<int> comp;\n    vector<vector<int>>\
+    \ members, cg;\n\n    kosaraju_scc(const vector<vector<int>> &g_) : g(g_) {\n\
+    \        comp.resize(sz(g), -1);\n        tg.resize(sz(g));\n        vis.resize(sz(g));\n\
     \        ord.reserve(sz(g));\n        for (int i = 0; i < sz(g); i++) {\n    \
     \        if (!vis[i]) {\n                dfs_setup(i);\n            }\n      \
     \  }\n        for (int i = sz(ord) - 1; i >= 0; i--) {\n            if (comp[ord[i]]\
@@ -58,7 +58,7 @@ data:
   isVerificationFile: false
   path: graphs/kosaraju_scc.h
   requiredBy: []
-  timestamp: '2024-10-25 19:46:34-04:00'
+  timestamp: '2024-12-02 22:41:32-05:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/library_checker/graph/scc.test.cpp
