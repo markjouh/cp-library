@@ -1,13 +1,13 @@
 #include "segtree.h"
 
 template <class T, auto op, auto id>
-struct SegtreeSet {
+struct segtree_set {
     int n;
     set<int> free;
     set<pair<T, int>> used;
     Segtree<T, op, id> st;
 
-    SegtreeSet(int n_) : n(n_), st(n) {
+    segtree_set(int n_) : n(n_), st(n) {
         for (int i = 0; i < n; i++) {
             free.insert(i);
         }

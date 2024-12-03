@@ -6,7 +6,7 @@
 int main() {
     int q;
     cin >> q;
-    BinaryTrie<uint32_t> bt;
+    binary_trie<uint32_t> bt;
     while (q--) {
         int t, x;
         cin >> t >> x;

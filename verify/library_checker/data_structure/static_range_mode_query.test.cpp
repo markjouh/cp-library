@@ -11,14 +11,14 @@ int main() {
     for (int i = 0; i < n; i++) {
         cin >> a[i];
     }
-    MoQueries<pair<int, int>, 300> mo;
+    mo_queries<pair<int, int>, 300> mo;
     while (q--) {
         int l, r;
         cin >> l >> r;
         mo.insert(l, r - 1);
     }
 
-    HashTable<int, int> freq;
+    hash_table<int, int> freq;
     set<pair<int, int>> st;
 
     auto add = [&](int p) {

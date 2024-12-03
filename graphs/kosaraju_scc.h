@@ -1,9 +1,9 @@
-struct KosarajuSCC {
+struct kosaraju_scc {
     int sccs = 0;
     vector<int> comp;
     vector<vector<int>> members, cg;
 
-    KosarajuSCC(const vector<vector<int>> &g_) : g(g_) {
+    kosaraju_scc(const vector<vector<int>> &g_) : g(g_) {
         comp.resize(sz(g), -1);
         tg.resize(sz(g));
         vis.resize(sz(g));

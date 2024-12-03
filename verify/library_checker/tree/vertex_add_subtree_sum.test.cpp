@@ -1,7 +1,7 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/vertex_add_subtree_sum"
 
 #include "../../../template/template.h"
-#include "../../../datastructures/binary_indexed_tree/bit.h"
+#include "../../../datastructures/fenwick_tree/fentree.h"
 
 int main() {
     int n, q;
@@ -32,7 +32,7 @@ int main() {
 
     dfs(dfs, 0, -1);
 
-    BIT<ll> ft(n);
+    fentree<ll> ft(n);
     for (int i = 0; i < n; i++) {
         ft.add(tin[i], a[i]);
     }

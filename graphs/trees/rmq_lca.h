@@ -1,29 +1,28 @@
-#include "../../datastructures/static/rmq.h"
+#include "../../datastructures/static/sparse_table.h"
 
-struct LCA {
+struct rmq_lca {
     vector<int> tin, dep;
-    RMQ<pair<int, int>> rmq;
+    sparse_table<pair<int, int>, min_op> rmq;
 
-    LCA(const vector<vector<int>> &g) {
-        const int n = sz(g);
-        tin.resize(n), dep.resize(n);
-
+    rmq_lca() {}
+    rmq_lca(const vector<vector<int>> &g) {
+        tin.resize(sz(g)), dep.resize(sz(g));
         vector<pair<int, int>> d;
 
         auto dfs = [&](auto &&self, int u, int par) -> void {
             tin[u] = sz(d);
-            d.emplace_back(dep[u], u);
+            d.eb(dep[u], u);
             for (int v : g[u]) {
                 if (v != par) {
                     dep[v] = dep[u] + 1;
                     self(self, v, u);
-                    d.emplace_back(dep[u], u);
+                    d.eb(dep[u], u);
                 }
             }
         };
 
         dfs(dfs, 0, -1);
-        rmq = RMQ(d);
+        rmq = sparse_table(d);
     }
 
     int lca(int u, int v) {

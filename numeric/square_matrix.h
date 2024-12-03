@@ -1,8 +1,8 @@
 template <class T, int N>
-struct SquareMatrix {
+struct square_matrix {
     array<array<T, N>, N> vals{};
 
-    SquareMatrix() {
+    square_matrix() {
         for (int i = 0; i < N; i++) {
             vals[i][i] = 1;
         }
@@ -12,8 +12,8 @@ struct SquareMatrix {
         return vals[p];
     }
 
-    friend SquareMatrix pow(SquareMatrix base, int exp) {
-        SquareMatrix res;
+    friend square_matrix pow(square_matrix base, int exp) {
+        square_matrix res;
         while (exp) {
             if (exp & 1) {
                 res *= base;
@@ -24,7 +24,7 @@ struct SquareMatrix {
         return res;
     }
 
-    SquareMatrix &operator*=(SquareMatrix b) {
+    square_matrix &operator*=(square_matrix b) {
         array<array<T, N>, N> res{};
         for (int i = 0; i < N; i++) {
             for (int j = 0; j < N; j++) {
@@ -37,7 +37,7 @@ struct SquareMatrix {
         return *this;
     }
 
-    friend SquareMatrix operator*(SquareMatrix a, SquareMatrix b) {
+    friend square_matrix operator*(square_matrix a, square_matrix b) {
         return a *= b;
     }
 };

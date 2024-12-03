@@ -1,13 +1,13 @@
 #include "primitives.h"
 
 template <class T>
-T lattice_seg(const Point<T> &s) {
+T lattice_seg(const point<T> &s) {
     auto a = s.p, b = s.p + s.d;
     return gcd(b.x - a.x, b.y - a.y); // (inside, on boundary)
 }
 
 template <class T>
-pair<ll, ll> lattice_poly(const vector<Point<T>> &v) {
+pair<ll, ll> lattice_poly(const vector<point<T>> &v) {
     pair<ll, ll> res;
     for (int i = 0; i < sz(v); i++) {
         auto nxt = v[i == sz(v) - 1 ? 0 : i + 1];

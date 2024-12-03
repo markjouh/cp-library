@@ -10,7 +10,7 @@ int main() {
     for (int i = 0; i < n; i++) {
         cin >> a[i];
     }
-    MergesortTree<int> mt(a);
+    mergesort_tree<int> mt(a);
     while (q--) {
         int l, r, k;
         cin >> l >> r >> k;

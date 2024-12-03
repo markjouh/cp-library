@@ -1,4 +1,4 @@
-auto gen_sa(const string &s) {
+auto gen_suffix_array(const string &s) {
     const int n = sz(s) + 1;
 
     vector<int> sa(n);

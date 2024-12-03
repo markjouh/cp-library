@@ -1,4 +1,4 @@
-struct TreeHashing {
+struct tree_hashing {
     map<vector<int>, int> hash;
 
     auto add(const vector<vector<int>> &g, int r = 0) {

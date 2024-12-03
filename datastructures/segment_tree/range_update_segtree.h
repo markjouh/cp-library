@@ -1,9 +1,9 @@
 template <class T, auto op, auto id>
-struct SegtreeRU {
+struct ru_segtree {
     int n;
     vector<T> st;
 
-    SegtreeRU(int n_) : n(n_), st(2 * n, id()) {}
+    ru_segtree(int n_) : n(n_), st(2 * n, id()) {}
 
     void update(int l, int r, T v) {
         for (l += n, r += n + 1; l < r; l >>= 1, r >>= 1) {

@@ -3,7 +3,7 @@
 #include "../../../template/template.h"
 #include "../../../numeric/mint.h"
 
-using mi = Mint<1000000007>;
+using mi = mint<1000000007>;
 
 int main() {
     int m, n;

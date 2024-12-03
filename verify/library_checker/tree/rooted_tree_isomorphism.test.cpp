@@ -12,7 +12,7 @@ int main() {
         cin >> p;
         g[p].push_back(i);
     }
-    TreeHashing iso;
+    tree_hashing iso;
     auto res = iso.add(g);
     cout << sz(iso.hash) << '\n';
     for (int x : res) {

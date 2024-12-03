@@ -1,11 +1,11 @@
 template <class T>
-struct BITRU {
+struct ru_fentree {
     int n;
     vector<T> ft;
 
-    BITRU(int n_) : n(n_), ft(n + 1) {}
+    ru_fentree(int n_) : n(n_), ft(n + 1) {}
 
-    BITRU(const vector<T> &a) : n(sz(a)), ft(n + 1) {
+    ru_fentree(const vector<T> &a) : n(sz(a)), ft(n + 1) {
         for (int i = 0; i < n; i++) {
             ft[i + 1] += a[i];
             ft[i] -= a[i];

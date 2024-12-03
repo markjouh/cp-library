@@ -1,7 +1,7 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/point_add_range_sum"
 
 #include "../../../template/template.h"
-#include "../../../datastructures/binary_indexed_tree/bit.h"
+#include "../../../datastructures/fenwick_tree/fentree.h"
 
 int main() {
     int n, q;
@@ -10,7 +10,7 @@ int main() {
     for (int i = 0; i < n; i++) {
         cin >> a[i];
     }
-    BIT<ll> ft(a);
+    fentree<ll> ft(a);
     while (q--) {
         bool t;
         int x, y;

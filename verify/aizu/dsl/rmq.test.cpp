@@ -14,7 +14,7 @@ int id() {
 int main() {
     int n, q;
     cin >> n >> q;
-    Segtree<int, op, id> st(n);
+    segtree<int, op, id> st(n);
     while (q--) {
         bool t;
         int x, y;

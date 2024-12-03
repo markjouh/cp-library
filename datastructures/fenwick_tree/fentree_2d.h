@@ -1,11 +1,11 @@
-#include "bit.h"
+#include "fentree.h"
 
 template <class T>
-struct BIT2D {
+struct fentree_2d {
     int n;
-    vector<BIT<T>> ft;
+    vector<fentree<T>> ft;
 
-    BIT2D(int n_, int m) : n(n_), ft(n + 1, BIT<T>(m)) {}
+    fenwick_tree_2d(int n_, int m) : n(n_), ft(n + 1, fentree<T>(m)) {}
 
     void add(int r, int c, T v) {
         for (r++; r <= n; r += r & -r) {

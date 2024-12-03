@@ -11,99 +11,99 @@ bool safe_eq(T a, T b = 0) {
 }
 
 template <class T>
-struct Point {
+struct point {
     T x, y;
 
-    Point(T x_ = 0, T y_ = 0) : x(x_), y(y_) {}
+    point(T x_ = 0, T y_ = 0) : x(x_), y(y_) {}
 
     template <class U>
-    operator Point<U>() const {
-        return Point<U>(static_cast<U>(x), static_cast<U>(y));
+    operator point<U>() const {
+        return point<U>(static_cast<U>(x), static_cast<U>(y));
     }
 
     // Cast b onto the line colinear to a and multiply their magnitudes
     // Is b pointing in the same direction as a?
-    friend prod_t<T> operator*(Point a, const Point &b) {
+    friend prod_t<T> operator*(point a, const point &b) {
         return prod_t<T>(a.x) * b.x + prod_t<T>(a.y) * b.y;
     }
     // Align a horizontally along the x axis and integrate the parallelogram
     // Which side of a is b on?
-    friend prod_t<T> operator^(Point a, const Point &b) {
+    friend prod_t<T> operator^(point a, const point &b) {
         return prod_t<T>(a.x) * b.y - prod_t<T>(a.y) * b.x;
     }
 
-    Point &operator+=(const Point &b) {
+    point &operator+=(const point &b) {
         x += b.x, y += b.y;
         return *this;
     }
-    Point &operator-=(const Point &b) {
+    point &operator-=(const point &b) {
         x -= b.x, y -= b.y;
         return *this;
     }
-    Point &operator*=(T fac) {
+    point &operator*=(T fac) {
         x *= fac, y *= fac;
         return *this;
     }
-    Point &operator/=(T fac) {
+    point &operator/=(T fac) {
         x /= fac, y /= fac;
         return *this;
     }
-    friend Point operator+(Point a, const Point &b) {
+    friend point operator+(point a, const point &b) {
         return a += b;
     }
-    friend Point operator-(Point a, const Point &b) {
+    friend point operator-(point a, const point &b) {
         return a -= b;
     }
-    friend Point operator*(Point a, T b) {
+    friend point operator*(point a, T b) {
         return a *= b;
     }
-    friend Point operator/(Point a, T b) {
+    friend point operator/(point a, T b) {
         return a /= b;
     }
-    friend bool operator<(const Point &a, const Point &b) {
+    friend bool operator<(const point &a, const point &b) {
         return a.x < b.x || (a.x == b.x && a.y < b.y);
     }
-    friend bool operator>(const Point &a, const Point &b) {
+    friend bool operator>(const point &a, const point &b) {
         return b < a;
     }
-    friend bool operator==(const Point &a, const Point &b) {
+    friend bool operator==(const point &a, const point &b) {
         return a.x == b.x && a.y == b.y;
     }
-    friend bool operator!=(const Point &a, const Point &b) {
+    friend bool operator!=(const point &a, const point &b) {
         return !(a == b);
     }
     int side() const {
         return y < 0 ? -1 : y == 0 && x >= 0 ? 0 : 1;
     }
-    friend bool comp_angle(const Point &a, const Point &b) {
+    friend bool comp_angle(const point &a, const point &b) {
         return a.side() < b.side() || (a.side() == b.side() && (a ^ b) > 0);
     }
-    friend prod_t<T> mag_sq(const Point &a) {
+    friend prod_t<T> mag_sq(const point &a) {
         return a * a;
     }
-    friend ld mag(const Point &a) {
+    friend ld mag(const point &a) {
         return sqrt(mag_sq(a));
     }
-    friend prod_t<T> dist_sq(const Point &a, const Point &b) {
+    friend prod_t<T> dist_sq(const point &a, const point &b) {
         return mag_sq(a - b);
     }
-    friend ld dist(const Point &a, const Point &b) {
+    friend ld dist(const point &a, const point &b) {
         return mag(a - b);
     }
-    friend istream &operator>>(istream &is, Point &a) {
+    friend istream &operator>>(istream &is, point &a) {
         return is >> a.x >> a.y;
     }
-    friend ostream &operator<<(ostream &os, const Point &a) {
+    friend ostream &operator<<(ostream &os, const point &a) {
         return os << '(' << a.x << ", " << a.y << ')';
     }
 };
 
 template <class T>
 struct Line {
-    Point<T> p, d;
+    point<T> p, d;
 
-    Line(Point<T> a = Point<T>()) : p(Point<T>()), d(a) {}
-    Line(Point<T> a, Point<T> b, bool ends = true) : p(a), d(ends ? b - a : b) {}
+    Line(point<T> a = point<T>()) : p(point<T>()), d(a) {}
+    Line(point<T> a, point<T> b, bool ends = true) : p(a), d(ends ? b - a : b) {}
 
     bool operator<(const Line &b) const {
         return comp_angle(this->d, b.d);
@@ -118,23 +118,23 @@ struct Line {
 };
 
 template <class T>
-bool on_line(const Point<T> &p, const Line<T> &l) {
+bool on_line(const point<T> &p, const Line<T> &l) {
     return safe_eq((p - l.p) ^ l.d);
 }
 
 template <class T>
-bool on_seg(const Point<T> &p, const Line<T> &s) {
+bool on_seg(const point<T> &p, const Line<T> &s) {
     auto vec_a = (s.p - p), vec_b = (s.p + s.d - p);
     return safe_eq(vec_a ^ vec_b) && (vec_a * vec_b) <= 0;
 }
 
 template <class T>
-ld dist_line(const Point<T> &p, const Line<T> &l) {
+ld dist_line(const point<T> &p, const Line<T> &l) {
     return abs((p - l.p) ^ l.d) / mag(l);
 }
 
 template <class T>
-ld dist_seg(const Point<T> &p, const Line<T> &s) {
+ld dist_seg(const point<T> &p, const Line<T> &s) {
     if ((p - s.p) * s.d <= 0) {
         return dist(p, s.p);
     }
@@ -145,12 +145,12 @@ ld dist_seg(const Point<T> &p, const Line<T> &s) {
 }
 
 template <class T>
-Point<ld> project_line(const Point<T> &p, const Line<T> &l) {
+Point<ld> project_line(const point<T> &p, const Line<T> &l) {
     return Point<ld>(l.p) + Point<ld>(l.d) * ((p - l.p) * l.d) / mag_sq(l);
 }
 
 template <class T>
-Point<ld> project_seg(const Point<T> &p, const Line<T> &s) {
+Point<ld> project_seg(const point<T> &p, const Line<T> &s) {
     if ((p - s.p) * s.d <= 0) {
         return s.p;
     }

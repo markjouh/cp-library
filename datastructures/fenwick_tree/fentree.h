@@ -1,11 +1,11 @@
 template <class T>
-struct BIT {
+struct fentree {
     int n;
     vector<T> ft;
 
-    BIT(int n_) : n(n_), ft(n + 1) {}
+    fentree(int n_) : n(n_), ft(n + 1) {}
 
-    BIT(const vector<T> &a) : n(sz(a)), ft(n + 1) {
+    fentree(const vector<T> &a) : n(sz(a)), ft(n + 1) {
         for (int i = 1; i <= n; i++) {
             ft[i] += a[i - 1];
             if (i + (i & -i) <= n) {

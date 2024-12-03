@@ -6,15 +6,15 @@
 int main() {
     int n, q;
     cin >> n >> q;
-    DSU dsu(n);
+    dsu comps(n);
     while (q--) {
         bool t;
         int x, y;
         cin >> t >> x >> y;
         if (t) {
-            cout << (dsu.find(x) == dsu.find(y)) << '\n';
+            cout << (comps.find(x) == comps.find(y)) << '\n';
         } else {
-            dsu.join(x, y);
+            comps.join(x, y);
         }
     }
 }

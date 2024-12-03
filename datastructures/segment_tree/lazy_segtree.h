@@ -1,11 +1,11 @@
 template <class T, auto op, auto t_id, class U, auto mapping, auto comp, auto u_id>
-struct SegtreeLazy {
-    SegtreeLazy(int n_, T v = t_id()) {
+struct lazy_segtree {
+    lazy_segtree(int n_, T v = t_id()) {
         init(n_, v);
         pull_all();
     }
 
-    SegtreeLazy(const vector<T> &a) {
+    lazy_segtree(const vector<T> &a) {
         init(sz(a), t_id());
         copy(all(a), begin(st) + tree_sz);
         pull_all();

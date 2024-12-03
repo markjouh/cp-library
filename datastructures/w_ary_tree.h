@@ -1,13 +1,13 @@
-struct Word {
+struct word {
     uint64_t mask;
-    Word() : mask(0) {}
+    word() : mask(0) {}
     
     void flip_bit(int p) { mask ^= 1ull << p; }
     int min_bit() { return __builtin_ctzll(mask); }
     int max_bit() { return 63 - __builtin_clzll(mask); }
 };
 
-struct WaryBase : public Word {
+struct w_ary_base : public word {
     bool flip(int p) {
         bool old = mask != 0;
         flip_bit(p);
@@ -18,8 +18,8 @@ struct WaryBase : public Word {
 };
 
 template <int L>
-struct WaryTree : public Word {
-    array<conditional_t<(L > 2), WaryTree<L - 1>, WaryBase>, 64> nxt;
+struct w_ary_tree : public word {
+    array<conditional_t<(L > 2), w_ary_tree<L - 1>, w_ary_base>, 64> nxt;
 
     static constexpr int block_sz = 1ull << (6 * (L - 1));
 
@@ -31,11 +31,11 @@ struct WaryTree : public Word {
         }
         return (mask != 0) != old;
     }
-    int min() {
+    int get_min() {
         int block = min_bit();
         return block * block_sz + nxt[block].min();
     }
-    int max() {
+    int get_max() {
         int block = max_bit();
         return block * block_sz + nxt[block].max();
     }

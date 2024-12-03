@@ -1,11 +1,11 @@
 template <class T>
-struct BinaryTrie {
+struct binary_trie {
     static const int W = sizeof(T) * 8;
     vector<array<int, 2>> nxt;
     vector<int> cnt;
     T filter = 0;
 
-    BinaryTrie() : nxt(1, {-1, -1}), cnt(1, 0) {}
+    binary_trie() : nxt(1, {-1, -1}), cnt(1, 0) {}
 
     void add(T x, int v = 1) {
         x ^= filter;
@@ -22,7 +22,7 @@ struct BinaryTrie {
         }
     }
 
-    BinaryTrie &operator^=(T x) {
+    binary_trie &operator^=(T x) {
         filter ^= x;
         return *this;
     }

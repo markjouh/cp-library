@@ -1,4 +1,4 @@
-struct CentroidDecomp {
+struct centroid_decomp {
     int root;
     vector<int> par;
     vector<vector<int>> h;
@@ -7,7 +7,7 @@ struct CentroidDecomp {
         return h[u];
     }
 
-    CentroidDecomp(const vector<vector<int>> &g_) : g(g_) {
+    centroid_decomp(const vector<vector<int>> &g_) : g(g_) {
         const int n = sz(g);
         par.resize(n);
         blocked.resize(n);

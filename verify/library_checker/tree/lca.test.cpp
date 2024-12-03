@@ -12,7 +12,7 @@ int main() {
         cin >> p;
         g[p].push_back(i);
     }
-    BinaryLifting bl(g);
+    binary_lifting bl(g);
     while (q--) {
         int u, v;
         cin >> u >> v;

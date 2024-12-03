@@ -6,7 +6,7 @@
 int main() {
     int q;
     cin >> q;
-    HashTable<ll, ll> mp;
+    hash_table<ll, ll> mp;
     while (q--) {
         bool t;
         ll k;

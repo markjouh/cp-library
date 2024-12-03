@@ -12,7 +12,7 @@ int main() {
         cin >> u >> v;
         g[u].push_back(v);
     }
-    KosarajuSCC scc(g);
+    kosaraju_scc scc(g);
     cout << scc.sccs << '\n';
     for (int i = 0; i < scc.sccs; i++) {
         cout << sz(scc.members[i]) << ' ';

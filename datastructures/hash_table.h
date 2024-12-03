@@ -1,6 +1,6 @@
 #include <ext/pb_ds/assoc_container.hpp>
 
-struct CustomHash {
+struct custom_hash {
     static uint64_t splitmix64(uint64_t x) {
         x += 0x9e3779b97f4a7c15;
         x = (x ^ (x >> 30)) * 0xbf58476d1ce4e5b9;
@@ -15,4 +15,4 @@ struct CustomHash {
 };
 
 template <class T, class U>
-using HashTable = __gnu_pbds::gp_hash_table<T, U, CustomHash>;
+using hash_table = __gnu_pbds::gp_hash_table<T, U, custom_hash>;

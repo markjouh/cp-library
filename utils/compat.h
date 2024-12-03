@@ -13,6 +13,6 @@ unsigned int __lg(T x) {
     return res;
 }
 
-#endif //__clang__
+#endif // __clang__
 
 #endif // COMPAT_H

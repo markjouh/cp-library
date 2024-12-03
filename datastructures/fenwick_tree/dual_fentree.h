@@ -1,11 +1,11 @@
-#include "bit.h"
+#include "fentree.h"
 
 template <class T>
-struct BITDual {
+struct dual_fentree {
     int n;
-    BIT<T> pref, suff;
+    fentree<T> pref, suff;
 
-    BITDual(int n_) : n(n_), pref(n), suff(n) {}
+    dual_fentree(int n_) : n(n_), pref(n), suff(n) {}
 
     T sum(int r) {
         return pref.sum(r - 1) + suff.sum(n - r - 1) * (r + 1);

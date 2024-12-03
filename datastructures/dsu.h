@@ -1,7 +1,7 @@
-struct DSU {
+struct dsu {
     vector<int> a;
 
-    DSU(int n) : a(n, -1) {}
+    dsu(int n) : a(n, -1) {}
 
     int size(int x) {
         return -a[find(x)];

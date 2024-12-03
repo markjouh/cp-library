@@ -7,7 +7,7 @@ int main() {
     string s;
     cin >> s;
     bool first = true;
-    for (int x : gen_sa(s)) {
+    for (int x : gen_suffix_array(s)) {
         if (first) {
             first = false;
             continue;

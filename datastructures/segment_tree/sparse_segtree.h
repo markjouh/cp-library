@@ -1,8 +1,8 @@
 template <class T, auto op, auto id>
-struct SegtreeSparse {
-    SegtreeSparse() {}
+struct sparse_segtree {
+    sparse_segtree() {}
     
-    SegtreeSparse(int n) {
+    sparse_segtree(int n) {
         log = __lg(n) + 1;
         tree_sz = 1 << log;
         st.push_back(id());

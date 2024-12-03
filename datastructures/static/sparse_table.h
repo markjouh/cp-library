@@ -1,19 +1,10 @@
-template <class T>
-T min_f(T x, T y) {
-    return x < y ? x : y;
-}
-template <class T>
-T max_f(T x, T y) {
-    return x > y ? x : y;
-}
-
-template <class T, auto op = min_f<T>>
-struct RMQ {
+template <class T, auto op>
+struct sparse_table {
     int n, log;
     vector<vector<T>> st;
 
-    RMQ() {}
-    RMQ(const vector<T> &a) : n(sz(a)), log(__lg(n) + 1) {
+    sparse_table() {}
+    sparse_table(const vector<T> &a) : n(sz(a)), log(__lg(n) + 1) {
         st.resize(log);
         st[0] = a;
         for (int i = 1; i < log; i++) {
@@ -30,3 +21,12 @@ struct RMQ {
         return op(st[i][l], st[i][r - (1 << i)]);
     }
 };
+
+template <class T>
+T min_op(T x, T y) {
+    return x < y ? x : y;
+}
+template <class T>
+T max_op(T x, T y) {
+    return x > y ? x : y;
+}
