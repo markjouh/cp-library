@@ -2,27 +2,28 @@
 
 struct rmq_lca {
     vector<int> tin, dep;
-    sparse_table<pair<int, int>, min_op> rmq;
+    sparse_table<pair<int, int>, min_op<pair<int, int>>> rmq;
 
     rmq_lca() {}
     rmq_lca(const vector<vector<int>> &g) {
-        tin.resize(sz(g)), dep.resize(sz(g));
+        tin.resize(sz(g));
+        dep.resize(sz(g));
         vector<pair<int, int>> d;
 
         auto dfs = [&](auto &&self, int u, int par) -> void {
             tin[u] = sz(d);
-            d.eb(dep[u], u);
+            d.emplace_back(dep[u], u);
             for (int v : g[u]) {
                 if (v != par) {
                     dep[v] = dep[u] + 1;
                     self(self, v, u);
-                    d.eb(dep[u], u);
+                    d.emplace_back(dep[u], u);
                 }
             }
         };
 
         dfs(dfs, 0, -1);
-        rmq = sparse_table(d);
+        rmq = sparse_table<pair<int, int>, min_op<pair<int, int>>>(d);
     }
 
     int lca(int u, int v) {
