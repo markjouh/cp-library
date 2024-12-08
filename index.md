@@ -63,14 +63,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: datastructures/static/sparse_table.h
       title: datastructures/static/sparse_table.h
-  - name: geometry
-    pages:
-    - icon: ':warning:'
-      path: geometry/integer_lattice.h
-      title: geometry/integer_lattice.h
-    - icon: ':warning:'
-      path: geometry/primitives.h
-      title: geometry/primitives.h
   - name: graphs
     pages:
     - icon: ':warning:'
@@ -114,6 +106,9 @@ data:
       title: heuristic/simulated_annealing.h
   - name: numeric
     pages:
+    - icon: ':heavy_check_mark:'
+      path: numeric/binsearch.h
+      title: numeric/binsearch.h
     - icon: ':warning:'
       path: numeric/binsearch_reals.h
       title: numeric/binsearch_reals.h
@@ -128,7 +123,7 @@ data:
       title: numeric/square_matrix.h
   - name: strings
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: strings/hashing.h
       title: strings/hashing.h
     - icon: ':heavy_check_mark:'
@@ -136,25 +131,9 @@ data:
       title: strings/suffix_array.h
   - name: template
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template/template.h
       title: template/template.h
-  - name: utils/bits
-    pages:
-    - icon: ':heavy_check_mark:'
-      path: utils/bits/stdc++.h
-      title: utils/bits/stdc++.h
-  - name: utils
-    pages:
-    - icon: ':heavy_check_mark:'
-      path: utils/compat.h
-      title: utils/compat.h
-    - icon: ':heavy_check_mark:'
-      path: utils/debug.h
-      title: utils/debug.h
-    - icon: ':heavy_check_mark:'
-      path: utils/random.h
-      title: utils/random.h
   verificationCategories:
   - name: verify/aizu/alds1
     pages:
@@ -215,7 +194,7 @@ data:
       title: verify/library_checker/number_theory/enumerate_primes.test.cpp
   - name: verify/library_checker/string
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/library_checker/string/enumerate_palindromes.test.cpp
       title: verify/library_checker/string/enumerate_palindromes.test.cpp
     - icon: ':heavy_check_mark:'
