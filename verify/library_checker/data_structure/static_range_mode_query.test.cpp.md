@@ -7,7 +7,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: datastructures/static/mo_queries.h
     title: datastructures/static/mo_queries.h
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.h
     title: template/template.h
   _extendedRequiredBy: []

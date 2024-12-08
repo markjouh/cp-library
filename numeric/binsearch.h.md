@@ -9,6 +9,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/library_checker/data_structure/range_kth_smallest.test.cpp
     title: verify/library_checker/data_structure/range_kth_smallest.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/library_checker/string/enumerate_palindromes.test.cpp
+    title: verify/library_checker/string/enumerate_palindromes.test.cpp
   _isVerificationFailed: false
   _pathExtension: h
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -36,6 +39,7 @@ data:
   verifiedWith:
   - verify/aizu/alds1/binary_search.test.cpp
   - verify/library_checker/data_structure/range_kth_smallest.test.cpp
+  - verify/library_checker/string/enumerate_palindromes.test.cpp
 documentation_of: numeric/binsearch.h
 layout: document
 redirect_from:

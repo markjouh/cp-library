@@ -123,7 +123,7 @@ data:
       title: numeric/square_matrix.h
   - name: strings
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: strings/hashing.h
       title: strings/hashing.h
     - icon: ':heavy_check_mark:'
@@ -131,7 +131,10 @@ data:
       title: strings/suffix_array.h
   - name: template
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
+      path: template/io_helpers.h
+      title: template/io_helpers.h
+    - icon: ':heavy_check_mark:'
       path: template/template.h
       title: template/template.h
   verificationCategories:
@@ -194,7 +197,7 @@ data:
       title: verify/library_checker/number_theory/enumerate_primes.test.cpp
   - name: verify/library_checker/string
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/library_checker/string/enumerate_palindromes.test.cpp
       title: verify/library_checker/string/enumerate_palindromes.test.cpp
     - icon: ':heavy_check_mark:'

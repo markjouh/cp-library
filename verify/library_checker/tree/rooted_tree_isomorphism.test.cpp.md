@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: graphs/trees/tree_hashing.h
     title: graphs/trees/tree_hashing.h
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.h
     title: template/template.h
   _extendedRequiredBy: []
