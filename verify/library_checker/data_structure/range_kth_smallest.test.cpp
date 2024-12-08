@@ -1,7 +1,7 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/range_kth_smallest"
 
 #include "../../../template/template.h"
-#include "../../../datastructures/static/mergesort_tree.h"
+#include "../../../datastructures/mergesort_tree.h"
 
 int main() {
     int n, q;
