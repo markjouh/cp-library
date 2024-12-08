@@ -4,19 +4,19 @@ data:
   - icon: ':heavy_check_mark:'
     path: strings/suffix_array.h
     title: strings/suffix_array.h
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.h
     title: template/template.h
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: utils/bits/stdc++.h
     title: utils/bits/stdc++.h
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: utils/compat.h
     title: utils/compat.h
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: utils/debug.h
     title: utils/debug.h
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: utils/random.h
     title: utils/random.h
   _extendedRequiredBy: []

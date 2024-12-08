@@ -12,7 +12,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: datastructures/hash_table.h
       title: datastructures/hash_table.h
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
+      path: datastructures/mergesort_tree.h
+      title: datastructures/mergesort_tree.h
+    - icon: ':heavy_check_mark:'
       path: datastructures/ordered_set.h
       title: datastructures/ordered_set.h
     - icon: ':warning:'
@@ -54,9 +57,6 @@ data:
       title: datastructures/segment_tree/sparse_segtree.h
   - name: datastructures/static
     pages:
-    - icon: ':x:'
-      path: datastructures/static/mergesort_tree.h
-      title: datastructures/static/mergesort_tree.h
     - icon: ':heavy_check_mark:'
       path: datastructures/static/mo_queries.h
       title: datastructures/static/mo_queries.h
@@ -136,23 +136,23 @@ data:
       title: strings/suffix_array.h
   - name: template
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: template/template.h
       title: template/template.h
   - name: utils/bits
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: utils/bits/stdc++.h
       title: utils/bits/stdc++.h
   - name: utils
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: utils/compat.h
       title: utils/compat.h
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: utils/debug.h
       title: utils/debug.h
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: utils/random.h
       title: utils/random.h
   verificationCategories:
@@ -185,7 +185,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/library_checker/data_structure/point_add_range_sum.test.cpp
       title: verify/library_checker/data_structure/point_add_range_sum.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/library_checker/data_structure/range_kth_smallest.test.cpp
       title: verify/library_checker/data_structure/range_kth_smallest.test.cpp
     - icon: ':heavy_check_mark:'

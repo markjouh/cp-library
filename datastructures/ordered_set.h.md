@@ -2,19 +2,19 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':x:'
-    path: datastructures/static/mergesort_tree.h
-    title: datastructures/static/mergesort_tree.h
+  - icon: ':heavy_check_mark:'
+    path: datastructures/mergesort_tree.h
+    title: datastructures/mergesort_tree.h
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/aizu/alds1/number_of_inversions.test.cpp
     title: verify/aizu/alds1/number_of_inversions.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/library_checker/data_structure/range_kth_smallest.test.cpp
     title: verify/library_checker/data_structure/range_kth_smallest.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: h
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"datastructures/ordered_set.h\"\n#include <ext/pb_ds/assoc_container.hpp>\
@@ -41,9 +41,9 @@ data:
   isVerificationFile: false
   path: datastructures/ordered_set.h
   requiredBy:
-  - datastructures/static/mergesort_tree.h
+  - datastructures/mergesort_tree.h
   timestamp: '2024-12-02 22:41:32-05:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/aizu/alds1/number_of_inversions.test.cpp
   - verify/library_checker/data_structure/range_kth_smallest.test.cpp

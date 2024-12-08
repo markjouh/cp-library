@@ -1,16 +1,16 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: utils/bits/stdc++.h
     title: utils/bits/stdc++.h
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: utils/compat.h
     title: utils/compat.h
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: utils/debug.h
     title: utils/debug.h
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: utils/random.h
     title: utils/random.h
   _extendedRequiredBy: []
@@ -36,7 +36,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/library_checker/data_structure/point_add_range_sum.test.cpp
     title: verify/library_checker/data_structure/point_add_range_sum.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/library_checker/data_structure/range_kth_smallest.test.cpp
     title: verify/library_checker/data_structure/range_kth_smallest.test.cpp
   - icon: ':heavy_check_mark:'
@@ -75,9 +75,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/library_checker/tree/vertex_add_subtree_sum.test.cpp
     title: verify/library_checker/tree/vertex_add_subtree_sum.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: h
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"template/template.h\"\n#include <bits/stdc++.h>\n\nusing\
@@ -140,7 +140,7 @@ data:
   path: template/template.h
   requiredBy: []
   timestamp: '2024-12-02 22:41:32-05:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/aizu/alds1/binary_search.test.cpp
   - verify/aizu/alds1/number_of_inversions.test.cpp
