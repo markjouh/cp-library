@@ -16,7 +16,8 @@
 "verify/library_checker/number_theory/enumerate_primes.test.cpp": "2024-12-07 19:52:17 -0500",
 "verify/library_checker/string/enumerate_palindromes.test.cpp": "2024-12-07 20:04:53 -0500",
 "verify/library_checker/string/suffix_array.test.cpp": "2024-12-07 19:52:17 -0500",
-"verify/library_checker/tree/lca.test.cpp": "2024-12-07 19:52:17 -0500",
+"verify/library_checker/tree/binlift_lca.test.cpp": "2024-12-07 20:11:53 -0500",
+"verify/library_checker/tree/rmq_lca.test.cpp": "2024-12-07 20:11:53 -0500",
 "verify/library_checker/tree/rooted_tree_isomorphism.test.cpp": "2024-12-07 19:52:17 -0500",
 "verify/library_checker/tree/vertex_add_subtree_sum.test.cpp": "2024-12-07 19:52:17 -0500"
 }
