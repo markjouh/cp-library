@@ -1,6 +1,7 @@
 #define PROBLEM "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_4_B"
 
 #include "../../../template/template.h"
+#include "../../../numeric/binsearch.h"
 
 int main() {
     int n;

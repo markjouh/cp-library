@@ -1,3 +1,0 @@
-#include "compat.h"
-#include "debug.h"
-#include "random.h"
