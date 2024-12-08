@@ -17,10 +17,10 @@ data:
     PROBLEM: https://judge.yosupo.jp/problem/lca
     links:
     - https://judge.yosupo.jp/problem/lca
-  bundledCode: "#line 1 \"verify/library_checker/tree/lca.test.cpp\"\n#define PROBLEM\
-    \ \"https://judge.yosupo.jp/problem/lca\"\n\n#line 1 \"template/template.h\"\n\
-    #include <bits/stdc++.h>\n\nusing namespace std;\n\n#define all(x) begin(x), end(x)\n\
-    #define sz(x) int(size(x))\n\nusing ll = long long;\n#line 1 \"graphs/trees/binary_lifting.h\"\
+  bundledCode: "#line 1 \"verify/library_checker/tree/binlift_lca.test.cpp\"\n#define\
+    \ PROBLEM \"https://judge.yosupo.jp/problem/lca\"\n\n#line 1 \"template/template.h\"\
+    \n#include <bits/stdc++.h>\n\nusing namespace std;\n\n#define all(x) begin(x),\
+    \ end(x)\n#define sz(x) int(size(x))\n\nusing ll = long long;\n#line 1 \"graphs/trees/binary_lifting.h\"\
     \nstruct binary_lifting {\n    int log;\n    vector<int> dep;\n    vector<vector<int>>\
     \ up;\n\n    binary_lifting(const vector<vector<int>> &g, int root = 0) {\n  \
     \      log = __lg(sz(g)) + 1;\n        dep.resize(sz(g), -1);\n        up = vector(sz(g),\
@@ -41,7 +41,7 @@ data:
     \ i >= 0; i--) {\n            if (up[x][i] != up[y][i]) {\n                x =\
     \ up[x][i];\n                y = up[y][i];\n            }\n        }\n       \
     \ return up[x][0];\n    }\n\n    int dist(int x, int y) {\n        return dep[x]\
-    \ + dep[y] - 2 * dep[lca(x, y)];\n    }\n};\n#line 5 \"verify/library_checker/tree/lca.test.cpp\"\
+    \ + dep[y] - 2 * dep[lca(x, y)];\n    }\n};\n#line 5 \"verify/library_checker/tree/binlift_lca.test.cpp\"\
     \n\nint main() {\n    int n, q;\n    cin >> n >> q;\n    vector<vector<int>> g(n);\n\
     \    for (int i = 1; i < n; i++) {\n        int p;\n        cin >> p;\n      \
     \  g[p].push_back(i);\n    }\n    binary_lifting bl(g);\n    while (q--) {\n \
@@ -57,15 +57,15 @@ data:
   - template/template.h
   - graphs/trees/binary_lifting.h
   isVerificationFile: true
-  path: verify/library_checker/tree/lca.test.cpp
+  path: verify/library_checker/tree/binlift_lca.test.cpp
   requiredBy: []
-  timestamp: '2024-12-07 19:52:17-05:00'
+  timestamp: '2024-12-07 20:11:53-05:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: verify/library_checker/tree/lca.test.cpp
+documentation_of: verify/library_checker/tree/binlift_lca.test.cpp
 layout: document
 redirect_from:
-- /verify/verify/library_checker/tree/lca.test.cpp
-- /verify/verify/library_checker/tree/lca.test.cpp.html
-title: verify/library_checker/tree/lca.test.cpp
+- /verify/verify/library_checker/tree/binlift_lca.test.cpp
+- /verify/verify/library_checker/tree/binlift_lca.test.cpp.html
+title: verify/library_checker/tree/binlift_lca.test.cpp
 ---

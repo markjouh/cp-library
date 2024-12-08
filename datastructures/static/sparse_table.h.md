@@ -2,13 +2,16 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: graphs/trees/rmq_lca.h
     title: graphs/trees/rmq_lca.h
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/library_checker/data_structure/static_rmq.test.cpp
     title: verify/library_checker/data_structure/static_rmq.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/library_checker/tree/rmq_lca.test.cpp
+    title: verify/library_checker/tree/rmq_lca.test.cpp
   _isVerificationFailed: false
   _pathExtension: h
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -45,6 +48,7 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/library_checker/data_structure/static_rmq.test.cpp
+  - verify/library_checker/tree/rmq_lca.test.cpp
 documentation_of: datastructures/static/sparse_table.h
 layout: document
 redirect_from:

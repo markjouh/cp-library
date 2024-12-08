@@ -55,8 +55,11 @@ data:
     path: verify/library_checker/string/suffix_array.test.cpp
     title: verify/library_checker/string/suffix_array.test.cpp
   - icon: ':heavy_check_mark:'
-    path: verify/library_checker/tree/lca.test.cpp
-    title: verify/library_checker/tree/lca.test.cpp
+    path: verify/library_checker/tree/binlift_lca.test.cpp
+    title: verify/library_checker/tree/binlift_lca.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/library_checker/tree/rmq_lca.test.cpp
+    title: verify/library_checker/tree/rmq_lca.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/library_checker/tree/rooted_tree_isomorphism.test.cpp
     title: verify/library_checker/tree/rooted_tree_isomorphism.test.cpp
@@ -121,8 +124,9 @@ data:
   - verify/library_checker/graph/shortest_path.test.cpp
   - verify/library_checker/graph/scc.test.cpp
   - verify/library_checker/tree/rooted_tree_isomorphism.test.cpp
-  - verify/library_checker/tree/lca.test.cpp
   - verify/library_checker/tree/vertex_add_subtree_sum.test.cpp
+  - verify/library_checker/tree/binlift_lca.test.cpp
+  - verify/library_checker/tree/rmq_lca.test.cpp
 documentation_of: template/template.h
 layout: document
 redirect_from:

@@ -93,7 +93,7 @@ data:
     - icon: ':warning:'
       path: graphs/trees/centroid_decomposition.h
       title: graphs/trees/centroid_decomposition.h
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: graphs/trees/rmq_lca.h
       title: graphs/trees/rmq_lca.h
     - icon: ':heavy_check_mark:'
@@ -206,8 +206,11 @@ data:
   - name: verify/library_checker/tree
     pages:
     - icon: ':heavy_check_mark:'
-      path: verify/library_checker/tree/lca.test.cpp
-      title: verify/library_checker/tree/lca.test.cpp
+      path: verify/library_checker/tree/binlift_lca.test.cpp
+      title: verify/library_checker/tree/binlift_lca.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/library_checker/tree/rmq_lca.test.cpp
+      title: verify/library_checker/tree/rmq_lca.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/library_checker/tree/rooted_tree_isomorphism.test.cpp
       title: verify/library_checker/tree/rooted_tree_isomorphism.test.cpp

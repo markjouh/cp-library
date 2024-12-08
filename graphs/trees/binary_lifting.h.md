@@ -4,8 +4,8 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: verify/library_checker/tree/lca.test.cpp
-    title: verify/library_checker/tree/lca.test.cpp
+    path: verify/library_checker/tree/binlift_lca.test.cpp
+    title: verify/library_checker/tree/binlift_lca.test.cpp
   _isVerificationFailed: false
   _pathExtension: h
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -61,7 +61,7 @@ data:
   timestamp: '2024-12-02 22:41:32-05:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/library_checker/tree/lca.test.cpp
+  - verify/library_checker/tree/binlift_lca.test.cpp
 documentation_of: graphs/trees/binary_lifting.h
 layout: document
 redirect_from:
