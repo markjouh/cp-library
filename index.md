@@ -66,6 +66,9 @@ data:
   - name: graphs
     pages:
     - icon: ':warning:'
+      path: graphs/bipartite_matching.h
+      title: graphs/bipartite_matching.h
+    - icon: ':warning:'
       path: graphs/euler_cycle.h
       title: graphs/euler_cycle.h
     - icon: ':heavy_check_mark:'
