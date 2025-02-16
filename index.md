@@ -99,6 +99,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: graphs/trees/tree_hashing.h
       title: graphs/trees/tree_hashing.h
+    - icon: ':warning:'
+      path: graphs/trees/tree_paths.h
+      title: graphs/trees/tree_paths.h
   - name: heuristic
     pages:
     - icon: ':warning:'

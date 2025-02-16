@@ -45,8 +45,8 @@ data:
   timestamp: '2024-12-02 22:41:32-05:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/aizu/alds1/number_of_inversions.test.cpp
   - verify/library_checker/data_structure/range_kth_smallest.test.cpp
+  - verify/aizu/alds1/number_of_inversions.test.cpp
 documentation_of: datastructures/ordered_set.h
 layout: document
 redirect_from:

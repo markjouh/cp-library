@@ -106,27 +106,27 @@ data:
   timestamp: '2024-12-07 19:52:17-05:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/aizu/alds1/binary_search.test.cpp
-  - verify/aizu/alds1/number_of_inversions.test.cpp
-  - verify/aizu/ntl/power.test.cpp
-  - verify/aizu/dsl/rmq.test.cpp
-  - verify/aizu/dsl/rsq_and_raq.test.cpp
   - verify/library_checker/number_theory/enumerate_primes.test.cpp
-  - verify/library_checker/data_structure/static_rmq.test.cpp
-  - verify/library_checker/data_structure/set_xor_min.test.cpp
-  - verify/library_checker/data_structure/point_add_range_sum.test.cpp
-  - verify/library_checker/data_structure/unionfind.test.cpp
-  - verify/library_checker/data_structure/static_range_mode_query.test.cpp
-  - verify/library_checker/data_structure/range_kth_smallest.test.cpp
-  - verify/library_checker/data_structure/associative_array.test.cpp
   - verify/library_checker/string/suffix_array.test.cpp
   - verify/library_checker/string/enumerate_palindromes.test.cpp
   - verify/library_checker/graph/shortest_path.test.cpp
   - verify/library_checker/graph/scc.test.cpp
-  - verify/library_checker/tree/rooted_tree_isomorphism.test.cpp
-  - verify/library_checker/tree/vertex_add_subtree_sum.test.cpp
+  - verify/library_checker/data_structure/set_xor_min.test.cpp
+  - verify/library_checker/data_structure/static_range_mode_query.test.cpp
+  - verify/library_checker/data_structure/point_add_range_sum.test.cpp
+  - verify/library_checker/data_structure/unionfind.test.cpp
+  - verify/library_checker/data_structure/associative_array.test.cpp
+  - verify/library_checker/data_structure/static_rmq.test.cpp
+  - verify/library_checker/data_structure/range_kth_smallest.test.cpp
   - verify/library_checker/tree/binlift_lca.test.cpp
+  - verify/library_checker/tree/vertex_add_subtree_sum.test.cpp
   - verify/library_checker/tree/rmq_lca.test.cpp
+  - verify/library_checker/tree/rooted_tree_isomorphism.test.cpp
+  - verify/aizu/alds1/number_of_inversions.test.cpp
+  - verify/aizu/alds1/binary_search.test.cpp
+  - verify/aizu/dsl/rmq.test.cpp
+  - verify/aizu/dsl/rsq_and_raq.test.cpp
+  - verify/aizu/ntl/power.test.cpp
 documentation_of: template/template.h
 layout: document
 redirect_from:

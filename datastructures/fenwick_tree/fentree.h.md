@@ -47,14 +47,14 @@ data:
   isVerificationFile: false
   path: datastructures/fenwick_tree/fentree.h
   requiredBy:
-  - datastructures/fenwick_tree/dual_fentree.h
   - datastructures/fenwick_tree/fentree_2d.h
+  - datastructures/fenwick_tree/dual_fentree.h
   timestamp: '2024-12-02 22:41:32-05:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/aizu/dsl/rsq_and_raq.test.cpp
   - verify/library_checker/data_structure/point_add_range_sum.test.cpp
   - verify/library_checker/tree/vertex_add_subtree_sum.test.cpp
+  - verify/aizu/dsl/rsq_and_raq.test.cpp
 documentation_of: datastructures/fenwick_tree/fentree.h
 layout: document
 redirect_from:
