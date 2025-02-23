@@ -1,68 +1,68 @@
-struct centroid_decomp {
-    int root;
-    vector<int> par;
-    vector<vector<int>> h;
+// https://codeforces.com/contest/342/submission/307361210
 
-    const vector<int> &operator[](int u) {
-        return h[u];
+struct CentroidDecomp {
+  int root;
+  vector<int> par;
+  vector<vector<int>> tree;
+
+  CentroidDecomp(const vector<vector<int>> &g_) : g(g_) {
+    const int n = g.size();
+    par.resize(n);
+    blocked.resize(n);
+    st_size.resize(n);
+    for (int i = 0; i < n; i++) {
+      if (st_size[i] == 0) {
+        build(i, -1);
+      }
     }
+    blocked.clear();
+    st_size.clear();
 
-    centroid_decomp(const vector<vector<int>> &g_) : g(g_) {
-        const int n = sz(g);
-        par.resize(n);
-        blocked.resize(n);
-        size_st.resize(n);
-        for (int i = 0; i < n; i++) {
-            if (size_st[i] == 0) {
-                build(i, -1);
-            }
-        }
-        blocked.clear();
-        size_st.clear();
-
-        h.resize(n);
-        for (int i = 0; i < n; i++) {
-            if (par[i] == -1) {
-                root = i;
-            } else {
-                h[par[i]].push_back(i);
-            }
-        }
+    tree.resize(n);
+    for (int i = 0; i < n; i++) {
+      if (par[i] == -1) {
+        root = i;
+      } else {
+        tree[par[i]].push_back(i);
+      }
     }
+  }
 
 private:
-    const vector<vector<int>> &g;
-    vector<bool> blocked;
-    vector<int> size_st;
+  const vector<vector<int>> &g;
+  vector<bool> blocked;
+  vector<int> st_size;
 
-    void get_sizes(int u, int u_par) {
-        size_st[u] = 1;
-        for (int v : g[u]) {
-            if (v != u_par && !blocked[v]) {
-                get_sizes(v, u);
-                size_st[u] += size_st[v];
-            }
-        }
+  void get_sizes(int u, int u_par) {
+    st_size[u] = 1;
+    for (int v : g[u]) {
+      if (v != u_par && !blocked[v]) {
+        get_sizes(v, u);
+        st_size[u] += st_size[v];
+      }
     }
-    int find_centroid(int u, int u_par, int tree_sz) {
-        int nxt = -1;
-        for (int v : g[u]) {
-            if (v != u_par && !blocked[v] && size_st[v] * 2 > tree_sz) {
-                nxt = v;
-                break;
-            }
-        }
-        return nxt == -1 ? u : find_centroid(nxt, u, tree_sz);
+  }
+
+  int get_centroid(int u, int u_par, int tree_sz) {
+    int nxt = -1;
+    for (int v : g[u]) {
+      if (v != u_par && !blocked[v] && st_size[v] * 2 > tree_sz) {
+        nxt = v;
+        break;
+      }
     }
-    void build(int u, int u_par) {
-        get_sizes(u, -1);
-        const int cent = find_centroid(u, -1, size_st[u]);
-        par[cent] = u_par;
-        blocked[cent] = true;
-        for (int v : g[cent]) {
-            if (!blocked[v]) {
-                build(v, cent);
-            }
-        }
+    return nxt == -1 ? u : get_centroid(nxt, u, tree_sz);
+  }
+  
+  void build(int u, int u_par) {
+    get_sizes(u, -1);
+    const int cent = get_centroid(u, -1, st_size[u]);
+    par[cent] = u_par;
+    blocked[cent] = true;
+    for (int v : g[cent]) {
+      if (!blocked[v]) {
+        build(v, cent);
+      }
     }
+  }
 };
