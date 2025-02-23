@@ -9,7 +9,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/aizu/alds1/number_of_inversions.test.cpp
     title: verify/aizu/alds1/number_of_inversions.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/aizu/dsl/rmq.test.cpp
     title: verify/aizu/dsl/rmq.test.cpp
   - icon: ':heavy_check_mark:'
@@ -66,9 +66,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/library_checker/tree/vertex_add_subtree_sum.test.cpp
     title: verify/library_checker/tree/vertex_add_subtree_sum.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: h
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: '#line 1 "template/template.h"
@@ -104,7 +104,7 @@ data:
   path: template/template.h
   requiredBy: []
   timestamp: '2024-12-07 19:52:17-05:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/library_checker/number_theory/enumerate_primes.test.cpp
   - verify/library_checker/string/suffix_array.test.cpp

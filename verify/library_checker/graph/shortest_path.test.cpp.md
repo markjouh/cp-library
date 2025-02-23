@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: graphs/shortest_paths/dijkstras.h
     title: graphs/shortest_paths/dijkstras.h
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.h
     title: template/template.h
   _extendedRequiredBy: []

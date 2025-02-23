@@ -7,7 +7,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: graphs/trees/rmq_lca.h
     title: graphs/trees/rmq_lca.h
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.h
     title: template/template.h
   _extendedRequiredBy: []

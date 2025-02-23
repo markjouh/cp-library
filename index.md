@@ -46,7 +46,7 @@ data:
     - icon: ':warning:'
       path: datastructures/segment_tree/range_update_segtree.h
       title: datastructures/segment_tree/range_update_segtree.h
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: datastructures/segment_tree/segtree.h
       title: datastructures/segment_tree/segtree.h
     - icon: ':warning:'
@@ -140,7 +140,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: template/io_helpers.h
       title: template/io_helpers.h
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template/template.h
       title: template/template.h
   verificationCategories:
@@ -154,7 +154,7 @@ data:
       title: verify/aizu/alds1/number_of_inversions.test.cpp
   - name: verify/aizu/dsl
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/aizu/dsl/rmq.test.cpp
       title: verify/aizu/dsl/rmq.test.cpp
     - icon: ':heavy_check_mark:'
