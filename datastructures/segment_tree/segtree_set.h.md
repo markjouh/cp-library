@@ -13,7 +13,7 @@ data:
     links: []
   bundledCode: "#line 1 \"datastructures/segment_tree/segtree.h\"\ntemplate <class\
     \ T, auto op, auto id>\nstruct Segtree {\n  int n;\n  vector<T> st;\n\n  Segtree(int\
-    \ n_) : n(n_), st(2 * n, id()) {}\n\n  Segtree(const vector<T> &a) : n(sz(a)),\
+    \ n_) : n(n_), st(2 * n, id()) {}\n\n  Segtree(const vector<T> &a) : n(a.size()),\
     \ st(2 * n) {\n    copy(a.begin(), a.end(), st.begin() + n);\n    for (int i =\
     \ n - 1; i > 0; i--) {\n      st[i] = op(st[i << 1], st[i << 1 | 1]);\n    }\n\
     \  }\n\n  void set(int p, T val) {\n    for (st[p += n] = val, p >>= 1; p > 0;\
@@ -47,7 +47,7 @@ data:
   isVerificationFile: false
   path: datastructures/segment_tree/segtree_set.h
   requiredBy: []
-  timestamp: '2025-02-22 23:34:27-05:00'
+  timestamp: '2025-02-22 23:35:17-05:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: datastructures/segment_tree/segtree_set.h
