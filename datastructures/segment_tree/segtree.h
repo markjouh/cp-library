@@ -5,7 +5,7 @@ struct Segtree {
 
   Segtree(int n_) : n(n_), st(2 * n, id()) {}
 
-  Segtree(const vector<T> &a) : n(sz(a)), st(2 * n) {
+  Segtree(const vector<T> &a) : n(a.size()), st(2 * n) {
     copy(a.begin(), a.end(), st.begin() + n);
     for (int i = n - 1; i > 0; i--) {
       st[i] = op(st[i << 1], st[i << 1 | 1]);
