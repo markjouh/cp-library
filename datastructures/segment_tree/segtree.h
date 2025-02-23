@@ -12,6 +12,12 @@ struct Segtree {
     }
   }
 
+  void set(int p, T val) {
+    for (st[p += n] = val, p >>= 1; p > 0; p >>= 1) {
+      st[p] = op(st[p << 1], st[p << 1 | 1]);
+    }
+  }
+
   T get(int p) {
     return st[p + n];
   }
@@ -27,11 +33,5 @@ struct Segtree {
       }
     }
     return op(ls, rs);
-  }
-
-  void set(int p, T val) {
-    for (st[p += n] = val, p >>= 1; p > 0; p >>= 1) {
-      st[p] = op(st[p << 1], st[p << 1 | 1]);
-    }
   }
 };
