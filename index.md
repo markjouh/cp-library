@@ -60,9 +60,9 @@ data:
       title: datastructures/segment_tree/sparse_segtree.h
   - name: datastructures/static
     pages:
-    - icon: ':heavy_check_mark:'
-      path: datastructures/static/mo_queries.h
-      title: datastructures/static/mo_queries.h
+    - icon: ':warning:'
+      path: datastructures/static/mo_handler.h
+      title: datastructures/static/mo_handler.h
     - icon: ':heavy_check_mark:'
       path: datastructures/static/sparse_table.h
       title: datastructures/static/sparse_table.h
@@ -99,6 +99,9 @@ data:
     - icon: ':warning:'
       path: graphs/trees/centroid_decomposition.h
       title: graphs/trees/centroid_decomposition.h
+    - icon: ':warning:'
+      path: graphs/trees/euler_tour.h
+      title: graphs/trees/euler_tour.h
     - icon: ':heavy_check_mark:'
       path: graphs/trees/rmq_lca.h
       title: graphs/trees/rmq_lca.h
@@ -182,7 +185,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/library_checker/data_structure/set_xor_min.test.cpp
       title: verify/library_checker/data_structure/set_xor_min.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/library_checker/data_structure/static_range_mode_query.test.cpp
       title: verify/library_checker/data_structure/static_range_mode_query.test.cpp
     - icon: ':heavy_check_mark:'

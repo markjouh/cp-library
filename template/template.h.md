@@ -31,9 +31,6 @@ data:
     path: verify/library_checker/data_structure/set_xor_min.test.cpp
     title: verify/library_checker/data_structure/set_xor_min.test.cpp
   - icon: ':heavy_check_mark:'
-    path: verify/library_checker/data_structure/static_range_mode_query.test.cpp
-    title: verify/library_checker/data_structure/static_range_mode_query.test.cpp
-  - icon: ':heavy_check_mark:'
     path: verify/library_checker/data_structure/static_rmq.test.cpp
     title: verify/library_checker/data_structure/static_rmq.test.cpp
   - icon: ':heavy_check_mark:'
@@ -112,7 +109,6 @@ data:
   - verify/library_checker/graph/shortest_path.test.cpp
   - verify/library_checker/graph/scc.test.cpp
   - verify/library_checker/data_structure/set_xor_min.test.cpp
-  - verify/library_checker/data_structure/static_range_mode_query.test.cpp
   - verify/library_checker/data_structure/point_add_range_sum.test.cpp
   - verify/library_checker/data_structure/unionfind.test.cpp
   - verify/library_checker/data_structure/associative_array.test.cpp

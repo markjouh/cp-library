@@ -6,9 +6,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/library_checker/data_structure/associative_array.test.cpp
     title: verify/library_checker/data_structure/associative_array.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verify/library_checker/data_structure/static_range_mode_query.test.cpp
-    title: verify/library_checker/data_structure/static_range_mode_query.test.cpp
   _isVerificationFailed: false
   _pathExtension: h
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -35,7 +32,6 @@ data:
   timestamp: '2025-02-24 12:14:54-05:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/library_checker/data_structure/static_range_mode_query.test.cpp
   - verify/library_checker/data_structure/associative_array.test.cpp
 documentation_of: datastructures/hash_table.h
 layout: document
