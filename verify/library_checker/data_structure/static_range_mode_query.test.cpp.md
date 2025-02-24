@@ -25,12 +25,11 @@ data:
     \n#line 1 \"template/template.h\"\n#include <bits/stdc++.h>\n\nusing namespace\
     \ std;\n\n#define all(x) begin(x), end(x)\n#define sz(x) int(size(x))\n\nusing\
     \ ll = long long;\n#line 1 \"datastructures/hash_table.h\"\n#include <ext/pb_ds/assoc_container.hpp>\n\
-    \nstruct custom_hash {\n    static uint64_t splitmix64(uint64_t x) {\n       \
-    \ x += 0x9e3779b97f4a7c15;\n        x = (x ^ (x >> 30)) * 0xbf58476d1ce4e5b9;\n\
-    \        x = (x ^ (x >> 27)) * 0x94d049bb133111eb;\n        return x ^ (x >> 31);\n\
-    \    }\n\n    size_t operator()(uint64_t x) const {\n        static const uint64_t\
-    \ FIXED_RANDOM = chrono::steady_clock::now().time_since_epoch().count();\n   \
-    \     return splitmix64(x + FIXED_RANDOM);\n    }\n};\n\ntemplate <class T, class\
+    \nstruct custom_hash {\n  static uint64_t splitmix64(uint64_t x) {\n    x += 0x9e3779b97f4a7c15;\n\
+    \    x = (x ^ (x >> 30)) * 0xbf58476d1ce4e5b9;\n    x = (x ^ (x >> 27)) * 0x94d049bb133111eb;\n\
+    \    return x ^ (x >> 31);\n  }\n \n  size_t operator()(uint64_t x) const {\n\
+    \    static const uint64_t FIXED_RANDOM = chrono::steady_clock::now().time_since_epoch().count();\n\
+    \    return splitmix64(x + FIXED_RANDOM);\n  }\n};\n\ntemplate <class T, class\
     \ U>\nusing hash_table = __gnu_pbds::gp_hash_table<T, U, custom_hash>;\n#line\
     \ 1 \"datastructures/static/mo_queries.h\"\ntemplate <class T, int K>\nstruct\
     \ mo_queries {\n    vector<array<int, 3>> queries;\n    vector<T> res;\n\n   \
@@ -83,7 +82,7 @@ data:
   isVerificationFile: true
   path: verify/library_checker/data_structure/static_range_mode_query.test.cpp
   requiredBy: []
-  timestamp: '2024-12-07 19:52:17-05:00'
+  timestamp: '2025-02-24 12:14:54-05:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/library_checker/data_structure/static_range_mode_query.test.cpp

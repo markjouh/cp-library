@@ -24,17 +24,16 @@ data:
     \ ll = long long;\n#line 1 \"datastructures/ordered_set.h\"\n#include <ext/pb_ds/assoc_container.hpp>\
     \ \n#include <ext/pb_ds/tree_policy.hpp>\n\nusing namespace __gnu_pbds; \n\ntemplate\
     \ <class T>\nusing ordered_set = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;\n\
-    \ntemplate <class T>\nstruct ordered_multiset {\n    int time = 0;\n    ordered_set<pair<T,\
-    \ int>> st;\n\n    void insert(T x) {\n        st.insert({x, time++});\n    }\n\
-    \    void extract(T x) {\n        auto it = st.lower_bound({x, 0});\n        if\
-    \ (it != end(st) && it->fi == x) {\n            st.erase(it);\n        }\n   \
-    \ }\n\n    T find_by_order(int k) {\n        return (*st.find_by_order(k)).first;\n\
-    \    }\n    int order_of_key(T x) {\n        return st.order_of_key({x, 0});\n\
-    \    }\n};\n#line 5 \"verify/aizu/alds1/number_of_inversions.test.cpp\"\n\nint\
-    \ main() {\n    int n;\n    cin >> n;\n    ll ans = 0;\n    ordered_set<int> st;\n\
-    \    for (int i = 0; i < n; i++) {\n        int x;\n        cin >> x;\n      \
-    \  ans += sz(st) - st.order_of_key(x + 1);\n        st.insert(x);\n    }\n   \
-    \ cout << ans << '\\n';\n}\n"
+    \ntemplate <class T>\nstruct ordered_multiset {\n  int time = 0;\n  ordered_set<pair<T,\
+    \ int>> st;\n \n  void insert(T x) {\n    st.insert({x, time++});\n  }\n \n  void\
+    \ extract(T x) {\n    auto it = st.lower_bound({x, 0});\n    if (it != end(st)\
+    \ && it->first == x) {\n      st.erase(it);\n    }\n  }\n \n  T find_by_order(int\
+    \ k) {\n    return (*st.find_by_order(k)).first;\n  }\n \n  int order_of_key(T\
+    \ x) {\n    return st.order_of_key({x, 0});\n  }\n};\n#line 5 \"verify/aizu/alds1/number_of_inversions.test.cpp\"\
+    \n\nint main() {\n    int n;\n    cin >> n;\n    ll ans = 0;\n    ordered_set<int>\
+    \ st;\n    for (int i = 0; i < n; i++) {\n        int x;\n        cin >> x;\n\
+    \        ans += sz(st) - st.order_of_key(x + 1);\n        st.insert(x);\n    }\n\
+    \    cout << ans << '\\n';\n}\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_5_D\"\
     \n\n#include \"../../../template/template.h\"\n#include \"../../../datastructures/ordered_set.h\"\
     \n\nint main() {\n    int n;\n    cin >> n;\n    ll ans = 0;\n    ordered_set<int>\
@@ -47,7 +46,7 @@ data:
   isVerificationFile: true
   path: verify/aizu/alds1/number_of_inversions.test.cpp
   requiredBy: []
-  timestamp: '2024-12-07 19:52:17-05:00'
+  timestamp: '2025-02-24 12:15:36-05:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/aizu/alds1/number_of_inversions.test.cpp
