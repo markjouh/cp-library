@@ -19,6 +19,9 @@ data:
       path: datastructures/ordered_set.h
       title: datastructures/ordered_set.h
     - icon: ':warning:'
+      path: datastructures/sqrt_range_sum.h
+      title: datastructures/sqrt_range_sum.h
+    - icon: ':warning:'
       path: datastructures/w_ary_tree.h
       title: datastructures/w_ary_tree.h
   - name: datastructures/fenwick_tree
