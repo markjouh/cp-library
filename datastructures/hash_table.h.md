@@ -3,12 +3,15 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
+    path: verify/library_checker/data_structure/associative_array.test.cpp
+    title: verify/library_checker/data_structure/associative_array.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/library_checker/data_structure/static_range_mode_query.test.cpp
     title: verify/library_checker/data_structure/static_range_mode_query.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: h
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"datastructures/hash_table.h\"\n#include <ext/pb_ds/assoc_container.hpp>\n\
@@ -31,8 +34,9 @@ data:
   path: datastructures/hash_table.h
   requiredBy: []
   timestamp: '2024-12-02 22:41:32-05:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - verify/library_checker/data_structure/associative_array.test.cpp
   - verify/library_checker/data_structure/static_range_mode_query.test.cpp
 documentation_of: datastructures/hash_table.h
 layout: document

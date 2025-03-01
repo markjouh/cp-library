@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: datastructures/static/sparse_table.h
     title: datastructures/static/sparse_table.h
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/library_checker/tree/rmq_lca.test.cpp
     title: verify/library_checker/tree/rmq_lca.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: h
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"datastructures/static/sparse_table.h\"\ntemplate <class\
@@ -60,7 +60,7 @@ data:
   path: graphs/trees/rmq_lca.h
   requiredBy: []
   timestamp: '2024-12-07 20:11:53-05:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/library_checker/tree/rmq_lca.test.cpp
 documentation_of: graphs/trees/rmq_lca.h

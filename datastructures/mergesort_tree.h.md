@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: datastructures/ordered_set.h
     title: datastructures/ordered_set.h
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/library_checker/data_structure/range_kth_smallest.test.cpp
     title: verify/library_checker/data_structure/range_kth_smallest.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: h
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"datastructures/ordered_set.h\"\n#include <ext/pb_ds/assoc_container.hpp>\
@@ -54,7 +54,7 @@ data:
   path: datastructures/mergesort_tree.h
   requiredBy: []
   timestamp: '2024-12-07 19:42:18-05:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/library_checker/data_structure/range_kth_smallest.test.cpp
 documentation_of: datastructures/mergesort_tree.h
