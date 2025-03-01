@@ -1,5 +1,11 @@
 #include <bits/stdc++.h>
- 
+
+#ifdef LOCAL
+#include <debug>
+#else
+#define dbg(...)
+#endif
+
 using namespace std;
  
 #define arg4(a, b, c, d, ...) d
