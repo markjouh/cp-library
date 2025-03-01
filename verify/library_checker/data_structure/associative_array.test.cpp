@@ -1,22 +1,21 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/associative_array"
 
 #include "../../../template/template.h"
-#include "../../../template/io_helpers.h"
 #include "../../../datastructures/hash_table.h"
 
 int main() {
     int q;
-    re(q);
+    cin >> q;
     hash_table<ll, ll> mp;
     while (q--) {
         bool t;
         ll k;
-        re(t, k);
+        cin >> t >> k;
         if (t) {
-            pr(mp[k]);
+            cout << mp[k] << '\n';
         } else {
             ll v;
-            re(v);
+            cin >> v;
             mp[k] = v;
         }
     }
