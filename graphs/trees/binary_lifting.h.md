@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/library_checker/tree/binlift_lca.test.cpp
     title: verify/library_checker/tree/binlift_lca.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: h
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 1 \"graphs/trees/binary_lifting.h\"\nstruct binary_lifting {\n\
@@ -59,7 +59,7 @@ data:
   path: graphs/trees/binary_lifting.h
   requiredBy: []
   timestamp: '2024-12-02 22:41:32-05:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - verify/library_checker/tree/binlift_lca.test.cpp
 documentation_of: graphs/trees/binary_lifting.h

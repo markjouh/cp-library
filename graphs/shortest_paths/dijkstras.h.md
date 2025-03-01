@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/library_checker/graph/shortest_path.test.cpp
     title: verify/library_checker/graph/shortest_path.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: h
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 1 \"graphs/shortest_paths/dijkstras.h\"\ntemplate <class T>\n\
@@ -35,7 +35,7 @@ data:
   path: graphs/shortest_paths/dijkstras.h
   requiredBy: []
   timestamp: '2024-10-25 19:46:34-04:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - verify/library_checker/graph/shortest_path.test.cpp
 documentation_of: graphs/shortest_paths/dijkstras.h

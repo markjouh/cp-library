@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/library_checker/number_theory/enumerate_primes.test.cpp
     title: verify/library_checker/number_theory/enumerate_primes.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: h
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 1 \"numeric/sieve_factor.h\"\n/*\n|           | $\\max_{1 \\\
@@ -90,7 +90,7 @@ data:
   path: numeric/sieve_factor.h
   requiredBy: []
   timestamp: '2024-11-16 20:34:38-05:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - verify/library_checker/number_theory/enumerate_primes.test.cpp
 documentation_of: numeric/sieve_factor.h

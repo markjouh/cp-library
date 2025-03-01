@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: datastructures/fenwick_tree/fentree.h
     title: datastructures/fenwick_tree/fentree.h
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/aizu/dsl/rsq_and_raq.test.cpp
     title: verify/aizu/dsl/rsq_and_raq.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: h
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 1 \"datastructures/fenwick_tree/fentree.h\"\ntemplate <class\
@@ -46,7 +46,7 @@ data:
   path: datastructures/fenwick_tree/dual_fentree.h
   requiredBy: []
   timestamp: '2024-12-02 22:41:32-05:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - verify/aizu/dsl/rsq_and_raq.test.cpp
 documentation_of: datastructures/fenwick_tree/dual_fentree.h

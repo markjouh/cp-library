@@ -2,25 +2,25 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: datastructures/fenwick_tree/dual_fentree.h
     title: datastructures/fenwick_tree/dual_fentree.h
   - icon: ':warning:'
     path: datastructures/fenwick_tree/fentree_2d.h
     title: datastructures/fenwick_tree/fentree_2d.h
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/aizu/dsl/rsq_and_raq.test.cpp
     title: verify/aizu/dsl/rsq_and_raq.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/library_checker/data_structure/point_add_range_sum.test.cpp
     title: verify/library_checker/data_structure/point_add_range_sum.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/library_checker/tree/vertex_add_subtree_sum.test.cpp
     title: verify/library_checker/tree/vertex_add_subtree_sum.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: h
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 1 \"datastructures/fenwick_tree/fentree.h\"\ntemplate <class\
@@ -47,13 +47,13 @@ data:
   isVerificationFile: false
   path: datastructures/fenwick_tree/fentree.h
   requiredBy:
-  - datastructures/fenwick_tree/fentree_2d.h
   - datastructures/fenwick_tree/dual_fentree.h
+  - datastructures/fenwick_tree/fentree_2d.h
   timestamp: '2024-12-02 22:41:32-05:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
-  - verify/library_checker/data_structure/point_add_range_sum.test.cpp
   - verify/library_checker/tree/vertex_add_subtree_sum.test.cpp
+  - verify/library_checker/data_structure/point_add_range_sum.test.cpp
   - verify/aizu/dsl/rsq_and_raq.test.cpp
 documentation_of: datastructures/fenwick_tree/fentree.h
 layout: document
