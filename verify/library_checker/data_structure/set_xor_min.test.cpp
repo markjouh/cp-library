@@ -4,22 +4,22 @@
 #include "../../../datastructures/binary_trie.h"
 
 int main() {
-    int q;
-    cin >> q;
-    binary_trie<uint32_t> bt;
-    while (q--) {
-        int t, x;
-        cin >> t >> x;
-        if (t == 0) {
-            if (bt.min_xor(x) != 0) {
-                bt.add(x);
-            }
-        } else if (t == 1) {
-            if (bt.min_xor(x) == 0) {
-                bt.add(x, -1);
-            }
-        } else {
-            cout << bt.min_xor(x) << '\n';
-        }
+  int q;
+  cin >> q;
+  BinaryTrie<uint32_t> bt;
+  while (q--) {
+    int t, x;
+    cin >> t >> x;
+    if (t == 0) {
+      if (bt.min_xor(x) != 0) {
+        bt.insert(x);
+      }
+    } else if (t == 1) {
+      if (bt.min_xor(x) == 0) {
+        bt.insert(x, -1);
+      }
+    } else {
+      cout << bt.min_xor(x) << '\n';
     }
+  }
 }

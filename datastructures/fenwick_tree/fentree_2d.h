@@ -5,7 +5,7 @@ struct fentree_2d {
     int n;
     vector<fentree<T>> ft;
 
-    fenwick_tree_2d(int n_, int m) : n(n_), ft(n + 1, fentree<T>(m)) {}
+    fentree_2d(int n_, int m) : n(n_), ft(n + 1, fentree<T>(m)) {}
 
     void add(int r, int c, T v) {
         for (r++; r <= n; r += r & -r) {

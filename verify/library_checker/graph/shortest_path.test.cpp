@@ -13,7 +13,7 @@ int main() {
         g[u].emplace_back(v, w);
     }
     
-    auto [dist, from] = dijkstras<ll>(g, s);
+    auto [dist, from] = dijkstras<int64_t>(g, s);
     if (dist[t] != LLONG_MAX) {
         cout << dist[t] << ' ';
         vector<pair<int, int>> path;

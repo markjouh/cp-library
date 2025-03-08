@@ -1,27 +1,27 @@
-struct dsu {
-    vector<int> a;
+struct DSU {
+  vector<int> a;
 
-    dsu(int n) : a(n, -1) {}
+  DSU(int n) : a(n, -1) {}
 
-    int size(int x) {
-        return -a[find(x)];
+  int size(int x) {
+    return -a[find(x)];
+  }
+
+  int find(int x) {
+    return a[x] < 0 ? x : a[x] = find(a[x]);
+  }
+
+  bool join(int x, int y) {
+    x = find(x);
+    y = find(y);
+    if (x == y) {
+      return 0;
     }
-
-    int find(int x) {
-        return a[x] < 0 ? x : a[x] = find(a[x]);
+    if (a[x] > a[y]) {
+      swap(x, y);
     }
-
-    bool join(int x, int y) {
-        x = find(x);
-        y = find(y);
-        if (x == y) {
-            return 0;
-        }
-        if (a[x] > a[y]) {
-            swap(x, y);
-        }
-        a[x] += a[y];
-        a[y] = x;
-        return 1;
-    }
+    a[x] += a[y];
+    a[y] = x;
+    return 1;
+  }
 };

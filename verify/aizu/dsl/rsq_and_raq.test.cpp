@@ -6,7 +6,7 @@
 int main() {
     int n, q;
     cin >> n >> q;
-    dual_fentree<ll> ft(n);
+    dual_fentree<int64_t> ft(n);
     while (q--) {
         bool t;
         int l, r;

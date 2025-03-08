@@ -4,17 +4,17 @@
 #include "../../../datastructures/dsu.h"
 
 int main() {
-    int n, q;
-    cin >> n >> q;
-    dsu comps(n);
-    while (q--) {
-        bool t;
-        int x, y;
-        cin >> t >> x >> y;
-        if (t) {
-            cout << (comps.find(x) == comps.find(y)) << '\n';
-        } else {
-            comps.join(x, y);
-        }
+  int n, q;
+  cin >> n >> q;
+  DSU comps(n);
+  while (q--) {
+    bool t;
+    int x, y;
+    cin >> t >> x >> y;
+    if (t) {
+      cout << (comps.find(x) == comps.find(y)) << '\n';
+    } else {
+      comps.join(x, y);
     }
+  }
 }

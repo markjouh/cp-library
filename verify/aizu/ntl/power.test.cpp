@@ -3,10 +3,10 @@
 #include "../../../template/template.h"
 #include "../../../numeric/mint.h"
 
-using mi = mint<1000000007>;
+using mi = Mint<1000000007>;
 
 int main() {
-    int m, n;
-    cin >> m >> n;
-    cout << pow(mi(m), n) << '\n';
+  int m, n;
+  cin >> m >> n;
+  cout << pow(mi(m), n) << '\n';
 }

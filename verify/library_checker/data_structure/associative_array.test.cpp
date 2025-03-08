@@ -4,19 +4,19 @@
 #include "../../../datastructures/hash_table.h"
 
 int main() {
-    int q;
-    cin >> q;
-    hash_table<ll, ll> mp;
-    while (q--) {
-        bool t;
-        ll k;
-        cin >> t >> k;
-        if (t) {
-            cout << mp[k] << '\n';
-        } else {
-            ll v;
-            cin >> v;
-            mp[k] = v;
-        }
+  int q;
+  cin >> q;
+  hash_table<int64_t, int64_t> mp;
+  while (q--) {
+    bool t;
+    int64_t k;
+    cin >> t >> k;
+    if (t) {
+      cout << mp[k] << '\n';
+    } else {
+      int64_t v;
+      cin >> v;
+      mp[k] = v;
     }
+  }
 }

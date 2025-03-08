@@ -32,7 +32,7 @@ int main() {
 
     dfs(dfs, 0, -1);
 
-    fentree<ll> ft(n);
+    fentree<int64_t> ft(n);
     for (int i = 0; i < n; i++) {
         ft.add(tin[i], a[i]);
     }
