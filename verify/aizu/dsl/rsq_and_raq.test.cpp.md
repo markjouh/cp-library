@@ -7,7 +7,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: datastructures/fenwick_tree/fentree.h
     title: datastructures/fenwick_tree/fentree.h
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.h
     title: template/template.h
   _extendedRequiredBy: []
@@ -22,9 +22,9 @@ data:
     - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_G
   bundledCode: "#line 1 \"verify/aizu/dsl/rsq_and_raq.test.cpp\"\n#define PROBLEM\
     \ \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_G\"\n\n#line\
-    \ 1 \"template/template.h\"\n#include <bits/stdc++.h>\n\nusing namespace std;\n\
-    \n#define all(x) begin(x), end(x)\n#define sz(x) int(size(x))\n\nusing ll = long\
-    \ long;\n#line 1 \"datastructures/fenwick_tree/fentree.h\"\ntemplate <class T>\n\
+    \ 1 \"template/template.h\"\n/**\n *    author: mark\n**/\n#include <bits/stdc++.h>\n\
+    \nusing namespace std;\n\n#define sz(x) int(size(x))\n#define all(x) begin(x),\
+    \ end(x)\n#line 1 \"datastructures/fenwick_tree/fentree.h\"\ntemplate <class T>\n\
     struct fentree {\n    int n;\n    vector<T> ft;\n\n    fentree(int n_) : n(n_),\
     \ ft(n + 1) {}\n\n    fentree(const vector<T> &a) : n(sz(a)), ft(n + 1) {\n  \
     \      for (int i = 1; i <= n; i++) {\n            ft[i] += a[i - 1];\n      \
@@ -42,18 +42,18 @@ data:
     \    suff.add(n - r - 1, v);\n    }\n\n    void add(int l, int r, T v) {\n   \
     \     add(r, v);\n        if (l > 0) {\n            add(l - 1, T(0) - T(v));\n\
     \        }\n    }\n};\n#line 5 \"verify/aizu/dsl/rsq_and_raq.test.cpp\"\n\nint\
-    \ main() {\n    int n, q;\n    cin >> n >> q;\n    dual_fentree<ll> ft(n);\n \
-    \   while (q--) {\n        bool t;\n        int l, r;\n        cin >> t >> l >>\
-    \ r;\n        l--; r--;\n        if (t) {\n            cout << ft.sum(l, r) <<\
-    \ '\\n';\n        } else {\n            int x;\n            cin >> x;\n      \
-    \      ft.add(l, r, x);\n        }\n    }\n}\n"
-  code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_G\"\
-    \n\n#include \"../../../template/template.h\"\n#include \"../../../datastructures/fenwick_tree/dual_fentree.h\"\
-    \n\nint main() {\n    int n, q;\n    cin >> n >> q;\n    dual_fentree<ll> ft(n);\n\
+    \ main() {\n    int n, q;\n    cin >> n >> q;\n    dual_fentree<int64_t> ft(n);\n\
     \    while (q--) {\n        bool t;\n        int l, r;\n        cin >> t >> l\
     \ >> r;\n        l--; r--;\n        if (t) {\n            cout << ft.sum(l, r)\
     \ << '\\n';\n        } else {\n            int x;\n            cin >> x;\n   \
-    \         ft.add(l, r, x);\n        }\n    }\n}"
+    \         ft.add(l, r, x);\n        }\n    }\n}\n"
+  code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_G\"\
+    \n\n#include \"../../../template/template.h\"\n#include \"../../../datastructures/fenwick_tree/dual_fentree.h\"\
+    \n\nint main() {\n    int n, q;\n    cin >> n >> q;\n    dual_fentree<int64_t>\
+    \ ft(n);\n    while (q--) {\n        bool t;\n        int l, r;\n        cin >>\
+    \ t >> l >> r;\n        l--; r--;\n        if (t) {\n            cout << ft.sum(l,\
+    \ r) << '\\n';\n        } else {\n            int x;\n            cin >> x;\n\
+    \            ft.add(l, r, x);\n        }\n    }\n}"
   dependsOn:
   - template/template.h
   - datastructures/fenwick_tree/dual_fentree.h
@@ -61,7 +61,7 @@ data:
   isVerificationFile: true
   path: verify/aizu/dsl/rsq_and_raq.test.cpp
   requiredBy: []
-  timestamp: '2025-02-28 17:42:52-08:00'
+  timestamp: '2025-03-08 02:00:51-05:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/aizu/dsl/rsq_and_raq.test.cpp

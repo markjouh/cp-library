@@ -7,7 +7,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: graphs/trees/rmq_lca.h
     title: graphs/trees/rmq_lca.h
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.h
     title: template/template.h
   _extendedRequiredBy: []
@@ -22,8 +22,8 @@ data:
     - https://judge.yosupo.jp/problem/lca
   bundledCode: "#line 1 \"verify/library_checker/tree/rmq_lca.test.cpp\"\n#define\
     \ PROBLEM \"https://judge.yosupo.jp/problem/lca\"\n\n#line 1 \"template/template.h\"\
-    \n#include <bits/stdc++.h>\n\nusing namespace std;\n\n#define all(x) begin(x),\
-    \ end(x)\n#define sz(x) int(size(x))\n\nusing ll = long long;\n#line 1 \"datastructures/static/sparse_table.h\"\
+    \n/**\n *    author: mark\n**/\n#include <bits/stdc++.h>\n\nusing namespace std;\n\
+    \n#define sz(x) int(size(x))\n#define all(x) begin(x), end(x)\n#line 1 \"datastructures/static/sparse_table.h\"\
     \ntemplate <class T, auto op>\nstruct sparse_table {\n    int n, log;\n    vector<vector<T>>\
     \ st;\n\n    sparse_table() {}\n    sparse_table(const vector<T> &a) : n(sz(a)),\
     \ log(__lg(n) + 1) {\n        st.resize(log);\n        st[0] = a;\n        for\
@@ -66,7 +66,7 @@ data:
   isVerificationFile: true
   path: verify/library_checker/tree/rmq_lca.test.cpp
   requiredBy: []
-  timestamp: '2025-02-28 17:42:52-08:00'
+  timestamp: '2025-03-08 02:00:51-05:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/library_checker/tree/rmq_lca.test.cpp

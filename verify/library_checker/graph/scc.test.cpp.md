@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: graphs/kosaraju_scc.h
     title: graphs/kosaraju_scc.h
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.h
     title: template/template.h
   _extendedRequiredBy: []
@@ -19,8 +19,8 @@ data:
     - https://judge.yosupo.jp/problem/scc
   bundledCode: "#line 1 \"verify/library_checker/graph/scc.test.cpp\"\n#define PROBLEM\
     \ \"https://judge.yosupo.jp/problem/scc\"\n\n#line 1 \"template/template.h\"\n\
-    #include <bits/stdc++.h>\n\nusing namespace std;\n\n#define all(x) begin(x), end(x)\n\
-    #define sz(x) int(size(x))\n\nusing ll = long long;\n#line 1 \"graphs/kosaraju_scc.h\"\
+    /**\n *    author: mark\n**/\n#include <bits/stdc++.h>\n\nusing namespace std;\n\
+    \n#define sz(x) int(size(x))\n#define all(x) begin(x), end(x)\n#line 1 \"graphs/kosaraju_scc.h\"\
     \nstruct kosaraju_scc {\n    int sccs = 0;\n    vector<int> comp;\n    vector<vector<int>>\
     \ members, cg;\n\n    kosaraju_scc(const vector<vector<int>> &g_) : g(g_) {\n\
     \        comp.resize(sz(g), -1);\n        tg.resize(sz(g));\n        vis.resize(sz(g));\n\
@@ -62,7 +62,7 @@ data:
   isVerificationFile: true
   path: verify/library_checker/graph/scc.test.cpp
   requiredBy: []
-  timestamp: '2025-02-28 17:42:52-08:00'
+  timestamp: '2025-03-08 02:00:51-05:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/library_checker/graph/scc.test.cpp

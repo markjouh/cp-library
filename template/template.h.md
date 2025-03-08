@@ -6,7 +6,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/aizu/alds1/binary_search.test.cpp
     title: verify/aizu/alds1/binary_search.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/aizu/alds1/number_of_inversions.test.cpp
     title: verify/aizu/alds1/number_of_inversions.test.cpp
   - icon: ':heavy_check_mark:'
@@ -15,7 +15,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/aizu/dsl/rsq_and_raq.test.cpp
     title: verify/aizu/dsl/rsq_and_raq.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/aizu/ntl/power.test.cpp
     title: verify/aizu/ntl/power.test.cpp
   - icon: ':heavy_check_mark:'
@@ -45,7 +45,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/library_checker/graph/shortest_path.test.cpp
     title: verify/library_checker/graph/shortest_path.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/library_checker/number_theory/enumerate_primes.test.cpp
     title: verify/library_checker/number_theory/enumerate_primes.test.cpp
   - icon: ':heavy_check_mark:'
@@ -66,45 +66,22 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/library_checker/tree/vertex_add_subtree_sum.test.cpp
     title: verify/library_checker/tree/vertex_add_subtree_sum.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: h
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
-  bundledCode: '#line 1 "template/template.h"
-
-    #include <bits/stdc++.h>
-
-
-    using namespace std;
-
-
-    #define all(x) begin(x), end(x)
-
-    #define sz(x) int(size(x))
-
-
-    using ll = long long;
-
-    '
-  code: '#include <bits/stdc++.h>
-
-
-    using namespace std;
-
-
-    #define all(x) begin(x), end(x)
-
-    #define sz(x) int(size(x))
-
-
-    using ll = long long;'
+  bundledCode: "#line 1 \"template/template.h\"\n/**\n *    author: mark\n**/\n#include\
+    \ <bits/stdc++.h>\n\nusing namespace std;\n\n#define sz(x) int(size(x))\n#define\
+    \ all(x) begin(x), end(x)\n"
+  code: "/**\n *    author: mark\n**/\n#include <bits/stdc++.h>\n\nusing namespace\
+    \ std;\n\n#define sz(x) int(size(x))\n#define all(x) begin(x), end(x)"
   dependsOn: []
   isVerificationFile: false
   path: template/template.h
   requiredBy: []
-  timestamp: '2025-02-28 17:42:52-08:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2025-03-08 02:00:51-05:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/library_checker/tree/vertex_add_subtree_sum.test.cpp
   - verify/library_checker/tree/rmq_lca.test.cpp

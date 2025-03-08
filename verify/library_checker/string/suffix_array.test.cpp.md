@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: strings/suffix_array.h
     title: strings/suffix_array.h
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.h
     title: template/template.h
   _extendedRequiredBy: []
@@ -19,18 +19,18 @@ data:
     - https://judge.yosupo.jp/problem/suffixarray
   bundledCode: "#line 1 \"verify/library_checker/string/suffix_array.test.cpp\"\n\
     #define PROBLEM \"https://judge.yosupo.jp/problem/suffixarray\"\n\n#line 1 \"\
-    template/template.h\"\n#include <bits/stdc++.h>\n\nusing namespace std;\n\n#define\
-    \ all(x) begin(x), end(x)\n#define sz(x) int(size(x))\n\nusing ll = long long;\n\
-    #line 1 \"strings/suffix_array.h\"\nauto gen_suffix_array(const string &s) {\n\
-    \    const int n = sz(s) + 1;\n\n    vector<int> sa(n);\n    sa[0] = n - 1;\n\
-    \    iota(begin(sa) + 1, end(sa), 0);\n    sort(begin(sa) + 1, end(sa), [&](int\
-    \ x, int y) {\n        return s[x] < s[y];\n    });\n\n    vector<int> ec(n);\n\
-    \    ec[sa[1]] = 1;\n    for (int i = 2; i < n; i++) {\n        ec[sa[i]] = ec[sa[i\
-    \ - 1]] + (s[sa[i]] != s[sa[i - 1]]);\n    }\n\n    for (int i = 1; i < n; i *=\
-    \ 2) {\n        transform(all(sa), begin(sa), [&](int x) {\n            x -= i;\n\
-    \            return x + (x < 0) * n;\n        });\n\n        vector<int> pos(n\
-    \ + 1);\n        for (int x : ec) {\n            pos[x + 1]++;\n        }\n  \
-    \      partial_sum(all(pos), begin(pos));\n\n        vector<int> new_sa(n);\n\
+    template/template.h\"\n/**\n *    author: mark\n**/\n#include <bits/stdc++.h>\n\
+    \nusing namespace std;\n\n#define sz(x) int(size(x))\n#define all(x) begin(x),\
+    \ end(x)\n#line 1 \"strings/suffix_array.h\"\nauto gen_suffix_array(const string\
+    \ &s) {\n    const int n = sz(s) + 1;\n\n    vector<int> sa(n);\n    sa[0] = n\
+    \ - 1;\n    iota(begin(sa) + 1, end(sa), 0);\n    sort(begin(sa) + 1, end(sa),\
+    \ [&](int x, int y) {\n        return s[x] < s[y];\n    });\n\n    vector<int>\
+    \ ec(n);\n    ec[sa[1]] = 1;\n    for (int i = 2; i < n; i++) {\n        ec[sa[i]]\
+    \ = ec[sa[i - 1]] + (s[sa[i]] != s[sa[i - 1]]);\n    }\n\n    for (int i = 1;\
+    \ i < n; i *= 2) {\n        transform(all(sa), begin(sa), [&](int x) {\n     \
+    \       x -= i;\n            return x + (x < 0) * n;\n        });\n\n        vector<int>\
+    \ pos(n + 1);\n        for (int x : ec) {\n            pos[x + 1]++;\n       \
+    \ }\n        partial_sum(all(pos), begin(pos));\n\n        vector<int> new_sa(n);\n\
     \        for (int j : sa) {\n            new_sa[pos[ec[j]]++] = j;\n        }\n\
     \        sa = new_sa;\n\n        vector<int> new_ec(n);\n        for (int j =\
     \ 1; j < n; j++) {\n            int x = sa[j - 1], y = sa[j];\n            new_ec[y]\
@@ -57,7 +57,7 @@ data:
   isVerificationFile: true
   path: verify/library_checker/string/suffix_array.test.cpp
   requiredBy: []
-  timestamp: '2025-02-28 17:42:52-08:00'
+  timestamp: '2025-03-08 02:00:51-05:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/library_checker/string/suffix_array.test.cpp

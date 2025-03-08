@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: graphs/trees/binary_lifting.h
     title: graphs/trees/binary_lifting.h
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.h
     title: template/template.h
   _extendedRequiredBy: []
@@ -19,8 +19,8 @@ data:
     - https://judge.yosupo.jp/problem/lca
   bundledCode: "#line 1 \"verify/library_checker/tree/binlift_lca.test.cpp\"\n#define\
     \ PROBLEM \"https://judge.yosupo.jp/problem/lca\"\n\n#line 1 \"template/template.h\"\
-    \n#include <bits/stdc++.h>\n\nusing namespace std;\n\n#define all(x) begin(x),\
-    \ end(x)\n#define sz(x) int(size(x))\n\nusing ll = long long;\n#line 1 \"graphs/trees/binary_lifting.h\"\
+    \n/**\n *    author: mark\n**/\n#include <bits/stdc++.h>\n\nusing namespace std;\n\
+    \n#define sz(x) int(size(x))\n#define all(x) begin(x), end(x)\n#line 1 \"graphs/trees/binary_lifting.h\"\
     \nstruct binary_lifting {\n    int log;\n    vector<int> dep;\n    vector<vector<int>>\
     \ up;\n\n    binary_lifting(const vector<vector<int>> &g, int root = 0) {\n  \
     \      log = __lg(sz(g)) + 1;\n        dep.resize(sz(g), -1);\n        up = vector(sz(g),\
@@ -59,7 +59,7 @@ data:
   isVerificationFile: true
   path: verify/library_checker/tree/binlift_lca.test.cpp
   requiredBy: []
-  timestamp: '2025-02-28 17:42:52-08:00'
+  timestamp: '2025-03-08 02:00:51-05:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/library_checker/tree/binlift_lca.test.cpp
