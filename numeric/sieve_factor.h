@@ -29,7 +29,7 @@ void sieve(int n) {
     if (!mn_factor[i]) {
       mn_factor[i] = i;
       primes.push_back(i);
-      for (ll j = 1ll * i * i; j <= n; j += i) {
+      for (int64_t j = 1ll * i * i; j <= n; j += i) {
         if (!mn_factor[j]) {
           mn_factor[j] = i;
         }

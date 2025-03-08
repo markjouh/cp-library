@@ -2,9 +2,9 @@ template <int MOD>
 struct Mint {
   int v;
  
-  Mint(ll x = 0) : v(int(-MOD < x && x < MOD ? x : x % MOD) + (x < 0) * MOD) {}
+  Mint(int64_t x = 0) : v(int(-MOD < x && x < MOD ? x : x % MOD) + (x < 0) * MOD) {}
  
-  friend Mint pow(Mint base, ll exp) {
+  friend Mint pow(Mint base, int64_t exp) {
     Mint res = 1;
     while (exp) {
       if (exp & 1) {
