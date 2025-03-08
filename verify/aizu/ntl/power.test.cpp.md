@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: numeric/mint.h
     title: numeric/mint.h
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.h
     title: template/template.h
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_B
@@ -21,20 +21,20 @@ data:
     \n\n#line 1 \"template/template.h\"\n/**\n *    author: mark\n**/\n#include <bits/stdc++.h>\n\
     \nusing namespace std;\n\n#define sz(x) int(size(x))\n#define all(x) begin(x),\
     \ end(x)\n#line 1 \"numeric/mint.h\"\ntemplate <int MOD>\nstruct Mint {\n  int\
-    \ v;\n \n  Mint(ll x = 0) : v(int(-MOD < x && x < MOD ? x : x % MOD) + (x < 0)\
-    \ * MOD) {}\n \n  friend Mint pow(Mint base, ll exp) {\n    Mint res = 1;\n  \
-    \  while (exp) {\n      if (exp & 1) {\n        res *= base;\n      }\n      base\
-    \ *= base;\n      exp >>= 1;\n    }\n    return res;\n  }\n\n  Mint &operator+=(Mint\
-    \ b) {\n    v = v + b.v - (v + b.v >= MOD) * MOD;\n    return *this;\n  }\n  Mint\
-    \ &operator-=(Mint b) {\n    v = v - b.v + (v < b.v) * MOD;\n    return *this;\n\
-    \  }\n  Mint &operator*=(Mint b) {\n    v = int(1ll * v * b.v % MOD);\n    return\
-    \ *this;\n  }\n  Mint &operator/=(Mint b) {\n    v = int(1ll * v * pow(b, MOD\
-    \ - 2).v % MOD);\n    return *this;\n  }\n  friend Mint operator+(Mint a, Mint\
-    \ b) {\n    return a += b;\n  }\n  friend Mint operator-(Mint a, Mint b) {\n \
-    \   return a -= b;\n  }\n  friend Mint operator*(Mint a, Mint b) {\n    return\
-    \ a *= b;\n  }\n  friend Mint operator/(Mint a, Mint b) {\n    return a /= b;\n\
-    \  }\n  friend ostream &operator<<(ostream &os, Mint a) {\n    return os << a.v;\n\
-    \  }\n};\n\n// using mi = Mint<int(1e9 + 7)>;\n// using mi = Mint<998244353>;\n\
+    \ v;\n \n  Mint(int64_t x = 0) : v(int(-MOD < x && x < MOD ? x : x % MOD) + (x\
+    \ < 0) * MOD) {}\n \n  friend Mint pow(Mint base, int64_t exp) {\n    Mint res\
+    \ = 1;\n    while (exp) {\n      if (exp & 1) {\n        res *= base;\n      }\n\
+    \      base *= base;\n      exp >>= 1;\n    }\n    return res;\n  }\n\n  Mint\
+    \ &operator+=(Mint b) {\n    v = v + b.v - (v + b.v >= MOD) * MOD;\n    return\
+    \ *this;\n  }\n  Mint &operator-=(Mint b) {\n    v = v - b.v + (v < b.v) * MOD;\n\
+    \    return *this;\n  }\n  Mint &operator*=(Mint b) {\n    v = int(1ll * v * b.v\
+    \ % MOD);\n    return *this;\n  }\n  Mint &operator/=(Mint b) {\n    v = int(1ll\
+    \ * v * pow(b, MOD - 2).v % MOD);\n    return *this;\n  }\n  friend Mint operator+(Mint\
+    \ a, Mint b) {\n    return a += b;\n  }\n  friend Mint operator-(Mint a, Mint\
+    \ b) {\n    return a -= b;\n  }\n  friend Mint operator*(Mint a, Mint b) {\n \
+    \   return a *= b;\n  }\n  friend Mint operator/(Mint a, Mint b) {\n    return\
+    \ a /= b;\n  }\n  friend ostream &operator<<(ostream &os, Mint a) {\n    return\
+    \ os << a.v;\n  }\n};\n\n// using mi = Mint<int(1e9 + 7)>;\n// using mi = Mint<998244353>;\n\
     \n// vector<mi> fact, inv_fact;\n\n// void gen_fact(int n) {\n//   fact.resize(n\
     \ + 1);\n//   inv_fact.resize(n + 1);\n//   fact[0] = fact[1] = inv_fact[0] =\
     \ inv_fact[1] = 1;\n//   for (int i = 2; i <= n; i++) {\n//     fact[i] = fact[i\
@@ -54,8 +54,8 @@ data:
   isVerificationFile: true
   path: verify/aizu/ntl/power.test.cpp
   requiredBy: []
-  timestamp: '2025-03-08 02:00:51-05:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2025-03-08 14:47:17-05:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/aizu/ntl/power.test.cpp
 layout: document

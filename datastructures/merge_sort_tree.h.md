@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: datastructures/ordered_set.h
     title: datastructures/ordered_set.h
   _extendedRequiredBy: []

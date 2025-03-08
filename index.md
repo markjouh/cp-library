@@ -15,7 +15,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: datastructures/merge_sort_tree.h
       title: datastructures/merge_sort_tree.h
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: datastructures/ordered_set.h
       title: datastructures/ordered_set.h
     - icon: ':warning:'
@@ -109,10 +109,10 @@ data:
     - icon: ':warning:'
       path: numeric/binsearch_reals.h
       title: numeric/binsearch_reals.h
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: numeric/mint.h
       title: numeric/mint.h
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: numeric/sieve_factor.h
       title: numeric/sieve_factor.h
     - icon: ':warning:'
@@ -128,7 +128,7 @@ data:
       title: strings/suffix_array.h
   - name: template
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: template/template.h
       title: template/template.h
   verificationCategories:
@@ -137,7 +137,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/aizu/alds1/binary_search.test.cpp
       title: verify/aizu/alds1/binary_search.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/aizu/alds1/number_of_inversions.test.cpp
       title: verify/aizu/alds1/number_of_inversions.test.cpp
   - name: verify/aizu/dsl
@@ -150,7 +150,7 @@ data:
       title: verify/aizu/dsl/rsq_and_raq.test.cpp
   - name: verify/aizu/ntl
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/aizu/ntl/power.test.cpp
       title: verify/aizu/ntl/power.test.cpp
   - name: verify/library_checker/data_structure
@@ -186,7 +186,7 @@ data:
       title: verify/library_checker/graph/shortest_path.test.cpp
   - name: verify/library_checker/number_theory
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/library_checker/number_theory/enumerate_primes.test.cpp
       title: verify/library_checker/number_theory/enumerate_primes.test.cpp
   - name: verify/library_checker/string

@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/library_checker/number_theory/enumerate_primes.test.cpp
     title: verify/library_checker/number_theory/enumerate_primes.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: h
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"numeric/sieve_factor.h\"\n/*\n|           | $\\max_{1 \\\
@@ -30,7 +30,7 @@ data:
     \                     |          |\n*/\n\nvector<int> mn_factor, primes;\n\nvoid\
     \ sieve(int n) {\n  mn_factor.resize(n + 1);\n  for (int i = 2; i <= n; i++) {\n\
     \    if (!mn_factor[i]) {\n      mn_factor[i] = i;\n      primes.push_back(i);\n\
-    \      for (ll j = 1ll * i * i; j <= n; j += i) {\n        if (!mn_factor[j])\
+    \      for (int64_t j = 1ll * i * i; j <= n; j += i) {\n        if (!mn_factor[j])\
     \ {\n          mn_factor[j] = i;\n        }\n      }\n    }\n  }\n}\n\ntemplate\
     \ <class T>\nauto factorize(T x) {\n  vector<pair<T, int>> res;\n\n  // O(log\
     \ x) if sieved up to x\n  if (x <= sz(mn_factor) - 1) {\n    while (x > 1) {\n\
@@ -64,11 +64,11 @@ data:
     \      |          |\n| $10^{18}$ | 103680                           |        \
     \  |\n*/\n\nvector<int> mn_factor, primes;\n\nvoid sieve(int n) {\n  mn_factor.resize(n\
     \ + 1);\n  for (int i = 2; i <= n; i++) {\n    if (!mn_factor[i]) {\n      mn_factor[i]\
-    \ = i;\n      primes.push_back(i);\n      for (ll j = 1ll * i * i; j <= n; j +=\
-    \ i) {\n        if (!mn_factor[j]) {\n          mn_factor[j] = i;\n        }\n\
-    \      }\n    }\n  }\n}\n\ntemplate <class T>\nauto factorize(T x) {\n  vector<pair<T,\
-    \ int>> res;\n\n  // O(log x) if sieved up to x\n  if (x <= sz(mn_factor) - 1)\
-    \ {\n    while (x > 1) {\n      int y = mn_factor[x];\n      res.emplace_back(y,\
+    \ = i;\n      primes.push_back(i);\n      for (int64_t j = 1ll * i * i; j <= n;\
+    \ j += i) {\n        if (!mn_factor[j]) {\n          mn_factor[j] = i;\n     \
+    \   }\n      }\n    }\n  }\n}\n\ntemplate <class T>\nauto factorize(T x) {\n \
+    \ vector<pair<T, int>> res;\n\n  // O(log x) if sieved up to x\n  if (x <= sz(mn_factor)\
+    \ - 1) {\n    while (x > 1) {\n      int y = mn_factor[x];\n      res.emplace_back(y,\
     \ 0);\n      while (x % y == 0) {\n        x /= y;\n        res.back().second++;\n\
     \      }\n    }\n    return res;\n  }\n\n  // O(sqrt x log x) otherwise, must\
     \ have sieved to sqrt(x)\n  for (int p : primes) {\n    if (1ll * p * p > x) {\n\
@@ -84,8 +84,8 @@ data:
   isVerificationFile: false
   path: numeric/sieve_factor.h
   requiredBy: []
-  timestamp: '2025-03-08 02:00:51-05:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2025-03-08 14:47:17-05:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/library_checker/number_theory/enumerate_primes.test.cpp
 documentation_of: numeric/sieve_factor.h

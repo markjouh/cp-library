@@ -4,13 +4,13 @@ data:
   - icon: ':heavy_check_mark:'
     path: datastructures/merge_sort_tree.h
     title: datastructures/merge_sort_tree.h
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: datastructures/ordered_set.h
     title: datastructures/ordered_set.h
   - icon: ':heavy_check_mark:'
     path: numeric/binsearch.h
     title: numeric/binsearch.h
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.h
     title: template/template.h
   _extendedRequiredBy: []
