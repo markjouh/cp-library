@@ -58,8 +58,8 @@ data:
     path: verify/library_checker/tree/binlift_lca.test.cpp
     title: verify/library_checker/tree/binlift_lca.test.cpp
   - icon: ':heavy_check_mark:'
-    path: verify/library_checker/tree/rmq_lca.test.cpp
-    title: verify/library_checker/tree/rmq_lca.test.cpp
+    path: verify/library_checker/tree/fast_lca.test.cpp
+    title: verify/library_checker/tree/fast_lca.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/library_checker/tree/rooted_tree_isomorphism.test.cpp
     title: verify/library_checker/tree/rooted_tree_isomorphism.test.cpp
@@ -84,8 +84,8 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/library_checker/tree/vertex_add_subtree_sum.test.cpp
-  - verify/library_checker/tree/rmq_lca.test.cpp
   - verify/library_checker/tree/rooted_tree_isomorphism.test.cpp
+  - verify/library_checker/tree/fast_lca.test.cpp
   - verify/library_checker/tree/binlift_lca.test.cpp
   - verify/library_checker/number_theory/enumerate_primes.test.cpp
   - verify/library_checker/string/enumerate_palindromes.test.cpp

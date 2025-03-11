@@ -3,15 +3,15 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
-    path: graphs/trees/rmq_lca.h
-    title: graphs/trees/rmq_lca.h
+    path: graphs/trees/fast_lca.h
+    title: graphs/trees/fast_lca.h
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/library_checker/data_structure/static_rmq.test.cpp
     title: verify/library_checker/data_structure/static_rmq.test.cpp
   - icon: ':heavy_check_mark:'
-    path: verify/library_checker/tree/rmq_lca.test.cpp
-    title: verify/library_checker/tree/rmq_lca.test.cpp
+    path: verify/library_checker/tree/fast_lca.test.cpp
+    title: verify/library_checker/tree/fast_lca.test.cpp
   _isVerificationFailed: false
   _pathExtension: h
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -43,11 +43,11 @@ data:
   isVerificationFile: false
   path: datastructures/static/sparse_table.h
   requiredBy:
-  - graphs/trees/rmq_lca.h
+  - graphs/trees/fast_lca.h
   timestamp: '2024-12-02 22:41:32-05:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/library_checker/tree/rmq_lca.test.cpp
+  - verify/library_checker/tree/fast_lca.test.cpp
   - verify/library_checker/data_structure/static_rmq.test.cpp
 documentation_of: datastructures/static/sparse_table.h
 layout: document

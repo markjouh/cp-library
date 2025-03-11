@@ -11,30 +11,26 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"graphs/trees/tree_hashing.h\"\nstruct tree_hashing {\n \
-    \   map<vector<int>, int> hash;\n\n    auto add(const vector<vector<int>> &g,\
-    \ int r = 0) {\n        vector<int> res(sz(g));\n        \n        auto dfs =\
-    \ [&](auto &&self, int u, int par) -> void {\n            vector<int> ch;\n  \
-    \          for (int v : g[u]) {\n                if (v != par) {\n           \
-    \         self(self, v, u);\n                    ch.push_back(res[v]);\n     \
-    \           }\n            }\n            sort(all(ch));\n            if (!hash.count(ch))\
-    \ {\n                hash[ch] = sz(hash);\n            }\n            res[u] =\
-    \ hash[ch];\n        };\n\n        dfs(dfs, r, -1);\n\n        return res;\n \
-    \   }\n};\n"
-  code: "struct tree_hashing {\n    map<vector<int>, int> hash;\n\n    auto add(const\
-    \ vector<vector<int>> &g, int r = 0) {\n        vector<int> res(sz(g));\n    \
-    \    \n        auto dfs = [&](auto &&self, int u, int par) -> void {\n       \
-    \     vector<int> ch;\n            for (int v : g[u]) {\n                if (v\
-    \ != par) {\n                    self(self, v, u);\n                    ch.push_back(res[v]);\n\
-    \                }\n            }\n            sort(all(ch));\n            if\
-    \ (!hash.count(ch)) {\n                hash[ch] = sz(hash);\n            }\n \
-    \           res[u] = hash[ch];\n        };\n\n        dfs(dfs, r, -1);\n\n   \
-    \     return res;\n    }\n};\n"
+  bundledCode: "#line 1 \"graphs/trees/tree_hashing.h\"\nmap<vector<int>, int> tree_hashes;\n\
+    \nauto hash_tree(const vector<vector<int>> &g, int root = 0) {\n\tvector<int>\
+    \ res(sz(g));\n\t\n\tauto dfs = [&](auto &&self, int u, int par) -> void {\n\t\
+    \tvector<int> ch;\n\t\tfor (int v : g[u]) {\n\t\t\tif (v != par) {\n\t\t\t\tself(self,\
+    \ v, u);\n\t\t\t\tch.push_back(res[v]);\n\t\t\t}\n\t\t}\n\t\tsort(all(ch));\n\t\
+    \tif (!tree_hashes.count(ch)) {\n\t\t\ttree_hashes[ch] = sz(tree_hashes);\n\t\t\
+    }\n\t\tres[u] = tree_hashes[ch];\n\t};\n\n\tdfs(dfs, root, -1);\n\n\treturn res;\n\
+    }\n"
+  code: "map<vector<int>, int> tree_hashes;\n\nauto hash_tree(const vector<vector<int>>\
+    \ &g, int root = 0) {\n\tvector<int> res(sz(g));\n\t\n\tauto dfs = [&](auto &&self,\
+    \ int u, int par) -> void {\n\t\tvector<int> ch;\n\t\tfor (int v : g[u]) {\n\t\
+    \t\tif (v != par) {\n\t\t\t\tself(self, v, u);\n\t\t\t\tch.push_back(res[v]);\n\
+    \t\t\t}\n\t\t}\n\t\tsort(all(ch));\n\t\tif (!tree_hashes.count(ch)) {\n\t\t\t\
+    tree_hashes[ch] = sz(tree_hashes);\n\t\t}\n\t\tres[u] = tree_hashes[ch];\n\t};\n\
+    \n\tdfs(dfs, root, -1);\n\n\treturn res;\n}"
   dependsOn: []
   isVerificationFile: false
   path: graphs/trees/tree_hashing.h
   requiredBy: []
-  timestamp: '2024-12-02 22:41:32-05:00'
+  timestamp: '2025-03-11 01:06:40-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/library_checker/tree/rooted_tree_isomorphism.test.cpp

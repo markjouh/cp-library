@@ -88,8 +88,8 @@ data:
       path: graphs/trees/centroid_decomposition.h
       title: graphs/trees/centroid_decomposition.h
     - icon: ':heavy_check_mark:'
-      path: graphs/trees/rmq_lca.h
-      title: graphs/trees/rmq_lca.h
+      path: graphs/trees/fast_lca.h
+      title: graphs/trees/fast_lca.h
     - icon: ':heavy_check_mark:'
       path: graphs/trees/tree_hashing.h
       title: graphs/trees/tree_hashing.h
@@ -109,15 +109,20 @@ data:
     - icon: ':warning:'
       path: numeric/binsearch_reals.h
       title: numeric/binsearch_reals.h
+    - icon: ':warning:'
+      path: numeric/fraction.h
+      title: numeric/fraction.h
     - icon: ':heavy_check_mark:'
       path: numeric/mint.h
       title: numeric/mint.h
     - icon: ':heavy_check_mark:'
       path: numeric/sieve_factor.h
       title: numeric/sieve_factor.h
+  - name: random
+    pages:
     - icon: ':warning:'
-      path: numeric/square_matrix.h
-      title: numeric/square_matrix.h
+      path: random/xorshift64.h
+      title: random/xorshift64.h
   - name: strings
     pages:
     - icon: ':heavy_check_mark:'
@@ -128,6 +133,9 @@ data:
       title: strings/suffix_array.h
   - name: template
     pages:
+    - icon: ':warning:'
+      path: template/fast_io.h
+      title: template/fast_io.h
     - icon: ':heavy_check_mark:'
       path: template/template.h
       title: template/template.h
@@ -203,8 +211,8 @@ data:
       path: verify/library_checker/tree/binlift_lca.test.cpp
       title: verify/library_checker/tree/binlift_lca.test.cpp
     - icon: ':heavy_check_mark:'
-      path: verify/library_checker/tree/rmq_lca.test.cpp
-      title: verify/library_checker/tree/rmq_lca.test.cpp
+      path: verify/library_checker/tree/fast_lca.test.cpp
+      title: verify/library_checker/tree/fast_lca.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/library_checker/tree/rooted_tree_isomorphism.test.cpp
       title: verify/library_checker/tree/rooted_tree_isomorphism.test.cpp
