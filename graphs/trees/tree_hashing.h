@@ -1,26 +1,24 @@
-struct tree_hashing {
-    map<vector<int>, int> hash;
+map<vector<int>, int> tree_hashes;
 
-    auto add(const vector<vector<int>> &g, int r = 0) {
-        vector<int> res(sz(g));
-        
-        auto dfs = [&](auto &&self, int u, int par) -> void {
-            vector<int> ch;
-            for (int v : g[u]) {
-                if (v != par) {
-                    self(self, v, u);
-                    ch.push_back(res[v]);
-                }
-            }
-            sort(all(ch));
-            if (!hash.count(ch)) {
-                hash[ch] = sz(hash);
-            }
-            res[u] = hash[ch];
-        };
+auto hash_tree(const vector<vector<int>> &g, int root = 0) {
+	vector<int> res(sz(g));
+	
+	auto dfs = [&](auto &&self, int u, int par) -> void {
+		vector<int> ch;
+		for (int v : g[u]) {
+			if (v != par) {
+				self(self, v, u);
+				ch.push_back(res[v]);
+			}
+		}
+		sort(all(ch));
+		if (!tree_hashes.count(ch)) {
+			tree_hashes[ch] = sz(tree_hashes);
+		}
+		res[u] = tree_hashes[ch];
+	};
 
-        dfs(dfs, r, -1);
+	dfs(dfs, root, -1);
 
-        return res;
-    }
-};
+	return res;
+}

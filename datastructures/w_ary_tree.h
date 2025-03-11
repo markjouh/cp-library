@@ -1,5 +1,6 @@
 struct Word {
   uint64_t mask;
+  
   Word() : mask(0) {}
   
   void flip_bit(int p) {
