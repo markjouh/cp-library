@@ -9,7 +9,7 @@ int main() {
     cin >> s;
     string rev = s;
     reverse(all(rev));
-    RollingHash a(s), b(rev);
+    hashing::RollingHash a(s), b(rev);
     const int n = sz(s);
     vector<int> ans(2 * n - 1);
     for (int i = 0; i < n; i++) {
