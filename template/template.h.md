@@ -52,9 +52,6 @@ data:
     path: verify/library_checker/string/enumerate_palindromes.test.cpp
     title: verify/library_checker/string/enumerate_palindromes.test.cpp
   - icon: ':heavy_check_mark:'
-    path: verify/library_checker/string/suffix_array.test.cpp
-    title: verify/library_checker/string/suffix_array.test.cpp
-  - icon: ':heavy_check_mark:'
     path: verify/library_checker/tree/binlift_lca.test.cpp
     title: verify/library_checker/tree/binlift_lca.test.cpp
   - icon: ':heavy_check_mark:'
@@ -89,7 +86,6 @@ data:
   - verify/library_checker/tree/binlift_lca.test.cpp
   - verify/library_checker/number_theory/enumerate_primes.test.cpp
   - verify/library_checker/string/enumerate_palindromes.test.cpp
-  - verify/library_checker/string/suffix_array.test.cpp
   - verify/library_checker/graph/shortest_path.test.cpp
   - verify/library_checker/graph/scc.test.cpp
   - verify/library_checker/data_structure/associative_array.test.cpp

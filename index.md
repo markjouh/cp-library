@@ -6,6 +6,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: datastructures/binary_trie.h
       title: datastructures/binary_trie.h
+    - icon: ':warning:'
+      path: datastructures/chtolly_tree.h
+      title: datastructures/chtolly_tree.h
     - icon: ':heavy_check_mark:'
       path: datastructures/dsu.h
       title: datastructures/dsu.h
@@ -128,7 +131,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: strings/hashing.h
       title: strings/hashing.h
-    - icon: ':heavy_check_mark:'
+    - icon: ':warning:'
       path: strings/suffix_array.h
       title: strings/suffix_array.h
   - name: template
@@ -202,9 +205,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/library_checker/string/enumerate_palindromes.test.cpp
       title: verify/library_checker/string/enumerate_palindromes.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: verify/library_checker/string/suffix_array.test.cpp
-      title: verify/library_checker/string/suffix_array.test.cpp
   - name: verify/library_checker/tree
     pages:
     - icon: ':heavy_check_mark:'
