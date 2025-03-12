@@ -7,8 +7,8 @@ data:
       path: datastructures/binary_trie.h
       title: datastructures/binary_trie.h
     - icon: ':warning:'
-      path: datastructures/chtolly_tree.h
-      title: datastructures/chtolly_tree.h
+      path: datastructures/chtholly_tree.h
+      title: datastructures/chtholly_tree.h
     - icon: ':heavy_check_mark:'
       path: datastructures/dsu.h
       title: datastructures/dsu.h
