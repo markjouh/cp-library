@@ -2,7 +2,7 @@
 
 struct FastLCA {
   vector<int> tin, dep;
-  sparse_table<pair<int, int>, min_op<pair<int, int>>> rmq;
+  SparseTable<pair<int, int>, min_op<pair<int, int>>> rmq;
 
   FastLCA() {}
   FastLCA(const vector<vector<int>> &g) {
@@ -23,7 +23,7 @@ struct FastLCA {
     };
 
     dfs(dfs, 0, -1);
-    rmq = sparse_table<pair<int, int>, min_op<pair<int, int>>>(d);
+    rmq = SparseTable<pair<int, int>, min_op<pair<int, int>>>(d);
   }
 
   int lca(int u, int v) {
