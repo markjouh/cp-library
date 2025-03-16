@@ -3,3 +3,9 @@
 
 # Ignore compiled output files
 *.out
+*.exe
+
+# Ignore files with no extension
+*
+!/**/
+!*.*
