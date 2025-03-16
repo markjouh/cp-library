@@ -52,11 +52,16 @@ data:
   - name: datastructures/static
     pages:
     - icon: ':heavy_check_mark:'
-      path: datastructures/static/mo_queries.h
-      title: datastructures/static/mo_queries.h
+      path: datastructures/static/mo_handler.h
+      title: datastructures/static/mo_handler.h
     - icon: ':heavy_check_mark:'
       path: datastructures/static/sparse_table.h
       title: datastructures/static/sparse_table.h
+  - name: flow
+    pages:
+    - icon: ':warning:'
+      path: flow/edmonds_karp_max_flow.h
+      title: flow/edmonds_karp_max_flow.h
   - name: graphs
     pages:
     - icon: ':warning:'
