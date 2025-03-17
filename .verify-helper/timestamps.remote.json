@@ -2,6 +2,7 @@
 "verify/aizu/alds1/binary_search.test.cpp": "2025-03-08 02:00:51 -0500",
 "verify/aizu/alds1/number_of_inversions.test.cpp": "2025-03-08 14:47:17 -0500",
 "verify/aizu/dsl/rmq.test.cpp": "2025-03-08 02:00:51 -0500",
+"verify/aizu/dsl/rsq_and_raq.test.cpp": "2025-03-17 19:55:07 -0400",
 "verify/aizu/ntl/power.test.cpp": "2025-03-08 14:47:17 -0500",
 "verify/library_checker/data_structure/associative_array.test.cpp": "2025-03-08 02:00:51 -0500",
 "verify/library_checker/data_structure/point_add_range_sum.test.cpp": "2025-03-17 19:49:59 -0400",
