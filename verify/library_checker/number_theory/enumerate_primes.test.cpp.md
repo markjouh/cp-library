@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: numeric/sieve_factor.h
     title: numeric/sieve_factor.h
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.h
     title: template/template.h
   _extendedRequiredBy: []

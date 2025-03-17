@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: datastructures/hash_table.h
     title: datastructures/hash_table.h
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.h
     title: template/template.h
   _extendedRequiredBy: []
