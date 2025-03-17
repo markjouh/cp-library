@@ -1,3 +1,5 @@
+#include "fentree.h"
+
 template <class T>
 struct DualFentree {
   int n;
