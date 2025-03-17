@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: datastructures/fenwick_tree/fentree.h
     title: datastructures/fenwick_tree/fentree.h
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.h
     title: template/template.h
   _extendedRequiredBy: []
@@ -22,24 +22,23 @@ data:
     #line 1 \"template/template.h\"\n/**\n *    author: mark\n**/\n#include <bits/stdc++.h>\n\
     \nusing namespace std;\n\n#define sz(x) int(size(x))\n#define all(x) begin(x),\
     \ end(x)\n#line 1 \"datastructures/fenwick_tree/fentree.h\"\ntemplate <class T>\n\
-    struct fentree {\n    int n;\n    vector<T> ft;\n\n    fentree(int n_) : n(n_),\
-    \ ft(n + 1) {}\n\n    fentree(const vector<T> &a) : n(sz(a)), ft(n + 1) {\n  \
-    \      for (int i = 1; i <= n; i++) {\n            ft[i] += a[i - 1];\n      \
-    \      if (i + (i & -i) <= n) {\n                ft[i + (i & -i)] += ft[i];\n\
-    \            }\n        }\n    }\n\n    void add(int p, T v) {\n        for (p++;\
-    \ p <= n; p += p & -p) {\n            ft[p] += v;\n        }\n    }\n\n    T sum(int\
-    \ r) {\n        T res = 0;\n        for (r++; r > 0; r -= r & -r) {\n        \
-    \    res += ft[r];\n        }\n        return res;\n    }\n\n    T sum(int l,\
-    \ int r) {\n        return sum(r) - sum(l - 1);\n    }\n};\n#line 5 \"verify/library_checker/data_structure/point_add_range_sum.test.cpp\"\
+    struct Fentree {\n  int n;\n  vector<T> ft;\n\n  Fentree(int n_) : n(n_), ft(n\
+    \ + 1) {}\n\n  Fentree(const vector<T> &a) : n(sz(a)), ft(n + 1) {\n    for (int\
+    \ i = 1; i <= n; i++) {\n      ft[i] += a[i - 1];\n      if (i + (i & -i) <= n)\
+    \ {\n        ft[i + (i & -i)] += ft[i];\n      }\n    }\n  }\n\n  void add(int\
+    \ p, T v) {\n    for (p++; p <= n; p += p & -p) {\n      ft[p] += v;\n    }\n\
+    \  }\n\n  T sum(int r) {\n    T res = 0;\n    for (r++; r > 0; r -= r & -r) {\n\
+    \      res += ft[r];\n    }\n    return res;\n  }\n\n  T sum(int l, int r) {\n\
+    \    return sum(r) - sum(l - 1);\n  }\n};\n#line 5 \"verify/library_checker/data_structure/point_add_range_sum.test.cpp\"\
     \n\nint main() {\n  int n, q;\n  cin >> n >> q;\n  vector<int64_t> a(n);\n  for\
-    \ (int i = 0; i < n; i++) {\n    cin >> a[i];\n  }\n  fentree<int64_t> ft(a);\n\
+    \ (int i = 0; i < n; i++) {\n    cin >> a[i];\n  }\n  Fentree<int64_t> ft(a);\n\
     \  while (q--) {\n    bool t;\n    int x, y;\n    cin >> t >> x >> y;\n    if\
     \ (t) {\n      cout << ft.sum(x, y - 1) << '\\n';\n    } else {\n      ft.add(x,\
     \ y);\n    }\n  }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/point_add_range_sum\"\n\
     \n#include \"../../../template/template.h\"\n#include \"../../../datastructures/fenwick_tree/fentree.h\"\
     \n\nint main() {\n  int n, q;\n  cin >> n >> q;\n  vector<int64_t> a(n);\n  for\
-    \ (int i = 0; i < n; i++) {\n    cin >> a[i];\n  }\n  fentree<int64_t> ft(a);\n\
+    \ (int i = 0; i < n; i++) {\n    cin >> a[i];\n  }\n  Fentree<int64_t> ft(a);\n\
     \  while (q--) {\n    bool t;\n    int x, y;\n    cin >> t >> x >> y;\n    if\
     \ (t) {\n      cout << ft.sum(x, y - 1) << '\\n';\n    } else {\n      ft.add(x,\
     \ y);\n    }\n  }\n}"
@@ -49,7 +48,7 @@ data:
   isVerificationFile: true
   path: verify/library_checker/data_structure/point_add_range_sum.test.cpp
   requiredBy: []
-  timestamp: '2025-03-08 02:00:51-05:00'
+  timestamp: '2025-03-17 19:49:59-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/library_checker/data_structure/point_add_range_sum.test.cpp

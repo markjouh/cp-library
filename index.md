@@ -26,7 +26,7 @@ data:
       title: datastructures/w_ary_tree.h
   - name: datastructures/fenwick_tree
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: datastructures/fenwick_tree/dual_fentree.h
       title: datastructures/fenwick_tree/dual_fentree.h
     - icon: ':heavy_check_mark:'
@@ -144,7 +144,7 @@ data:
     - icon: ':warning:'
       path: template/fast_io.h
       title: template/fast_io.h
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template/template.h
       title: template/template.h
   verificationCategories:
@@ -161,7 +161,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/aizu/dsl/rmq.test.cpp
       title: verify/aizu/dsl/rmq.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/aizu/dsl/rsq_and_raq.test.cpp
       title: verify/aizu/dsl/rsq_and_raq.test.cpp
   - name: verify/aizu/ntl

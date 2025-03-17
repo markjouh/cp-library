@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: numeric/binsearch.h
     title: numeric/binsearch.h
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.h
     title: template/template.h
   _extendedRequiredBy: []
