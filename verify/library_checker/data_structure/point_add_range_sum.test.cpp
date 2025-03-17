@@ -10,7 +10,7 @@ int main() {
   for (int i = 0; i < n; i++) {
     cin >> a[i];
   }
-  fentree<int64_t> ft(a);
+  Fentree<int64_t> ft(a);
   while (q--) {
     bool t;
     int x, y;
