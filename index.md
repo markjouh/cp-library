@@ -137,6 +137,9 @@ data:
       path: strings/hashing.h
       title: strings/hashing.h
     - icon: ':warning:'
+      path: strings/run_length_encoding.h
+      title: strings/run_length_encoding.h
+    - icon: ':warning:'
       path: strings/suffix_array.h
       title: strings/suffix_array.h
   - name: template
