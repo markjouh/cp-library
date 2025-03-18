@@ -5,8 +5,6 @@ mt19937_64 mt(chrono::steady_clock::now().time_since_epoch().count());
 const uint64_t MOD = (1ll << 61) - 1;
 const uint64_t B = uniform_int_distribution<uint64_t>(0, MOD)(mt);
 
-vector<uint64_t> pow_b = {1};
-
 uint64_t add(uint64_t a, uint64_t b) {
   a += b;
   if (a >= MOD) {
@@ -32,6 +30,48 @@ uint64_t mul(uint64_t a, uint64_t b) {
   return ret - 1;
 }
 
+template<typename T, typename = void>
+struct is_iterable : false_type {};
+template<typename T>
+struct is_iterable<T, void_t<
+  decltype(begin(declval<T&>())),
+  decltype(end(declval<T&>()))
+>> : true_type {};
+
+template<typename T>
+struct is_tuple : false_type {};
+template<typename... Ts>
+struct is_tuple<tuple<Ts...>> : true_type {};
+template<typename T, typename U>
+struct is_tuple<pair<T, U>> : true_type {};
+
+template<typename T>
+uint64_t hash_one(const T &t) {
+  if constexpr (is_tuple<T>::value) {
+    uint64_t res = 0;
+    apply([&](const auto &...elems) {
+      ((res = add(mul(res, B), hash_one(elems))), ...);
+    }, t);
+    return res;
+  } else if constexpr (is_iterable<T>::value) {
+    uint64_t res = 0;
+    for (const auto &x : t)
+      res = add(mul(res, B), hash_one(x));
+    return res;
+  } else {
+    return static_cast<uint64_t>(t);
+  }
+}
+
+template<typename ...Args>
+uint64_t hash(const Args &...args) {
+  uint64_t res = 0;
+  ((res = add(mul(res, B), hash_one(args))), ...);
+  return res;
+}
+
+vector<uint64_t> pow_b = {1};
+
 struct SegHash {
   uint64_t val;
   int len;
@@ -52,11 +92,11 @@ struct RollingHash {
   vector<uint64_t> h;
 
   template <class T>
-  RollingHash(const T &s) : n(sz(s)), h(n + 1) {
+  RollingHash(const T &s) : n(s.size()), h(n + 1) {
     for (int i = 0; i < n; i++) {
       h[i + 1] = add(mul(h[i], B), s[i]);
     }
-    int p = sz(pow_b);
+    int p = pow_b.size();
     if (p < n + 1) {
       pow_b.resize(n + 1);
       for (int i = p; i <= n; i++) {
