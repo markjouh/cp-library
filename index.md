@@ -18,7 +18,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: datastructures/merge_sort_tree.h
       title: datastructures/merge_sort_tree.h
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: datastructures/ordered_set.h
       title: datastructures/ordered_set.h
     - icon: ':warning:'
@@ -147,7 +147,7 @@ data:
     - icon: ':warning:'
       path: template/fast_io.h
       title: template/fast_io.h
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template/template.h
       title: template/template.h
   verificationCategories:
@@ -156,7 +156,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/aizu/alds1/binary_search.test.cpp
       title: verify/aizu/alds1/binary_search.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/aizu/alds1/number_of_inversions.test.cpp
       title: verify/aizu/alds1/number_of_inversions.test.cpp
   - name: verify/aizu/dsl

@@ -7,7 +7,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: strings/hashing.h
     title: strings/hashing.h
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.h
     title: template/template.h
   _extendedRequiredBy: []
