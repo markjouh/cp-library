@@ -1,15 +1,16 @@
-#include <ext/pb_ds/assoc_container.hpp> 
+#include <ext/pb_ds/assoc_container.hpp>
 #include <ext/pb_ds/tree_policy.hpp>
 
-using namespace __gnu_pbds; 
+using namespace __gnu_pbds;
 
 template <class T>
-using ordered_set = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
+using OrderedSet =
+  tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
 
 template <class T>
-struct ordered_multiset {
+struct OrderedMultiset {
   int time = 0;
-  ordered_set<pair<T, int>> st;
+  OrderedSet<pair<T, int>> st;
 
   void insert(T x) {
     st.insert({x, time++});

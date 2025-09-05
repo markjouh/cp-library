@@ -3,7 +3,7 @@
 template <class T>
 struct MergeSortTree {
   int n;
-  vector<ordered_set<pair<T, int>>> st;
+  vector<OrderedSet<pair<T, int>>> st;
  
   MergeSortTree(const vector<T> &a) : n(sz(a)), st(2 * n) {
     for (int i = 0; i < n; i++) {
@@ -27,10 +27,11 @@ struct MergeSortTree {
   }
  
   void set(int p, T v) {
-    const auto old = *begin(st[p + n]);
-    for (p += n; p > 0; p >>= 1) {
+    const int idx = p;
+    const auto old = *begin(st[idx + n]);
+    for (p = idx + n; p > 0; p >>= 1) {
       st[p].erase(old);
-      st[p].insert(v);
+      st[p].insert({v, idx});
     }
   }
 };

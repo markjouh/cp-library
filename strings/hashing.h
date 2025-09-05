@@ -22,48 +22,51 @@ uint64_t sub(uint64_t a, uint64_t b) {
 }
 
 uint64_t mul(uint64_t a, uint64_t b) {
-  uint64_t l1 = (uint32_t) a, h1 = a >> 32, l2 = (uint32_t) b, h2 = b >> 32;
+  uint64_t l1 = (uint32_t)a, h1 = a >> 32, l2 = (uint32_t)b, h2 = b >> 32;
   uint64_t l = l1 * l2, m = l1 * h2 + l2 * h1, h = h1 * h2;
-  uint64_t ret = (l & MOD) + (l >> 61) + (h << 3) + (m >> 29) + (m << 35 >> 3) + 1;
+  uint64_t ret =
+      (l & MOD) + (l >> 61) + (h << 3) + (m >> 29) + (m << 35 >> 3) + 1;
   ret = (ret & MOD) + (ret >> 61);
   ret = (ret & MOD) + (ret >> 61);
   return ret - 1;
 }
 
-template<typename T, typename = void>
-struct is_iterable : false_type {};
-template<typename T>
-struct is_iterable<T, void_t<
-  decltype(begin(declval<T&>())),
-  decltype(end(declval<T&>()))
->> : true_type {};
+template <typename T, typename = void>
+struct IsIterable : false_type {};
+template <typename T>
+struct IsIterable<
+    T, void_t<decltype(begin(declval<T &>())), decltype(end(declval<T &>()))>>
+    : true_type {};
 
-template<typename T>
-struct is_tuple : false_type {};
-template<typename... Ts>
-struct is_tuple<tuple<Ts...>> : true_type {};
-template<typename T, typename U>
-struct is_tuple<pair<T, U>> : true_type {};
+template <typename T>
+struct IsTuple : false_type {};
+template <typename... Ts>
+struct IsTuple<tuple<Ts...>> : true_type {};
+template <typename T, typename U>
+struct IsTuple<pair<T, U>> : true_type {};
 
-template<typename T>
+template <typename T>
 uint64_t hash_one(const T &t) {
-  if constexpr (is_tuple<T>::value) {
+  if constexpr (IsTuple<T>::value) {
     uint64_t res = 0;
-    apply([&](const auto &...elems) {
-      ((res = add(mul(res, B), hash_one(elems))), ...);
-    }, t);
+    apply(
+        [&](const auto &...elems) {
+          ((res = add(mul(res, B), hash_one(elems))), ...);
+        },
+        t);
     return res;
-  } else if constexpr (is_iterable<T>::value) {
+  } else if constexpr (IsIterable<T>::value) {
     uint64_t res = 0;
-    for (const auto &x : t)
+    for (const auto &x : t) {
       res = add(mul(res, B), hash_one(x));
+    }
     return res;
   } else {
     return static_cast<uint64_t>(t);
   }
 }
 
-template<typename ...Args>
+template <typename... Args>
 uint64_t hash(const Args &...args) {
   uint64_t res = 0;
   ((res = add(mul(res, B), hash_one(args))), ...);
@@ -115,4 +118,4 @@ struct RollingHash {
   }
 };
 
-} // namespace hashing
+}  // namespace hashing

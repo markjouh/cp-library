@@ -7,7 +7,7 @@ int main() {
   int n;
   cin >> n;
   int64_t ans = 0;
-  ordered_set<int> st;
+  OrderedSet<int> st;
   for (int i = 0; i < n; i++) {
     int x;
     cin >> x;
