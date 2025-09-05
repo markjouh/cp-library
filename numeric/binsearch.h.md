@@ -36,8 +36,8 @@ data:
   timestamp: '2025-03-08 02:00:51-05:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/library_checker/string/enumerate_palindromes.test.cpp
   - verify/library_checker/data_structure/range_kth_smallest.test.cpp
+  - verify/library_checker/string/enumerate_palindromes.test.cpp
   - verify/aizu/alds1/binary_search.test.cpp
 documentation_of: numeric/binsearch.h
 layout: document

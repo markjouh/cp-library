@@ -44,8 +44,8 @@ data:
   timestamp: '2025-03-16 14:57:47-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/library_checker/tree/fast_lca.test.cpp
   - verify/library_checker/data_structure/static_rmq.test.cpp
+  - verify/library_checker/tree/fast_lca.test.cpp
 documentation_of: datastructures/static/sparse_table.h
 layout: document
 redirect_from:
