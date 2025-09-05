@@ -83,13 +83,14 @@ Docs live as Markdown files and are linked to headers via front matter. The site
   - Install toolchain: `brew install gcc pipx`
   - Ensure PATH has pipx bin: `export PATH="$HOME/.local/bin:$PATH"`
   - Install tools: `pipx install online-judge-verify-helper` and `pipx install online-judge-tools`
-  - Create local config: `make config-local CXX_BIN=g++-15` (or your installed `g++-XX`)
+  - Create local config: `make -f .verify-helper/local/Makefile config-local CXX_BIN=g++-15` (or your installed `g++-XX`)
 - Day-to-day:
   - Modify headers in place.
   - Add tests under `verify/.../*.test.cpp` with a `#define PROBLEM` URL.
-  - Run a single test: `oj-verify run verify/.../file.test.cpp --config-file .verify-helper/config.local.toml`
-  - Run all tests: `oj-verify all --config-file .verify-helper/config.local.toml` (or `make verify`)
-  - Build docs locally: `oj-verify docs --config-file .verify-helper/config.local.toml` (or `make docs`)
+  - Run a single test: `oj-verify run verify/.../file.test.cpp --config-file .verify-helper/local/config.local.toml` (or `make -f .verify-helper/local/Makefile verify-one FILE=...`)
+  - Run all tests: `oj-verify all --config-file .verify-helper/local/config.local.toml` (or `make -f .verify-helper/local/Makefile verify`)
+  - Build docs locally: `oj-verify docs --config-file .verify-helper/local/config.local.toml` (or `make -f .verify-helper/local/Makefile docs`)
+  - Note: `.verify-helper/local/config.local.toml` is untracked and generated via the local Makefile.
 - Push changes; CI runs with `.verify-helper/config.toml` (kept CI-friendly) and updates the site.
 
 # Non-obvious conventions and pitfalls
