@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: datastructures/ordered_set.h
     title: datastructures/ordered_set.h
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.h
     title: template/template.h
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_5_D
@@ -24,7 +24,7 @@ data:
     \ end(x)\n#line 1 \"datastructures/ordered_set.h\"\n#include <ext/pb_ds/assoc_container.hpp>\
     \ \n#include <ext/pb_ds/tree_policy.hpp>\n\nusing namespace __gnu_pbds; \n\ntemplate\
     \ <class T>\nusing ordered_set = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;\n\
-    \ntemplate <class T>\nstruct OrderedMultiset {\n  int time = 0;\n  ordered_set<pair<T,\
+    \ntemplate <class T>\nstruct ordered_multiset {\n  int time = 0;\n  ordered_set<pair<T,\
     \ int>> st;\n\n  void insert(T x) {\n    st.insert({x, time++});\n  }\n  void\
     \ extract(T x) {\n    auto it = st.lower_bound({x, 0});\n    if (it != end(st)\
     \ && it->fi == x) {\n      st.erase(it);\n    }\n  }\n\n  T find_by_order(int\
@@ -46,8 +46,8 @@ data:
   isVerificationFile: true
   path: verify/aizu/alds1/number_of_inversions.test.cpp
   requiredBy: []
-  timestamp: '2025-09-05 13:29:58-04:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2025-03-08 14:47:17-05:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/aizu/alds1/number_of_inversions.test.cpp
 layout: document
