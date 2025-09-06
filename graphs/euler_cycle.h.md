@@ -17,7 +17,7 @@ data:
     \     }\n            self += u == v;\n        }\n    }\n\n    vector<bool> removed(cnt);\n\
     \    vector<int> stk, res;\n    stk.push_back(0);\n    while (sz(stk)) {\n   \
     \     int u = stk.back();\n        if (deg[u] == 0) {\n            res.push_back(u);\n\
-    \            stk.pop_back();\n        } else {\n            while (removed[h[u].back().se])\
+    \            stk.pop_back();\n        } else {\n            while (removed[h[u].back().second])\
     \ {\n                h[u].pop_back();\n            }\n            auto [v, idx]\
     \ = h[u].back();\n            h[u].pop_back();\n\n            deg[u]--, deg[v]--;\n\
     \            removed[idx] = true;\n\n            stk.push_back(v);\n        }\n\
@@ -31,8 +31,8 @@ data:
     \        }\n    }\n\n    vector<bool> removed(cnt);\n    vector<int> stk, res;\n\
     \    stk.push_back(0);\n    while (sz(stk)) {\n        int u = stk.back();\n \
     \       if (deg[u] == 0) {\n            res.push_back(u);\n            stk.pop_back();\n\
-    \        } else {\n            while (removed[h[u].back().se]) {\n           \
-    \     h[u].pop_back();\n            }\n            auto [v, idx] = h[u].back();\n\
+    \        } else {\n            while (removed[h[u].back().second]) {\n       \
+    \         h[u].pop_back();\n            }\n            auto [v, idx] = h[u].back();\n\
     \            h[u].pop_back();\n\n            deg[u]--, deg[v]--;\n           \
     \ removed[idx] = true;\n\n            stk.push_back(v);\n        }\n    }\n  \
     \  return res;\n}"
@@ -40,7 +40,7 @@ data:
   isVerificationFile: false
   path: graphs/euler_cycle.h
   requiredBy: []
-  timestamp: '2024-10-25 19:46:34-04:00'
+  timestamp: '2025-09-06 19:45:01-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: graphs/euler_cycle.h

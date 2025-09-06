@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/library_checker/tree/rooted_tree_isomorphism.test.cpp
     title: verify/library_checker/tree/rooted_tree_isomorphism.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: h
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 1 \"graphs/trees/tree_hashing.h\"\nmap<vector<int>, int> tree_hashes;\n\
@@ -31,7 +31,7 @@ data:
   path: graphs/trees/tree_hashing.h
   requiredBy: []
   timestamp: '2025-03-11 01:06:40-04:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - verify/library_checker/tree/rooted_tree_isomorphism.test.cpp
 documentation_of: graphs/trees/tree_hashing.h

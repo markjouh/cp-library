@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: datastructures/fenwick_tree/fentree.h
     title: datastructures/fenwick_tree/fentree.h
   _extendedRequiredBy: []
