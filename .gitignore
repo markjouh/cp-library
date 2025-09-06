@@ -9,3 +9,6 @@
 *
 !/**/
 !*.*
+
+# Ignore local configuration stuff
+.claude

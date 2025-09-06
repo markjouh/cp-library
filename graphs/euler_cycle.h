@@ -24,7 +24,7 @@ auto euler_cycle(const vector<vector<int>> &g) {
             res.push_back(u);
             stk.pop_back();
         } else {
-            while (removed[h[u].back().se]) {
+            while (removed[h[u].back().second]) {
                 h[u].pop_back();
             }
             auto [v, idx] = h[u].back();

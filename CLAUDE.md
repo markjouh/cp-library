@@ -1,6 +1,6 @@
 ## Overview
 
-A collection of data structures and algorithms for competitive programming, automatically tested against online judge datasets and documented via GitHub Actions.
+This repository contains a collection of data structures and algorithms for competitive programming, automatically tested against online judge datasets and documented via GitHub Actions.
 
 ## Code Style
 
@@ -9,14 +9,8 @@ A collection of data structures and algorithms for competitive programming, auto
 - PascalCase for classes, snake_case for everything else
 - 0-indexed and inclusive intervals always
 
-**Class Naming:**
-- `Segtree` not `SegTree` (includes `LazySegtree`, `SparseSegtree`, `PersistentSegtree`)
-- `Fentree` not `FenTree` (includes `DualFentree`, `Fentree2D`)
-- Fully capitalize acronyms (`KosarajuSCC`, `FastLCA`, `DSU`)
-
 **Headers:**
 - Assume `template/template.h` is pre-included
-- Don't include IO or external libraries inside headers
 
 ## Tests
 
@@ -24,7 +18,6 @@ Tests go in `verify/<judge>/<category>/<name>.test.cpp` and must:
 - Start with `#define PROBLEM "https://judge.yosupo.jp/problem/..."` 
 - Include `template/template.h` then the header being tested
 - Read judge input and print exact expected output in `main()`
-- Cover edge cases: empty/singleton inputs, min/max indices, degenerate graphs, overflow boundaries, adversarial inputs
 - Use `// verification-helper: IGNORE` to temporarily skip (sparingly)
 
 ## Supported Judges
