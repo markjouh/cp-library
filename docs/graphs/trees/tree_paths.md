@@ -1,6 +1,6 @@
 ---
 title: Tree Paths
-documentation_of: ./src/trees/tree_paths.h
+documentation_of: ./src/graphs/trees/tree_paths.h
 ---
 
 Utilities for path queries and updates in trees using heavy-light decomposition concepts.

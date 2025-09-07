@@ -1,6 +1,6 @@
 ---
 title: Binary Lifting
-documentation_of: ./src/trees/binary_lifting.h
+documentation_of: ./src/graphs/trees/binary_lifting.h
 ---
 
 Binary lifting for LCA queries and k-th ancestor queries in trees.

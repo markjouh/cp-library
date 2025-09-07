@@ -3,7 +3,7 @@ title: Chtholly Tree
 documentation_of: ./src/datastructures/chtholly_tree.h
 ---
 
-ODT (Old Driver Tree) for efficient range operations on arrays with many consecutive equal values.
+A data structure that represents an array as a set of disjoint intervals of equal values. Also known as an Old Driver Tree (ODT).
 
 ## Operations
 
@@ -13,9 +13,9 @@ ODT (Old Driver Tree) for efficient range operations on arrays with many consecu
 - `apply(l, r, f)`: Apply transformation `f` to values in `[l, r]`
 
 ## Complexity
-
-- Operations: $O(\log n + k)$ where $k$ is segments in range
-- Space: $O(s)$ where $s$ is number of segments
+- **Amortized (with random data):** $O(\log n)$ per operation.
+- **Worst-case:** $O(k \log s)$, where `s` is the total number of segments and `k` is the number of segments in the range. This can be as bad as $O(n \log n)$ if `s` and `k` become linear in `n`.
+- **Space:** $O(s)$, where `s` is the number of segments.
 
 ## Usage
 
@@ -34,7 +34,6 @@ ct.traverse(0, 6, [&](auto it) {
 ```
 
 ## Notes
+The efficiency of this structure hinges on the number of segments (`s`) remaining small. Its favorable amortized performance is achieved only with random data or a high frequency of range-assignment operations, which merge segments and reduce `s`.
 
-Uses `std::set` to maintain segments. Automatically splits and merges segments based on value equality.
-
-**Performance Warning**: The $O(\log n + k)$ complexity only amortizes to $O(\log n)$ per operation when interval bounds are random. In adversarial cases where intervals have structured patterns, performance may degrade significantly.
+**Performance Warning**: The worst-case performance is poor. Adversarial inputs (e.g., point updates that repeatedly split segments) can cause the number of segments to grow to $O(n)$. In such cases, an operation over a range containing `k` segments takes $O(k \log n)$ time. This structure should only be used when the problem guarantees random inputs or a structure that prevents segment proliferation. It is not a general-purpose replacement for a segment tree.

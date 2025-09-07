@@ -1,6 +1,6 @@
 ---
 title: Centroid Decomposition
-documentation_of: ./src/trees/centroid_decomposition.h
+documentation_of: ./src/graphs/trees/centroid_decomposition.h
 ---
 
 Decomposes tree into centroid hierarchy for efficient path queries and updates.

@@ -1,6 +1,6 @@
 ---
 title: Tree Hashing
-documentation_of: ./src/trees/tree_hashing.h
+documentation_of: ./src/graphs/trees/tree_hashing.h
 ---
 
 Computes hash values for tree isomorphism detection and subtree comparison.

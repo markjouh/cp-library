@@ -1,6 +1,6 @@
 ---
 title: Fast LCA (Lowest Common Ancestor)
-documentation_of: ./src/trees/fast_lca.h
+documentation_of: ./src/graphs/trees/fast_lca.h
 ---
 
 Fast LCA queries using sparse table with $O(1)$ query time after linear preprocessing.
