@@ -3,7 +3,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#include "numeric/mint.h"
+#include "../../numeric/mint.h"
 
 using mi = Mint<998244353>;
 
