@@ -45,6 +45,7 @@ Shortest path algorithm for graphs with edge weights 0 or 1 using deque-based BF
 
 ## Usage
 
+{% raw %}
 ```cpp
 // Graph with 0/1 weights: {destination, weight}
 vector<vector<pair<int, int>>> g = {
@@ -56,6 +57,7 @@ vector<vector<pair<int, int>>> g = {
 
 vector<int> dist = bfs01(g, 0);
 ```
+{% endraw %}
 
 ## Notes
 

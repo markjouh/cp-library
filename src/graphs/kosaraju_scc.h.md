@@ -77,6 +77,7 @@ Finds strongly connected components in directed graphs using two DFS passes.
 
 ## Usage
 
+{% raw %}
 ```cpp
 vector<vector<int>> g = {{1}, {2}, {0, 3}, {}};
 KosarajuScc scc(g);
@@ -91,6 +92,7 @@ for (int i = 0; i < scc.sccs; i++) {
   }
 }
 ```
+{% endraw %}
 
 ## Notes
 
