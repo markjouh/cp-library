@@ -120,7 +120,7 @@ data:
     - icon: ':warning:'
       path: src/numeric/fraction.h
       title: Fraction
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: src/numeric/mint.h
       title: Modular Integer (Mint)
     - icon: ':heavy_check_mark:'
@@ -150,7 +150,7 @@ data:
   verificationCategories:
   - name: src/verify/library_checker
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: src/verify/library_checker/convolution_mod.test.cpp
       title: src/verify/library_checker/convolution_mod.test.cpp
   - name: src/verify/library_checker/data_structure
