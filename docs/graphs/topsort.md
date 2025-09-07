@@ -16,6 +16,7 @@ Topological sorting using Kahn's algorithm with in-degree counting for cycle det
 
 ## Usage
 
+{% raw %}
 ```cpp
 vector<vector<int>> g = {{1, 2}, {3}, {3}, {}};
 vector<int> order = topsort(g);
@@ -27,6 +28,7 @@ if (order.size() == g.size()) {
   cout << "Graph contains cycles" << endl;
 }
 ```
+{% endraw %}
 
 ## Notes
 

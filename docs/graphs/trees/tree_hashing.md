@@ -17,6 +17,7 @@ Computes hash values for tree isomorphism detection and subtree comparison.
 
 ## Usage
 
+{% raw %}
 ```cpp
 vector<vector<int>> tree1 = {{1, 2}, {0}, {0}};
 vector<vector<int>> tree2 = {{1}, {0, 2}, {1}};
@@ -28,6 +29,7 @@ if (hash1 == hash2) {
   // Trees are isomorphic when rooted appropriately
 }
 ```
+{% endraw %}
 
 ## Notes
 

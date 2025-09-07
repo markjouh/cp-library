@@ -17,10 +17,12 @@ Utilities for path queries and updates in trees using heavy-light decomposition 
 
 ## Usage
 
+{% raw %}
 ```cpp
 vector<vector<int>> tree = {{1, 2}, {0, 3}, {0}, {1}};
 // Specific usage depends on implemented path operations
 ```
+{% endraw %}
 
 ## Notes
 

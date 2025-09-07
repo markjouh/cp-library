@@ -16,6 +16,7 @@ Single-source shortest paths for weighted graphs with non-negative edge weights.
 
 ## Usage
 
+{% raw %}
 ```cpp
 vector<vector<pair<int, int>>> g = {
   {{1, 4}, {2, 1}},
@@ -35,6 +36,7 @@ while (cur != -1) {
 }
 reverse(path.begin(), path.end());
 ```
+{% endraw %}
 
 ## Notes
 

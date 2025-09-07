@@ -16,6 +16,7 @@ Finds up to k shortest paths from source to all vertices using modified Dijkstra
 
 ## Usage
 
+{% raw %}
 ```cpp
 vector<vector<pair<int, int>>> g = {
   {{1, 1}, {2, 4}},
@@ -32,6 +33,7 @@ for (int v = 0; v < distances.size(); v++) {
   }
 }
 ```
+{% endraw %}
 
 ## Notes
 

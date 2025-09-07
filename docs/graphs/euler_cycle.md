@@ -17,6 +17,7 @@ Find Eulerian cycle/path in directed graphs using Hierholzer's algorithm.
 
 ## Usage
 
+{% raw %}
 ```cpp
 vector<vector<int>> g = {{1}, {2}, {0}};
 vector<int> cycle = euler_cycle(g);
@@ -28,6 +29,7 @@ if (!cycle.empty()) {
   }
 }
 ```
+{% endraw %}
 
 ## Notes
 

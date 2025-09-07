@@ -18,12 +18,14 @@ Fast LCA queries using sparse table with $O(1)$ query time after linear preproce
 
 ## Usage
 
+{% raw %}
 ```cpp
 vector<vector<int>> tree = {{1, 2}, {0, 3}, {0}, {1}};
 FastLCA lca_solver(tree, 0);
 
 int ancestor = lca_solver.lca(2, 3);
 ```
+{% endraw %}
 
 ## Notes
 

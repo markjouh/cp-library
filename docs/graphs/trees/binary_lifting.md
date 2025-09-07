@@ -19,6 +19,7 @@ Binary lifting for LCA queries and k-th ancestor queries in trees.
 
 ## Usage
 
+{% raw %}
 ```cpp
 vector<vector<int>> tree = {{1, 2}, {0, 3}, {0}, {1}};
 BinaryLifting bl(tree, 0);
@@ -26,6 +27,7 @@ BinaryLifting bl(tree, 0);
 int ancestor = bl.lca(2, 3);
 int kth_anc = bl.kth_ancestor(3, 2); // 2nd ancestor of vertex 3
 ```
+{% endraw %}
 
 ## Notes
 

@@ -17,6 +17,7 @@ Decomposes tree into centroid hierarchy for efficient path queries and updates.
 
 ## Usage
 
+{% raw %}
 ```cpp
 vector<vector<int>> tree = {{1, 2}, {0, 3}, {0}, {1}};
 CentroidDecomposition cd(tree);
@@ -24,6 +25,7 @@ CentroidDecomposition cd(tree);
 // Use centroid tree for path queries
 // Implementation depends on specific problem requirements
 ```
+{% endraw %}
 
 ## Notes
 
