@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _extendedVerifiedWith:
+  - icon: ':x:'
+    path: src/verify/library_checker/data_structure/point_add_range_sum_persistent.test.cpp
+    title: src/verify/library_checker/data_structure/point_add_range_sum_persistent.test.cpp
+  _isVerificationFailed: true
   _pathExtension: h
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 1 \"src/datastructures/segment_tree/persistent_segtree.h\"\n\
@@ -52,8 +55,9 @@ data:
   path: src/datastructures/segment_tree/persistent_segtree.h
   requiredBy: []
   timestamp: '2025-09-07 14:42:16-04:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_WA
+  verifiedWith:
+  - src/verify/library_checker/data_structure/point_add_range_sum_persistent.test.cpp
 documentation_of: src/datastructures/segment_tree/persistent_segtree.h
 layout: document
 title: Persistent Segment Tree

@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/numeric/sieve_factor.h
     title: Sieve with Factorization
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/template/template.h
     title: Template
   _extendedRequiredBy: []

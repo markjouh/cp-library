@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/datastructures/fenwick_tree/fentree.h
     title: Fenwick Tree (Binary Indexed Tree)
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/template/template.h
     title: Template
   _extendedRequiredBy: []

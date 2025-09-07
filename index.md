@@ -37,16 +37,16 @@ data:
       title: 2D Fenwick Tree
   - name: src/datastructures/segment_tree
     pages:
-    - icon: ':warning:'
+    - icon: ':x:'
       path: src/datastructures/segment_tree/lazy_segtree.h
       title: Lazily Propagated Segment Tree
-    - icon: ':warning:'
+    - icon: ':x:'
       path: src/datastructures/segment_tree/persistent_segtree.h
       title: Persistent Segment Tree
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: src/datastructures/segment_tree/segtree.h
       title: Segment Tree
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: src/datastructures/segment_tree/sparse_segtree.h
       title: Sparse Segment Tree
   - name: src/datastructures/static
@@ -144,7 +144,7 @@ data:
       title: Suffix Array and LCP Array
   - name: src/template
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: src/template/template.h
       title: Template
   verificationCategories:
@@ -156,6 +156,15 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/verify/library_checker/data_structure/point_add_range_sum.test.cpp
       title: src/verify/library_checker/data_structure/point_add_range_sum.test.cpp
+    - icon: ':x:'
+      path: src/verify/library_checker/data_structure/point_add_range_sum_persistent.test.cpp
+      title: src/verify/library_checker/data_structure/point_add_range_sum_persistent.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: src/verify/library_checker/data_structure/point_add_range_sum_segtree.test.cpp
+      title: src/verify/library_checker/data_structure/point_add_range_sum_segtree.test.cpp
+    - icon: ':x:'
+      path: src/verify/library_checker/data_structure/range_affine_range_sum.test.cpp
+      title: src/verify/library_checker/data_structure/range_affine_range_sum.test.cpp
     - icon: ':heavy_check_mark:'
       path: src/verify/library_checker/data_structure/range_kth_smallest.test.cpp
       title: src/verify/library_checker/data_structure/range_kth_smallest.test.cpp
@@ -165,6 +174,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/verify/library_checker/data_structure/static_range_mode_query.test.cpp
       title: src/verify/library_checker/data_structure/static_range_mode_query.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: src/verify/library_checker/data_structure/static_range_sum_sparse.test.cpp
+      title: src/verify/library_checker/data_structure/static_range_sum_sparse.test.cpp
     - icon: ':heavy_check_mark:'
       path: src/verify/library_checker/data_structure/static_rmq.test.cpp
       title: src/verify/library_checker/data_structure/static_rmq.test.cpp

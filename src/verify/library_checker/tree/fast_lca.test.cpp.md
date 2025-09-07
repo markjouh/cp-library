@@ -7,7 +7,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/graphs/trees/fast_lca.h
     title: Fast LCA (Lowest Common Ancestor)
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/template/template.h
     title: Template
   _extendedRequiredBy: []

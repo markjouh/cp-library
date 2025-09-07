@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _extendedVerifiedWith:
+  - icon: ':x:'
+    path: src/verify/library_checker/data_structure/range_affine_range_sum.test.cpp
+    title: src/verify/library_checker/data_structure/range_affine_range_sum.test.cpp
+  _isVerificationFailed: true
   _pathExtension: h
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 1 \"src/datastructures/segment_tree/lazy_segtree.h\"\ntemplate\
@@ -102,8 +105,9 @@ data:
   path: src/datastructures/segment_tree/lazy_segtree.h
   requiredBy: []
   timestamp: '2025-09-06 20:10:03-04:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_WA
+  verifiedWith:
+  - src/verify/library_checker/data_structure/range_affine_range_sum.test.cpp
 documentation_of: src/datastructures/segment_tree/lazy_segtree.h
 layout: document
 title: Lazily Propagated Segment Tree

@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/graphs/shortest_paths/dijkstras.h
     title: Dijkstra's Shortest Path Algorithm
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/template/template.h
     title: Template
   _extendedRequiredBy: []

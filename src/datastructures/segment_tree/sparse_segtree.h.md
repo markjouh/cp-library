@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: src/verify/library_checker/data_structure/static_range_sum_sparse.test.cpp
+    title: src/verify/library_checker/data_structure/static_range_sum_sparse.test.cpp
   _isVerificationFailed: false
   _pathExtension: h
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"src/datastructures/segment_tree/sparse_segtree.h\"\ntemplate\
@@ -58,8 +61,9 @@ data:
   path: src/datastructures/segment_tree/sparse_segtree.h
   requiredBy: []
   timestamp: '2025-09-07 14:42:16-04:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - src/verify/library_checker/data_structure/static_range_sum_sparse.test.cpp
 documentation_of: src/datastructures/segment_tree/sparse_segtree.h
 layout: document
 title: Sparse Segment Tree

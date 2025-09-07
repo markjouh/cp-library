@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/datastructures/binary_trie.h
     title: Binary Trie
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/template/template.h
     title: Template
   _extendedRequiredBy: []

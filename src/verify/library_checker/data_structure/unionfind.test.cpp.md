@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/datastructures/dsu.h
     title: Disjoint Set Union (DSU)
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/template/template.h
     title: Template
   _extendedRequiredBy: []
