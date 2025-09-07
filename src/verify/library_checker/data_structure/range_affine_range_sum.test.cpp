@@ -39,13 +39,14 @@ int main() {
   int n, q;
   cin >> n >> q;
   
-  LazySegtree<S, op, t_id, F, mapping, comp, u_id> seg(n);
-  
+  vector<S> init(n);
   for (int i = 0; i < n; i++) {
     ll a;
     cin >> a;
-    seg.set(i, {a, 1});
+    init[i] = {a, 1};
   }
+  
+  LazySegtree<S, op, t_id, F, mapping, comp, u_id> seg(init);
   
   while (q--) {
     int t;
