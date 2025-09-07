@@ -19,7 +19,7 @@ data:
     - https://judge.yosupo.jp/problem/unionfind
   bundledCode: "#line 1 \"src/verify/library_checker/data_structure/unionfind.test.cpp\"\
     \n#define PROBLEM \"https://judge.yosupo.jp/problem/unionfind\"\n\n#line 1 \"\
-    src/template/template.h\"\n/**\n *    author: mark\n**/\n#include <bits/stdc++.h>\n\
+    src/template/template.h\"\n/**\n  *    author: mark\n**/\n#include <bits/stdc++.h>\n\
     \nusing namespace std;\n\n#define sz(x) int(size(x))\n#define all(x) begin(x),\
     \ end(x)\n#line 1 \"src/datastructures/dsu.h\"\nstruct DSU {\n  vector<int> a;\n\
     \n  DSU(int n) : a(n, -1) {}\n\n  int size(int x) {\n    return -a[find(x)];\n\
@@ -43,7 +43,7 @@ data:
   isVerificationFile: true
   path: src/verify/library_checker/data_structure/unionfind.test.cpp
   requiredBy: []
-  timestamp: '2025-09-07 13:11:03-04:00'
+  timestamp: '2025-09-07 14:42:16-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: src/verify/library_checker/data_structure/unionfind.test.cpp

@@ -22,7 +22,7 @@ data:
     - https://judge.yosupo.jp/problem/enumerate_palindromes
   bundledCode: "#line 1 \"src/verify/library_checker/string/enumerate_palindromes.test.cpp\"\
     \n#define PROBLEM \"https://judge.yosupo.jp/problem/enumerate_palindromes\"\n\n\
-    #line 1 \"src/template/template.h\"\n/**\n *    author: mark\n**/\n#include <bits/stdc++.h>\n\
+    #line 1 \"src/template/template.h\"\n/**\n  *    author: mark\n**/\n#include <bits/stdc++.h>\n\
     \nusing namespace std;\n\n#define sz(x) int(size(x))\n#define all(x) begin(x),\
     \ end(x)\n#line 1 \"src/numeric/binsearch.h\"\ntemplate <class T, class U>\nT\
     \ bsmin(T lo, T hi, U f) {\n  assert(lo <= hi);\n  hi++;\n  for (T i = T(1) <<\
@@ -40,15 +40,15 @@ data:
     \ l2 * h1, h = h1 * h2;\n  uint64_t ret = (l & MOD) + (l >> 61) + (h << 3) + (m\
     \ >> 29) + (m << 35 >> 3) + 1;\n  ret = (ret & MOD) + (ret >> 61);\n  ret = (ret\
     \ & MOD) + (ret >> 61);\n  return ret - 1;\n}\n\ntemplate<typename T, typename\
-    \ = void>\nstruct is_iterable : false_type {};\ntemplate<typename T>\nstruct is_iterable<T,\
+    \ = void>\nstruct IsIterable : false_type {};\ntemplate<typename T>\nstruct IsIterable<T,\
     \ void_t<\n  decltype(begin(declval<T&>())),\n  decltype(end(declval<T&>()))\n\
-    >> : true_type {};\n\ntemplate<typename T>\nstruct is_tuple : false_type {};\n\
-    template<typename... Ts>\nstruct is_tuple<tuple<Ts...>> : true_type {};\ntemplate<typename\
-    \ T, typename U>\nstruct is_tuple<pair<T, U>> : true_type {};\n\ntemplate<typename\
-    \ T>\nuint64_t hash_one(const T &t) {\n  if constexpr (is_tuple<T>::value) {\n\
+    >> : true_type {};\n\ntemplate<typename T>\nstruct IsTuple : false_type {};\n\
+    template<typename... Ts>\nstruct IsTuple<tuple<Ts...>> : true_type {};\ntemplate<typename\
+    \ T, typename U>\nstruct IsTuple<pair<T, U>> : true_type {};\n\ntemplate<typename\
+    \ T>\nuint64_t hash_one(const T &t) {\n  if constexpr (IsTuple<T>::value) {\n\
     \    uint64_t res = 0;\n    apply([&](const auto &...elems) {\n      ((res = add(mul(res,\
     \ B), hash_one(elems))), ...);\n    }, t);\n    return res;\n  } else if constexpr\
-    \ (is_iterable<T>::value) {\n    uint64_t res = 0;\n    for (const auto &x : t)\n\
+    \ (IsIterable<T>::value) {\n    uint64_t res = 0;\n    for (const auto &x : t)\n\
     \      res = add(mul(res, B), hash_one(x));\n    return res;\n  } else {\n   \
     \ return static_cast<uint64_t>(t);\n  }\n}\n\ntemplate<typename ...Args>\nuint64_t\
     \ hash(const Args &...args) {\n  uint64_t res = 0;\n  ((res = add(mul(res, B),\
@@ -65,27 +65,26 @@ data:
     \ < ++r);\n    return SegHash(sub(h[r], mul(h[l], pow_b[r - l])), r - l);\n  }\n\
     \n  SegHash get_all() const {\n    return SegHash(h[n], n);\n  }\n};\n\n} // namespace\
     \ hashing\n#line 6 \"src/verify/library_checker/string/enumerate_palindromes.test.cpp\"\
-    \n\nint main() {\n    string s;\n    cin >> s;\n    string rev = s;\n    reverse(all(rev));\n\
-    \    hashing::RollingHash a(s), b(rev);\n    const int n = sz(s);\n    vector<int>\
-    \ ans(2 * n - 1);\n    for (int i = 0; i < n; i++) {\n        ans[2 * i] = 2 *\
-    \ bsmax(0, min(i, n - i - 1), [&](int d) {\n            return a.get(i - d, i)\
-    \ == b.get(n - i - 1 - d, n - i - 1);\n        }) + 1;\n    }\n    for (int i\
-    \ = 0; i < n - 1; i++) {\n        ans[2 * i + 1] = 2 * bsmax(0, min(i, n - i -\
-    \ 2), [&](int d) {\n            return a.get(i - d, i) == b.get(n - i - 2 - d,\
-    \ n - i - 2);\n        }) + 2;\n    }\n    for (int i = 0; i < 2 * n - 1; i++)\
-    \ {\n        cout << ans[i] << ' ';\n    }\n    cout << '\\n';\n}\n"
+    \n\nint main() {\n  string s;\n  cin >> s;\n  string rev = s;\n  reverse(all(rev));\n\
+    \  hashing::RollingHash a(s), b(rev);\n  const int n = sz(s);\n  vector<int> ans(2\
+    \ * n - 1);\n  for (int i = 0; i < n; i++) {\n    ans[2 * i] = 2 * bsmax(0, min(i,\
+    \ n - i - 1), [&](int d) {\n      return a.get(i - d, i) == b.get(n - i - 1 -\
+    \ d, n - i - 1);\n    }) + 1;\n  }\n  for (int i = 0; i < n - 1; i++) {\n    ans[2\
+    \ * i + 1] = 2 * bsmax(0, min(i, n - i - 2), [&](int d) {\n      return a.get(i\
+    \ - d, i) == b.get(n - i - 2 - d, n - i - 2);\n    }) + 2;\n  }\n  for (int i\
+    \ = 0; i < 2 * n - 1; i++) {\n    cout << ans[i] << ' ';\n  }\n  cout << '\\n';\n\
+    }\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/enumerate_palindromes\"\
     \n\n#include \"../../../template/template.h\"\n#include \"../../../numeric/binsearch.h\"\
-    \n#include \"../../../strings/hashing.h\"\n\nint main() {\n    string s;\n   \
-    \ cin >> s;\n    string rev = s;\n    reverse(all(rev));\n    hashing::RollingHash\
-    \ a(s), b(rev);\n    const int n = sz(s);\n    vector<int> ans(2 * n - 1);\n \
-    \   for (int i = 0; i < n; i++) {\n        ans[2 * i] = 2 * bsmax(0, min(i, n\
-    \ - i - 1), [&](int d) {\n            return a.get(i - d, i) == b.get(n - i -\
-    \ 1 - d, n - i - 1);\n        }) + 1;\n    }\n    for (int i = 0; i < n - 1; i++)\
-    \ {\n        ans[2 * i + 1] = 2 * bsmax(0, min(i, n - i - 2), [&](int d) {\n \
-    \           return a.get(i - d, i) == b.get(n - i - 2 - d, n - i - 2);\n     \
-    \   }) + 2;\n    }\n    for (int i = 0; i < 2 * n - 1; i++) {\n        cout <<\
-    \ ans[i] << ' ';\n    }\n    cout << '\\n';\n}"
+    \n#include \"../../../strings/hashing.h\"\n\nint main() {\n  string s;\n  cin\
+    \ >> s;\n  string rev = s;\n  reverse(all(rev));\n  hashing::RollingHash a(s),\
+    \ b(rev);\n  const int n = sz(s);\n  vector<int> ans(2 * n - 1);\n  for (int i\
+    \ = 0; i < n; i++) {\n    ans[2 * i] = 2 * bsmax(0, min(i, n - i - 1), [&](int\
+    \ d) {\n      return a.get(i - d, i) == b.get(n - i - 1 - d, n - i - 1);\n   \
+    \ }) + 1;\n  }\n  for (int i = 0; i < n - 1; i++) {\n    ans[2 * i + 1] = 2 *\
+    \ bsmax(0, min(i, n - i - 2), [&](int d) {\n      return a.get(i - d, i) == b.get(n\
+    \ - i - 2 - d, n - i - 2);\n    }) + 2;\n  }\n  for (int i = 0; i < 2 * n - 1;\
+    \ i++) {\n    cout << ans[i] << ' ';\n  }\n  cout << '\\n';\n}"
   dependsOn:
   - src/template/template.h
   - src/numeric/binsearch.h
@@ -93,7 +92,7 @@ data:
   isVerificationFile: true
   path: src/verify/library_checker/string/enumerate_palindromes.test.cpp
   requiredBy: []
-  timestamp: '2025-09-07 13:11:03-04:00'
+  timestamp: '2025-09-07 14:42:16-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: src/verify/library_checker/string/enumerate_palindromes.test.cpp

@@ -9,7 +9,7 @@ data:
   attributes:
     links: []
   bundledCode: "#line 1 \"src/numeric/mint.h\"\ntemplate <int MOD>\nstruct Mint {\n\
-    \  int v;\n \n  Mint(int64_t x = 0) : v(int(-MOD < x && x < MOD ? x : x % MOD)\
+    \  int v;\n\n  Mint(int64_t x = 0) : v(int(-MOD < x && x < MOD ? x : x % MOD)\
     \ + (x < 0) * MOD) {}\n \n  friend Mint pow(Mint base, int64_t exp) {\n    Mint\
     \ res = 1;\n    while (exp) {\n      if (exp & 1) {\n        res *= base;\n  \
     \    }\n      base *= base;\n      exp >>= 1;\n    }\n    return res;\n  }\n\n\
@@ -31,7 +31,7 @@ data:
     \ * (i + 1);\n//   }\n// }\n\n// mi nck(int n, int k) {\n//   if (n < k || k <\
     \ 0) {\n//     return 0;\n//   }\n//   return fact[n] * inv_fact[k] * inv_fact[n\
     \ - k];\n// }\n"
-  code: "template <int MOD>\nstruct Mint {\n  int v;\n \n  Mint(int64_t x = 0) : v(int(-MOD\
+  code: "template <int MOD>\nstruct Mint {\n  int v;\n\n  Mint(int64_t x = 0) : v(int(-MOD\
     \ < x && x < MOD ? x : x % MOD) + (x < 0) * MOD) {}\n \n  friend Mint pow(Mint\
     \ base, int64_t exp) {\n    Mint res = 1;\n    while (exp) {\n      if (exp &\
     \ 1) {\n        res *= base;\n      }\n      base *= base;\n      exp >>= 1;\n\
@@ -57,7 +57,7 @@ data:
   isVerificationFile: false
   path: src/numeric/mint.h
   requiredBy: []
-  timestamp: '2025-09-06 20:10:03-04:00'
+  timestamp: '2025-09-07 14:42:16-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: src/numeric/mint.h

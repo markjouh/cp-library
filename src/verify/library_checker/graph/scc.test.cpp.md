@@ -19,50 +19,46 @@ data:
     - https://judge.yosupo.jp/problem/scc
   bundledCode: "#line 1 \"src/verify/library_checker/graph/scc.test.cpp\"\n#define\
     \ PROBLEM \"https://judge.yosupo.jp/problem/scc\"\n\n#line 1 \"src/template/template.h\"\
-    \n/**\n *    author: mark\n**/\n#include <bits/stdc++.h>\n\nusing namespace std;\n\
+    \n/**\n  *    author: mark\n**/\n#include <bits/stdc++.h>\n\nusing namespace std;\n\
     \n#define sz(x) int(size(x))\n#define all(x) begin(x), end(x)\n#line 1 \"src/graphs/kosaraju_scc.h\"\
-    \nstruct kosaraju_scc {\n    int sccs = 0;\n    vector<int> comp;\n    vector<vector<int>>\
-    \ members, cg;\n\n    kosaraju_scc(const vector<vector<int>> &g_) : g(g_) {\n\
-    \        comp.resize(sz(g), -1);\n        tg.resize(sz(g));\n        vis.resize(sz(g));\n\
-    \        ord.reserve(sz(g));\n        for (int i = 0; i < sz(g); i++) {\n    \
-    \        if (!vis[i]) {\n                dfs_setup(i);\n            }\n      \
-    \  }\n        for (int i = sz(ord) - 1; i >= 0; i--) {\n            if (comp[ord[i]]\
-    \ == -1) {\n                members.emplace_back();\n                dfs_build(ord[i]);\n\
-    \                sccs++;\n            }\n        }\n        tg.clear();\n    \
-    \    vis.clear();\n        ord.clear();\n\n        cg.resize(sccs);\n        vector<int>\
-    \ prev(sccs, -1);\n        for (int i = 0; i < sccs; i++) {\n            for (int\
-    \ u : members[i]) {\n                for (int v : g[u]) {\n                  \
-    \  if (comp[v] != i && prev[comp[v]] < i) {\n                        cg[i].push_back(comp[v]);\n\
-    \                        prev[comp[v]] = i;\n                    }\n         \
-    \       }\n            }\n        }\n    }\n\nprivate:\n    const vector<vector<int>>\
-    \ &g;\n    vector<vector<int>> tg;\n    vector<bool> vis;\n    vector<int> ord;\n\
-    \n    void dfs_setup(int u) {\n        vis[u] = true;\n        for (int v : g[u])\
-    \ {\n            tg[v].push_back(u);\n            if (!vis[v]) {\n           \
-    \     dfs_setup(v);\n            }\n        }\n        ord.push_back(u);\n   \
-    \ }\n\n    void dfs_build(int u) {\n        comp[u] = sccs;\n        members[sccs].push_back(u);\n\
-    \        for (int v : tg[u]) {\n            if (comp[v] == -1) {\n           \
-    \     dfs_build(v);\n            }\n        }\n    }\n};\n#line 5 \"src/verify/library_checker/graph/scc.test.cpp\"\
-    \n\nint main() {\n    int n, m;\n    cin >> n >> m;\n    vector<vector<int>> g(n);\n\
-    \    for (int i = 0; i < m; i++) {\n        int u, v;\n        cin >> u >> v;\n\
-    \        g[u].push_back(v);\n    }\n    kosaraju_scc scc(g);\n    cout << scc.sccs\
-    \ << '\\n';\n    for (int i = 0; i < scc.sccs; i++) {\n        cout << sz(scc.members[i])\
-    \ << ' ';\n        for (int x : scc.members[i]) {\n            cout << x << '\
-    \ ';\n        }\n        cout << '\\n';\n    }\n}\n"
+    \nstruct KosarajuScc {\n  int sccs = 0;\n  vector<int> comp;\n  vector<vector<int>>\
+    \ members, cg;\n\n  KosarajuScc(const vector<vector<int>> &g_) : g(g_) {\n   \
+    \ comp.resize(sz(g), -1);\n    tg.resize(sz(g));\n    vis.resize(sz(g));\n   \
+    \ ord.reserve(sz(g));\n    for (int i = 0; i < sz(g); i++) {\n      if (!vis[i])\
+    \ {\n        dfs_setup(i);\n      }\n    }\n    for (int i = sz(ord) - 1; i >=\
+    \ 0; i--) {\n      if (comp[ord[i]] == -1) {\n        members.emplace_back();\n\
+    \        dfs_build(ord[i]);\n        sccs++;\n      }\n    }\n    tg.clear();\n\
+    \    vis.clear();\n    ord.clear();\n\n    cg.resize(sccs);\n    vector<int> prev(sccs,\
+    \ -1);\n    for (int i = 0; i < sccs; i++) {\n      for (int u : members[i]) {\n\
+    \        for (int v : g[u]) {\n          if (comp[v] != i && prev[comp[v]] < i)\
+    \ {\n            cg[i].push_back(comp[v]);\n            prev[comp[v]] = i;\n \
+    \         }\n        }\n      }\n    }\n  }\n\nprivate:\n  const vector<vector<int>>\
+    \ &g;\n  vector<vector<int>> tg;\n  vector<bool> vis;\n  vector<int> ord;\n\n\
+    \  void dfs_setup(int u) {\n    vis[u] = true;\n    for (int v : g[u]) {\n   \
+    \   tg[v].push_back(u);\n      if (!vis[v]) {\n        dfs_setup(v);\n      }\n\
+    \    }\n    ord.push_back(u);\n  }\n\n  void dfs_build(int u) {\n    comp[u] =\
+    \ sccs;\n    members[sccs].push_back(u);\n    for (int v : tg[u]) {\n      if\
+    \ (comp[v] == -1) {\n        dfs_build(v);\n      }\n    }\n  }\n};\n#line 5 \"\
+    src/verify/library_checker/graph/scc.test.cpp\"\n\nint main() {\n  int n, m;\n\
+    \  cin >> n >> m;\n  vector<vector<int>> g(n);\n  for (int i = 0; i < m; i++)\
+    \ {\n    int u, v;\n    cin >> u >> v;\n    g[u].push_back(v);\n  }\n  KosarajuScc\
+    \ scc(g);\n  cout << scc.sccs << '\\n';\n  for (int i = 0; i < scc.sccs; i++)\
+    \ {\n    cout << sz(scc.members[i]) << ' ';\n    for (int x : scc.members[i])\
+    \ {\n      cout << x << ' ';\n    }\n    cout << '\\n';\n  }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/scc\"\n\n#include \"../../../template/template.h\"\
-    \n#include \"../../../graphs/kosaraju_scc.h\"\n\nint main() {\n    int n, m;\n\
-    \    cin >> n >> m;\n    vector<vector<int>> g(n);\n    for (int i = 0; i < m;\
-    \ i++) {\n        int u, v;\n        cin >> u >> v;\n        g[u].push_back(v);\n\
-    \    }\n    kosaraju_scc scc(g);\n    cout << scc.sccs << '\\n';\n    for (int\
-    \ i = 0; i < scc.sccs; i++) {\n        cout << sz(scc.members[i]) << ' ';\n  \
-    \      for (int x : scc.members[i]) {\n            cout << x << ' ';\n       \
-    \ }\n        cout << '\\n';\n    }\n}"
+    \n#include \"../../../graphs/kosaraju_scc.h\"\n\nint main() {\n  int n, m;\n \
+    \ cin >> n >> m;\n  vector<vector<int>> g(n);\n  for (int i = 0; i < m; i++) {\n\
+    \    int u, v;\n    cin >> u >> v;\n    g[u].push_back(v);\n  }\n  KosarajuScc\
+    \ scc(g);\n  cout << scc.sccs << '\\n';\n  for (int i = 0; i < scc.sccs; i++)\
+    \ {\n    cout << sz(scc.members[i]) << ' ';\n    for (int x : scc.members[i])\
+    \ {\n      cout << x << ' ';\n    }\n    cout << '\\n';\n  }\n}"
   dependsOn:
   - src/template/template.h
   - src/graphs/kosaraju_scc.h
   isVerificationFile: true
   path: src/verify/library_checker/graph/scc.test.cpp
   requiredBy: []
-  timestamp: '2025-09-07 13:11:03-04:00'
+  timestamp: '2025-09-07 14:42:16-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: src/verify/library_checker/graph/scc.test.cpp

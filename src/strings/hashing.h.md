@@ -22,15 +22,15 @@ data:
     \ l2 * h1, h = h1 * h2;\n  uint64_t ret = (l & MOD) + (l >> 61) + (h << 3) + (m\
     \ >> 29) + (m << 35 >> 3) + 1;\n  ret = (ret & MOD) + (ret >> 61);\n  ret = (ret\
     \ & MOD) + (ret >> 61);\n  return ret - 1;\n}\n\ntemplate<typename T, typename\
-    \ = void>\nstruct is_iterable : false_type {};\ntemplate<typename T>\nstruct is_iterable<T,\
+    \ = void>\nstruct IsIterable : false_type {};\ntemplate<typename T>\nstruct IsIterable<T,\
     \ void_t<\n  decltype(begin(declval<T&>())),\n  decltype(end(declval<T&>()))\n\
-    >> : true_type {};\n\ntemplate<typename T>\nstruct is_tuple : false_type {};\n\
-    template<typename... Ts>\nstruct is_tuple<tuple<Ts...>> : true_type {};\ntemplate<typename\
-    \ T, typename U>\nstruct is_tuple<pair<T, U>> : true_type {};\n\ntemplate<typename\
-    \ T>\nuint64_t hash_one(const T &t) {\n  if constexpr (is_tuple<T>::value) {\n\
+    >> : true_type {};\n\ntemplate<typename T>\nstruct IsTuple : false_type {};\n\
+    template<typename... Ts>\nstruct IsTuple<tuple<Ts...>> : true_type {};\ntemplate<typename\
+    \ T, typename U>\nstruct IsTuple<pair<T, U>> : true_type {};\n\ntemplate<typename\
+    \ T>\nuint64_t hash_one(const T &t) {\n  if constexpr (IsTuple<T>::value) {\n\
     \    uint64_t res = 0;\n    apply([&](const auto &...elems) {\n      ((res = add(mul(res,\
     \ B), hash_one(elems))), ...);\n    }, t);\n    return res;\n  } else if constexpr\
-    \ (is_iterable<T>::value) {\n    uint64_t res = 0;\n    for (const auto &x : t)\n\
+    \ (IsIterable<T>::value) {\n    uint64_t res = 0;\n    for (const auto &x : t)\n\
     \      res = add(mul(res, B), hash_one(x));\n    return res;\n  } else {\n   \
     \ return static_cast<uint64_t>(t);\n  }\n}\n\ntemplate<typename ...Args>\nuint64_t\
     \ hash(const Args &...args) {\n  uint64_t res = 0;\n  ((res = add(mul(res, B),\
@@ -57,15 +57,15 @@ data:
     \ l2 * h1, h = h1 * h2;\n  uint64_t ret = (l & MOD) + (l >> 61) + (h << 3) + (m\
     \ >> 29) + (m << 35 >> 3) + 1;\n  ret = (ret & MOD) + (ret >> 61);\n  ret = (ret\
     \ & MOD) + (ret >> 61);\n  return ret - 1;\n}\n\ntemplate<typename T, typename\
-    \ = void>\nstruct is_iterable : false_type {};\ntemplate<typename T>\nstruct is_iterable<T,\
+    \ = void>\nstruct IsIterable : false_type {};\ntemplate<typename T>\nstruct IsIterable<T,\
     \ void_t<\n  decltype(begin(declval<T&>())),\n  decltype(end(declval<T&>()))\n\
-    >> : true_type {};\n\ntemplate<typename T>\nstruct is_tuple : false_type {};\n\
-    template<typename... Ts>\nstruct is_tuple<tuple<Ts...>> : true_type {};\ntemplate<typename\
-    \ T, typename U>\nstruct is_tuple<pair<T, U>> : true_type {};\n\ntemplate<typename\
-    \ T>\nuint64_t hash_one(const T &t) {\n  if constexpr (is_tuple<T>::value) {\n\
+    >> : true_type {};\n\ntemplate<typename T>\nstruct IsTuple : false_type {};\n\
+    template<typename... Ts>\nstruct IsTuple<tuple<Ts...>> : true_type {};\ntemplate<typename\
+    \ T, typename U>\nstruct IsTuple<pair<T, U>> : true_type {};\n\ntemplate<typename\
+    \ T>\nuint64_t hash_one(const T &t) {\n  if constexpr (IsTuple<T>::value) {\n\
     \    uint64_t res = 0;\n    apply([&](const auto &...elems) {\n      ((res = add(mul(res,\
     \ B), hash_one(elems))), ...);\n    }, t);\n    return res;\n  } else if constexpr\
-    \ (is_iterable<T>::value) {\n    uint64_t res = 0;\n    for (const auto &x : t)\n\
+    \ (IsIterable<T>::value) {\n    uint64_t res = 0;\n    for (const auto &x : t)\n\
     \      res = add(mul(res, B), hash_one(x));\n    return res;\n  } else {\n   \
     \ return static_cast<uint64_t>(t);\n  }\n}\n\ntemplate<typename ...Args>\nuint64_t\
     \ hash(const Args &...args) {\n  uint64_t res = 0;\n  ((res = add(mul(res, B),\
@@ -86,7 +86,7 @@ data:
   isVerificationFile: false
   path: src/strings/hashing.h
   requiredBy: []
-  timestamp: '2025-09-06 20:10:03-04:00'
+  timestamp: '2025-09-07 14:42:16-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - src/verify/library_checker/string/enumerate_palindromes.test.cpp

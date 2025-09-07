@@ -22,7 +22,7 @@ data:
     - https://judge.yosupo.jp/problem/static_range_mode_query
   bundledCode: "#line 1 \"src/verify/library_checker/data_structure/static_range_mode_query.test.cpp\"\
     \n#define PROBLEM \"https://judge.yosupo.jp/problem/static_range_mode_query\"\n\
-    \n#line 1 \"src/template/template.h\"\n/**\n *    author: mark\n**/\n#include\
+    \n#line 1 \"src/template/template.h\"\n/**\n  *    author: mark\n**/\n#include\
     \ <bits/stdc++.h>\n\nusing namespace std;\n\n#define sz(x) int(size(x))\n#define\
     \ all(x) begin(x), end(x)\n#line 1 \"src/datastructures/hash_table.h\"\n#include\
     \ <ext/pb_ds/assoc_container.hpp>\n\nstruct CustomHash {\n  static uint64_t splitmix64(uint64_t\
@@ -78,7 +78,7 @@ data:
   isVerificationFile: true
   path: src/verify/library_checker/data_structure/static_range_mode_query.test.cpp
   requiredBy: []
-  timestamp: '2025-09-07 13:11:03-04:00'
+  timestamp: '2025-09-07 14:42:16-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: src/verify/library_checker/data_structure/static_range_mode_query.test.cpp

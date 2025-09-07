@@ -13,24 +13,24 @@ data:
     links: []
   bundledCode: "#line 1 \"src/graphs/trees/tree_hashing.h\"\nmap<vector<int>, int>\
     \ tree_hashes;\n\nauto hash_tree(const vector<vector<int>> &g, int root = 0) {\n\
-    \tvector<int> res(sz(g));\n\t\n\tauto dfs = [&](auto &&self, int u, int par) ->\
-    \ void {\n\t\tvector<int> ch;\n\t\tfor (int v : g[u]) {\n\t\t\tif (v != par) {\n\
-    \t\t\t\tself(self, v, u);\n\t\t\t\tch.push_back(res[v]);\n\t\t\t}\n\t\t}\n\t\t\
-    sort(all(ch));\n\t\tif (!tree_hashes.count(ch)) {\n\t\t\ttree_hashes[ch] = sz(tree_hashes);\n\
-    \t\t}\n\t\tres[u] = tree_hashes[ch];\n\t};\n\n\tdfs(dfs, root, -1);\n\n\treturn\
-    \ res;\n}\n"
+    \  vector<int> res(sz(g));\n  \n  auto dfs = [&](auto &&self, int u, int par)\
+    \ -> void {\n    vector<int> ch;\n    for (int v : g[u]) {\n      if (v != par)\
+    \ {\n        self(self, v, u);\n        ch.push_back(res[v]);\n      }\n    }\n\
+    \    sort(all(ch));\n    if (!tree_hashes.count(ch)) {\n      tree_hashes[ch]\
+    \ = sz(tree_hashes);\n    }\n    res[u] = tree_hashes[ch];\n  };\n\n  dfs(dfs,\
+    \ root, -1);\n\n  return res;\n}\n"
   code: "map<vector<int>, int> tree_hashes;\n\nauto hash_tree(const vector<vector<int>>\
-    \ &g, int root = 0) {\n\tvector<int> res(sz(g));\n\t\n\tauto dfs = [&](auto &&self,\
-    \ int u, int par) -> void {\n\t\tvector<int> ch;\n\t\tfor (int v : g[u]) {\n\t\
-    \t\tif (v != par) {\n\t\t\t\tself(self, v, u);\n\t\t\t\tch.push_back(res[v]);\n\
-    \t\t\t}\n\t\t}\n\t\tsort(all(ch));\n\t\tif (!tree_hashes.count(ch)) {\n\t\t\t\
-    tree_hashes[ch] = sz(tree_hashes);\n\t\t}\n\t\tres[u] = tree_hashes[ch];\n\t};\n\
-    \n\tdfs(dfs, root, -1);\n\n\treturn res;\n}"
+    \ &g, int root = 0) {\n  vector<int> res(sz(g));\n  \n  auto dfs = [&](auto &&self,\
+    \ int u, int par) -> void {\n    vector<int> ch;\n    for (int v : g[u]) {\n \
+    \     if (v != par) {\n        self(self, v, u);\n        ch.push_back(res[v]);\n\
+    \      }\n    }\n    sort(all(ch));\n    if (!tree_hashes.count(ch)) {\n     \
+    \ tree_hashes[ch] = sz(tree_hashes);\n    }\n    res[u] = tree_hashes[ch];\n \
+    \ };\n\n  dfs(dfs, root, -1);\n\n  return res;\n}"
   dependsOn: []
   isVerificationFile: false
   path: src/graphs/trees/tree_hashing.h
   requiredBy: []
-  timestamp: '2025-09-06 20:10:03-04:00'
+  timestamp: '2025-09-07 14:42:16-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - src/verify/library_checker/tree/rooted_tree_isomorphism.test.cpp
