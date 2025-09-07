@@ -3,10 +3,10 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: src/graphs/shortest_paths/dijkstras.h
-    title: src/graphs/shortest_paths/dijkstras.h
+    title: Dijkstra's Shortest Path Algorithm
   - icon: ':heavy_check_mark:'
     path: src/template/template.h
-    title: src/template/template.h
+    title: Template
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false

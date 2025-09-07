@@ -3,10 +3,10 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: src/datastructures/fenwick_tree/fentree.h
-    title: src/datastructures/fenwick_tree/fentree.h
+    title: Fenwick Tree (Binary Indexed Tree)
   - icon: ':heavy_check_mark:'
     path: src/template/template.h
-    title: src/template/template.h
+    title: Template
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false

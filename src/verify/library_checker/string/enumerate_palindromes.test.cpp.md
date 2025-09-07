@@ -3,13 +3,13 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: src/numeric/binsearch.h
-    title: src/numeric/binsearch.h
+    title: Binary Search
   - icon: ':heavy_check_mark:'
     path: src/strings/hashing.h
-    title: src/strings/hashing.h
+    title: Polynomial Rolling Hash
   - icon: ':heavy_check_mark:'
     path: src/template/template.h
-    title: src/template/template.h
+    title: Template
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false

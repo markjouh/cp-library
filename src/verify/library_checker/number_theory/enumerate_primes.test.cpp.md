@@ -3,10 +3,10 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: src/numeric/sieve_factor.h
-    title: src/numeric/sieve_factor.h
+    title: Sieve with Factorization
   - icon: ':heavy_check_mark:'
     path: src/template/template.h
-    title: src/template/template.h
+    title: Template
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false

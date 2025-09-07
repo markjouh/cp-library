@@ -3,10 +3,10 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: src/graphs/kosaraju_scc.h
-    title: src/graphs/kosaraju_scc.h
+    title: Kosaraju's Algorithm for Strongly Connected Components
   - icon: ':heavy_check_mark:'
     path: src/template/template.h
-    title: src/template/template.h
+    title: Template
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false

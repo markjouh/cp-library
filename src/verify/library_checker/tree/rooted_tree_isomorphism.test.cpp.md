@@ -6,7 +6,7 @@ data:
     title: src/graphs/trees/tree_hashing.h
   - icon: ':heavy_check_mark:'
     path: src/template/template.h
-    title: src/template/template.h
+    title: Template
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false

@@ -3,16 +3,16 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: src/datastructures/merge_sort_tree.h
-    title: src/datastructures/merge_sort_tree.h
+    title: Merge Sort Tree
   - icon: ':heavy_check_mark:'
     path: src/datastructures/ordered_set.h
-    title: src/datastructures/ordered_set.h
+    title: Ordered Set
   - icon: ':heavy_check_mark:'
     path: src/numeric/binsearch.h
-    title: src/numeric/binsearch.h
+    title: Binary Search
   - icon: ':heavy_check_mark:'
     path: src/template/template.h
-    title: src/template/template.h
+    title: Template
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false

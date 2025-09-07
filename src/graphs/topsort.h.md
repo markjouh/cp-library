@@ -31,8 +31,34 @@ data:
   verifiedWith: []
 documentation_of: src/graphs/topsort.h
 layout: document
-redirect_from:
-- /library/src/graphs/topsort.h
-- /library/src/graphs/topsort.h.html
-title: src/graphs/topsort.h
+title: Topological Sort using Kahn's Algorithm
 ---
+
+Topological sorting using Kahn's algorithm with in-degree counting for cycle detection.
+
+## Operations
+
+- `topsort(g)`: Returns vertices in topological order
+
+## Complexity
+
+- Time: $O(V + E)$
+- Space: $O(V)$
+
+## Usage
+
+```cpp
+vector<vector<int>> g = {{1, 2}, {3}, {3}, {}};
+vector<int> order = topsort(g);
+
+// Check if ordering is complete (no cycles)
+if (order.size() == g.size()) {
+  cout << "Valid DAG" << endl;
+} else {
+  cout << "Graph contains cycles" << endl;
+}
+```
+
+## Notes
+
+Returns partial ordering if graph contains cycles. Uses BFS with zero in-degree vertices.
