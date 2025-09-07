@@ -1,7 +1,7 @@
 template <int MOD>
 struct Mint {
   int v;
- 
+
   Mint(int64_t x = 0) : v(int(-MOD < x && x < MOD ? x : x % MOD) + (x < 0) * MOD) {}
  
   friend Mint pow(Mint base, int64_t exp) {

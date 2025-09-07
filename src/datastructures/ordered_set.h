@@ -7,7 +7,7 @@ template <class T>
 using ordered_set = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
 
 template <class T>
-struct ordered_multiset {
+struct OrderedMultiset {
   int time = 0;
   ordered_set<pair<T, int>> st;
 

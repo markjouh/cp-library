@@ -31,29 +31,29 @@ uint64_t mul(uint64_t a, uint64_t b) {
 }
 
 template<typename T, typename = void>
-struct is_iterable : false_type {};
+struct IsIterable : false_type {};
 template<typename T>
-struct is_iterable<T, void_t<
+struct IsIterable<T, void_t<
   decltype(begin(declval<T&>())),
   decltype(end(declval<T&>()))
 >> : true_type {};
 
 template<typename T>
-struct is_tuple : false_type {};
+struct IsTuple : false_type {};
 template<typename... Ts>
-struct is_tuple<tuple<Ts...>> : true_type {};
+struct IsTuple<tuple<Ts...>> : true_type {};
 template<typename T, typename U>
-struct is_tuple<pair<T, U>> : true_type {};
+struct IsTuple<pair<T, U>> : true_type {};
 
 template<typename T>
 uint64_t hash_one(const T &t) {
-  if constexpr (is_tuple<T>::value) {
+  if constexpr (IsTuple<T>::value) {
     uint64_t res = 0;
     apply([&](const auto &...elems) {
       ((res = add(mul(res, B), hash_one(elems))), ...);
     }, t);
     return res;
-  } else if constexpr (is_iterable<T>::value) {
+  } else if constexpr (IsIterable<T>::value) {
     uint64_t res = 0;
     for (const auto &x : t)
       res = add(mul(res, B), hash_one(x));
