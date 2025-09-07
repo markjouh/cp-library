@@ -148,6 +148,11 @@ data:
       path: src/template/template.h
       title: Template
   verificationCategories:
+  - name: src/verify/library_checker
+    pages:
+    - icon: ':x:'
+      path: src/verify/library_checker/convolution_mod.test.cpp
+      title: src/verify/library_checker/convolution_mod.test.cpp
   - name: src/verify/library_checker/data_structure
     pages:
     - icon: ':heavy_check_mark:'
