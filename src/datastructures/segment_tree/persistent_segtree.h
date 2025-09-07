@@ -9,6 +9,7 @@ struct PersistentSegtree {
   PersistentSegtree(int n) {
     log = __lg(n) + 1;
     tree_sz = 1 << log;
+    updates = 0;
     st.resize(tree_sz << 1, id());
     ch.resize(tree_sz << 1);
     for (int i = tree_sz - 1; i > 0; i--) {
