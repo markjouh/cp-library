@@ -72,13 +72,13 @@ data:
     S mapping(S x, F f) {\n  return {(f.a * x.sum % MOD + f.b * x.size % MOD) % MOD,\
     \ x.size};\n}\n\nF comp(F f, F g) {\n  return {g.a * f.a % MOD, (g.a * f.b % MOD\
     \ + g.b) % MOD};\n}\n\nF u_id() {\n  return {1, 0};\n}\n\nint main() {\n  int\
-    \ n, q;\n  cin >> n >> q;\n  \n  LazySegtree<S, op, t_id, F, mapping, comp, u_id>\
-    \ seg(n);\n  \n  for (int i = 0; i < n; i++) {\n    ll a;\n    cin >> a;\n   \
-    \ seg.set(i, {a, 1});\n  }\n  \n  while (q--) {\n    int t;\n    cin >> t;\n \
-    \   if (t == 0) {\n      int l, r;\n      ll b, c;\n      cin >> l >> r >> b >>\
-    \ c;\n      seg.update(l, r - 1, {b, c});\n    } else {\n      int l, r;\n   \
-    \   cin >> l >> r;\n      cout << seg.query(l, r - 1).sum << '\\n';\n    }\n \
-    \ }\n  \n  return 0;\n}\n"
+    \ n, q;\n  cin >> n >> q;\n  \n  vector<S> init(n);\n  for (int i = 0; i < n;\
+    \ i++) {\n    ll a;\n    cin >> a;\n    init[i] = {a, 1};\n  }\n  \n  LazySegtree<S,\
+    \ op, t_id, F, mapping, comp, u_id> seg(init);\n  \n  while (q--) {\n    int t;\n\
+    \    cin >> t;\n    if (t == 0) {\n      int l, r;\n      ll b, c;\n      cin\
+    \ >> l >> r >> b >> c;\n      seg.update(l, r - 1, {b, c});\n    } else {\n  \
+    \    int l, r;\n      cin >> l >> r;\n      cout << seg.query(l, r - 1).sum <<\
+    \ '\\n';\n    }\n  }\n  \n  return 0;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/range_affine_range_sum\"\
     \n\n#include \"../../../template/template.h\"\n#include \"../../../datastructures/segment_tree/lazy_segtree.h\"\
     \n\nusing ll = long long;\n\nconst ll MOD = 998244353;\n\nstruct S {\n  ll sum,\
@@ -87,20 +87,20 @@ data:
     S mapping(S x, F f) {\n  return {(f.a * x.sum % MOD + f.b * x.size % MOD) % MOD,\
     \ x.size};\n}\n\nF comp(F f, F g) {\n  return {g.a * f.a % MOD, (g.a * f.b % MOD\
     \ + g.b) % MOD};\n}\n\nF u_id() {\n  return {1, 0};\n}\n\nint main() {\n  int\
-    \ n, q;\n  cin >> n >> q;\n  \n  LazySegtree<S, op, t_id, F, mapping, comp, u_id>\
-    \ seg(n);\n  \n  for (int i = 0; i < n; i++) {\n    ll a;\n    cin >> a;\n   \
-    \ seg.set(i, {a, 1});\n  }\n  \n  while (q--) {\n    int t;\n    cin >> t;\n \
-    \   if (t == 0) {\n      int l, r;\n      ll b, c;\n      cin >> l >> r >> b >>\
-    \ c;\n      seg.update(l, r - 1, {b, c});\n    } else {\n      int l, r;\n   \
-    \   cin >> l >> r;\n      cout << seg.query(l, r - 1).sum << '\\n';\n    }\n \
-    \ }\n  \n  return 0;\n}"
+    \ n, q;\n  cin >> n >> q;\n  \n  vector<S> init(n);\n  for (int i = 0; i < n;\
+    \ i++) {\n    ll a;\n    cin >> a;\n    init[i] = {a, 1};\n  }\n  \n  LazySegtree<S,\
+    \ op, t_id, F, mapping, comp, u_id> seg(init);\n  \n  while (q--) {\n    int t;\n\
+    \    cin >> t;\n    if (t == 0) {\n      int l, r;\n      ll b, c;\n      cin\
+    \ >> l >> r >> b >> c;\n      seg.update(l, r - 1, {b, c});\n    } else {\n  \
+    \    int l, r;\n      cin >> l >> r;\n      cout << seg.query(l, r - 1).sum <<\
+    \ '\\n';\n    }\n  }\n  \n  return 0;\n}"
   dependsOn:
   - src/template/template.h
   - src/datastructures/segment_tree/lazy_segtree.h
   isVerificationFile: true
   path: src/verify/library_checker/data_structure/range_affine_range_sum.test.cpp
   requiredBy: []
-  timestamp: '2025-09-07 18:13:39-04:00'
+  timestamp: '2025-09-07 18:23:31-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: src/verify/library_checker/data_structure/range_affine_range_sum.test.cpp
