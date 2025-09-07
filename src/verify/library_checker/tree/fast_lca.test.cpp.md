@@ -6,7 +6,7 @@ data:
     title: Sparse Table
   - icon: ':heavy_check_mark:'
     path: src/graphs/trees/fast_lca.h
-    title: src/graphs/trees/fast_lca.h
+    title: Fast LCA (Lowest Common Ancestor)
   - icon: ':heavy_check_mark:'
     path: src/template/template.h
     title: Template

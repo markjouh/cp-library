@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: src/graphs/trees/binary_lifting.h
-    title: src/graphs/trees/binary_lifting.h
+    title: Binary Lifting
   - icon: ':heavy_check_mark:'
     path: src/template/template.h
     title: Template

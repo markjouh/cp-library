@@ -4,7 +4,7 @@ data:
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
     path: src/graphs/trees/fast_lca.h
-    title: src/graphs/trees/fast_lca.h
+    title: Fast LCA (Lowest Common Ancestor)
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: src/verify/library_checker/data_structure/static_rmq.test.cpp

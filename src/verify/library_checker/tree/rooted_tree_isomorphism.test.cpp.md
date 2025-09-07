@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: src/graphs/trees/tree_hashing.h
-    title: src/graphs/trees/tree_hashing.h
+    title: Tree Hashing
   - icon: ':heavy_check_mark:'
     path: src/template/template.h
     title: Template

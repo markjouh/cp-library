@@ -39,7 +39,7 @@ data:
     pages:
     - icon: ':warning:'
       path: src/datastructures/segment_tree/lazy_segtree.h
-      title: Lazy Propagation Segment Tree
+      title: Lazily Propagated Segment Tree
     - icon: ':warning:'
       path: src/datastructures/segment_tree/persistent_segtree.h
       title: Persistent Segment Tree
@@ -91,19 +91,19 @@ data:
     pages:
     - icon: ':heavy_check_mark:'
       path: src/graphs/trees/binary_lifting.h
-      title: src/graphs/trees/binary_lifting.h
+      title: Binary Lifting
     - icon: ':warning:'
       path: src/graphs/trees/centroid_decomposition.h
-      title: src/graphs/trees/centroid_decomposition.h
+      title: Centroid Decomposition
     - icon: ':heavy_check_mark:'
       path: src/graphs/trees/fast_lca.h
-      title: src/graphs/trees/fast_lca.h
+      title: Fast LCA (Lowest Common Ancestor)
     - icon: ':heavy_check_mark:'
       path: src/graphs/trees/tree_hashing.h
-      title: src/graphs/trees/tree_hashing.h
+      title: Tree Hashing
     - icon: ':warning:'
       path: src/graphs/trees/tree_paths.h
-      title: src/graphs/trees/tree_paths.h
+      title: Tree Paths
   - name: src/heuristic
     pages:
     - icon: ':warning:'
