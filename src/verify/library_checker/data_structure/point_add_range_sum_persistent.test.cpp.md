@@ -46,9 +46,9 @@ data:
     \ };\n  \n  PersistentSegtree<ll, op, id> seg(n);\n  \n  for (int i = 0; i < n;\
     \ i++) {\n    ll a;\n    cin >> a;\n    seg.update(i, a);\n  }\n  \n  while (q--)\
     \ {\n    int t;\n    cin >> t;\n    if (t == 0) {\n      int p;\n      ll x;\n\
-    \      cin >> p >> x;\n      ll cur = seg.query(p, p + 1);\n      seg.update(p,\
-    \ cur + x);\n    } else {\n      int l, r;\n      cin >> l >> r;\n      cout <<\
-    \ seg.query(l, r) << '\\n';\n    }\n  }\n  \n  return 0;\n}\n"
+    \      cin >> p >> x;\n      ll cur = seg.query(p, p);\n      seg.update(p, cur\
+    \ + x);\n    } else {\n      int l, r;\n      cin >> l >> r;\n      cout << seg.query(l,\
+    \ r - 1) << '\\n';\n    }\n  }\n  \n  return 0;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/point_add_range_sum\"\n\
     \n#include \"../../../template/template.h\"\n#include \"../../../datastructures/segment_tree/persistent_segtree.h\"\
     \n\nusing ll = long long;\n\nint main() {\n  int n, q;\n  cin >> n >> q;\n  \n\
@@ -56,16 +56,16 @@ data:
     \ };\n  \n  PersistentSegtree<ll, op, id> seg(n);\n  \n  for (int i = 0; i < n;\
     \ i++) {\n    ll a;\n    cin >> a;\n    seg.update(i, a);\n  }\n  \n  while (q--)\
     \ {\n    int t;\n    cin >> t;\n    if (t == 0) {\n      int p;\n      ll x;\n\
-    \      cin >> p >> x;\n      ll cur = seg.query(p, p + 1);\n      seg.update(p,\
-    \ cur + x);\n    } else {\n      int l, r;\n      cin >> l >> r;\n      cout <<\
-    \ seg.query(l, r) << '\\n';\n    }\n  }\n  \n  return 0;\n}"
+    \      cin >> p >> x;\n      ll cur = seg.query(p, p);\n      seg.update(p, cur\
+    \ + x);\n    } else {\n      int l, r;\n      cin >> l >> r;\n      cout << seg.query(l,\
+    \ r - 1) << '\\n';\n    }\n  }\n  \n  return 0;\n}"
   dependsOn:
   - src/template/template.h
   - src/datastructures/segment_tree/persistent_segtree.h
   isVerificationFile: true
   path: src/verify/library_checker/data_structure/point_add_range_sum_persistent.test.cpp
   requiredBy: []
-  timestamp: '2025-09-07 18:08:01-04:00'
+  timestamp: '2025-09-07 18:13:39-04:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: src/verify/library_checker/data_structure/point_add_range_sum_persistent.test.cpp

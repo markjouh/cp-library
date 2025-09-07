@@ -37,7 +37,7 @@ data:
       title: 2D Fenwick Tree
   - name: src/datastructures/segment_tree
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: src/datastructures/segment_tree/lazy_segtree.h
       title: Lazily Propagated Segment Tree
     - icon: ':x:'
@@ -162,7 +162,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/verify/library_checker/data_structure/point_add_range_sum_segtree.test.cpp
       title: src/verify/library_checker/data_structure/point_add_range_sum_segtree.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: src/verify/library_checker/data_structure/range_affine_range_sum.test.cpp
       title: src/verify/library_checker/data_structure/range_affine_range_sum.test.cpp
     - icon: ':heavy_check_mark:'
