@@ -28,7 +28,7 @@ S mapping(S x, F f) {
 }
 
 F comp(F f, F g) {
-  return {f.a * g.a % MOD, (f.a * g.b % MOD + f.b) % MOD};
+  return {g.a * f.a % MOD, (g.a * f.b % MOD + g.b) % MOD};
 }
 
 F u_id() {

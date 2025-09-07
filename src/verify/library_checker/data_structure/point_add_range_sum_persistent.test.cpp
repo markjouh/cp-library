@@ -27,12 +27,12 @@ int main() {
       int p;
       ll x;
       cin >> p >> x;
-      ll cur = seg.query(p, p + 1);
+      ll cur = seg.query(p, p);
       seg.update(p, cur + x);
     } else {
       int l, r;
       cin >> l >> r;
-      cout << seg.query(l, r) << '\n';
+      cout << seg.query(l, r - 1) << '\n';
     }
   }
   
