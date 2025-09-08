@@ -117,7 +117,7 @@ data:
     - icon: ':warning:'
       path: src/numeric/fraction.h
       title: Fraction
-    - icon: ':heavy_check_mark:'
+    - icon: ':warning:'
       path: src/numeric/mint.h
       title: Modular Integer (Mint)
     - icon: ':heavy_check_mark:'
@@ -145,11 +145,11 @@ data:
       path: src/template/template.h
       title: Template
   verificationCategories:
-  - name: src/verify/library_checker
+  - name: src/verify/library_checker/convolution
     pages:
-    - icon: ':heavy_check_mark:'
-      path: src/verify/library_checker/convolution_mod.test.cpp
-      title: src/verify/library_checker/convolution_mod.test.cpp
+    - icon: ':x:'
+      path: src/verify/library_checker/convolution/convolution_mod.test.cpp
+      title: src/verify/library_checker/convolution/convolution_mod.test.cpp
   - name: src/verify/library_checker/data_structure
     pages:
     - icon: ':heavy_check_mark:'
@@ -158,9 +158,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/verify/library_checker/data_structure/point_add_range_sum.test.cpp
       title: src/verify/library_checker/data_structure/point_add_range_sum.test.cpp
-    - icon: ':x:'
-      path: src/verify/library_checker/data_structure/point_add_range_sum_persistent.test.cpp
-      title: src/verify/library_checker/data_structure/point_add_range_sum_persistent.test.cpp
     - icon: ':heavy_check_mark:'
       path: src/verify/library_checker/data_structure/point_add_range_sum_segtree.test.cpp
       title: src/verify/library_checker/data_structure/point_add_range_sum_segtree.test.cpp

@@ -2,13 +2,10 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: src/verify/library_checker/convolution_mod.test.cpp
-    title: src/verify/library_checker/convolution_mod.test.cpp
+  _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: h
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':warning:'
   attributes:
     links: []
   bundledCode: "#line 1 \"src/numeric/mint.h\"\ntemplate <int MOD>\nstruct Mint {\n\
@@ -61,9 +58,8 @@ data:
   path: src/numeric/mint.h
   requiredBy: []
   timestamp: '2025-09-07 14:42:16-04:00'
-  verificationStatus: LIBRARY_ALL_AC
-  verifiedWith:
-  - src/verify/library_checker/convolution_mod.test.cpp
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
 documentation_of: src/numeric/mint.h
 layout: document
 title: Modular Integer (Mint)
