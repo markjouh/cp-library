@@ -7,7 +7,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/datastructures/static/mo_handler.h
     title: Mo's Algorithm Handler
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/template/template.h
     title: Template
   _extendedRequiredBy: []

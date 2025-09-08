@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/datastructures/segment_tree/sparse_segtree.h
     title: Sparse Segment Tree
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/template/template.h
     title: Template
   _extendedRequiredBy: []

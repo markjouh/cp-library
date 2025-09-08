@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/graphs/trees/binary_lifting.h
     title: Binary Lifting
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/template/template.h
     title: Template
   _extendedRequiredBy: []

@@ -48,10 +48,11 @@ A custom hash function is included to protect against anti-hash attacks, making 
 
 ## Operations
 
-- `HashTable()`: Create empty hash table
-- `insert(key, value)`: Insert key-value pair
-- `find(key)`: Find value associated with key
-- `erase(key)`: Remove key from table
+- `hash_table()`: Create empty hash table (typedef for `__gnu_pbds::gp_hash_table`)
+- `insert(key, value)`: Insert key-value pair (inherited from `gp_hash_table`)
+- `find(key)`: Find value associated with key (inherited from `gp_hash_table`)
+- `erase(key)`: Remove key from table (inherited from `gp_hash_table`)
+- `operator[]`: Access element (inherited from `gp_hash_table`)
 
 ## Complexity
 
@@ -61,13 +62,16 @@ A custom hash function is included to protect against anti-hash attacks, making 
 
 ## Usage
 
+Note: To use this header, you may need to include `<chrono>` in your source file for the custom hash function to compile properly.
+
 ```cpp
 #include "datastructures/hash_table.h"
 #include <iostream>
 #include <string>
+#include <chrono> // Required for hash function
 
 int main() {
-    HashTable<int, std::string> ht;
+    hash_table<int, std::string> ht;
     ht.insert(42, "answer");
     ht.insert(13, "lucky");
 
@@ -88,4 +92,4 @@ int main() {
 
 ## Notes
 
-The underlying implementation is `gp_hash_table` from `ext/pb_ds/assoc_container.hpp`. The custom hash function ensures reliable performance.
+The underlying implementation is `gp_hash_table` from `ext/pb_ds/assoc_container.hpp`. The custom hash function ensures reliable performance. This is implemented as a template alias, so all methods available in `gp_hash_table` are also available in `hash_table`.

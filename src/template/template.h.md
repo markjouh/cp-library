@@ -9,9 +9,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/verify/library_checker/data_structure/point_add_range_sum.test.cpp
     title: src/verify/library_checker/data_structure/point_add_range_sum.test.cpp
-  - icon: ':x:'
-    path: src/verify/library_checker/data_structure/point_add_range_sum_persistent.test.cpp
-    title: src/verify/library_checker/data_structure/point_add_range_sum_persistent.test.cpp
   - icon: ':heavy_check_mark:'
     path: src/verify/library_checker/data_structure/point_add_range_sum_segtree.test.cpp
     title: src/verify/library_checker/data_structure/point_add_range_sum_segtree.test.cpp
@@ -60,9 +57,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/verify/library_checker/tree/vertex_add_subtree_sum.test.cpp
     title: src/verify/library_checker/tree/vertex_add_subtree_sum.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: h
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"src/template/template.h\"\n/**\n  *    author: mark\n**/\n\
@@ -75,7 +72,7 @@ data:
   path: src/template/template.h
   requiredBy: []
   timestamp: '2025-09-07 14:42:16-04:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - src/verify/library_checker/data_structure/range_affine_range_sum.test.cpp
   - src/verify/library_checker/data_structure/set_xor_min.test.cpp
@@ -86,7 +83,6 @@ data:
   - src/verify/library_checker/data_structure/point_add_range_sum.test.cpp
   - src/verify/library_checker/data_structure/point_add_range_sum_segtree.test.cpp
   - src/verify/library_checker/data_structure/unionfind.test.cpp
-  - src/verify/library_checker/data_structure/point_add_range_sum_persistent.test.cpp
   - src/verify/library_checker/data_structure/static_rmq.test.cpp
   - src/verify/library_checker/tree/rooted_tree_isomorphism.test.cpp
   - src/verify/library_checker/tree/fast_lca.test.cpp

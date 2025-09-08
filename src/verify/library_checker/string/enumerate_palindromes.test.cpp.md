@@ -7,7 +7,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/strings/hashing.h
     title: Polynomial Rolling Hash
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/template/template.h
     title: Template
   _extendedRequiredBy: []

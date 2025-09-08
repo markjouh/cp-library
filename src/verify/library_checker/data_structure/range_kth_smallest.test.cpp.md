@@ -10,7 +10,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/numeric/binsearch.h
     title: Binary Search
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/template/template.h
     title: Template
   _extendedRequiredBy: []

@@ -40,9 +40,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/datastructures/segment_tree/lazy_segtree.h
       title: Lazily Propagated Segment Tree
-    - icon: ':x:'
-      path: src/datastructures/segment_tree/persistent_segtree.h
-      title: Persistent Segment Tree
     - icon: ':heavy_check_mark:'
       path: src/datastructures/segment_tree/segtree.h
       title: Segment Tree
@@ -144,7 +141,7 @@ data:
       title: Suffix Array and LCP Array
   - name: src/template
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: src/template/template.h
       title: Template
   verificationCategories:
