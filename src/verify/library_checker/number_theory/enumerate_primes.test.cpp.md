@@ -43,17 +43,17 @@ data:
     \      for (int64_t j = 1ll * i * i; j <= n; j += i) {\n        if (!mn_factor[j])\
     \ {\n          mn_factor[j] = i;\n        }\n      }\n    }\n  }\n}\n\ntemplate\
     \ <class T>\nauto factorize(T x) {\n  vector<pair<T, int>> res;\n\n  // O(log\
-    \ x) if sieved up to x\n  if (x <= sz(mn_factor) - 1) {\n    while (x > 1) {\n\
-    \      int y = mn_factor[x];\n      res.emplace_back(y, 0);\n      while (x %\
-    \ y == 0) {\n        x /= y;\n        res.back().second++;\n      }\n    }\n \
-    \   return res;\n  }\n\n  // O(sqrt x log x) otherwise, must have sieved to sqrt(x)\n\
+    \ x) if sieved up to x\n  if (x <= ssize(mn_factor) - 1) {\n    while (x > 1)\
+    \ {\n      int y = mn_factor[x];\n      res.emplace_back(y, 0);\n      while (x\
+    \ % y == 0) {\n        x /= y;\n        res.back().second++;\n      }\n    }\n\
+    \    return res;\n  }\n\n  // O(sqrt x log x) otherwise, must have sieved to sqrt(x)\n\
     \  for (int p : primes) {\n    if (1ll * p * p > x) {\n      break;\n    }\n \
     \   int exp = 0;\n    while (x % p == 0) {\n      x /= p;\n      exp++;\n    }\n\
     \    if (exp) {\n      res.emplace_back(p, exp);\n    }\n  }\n  if (x > 1) {\n\
     \    res.emplace_back(x, 1);\n  }\n  return res;\n}\n\ntemplate <class T>\nauto\
     \ gen_divisors(T x) {\n  vector<T> res = {1};\n  for (auto [p, exp] : factorize(x))\
-    \ {\n    const int old_size = sz(res);\n    T coeff = 1;\n    for (int i = 0;\
-    \ i < exp; i++) {\n      coeff *= p;\n      for (int j = 0; j < old_size; j++)\
+    \ {\n    const int old_size = ssize(res);\n    T coeff = 1;\n    for (int i =\
+    \ 0; i < exp; i++) {\n      coeff *= p;\n      for (int j = 0; j < old_size; j++)\
     \ {\n        res.push_back(coeff * res[j]);\n      }\n    }\n  }\n  return res;\n\
     }\n#line 5 \"src/verify/library_checker/number_theory/enumerate_primes.test.cpp\"\
     \n\nint main() {\n  int n, a, b;\n  cin >> n >> a >> b;\n  sieve(n);\n  cout <<\
@@ -72,7 +72,7 @@ data:
   isVerificationFile: true
   path: src/verify/library_checker/number_theory/enumerate_primes.test.cpp
   requiredBy: []
-  timestamp: '2025-09-07 14:42:16-04:00'
+  timestamp: '2025-09-14 12:12:28-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: src/verify/library_checker/number_theory/enumerate_primes.test.cpp

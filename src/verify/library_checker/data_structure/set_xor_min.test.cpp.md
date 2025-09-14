@@ -26,16 +26,16 @@ data:
     \ nxt;\n  vector<int> cnt;\n  T filter = 0;\n\n  BinaryTrie() : nxt(1, {-1, -1}),\
     \ cnt(1, 0) {}\n\n  void insert(T x, int v = 1) {\n    x ^= filter;\n    int pos\
     \ = 0;\n    for (int i = W - 1; i >= 0; i--) {\n      bool dir = (x >> i) & 1;\n\
-    \      if (nxt[pos][dir] == -1) {\n        nxt[pos][dir] = sz(nxt);\n        nxt.push_back({-1,\
-    \ -1});\n        cnt.push_back(0);\n      }\n      pos = nxt[pos][dir];\n    \
-    \  cnt[pos] += v;\n    }\n  }\n\n  BinaryTrie &operator^=(T x) {\n    filter ^=\
-    \ x;\n    return *this;\n  }\n\n  T min_xor(T x) {\n    x ^= filter;\n    int\
-    \ pos = 0;\n    T res = 0;\n    for (int i = W - 1; i >= 0; i--) {\n      bool\
-    \ dir = (x >> i) & 1;\n      if (nxt[pos][dir] == -1 || cnt[nxt[pos][dir]] ==\
-    \ 0) {\n        res |= T(1) << i;\n        pos = nxt[pos][dir ^ 1];\n      } else\
-    \ {\n        pos = nxt[pos][dir];\n      }\n    }\n    return res;\n  }\n\n  T\
-    \ max_xor(T x) {\n    static const T mask = -1;\n    return mask ^ min_xor(x ^\
-    \ mask);\n  }\n};\n#line 5 \"src/verify/library_checker/data_structure/set_xor_min.test.cpp\"\
+    \      if (nxt[pos][dir] == -1) {\n        nxt[pos][dir] = ssize(nxt);\n     \
+    \   nxt.push_back({-1, -1});\n        cnt.push_back(0);\n      }\n      pos =\
+    \ nxt[pos][dir];\n      cnt[pos] += v;\n    }\n  }\n\n  BinaryTrie &operator^=(T\
+    \ x) {\n    filter ^= x;\n    return *this;\n  }\n\n  T min_xor(T x) {\n    x\
+    \ ^= filter;\n    int pos = 0;\n    T res = 0;\n    for (int i = W - 1; i >= 0;\
+    \ i--) {\n      bool dir = (x >> i) & 1;\n      if (nxt[pos][dir] == -1 || cnt[nxt[pos][dir]]\
+    \ == 0) {\n        res |= T(1) << i;\n        pos = nxt[pos][dir ^ 1];\n     \
+    \ } else {\n        pos = nxt[pos][dir];\n      }\n    }\n    return res;\n  }\n\
+    \n  T max_xor(T x) {\n    static const T mask = -1;\n    return mask ^ min_xor(x\
+    \ ^ mask);\n  }\n};\n#line 5 \"src/verify/library_checker/data_structure/set_xor_min.test.cpp\"\
     \n\nint main() {\n  int q;\n  cin >> q;\n  BinaryTrie<uint32_t> bt;\n  while (q--)\
     \ {\n    int t, x;\n    cin >> t >> x;\n    if (t == 0) {\n      if (bt.min_xor(x)\
     \ != 0) {\n        bt.insert(x);\n      }\n    } else if (t == 1) {\n      if\
@@ -54,7 +54,7 @@ data:
   isVerificationFile: true
   path: src/verify/library_checker/data_structure/set_xor_min.test.cpp
   requiredBy: []
-  timestamp: '2025-09-07 14:42:16-04:00'
+  timestamp: '2025-09-14 12:12:28-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: src/verify/library_checker/data_structure/set_xor_min.test.cpp

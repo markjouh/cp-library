@@ -23,10 +23,10 @@ data:
     \n#define sz(x) int(size(x))\n#define all(x) begin(x), end(x)\n#line 1 \"src/graphs/kosaraju_scc.h\"\
     \nstruct KosarajuScc {\n  int sccs = 0;\n  vector<int> comp;\n  vector<vector<int>>\
     \ members, cg;\n\n  KosarajuScc(const vector<vector<int>> &g_) : g(g_) {\n   \
-    \ comp.resize(sz(g), -1);\n    tg.resize(sz(g));\n    vis.resize(sz(g));\n   \
-    \ ord.reserve(sz(g));\n    for (int i = 0; i < sz(g); i++) {\n      if (!vis[i])\
-    \ {\n        dfs_setup(i);\n      }\n    }\n    for (int i = sz(ord) - 1; i >=\
-    \ 0; i--) {\n      if (comp[ord[i]] == -1) {\n        members.emplace_back();\n\
+    \ comp.resize(ssize(g), -1);\n    tg.resize(ssize(g));\n    vis.resize(ssize(g));\n\
+    \    ord.reserve(ssize(g));\n    for (int i = 0; i < ssize(g); i++) {\n      if\
+    \ (!vis[i]) {\n        dfs_setup(i);\n      }\n    }\n    for (int i = ssize(ord)\
+    \ - 1; i >= 0; i--) {\n      if (comp[ord[i]] == -1) {\n        members.emplace_back();\n\
     \        dfs_build(ord[i]);\n        sccs++;\n      }\n    }\n    tg.clear();\n\
     \    vis.clear();\n    ord.clear();\n\n    cg.resize(sccs);\n    vector<int> prev(sccs,\
     \ -1);\n    for (int i = 0; i < sccs; i++) {\n      for (int u : members[i]) {\n\
@@ -58,7 +58,7 @@ data:
   isVerificationFile: true
   path: src/verify/library_checker/graph/scc.test.cpp
   requiredBy: []
-  timestamp: '2025-09-07 14:42:16-04:00'
+  timestamp: '2025-09-14 12:12:28-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: src/verify/library_checker/graph/scc.test.cpp

@@ -23,9 +23,9 @@ data:
     \nusing namespace std;\n\n#define sz(x) int(size(x))\n#define all(x) begin(x),\
     \ end(x)\n#line 1 \"src/graphs/shortest_paths/dijkstras.h\"\ntemplate <class T>\n\
     auto dijkstras(const vector<vector<pair<int, int>>> &g, int start = 0) {\n  priority_queue<pair<T,\
-    \ int>, vector<pair<T, int>>, greater<pair<T, int>>> pq;\n\n  vector<T> dist(sz(g),\
-    \ numeric_limits<T>::max());\n  vector<int> from(sz(g), -1);\n\n  dist[start]\
-    \ = 0;\n  pq.emplace(0, start);\n\n  while (sz(pq)) {\n    auto [d, u] = pq.top();\n\
+    \ int>, vector<pair<T, int>>, greater<pair<T, int>>> pq;\n\n  vector<T> dist(ssize(g),\
+    \ numeric_limits<T>::max());\n  vector<int> from(ssize(g), -1);\n\n  dist[start]\
+    \ = 0;\n  pq.emplace(0, start);\n\n  while (ssize(pq)) {\n    auto [d, u] = pq.top();\n\
     \    pq.pop();\n    if (d != dist[u]) {\n      continue;\n    }\n    for (auto\
     \ [v, w] : g[u]) {\n      if (d + w < dist[v]) {\n        dist[v] = d + w;\n \
     \       from[v] = u;\n        pq.emplace(dist[v], v);\n      }\n    }\n  }\n \
@@ -54,7 +54,7 @@ data:
   isVerificationFile: true
   path: src/verify/library_checker/graph/shortest_path.test.cpp
   requiredBy: []
-  timestamp: '2025-09-07 14:42:16-04:00'
+  timestamp: '2025-09-14 12:12:28-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: src/verify/library_checker/graph/shortest_path.test.cpp

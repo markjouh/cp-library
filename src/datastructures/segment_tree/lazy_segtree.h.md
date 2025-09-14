@@ -14,7 +14,7 @@ data:
   bundledCode: "#line 1 \"src/datastructures/segment_tree/lazy_segtree.h\"\ntemplate\
     \ <class T, auto op, auto t_id, class U, auto mapping, auto comp, auto u_id>\n\
     struct LazySegtree {\n  LazySegtree(int n_, T v = t_id()) {\n    init(n_, v);\n\
-    \    pull_all();\n  }\n\n  LazySegtree(const vector<T> &a) {\n    init(sz(a),\
+    \    pull_all();\n  }\n\n  LazySegtree(const vector<T> &a) {\n    init(ssize(a),\
     \ t_id());\n    copy(all(a), begin(st) + tree_sz);\n    pull_all();\n  }\n\n \
     \ void set(int p, T v) {\n    push_path(p += tree_sz);\n    st[p] = v;\n    pull_path(p);\n\
     \  }\n\n  void update(int p, U v) {\n    push_path(p += tree_sz);\n    st[p] =\
@@ -59,7 +59,7 @@ data:
   code: "template <class T, auto op, auto t_id, class U, auto mapping, auto comp,\
     \ auto u_id>\nstruct LazySegtree {\n  LazySegtree(int n_, T v = t_id()) {\n  \
     \  init(n_, v);\n    pull_all();\n  }\n\n  LazySegtree(const vector<T> &a) {\n\
-    \    init(sz(a), t_id());\n    copy(all(a), begin(st) + tree_sz);\n    pull_all();\n\
+    \    init(ssize(a), t_id());\n    copy(all(a), begin(st) + tree_sz);\n    pull_all();\n\
     \  }\n\n  void set(int p, T v) {\n    push_path(p += tree_sz);\n    st[p] = v;\n\
     \    pull_path(p);\n  }\n\n  void update(int p, U v) {\n    push_path(p += tree_sz);\n\
     \    st[p] = mapping(st[p], v);\n    pull_path(p);\n  }\n\n  void update(int l,\
@@ -99,12 +99,12 @@ data:
     \  for (int i = 1; i <= log; i++) {\n      if (((l >> i) << i) != l) {\n     \
     \   pull(l >> i);\n      }\n      if (((r >> i) << i) != r) {\n        pull((r\
     \ - 1) >> i);\n      }\n    }\n  }\n\n  void pull_all() {\n    for (int i = tree_sz\
-    \ - 1; i > 0; i--) {\n      pull(i);\n    }\n  }\n};"
+    \ - 1; i > 0; i--) {\n      pull(i);\n    }\n  }\n};\n"
   dependsOn: []
   isVerificationFile: false
   path: src/datastructures/segment_tree/lazy_segtree.h
   requiredBy: []
-  timestamp: '2025-09-06 20:10:03-04:00'
+  timestamp: '2025-09-14 12:12:28-04:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - src/verify/library_checker/data_structure/range_affine_range_sum.test.cpp

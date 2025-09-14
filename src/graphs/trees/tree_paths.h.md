@@ -11,14 +11,14 @@ data:
   bundledCode: "#line 1 \"src/graphs/trees/tree_paths.h\"\ntemplate <class T, auto\
     \ op, auto id>\nstruct TreePaths {\n  int log;\n  vector<int> dep;\n  vector<vector<int>>\
     \ up;\n  vector<vector<T>> val;\n\n  TreePaths(const vector<vector<pair<int, int>>>\
-    \ &g, int root = 0) {\n    log = __lg(sz(g)) + 1;\n    dep.resize(sz(g), -1);\n\
-    \    up = vector(sz(g), vector<int>(log, -1));\n    val = vector(sz(g), vector<T>(log,\
-    \ id()));\n\n    queue<int> q;\n    dep[root] = 0;\n    q.push(root);\n    while\
-    \ (sz(q)) {\n      int u = q.front();\n      q.pop();\n      for (auto [v, w]\
-    \ : g[u]) {\n        if (dep[v] == -1) {\n          dep[v] = dep[u] + 1;\n   \
-    \       up[v][0] = u;\n          val[v][0] = w;\n          for (int i = 1; i <\
-    \ log; i++) {\n            if (up[v][i - 1] == -1) {\n              break;\n \
-    \           }\n            up[v][i] = up[up[v][i - 1]][i - 1];\n            val[v][i]\
+    \ &g, int root = 0) {\n    log = __lg(ssize(g)) + 1;\n    dep.resize(ssize(g),\
+    \ -1);\n    up = vector(ssize(g), vector<int>(log, -1));\n    val = vector(ssize(g),\
+    \ vector<T>(log, id()));\n\n    queue<int> q;\n    dep[root] = 0;\n    q.push(root);\n\
+    \    while (ssize(q)) {\n      int u = q.front();\n      q.pop();\n      for (auto\
+    \ [v, w] : g[u]) {\n        if (dep[v] == -1) {\n          dep[v] = dep[u] + 1;\n\
+    \          up[v][0] = u;\n          val[v][0] = w;\n          for (int i = 1;\
+    \ i < log; i++) {\n            if (up[v][i - 1] == -1) {\n              break;\n\
+    \            }\n            up[v][i] = up[up[v][i - 1]][i - 1];\n            val[v][i]\
     \ = op(val[v][i - 1], val[up[v][i - 1]][i - 1]);\n          }\n          q.push(v);\n\
     \        }\n      }\n    }\n  }\n\n  T query(int x, int y) {\n    if (dep[x] <\
     \ dep[y]) {\n      swap(x, y);\n    }\n    T res = id();\n    const int diff =\
@@ -31,14 +31,14 @@ data:
     \ val[y][0]);\n    return res;\n  }\n};\n"
   code: "template <class T, auto op, auto id>\nstruct TreePaths {\n  int log;\n  vector<int>\
     \ dep;\n  vector<vector<int>> up;\n  vector<vector<T>> val;\n\n  TreePaths(const\
-    \ vector<vector<pair<int, int>>> &g, int root = 0) {\n    log = __lg(sz(g)) +\
-    \ 1;\n    dep.resize(sz(g), -1);\n    up = vector(sz(g), vector<int>(log, -1));\n\
-    \    val = vector(sz(g), vector<T>(log, id()));\n\n    queue<int> q;\n    dep[root]\
-    \ = 0;\n    q.push(root);\n    while (sz(q)) {\n      int u = q.front();\n   \
-    \   q.pop();\n      for (auto [v, w] : g[u]) {\n        if (dep[v] == -1) {\n\
-    \          dep[v] = dep[u] + 1;\n          up[v][0] = u;\n          val[v][0]\
-    \ = w;\n          for (int i = 1; i < log; i++) {\n            if (up[v][i - 1]\
-    \ == -1) {\n              break;\n            }\n            up[v][i] = up[up[v][i\
+    \ vector<vector<pair<int, int>>> &g, int root = 0) {\n    log = __lg(ssize(g))\
+    \ + 1;\n    dep.resize(ssize(g), -1);\n    up = vector(ssize(g), vector<int>(log,\
+    \ -1));\n    val = vector(ssize(g), vector<T>(log, id()));\n\n    queue<int> q;\n\
+    \    dep[root] = 0;\n    q.push(root);\n    while (ssize(q)) {\n      int u =\
+    \ q.front();\n      q.pop();\n      for (auto [v, w] : g[u]) {\n        if (dep[v]\
+    \ == -1) {\n          dep[v] = dep[u] + 1;\n          up[v][0] = u;\n        \
+    \  val[v][0] = w;\n          for (int i = 1; i < log; i++) {\n            if (up[v][i\
+    \ - 1] == -1) {\n              break;\n            }\n            up[v][i] = up[up[v][i\
     \ - 1]][i - 1];\n            val[v][i] = op(val[v][i - 1], val[up[v][i - 1]][i\
     \ - 1]);\n          }\n          q.push(v);\n        }\n      }\n    }\n  }\n\n\
     \  T query(int x, int y) {\n    if (dep[x] < dep[y]) {\n      swap(x, y);\n  \
@@ -54,7 +54,7 @@ data:
   isVerificationFile: false
   path: src/graphs/trees/tree_paths.h
   requiredBy: []
-  timestamp: '2025-09-07 14:42:16-04:00'
+  timestamp: '2025-09-14 12:12:28-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: src/graphs/trees/tree_paths.h

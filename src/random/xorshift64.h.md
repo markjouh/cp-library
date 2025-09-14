@@ -16,20 +16,20 @@ data:
     \ * 0x8cde9e0f1d3b04d7;\n  x ^= x << 7;\n  x ^= x >> 9;\n  return x;\n}\n\nuint64_t\
     \ rng(uint64_t n) {\n  return rng() % n;\n}\n\nint64_t rng(int64_t l, int64_t\
     \ r) {\n  return l + rng() % (r - l);\n}\n\ntemplate <class T>\nvoid shuffle(vector<T>\
-    \ &a) {\n  for (int i = 0; i < sz(a); i++) {\n    int j = rng() % (i + 1);\n \
-    \   if (i != j) {\n      swap(a[i], a[j]);\n    }\n  }\n}\n"
+    \ &a) {\n  for (int i = 0; i < ssize(a); i++) {\n    int j = rng() % (i + 1);\n\
+    \    if (i != j) {\n      swap(a[i], a[j]);\n    }\n  }\n}\n"
   code: "// http://isaku-wada.my.coocan.jp/rand/rand.html\n// https://github.com/maspypy/library/blob/bd963151adcd2ad29642a2dcea65a15420d1767d/random/base.hpp\n\
     \nuint64_t rng() {\n  static uint64_t x = uint64_t(chrono::duration_cast<chrono::nanoseconds>(chrono::high_resolution_clock::now().time_since_epoch()).count())\
     \ * 0x8cde9e0f1d3b04d7;\n  x ^= x << 7;\n  x ^= x >> 9;\n  return x;\n}\n\nuint64_t\
     \ rng(uint64_t n) {\n  return rng() % n;\n}\n\nint64_t rng(int64_t l, int64_t\
     \ r) {\n  return l + rng() % (r - l);\n}\n\ntemplate <class T>\nvoid shuffle(vector<T>\
-    \ &a) {\n  for (int i = 0; i < sz(a); i++) {\n    int j = rng() % (i + 1);\n \
-    \   if (i != j) {\n      swap(a[i], a[j]);\n    }\n  }\n}"
+    \ &a) {\n  for (int i = 0; i < ssize(a); i++) {\n    int j = rng() % (i + 1);\n\
+    \    if (i != j) {\n      swap(a[i], a[j]);\n    }\n  }\n}\n"
   dependsOn: []
   isVerificationFile: false
   path: src/random/xorshift64.h
   requiredBy: []
-  timestamp: '2025-09-06 20:10:03-04:00'
+  timestamp: '2025-09-14 12:12:28-04:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: src/random/xorshift64.h

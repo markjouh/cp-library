@@ -24,7 +24,7 @@ data:
     \ all(x) begin(x), end(x)\n#line 1 \"src/datastructures/segment_tree/lazy_segtree.h\"\
     \ntemplate <class T, auto op, auto t_id, class U, auto mapping, auto comp, auto\
     \ u_id>\nstruct LazySegtree {\n  LazySegtree(int n_, T v = t_id()) {\n    init(n_,\
-    \ v);\n    pull_all();\n  }\n\n  LazySegtree(const vector<T> &a) {\n    init(sz(a),\
+    \ v);\n    pull_all();\n  }\n\n  LazySegtree(const vector<T> &a) {\n    init(ssize(a),\
     \ t_id());\n    copy(all(a), begin(st) + tree_sz);\n    pull_all();\n  }\n\n \
     \ void set(int p, T v) {\n    push_path(p += tree_sz);\n    st[p] = v;\n    pull_path(p);\n\
     \  }\n\n  void update(int p, U v) {\n    push_path(p += tree_sz);\n    st[p] =\
@@ -100,7 +100,7 @@ data:
   isVerificationFile: true
   path: src/verify/library_checker/data_structure/range_affine_range_sum.test.cpp
   requiredBy: []
-  timestamp: '2025-09-07 18:23:31-04:00'
+  timestamp: '2025-09-14 12:12:28-04:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: src/verify/library_checker/data_structure/range_affine_range_sum.test.cpp
