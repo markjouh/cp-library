@@ -1,5 +1,5 @@
 auto topsort(const vector<vector<int>> &g) {
-  vector<int> deg(sz(g));
+  vector<int> deg(ssize(g));
   for (int u = 0; u < sz(g); u++) {
     for (int v : g[u]) {
       deg[v]++;

@@ -6,15 +6,15 @@ struct TreePaths {
   vector<vector<T>> val;
 
   TreePaths(const vector<vector<pair<int, int>>> &g, int root = 0) {
-    log = __lg(sz(g)) + 1;
-    dep.resize(sz(g), -1);
-    up = vector(sz(g), vector<int>(log, -1));
-    val = vector(sz(g), vector<T>(log, id()));
+    log = __lg(ssize(g)) + 1;
+    dep.resize(ssize(g), -1);
+    up = vector(ssize(g), vector<int>(log, -1));
+    val = vector(ssize(g), vector<T>(log, id()));
 
     queue<int> q;
     dep[root] = 0;
     q.push(root);
-    while (sz(q)) {
+    while (ssize(q)) {
       int u = q.front();
       q.pop();
       for (auto [v, w] : g[u]) {

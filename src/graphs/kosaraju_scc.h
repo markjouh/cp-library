@@ -4,16 +4,16 @@ struct KosarajuScc {
   vector<vector<int>> members, cg;
 
   KosarajuScc(const vector<vector<int>> &g_) : g(g_) {
-    comp.resize(sz(g), -1);
-    tg.resize(sz(g));
-    vis.resize(sz(g));
-    ord.reserve(sz(g));
-    for (int i = 0; i < sz(g); i++) {
+    comp.resize(ssize(g), -1);
+    tg.resize(ssize(g));
+    vis.resize(ssize(g));
+    ord.reserve(ssize(g));
+    for (int i = 0; i < ssize(g); i++) {
       if (!vis[i]) {
         dfs_setup(i);
       }
     }
-    for (int i = sz(ord) - 1; i >= 0; i--) {
+    for (int i = ssize(ord) - 1; i >= 0; i--) {
       if (comp[ord[i]] == -1) {
         members.emplace_back();
         dfs_build(ord[i]);

@@ -1,5 +1,5 @@
 auto bfs01(const vector<vector<pair<int, bool>>> &g, int start = 0) {
-  vector<int> dist(sz(g), INT_MAX / 2);
+  vector<int> dist(ssize(g), INT_MAX / 2);
 
   static int dq[1 << 17];
   int l = 1 << 16, r = l;

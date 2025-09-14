@@ -6,12 +6,12 @@ struct FastLCA {
 
   FastLCA() {}
   FastLCA(const vector<vector<int>> &g) {
-    tin.resize(sz(g));
-    dep.resize(sz(g));
+    tin.resize(ssize(g));
+    dep.resize(ssize(g));
     vector<pair<int, int>> d;
 
     auto dfs = [&](auto &&self, int u, int par) -> void {
-      tin[u] = sz(d);
+      tin[u] = ssize(d);
       d.emplace_back(dep[u], u);
       for (int v : g[u]) {
         if (v != par) {
