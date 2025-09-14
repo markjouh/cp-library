@@ -13,7 +13,7 @@ struct BinaryTrie {
     for (int i = W - 1; i >= 0; i--) {
       bool dir = (x >> i) & 1;
       if (nxt[pos][dir] == -1) {
-        nxt[pos][dir] = sz(nxt);
+        nxt[pos][dir] = ssize(nxt);
         nxt.push_back({-1, -1});
         cnt.push_back(0);
       }

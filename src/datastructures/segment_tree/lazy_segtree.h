@@ -6,7 +6,7 @@ struct LazySegtree {
   }
 
   LazySegtree(const vector<T> &a) {
-    init(sz(a), t_id());
+    init(ssize(a), t_id());
     copy(all(a), begin(st) + tree_sz);
     pull_all();
   }

@@ -1,8 +1,8 @@
 auto euler_cycle(const vector<vector<int>> &g) {
-  vector<vector<pair<int, int>>> h(sz(g));
-  vector<int> deg(sz(g));
+  vector<vector<pair<int, int>>> h(ssize(g));
+  vector<int> deg(ssize(g));
   int cnt = 0;
-  for (int u = 0; u < sz(g); u++) {
+  for (int u = 0; u < ssize(g); u++) {
     int self = 0;
     for (int v : g[u]) {
       if ((u == v && self % 2) || u < v) {
@@ -18,7 +18,7 @@ auto euler_cycle(const vector<vector<int>> &g) {
   vector<bool> removed(cnt);
   vector<int> stk, res;
   stk.push_back(0);
-  while (sz(stk)) {
+  while (ssize(stk)) {
     int u = stk.back();
     if (deg[u] == 0) {
       res.push_back(u);

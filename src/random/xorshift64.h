@@ -18,7 +18,7 @@ int64_t rng(int64_t l, int64_t r) {
 
 template <class T>
 void shuffle(vector<T> &a) {
-  for (int i = 0; i < sz(a); i++) {
+  for (int i = 0; i < ssize(a); i++) {
     int j = rng() % (i + 1);
     if (i != j) {
       swap(a[i], a[j]);

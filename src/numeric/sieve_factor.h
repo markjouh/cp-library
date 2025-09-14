@@ -43,7 +43,7 @@ auto factorize(T x) {
   vector<pair<T, int>> res;
 
   // O(log x) if sieved up to x
-  if (x <= sz(mn_factor) - 1) {
+  if (x <= ssize(mn_factor) - 1) {
     while (x > 1) {
       int y = mn_factor[x];
       res.emplace_back(y, 0);
@@ -79,7 +79,7 @@ template <class T>
 auto gen_divisors(T x) {
   vector<T> res = {1};
   for (auto [p, exp] : factorize(x)) {
-    const int old_size = sz(res);
+    const int old_size = ssize(res);
     T coeff = 1;
     for (int i = 0; i < exp; i++) {
       coeff *= p;

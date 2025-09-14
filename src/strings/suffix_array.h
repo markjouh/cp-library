@@ -1,5 +1,5 @@
 auto gen_suffix_array(const string &s) {
-  const int n = sz(s) + 1;
+  const int n = ssize(s) + 1;
 
   vector<int> sa(n);
   sa[0] = n - 1;
@@ -44,7 +44,7 @@ auto gen_suffix_array(const string &s) {
 }
 
 auto gen_lcp(const vector<int> &sa, const string &s) {
-  const int n = sz(sa);
+  const int n = ssize(sa);
 
   vector<int> rank(n);
   for (int i = 0; i < n; i++) {

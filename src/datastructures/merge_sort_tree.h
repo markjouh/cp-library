@@ -5,7 +5,7 @@ struct MergeSortTree {
   int n;
   vector<ordered_set<pair<T, int>>> st;
  
-  MergeSortTree(const vector<T> &a) : n(sz(a)), st(2 * n) {
+  MergeSortTree(const vector<T> &a) : n(ssize(a)), st(2 * n) {
     for (int i = 0; i < n; i++) {
       for (int p = i + n; p > 0; p >>= 1) {
         st[p].insert({a[i], i});
