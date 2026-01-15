@@ -27,10 +27,11 @@ struct MergeSortTree {
   }
  
   void set(int p, T v) {
+    const int idx = p;
     const auto old = *begin(st[p + n]);
     for (p += n; p > 0; p >>= 1) {
       st[p].erase(old);
-      st[p].insert(v);
+      st[p].insert({v, idx});
     }
   }
 };

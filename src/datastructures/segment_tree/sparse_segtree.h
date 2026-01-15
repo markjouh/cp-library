@@ -43,7 +43,7 @@ private:
 
   int get_l(int x) {
     if (ch[x].first == -1) {
-      ch[x].first = sz(st);
+      ch[x].first = ssize(st);
       st.push_back(id());
       ch.emplace_back(-1, -1);
     }
@@ -52,7 +52,7 @@ private:
 
   int get_r(int x) {
     if (ch[x].second == -1) {
-      ch[x].second = sz(st);
+      ch[x].second = ssize(st);
       st.push_back(id());
       ch.emplace_back(-1, -1);
     }

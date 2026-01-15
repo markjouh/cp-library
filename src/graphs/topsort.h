@@ -1,12 +1,12 @@
 auto topsort(const vector<vector<int>> &g) {
   vector<int> deg(ssize(g));
-  for (int u = 0; u < sz(g); u++) {
+  for (int u = 0; u < ssize(g); u++) {
     for (int v : g[u]) {
       deg[v]++;
     }
   }
   queue<int> q;
-  for (int i = 0; i < sz(g); i++) {
+  for (int i = 0; i < ssize(g); i++) {
     if (deg[i] == 0) {
       q.push(i);
     }

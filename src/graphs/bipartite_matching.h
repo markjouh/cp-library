@@ -19,8 +19,8 @@ bool find(int j, vector<vector<int>> &ls_adj, vector<int> &rs_match, vector<int>
 
 int bipartite_matching(vector<vector<int>> &ls_adj, vector<int> &rs_match) {
   vector<int> vis;
-  for (int i = 0; i < sz(ls_adj); i++) {
-    vis.assign(sz(rs_match), 0);
+  for (int i = 0; i < ssize(ls_adj); i++) {
+    vis.assign(ssize(rs_match), 0);
     for (int j : ls_adj[i]) {
       if (find(j, ls_adj, rs_match, vis)) {
         rs_match[j] = i;
@@ -28,5 +28,5 @@ int bipartite_matching(vector<vector<int>> &ls_adj, vector<int> &rs_match) {
       }
     }
   }
-  return sz(rs_match) - count(all(rs_match), -1);
+  return ssize(rs_match) - count(all(rs_match), -1);
 }

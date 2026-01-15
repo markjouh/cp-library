@@ -5,7 +5,7 @@ struct Fentree {
 
   Fentree(int n_) : n(n_), ft(n + 1) {}
 
-  Fentree(const vector<T> &a) : n(sz(a)), ft(n + 1) {
+  Fentree(const vector<T> &a) : n(ssize(a)), ft(n + 1) {
     for (int i = 1; i <= n; i++) {
       ft[i] += a[i - 1];
       if (i + (i & -i) <= n) {

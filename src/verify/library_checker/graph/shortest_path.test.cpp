@@ -23,7 +23,7 @@ int main() {
       p = from[p];
     }
     reverse(all(path));
-    cout << sz(path) << '\n';
+    cout << ssize(path) << '\n';
     for (auto [u, v] : path) {
       cout << u << ' ' << v << '\n';
     }

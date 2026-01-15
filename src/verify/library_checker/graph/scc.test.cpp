@@ -15,7 +15,7 @@ int main() {
   KosarajuScc scc(g);
   cout << scc.sccs << '\n';
   for (int i = 0; i < scc.sccs; i++) {
-    cout << sz(scc.members[i]) << ' ';
+    cout << ssize(scc.members[i]) << ' ';
     for (int x : scc.members[i]) {
       cout << x << ' ';
     }

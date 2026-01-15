@@ -19,7 +19,7 @@ struct ChthollyTree {
   using Iter = typename set<Seg>::iterator;
 
   ChthollyTree(int n_, T v) : n(n_) {
-    st.emplace(make_pair(0, n - 1), v);
+    st.emplace(0, n - 1, v);
   }
   ChthollyTree(const vector<T> &a) : n(a.size()) {
     int p = -1;
