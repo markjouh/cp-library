@@ -16,7 +16,7 @@ struct OrderedMultiset {
   }
   void extract(T x) {
     auto it = st.lower_bound({x, 0});
-    if (it != end(st) && it->fi == x) {
+    if (it != end(st) && it->first == x) {
       st.erase(it);
     }
   }
