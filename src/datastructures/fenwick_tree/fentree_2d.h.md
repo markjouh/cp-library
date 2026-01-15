@@ -13,13 +13,13 @@ data:
     links: []
   bundledCode: "#line 1 \"src/datastructures/fenwick_tree/fentree.h\"\ntemplate <class\
     \ T>\nstruct Fentree {\n  int n;\n  vector<T> ft;\n\n  Fentree(int n_) : n(n_),\
-    \ ft(n + 1) {}\n\n  Fentree(const vector<T> &a) : n(sz(a)), ft(n + 1) {\n    for\
-    \ (int i = 1; i <= n; i++) {\n      ft[i] += a[i - 1];\n      if (i + (i & -i)\
-    \ <= n) {\n        ft[i + (i & -i)] += ft[i];\n      }\n    }\n  }\n\n  void add(int\
-    \ p, T v) {\n    for (p++; p <= n; p += p & -p) {\n      ft[p] += v;\n    }\n\
-    \  }\n\n  T sum(int r) {\n    T res = 0;\n    for (r++; r > 0; r -= r & -r) {\n\
-    \      res += ft[r];\n    }\n    return res;\n  }\n\n  T sum(int l, int r) {\n\
-    \    return sum(r) - sum(l - 1);\n  }\n};\n#line 2 \"src/datastructures/fenwick_tree/fentree_2d.h\"\
+    \ ft(n + 1) {}\n\n  Fentree(const vector<T> &a) : n(ssize(a)), ft(n + 1) {\n \
+    \   for (int i = 1; i <= n; i++) {\n      ft[i] += a[i - 1];\n      if (i + (i\
+    \ & -i) <= n) {\n        ft[i + (i & -i)] += ft[i];\n      }\n    }\n  }\n\n \
+    \ void add(int p, T v) {\n    for (p++; p <= n; p += p & -p) {\n      ft[p] +=\
+    \ v;\n    }\n  }\n\n  T sum(int r) {\n    T res = 0;\n    for (r++; r > 0; r -=\
+    \ r & -r) {\n      res += ft[r];\n    }\n    return res;\n  }\n\n  T sum(int l,\
+    \ int r) {\n    return sum(r) - sum(l - 1);\n  }\n};\n#line 2 \"src/datastructures/fenwick_tree/fentree_2d.h\"\
     \n\ntemplate <class T>\nstruct Fentree2D {\n  int n;\n  vector<Fentree<T>> ft;\n\
     \n  Fentree2D(int n_, int m) : n(n_), ft(n + 1, Fentree<T>(m)) {}\n\n  void add(int\
     \ r, int c, T v) {\n    for (r++; r <= n; r += r & -r) {\n      ft[r].add(c, v);\n\
@@ -41,7 +41,7 @@ data:
   isVerificationFile: false
   path: src/datastructures/fenwick_tree/fentree_2d.h
   requiredBy: []
-  timestamp: '2025-09-06 20:10:03-04:00'
+  timestamp: '2026-01-15 15:27:11+00:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: src/datastructures/fenwick_tree/fentree_2d.h

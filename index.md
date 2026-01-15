@@ -127,7 +127,7 @@ data:
     pages:
     - icon: ':warning:'
       path: src/random/xorshift64.h
-      title: XorShift64 Random Number Generator
+      title: XorShift Random Number Generator
   - name: src/strings
     pages:
     - icon: ':heavy_check_mark:'

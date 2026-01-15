@@ -44,7 +44,7 @@ layout: document
 title: Eulerian Cycle
 ---
 
-Find Eulerian cycle/path in directed graphs using Hierholzer's algorithm.
+Find Eulerian cycle in undirected graphs using Hierholzer's algorithm.
 
 ## Operations
 
@@ -60,18 +60,17 @@ Find Eulerian cycle/path in directed graphs using Hierholzer's algorithm.
 
 {% raw %}
 ```cpp
-vector<vector<int>> g = {{1}, {2}, {0}};
+// Undirected graph: edges listed from each endpoint
+vector<vector<int>> g = {{1, 2}, {0, 2}, {0, 1}};  // Triangle
 vector<int> cycle = euler_cycle(g);
+// cycle = [0, 2, 1, 0] or similar valid Eulerian cycle
 
-if (!cycle.empty()) {
-  // Found Eulerian cycle
-  for (int v : cycle) {
+for (int v : cycle) {
   cout << v << " ";
-  }
 }
 ```
 {% endraw %}
 
 ## Notes
 
-Requires all vertices with nonzero degree to have equal in-degree and out-degree. Returns empty vector if no cycle exists.
+Input is an undirected graph where `g[u]` contains all neighbors of `u`. Each edge should appear in both adjacency lists. Requires all vertices to have even degree for an Eulerian cycle to exist.

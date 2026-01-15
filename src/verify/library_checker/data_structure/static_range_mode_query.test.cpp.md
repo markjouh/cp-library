@@ -23,28 +23,28 @@ data:
   bundledCode: "#line 1 \"src/verify/library_checker/data_structure/static_range_mode_query.test.cpp\"\
     \n#define PROBLEM \"https://judge.yosupo.jp/problem/static_range_mode_query\"\n\
     \n#line 1 \"src/template/template.h\"\n/**\n  *    author: mark\n**/\n#include\
-    \ <bits/stdc++.h>\n\nusing namespace std;\n\n#define sz(x) int(size(x))\n#define\
-    \ all(x) begin(x), end(x)\n#line 1 \"src/datastructures/hash_table.h\"\n#include\
-    \ <ext/pb_ds/assoc_container.hpp>\n\nstruct CustomHash {\n  static uint64_t splitmix64(uint64_t\
-    \ x) {\n    x += 0x9e3779b97f4a7c15;\n    x = (x ^ (x >> 30)) * 0xbf58476d1ce4e5b9;\n\
-    \    x = (x ^ (x >> 27)) * 0x94d049bb133111eb;\n    return x ^ (x >> 31);\n  }\n\
-    \n  size_t operator()(uint64_t x) const {\n    static const uint64_t FIXED_RANDOM\
-    \ = chrono::steady_clock::now().time_since_epoch().count();\n    return splitmix64(x\
-    \ + FIXED_RANDOM);\n  }\n};\n\ntemplate <class T, class U>\nusing hash_table =\
-    \ __gnu_pbds::gp_hash_table<T, U, CustomHash>;\n#line 1 \"src/datastructures/static/mo_handler.h\"\
-    \ntemplate <int K>\nstruct MoHandler {\n  vector<array<int, 3>> queries;\n \n\
-    \  MoHandler() {}\n \n  void add(int l, int r) {\n    queries.push_back({l, r,\
-    \ int(queries.size())});\n  }\n \n  template <class F1, class F2, class F3, class\
-    \ F4, class F5>\n  void run(F1 add_l, F2 del_l, F3 add_r, F4 del_r, F5 answer)\
-    \ {\n    sort(queries.begin(), queries.end(), [](array<int, 3> a, array<int, 3>\
-    \ b) {\n      if (a[1] / K != b[1] / K) {\n        return a[1] / K < b[1] / K;\n\
-    \      }\n      return a[0] < b[0];\n    });\n \n    int cur_l = 0, cur_r = -1;\n\
-    \    for (auto [l, r, idx] : queries) {\n      while (cur_l > l) {\n        add_l(--cur_l);\n\
-    \      }\n      while (cur_r < r) {\n        add_r(++cur_r);\n      }\n      while\
-    \ (cur_l < l) {\n        del_l(cur_l++);\n      }\n      while (cur_r > r) {\n\
-    \        del_r(cur_r--);\n      }\n      answer(idx);\n    }\n  }\n \n  template\
-    \ <class F1, class F2, class F3>\n  void run(F1 add, F2 del, F3 answer) {\n  \
-    \  run<F1, F2, F1, F2, F3>(add, del, add, del, answer);\n  }\n};\n#line 6 \"src/verify/library_checker/data_structure/static_range_mode_query.test.cpp\"\
+    \ <bits/stdc++.h>\n\nusing namespace std;\n\n#define all(x) begin(x), end(x)\n\
+    #line 1 \"src/datastructures/hash_table.h\"\n#include <ext/pb_ds/assoc_container.hpp>\n\
+    \nstruct CustomHash {\n  static uint64_t splitmix64(uint64_t x) {\n    x += 0x9e3779b97f4a7c15;\n\
+    \    x = (x ^ (x >> 30)) * 0xbf58476d1ce4e5b9;\n    x = (x ^ (x >> 27)) * 0x94d049bb133111eb;\n\
+    \    return x ^ (x >> 31);\n  }\n\n  size_t operator()(uint64_t x) const {\n \
+    \   static const uint64_t FIXED_RANDOM = chrono::steady_clock::now().time_since_epoch().count();\n\
+    \    return splitmix64(x + FIXED_RANDOM);\n  }\n};\n\ntemplate <class T, class\
+    \ U>\nusing hash_table = __gnu_pbds::gp_hash_table<T, U, CustomHash>;\n#line 1\
+    \ \"src/datastructures/static/mo_handler.h\"\ntemplate <int K>\nstruct MoHandler\
+    \ {\n  vector<array<int, 3>> queries;\n \n  MoHandler() {}\n \n  void add(int\
+    \ l, int r) {\n    queries.push_back({l, r, int(queries.size())});\n  }\n \n \
+    \ template <class F1, class F2, class F3, class F4, class F5>\n  void run(F1 add_l,\
+    \ F2 del_l, F3 add_r, F4 del_r, F5 answer) {\n    sort(queries.begin(), queries.end(),\
+    \ [](array<int, 3> a, array<int, 3> b) {\n      if (a[1] / K != b[1] / K) {\n\
+    \        return a[1] / K < b[1] / K;\n      }\n      return a[0] < b[0];\n   \
+    \ });\n \n    int cur_l = 0, cur_r = -1;\n    for (auto [l, r, idx] : queries)\
+    \ {\n      while (cur_l > l) {\n        add_l(--cur_l);\n      }\n      while\
+    \ (cur_r < r) {\n        add_r(++cur_r);\n      }\n      while (cur_l < l) {\n\
+    \        del_l(cur_l++);\n      }\n      while (cur_r > r) {\n        del_r(cur_r--);\n\
+    \      }\n      answer(idx);\n    }\n  }\n \n  template <class F1, class F2, class\
+    \ F3>\n  void run(F1 add, F2 del, F3 answer) {\n    run<F1, F2, F1, F2, F3>(add,\
+    \ del, add, del, answer);\n  }\n};\n#line 6 \"src/verify/library_checker/data_structure/static_range_mode_query.test.cpp\"\
     \n\nint main() {\n  int n, q;\n  cin >> n >> q;\n  vector<int> a(n);\n  for (int\
     \ i = 0; i < n; i++) {\n    cin >> a[i];\n  }\n  MoHandler<300> mo;\n  for (int\
     \ i = 0; i < q; i++) {\n    int l, r;\n    cin >> l >> r;\n    mo.add(l, r - 1);\n\
@@ -78,7 +78,7 @@ data:
   isVerificationFile: true
   path: src/verify/library_checker/data_structure/static_range_mode_query.test.cpp
   requiredBy: []
-  timestamp: '2025-09-07 14:42:16-04:00'
+  timestamp: '2026-01-15 15:27:11+00:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: src/verify/library_checker/data_structure/static_range_mode_query.test.cpp

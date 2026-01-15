@@ -66,37 +66,40 @@ layout: document
 title: Fraction
 ---
 
-Exact rational arithmetic with automatic simplification and overflow protection.
+Exact rational arithmetic with comparison using 128-bit integers to prevent overflow.
 
 ## Operations
 
-- `Fraction(num, den)`: Create fraction `num/den`
+- `Frac(num, den)`: Create fraction `num/den` (default: `0/1`)
+- `reduce()`: Reduce fraction to lowest terms
 - `+`, `-`, `*`, `/`: Arithmetic operations
+- `-a`: Unary negation
 - `<`, `<=`, `>`, `>=`, `==`, `!=`: Comparison operations
-- `to_double()`: Convert to floating-point approximation
+- `<<`: Output as `num/den`
 
 ## Complexity
 
-- All operations: $O(\log(\min(\text{num}, \text{den})))$ for GCD computation
+- Arithmetic: $O(1)$ (no auto-reduction)
+- `reduce()`: $O(\log(\min(\text{num}, \text{den})))$
+- Comparison: $O(1)$ using 128-bit multiplication
 - Space: $O(1)$ per fraction
 
 ## Usage
 
 ```cpp
-Fraction a(3, 4);  // 3/4
-Fraction b(1, 2);  // 1/2
+Frac a(3, 4);  // 3/4
+Frac b(1, 2);  // 1/2
 
-Fraction sum = a + b;      // 5/4
-Fraction product = a * b;  // 3/8
-Fraction quotient = a / b; // 3/2
+Frac sum = a + b;      // 10/8 (not auto-reduced)
+sum.reduce();          // 5/4
+
+Frac product = a * b;  // 3/8
 
 if (a > b) {
-  cout << "3/4 > 1/2" << endl;
+  cout << a << " > " << b << endl;  // "3/4 > 1/2"
 }
-
-double approx = sum.to_double(); // 1.25
 ```
 
 ## Notes
 
-Automatically reduces fractions to lowest terms. Handles negative fractions and prevents overflow in intermediate calculations.
+Fractions are not automatically reduced after operations; call `reduce()` explicitly when needed. Comparisons use `__int128` to avoid overflow. Denominator is always kept positive.

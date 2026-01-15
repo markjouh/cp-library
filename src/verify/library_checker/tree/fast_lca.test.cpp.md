@@ -23,7 +23,7 @@ data:
   bundledCode: "#line 1 \"src/verify/library_checker/tree/fast_lca.test.cpp\"\n#define\
     \ PROBLEM \"https://judge.yosupo.jp/problem/lca\"\n\n#line 1 \"src/template/template.h\"\
     \n/**\n  *    author: mark\n**/\n#include <bits/stdc++.h>\n\nusing namespace std;\n\
-    \n#define sz(x) int(size(x))\n#define all(x) begin(x), end(x)\n#line 1 \"src/datastructures/static/sparse_table.h\"\
+    \n#define all(x) begin(x), end(x)\n#line 1 \"src/datastructures/static/sparse_table.h\"\
     \ntemplate <class T, auto op>\nstruct SparseTable {\n  int n, log;\n  vector<vector<T>>\
     \ st;\n\n  SparseTable() {}\n  SparseTable(const vector<T> &a) : n(ssize(a)),\
     \ log(__lg(n) + 1) {\n    st.resize(log);\n    st[0] = a;\n    for (int i = 1;\
@@ -63,7 +63,7 @@ data:
   isVerificationFile: true
   path: src/verify/library_checker/tree/fast_lca.test.cpp
   requiredBy: []
-  timestamp: '2025-09-14 12:12:28-04:00'
+  timestamp: '2026-01-15 15:27:11+00:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: src/verify/library_checker/tree/fast_lca.test.cpp

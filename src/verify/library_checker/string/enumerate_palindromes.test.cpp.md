@@ -23,14 +23,14 @@ data:
   bundledCode: "#line 1 \"src/verify/library_checker/string/enumerate_palindromes.test.cpp\"\
     \n#define PROBLEM \"https://judge.yosupo.jp/problem/enumerate_palindromes\"\n\n\
     #line 1 \"src/template/template.h\"\n/**\n  *    author: mark\n**/\n#include <bits/stdc++.h>\n\
-    \nusing namespace std;\n\n#define sz(x) int(size(x))\n#define all(x) begin(x),\
-    \ end(x)\n#line 1 \"src/numeric/binsearch.h\"\ntemplate <class T, class U>\nT\
-    \ bsmin(T lo, T hi, U f) {\n  assert(lo <= hi);\n  hi++;\n  for (T i = T(1) <<\
-    \ __lg(hi - lo); i > 0; i >>= 1) {\n    hi -= (hi - i >= lo && f(hi - i)) * i;\n\
-    \  }\n  return hi;\n}\n\ntemplate <class T, class U>\nT bsmax(T lo, T hi, U f)\
-    \ {\n  assert(lo <= hi);\n  lo--;\n  for (T i = T(1) << __lg(hi - lo); i > 0;\
-    \ i >>= 1) {\n    lo += (lo + i <= hi && f(lo + i)) * i;\n  }\n  return lo;\n\
-    }\n#line 1 \"src/strings/hashing.h\"\nnamespace hashing {\n\nmt19937_64 mt(chrono::steady_clock::now().time_since_epoch().count());\n\
+    \nusing namespace std;\n\n#define all(x) begin(x), end(x)\n#line 1 \"src/numeric/binsearch.h\"\
+    \ntemplate <class T, class U>\nT bsmin(T lo, T hi, U f) {\n  assert(lo <= hi);\n\
+    \  hi++;\n  for (T i = T(1) << __lg(hi - lo); i > 0; i >>= 1) {\n    hi -= (hi\
+    \ - i >= lo && f(hi - i)) * i;\n  }\n  return hi;\n}\n\ntemplate <class T, class\
+    \ U>\nT bsmax(T lo, T hi, U f) {\n  assert(lo <= hi);\n  lo--;\n  for (T i = T(1)\
+    \ << __lg(hi - lo); i > 0; i >>= 1) {\n    lo += (lo + i <= hi && f(lo + i)) *\
+    \ i;\n  }\n  return lo;\n}\n#line 1 \"src/strings/hashing.h\"\nnamespace hashing\
+    \ {\n\nmt19937_64 mt(chrono::steady_clock::now().time_since_epoch().count());\n\
     \nconst uint64_t MOD = (1ll << 61) - 1;\nconst uint64_t B = uniform_int_distribution<uint64_t>(0,\
     \ MOD)(mt);\n\nuint64_t add(uint64_t a, uint64_t b) {\n  a += b;\n  if (a >= MOD)\
     \ {\n    a -= MOD;\n  }\n  return a;\n}\n\nuint64_t sub(uint64_t a, uint64_t b)\
@@ -66,20 +66,20 @@ data:
     \n  SegHash get_all() const {\n    return SegHash(h[n], n);\n  }\n};\n\n} // namespace\
     \ hashing\n#line 6 \"src/verify/library_checker/string/enumerate_palindromes.test.cpp\"\
     \n\nint main() {\n  string s;\n  cin >> s;\n  string rev = s;\n  reverse(all(rev));\n\
-    \  hashing::RollingHash a(s), b(rev);\n  const int n = sz(s);\n  vector<int> ans(2\
-    \ * n - 1);\n  for (int i = 0; i < n; i++) {\n    ans[2 * i] = 2 * bsmax(0, min(i,\
-    \ n - i - 1), [&](int d) {\n      return a.get(i - d, i) == b.get(n - i - 1 -\
-    \ d, n - i - 1);\n    }) + 1;\n  }\n  for (int i = 0; i < n - 1; i++) {\n    ans[2\
-    \ * i + 1] = 2 * bsmax(0, min(i, n - i - 2), [&](int d) {\n      return a.get(i\
-    \ - d, i) == b.get(n - i - 2 - d, n - i - 2);\n    }) + 2;\n  }\n  for (int i\
-    \ = 0; i < 2 * n - 1; i++) {\n    cout << ans[i] << ' ';\n  }\n  cout << '\\n';\n\
-    }\n"
+    \  hashing::RollingHash a(s), b(rev);\n  const int n = ssize(s);\n  vector<int>\
+    \ ans(2 * n - 1);\n  for (int i = 0; i < n; i++) {\n    ans[2 * i] = 2 * bsmax(0,\
+    \ min(i, n - i - 1), [&](int d) {\n      return a.get(i - d, i) == b.get(n - i\
+    \ - 1 - d, n - i - 1);\n    }) + 1;\n  }\n  for (int i = 0; i < n - 1; i++) {\n\
+    \    ans[2 * i + 1] = 2 * bsmax(0, min(i, n - i - 2), [&](int d) {\n      return\
+    \ a.get(i - d, i) == b.get(n - i - 2 - d, n - i - 2);\n    }) + 2;\n  }\n  for\
+    \ (int i = 0; i < 2 * n - 1; i++) {\n    cout << ans[i] << ' ';\n  }\n  cout <<\
+    \ '\\n';\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/enumerate_palindromes\"\
     \n\n#include \"../../../template/template.h\"\n#include \"../../../numeric/binsearch.h\"\
     \n#include \"../../../strings/hashing.h\"\n\nint main() {\n  string s;\n  cin\
     \ >> s;\n  string rev = s;\n  reverse(all(rev));\n  hashing::RollingHash a(s),\
-    \ b(rev);\n  const int n = sz(s);\n  vector<int> ans(2 * n - 1);\n  for (int i\
-    \ = 0; i < n; i++) {\n    ans[2 * i] = 2 * bsmax(0, min(i, n - i - 1), [&](int\
+    \ b(rev);\n  const int n = ssize(s);\n  vector<int> ans(2 * n - 1);\n  for (int\
+    \ i = 0; i < n; i++) {\n    ans[2 * i] = 2 * bsmax(0, min(i, n - i - 1), [&](int\
     \ d) {\n      return a.get(i - d, i) == b.get(n - i - 1 - d, n - i - 1);\n   \
     \ }) + 1;\n  }\n  for (int i = 0; i < n - 1; i++) {\n    ans[2 * i + 1] = 2 *\
     \ bsmax(0, min(i, n - i - 2), [&](int d) {\n      return a.get(i - d, i) == b.get(n\
@@ -92,7 +92,7 @@ data:
   isVerificationFile: true
   path: src/verify/library_checker/string/enumerate_palindromes.test.cpp
   requiredBy: []
-  timestamp: '2025-09-07 14:42:16-04:00'
+  timestamp: '2026-01-15 15:27:11+00:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: src/verify/library_checker/string/enumerate_palindromes.test.cpp

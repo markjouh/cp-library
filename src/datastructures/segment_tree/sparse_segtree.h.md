@@ -23,17 +23,17 @@ data:
     \    }\n  }\n\n  T query(int l, int r) {\n    return get(l, r + 1, 0, 0, tree_sz);\n\
     \  }\n\nprivate:\n  int log, tree_sz;\n  vector<T> st;\n  vector<pair<int, int>>\
     \ ch;\n\n  int buf[32];\n  int idx;\n\n  int get_l(int x) {\n    if (ch[x].first\
-    \ == -1) {\n      ch[x].first = sz(st);\n      st.push_back(id());\n      ch.emplace_back(-1,\
+    \ == -1) {\n      ch[x].first = ssize(st);\n      st.push_back(id());\n      ch.emplace_back(-1,\
     \ -1);\n    }\n    return ch[x].first;\n  }\n\n  int get_r(int x) {\n    if (ch[x].second\
-    \ == -1) {\n      ch[x].second = sz(st);\n      st.push_back(id());\n      ch.emplace_back(-1,\
-    \ -1);\n    }\n    return ch[x].second;\n  }\n\n  void pull(int x) {\n    if (ch[x].first\
-    \ == -1) {\n      st[x] = st[ch[x].second];\n    } else if (ch[x].second != -1)\
-    \ {\n      st[x] = op(st[ch[x].first], st[ch[x].second]);\n    } else {\n    \
-    \  st[x] = st[ch[x].first];\n    }\n  }\n\n  T get(int l, int r, int x, int tl,\
-    \ int tr) {\n    if (x == -1 || tl >= r || tr <= l) {\n      return id();\n  \
-    \  }\n    if (tl >= l && tr <= r) {\n      return st[x];\n    }\n    int mid =\
-    \ (tl + tr) >> 1;\n    return op(get(l, r, ch[x].first, tl, mid), get(l, r, ch[x].second,\
-    \ mid, tr));\n  }\n};\n"
+    \ == -1) {\n      ch[x].second = ssize(st);\n      st.push_back(id());\n     \
+    \ ch.emplace_back(-1, -1);\n    }\n    return ch[x].second;\n  }\n\n  void pull(int\
+    \ x) {\n    if (ch[x].first == -1) {\n      st[x] = st[ch[x].second];\n    } else\
+    \ if (ch[x].second != -1) {\n      st[x] = op(st[ch[x].first], st[ch[x].second]);\n\
+    \    } else {\n      st[x] = st[ch[x].first];\n    }\n  }\n\n  T get(int l, int\
+    \ r, int x, int tl, int tr) {\n    if (x == -1 || tl >= r || tr <= l) {\n    \
+    \  return id();\n    }\n    if (tl >= l && tr <= r) {\n      return st[x];\n \
+    \   }\n    int mid = (tl + tr) >> 1;\n    return op(get(l, r, ch[x].first, tl,\
+    \ mid), get(l, r, ch[x].second, mid, tr));\n  }\n};\n"
   code: "template <class T, auto op, auto id>\nstruct SparseSegtree {\n  SparseSegtree()\
     \ {}\n\n  SparseSegtree(int n) {\n    log = __lg(n) + 1;\n    tree_sz = 1 << log;\n\
     \    st.push_back(id());\n    ch.emplace_back(-1, -1);\n  }\n\n  void set(int\
@@ -45,22 +45,22 @@ data:
     \    }\n  }\n\n  T query(int l, int r) {\n    return get(l, r + 1, 0, 0, tree_sz);\n\
     \  }\n\nprivate:\n  int log, tree_sz;\n  vector<T> st;\n  vector<pair<int, int>>\
     \ ch;\n\n  int buf[32];\n  int idx;\n\n  int get_l(int x) {\n    if (ch[x].first\
-    \ == -1) {\n      ch[x].first = sz(st);\n      st.push_back(id());\n      ch.emplace_back(-1,\
+    \ == -1) {\n      ch[x].first = ssize(st);\n      st.push_back(id());\n      ch.emplace_back(-1,\
     \ -1);\n    }\n    return ch[x].first;\n  }\n\n  int get_r(int x) {\n    if (ch[x].second\
-    \ == -1) {\n      ch[x].second = sz(st);\n      st.push_back(id());\n      ch.emplace_back(-1,\
-    \ -1);\n    }\n    return ch[x].second;\n  }\n\n  void pull(int x) {\n    if (ch[x].first\
-    \ == -1) {\n      st[x] = st[ch[x].second];\n    } else if (ch[x].second != -1)\
-    \ {\n      st[x] = op(st[ch[x].first], st[ch[x].second]);\n    } else {\n    \
-    \  st[x] = st[ch[x].first];\n    }\n  }\n\n  T get(int l, int r, int x, int tl,\
-    \ int tr) {\n    if (x == -1 || tl >= r || tr <= l) {\n      return id();\n  \
-    \  }\n    if (tl >= l && tr <= r) {\n      return st[x];\n    }\n    int mid =\
-    \ (tl + tr) >> 1;\n    return op(get(l, r, ch[x].first, tl, mid), get(l, r, ch[x].second,\
-    \ mid, tr));\n  }\n};"
+    \ == -1) {\n      ch[x].second = ssize(st);\n      st.push_back(id());\n     \
+    \ ch.emplace_back(-1, -1);\n    }\n    return ch[x].second;\n  }\n\n  void pull(int\
+    \ x) {\n    if (ch[x].first == -1) {\n      st[x] = st[ch[x].second];\n    } else\
+    \ if (ch[x].second != -1) {\n      st[x] = op(st[ch[x].first], st[ch[x].second]);\n\
+    \    } else {\n      st[x] = st[ch[x].first];\n    }\n  }\n\n  T get(int l, int\
+    \ r, int x, int tl, int tr) {\n    if (x == -1 || tl >= r || tr <= l) {\n    \
+    \  return id();\n    }\n    if (tl >= l && tr <= r) {\n      return st[x];\n \
+    \   }\n    int mid = (tl + tr) >> 1;\n    return op(get(l, r, ch[x].first, tl,\
+    \ mid), get(l, r, ch[x].second, mid, tr));\n  }\n};"
   dependsOn: []
   isVerificationFile: false
   path: src/datastructures/segment_tree/sparse_segtree.h
   requiredBy: []
-  timestamp: '2025-09-07 14:42:16-04:00'
+  timestamp: '2026-01-15 15:27:11+00:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - src/verify/library_checker/data_structure/static_range_sum_sparse.test.cpp
@@ -73,28 +73,29 @@ Segment tree for large coordinate ranges with dynamic node allocation.
 
 ## Operations
 
-- `SparseSegtree(max_coord)`: Create for coordinate range `[0, max_coord)`
-- `update(pos, val)`: Update position with value
-- `query(l, r)`: Query range sum/operation
+- `SparseSegtree<T, op, id>(n)`: Create for coordinate range `[0, n)`
+- `set(pos, val)`: Set value at position `pos`
+- `query(l, r)`: Query aggregate over range `[l, r]`
 
 ## Complexity
 
-- All operations: $O(\log(\text{max\_coord}))$
-- Space: $O(k \log(\text{max\_coord}))$ where $k$ is updates
+- All operations: $O(\log n)$
+- Space: $O(k \log n)$ where $k$ is number of `set` operations
 
 ## Usage
 
 ```cpp
-SparseSegtree<ll> sparse_seg(1e9); // Large coordinate range
+auto add = [](ll a, ll b) { return a + b; };
+auto zero = []() { return 0LL; };
 
-sparse_seg.update(1000000, 5);
-sparse_seg.update(999999999, 10);
+SparseSegtree<ll, add, zero> st(1e9);  // Large coordinate range
 
-ll sum = sparse_seg.query(999999, 1000001);
+st.set(1000000, 5);
+st.set(999999999, 10);
+
+ll sum = st.query(999999, 1000001);
 ```
 
 ## Notes
 
-Only allocates nodes for accessed coordinates. Efficient for large coordinate ranges with sparse updates.
-
-**Coordinate Compression**: While this uses dynamic allocation, for better cache performance with known coordinates, consider explicit coordinate compression where you map coordinates to dense indices `[0, k)` before using a regular segment tree.
+Only allocates nodes for accessed coordinates. Efficient for large coordinate ranges with sparse updates. For better cache performance with known coordinates, consider coordinate compression with a regular segment tree.

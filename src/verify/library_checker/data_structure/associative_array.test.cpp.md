@@ -20,12 +20,12 @@ data:
   bundledCode: "#line 1 \"src/verify/library_checker/data_structure/associative_array.test.cpp\"\
     \n#define PROBLEM \"https://judge.yosupo.jp/problem/associative_array\"\n\n#line\
     \ 1 \"src/template/template.h\"\n/**\n  *    author: mark\n**/\n#include <bits/stdc++.h>\n\
-    \nusing namespace std;\n\n#define sz(x) int(size(x))\n#define all(x) begin(x),\
-    \ end(x)\n#line 1 \"src/datastructures/hash_table.h\"\n#include <ext/pb_ds/assoc_container.hpp>\n\
-    \nstruct CustomHash {\n  static uint64_t splitmix64(uint64_t x) {\n    x += 0x9e3779b97f4a7c15;\n\
-    \    x = (x ^ (x >> 30)) * 0xbf58476d1ce4e5b9;\n    x = (x ^ (x >> 27)) * 0x94d049bb133111eb;\n\
-    \    return x ^ (x >> 31);\n  }\n\n  size_t operator()(uint64_t x) const {\n \
-    \   static const uint64_t FIXED_RANDOM = chrono::steady_clock::now().time_since_epoch().count();\n\
+    \nusing namespace std;\n\n#define all(x) begin(x), end(x)\n#line 1 \"src/datastructures/hash_table.h\"\
+    \n#include <ext/pb_ds/assoc_container.hpp>\n\nstruct CustomHash {\n  static uint64_t\
+    \ splitmix64(uint64_t x) {\n    x += 0x9e3779b97f4a7c15;\n    x = (x ^ (x >> 30))\
+    \ * 0xbf58476d1ce4e5b9;\n    x = (x ^ (x >> 27)) * 0x94d049bb133111eb;\n    return\
+    \ x ^ (x >> 31);\n  }\n\n  size_t operator()(uint64_t x) const {\n    static const\
+    \ uint64_t FIXED_RANDOM = chrono::steady_clock::now().time_since_epoch().count();\n\
     \    return splitmix64(x + FIXED_RANDOM);\n  }\n};\n\ntemplate <class T, class\
     \ U>\nusing hash_table = __gnu_pbds::gp_hash_table<T, U, CustomHash>;\n#line 5\
     \ \"src/verify/library_checker/data_structure/associative_array.test.cpp\"\n\n\
@@ -45,7 +45,7 @@ data:
   isVerificationFile: true
   path: src/verify/library_checker/data_structure/associative_array.test.cpp
   requiredBy: []
-  timestamp: '2025-09-07 14:42:16-04:00'
+  timestamp: '2026-01-15 15:27:11+00:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: src/verify/library_checker/data_structure/associative_array.test.cpp

@@ -17,9 +17,9 @@ data:
     \ && find(e, ls_adj, rs_match, vis)) {\n      rs_match[e] = di;\n      return\
     \ 1;\n    }\n  }\n  return 0;\n}\n\nint bipartite_matching(vector<vector<int>>\
     \ &ls_adj, vector<int> &rs_match) {\n  vector<int> vis;\n  for (int i = 0; i <\
-    \ sz(ls_adj); i++) {\n    vis.assign(sz(rs_match), 0);\n    for (int j : ls_adj[i])\
-    \ {\n      if (find(j, ls_adj, rs_match, vis)) {\n        rs_match[j] = i;\n \
-    \       break;\n      }\n    }\n  }\n  return sz(rs_match) - count(all(rs_match),\
+    \ ssize(ls_adj); i++) {\n    vis.assign(ssize(rs_match), 0);\n    for (int j :\
+    \ ls_adj[i]) {\n      if (find(j, ls_adj, rs_match, vis)) {\n        rs_match[j]\
+    \ = i;\n        break;\n      }\n    }\n  }\n  return ssize(rs_match) - count(all(rs_match),\
     \ -1);\n}\n"
   code: "// Left and right parts should have separate numbering\n// ls_adj should\
     \ contain the neighbors of the left part\n// rs_match should be the size of the\
@@ -29,15 +29,15 @@ data:
     \ : ls_adj[di]) {\n    if (!vis[e] && find(e, ls_adj, rs_match, vis)) {\n    \
     \  rs_match[e] = di;\n      return 1;\n    }\n  }\n  return 0;\n}\n\nint bipartite_matching(vector<vector<int>>\
     \ &ls_adj, vector<int> &rs_match) {\n  vector<int> vis;\n  for (int i = 0; i <\
-    \ sz(ls_adj); i++) {\n    vis.assign(sz(rs_match), 0);\n    for (int j : ls_adj[i])\
-    \ {\n      if (find(j, ls_adj, rs_match, vis)) {\n        rs_match[j] = i;\n \
-    \       break;\n      }\n    }\n  }\n  return sz(rs_match) - count(all(rs_match),\
+    \ ssize(ls_adj); i++) {\n    vis.assign(ssize(rs_match), 0);\n    for (int j :\
+    \ ls_adj[i]) {\n      if (find(j, ls_adj, rs_match, vis)) {\n        rs_match[j]\
+    \ = i;\n        break;\n      }\n    }\n  }\n  return ssize(rs_match) - count(all(rs_match),\
     \ -1);\n}\n"
   dependsOn: []
   isVerificationFile: false
   path: src/graphs/bipartite_matching.h
   requiredBy: []
-  timestamp: '2025-09-06 20:10:03-04:00'
+  timestamp: '2026-01-15 15:27:11+00:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: src/graphs/bipartite_matching.h
@@ -49,25 +49,36 @@ Maximum matching in bipartite graphs using augmenting path algorithm.
 
 ## Operations
 
-- `bipartite_matching(g, n_left, n_right)`: Find maximum matching
-- Returns vector of matched pairs
+- `bipartite_matching(ls_adj, rs_match)`: Find maximum matching, returns size of matching
 
 ## Complexity
 
-- Time: $O(VE)$ 
+- Time: $O(VE)$
 - Space: $O(V)$
 
 ## Usage
 
 ```cpp
-// Bipartite graph with left vertices [0, n_left) and right vertices [0, n_right)
-vector<vector<int>> g(n_left);
-g[left_vertex].push_back(right_vertex); // Add edge
+int n_left = 3, n_right = 4;
+vector<vector<int>> ls_adj(n_left);  // Adjacency list for left vertices
+vector<int> rs_match(n_right, -1);   // Must be initialized with -1s
 
-auto matching = bipartite_matching(g, n_left, n_right);
-int max_matching_size = matching.size();
+// Add edges: left vertex -> right vertex
+ls_adj[0].push_back(0);
+ls_adj[0].push_back(1);
+ls_adj[1].push_back(1);
+ls_adj[2].push_back(2);
+
+int matching_size = bipartite_matching(ls_adj, rs_match);
+
+// rs_match[j] contains the left vertex matched to right vertex j (-1 if unmatched)
+for (int j = 0; j < n_right; j++) {
+  if (rs_match[j] != -1) {
+    cout << rs_match[j] << " - " << j << endl;
+  }
+}
 ```
 
 ## Notes
 
-Uses DFS-based augmenting path search. Returns pairs `(left_vertex, right_vertex)` in maximum matching.
+Left and right parts use separate numbering `[0, n_left)` and `[0, n_right)`. The `rs_match` vector must be pre-allocated to `n_right` and initialized with `-1`s before calling.

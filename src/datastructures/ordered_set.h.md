@@ -20,7 +20,7 @@ data:
     \ntemplate <class T>\nstruct OrderedMultiset {\n  int time = 0;\n  ordered_set<pair<T,\
     \ int>> st;\n\n  void insert(T x) {\n    st.insert({x, time++});\n  }\n  void\
     \ extract(T x) {\n    auto it = st.lower_bound({x, 0});\n    if (it != end(st)\
-    \ && it->fi == x) {\n      st.erase(it);\n    }\n  }\n\n  T find_by_order(int\
+    \ && it->first == x) {\n      st.erase(it);\n    }\n  }\n\n  T find_by_order(int\
     \ k) {\n    return (*st.find_by_order(k)).first;\n  }\n  int order_of_key(T x)\
     \ {\n    return st.order_of_key({x, 0});\n  }\n};\n"
   code: "#include <ext/pb_ds/assoc_container.hpp> \n#include <ext/pb_ds/tree_policy.hpp>\n\
@@ -29,7 +29,7 @@ data:
     \ <class T>\nstruct OrderedMultiset {\n  int time = 0;\n  ordered_set<pair<T,\
     \ int>> st;\n\n  void insert(T x) {\n    st.insert({x, time++});\n  }\n  void\
     \ extract(T x) {\n    auto it = st.lower_bound({x, 0});\n    if (it != end(st)\
-    \ && it->fi == x) {\n      st.erase(it);\n    }\n  }\n\n  T find_by_order(int\
+    \ && it->first == x) {\n      st.erase(it);\n    }\n  }\n\n  T find_by_order(int\
     \ k) {\n    return (*st.find_by_order(k)).first;\n  }\n  int order_of_key(T x)\
     \ {\n    return st.order_of_key({x, 0});\n  }\n};"
   dependsOn: []
@@ -37,7 +37,7 @@ data:
   path: src/datastructures/ordered_set.h
   requiredBy:
   - src/datastructures/merge_sort_tree.h
-  timestamp: '2025-09-07 14:42:16-04:00'
+  timestamp: '2026-01-15 16:12:42+00:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - src/verify/library_checker/data_structure/range_kth_smallest.test.cpp

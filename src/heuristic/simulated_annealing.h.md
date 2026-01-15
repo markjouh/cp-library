@@ -41,31 +41,54 @@ layout: document
 title: Simulated Annealing
 ---
 
-Metaheuristic optimization algorithm using temperature-based acceptance probability.
+Template for simulated annealing optimization with time-based temperature control.
+
+## Structure
+
+Define a `State` struct with:
+- `State()`: Constructor for initial state
+- `edit()`: Apply random modification to current state
+- `undo()`: Revert the last `edit()` call
+- `eval()`: Return cost of current state (lower is better)
 
 ## Operations
 
-- `SimulatedAnnealing(initial_temp, cooling_rate)`: Initialize with temperature parameters
-- `optimize(initial_state, neighbor_fn, cost_fn, max_iterations)`: Run optimization
+- `anneal(ms)`: Run simulated annealing for `ms` milliseconds, returns best state found
 
 ## Complexity
 
-- Time: $O(\text{iterations} \times T_{\text{neighbor}} \times T_{\text{cost}})$
+- Time: Runs for specified milliseconds
 - Space: $O(\text{state\_size})$
 
 ## Usage
 
 ```cpp
-// Minimize a cost function
-auto neighbor = [](State s) { return get_random_neighbor(s); };
-auto cost = [](State s) { return calculate_cost(s); };
+struct State {
+  vector<int> perm;
+  int last_i, last_j;
 
-SimulatedAnnealing sa(1000.0, 0.95);
-State best = sa.optimize(initial_state, neighbor, cost, 10000);
+  State() : perm(n) {
+    iota(perm.begin(), perm.end(), 0);
+  }
+
+  void edit() {
+    last_i = rng(n);
+    last_j = rng(n);
+    swap(perm[last_i], perm[last_j]);
+  }
+
+  void undo() {
+    swap(perm[last_i], perm[last_j]);
+  }
+
+  int eval() const {
+    return calculate_cost(perm);
+  }
+};
+
+State best = anneal(1900);  // Run for 1900ms
 ```
 
 ## Notes
 
-Accepts worse solutions with probability decreasing over time. Effective for avoiding local optima in optimization problems.
-
-**Temperature Tuning**: Acceptance probability follows $e^{-\Delta E / T}$ where $\Delta E$ is cost difference and $T$ is temperature. Initial temperature should allow ~80% acceptance of random moves. Cooling rate of 0.95-0.99 works well for most problems. Too fast cooling causes premature convergence; too slow wastes computation.
+Temperature decreases exponentially from `temp_start` to `temp_end`. Acceptance probability follows $e^{-\Delta E / T}$. Adjust `temp_start` and `temp_end` constants in the code for your problem.

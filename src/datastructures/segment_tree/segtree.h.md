@@ -13,7 +13,7 @@ data:
     links: []
   bundledCode: "#line 1 \"src/datastructures/segment_tree/segtree.h\"\ntemplate <class\
     \ T, auto op, auto id>\nstruct Segtree {\n  int n;\n  vector<T> st;\n\n  Segtree(int\
-    \ n_) : n(n_), st(2 * n, id()) {}\n\n  Segtree(const vector<T> &a) : n(sz(a)),\
+    \ n_) : n(n_), st(2 * n, id()) {}\n\n  Segtree(const vector<T> &a) : n(ssize(a)),\
     \ st(2 * n) {\n    copy(all(a), begin(st) + n);\n    for (int i = n - 1; i > 0;\
     \ i--) {\n      st[i] = op(st[i << 1], st[i << 1 | 1]);\n    }\n  }\n\n  void\
     \ set(int p, T val) {\n    for (st[p += n] = val, p >>= 1; p > 0; p >>= 1) {\n\
@@ -24,7 +24,7 @@ data:
     \ rs = op(st[--r], rs);\n      }\n    }\n    return op(ls, rs);\n  }\n};\n"
   code: "template <class T, auto op, auto id>\nstruct Segtree {\n  int n;\n  vector<T>\
     \ st;\n\n  Segtree(int n_) : n(n_), st(2 * n, id()) {}\n\n  Segtree(const vector<T>\
-    \ &a) : n(sz(a)), st(2 * n) {\n    copy(all(a), begin(st) + n);\n    for (int\
+    \ &a) : n(ssize(a)), st(2 * n) {\n    copy(all(a), begin(st) + n);\n    for (int\
     \ i = n - 1; i > 0; i--) {\n      st[i] = op(st[i << 1], st[i << 1 | 1]);\n  \
     \  }\n  }\n\n  void set(int p, T val) {\n    for (st[p += n] = val, p >>= 1; p\
     \ > 0; p >>= 1) {\n      st[p] = op(st[p << 1], st[p << 1 | 1]);\n    }\n  }\n\
@@ -37,7 +37,7 @@ data:
   isVerificationFile: false
   path: src/datastructures/segment_tree/segtree.h
   requiredBy: []
-  timestamp: '2025-09-06 20:10:03-04:00'
+  timestamp: '2026-01-15 15:27:11+00:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - src/verify/library_checker/data_structure/point_add_range_sum_segtree.test.cpp

@@ -20,22 +20,22 @@ data:
   bundledCode: "#line 1 \"src/verify/library_checker/data_structure/static_rmq.test.cpp\"\
     \n#define PROBLEM \"https://judge.yosupo.jp/problem/staticrmq\"\n\n#line 1 \"\
     src/template/template.h\"\n/**\n  *    author: mark\n**/\n#include <bits/stdc++.h>\n\
-    \nusing namespace std;\n\n#define sz(x) int(size(x))\n#define all(x) begin(x),\
-    \ end(x)\n#line 1 \"src/datastructures/static/sparse_table.h\"\ntemplate <class\
-    \ T, auto op>\nstruct SparseTable {\n  int n, log;\n  vector<vector<T>> st;\n\n\
-    \  SparseTable() {}\n  SparseTable(const vector<T> &a) : n(ssize(a)), log(__lg(n)\
-    \ + 1) {\n    st.resize(log);\n    st[0] = a;\n    for (int i = 1; i < log; i++)\
-    \ {\n      st[i].resize(n - (1 << i) + 1);\n      for (int j = 0; j < ssize(st[i]);\
-    \ j++) {\n        st[i][j] = op(st[i - 1][j], st[i - 1][j + (1 << (i - 1))]);\n\
-    \      }\n    }\n  }\n\n  T query(int l, int r) {\n    assert(l <= r);\n    int\
-    \ i = __lg(++r - l);\n    return op(st[i][l], st[i][r - (1 << i)]);\n  }\n};\n\
-    \ntemplate <class T>\nT min_op(T x, T y) {\n  return x < y ? x : y;\n}\ntemplate\
-    \ <class T>\nT max_op(T x, T y) {\n  return x > y ? x : y;\n}\n#line 5 \"src/verify/library_checker/data_structure/static_rmq.test.cpp\"\
-    \n\nint op(int x, int y) {\n  return x < y ? x : y;\n}\n\nint main() {\n  int\
-    \ n, q;\n  cin >> n >> q;\n  vector<int> a(n);\n  for (int i = 0; i < n; i++)\
-    \ {\n    cin >> a[i];\n  }\n  SparseTable<int, op> rmq(a);\n  while (q--) {\n\
-    \    int l, r;\n    cin >> l >> r;\n    cout << rmq.query(l, r - 1) << '\\n';\n\
-    \  }\n}\n"
+    \nusing namespace std;\n\n#define all(x) begin(x), end(x)\n#line 1 \"src/datastructures/static/sparse_table.h\"\
+    \ntemplate <class T, auto op>\nstruct SparseTable {\n  int n, log;\n  vector<vector<T>>\
+    \ st;\n\n  SparseTable() {}\n  SparseTable(const vector<T> &a) : n(ssize(a)),\
+    \ log(__lg(n) + 1) {\n    st.resize(log);\n    st[0] = a;\n    for (int i = 1;\
+    \ i < log; i++) {\n      st[i].resize(n - (1 << i) + 1);\n      for (int j = 0;\
+    \ j < ssize(st[i]); j++) {\n        st[i][j] = op(st[i - 1][j], st[i - 1][j +\
+    \ (1 << (i - 1))]);\n      }\n    }\n  }\n\n  T query(int l, int r) {\n    assert(l\
+    \ <= r);\n    int i = __lg(++r - l);\n    return op(st[i][l], st[i][r - (1 <<\
+    \ i)]);\n  }\n};\n\ntemplate <class T>\nT min_op(T x, T y) {\n  return x < y ?\
+    \ x : y;\n}\ntemplate <class T>\nT max_op(T x, T y) {\n  return x > y ? x : y;\n\
+    }\n#line 5 \"src/verify/library_checker/data_structure/static_rmq.test.cpp\"\n\
+    \nint op(int x, int y) {\n  return x < y ? x : y;\n}\n\nint main() {\n  int n,\
+    \ q;\n  cin >> n >> q;\n  vector<int> a(n);\n  for (int i = 0; i < n; i++) {\n\
+    \    cin >> a[i];\n  }\n  SparseTable<int, op> rmq(a);\n  while (q--) {\n    int\
+    \ l, r;\n    cin >> l >> r;\n    cout << rmq.query(l, r - 1) << '\\n';\n  }\n\
+    }\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/staticrmq\"\n\n#include\
     \ \"../../../template/template.h\"\n#include \"../../../datastructures/static/sparse_table.h\"\
     \n\nint op(int x, int y) {\n  return x < y ? x : y;\n}\n\nint main() {\n  int\
@@ -49,7 +49,7 @@ data:
   isVerificationFile: true
   path: src/verify/library_checker/data_structure/static_rmq.test.cpp
   requiredBy: []
-  timestamp: '2025-09-14 12:12:28-04:00'
+  timestamp: '2026-01-15 15:27:11+00:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: src/verify/library_checker/data_structure/static_rmq.test.cpp
