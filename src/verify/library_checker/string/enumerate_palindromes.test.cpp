@@ -10,7 +10,7 @@ int main() {
   string rev = s;
   reverse(all(rev));
   hashing::RollingHash a(s), b(rev);
-  const int n = sz(s);
+  const int n = ssize(s);
   vector<int> ans(2 * n - 1);
   for (int i = 0; i < n; i++) {
     ans[2 * i] = 2 * bsmax(0, min(i, n - i - 1), [&](int d) {

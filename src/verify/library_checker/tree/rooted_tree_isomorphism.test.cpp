@@ -13,7 +13,7 @@ int main() {
     g[p].push_back(i);
   }
   auto res = hash_tree(g);
-  cout << sz(tree_hashes) << '\n';
+  cout << ssize(tree_hashes) << '\n';
   for (int x : res) {
     cout << x << ' ';
   }

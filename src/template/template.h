@@ -5,5 +5,4 @@
 
 using namespace std;
 
-#define sz(x) int(size(x))
 #define all(x) begin(x), end(x)
