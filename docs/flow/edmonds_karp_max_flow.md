@@ -7,29 +7,30 @@ Maximum flow algorithm using Edmonds-Karp implementation with BFS to find augmen
 
 ## Operations
 
-- `edmonds_karp(capacity, source, sink)`: Find maximum flow from source to sink
-- Returns maximum flow value
+- `EdmondsKarpMaxFlow(n, s, t)`: Create flow network with `n` vertices, source `s`, sink `t`
+- `add(u, v, cap)`: Add directed edge from `u` to `v` with capacity `cap` (default: `INT_MAX`)
+- `max_flow()`: Compute and return maximum flow value
 
 ## Complexity
 
 - Time: $O(VE^2)$
-- Space: $O(V^2)$ for capacity matrix
+- Space: $O(V + E)$
 
 ## Usage
 
 ```cpp
-int n = 4; // number of vertices
-vector<vector<int>> capacity(n, vector<int>(n, 0));
+int n = 4;
+EdmondsKarpMaxFlow flow(n, 0, 3);  // source=0, sink=3
 
 // Add edges with capacities
-capacity[0][1] = 10;
-capacity[0][2] = 5;
-capacity[1][3] = 8;
-capacity[2][3] = 10;
+flow.add(0, 1, 10);
+flow.add(0, 2, 5);
+flow.add(1, 3, 8);
+flow.add(2, 3, 10);
 
-int max_flow = edmonds_karp(capacity, 0, 3); // source=0, sink=3
+int result = flow.max_flow();  // returns 13
 ```
 
 ## Notes
 
-Uses BFS to ensure shortest augmenting paths. Modifies capacity matrix during execution to track residual graph.
+Uses BFS to ensure shortest augmenting paths. Edges are stored in adjacency list format with reverse edges for residual graph.
