@@ -3,14 +3,20 @@ title: Ordered Set
 documentation_of: ./src/datastructures/ordered_set.h
 ---
 
-GNU PBDS ordered set with order statistics (find by rank, rank by value).
+Sorted set with order-statistic queries, built on the PBDS tree. `OrderedMultiset` wraps it to support duplicates.
 
 ## Operations
 
-- `insert(x)`: Insert element `x`
-- `erase(x)`: Remove element `x`
-- `find_by_order(k)`: Find k-th smallest element (0-indexed)
-- `order_of_key(x)`: Count elements strictly less than `x`
+`ordered_set<T>` (PBDS tree):
+- `insert(x)`, `erase(x)`: Insert or remove `x`
+- `find_by_order(k)`: Iterator to the `k`-th smallest element (0-indexed)
+- `order_of_key(x)`: Count of elements strictly less than `x`
+
+`OrderedMultiset<T>`:
+- `insert(x)`: Insert `x` (duplicates allowed)
+- `extract(x)`: Remove one occurrence of `x`
+- `find_by_order(k)`: `k`-th smallest value
+- `order_of_key(x)`: Count of elements strictly less than `x`
 
 ## Complexity
 
@@ -25,13 +31,15 @@ os.insert(5);
 os.insert(3);
 os.insert(7);
 
-// Find 1st smallest (0-indexed)
-auto it = os.find_by_order(1); // Points to 5
+int kth = *os.find_by_order(1);  // 5
+int rank = os.order_of_key(6);   // 2
 
-// Count elements < 6
-int count = os.order_of_key(6); // Returns 2
+OrderedMultiset<int> ms;
+ms.insert(4);
+ms.insert(4);
+ms.extract(4);  // still contains one 4
 ```
 
 ## Notes
 
-Typedef for GNU PBDS tree. Maintains elements in sorted order with efficient rank operations.
+`ordered_set<T>` rejects duplicates; `OrderedMultiset` pairs each value with a unique timestamp internally to allow them.

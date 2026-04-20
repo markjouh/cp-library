@@ -3,12 +3,17 @@ title: Centroid Decomposition
 documentation_of: ./src/graphs/trees/centroid_decomposition.h
 ---
 
-Decomposes tree into centroid hierarchy for efficient path queries and updates.
+Recursive decomposition of a tree by centroids, producing a balanced auxiliary tree of depth $O(\log n)$.
 
 ## Operations
 
-- `CentroidDecomposition(g)`: Build centroid decomposition of tree `g`
-- Access decomposition tree structure through public members
+- `CentroidDecomp(g)`: Build centroid decomposition of tree `g`
+
+## Members
+
+- `root`: Root of the centroid tree
+- `par[u]`: Parent of `u` in the centroid tree (`-1` for the root)
+- `tree[u]`: Children of `u` in the centroid tree
 
 ## Complexity
 
@@ -19,14 +24,16 @@ Decomposes tree into centroid hierarchy for efficient path queries and updates.
 
 {% raw %}
 ```cpp
-vector<vector<int>> tree = {{1, 2}, {0, 3}, {0}, {1}};
-CentroidDecomposition cd(tree);
+vector<vector<int>> g = {{1, 2}, {0, 3}, {0}, {1}};
+CentroidDecomp cd(g);
 
-// Use centroid tree for path queries
-// Implementation depends on specific problem requirements
+int r = cd.root;
+for (int v : cd.tree[r]) {
+  // v is a child of r in the centroid tree
+}
 ```
 {% endraw %}
 
 ## Notes
 
-Creates auxiliary tree where each node's centroid subtrees have size at most n/2. Useful for path queries in trees.
+Each subtree of the centroid tree has size at most half of its parent, so depth is $O(\log n)$. Used for divide-and-conquer on tree paths.

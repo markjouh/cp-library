@@ -1,14 +1,15 @@
 ---
-title: Fast LCA (Lowest Common Ancestor)
+title: Fast LCA
 documentation_of: ./src/graphs/trees/fast_lca.h
 ---
 
-Fast LCA queries using sparse table with $O(1)$ query time after linear preprocessing.
+LCA queries via Euler tour and sparse table RMQ on the depth array.
 
 ## Operations
 
-- `FastLCA(g, root)`: Construct for tree `g` with given `root`
-- `lca(u, v)`: Find lowest common ancestor of vertices `u` and `v`
+- `FastLCA(g)`: Build from tree `g`, rooted at vertex `0`
+- `lca(u, v)`: Lowest common ancestor of `u` and `v`
+- `dist(u, v)`: Distance (number of edges) between `u` and `v`
 
 ## Complexity
 
@@ -20,15 +21,14 @@ Fast LCA queries using sparse table with $O(1)$ query time after linear preproce
 
 {% raw %}
 ```cpp
-vector<vector<int>> tree = {{1, 2}, {0, 3}, {0}, {1}};
-FastLCA lca_solver(tree, 0);
+vector<vector<int>> g = {{1, 2}, {0, 3}, {0}, {1}};
+FastLCA lca(g);
 
-int ancestor = lca_solver.lca(2, 3);
+int a = lca.lca(2, 3);
+int d = lca.dist(2, 3);
 ```
 {% endraw %}
 
 ## Notes
 
-Uses Euler tour and sparse table for RMQ. Requires tree structure (connected, acyclic graph).
-
-**Sparse Table Optimization**: The implementation uses a sparse table on the depth array from Euler tour traversal. The sparse table is built in $O(n \log n)$ with $O(1)$ RMQ queries using the fact that `min(a, b) = a` if `depth[a] <= depth[b]`, enabling overlap-safe range minimum queries.
+Root is fixed at vertex `0`. Relabel the tree if a different root is needed.

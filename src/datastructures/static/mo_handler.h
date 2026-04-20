@@ -5,7 +5,7 @@ struct MoHandler {
   MoHandler() {}
  
   void add(int l, int r) {
-    queries.push_back({l, r, int(queries.size())});
+    queries.push_back({l, r, int(ssize(queries))});
   }
  
   template <class F1, class F2, class F3, class F4, class F5>

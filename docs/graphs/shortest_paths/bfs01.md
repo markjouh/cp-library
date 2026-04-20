@@ -3,11 +3,11 @@ title: 0-1 BFS
 documentation_of: ./src/graphs/shortest_paths/bfs01.h
 ---
 
-Shortest path algorithm for graphs with edge weights 0 or 1 using deque-based BFS.
+Shortest paths on graphs with edge weights in $\{0, 1\}$ using a deque.
 
 ## Operations
 
-- `bfs01(g, start)`: Find shortest distances from `start` vertex
+- `bfs01(g, start)`: Return vector of shortest distances from `start`; `g[u]` stores `{neighbor, weight}` pairs with weight `0` or `1`
 
 ## Complexity
 
@@ -18,8 +18,7 @@ Shortest path algorithm for graphs with edge weights 0 or 1 using deque-based BF
 
 {% raw %}
 ```cpp
-// Graph with 0/1 weights: {destination, weight}
-vector<vector<pair<int, int>>> g = {
+vector<vector<pair<int, bool>>> g = {
   {{1, 0}, {2, 1}},
   {{3, 1}},
   {{3, 0}},
@@ -32,4 +31,4 @@ vector<int> dist = bfs01(g, 0);
 
 ## Notes
 
-More efficient than Dijkstra for 0-1 weighted graphs. Uses deque to maintain optimal ordering.
+Weight-0 edges are pushed to the front of the deque, weight-1 edges to the back, preserving BFS layer order.

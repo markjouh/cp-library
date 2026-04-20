@@ -12,7 +12,7 @@ Binary search on floating-point values with bit-level precision.
 
 ## Complexity
 
-- Time: $O(64 \times T_f)$ where $T_f$ is function evaluation time
+- Time: $O(T_f)$ — 64 iterations over the bit representation, where $T_f$ is the cost of one evaluation of `f`
 - Space: $O(1)$
 
 ## Usage

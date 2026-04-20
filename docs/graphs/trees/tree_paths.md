@@ -3,27 +3,39 @@ title: Tree Paths
 documentation_of: ./src/graphs/trees/tree_paths.h
 ---
 
-Utilities for path queries and updates in trees using heavy-light decomposition concepts.
+Binary lifting over a weighted tree, aggregating edge values along paths between vertices.
 
 ## Operations
 
-- Various path query and update operations on tree structures
-- Implementation depends on specific path operations needed
+- `TreePaths<T, op, id>(g, root)`: Build from weighted adjacency list `g` (edges are `{neighbor, weight}`), rooted at `root` (default: 0)
+- `query(x, y)`: Aggregate edge values along the path from `x` to `y`
+
+## Template Parameters
+
+- `T`: Value type
+- `op`: Associative binary function `(T, T) -> T`
+- `id`: Function `() -> T` returning the identity for `op`
 
 ## Complexity
 
-- Varies based on specific operations implemented
-- Typically $O(\log^2 n)$ for path queries
+- Construction: $O(n \log n)$
+- Query: $O(\log n)$
+- Space: $O(n \log n)$
 
 ## Usage
 
 {% raw %}
 ```cpp
-vector<vector<int>> tree = {{1, 2}, {0, 3}, {0}, {1}};
-// Specific usage depends on implemented path operations
+auto op = [](int a, int b) { return a + b; };
+auto id = []() { return 0; };
+
+vector<vector<pair<int, int>>> g = {{{1, 3}, {2, 5}}, {{0, 3}}, {{0, 5}}};
+TreePaths<int, op, id> tp(g, 0);
+
+int path_sum = tp.query(1, 2);  // 3 + 5 = 8
 ```
 {% endraw %}
 
 ## Notes
 
-Provides foundation for efficient path operations in trees. Common applications include path sum, path maximum, and path updates.
+`(T, op)` must form a monoid with identity `id()`. Edge values, not vertex values, are aggregated.

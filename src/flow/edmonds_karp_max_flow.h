@@ -11,9 +11,9 @@ struct EdmondsKarpMaxFlow {
   EdmondsKarpMaxFlow(int n_, int s_, int t_) : n(n_), s(s_), t(t_), g(n) {}
 
   void add(int u, int v, int cap = INT_MAX) {
-    g[u].push_back(edges.size());
+    g[u].push_back(ssize(edges));
     edges.push_back({u, v, cap, 0});
-    g[v].push_back(edges.size());
+    g[v].push_back(ssize(edges));
     edges.push_back({v, u, 0, 0});
   }
 

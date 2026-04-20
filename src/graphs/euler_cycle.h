@@ -18,7 +18,7 @@ auto euler_cycle(const vector<vector<int>> &g) {
   vector<bool> removed(cnt);
   vector<int> stk, res;
   stk.push_back(0);
-  while (ssize(stk)) {
+  while (!stk.empty()) {
     int u = stk.back();
     if (deg[u] == 0) {
       res.push_back(u);

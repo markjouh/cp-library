@@ -8,7 +8,7 @@ auto dijkstras(const vector<vector<pair<int, int>>> &g, int start = 0) {
   dist[start] = 0;
   pq.emplace(0, start);
 
-  while (ssize(pq)) {
+  while (!pq.empty()) {
     auto [d, u] = pq.top();
     pq.pop();
     if (d != dist[u]) {

@@ -3,37 +3,37 @@ title: Mo's Algorithm Handler
 documentation_of: ./src/datastructures/static/mo_handler.h
 ---
 
-Mo's algorithm for offline range queries with efficient query reordering.
+Mo's algorithm for offline range queries, sorting queries to minimize pointer movement.
 
 ## Operations
 
-- `MoHandler(n)`: Initialize for array of size `n`
-- `add_query(l, r)`: Add range query `[l, r]`
-- `process(add_fn, remove_fn, answer_fn)`: Process all queries with given functions
+- `MoHandler<K>()`: Create empty handler with compile-time block size `K` (typically $\sqrt{n}$)
+- `add(l, r)`: Register range query `[l, r]`
+- `run(add_l, del_l, add_r, del_r, answer)`: Process queries with separate callbacks for each endpoint
+- `run(add, del, answer)`: Overload when adding/removing from either end uses the same callback
 
 ## Complexity
 
-- Time: $O((n + q) \sqrt{n})$ where $q$ is number of queries
+- Time: $O((n + q) \sqrt{n} \cdot T)$ with $K = \sqrt{n}$, where $q$ is the number of queries and $T$ is the cost of a single boundary operation
 - Space: $O(q)$
 
 ## Usage
 
 ```cpp
-MoHandler mo(n);
+MoHandler<320> mo;  // K ~= sqrt(n) for n ~= 100000
 for (auto [l, r] : queries) {
-  mo.add_query(l, r);
+  mo.add(l, r);
 }
 
-vector<int> answers(queries.size());
-mo.process(
-  [&](int pos) { /* add element at pos */ },
-  [&](int pos) { /* remove element at pos */ },
-  [&](int query_id) { answers[query_id] = current_answer; }
+vector<int> ans(queries.size());
+// Symmetric case: add/remove don't depend on which end
+mo.run(
+  [&](int i) { /* include a[i] */ },
+  [&](int i) { /* exclude a[i] */ },
+  [&](int idx) { ans[idx] = current_answer; }
 );
 ```
 
 ## Notes
 
-Reorders queries to minimize pointer movements. Requires add/remove operations to be efficient and reversible.
-
-**Block Size Optimization**: Uses block size of $\sqrt{n}$ for optimal $O((n + q)\sqrt{n})$ complexity. For arrays with $n > 10^5$, consider tuning block size to $\sqrt{n} \times c$ where $c \approx 1.5$ for better cache performance, though this changes the theoretical complexity slightly.
+The four-callback overload is for structures where the side matters: for example, maintaining a running value that depends on insertion order, or a deque-like structure where pushing to the front differs from pushing to the back. When the two ends are interchangeable, pass the same add and delete lambda via the three-callback overload.

@@ -3,7 +3,7 @@ title: Polynomial Rolling Hash
 documentation_of: ./src/strings/hashing.h
 ---
 
-Polynomial rolling hash with 64-bit modulus $2^{61} - 1$ and randomized base for collision-resistant string hashing.
+Polynomial rolling hash over the Mersenne prime $2^{61} - 1$ with a randomized base, for collision-resistant string and container hashing.
 
 ## Operations
 

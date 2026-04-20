@@ -11,7 +11,7 @@ struct BinaryLifting {
     queue<int> q;
     dep[root] = 0;
     q.push(root);
-    while (ssize(q)) {
+    while (!q.empty()) {
       int u = q.front();
       q.pop();
       for (int v : g[u]) {

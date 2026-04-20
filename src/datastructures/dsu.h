@@ -1,7 +1,7 @@
 struct DSU {
   vector<int> a;
 
-  DSU(int n) : a(n, -1) {}
+  DSU(int n_) : a(n_, -1) {}
 
   int size(int x) {
     return -a[find(x)];
@@ -15,13 +15,13 @@ struct DSU {
     x = find(x);
     y = find(y);
     if (x == y) {
-      return 0;
+      return false;
     }
     if (a[x] > a[y]) {
       swap(x, y);
     }
     a[x] += a[y];
     a[y] = x;
-    return 1;
+    return true;
   }
 };

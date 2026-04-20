@@ -21,7 +21,7 @@ struct ChthollyTree {
   ChthollyTree(int n_, T v) : n(n_) {
     st.emplace(0, n - 1, v);
   }
-  ChthollyTree(const vector<T> &a) : n(a.size()) {
+  ChthollyTree(const vector<T> &a) : n(ssize(a)) {
     int p = -1;
     for (int i = 0; i < n; i++) {
       if (i == n - 1 || a[i] != a[i + 1]) {

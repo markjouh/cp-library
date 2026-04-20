@@ -4,17 +4,17 @@
 
 bool find(int j, vector<vector<int>> &ls_adj, vector<int> &rs_match, vector<int> &vis) {
   if (rs_match[j] == -1) {
-    return 1;
+    return true;
   }
   vis[j] = 1;
   int di = rs_match[j];
   for (int e : ls_adj[di]) {
     if (!vis[e] && find(e, ls_adj, rs_match, vis)) {
       rs_match[e] = di;
-      return 1;
+      return true;
     }
   }
-  return 0;
+  return false;
 }
 
 int bipartite_matching(vector<vector<int>> &ls_adj, vector<int> &rs_match) {

@@ -9,7 +9,7 @@ auto dijkstras_k_shortest(const vector<vector<pair<int, int>>> &g, int k, int st
 
   pq.emplace(0, start);
 
-  while (ssize(pq)) {
+  while (!pq.empty()) {
     auto [d, u] = pq.top();
     pq.pop();
     if (ssize(dist[u]) == k) {

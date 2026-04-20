@@ -12,7 +12,7 @@ Generic binary search for finding boundaries in monotonic functions.
 
 ## Complexity
 
-- Time: $O(\log(hi - lo) \times T_f)$ where $T_f$ is time for function evaluation
+- Time: $O(\log(hi - lo) \cdot T_f)$ where $T_f$ is the time for one evaluation of `f`
 - Space: $O(1)$
 
 ## Usage

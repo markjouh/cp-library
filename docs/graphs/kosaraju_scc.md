@@ -31,7 +31,7 @@ for (int i = 0; i < g.size(); i++) {
 
 for (int i = 0; i < scc.sccs; i++) {
   for (int v : scc.members[i]) {
-  cout << v << " ";
+    cout << v << " ";
   }
 }
 ```

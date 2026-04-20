@@ -4,7 +4,7 @@ struct CentroidDecomp {
   vector<vector<int>> tree;
  
   CentroidDecomp(const vector<vector<int>> &g_) : g(g_) {
-    const int n = g.size();
+    const int n = ssize(g);
     par.resize(n);
     blocked.resize(n);
     st_size.resize(n);

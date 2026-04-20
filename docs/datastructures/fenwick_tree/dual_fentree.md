@@ -10,8 +10,8 @@ Supports efficient range updates and point queries, dual to standard Fenwick tre
 - `DualFentree(n)`: Construct with size `n`
 - `add(r, v)`: Add `v` to all elements in `[0, r]`
 - `add(l, r, v)`: Add `v` to all elements in `[l, r]`
-- `sum(r)`: Get current value at position `r`
-- `sum(l, r)`: Get sum of values in range `[l, r]`
+- `sum(r)`: Value at position `r` after all applied updates
+- `sum(l, r)`: Sum of values over `[l, r]`
 
 ## Complexity
 

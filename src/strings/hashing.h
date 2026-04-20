@@ -92,11 +92,11 @@ struct RollingHash {
   vector<uint64_t> h;
 
   template <class T>
-  RollingHash(const T &s) : n(s.size()), h(n + 1) {
+  RollingHash(const T &s) : n(ssize(s)), h(n + 1) {
     for (int i = 0; i < n; i++) {
       h[i + 1] = add(mul(h[i], B), s[i]);
     }
-    int p = pow_b.size();
+    int p = ssize(pow_b);
     if (p < n + 1) {
       pow_b.resize(n + 1);
       for (int i = p; i <= n; i++) {

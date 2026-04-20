@@ -15,9 +15,9 @@ Two-dimensional Fenwick tree for efficient point updates and rectangular range s
 ## Complexity
 
 - Construction: $O(1)$
-- Update: $O(\log n \times \log m)$
-- Query: $O(\log n \times \log m)$
-- Space: $O(n \times m)$
+- Update: $O(\log n \log m)$
+- Query: $O(\log n \log m)$
+- Space: $O(nm)$
 
 ## Usage
 

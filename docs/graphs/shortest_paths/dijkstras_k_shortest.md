@@ -29,7 +29,7 @@ auto distances = dijkstras_k_shortest<int>(g, 3, 0);
 
 for (int v = 0; v < distances.size(); v++) {
   for (int dist : distances[v]) {
-  cout << dist << " ";
+    cout << dist << " ";
   }
 }
 ```
