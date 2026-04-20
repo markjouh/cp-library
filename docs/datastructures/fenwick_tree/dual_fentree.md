@@ -1,40 +1,32 @@
 ---
-title: Dual Fenwick Tree
+title: Range Add Range Sum Fenwick Tree
 documentation_of: ./src/datastructures/fenwick_tree/dual_fentree.h
 ---
 
-Supports efficient range updates and point queries, dual to standard Fenwick tree.
+Fenwick tree supporting range add and range sum queries, implemented with two BITs.
 
 ## Operations
 
-- `DualFentree(n)`: Construct with size `n`
-- `add(r, v)`: Add `v` to all elements in `[0, r]`
-- `add(l, r, v)`: Add `v` to all elements in `[l, r]`
-- `sum(r)`: Value at position `r` after all applied updates
-- `sum(l, r)`: Sum of values over `[l, r]`
+- `DualFentree(n)`: Construct size `n`, zero-initialized
+- `add(r, v)`: Add `v` to every element in `[0, r]`
+- `add(l, r, v)`: Add `v` to every element in `[l, r]`
+- `sum(r)`: Prefix sum over `[0, r]`
+- `sum(l, r)`: Range sum over `[l, r]`
 
 ## Complexity
 
-- Construction: $O(n)$
-- Update: $O(\log n)$
-- Query: $O(\log n)$
+- All operations: $O(\log n)$
 - Space: $O(n)$
 
 ## Usage
 
 ```cpp
-DualFentree<int> dft(n);
+DualFentree<long long> ft(n);
 
-// Add 5 to range [2, 7]
-dft.add(2, 7, 5);
-
-// Get value at position 3
-int value = dft.sum(3);
-
-// Get range sum [1, 5]
-int range_sum = dft.sum(1, 5);
+ft.add(2, 5, 3);          // add 3 to a[2..5]
+long long s = ft.sum(1, 4);  // sum of a[1..4]
 ```
 
 ## Notes
 
-Uses two Fenwick trees for linear and constant components of range updates.
+Uses two Fenwick trees to decompose range updates into prefix contributions, one linear in the index and one constant. Despite the name, this is not a "point-query" dual — it supports both range updates and range sum queries.
