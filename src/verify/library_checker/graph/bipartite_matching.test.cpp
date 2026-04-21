@@ -11,7 +11,6 @@ int main() {
   for (int i = 0; i < M; i++) {
     int u, v;
     cin >> u >> v;
-    u--; v--;
     ls_adj[u].push_back(v);
   }
 
@@ -21,7 +20,7 @@ int main() {
 
   for (int i = 0; i < R; i++) {
     if (rs_match[i] != -1) {
-      cout << rs_match[i] + 1 << ' ' << i + 1 << '\n';
+      cout << rs_match[i] << ' ' << i << '\n';
     }
   }
 }
