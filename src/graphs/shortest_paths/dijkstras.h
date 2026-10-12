@@ -1,5 +1,5 @@
 template <class T>
-auto dijkstras(const vector<vector<pair<int, int>>> &g, int start = 0) {
+auto dijkstras(const vector<vector<pair<int, T>>> &g, int start = 0) {
   priority_queue<pair<T, int>, vector<pair<T, int>>, greater<pair<T, int>>> pq;
 
   vector<T> dist(ssize(g), numeric_limits<T>::max());
